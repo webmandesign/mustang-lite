@@ -1,0 +1,59 @@
+/**
+ * WordPress Visual Editor Core Styles
+ */
+
+	body {
+		padding: 10px;
+		background: transparent;
+	}
+
+	/* General */
+		ins {
+			color: inherit;
+			border-bottom: 1px dotted {{border-color}};
+			border-color: inherit;
+		}
+		td, th {color: inherit}
+
+	/* Image captions */
+		.wp-caption-dd,
+		.wp-caption-text {
+			margin-top: .5em;
+			color: #666;
+		}
+
+	/* Lists */
+		ol ol {list-style: upper-alpha}
+		ol ol ol {list-style: lower-roman}
+		ol ol ol ol {list-style: lower-alpha}
+
+		ul,
+		ol {
+			margin-top: 1.62em;
+			padding-left: 0;
+			margin-left: .5em;
+			list-style: none;
+		}
+		ol {
+			margin-left: 2em;
+			list-style: decimal;
+		}
+
+		ul > li {
+			position: relative;
+			padding: 0;
+			margin-left: 1.5em;
+			list-style: disc;
+		}
+
+		li:first-child {margin-top: 0}
+
+		li ul,
+		li ol {
+			margin-top: .5em;
+			margin-bottom: .5em;
+		}
+
+
+
+

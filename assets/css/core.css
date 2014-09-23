@@ -1,0 +1,424 @@
+/**
+ * Core styles
+ *
+ * @version  1.1
+ */
+
+
+
+	/**
+	 * Main elements
+	 */
+
+		body {position: relative}
+
+		.wrap {
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 auto;
+			background-color: #fff;
+			color: #333;
+			z-index: 1;
+		}
+
+		.website-container {margin: 0 auto}
+			.boxed .website-container {
+				-webkit-box-shadow: 0 0 50px 0 rgba(0,0,0, .1);
+				        box-shadow: 0 0 50px 0 rgba(0,0,0, .1);
+			}
+
+		.boxed .website-container,
+		.boxed .wrap,
+		.wrap.boxed,
+		.boxed.post-meta-layout .wrap,
+		.wrap-inner {max-width: 100%}
+
+
+
+	/**
+	 * Global elements and classes
+	 */
+
+		a {
+			text-decoration: none;
+			color: #03c;
+		}
+		a:hover {text-decoration: underline}
+		a:active {}
+		a:visited {}
+		a:focus {outline: 0}
+			.no-js .email-nospam {display: none}
+
+		abbr[title],
+		acronym[title] {cursor: help}
+
+		blockquote {
+			position: relative;
+			padding: 0 1em;
+			margin: 1.62em 0 0;
+			border-radius: .5em;
+		}
+			cite {border: 0}
+			blockquote cite {display: block}
+
+			/* inline quotation */
+				q:before {content: '\201C'}
+				q:after {content: '\201D'}
+
+		code {
+			padding: .28em .62em;
+			background: rgba(0,0,0, .05);
+		}
+
+		del,
+		strike,
+		s {
+			text-decoration: line-through;
+			color: inherit;
+			opacity: .75;
+		}
+
+		img,
+		iframe {vertical-align: middle}
+			img[width],
+			img[height] {height: auto}
+			.lie8 img[width] {width: auto}
+			iframe {
+				border: 0;
+				outline: 0;
+			}
+				p + iframe {margin-top: 1.62em}
+
+			.wm-column img,
+			.widget img,
+			.pane img,
+			.wm-column iframe,
+			.widget iframe,
+			.pane iframe {max-width: 100%}
+
+		p {word-wrap: break-word}
+
+		pre {
+			padding: 15px;
+			margin: 0;
+			line-height: 30px;
+			word-wrap: break-word;
+			background: url({{theme_assets_url}}img/lines.png) repeat 0 -16px;
+		}
+			h1 + pre,
+			h2 + pre,
+			h3 + pre,
+			h4 + pre,
+			h5 + pre,
+			h6 + pre,
+			div + pre,
+			ul + pre,
+			ol + pre,
+			p + pre {margin-top: 1.62em}
+
+
+
+		/**
+		 * Tables
+		 */
+
+			table {
+				width: 100%;
+				margin: 1.62em 0 0;
+				border-radius: 4px;
+			}
+				caption {padding: 1em 0}
+				td, th {padding: .5em 1em}
+				th, tfoot td {text-align: left}
+
+				caption + thead tr:first-child th,
+				caption + thead tr:first-child td,
+				colgroup + thead tr:first-child th,
+				colgroup + thead tr:first-child td,
+				thead:first-child tr:first-child th,
+				thead:first-child tr:first-child td {border-top: 0}
+
+				thead + tbody tr:first-child td,
+				thead + tbody tr:first-child th {border-top-width: .25em}
+
+				tbody tr:hover td,
+				tbody tr:hover th {background-color: rgba(0,0,0, .05)}
+
+			/* Special table classes */
+				table.bordered {border-collapse: separate}
+				.bordered th:first-child,
+				.bordered td:first-child {border-left: 0}
+
+
+
+		/**
+		 * Classes
+		 */
+
+			span.br {
+				clear: both;
+				display: block;
+				width: 100%;
+				height: 1.62em;
+			}
+
+			.screen-reader-text {
+				position: absolute;
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+				.screen-reader-text:focus {
+					clip: auto;
+					position: absolute;
+					display: block;
+					width: auto;
+					height: auto;
+					left: 5px;
+					top: 5px;
+					padding: 15px 23px 14px;
+					line-height: normal;
+					text-decoration: none;
+					text-transform: none;
+					font-size: 14px;
+					font-weight: bold;
+					background-color: #f1f1f1;
+					color: #21759b;
+					border-radius: 3px;
+					box-shadow: 0 0 2px 2px rgba(0,0,0, .6);
+					z-index: 100000; /* Above WP toolbar */
+				}
+
+			.image-container {position: relative}
+				.image-container img {width: 100%}
+
+			mark,
+			.marker {
+				padding: 2px 5px;
+				color: #444;
+				background-color: #eee;
+				border-radius: 4px;
+			}
+
+			.cursor-zoom-in {
+				cursor: -webkit-zoom-in;
+				cursor: -moz-zoom-in;
+				cursor: zoom-in;
+			}
+				.lie8 .cursor-zoom-in {cursor: pointer}
+
+
+
+		/**
+		 * Definition lists
+		 */
+
+			h1 + dl,
+			h2 + dl,
+			h3 + dl,
+			h4 + dl,
+			h5 + dl,
+			h6 + dl,
+			div + dl,
+			p + dl {margin-top: 1.62em}
+
+
+
+		/**
+		 * Clearing
+		 */
+
+			.clear {clear: both}
+				.lie8 .last + .clear {min-height: 1px}
+			/* Supports Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 8+ */
+			/* Thanks to http://nicolasgallagher.com/micro-clearfix-hack/ */
+				.clearfix:before,
+					.clearfix:after,
+				.pane:before,
+					.pane:after,
+				.row:before,
+					.row:after,
+				.wm-row:before,
+					.wm-row:after,
+				.wrap-inner:before,
+					.wrap-inner:after {
+					content: ' ';
+					display: table;
+				}
+				.clearfix:after,
+				.pane:after,
+				.row:after,
+				.wm-row:after,
+				.wrap-inner:after {clear: both}
+
+
+
+	/**
+	 * Breadcrumbs
+	 */
+
+		.breadcrumbs {opacity: .6}
+			.breadcrumbs a {color: inherit}
+			.breadcrumbs-separator[class*="iconwm-"] {
+				display: inline-block;
+				position: relative;
+				width: 12px;
+				height: 12px;
+				top: -1px;
+				margin: 0 .75em;
+				line-height: 9px;
+				text-align: center;
+				font-size: 8px;
+				border-radius: 50%;
+			}
+
+
+
+	/**
+	 * Pagination
+	 *
+	 * Supports WP-PageNavi.
+	 */
+
+		.wm-pagination {
+			clear: both;
+			padding: 1.62em 0 0;
+			text-align: right;
+		}
+		.list-articles + .wm-pagination {margin-top: 2.62em}
+			.wm-pagination a,
+			.wm-pagination span {
+				display: inline-block;
+				width: 3em;
+				height: 3em;
+				padding: 0;
+				margin: 0 .15em;
+				line-height: 2.85em;
+				text-align: center;
+				text-decoration: none;
+				background: {{bg-color-brighter}};
+				color: #666;
+				border-radius: 1.5em;
+			}
+				.wm-pagination a span { /* post pages */
+					display: inline;
+					min-width: auto;
+					padding: 0;
+					margin: 0;
+					background: transparent;
+					border: 0;
+				}
+				.wm-pagination a:hover {
+					-webkit-box-shadow: inset 0 1px 10px rgba(0,0,0, .25);
+					        box-shadow: inset 0 1px 10px rgba(0,0,0, .25);
+				}
+
+			/* Pagination link active, current page */
+				.wm-pagination > span,
+				.wm-pagination a:active,
+				.wm-pagination .current {
+					background: {{accent-color}};
+					-webkit-box-shadow: inset 0 1px 5px rgba(0,0,0, .1);
+					        box-shadow: inset 0 1px 5px rgba(0,0,0, .1);
+				}
+
+			/* Dots */
+				.wm-pagination > span.dots,
+				.wm-pagination .extend {
+					min-width: auto;
+					padding: 0 .5em;
+					background: transparent;
+					color: inherit;
+					border: 0;
+					-webkit-box-shadow: none;
+					        box-shadow: none;
+				}
+
+			/* WP-PageNavi plugin support */
+				.wm-pagination .pages {
+					float: left;
+					width: auto;
+					background: none;
+					border: 0;
+				}
+				.wm-pagination .first,
+				.wm-pagination .last {display: none}
+
+
+
+	/**
+	 * Scrollbars
+	 *
+	 * @since  1.1
+	 */
+
+		::-webkit-scrollbar {width: 8px}
+
+		/* Track */
+			::-webkit-scrollbar-track {
+				background: rgba(255,255,255, .5);
+				-webkit-border-radius: 10px;
+				        border-radius: 10px;
+				-webkit-box-shadow: 0 0 0 1px rgba(255,255,255, .3), inset 0 0 6px rgba(0,0,0, .3);
+			}
+
+		/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: rgba(0,0,0, .5);
+				-webkit-border-radius: 10px;
+				        border-radius: 10px;
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0, .3);
+			}
+			::-webkit-scrollbar-thumb:window-inactive {background: rgba(0,0,0, .25)}
+
+
+
+	/**
+	 * MediaElement player custom styles
+	 *
+	 * @since  1.1
+	 */
+
+		/* Player */
+			body .mejs-container {margin: 1.62em 0}
+				body .mejs-container.mejs-audio {height: 50px !important}
+				body .mejs-container .mejs-controls {
+					height: 50px;
+					padding: 0 20px;
+					background: #222;
+				}
+					body .mejs-container .mejs-controls div {margin-top: 10px}
+					body .mejs-container .mejs-controls button {
+						-webkit-box-shadow: none;
+						        box-shadow: none;
+					}
+					body .mejs-container .mejs-controls .mejs-time-rail .mejs-time-total {background: #111}
+					body .mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded {
+						height: 6px;
+						margin-top: 2px;
+						background: #2c2c2c;
+						border-radius: 0;
+					}
+					body .mejs-container .mejs-controls .mejs-time-rail .mejs-time-current {background: #666}
+
+		/* Playlist */
+			body .wp-playlist {
+				padding: 1.62em;
+				margin: 1.62em 0;
+				border-color: inherit;
+			}
+				body .wp-playlist-current-item {margin-bottom: 1em}
+				body .wp-playlist .mejs-container {width: 100% !important}
+				body .wp-audio-playlist .mejs-container {height: 50px !important}
+				body .wp-playlist-tracks {margin-top: 1em}
+					body .wp-playlist-item {
+						padding: .5em 0;
+						border-color: inherit;
+					}
+					body .wp-playlist-item-length {margin-top: .5em}
+
+		.post-media .mejs-container,
+		.post-media .wp-playlist {margin: 0}
+
+
+
+

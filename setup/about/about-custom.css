@@ -1,0 +1,68 @@
+/**
+ * About Page Style Addons / Overrides
+ *
+ * @package     WebMan WordPress Theme Framework
+ * @subpackage  About Page
+ * @copyright   2014 WebMan - Oliver Juhas
+ * @since       1.0
+ * @version     1.1.1
+ */
+
+
+
+	.appearance_page_mustang-about .wm-notice {display: none !important}
+
+	.appearance_page_mustang-about #wpbody-content {overflow: hidden !important}
+		.appearance_page_mustang-about #wpcontent {margin-left: 160px}
+		.appearance_page_mustang-about.folded #wpcontent {margin-left: 36px}
+		.appearance_page_mustang-about .about-wrap {
+			padding-left: 40px;
+			margin-left: 0;
+		}
+
+	.appearance_page_mustang-about #wpwrap,
+	.dashboard_page_mustang-about #wpwrap {background: url(bg-about.png) repeat-x 0 -80px}
+
+	.about-wrap h1 {
+		color: #fff;
+		text-shadow: 0 0 20px rgba(0,0,0, .25);
+	}
+		.about-wrap .about-text {
+			color: #fff;
+			text-shadow: 1px 1px 1px rgba(0,0,0, .25);
+		}
+			.about-wrap .about-text a {color: #ddd}
+
+	.about-wrap .dropcap {
+		padding: .5em .75em;
+		font-size: 24px;
+		background: #3B5998;
+		color: #fff;
+	}
+
+	.about-wrap .dropcap {border-radius: 0}
+
+	.about-wrap .wm-notes {
+		padding: 2.62em 999em 2.62em 40px;
+		margin: 40px -999em 1.62em -40px;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		border-radius: 0;
+		-webkit-box-shadow: none;
+		        box-shadow: none;
+	}
+		.about-wrap .wm-notes .dropcap {
+			display: inline-block;
+			float: none;
+			margin-bottom: 1em;
+		}
+	.about-wrap .wm-notes.special {
+		font-size: 1.28em;
+		font-style: normal;
+		background: #fff;
+		color: #000;
+	}
+		.about-wrap .wm-notes.special p {font-size: 1em}
+		.about-wrap .wm-notes.special small {font-size: .62em}
+
+/* End of file */

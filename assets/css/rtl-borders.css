@@ -1,0 +1,48 @@
+/**
+ * Borders
+ */
+
+	blockquote {border-right: .5em solid {{accent-color}}} /* accent color */
+	blockquote.alignright {border-left: .5em solid {{accent-color}}} /* accent color */
+
+
+
+	/**
+	 * Right only
+	 */
+
+		.border-right,
+		.bordered th, .type-bordered th, .type-bordered-striped th,
+		.bordered td, .type-bordered td, .type-bordered-striped td,
+		.wm-tabbed-widgets .wm-tab-links li a,
+		.wm-filter ul > li,
+		.wm-accordion .wm-item-content,
+		.wm-tab-links li:first-child,
+		.nav-main li.megamenu > ul > li {
+			border-right: 1px solid {{border-color}};
+			border-color: inherit;
+		}
+			.wm-call-to-action {border-right-width: .62em}
+
+		/* Dotted */
+			.wm-countdown-timer .dash {
+				border-right: 2px dotted {{border-color}};
+				border-color: inherit;
+			}
+
+
+
+	/**
+	 * Left only
+	 */
+
+		.border-left,
+		.wm-accordion .wm-item-content,
+		.wm-tab-links li {
+			border-left: 1px solid {{border-color}};
+			border-color: inherit;
+		}
+
+
+
+
