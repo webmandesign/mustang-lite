@@ -5,7 +5,8 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Custom CSS Styles Generator
  * @copyright   2014 WebMan - Oliver Juhas
- * @version     2.0
+ * @since       1.0
+ * @version     1.2
  */
 
 
@@ -47,6 +48,9 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 							'forms'       => '{p} input[type="date"], {p} input[type="email"], {p} input[type="file"], {p} input[type="number"], {p} input[type="search"], {p} input[type="password"], {p} input[type="text"], {p} input[type="url"], {p} select, {p} textarea',
 							'headings'    => '{p} h1, {p} h2, {p} h3, {p} h4, {p} h5, {p} h6, {p} .h1, {p} .h2, {p} .h3, {p} .h4, {p} .h5, {p} .h6, {p} [class*="heading-style-"], {p} .no-icon-background .wm-iconbox-module .wm-content-module-element.image, {p} .no-icon-bg .wm-iconbox-module .wm-content-module-element.image',
 							'pagination'  => array(
+									/**
+									 * @since  Mustang Lite (Removed WooCommerce and bbPress selectors)
+									 */
 									'base'   => ', .wm-pagination a, .wm-pagination span',
 									'active' => ', .wm-pagination > span, .wm-pagination a:active, .wm-pagination .current',
 								),
@@ -59,6 +63,9 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 									'iconbox-link-color'     => '{p}.wm-iconbox-module .font-icon a',
 									'iconbox-text-shadow'    => '{p}.wm-iconbox-module.wm-content-module-item:hover .image i:before',
 								),
+							/**
+							 * @since  Mustang Lite (Removed WooCommerce selectors)
+							 */
 						),
 					'text_color'     => 200,
 					'treshold'       => ( defined( 'WMAMP_HOOK_PREFIX' ) ) ? ( apply_filters( WMAMP_HOOK_PREFIX . 'wma_contrast_color' . '_default_treshold', 127 ) ) : ( 127 ),
@@ -119,7 +126,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 					/**
 					 * Global colors
 					 *
-					 * @version  1.1.1
+					 * @version  1.1.1 (removed floating cart from colors-bg-10 selectors)
 					 */
 
 						'colors' => array( 'custom' => '/* Accent color */' ),
@@ -235,6 +242,8 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 
 						/**
 						 * Predefined colors
+						 *
+						 * @version  1.1.1 (removed bbPress from colors-shortcodes-10 and colors-shortcodes-20 selectors, removed WooCommerce styles - colors-shortcodes-40, colors-shortcodes-50, colors-red-40)
 						 */
 
 							//Shortcodes default colors
@@ -819,6 +828,8 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 
 						/**
 						 * Content
+						 *
+						 * @version  1.1.1 (removed WooCommerce styles - content-30, content-accent-70, content-accent-80, removed WooCommerce and bbPress selectors from content-50, content-forms, content-accent-40)
 						 */
 
 							'content' => array( 'custom' => '/* Background: Content area */' ),
@@ -1101,7 +1112,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 					/**
 					 * Typography
 					 *
-					 * @version  1.1.1
+					 * @version  1.2 (removed bbPress selectors from font-size-h1, font-size-h2, font-size-h3, font-size-h4)
 					 */
 
 						'typography' => array( 'custom' => '/* Typography */' ),
@@ -1123,6 +1134,13 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 							'selector' => '.logo.type-text, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"], blockquote',
 							'styles'   => array(
 								'font-family' => $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-headings' ) ] . ', Helvetica, Arial, Verdana, sans-serif',
+							)
+						),
+						'fonts-logo' => array(
+							'condition' => ( ! wm_option( $helper['prefix'] . 'logo' ) && wm_option( $helper['prefix'] . 'font-logo' ) ),
+							'selector'  => '.logo.type-text',
+							'styles'    => array(
+								'font-family' => $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-logo' ) ] . ', Helvetica, Arial, Verdana, sans-serif',
 							)
 						),
 
@@ -1155,12 +1173,14 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 
 					/**
 					 * High DPI / Retina styles
+					 *
+					 * @version  1.2
 					 */
 
 						'highdpi' => array( 'custom' => '/* High DPI/Retina displays styles */' ),
 
 						'highdpi-' . 10 => array(
-							'custom' => "@media only screen and (-webkit-min-device-pixel-ratio: 1.5), \r\n\t\tonly screen and (-moz-min-device-pixel-ratio: 1.5), \r\n\t\tonly screen and (-o-min-device-pixel-ratio: 3/2), \r\n\t\tonly screen and (min-device-pixel-ratio: 1.5), \r\n\t\tonly screen and (min-resolution: 1.5dppx) {"
+							'custom' => "@media only screen and (-webkit-min-device-pixel-ratio: 1.5), \r\n\t\tonly screen and (min--moz-device-pixel-ratio: 1.5), \r\n\t\tonly screen and (-moz-min-device-pixel-ratio: 1.5), \r\n\t\tonly screen and (-o-min-device-pixel-ratio: 3/2), \r\n\t\tonly screen and (min-device-pixel-ratio: 1.5), \r\n\t\tonly screen and (min-resolution: 144dpi), \r\n\t\tonly screen and (min-resolution: 1.5dppx) {"
 						),
 
 							/**

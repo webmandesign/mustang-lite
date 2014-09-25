@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -63,6 +63,9 @@
 						__( 'Theme customizer', 'wm_domain' ) => admin_url( 'customize.php' ),
 						__( 'Font icons', 'wm_domain' )       => admin_url( 'themes.php?page=icon-font' ),
 						__( 'User manual', 'wm_domain' )      => WM_ONLINE_MANUAL_URL,
+						/**
+						 * @since  Mustang Lite (Removed support link)
+						 */
 					);
 
 			//Output
@@ -75,19 +78,25 @@
 	/**
 	 * CSS generator replacements
 	 *
+	 * @version  1.2
+	 *
 	 * @param  array $replacements
 	 */
 	if ( ! function_exists( 'wm_generate_css_replacements' ) ) {
 		function wm_generate_css_replacements( $replacements = array() ) {
 			//Preparing output
 				$replacements = array(
-						'{{accent-color}}'           => '#3b5998',
-						'{{bg-color-brighter}}'      => '#f6f6f6',
-						'{{border-color}}'           => '#e3e3e3',
-						'{{theme_assets_dir}}'       => trailingslashit( get_template_directory() ) . 'assets/',
-						'{{theme_assets_url}}'       => trailingslashit( get_template_directory_uri() ) . 'assets/',
-						'{{child_theme_assets_dir}}' => trailingslashit( get_stylesheet_directory() ) . 'assets/',
-						'{{child_theme_assets_url}}' => trailingslashit( get_stylesheet_directory_uri() ) . 'assets/',
+						'{{accent-color}}'                 => '#3b5998',
+						'{{bg-color-brighter}}'            => '#f6f6f6',
+						'{{border-color}}'                 => '#e3e3e3',
+						'{{get_template_directory}}'       => trailingslashit( get_template_directory() ),
+						'{{get_stylesheet_directory}}'     => trailingslashit( get_stylesheet_directory() ),
+						'{{theme_assets_dir}}'             => trailingslashit( get_template_directory() ) . 'assets/',
+						'{{child_theme_assets_dir}}'       => trailingslashit( get_stylesheet_directory() ) . 'assets/',
+						'{{get_template_directory_uri}}'   => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_template_directory_uri() ) ),
+						'{{get_stylesheet_directory_uri}}' => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_stylesheet_directory_uri() ) ),
+						'{{theme_assets_url}}'             => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_template_directory_uri() ) . 'assets/' ),
+						'{{child_theme_assets_url}}'       => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_stylesheet_directory_uri() ) . 'assets/' ),
 					);
 
 			//Output
@@ -100,10 +109,15 @@
 	/**
 	 * Set $wm_options array
 	 *
+	 * @version  1.2
+	 *
 	 * @param  array $wm_options
 	 */
 	if ( ! function_exists( 'wm_contextual_help_texts' ) ) {
 		function wm_contextual_help_texts( $help_texts = array() ) {
+			//Helper variables
+				global $wpdb;
+
 			//Preparing output
 
 				/**
@@ -179,7 +193,7 @@
 								</tr>
 								<tr>
 									<th>' . __( 'MySQL Version', 'wm_domain_support' ) . ':</th>
-									<td>' . ( ( function_exists( 'mysql_get_server_info' ) ) ? ( esc_html( mysql_get_server_info() ) ) : ( '-' ) ) . '</td>
+									<td>' . $wpdb->db_version() . '</td>
 								</tr>
 							</tbody>';
 
@@ -229,7 +243,7 @@
 	 * Set $wm_skin_design array
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -904,6 +918,12 @@
 								'content' => '<p class="description">' . __( 'Set the Google Font to be used for website headings and body text. You can additionally set a font subset for different character lists.', 'wm_domain' ) . '</p>',
 							),
 
+								'fonts-logo' => array(
+									'type'    => 'select',
+									'id'      => $prefix . 'font' . '-logo',
+									'label'   => __( 'Text logo font', 'wm_domain' ),
+									'options' => ( function_exists( 'wma_asort' ) ) ? ( wma_asort( wm_helper_var( 'google-fonts' ) ) ) : ( wm_helper_var( 'google-fonts' ) ),
+								),
 								'fonts' . 20 => array(
 									'type'    => 'select',
 									'id'      => $prefix . 'font' . '-headings',

@@ -2,7 +2,7 @@
  * PrettyPhoto v3.1.5
  *
  * WebMan Custom Skin
- * @version  1.0
+ * @version  1.2
  * @since    1.1
  *
  * Use these PrettyPhoto JS setup options:
@@ -76,7 +76,7 @@
 						left: 50%;
 						top: 50%;
 						margin: -12px 0 0 -12px;
-						background: url({{theme_assets_url}}img/prettyphoto/default/loader.gif) 50% 50% no-repeat;
+						background: url( '{{theme_assets_url}}img/prettyphoto/default/loader.gif' ) 50% 50% no-repeat;
 					}
 
 				.pp_webman .pp_fade {display: none}

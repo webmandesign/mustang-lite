@@ -4,6 +4,8 @@
  * Adds support for languages written in a Right To Left (RTL) direction.
  *
  * @link  http://codex.wordpress.org/Right_to_Left_Language_Support
+ *
+ * @version  1.2
  */
 
 
@@ -150,7 +152,8 @@
 								padding-left: 0;
 								padding-right: 68px;
 							}
-							.responsive-design .wm-iconbox-module .wm-content-module-element.image {padding-right: 0}
+							.responsive-design .wm-iconbox-module .wm-content-module-element.image,
+							.responsive-design .text-center .wm-iconbox-module .wm-content-module-element {padding-right: 0}
 							.responsive-design .no-icon-background .wm-iconbox-module .wm-content-module-element {
 								padding-left: 0;
 								padding-right: 58px;

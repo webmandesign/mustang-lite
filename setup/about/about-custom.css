@@ -5,7 +5,7 @@
  * @subpackage  About Page
  * @copyright   2014 WebMan - Oliver Juhas
  * @since       1.0
- * @version     1.1.1
+ * @version     1.2
  */
 
 
@@ -13,7 +13,10 @@
 	.appearance_page_mustang-about .wm-notice {display: none !important}
 
 	.appearance_page_mustang-about #wpbody-content {overflow: hidden !important}
-		.appearance_page_mustang-about #wpcontent {margin-left: 160px}
+		.appearance_page_mustang-about #wpcontent {
+			padding: 0;
+			margin-left: 160px;
+		}
 		.appearance_page_mustang-about.folded #wpcontent {margin-left: 36px}
 		.appearance_page_mustang-about .about-wrap {
 			padding-left: 40px;

@@ -24,7 +24,7 @@
  * @license    GPL-2.0+
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.1.3
+ * @version    1.2
  */
 
 
@@ -50,7 +50,7 @@
 
 
 /**
- * Force theme lite version $theme_shortname to allow upgrade to premium
+ * @since  Mustang Lite (Force theme lite version $theme_shortname to allow upgrade to premium)
  */
 
 	$theme_shortname = 'mustang';
@@ -91,6 +91,7 @@
 
 	//URL constants
 		if ( ! defined( 'WM_DEVELOPER_URL' ) )            define( 'WM_DEVELOPER_URL',            'http://www.webmandesign.eu'                                 );
+		if ( ! defined( 'WM_SUPPORT_URL' ) )              define( 'WM_SUPPORT_URL',              'http://support.webmandesign.eu'                             );
 		if ( ! defined( 'WM_ONLINE_MANUAL_URL' ) )        define( 'WM_ONLINE_MANUAL_URL',        WM_DEVELOPER_URL . '/manual/' . WM_THEME_SHORTNAME . '/'     );
 
 	//Theme design constants

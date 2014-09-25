@@ -1,7 +1,9 @@
 /**
  * Core styles
  *
- * @version  1.1
+ * @version  1.2
+ *
+ * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  */
 
 
@@ -104,7 +106,7 @@
 			margin: 0;
 			line-height: 30px;
 			word-wrap: break-word;
-			background: url({{theme_assets_url}}img/lines.png) repeat 0 -16px;
+			background: url( '{{theme_assets_url}}img/lines.png' ) repeat 0 -16px;
 		}
 			h1 + pre,
 			h2 + pre,

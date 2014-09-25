@@ -1,5 +1,9 @@
 /**
  * Sidebar
+ *
+ * @version  1.2
+ *
+ * @since  Mustang Lite (Removed bbPress styles)
  */
 
 	.sidebar {position: relative}
@@ -161,10 +165,10 @@
 	 */
 
 		.textwidget p + ul,
-		.wm-content-module p + ul {margin-top: 1.62em}
+		.sidebar .wm-content-module p + ul {margin-top: 1.62em}
 
 			.textwidget ul > li,
-			.wm-content-module ul > li {
+			.sidebar .wm-content-module ul > li {
 				padding: 0;
 				margin-left: 1.62em;
 				list-style: disc;

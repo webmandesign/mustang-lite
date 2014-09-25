@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2
  *
  * CONTENT:
  * - 10) Anti-spam email jQuery plugin
@@ -152,7 +152,7 @@ jQuery( function() {
 		 */
 
 			function wmIsHighDPI() {
-				var mediaQuery = '(-webkit-min-device-pixel-ratio: 1.5),(-moz-min-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx)';
+				var mediaQuery = '(-webkit-min-device-pixel-ratio: 1.5),(min--moz-device-pixel-ratio: 1.5),(-moz-min-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(min-device-pixel-ratio: 1.5),(min-resolution: 144dpi),(min-resolution: 1.5dppx)';
 
 				return ( window.devicePixelRatio > 1 || ( window.matchMedia && window.matchMedia( mediaQuery ).matches ) );
 			} // /wmIsHighDPI
@@ -732,7 +732,7 @@ jQuery( function() {
 
 		//Uniform column height
 
-			var wmColumnHeightContainers = jQuery( '.wm-section, .match-column-height .wm-row' );
+			var wmColumnHeightContainers = jQuery( '.wm-section, .vc_row_inner-shortcode, .match-column-height .wm-row' );
 
 			wmColumnHeightContainers.imagesLoaded( function() {
 

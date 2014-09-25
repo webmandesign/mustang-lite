@@ -1,5 +1,9 @@
 /**
  * Responsive styles
+ *
+ * @version  1.2
+ *
+ * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  */
 
 	/**
@@ -421,7 +425,8 @@
 						/* Make the default layout small size */
 							.responsive-design .wm-content-module .wm-iconbox-module .title h3 {font-size: 1.38em}
 							.responsive-design .wm-iconbox-module .wm-content-module-element {padding-left: 68px}
-							.responsive-design .wm-iconbox-module .wm-content-module-element.image {padding-left: 0}
+							.responsive-design .wm-iconbox-module .wm-content-module-element.image,
+							.responsive-design .text-center .wm-iconbox-module .wm-content-module-element {padding-left: 0}
 							.responsive-design .wm-iconbox-module .image {
 								width: 48px;
 								height: 48px;

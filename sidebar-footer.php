@@ -62,7 +62,7 @@
 							<div class="widget">
 								<h3 class="widget-heading">WebMan Amplifier Plugin</h3>
 								<div class="widget-content">
-									The <a href="http://wordpress.org/plugins/webman-amplifier/" target="_blank"><strong>WebMan Amplifier</strong> plugin</a> was built specifically for themes created by WebMan (<a href="http://www.webmandesign.eu">www.webmandesign.eu</a>). This is premium plugin offered for free via WordPress plugin repository. It extends the power of your theme beyond imagination! <a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '"><strong>Install the plugin to use full potential of Mustang Lite theme!</strong></a>
+									The <a href="http://wordpress.org/plugins/webman-amplifier/" target="_blank"><strong>WebMan Amplifier</strong> plugin</a> was built specifically for themes created by WebMan (<a href="http://www.webmandesign.eu">www.webmandesign.eu</a>). This is a premium plugin offered for free via WordPress plugin repository. It extends the power of your theme beyond imagination! <a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '"><strong>Install the plugin to use full potential of Mustang Lite theme!</strong></a>
 								</div>
 							</div>
 						';

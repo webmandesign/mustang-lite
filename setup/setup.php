@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.1
+ * @version  1.2
  *
  * CONTENT:
  * - 1) Required files
@@ -50,6 +50,10 @@
 			add_action( 'wmhook_wmamp_plugin_activation', 'wm_default_setup', 10 );
 		//JetPack plugin infinite scroll
 			add_action( 'after_setup_theme', 'wm_jp_infinit_scroll', 20 );
+		//Pagination fallback
+			if ( ! function_exists( 'wma_pagination' ) ) {
+				add_action( 'wmhook_postslist_after', 'wm_pagination', 10 );
+			}
 		//Website sections
 			//DOCTYPE
 				add_action( 'wmhook_html_before', 'wm_doctype', 10 );
@@ -84,14 +88,10 @@
 				add_action( 'wmhook_footer_top',     'wm_section_footer_top',       10 );
 				add_action( 'wmhook_footer',         'wm_section_footer',           10 );
 				add_action( 'wmhook_footer_bottom',  'wm_section_footer_bottom',    10 );
+
 		//Remove actions
 			remove_action( 'wp_head', 'wp_generator'     );
 			remove_action( 'wp_head', 'wlwmanifest_link' );
-
-		//Theme lite version related
-			if ( ! function_exists( 'wma_pagination' ) ) {
-				add_action( 'wmhook_postslist_after', 'wm_pagination', 10 );
-			}
 
 
 
@@ -144,12 +144,15 @@
 				) {
 				add_filter( 'wmhook_wm_post_meta', 'wm_post_custom_metas', 10, 3 );
 			}
-
-		//Theme lite version related
-			add_filter( 'wmhook_disable_update_notifier', '__return_true' );
+		//Fallback when not using WebMan Amplifier
 			if ( ! function_exists( 'wma_amplifier' ) ) {
 				add_filter( 'wmhook_admin_modifications_enabled', '__return_false' );
 			}
+
+		/**
+		 * @since  Mustang Lite
+		 */
+			add_filter( 'wmhook_disable_update_notifier', '__return_true' );
 
 
 
@@ -363,6 +366,10 @@
 							),
 						);
 
+					/**
+					 * @since  Mustang Lite (removed WooCommerce specific widget areas)
+					 */
+
 					if ( ! function_exists( 'wma_amplifier' ) ) {
 						unset( $output['widget-areas']['topbar'] );
 						unset( $output['widget-areas']['topbar-extra'] );
@@ -398,7 +405,7 @@
 	 * Theme installation
 	 *
 	 * @since    1.0
-	 * @version  1.1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_install' ) ) {
 		function wm_install() {
@@ -444,8 +451,7 @@
 				//WordPress visual editor CSS stylesheets
 					$visual_editor_css = array();
 					if ( wm_google_fonts() ) {
-						$protocol            = ( is_ssl() ) ? ( 'https' ) : ( 'http' );
-						$visual_editor_css[] = str_replace( ',', '%2C', $protocol . '://fonts.googleapis.com/css' . wm_google_fonts() );
+						$visual_editor_css[] = str_replace( ',', '%2C', '//fonts.googleapis.com/css' . wm_google_fonts() );
 					}
 					$visual_editor_css[] = get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-ve-css' );
 					$visual_editor_css   = apply_filters( 'wmhook_wm_install_visual_editor_css', array_filter( $visual_editor_css ) );
@@ -486,6 +492,10 @@
 
 			//Custom WP Adminbar styles
 				add_theme_support( 'admin-bar', array( 'callback' => 'wm_adminbar_css' ) );
+
+			//Custom header and background (do not integrate yet...)
+				//add_theme_support( 'custom-header' );
+				//add_theme_support( 'custom-background' );
 
 			//Thumbnails support
 				add_theme_support( 'post-thumbnails' );
@@ -567,6 +577,9 @@
 	 * Apply default theme options
 	 *
 	 * This function must run after WebMan Amplifier is active!
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_default_setup' ) ) {
 		function wm_default_setup() {
@@ -587,18 +600,9 @@
 						if ( file_exists( $file_path ) ) {
 
 							//Save default theme skin
-								$replacements = apply_filters( 'wmhook_wm_save_skin_replacements', array(
-										'{{get_template_directory}}'       => trailingslashit( get_template_directory() ),
-										'{{get_template_directory_uri}}'   => trailingslashit( get_template_directory_uri() ),
-										'{{get_stylesheet_directory}}'     => trailingslashit( get_stylesheet_directory() ),
-										'{{get_stylesheet_directory_uri}}' => trailingslashit( get_stylesheet_directory_uri() ),
-										'{{theme_assets_dir}}'             => trailingslashit( get_template_directory() ) . 'assets/',
-										'{{theme_assets_url}}'             => trailingslashit( get_template_directory_uri() ) . 'assets/',
-										'{{child_theme_assets_dir}}'       => trailingslashit( get_stylesheet_directory() ) . 'assets/',
-										'{{child_theme_assets_url}}'       => trailingslashit( get_stylesheet_directory_uri() ) . 'assets/',
-									) );
-								$saving = strtr( wma_read_local_file( $file_path ), $replacements );
-								$saving = json_decode( trim( $saving ), true );
+								$replacements = (array) apply_filters( 'wmhook_generate_css_replacements', array() );
+								$saving       = strtr( wma_read_local_file( $file_path ), $replacements );
+								$saving       = json_decode( trim( $saving ), true );
 
 								update_option( WM_THEME_SETTINGS_SKIN, $saving );
 
@@ -624,15 +628,15 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
 			//Helper variables
-				$protocol    = ( is_ssl() ) ? ( 'https' ) : ( 'http' );
+				$dev_suffix  = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( '.dev' ) : ( '' );
 				$stylesheets = array(
-						'global' => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/initial/global.css' ) ) : ( get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ),
-						'rtl'    => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) ? ( '' ) : ( get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-rtl-css' ) ),
+						'global' => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/initial/global.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ) ),
+						'rtl'    => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) ? ( '' ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-rtl-css' ) ) ),
 						'main'   => get_stylesheet_directory_uri() . '/style.css',
 						'print'  => wm_get_stylesheet_directory_uri( 'assets/css/print.css' ),
 					);
@@ -670,8 +674,8 @@
 						'wm-basic-icons'      => array( wm_get_stylesheet_directory_uri( 'assets/css/icons-basic.css' ) ),
 						'wm-theme-customizer' => array( wm_get_stylesheet_directory_uri( 'library/assets/css/theme-customizer.css' ) ),
 					//Google Fonts
-						'wm-google-fonts' => array( $protocol . '://fonts.googleapis.com/css' . wm_google_fonts() ),
-					), $protocol, $stylesheets );
+						'wm-google-fonts' => array( '//fonts.googleapis.com/css' . wm_google_fonts() ),
+					), $stylesheets );
 
 				foreach ( $register_styles as $handle => $atts ) {
 					$src   = ( isset( $atts['src'] ) ) ? ( $atts['src'] ) : ( $atts[0] );
@@ -689,7 +693,7 @@
 				$register_scripts = array(
 					//Frontend
 						'wm-theme-scripts' => array(
-								'src'  => wm_get_stylesheet_directory_uri( 'assets/js/scripts.js' ),
+								'src'  => wm_get_stylesheet_directory_uri( 'assets/js' . str_replace( '.', '/', $dev_suffix ) . '/scripts' . $dev_suffix . '.js' ),
 								'deps' => array( 'jquery', 'wm-imagesloaded' ),
 							),
 						'respond' => array( wm_get_stylesheet_directory_uri( 'assets/js/respond.min.js' ) ),
@@ -717,7 +721,7 @@
 					$register_scripts['wm-imagesloaded'] = array( wm_get_stylesheet_directory_uri( 'assets/js/imagesloaded/imagesloaded.min.js' ) );
 				}
 
-				$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', $register_scripts, $protocol );
+				$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', $register_scripts );
 
 				foreach ( $register_scripts as $handle => $atts ) {
 					$src       = ( isset( $atts['src'] ) ) ? ( $atts['src'] ) : ( $atts[0] );
@@ -732,7 +736,7 @@
 			 * Custom actions
 			 */
 
-				do_action( 'wmhook_wm_register_assets', $protocol, $stylesheets );
+				do_action( 'wmhook_wm_register_assets', $stylesheets );
 		}
 	} // /wm_register_assets
 
@@ -831,6 +835,9 @@
 
 	/**
 	 * Get Google Fonts link
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_google_fonts' ) ) {
 		function wm_google_fonts() {
@@ -838,7 +845,14 @@
 				$output = array();
 				$subset = wm_option( 'skin-font-subset' );
 
-				$fonts_sections = apply_filters( 'wmhook_wm_google_fonts_sections', array_filter( array( wm_option( 'skin-font-body' ), wm_option( 'skin-font-headings' ) ) ) );
+				$fonts_sections = array( wm_option( 'skin-font-body' ), wm_option( 'skin-font-headings' ) );
+				if (
+						! wm_option( 'skin-logo' )
+						&& wm_option( 'skin-font-logo' )
+					)  {
+					$fonts_sections[] = wm_option( 'skin-font-logo' );
+				}
+				$fonts_sections = apply_filters( 'wmhook_wm_google_fonts_sections', array_filter( $fonts_sections ) );
 
 			//Preparing output
 				foreach ( $fonts_sections as $section ) {
@@ -894,13 +908,21 @@
 				$body_classes = array();
 				$post_id      = ( is_home() ) ? ( get_option( 'page_for_posts' ) ) : ( null );
 
+				//WooCommerce support
+					$wc_shop = false;
+					/**
+					 * @since  Mustang Lite (WooCommerce support removed)
+					 */
+
 			//Preparing output
 				//Website layout
 					$body_classes[0] = trim( wm_option( 'skin-layout' ) );
 
 					if (
-							! is_search()
-							&& ! is_archive()
+							(
+								( ! is_search() && ! is_archive() )
+								|| $wc_shop
+							)
 							&& ( function_exists( 'wma_meta_option' ) && wma_meta_option( 'layout', $post_id ) )
 						) {
 						$body_classes[0] = trim( wma_meta_option( 'layout', $post_id ) );
@@ -973,6 +995,10 @@
 						) {
 						$body_classes[10] = 'no-sidebar';
 					}
+
+				/**
+				 * @since  Mustang Lite (removed WooCommerce and bbPress support)
+				 */
 
 				//Page layout
 					if ( wma_meta_option( 'sidebar' ) ) {
@@ -1078,7 +1104,7 @@
 	 * Website HEAD
 	 *
 	 * @since    1.1
-	 * @version  1.1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
@@ -1097,7 +1123,9 @@
 
 				$output[40] = '<title' . wm_schema_org( 'name' ) . '>' . wp_title( '', false ) . '</title>';
 
-				// $output[50] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
+				if ( function_exists( 'wma_amplifier' ) ) {
+					$output[50] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
+				}
 				$output[60] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
 				$output[70] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
 
@@ -1395,6 +1423,10 @@
 					}
 
 				//Preparing output
+					/**
+					 * @since  Mustang Lite (WooCommerce support removed)
+					 */
+
 					//Search button
 						$output .= apply_filters( 'wmhook_wm_navigation_special_search', '<li id="menu-search" class="menu-search"><a href="#search-container" class="menu-search-switch no-scroll-link"><span class="screen-reader-text">' . __( 'Search', 'wm_domain' ) . '</span></a></li>', $custom_nav );
 
@@ -1547,6 +1579,9 @@
 
 	/**
 	 * Slider
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_section_slider' ) ) {
 		function wm_section_slider() {
@@ -1567,19 +1602,35 @@
 				$slider_type = 'none';
 				$image_size  = apply_filters( 'wmhook_wm_section_slider_image_size', 'full-hd' );
 
+				//WooCommerce support
+					$wc_shop = false;
+					/**
+					 * @since  Mustang Lite (WooCommerce support removed)
+					 */
+
 			//Requirements check
 				if (
-						! function_exists( 'wma_meta_option' )
-						|| ( ! is_singular( 'page' ) && ! is_home() ) //check for singular pages
+						( ! is_singular( 'page' ) && ! is_home() && ! $wc_shop ) //check for singular pages; WooCommerce support
 						|| 1 < $paged
 					) {
 					return;
 				}
 
 			//Slider type
-				if ( wma_meta_option( 'slider', $page_id ) ) {
+				if (
+						function_exists( 'wma_meta_option' )
+						&& wma_meta_option( 'slider', $page_id )
+					) {
+					//Custom, per page slider setup
 					$slider_type = wma_meta_option( 'slider', $page_id );
+				} elseif (
+						! function_exists( 'wma_meta_option' )
+						&& is_front_page()
+					) {
+					//Slider on front page fallback
+					$slider_type = 'static';
 				}
+
 				//Return, if no slider type selected
 					if ( 'none' === $slider_type ) {
 						return;
@@ -1612,7 +1663,14 @@
 									$image_title = apply_filters( 'wmhook_wm_section_slider_image_title', $attachment->post_title );
 									$image_alt   = apply_filters( 'wmhook_wm_section_slider_image_alt',   $attachment->post_title );
 
-									$image_caption = ( $attachment->post_excerpt ) ? ( '<div class="caption position-' . wma_meta_option( 'slider-static', $page_id ) . '"><div class="wrap-inner"><div class="caption-table"><div class="caption-cell">' . $attachment->post_excerpt . '</div></div></div></div>' ) : ( '' );
+									if ( function_exists( 'wma_meta_option' ) ) {
+										$caption_pos = wma_meta_option( 'slider-static', $page_id );
+									} else {
+										$caption_pos = 'center';
+									}
+									$caption_pos = apply_filters( 'wmhook_wm_section_slider_caption_pos', $caption_pos );
+
+									$image_caption = ( $attachment->post_excerpt ) ? ( '<div class="caption position-' . $caption_pos . '"><div class="wrap-inner"><div class="caption-table"><div class="caption-cell">' . $attachment->post_excerpt . '</div></div></div></div>' ) : ( '' );
 									$image_caption = apply_filters( 'wmhook_wm_section_slider_image_caption', $image_caption );
 
 									/**
@@ -1662,7 +1720,7 @@
 	 * Main heading (title)
 	 *
 	 * @since    1.0
-	 * @version  1.1.1
+	 * @version  1.2
 	 *
 	 * @param  array $args Heading setup arguments
 	 */
@@ -1682,14 +1740,30 @@
 				$blog_page_id = get_option( 'page_for_posts' );
 				$page_id      = ( is_home() ) ? ( $blog_page_id ) : ( null );
 
+				$disable_heading = false;
+				if (
+						(
+							function_exists( 'wma_meta_option' )
+							&& wma_meta_option( 'disable-heading', $page_id )
+						)
+						|| (
+							! function_exists( 'wma_meta_option' )
+							&& is_front_page()
+						)
+					) {
+					$disable_heading = true;
+				}
+
+				//WooCommerce support
+					$wc_shop = false;
+					/**
+					 * @since  Mustang Lite (WooCommerce support removed)
+					 */
+
 				//Requirements check
 					if (
 							( is_home() && ! $blog_page_id )
-							|| (
-								function_exists( 'wma_meta_option' )
-								&& wma_meta_option( 'disable-heading', $page_id )
-								&& apply_filters( 'wmhook_wm_section_heading_enabled', true )
-							)
+							|| $disable_heading
 						) {
 						return;
 					}
@@ -1772,6 +1846,10 @@
 					if ( is_404() ) {
 						$args['title']  = __( 'Error 404', 'wm_domain' );
 					}
+
+				/**
+				 * @since  Mustang Lite (removed WooCommerce and bbPress support)
+				 */
 
 				//Addons
 					$widget_area_atts = apply_filters( 'wmhook_wm_section_heading_widget_area_atts', array(
@@ -1957,13 +2035,17 @@
 	 * Footer
 	 *
 	 * @since    1.0
-	 * @version  1.1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_section_footer' ) ) {
 		function wm_section_footer() {
 			//Helper variables
 				$output  = array();
 				$post_id = null;
+
+				/**
+				 * @since  Mustang Lite (removed WooCommerce support)
+				 */
 
 			//Requirements check
 				if (
@@ -2029,12 +2111,19 @@
 
 		/**
 		 * Footer top
+		 *
+		 * @since    1.0
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_section_footer_top' ) ) {
 			function wm_section_footer_top() {
 				//Helper variables
 					$output  = '';
 					$post_id = null;
+
+					/**
+					 * @since  Mustang Lite (removed WooCommerce support)
+					 */
 
 				//Requirements check
 					if (
@@ -2062,6 +2151,10 @@
 				//Helper variables
 					$output  = '';
 					$post_id = null;
+
+					/**
+					 * @since  Mustang Lite (removed WooCommerce support)
+					 */
 
 				//Requirements check
 					if (
@@ -2166,6 +2259,10 @@
 			//Preparing output
 				$classes .= ' vc-remove-licence-notice';
 				$classes .= ' bbp-hide-content-container';
+
+				/**
+				 * @since  Mustang Lite (removed WooCommerce support)
+				 */
 
 			//Output
 				return $classes;
@@ -2354,7 +2451,10 @@
 				$atts     = wp_parse_args( $atts, $defaults );
 
 				if (
-						( is_home() || is_singular() )
+						(
+							( is_home() || is_singular() )
+							|| ( class_exists( 'Woocommerce' ) && is_shop() ) //WooCommerce support
+						)
 						&& function_exists( 'wma_meta_option' )
 						&& wma_meta_option( 'sidebar', $atts['page_id'] )
 					) {
@@ -2688,6 +2788,12 @@
 
 
 		/**
+		 * @since  Mustang Lite (bbPress integration removed)
+		 */
+
+
+
+		/**
 		 * Contact Form 7 integration
 		 */
 
@@ -2804,5 +2910,11 @@
 						return apply_filters( 'wmhook_wm_post_custom_metas_output', $empty . $output, $meta );
 				}
 			} // /wm_post_custom_metas
+
+
+
+		/**
+		 * @since  Mustang Lite (WooCommerce integration removed)
+		 */
 
 ?>

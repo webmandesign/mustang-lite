@@ -1,11 +1,15 @@
 /**
  * WordPress Visual Editor Core Styles
+ *
+ * @version  1.2
  */
 
 	body {
 		padding: 10px;
 		background: transparent;
 	}
+	body.wp-autoresize {padding: 10px !important}
+	body.wp-autoresize iframe body {padding: 0 !important}
 
 	/* General */
 		ins {

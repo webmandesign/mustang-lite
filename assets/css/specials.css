@@ -1,5 +1,7 @@
 /**
  * Special CSS classes and animations
+ *
+ * @version  1.2
  */
 
 
@@ -357,7 +359,7 @@
 					height: 2em;
 					left: -5%;
 					bottom: -2em;
-					background: url({{theme_assets_url}}img/shadow-bottom.png) no-repeat 50%;
+					background: url( '{{theme_assets_url}}img/shadow-bottom.png' ) no-repeat 50%;
 					background-size: 100% 100%;
 				}
 				.ie8 .bottom-shadow:after,

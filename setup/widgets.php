@@ -24,11 +24,11 @@
  */
 
 	//Add widgets
-		locate_template( WM_SETUP_DIR . 'widgets/w-contact.php',        true );
-		locate_template( WM_SETUP_DIR . 'widgets/w-module.php',         true );
-		locate_template( WM_SETUP_DIR . 'widgets/w-posts.php',          true );
-		locate_template( WM_SETUP_DIR . 'widgets/w-subnav.php',         true );
-		locate_template( WM_SETUP_DIR . 'widgets/w-twitter.php',        true );
+		locate_template( WM_SETUP_DIR . 'widgets/w-contact.php', true );
+		locate_template( WM_SETUP_DIR . 'widgets/w-module.php',  true );
+		locate_template( WM_SETUP_DIR . 'widgets/w-posts.php',   true );
+		locate_template( WM_SETUP_DIR . 'widgets/w-subnav.php',  true );
+		locate_template( WM_SETUP_DIR . 'widgets/w-twitter.php', true );
 		if ( function_exists( 'wma_amplifier' ) ) {
 			locate_template( WM_SETUP_DIR . 'widgets/w-tabbed-widgets.php', true );
 		}

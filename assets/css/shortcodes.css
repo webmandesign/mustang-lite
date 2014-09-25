@@ -1,7 +1,9 @@
 /**
  * Shortcodes
  *
- * @version  1.1
+ * @version  1.2
+ *
+ * @since  Mustang Lite (Removed bbPress styles)
  */
 
 
@@ -140,7 +142,7 @@
 			width: 100%;
 			padding: 1.62em 2.62em;
 			border-radius: 4px;
-			background: url({{theme_assets_url}}img/gradient-bottom.png) repeat-x 0 100%;
+			background: url( '{{theme_assets_url}}img/gradient-bottom.png' ) repeat-x 0 100%;
 			background: -webkit-linear-gradient( top, rgba(255,255,255, .05) 33%, rgba(0,0,0, .05) 100% );
 			background:    -moz-linear-gradient( top, rgba(255,255,255, .05) 33%, rgba(0,0,0, .05) 100% );
 			background:     -ms-linear-gradient( top, rgba(255,255,255, .05) 33%, rgba(0,0,0, .05) 100% );
@@ -789,28 +791,14 @@
 					.social-youtube:hover {color: #e14d41 !important}
 
 			/* Social icon animation */
-				@-webkit-keyframes "moveIcon" {
+				@-webkit-keyframes moveIcon {
 					0% {top: 0;}
 					25% {top: -2em;}
 					50% {top: -2em;}
 					75% {top: .25em;}
 					100% {top: 0;}
 				}
-				@-moz-keyframes moveIcon {
-					0% {top: 0;}
-					25% {top: -2em;}
-					50% {top: -2em;}
-					75% {top: .25em;}
-					100% {top: 0;}
-				}
-				@-ms-keyframes "moveIcon" {
-					0% {top: 0;}
-					25% {top: -2em;}
-					50% {top: -2em;}
-					75% {top: .25em;}
-					100% {top: 0;}
-				}
-				@keyframes "moveIcon" {
+				@keyframes moveIcon {
 					0% {top: 0;}
 					25% {top: -2em;}
 					50% {top: -2em;}
@@ -819,8 +807,6 @@
 				}
 				.wm-social-icon:hover:before {
 					-webkit-animation: moveIcon .4s;
-					   -moz-animation: moveIcon .4s;
-					    -ms-animation: moveIcon .4s;
 					        animation: moveIcon .4s;
 				}
 
@@ -1440,7 +1426,7 @@
 					height: 100%;
 					left: 0;
 					top: 0;
-					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+					background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=' );
 					opacity: .25;
 				}
 

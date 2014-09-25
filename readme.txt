@@ -21,6 +21,22 @@ http://themedemos.webmandesign.eu/mustang/
 
 == Changelog ==
 
+= 1.2 =
+* ADDED: WordPress 4.0 support
+* ADDED: Text logo font setup
+* ADDED: Files content list in unminified stylesheet
+* UPDATED: Unminified styles and scripts used with WordPress debug mode
+* UPDATED: Framework's library version 3.2
+* UPDATED: Minor CSS styles
+* UPDATED: Scripts: imagesLoaded 3.1.8, Animate.css
+* FIXED: Support contextual help tab databaze info PHP error
+* FIXED: All assets URLs (including the ones inside the stylesheet) are SSL ready
+* FIXED: Centered Content Modules mobile view issue
+* FIXED: Icon list inside Content Module issue
+* FIXED: 100% score with http://themecheck.org/
+
+Files changed: `assets/css/_custom-styles.php, assets/css/_generate-css.php, assets/css/_generate-rtl-css.php, assets/css/_generate-ve-css.php, assets/css/core.css, assets/css/high-dpi.css, assets/css/plugins-woocommerce.css, assets/css/prettyphoto.css, assets/css/reset.css, assets/css/responsive.css, assets/css/rtl-responsive.css, assets/css/shortcodes.css, assets/css/sidebar.css, assets/css/specials.css, assets/css/visual-editor.css, assets/js/scripts.js, assets/js/dev/scripts.dev.js, setup/plugins.php, setup/setup-theme-options.php, setup/setup.php, setup/about/about-custom.css`
+
 = 1.1.3 =
 * FIXED: Long logo (website title) text wrapping
 
@@ -97,6 +113,11 @@ git.io/normalize
 Copyright (c) 2014 Alexander Farkas
 Licensed under MIT/GPL2
 https://github.com/aFarkas/html5shiv
+
+**imagesLoaded**
+Copyright (c) 2014 Tomas Sardyha (@Darsain) and David DeSandro (@desandro)
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+https://github.com/desandro/imagesloaded
 
 **jquery.appear.js**
 Copyright (c) 2012 Andrey Sidorov
