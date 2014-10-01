@@ -1,4 +1,4 @@
-## Mustang Lite
+# Mustang Lite
 
 * **Theme URI:** http://www.webmandesign.eu/mustang-lite/
 * **Author:** WebMan
