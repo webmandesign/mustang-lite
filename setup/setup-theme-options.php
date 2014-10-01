@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2
+ * @version  1.2.1
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -243,7 +243,7 @@
 	 * Set $wm_skin_design array
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.2.1
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -323,7 +323,6 @@
 									'min'           => 1020,
 									'max'           => 1920,
 									'step'          => 20,
-									'validate'      => 'absint',
 									'customizer_js' => array(
 											'css' => array(
 													'.boxed .wrap, .wrap.boxed, body.boxed.page-meta-layout .wrap, .wrap-inner' => array( array( 'width', 'px' ) ),
@@ -382,14 +381,13 @@
 									),
 
 								'skin' . 160 => array(
-									'type'     => 'slider',
-									'id'       => $prefix . 'text-color-treshold',
-									'label'    => __( 'Auto color treshold', 'wm_domain' ),
-									'default'  => 0,
-									'min'      => -50,
-									'max'      => 50,
-									'step'     => 1,
-									'validate' => 'int',
+									'type'    => 'slider',
+									'id'      => $prefix . 'text-color-treshold',
+									'label'   => __( 'Auto color treshold', 'wm_domain' ),
+									'default' => 0,
+									'min'     => -50,
+									'max'     => 50,
+									'step'    => 1,
 								),
 									'skin' . 170 => array(
 										'type'    => 'theme-customizer-html',
@@ -528,15 +526,14 @@
 									'content' => '<p class="description">' . __( 'Navigation padding will affect the header height and logo position.', 'wm_domain' ) . '</p>',
 								),
 									'header' . 160 => array(
-										'type'     => 'slider',
-										'id'       => $prefix . 'nav' . '-padding',
-										'label'    => __( 'Navigation padding', 'wm_domain' ),
-										'default'  => 25,
-										'min'      => 0,
-										'max'      => 60,
-										'step'     => 1,
-										'validate' => 'absint',
-										'zero'     => true,
+										'type'    => 'slider',
+										'id'      => $prefix . 'nav' . '-padding',
+										'label'   => __( 'Navigation padding', 'wm_domain' ),
+										'default' => 25,
+										'min'     => 0,
+										'max'     => 60,
+										'step'    => 1,
+										'zero'    => true,
 									),
 
 								'header' . 170 => array(
@@ -957,7 +954,6 @@
 									'min'           => 10,
 									'max'           => 20,
 									'step'          => 1,
-									'validate'      => 'absint',
 									'customizer_js' => array(
 											'css' => array(
 													'body' => array( array( 'font-size', 'px' ) ),
@@ -978,7 +974,6 @@
 										'min'           => 75,
 										'max'           => 450,
 										'step'          => 5,
-										'validate'      => 'absint',
 										'customizer_js' => array(
 												'css' => array(
 														'h1, .heading-style-1' => array( array( 'font-size', '%' ) ),
@@ -993,7 +988,6 @@
 										'min'           => 75,
 										'max'           => 450,
 										'step'          => 5,
-										'validate'      => 'absint',
 										'customizer_js' => array(
 												'css' => array(
 														'h2, .heading-style-2' => array( array( 'font-size', '%' ) ),
@@ -1008,7 +1002,6 @@
 										'min'           => 75,
 										'max'           => 450,
 										'step'          => 5,
-										'validate'      => 'absint',
 										'customizer_js' => array(
 												'css' => array(
 														'h3, .heading-style-3' => array( array( 'font-size', '%' ) ),
@@ -1023,7 +1016,6 @@
 										'min'           => 75,
 										'max'           => 450,
 										'step'          => 5,
-										'validate'      => 'absint',
 										'customizer_js' => array(
 												'css' => array(
 														'h4, h5, h6, .heading-style-4, .heading-style-5, .heading-style-6' => array( array( 'font-size', '%' ) ),

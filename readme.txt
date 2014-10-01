@@ -21,6 +21,16 @@ http://themedemos.webmandesign.eu/mustang/
 
 == Changelog ==
 
+= 1.2.1 =
+* UPDATED: Basic icons fully GPL compatible
+* UPDATED: Optimized code
+* UPDATED: Framework library version 3.3
+* FIX: Removed schema.org attributes from title HTML tag
+* FIX: Default sidebars content display when WebMan Amplifier plugin is active (especially for plugins such as WooCommerce)
+* FIX: Fixed HTML head according to new Theme Check
+
+Files changed: `header.php, sidebar.php, sidebar-footer.php, assets/css/content.css, assets/css/icons-basic.css, assets/css/prettyphoto.css, assets/css/rtl.css, assets/css/shortcodes.css, assets/css/initial/global.css, assets/font/basic-icons/*.*, library/*.*, setup/plugins.php, setup/setup.php, setup/setup-theme-options.php, setup/widgets.php`
+
 = 1.2 =
 * ADDED: WordPress 4.0 support
 * ADDED: Text logo font setup
@@ -94,10 +104,6 @@ User manual available at http://www.webmandesign.eu/manual/mustang/
 **Mustang Lite WordPress Theme**
 Copyright 2014 WebMan [http://www.webmandesign.eu/]
 Distributed under the terms of the GNU GPL
-
-**Mustang Lite WordPress Theme screenshot images**
-Licensed under CC0 1.0 Universal - http://creativecommons.org/publicdomain/zero/1.0/
-http://unsplash.com/
 
 **Animate.css**
 Copyright (c) 2014 Daniel Eden

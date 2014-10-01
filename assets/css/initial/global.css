@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /**
- * Mustang Lite initial styles
+ * Mustang initial styles
  *
  * This stylesheet is only used when WebMan Amplifier plugin is not active.
  * After the plugin is active, you have options to change every aspect of the
@@ -10,12 +10,47 @@
  *
  * This initial stylesheet doesn't contain responsive styles, nor Animate.css.
  *
- * @since  1.1.1
+ * @since    1.1.1
+ * @version  1.2.1
  */
 
 
 /**
+ * CONTENT:
+ *
+ * assets/css/reset.css
+ * assets/css/icons-basic.css
+ * assets/css/core.css
+ * assets/css/columns-static.css
+ * assets/css/typography.css
+ * assets/css/wp-styles.css
+ * assets/css/forms.css
+ * assets/css/headings.css
+ * assets/css/header.css
+ * assets/css/slider.css
+ * assets/css/content.css
+ * assets/css/comments.css
+ * assets/css/sidebar.css
+ * assets/css/footer.css
+ * assets/css/prettyphoto.css
+ * assets/css/plugins.css
+ * assets/css/shortcodes.css
+ * assets/css/borders.css
+ * assets/css/ltr-borders.css
+ * assets/css/specials.css
+ * assets/css/high-dpi.css
+ */
+
+
+
+
+
+/* assets/css/reset.css */
+
+/**
  * HTML reset
+ *
+ * @version  1.2
  */
 
 
@@ -59,8 +94,15 @@
 
 
 
+
+
+
+/* assets/css/icons-basic.css */
+
 /**
  * Basic global icon font
+ *
+ * @version  20140930
  */
 
 	@font-face {
@@ -87,119 +129,138 @@
 
 
 	/**
-	 * Post formats
+	 * Icons
 	 */
 
-		.iconwm-audio:before   { content: '\71'; } /* 'q' */
-		.iconwm-gallery:before { content: '\51'; } /* 'Q' */
-		.iconwm-image:before   { content: '\77'; } /* 'w' */
-		.iconwm-link:before    { content: '\57'; } /* 'W' */
-		.iconwm-standard:before,
-		.iconwm-pencil:before  { content: '\65'; } /* 'e' */
-		.iconwm-quote:before   { content: '\4d'; } /* 'M' */
-		.iconwm-status:before,
-		.iconwm-user:before    { content: '\72'; } /* 'r' */
-		.iconwm-users:before   { content: '\2f'; } /* '/' */
-		.iconwm-video:before   { content: '\52'; } /* 'R' */
-
-
-
-	/**
-	 * Message box icons
-	 */
-
-		.iconwm-cancel-circle:before { content: '\74'; } /* 't' */
-		.iconwm-check:before         { content: '\54'; } /* 'T' */
-		.iconwm-info:before          { content: '\79'; } /* 'y' */
-		.iconwm-question:before      { content: '\59'; } /* 'Y' */
-		.iconwm-warning:before       { content: '\75'; } /* 'u' */
-
-
-
-	/**
-	 * Directional icons
-	 */
-
-		.iconwm-arrow-left:before             { content: '\61'; } /* 'a' */
-		.iconwm-arrow-right:before            { content: '\41'; } /* 'A' */
-		.iconwm-arrow-left-open:before        { content: '\73'; } /* 's' */
-		.iconwm-arrow-right-open:before       { content: '\53'; } /* 'S' */
-		.iconwm-arrow-left-thin:before        { content: '\64'; } /* 'd' */
-		.iconwm-arrow-right-thin:before       { content: '\44'; } /* 'D' */
-		.iconwm-arrow-left-thin-small:before  { content: '\66'; } /* 'f' */
-		.iconwm-arrow-right-thin-small:before { content: '\46'; } /* 'F' */
-		.iconwm-left-circle:before            { content: '\67'; } /* 'g' */
-		.iconwm-right-circle:before           { content: '\47'; } /* 'G' */
-		.iconwm-left-dir:before               { content: '\68'; } /* 'h' */
-		.iconwm-right-dir:before              { content: '\48'; } /* 'H' */
-		.iconwm-minus:before                  { content: '\6a'; } /* 'j' */
-		.iconwm-plus:before                   { content: '\4a'; } /* 'J' */
-		.iconwm-minus-circle:before           { content: '\6b'; } /* 'k' */
-		.iconwm-plus-circle:before            { content: '\4b'; } /* 'K' */
-		.iconwm-up:before                     { content: '\6c'; } /* 'l' */
-		.iconwm-down:before                   { content: '\4c'; } /* 'L' */
-
-
-
-	/**
-	 * Other icons
-	 */
-
-		.iconwm-attachment:before      { content: '\5c'; } /* '\' */
-		.iconwm-bookmark:before        { content: '\7c'; } /* '|' */
-		.iconwm-bullet:before          { content: '\7a'; } /* 'z' */
-		.iconwm-bullet-large:before    { content: '\5a'; } /* 'Z' */
-		.iconwm-camera:before          { content: '\78'; } /* 'x' */
-		.iconwm-cancel:before          { content: '\58'; } /* 'X' */
-		.iconwm-clock:before           { content: '\63'; } /* 'c' */
-		.iconwm-cloud:before           { content: '\43'; } /* 'C' */
-		.iconwm-comment:before         { content: '\76'; } /* 'v' */
-		.iconwm-comments:before        { content: '\56'; } /* 'V' */
-		.iconwm-download:before        { content: '\62'; } /* 'b' */
-		.iconwm-location:before        { content: '\42'; } /* 'B' */
-		.iconwm-menu:before            { content: '\6e'; } /* 'n' */
-		.iconwm-mail:before,
-		.iconwm-mail-alt:before        { content: '\3f'; } /* '?' */
-		.iconwm-phone:before           { content: '\4e'; } /* 'N' */
-		.iconwm-quote-left:before      { content: '\4d'; } /* 'M' */
-		.iconwm-quote-right:before     { content: '\2c'; } /* ',' */
-		.iconwm-search:before          { content: '\3c'; } /* '<' */
-		.iconwm-tag:before             { content: '\2e'; } /* '.' */
-		.iconwm-tags:before            { content: '\3e'; } /* '>' */
-		.iconwm-twitter:before         { content: '\60'; } /* '`' */
-		.iconwm-twitter-circled:before { content: '\ac'; } /* '¬' */
-
-		.iconwm-heart:before           { content: '\31'; } /* '1' */
-		.iconwm-heart-empty:before     { content: '\32'; } /* '2' */
-		.iconwm-star:before            { content: '\33'; } /* '3' */
-		.iconwm-star-empty:before      { content: '\34'; } /* '4' */
-		.iconwm-star-half:before       { content: '\35'; } /* '5' */
-		.iconwm-star-half-alt:before   { content: '\36'; } /* '6' */
-		.iconwm-eye:before             { content: '\37'; } /* '7' */
-		.iconwm-eye-off:before         { content: '\38'; } /* '8' */
-		.iconwm-thumbs-up:before       { content: '\39'; } /* '9' */
-		.iconwm-thumbs-down:before     { content: '\30'; } /* '0' */
-		.iconwm-thumbs-up-alt:before   { content: '\2b'; } /* '+' */
+		.iconwm-basket:before { content: '\21'; } /* '!' */
+		.iconwm-basket-1:before { content: '\22'; } /* '&quot;' */
+		.iconwm-bag:before,
+		.iconwm-shop:before { content: '\24'; } /* '$' */
+		.iconwm-arrows-cw:before { content: '\26'; } /* '&amp;' */
+		.iconwm-spin5:before { content: '\2a'; } /* '*' */
+		.iconwm-thumbs-up-alt:before { content: '\2b'; } /* '+' */
+		.iconwm-quote-right:before { content: '\2c'; } /* ',' */
 		.iconwm-thumbs-down-alt:before { content: '\2d'; } /* '-' */
+		.iconwm-tag:before { content: '\2e'; } /* '.' */
+		.iconwm-users:before { content: '\2f'; } /* '/' */
+		.iconwm-thumbs-down:before { content: '\30'; } /* '0' */
+		.iconwm-heart:before { content: '\31'; } /* '1' */
+		.iconwm-heart-empty:before { content: '\32'; } /* '2' */
+		.iconwm-star:before { content: '\33'; } /* '3' */
+		.iconwm-star-empty:before { content: '\34'; } /* '4' */
+		.iconwm-star-half:before { content: '\35'; } /* '5' */
+		.iconwm-star-half-alt:before { content: '\36'; } /* '6' */
+		.iconwm-eye:before { content: '\37'; } /* '7' */
+		.iconwm-eye-off:before { content: '\38'; } /* '8' */
+		.iconwm-thumbs-up:before { content: '\39'; } /* '9' */
+		.iconwm-search:before { content: '\3c'; } /* '&lt;' */
+		.iconwm-tags:before { content: '\3e'; } /* '&gt;' */
+		.iconwm-mail:before,
+		.iconwm-mail-alt:before { content: '\3f'; } /* '?' */
+		.iconwm-arrow-right:before { content: '\41'; } /* 'A' */
+		.iconwm-location:before { content: '\42'; } /* 'B' */
+		.iconwm-cloud:before { content: '\43'; } /* 'C' */
+		.iconwm-arrow-right-thin:before,
+		.iconwm-arrow-right-thin-small:before { content: '\46'; } /* 'F' */
+		.iconwm-right-circle:before { content: '\47'; } /* 'G' */
+		.iconwm-right-dir:before { content: '\48'; } /* 'H' */
+		.iconwm-plus:before { content: '\4a'; } /* 'J' */
+		.iconwm-plus-circle:before { content: '\4b'; } /* 'K' */
+		.iconwm-down:before { content: '\4c'; } /* 'L' */
+		.iconwm-quote:before,
+		.iconwm-quote-left:before { content: '\4d'; } /* 'M' */
+		.iconwm-phone:before { content: '\4e'; } /* 'N' */
+		.iconwm-gallery:before { content: '\51'; } /* 'Q' */
+		.iconwm-video:before { content: '\52'; } /* 'R' */
+		.iconwm-arrow-right-open:before { content: '\53'; } /* 'S' */
+		.iconwm-check:before { content: '\54'; } /* 'T' */
+		.iconwm-comments:before { content: '\56'; } /* 'V' */
+		.iconwm-link:before { content: '\57'; } /* 'W' */
+		.iconwm-cancel:before { content: '\58'; } /* 'X' */
+		.iconwm-question:before { content: '\59'; } /* 'Y' */
+		.iconwm-bullet:before,
+		.iconwm-bullet-large:before { content: '\5a'; } /* 'Z' */
+		.iconwm-attachment:before { content: '\5c'; } /* '\' */
+		.iconwm-emo-thumbsup:before { content: '\5f'; } /* '_' */
+		.iconwm-twitter-circled:before,
+		.iconwm-twitter:before { content: '\60'; } /* '`' */
+		.iconwm-arrow-left:before { content: '\61'; } /* 'a' */
+		.iconwm-download:before { content: '\62'; } /* 'b' */
+		.iconwm-clock:before { content: '\63'; } /* 'c' */
+		.iconwm-standard:before,
+		.iconwm-pencil:before { content: '\65'; } /* 'e' */
+		.iconwm-arrow-left-thin:before,
+		.iconwm-arrow-left-thin-small:before { content: '\66'; } /* 'f' */
+		.iconwm-left-circle:before { content: '\67'; } /* 'g' */
+		.iconwm-left-dir:before { content: '\68'; } /* 'h' */
+		.iconwm-minus:before { content: '\6a'; } /* 'j' */
+		.iconwm-minus-circle:before { content: '\6b'; } /* 'k' */
+		.iconwm-up:before { content: '\6c'; } /* 'l' */
+		.iconwm-menu:before { content: '\6e'; } /* 'n' */
+		.iconwm-audio:before { content: '\71'; } /* 'q' */
+		.iconwm-status:before,
+		.iconwm-user:before { content: '\72'; } /* 'r' */
+		.iconwm-arrow-left-open:before { content: '\73'; } /* 's' */
+		.iconwm-cancel-circle:before { content: '\74'; } /* 't' */
+		.iconwm-warning:before { content: '\75'; } /* 'u' */
+		.iconwm-comment:before { content: '\76'; } /* 'v' */
+		.iconwm-image:before { content: '\77'; } /* 'w' */
+		.iconwm-camera:before { content: '\78'; } /* 'x' */
+		.iconwm-info:before { content: '\79'; } /* 'y' */
+		.iconwm-bookmark:before { content: '\7c'; } /* '|' */
+		.iconwm-th-large:before { content: '\7e'; } /* '~' */
+		.iconwm-th-list:before { content: '\a1'; } /* '¡' */
+		.iconwm-basket-2:before { content: '\a3'; } /* '£' */
+		.iconwm-video-1:before { content: '\a4'; } /* '¤' */
+		.iconwm-ellipsis:before { content: '\b2'; } /* '²' */
+		.iconwm-ellipsis-vert:before { content: '\b3'; } /* '³' */
+		.iconwm-flickr:before { content: '\e805'; } /* '' */
+		.iconwm-linkedin:before { content: '\e806'; } /* '' */
+		.iconwm-rss:before { content: '\e807'; } /* '' */
+		.iconwm-github:before { content: '\e808'; } /* '' */
+		.iconwm-tumblr:before { content: '\e809'; } /* '' */
+		.iconwm-vimeo:before { content: '\e80a'; } /* '' */
+		.iconwm-pinterest:before { content: '\e80b'; } /* '' */
+		.iconwm-facebook:before { content: '\e80c'; } /* '' */
+		.iconwm-behance:before { content: '\e80d'; } /* '' */
+		.iconwm-gplus:before { content: '\e80e'; } /* '' */
+		.iconwm-soundcloud:before { content: '\e80f'; } /* '' */
+		.iconwm-dribbble:before { content: '\e810'; } /* '' */
+		.iconwm-paypal:before { content: '\e811'; } /* '' */
+		.iconwm-instagram:before { content: '\e812'; } /* '' */
+		.iconwm-skype:before { content: '\e813'; } /* '' */
+		.iconwm-stumbleupon:before { content: '\e814'; } /* '' */
+		.iconwm-lastfm:before { content: '\e815'; } /* '' */
+		.iconwm-spotify:before { content: '\e816'; } /* '' */
+		.iconwm-dropbox:before { content: '\e817'; } /* '' */
+		.iconwm-evernote:before { content: '\e818'; } /* '' */
+		.iconwm-android:before { content: '\e819'; } /* '' */
+		.iconwm-wikipedia:before { content: '\e81a'; } /* '' */
+		.iconwm-forrst:before { content: '\e81b'; } /* '' */
+		.iconwm-blogger:before { content: '\e81c'; } /* '' */
+		.iconwm-youtube:before { content: '\e81d'; } /* '' */
+		.iconwm-windows:before { content: '\e81e'; } /* '' */
+		.iconwm-appstore:before { content: '\e81f'; } /* '' */
+		.iconwm-yahoo:before { content: '\e820'; } /* '' */
+		.iconwm-wordpress:before { content: '\e821'; } /* '' */
+		.iconwm-stackoverflow:before { content: '\e822'; } /* '' */
+		.iconwm-support:before { content: '\e825'; } /* '' */
+		.iconwm-ebay:before { content: '\e82e'; } /* '' */
+		.iconwm-amazon:before { content: '\e832'; } /* '' */
+		.iconwm-print:before { content: '\e83b'; } /* '' */
 
-		.iconwm-basket:before          { content: '\21'; } /* '!' */
-		.iconwm-basket-1:before        { content: '\22'; } /* '"' */
-		.iconwm-basket-2:before        { content: '\A3'; } /* '£' */
-		.iconwm-shop:before            { content: '\24'; } /* '$' */
-		.iconwm-bag:before             { content: '\25'; } /* '%' */
-
-		.iconwm-wristwatch:before      { content: '\5e'; } /* '^' */
-		.iconwm-hourglass:before       { content: '\26'; } /* '&' */
-		.iconwm-emo-thumbsup:before    { content: '\5f'; } /* '_' */
-		.iconwm-spin5:before           { content: '\2a'; } /* '*' */
 
 
 
+
+
+
+/* assets/css/core.css */
 
 /**
  * Core styles
  *
- * @version  1.1
+ * @version  1.2
  */
 
 
@@ -302,7 +363,7 @@
 			margin: 0;
 			line-height: 30px;
 			word-wrap: break-word;
-			background: url(../../img/lines.png) repeat 0 -16px;
+			background: url( '../../img/lines.png' ) repeat 0 -16px;
 		}
 			h1 + pre,
 			h2 + pre,
@@ -474,17 +535,23 @@
 	/**
 	 * Pagination
 	 *
-	 * Supports WP-PageNavi.
+	 * Supports WP-PageNavi, bbPress and WooCommerce plugin.
 	 */
 
-		.wm-pagination {
+		.wm-pagination,
+		.bbp-pagination .bbp-pagination-links,
+		.woocommerce-page nav.woocommerce-pagination {
 			clear: both;
 			padding: 1.62em 0 0;
 			text-align: right;
 		}
 		.list-articles + .wm-pagination {margin-top: 2.62em}
 			.wm-pagination a,
-			.wm-pagination span {
+			.wm-pagination span,
+			.bbp-pagination .bbp-pagination-links a,
+			.bbp-pagination .bbp-pagination-links span,
+			.woocommerce-pagination a,
+			.woocommerce-pagination span {
 				display: inline-block;
 				width: 3em;
 				height: 3em;
@@ -497,7 +564,9 @@
 				color: #666;
 				border-radius: 1.5em;
 			}
-				.wm-pagination a span { /* post pages */
+				.wm-pagination a span,
+				.bbp-pagination .bbp-pagination-links a span,
+				.woocommerce-pagination a span { /* post pages */
 					display: inline;
 					min-width: auto;
 					padding: 0;
@@ -505,7 +574,9 @@
 					background: transparent;
 					border: 0;
 				}
-				.wm-pagination a:hover {
+				.wm-pagination a:hover,
+				.bbp-pagination .bbp-pagination-links a:hover,
+				.woocommerce-pagination a:hover {
 					-webkit-box-shadow: inset 0 1px 10px rgba(0,0,0, .25);
 					        box-shadow: inset 0 1px 10px rgba(0,0,0, .25);
 				}
@@ -513,7 +584,13 @@
 			/* Pagination link active, current page */
 				.wm-pagination > span,
 				.wm-pagination a:active,
-				.wm-pagination .current {
+				.wm-pagination .current,
+				.bbp-pagination .bbp-pagination-links > span,
+				.bbp-pagination .bbp-pagination-links a:active,
+				.bbp-pagination .bbp-pagination-links .current,
+				.woocommerce-pagination > span,
+				.woocommerce-pagination a:active,
+				.woocommerce-pagination .current {
 					background: #3b5998;
 					-webkit-box-shadow: inset 0 1px 5px rgba(0,0,0, .1);
 					        box-shadow: inset 0 1px 5px rgba(0,0,0, .1);
@@ -521,7 +598,9 @@
 
 			/* Dots */
 				.wm-pagination > span.dots,
-				.wm-pagination .extend {
+				.wm-pagination .extend,
+				.bbp-pagination .bbp-pagination-links > span.dots,
+				.woocommerce-pagination > span.dots {
 					min-width: auto;
 					padding: 0 .5em;
 					background: transparent;
@@ -620,6 +699,11 @@
 
 
 
+
+
+
+/* assets/css/columns-static.css */
+
 /**
  * Grid styles
  *
@@ -671,6 +755,11 @@
 
 
 
+
+
+
+/* assets/css/typography.css */
+
 /**
  * Typography
  *
@@ -678,6 +767,8 @@
  * @link  http://goo.gl/Hhb0jD
  * @link  http://typeplate.com
  * @link  http://www.pearsonified.com/typography/
+ *
+ * @version  1.1.1
  */
 
 
@@ -764,7 +855,7 @@
 		blockquote cite,
 		ol > li:before,
 		.breadcrumbs,
-		.wm-pagination,
+		.wm-pagination, .woocommerce-pagination, .bbp-pagination,
 		.topbar,
 		.logo .description,
 		.sidebar .widget-heading,
@@ -908,6 +999,11 @@
 
 
 
+
+
+
+/* assets/css/wp-styles.css */
+
 /**
  * WordPress required styles
  *
@@ -1020,6 +1116,11 @@
 
 
 
+
+
+
+
+/* assets/css/forms.css */
 
 /**
  * Form styles
@@ -1185,7 +1286,8 @@
 	 */
 
 		.form-search,
-		#searchform {
+		#searchform,
+		#bbp-search-form {
 			display: block;
 			position: relative;
 			width: 17em;
@@ -1196,7 +1298,8 @@
 			text-align: left;
 		}
 			.form-search:before,
-			#searchform:before {
+			#searchform:before,
+			#bbp-search-form:before {
 				content: '<';
 				display: block;
 				position: absolute;
@@ -1214,7 +1317,8 @@
 
 			.form-search input[type="text"],
 			.widget .form-search input[type="text"],
-			#searchform input[type="text"] {
+			#searchform input[type="text"],
+			#bbp-search-form input[type="text"] {
 				position: absolute;
 				width: 100%;
 				left: 0;
@@ -1224,10 +1328,12 @@
 			}
 			.lie8 .form-search input[type="text"],
 			.lie8 .widget .form-search input[type="text"],
-			.lie8 #searchform input[type="text"] {z-index: -1}
+			.lie8 #searchform input[type="text"],
+			.lie8 #bbp-search-form input[type="text"] {z-index: -1}
 
 			.form-search input[type="submit"],
-			#searchform input[type="submit"] {
+			#searchform input[type="submit"],
+			#bbp-search-form input[type="submit"] {
 				position: absolute;
 				width: 2em;
 				height: 2.62em;
@@ -1242,14 +1348,17 @@
 				        box-shadow: none;
 			}
 			.lie8 .form-search input[type="submit"],
-			.lie8 #searchform input[type="submit"] {
+			.lie8 #searchform input[type="submit"],
+			.lie8 #bbp-search-form input[type="submit"] {
 				background: #fff !important;
 				filter: alpha(opacity=1);
 			}
 				.form-search input[type="submit"]:hover,
 				.form-search input[type="submit"]:active,
 				#searchform input[type="submit"]:hover,
-				#searchform input[type="submit"]:active {
+				#searchform input[type="submit"]:active,
+				#bbp-search-form input[type="submit"]:hover,
+				#bbp-search-form input[type="submit"]:active {
 					-webkit-box-shadow: none;
 					        box-shadow: none;
 				}
@@ -1427,6 +1536,11 @@
 
 
 
+
+
+
+/* assets/css/headings.css */
+
 /**
  * Headings
  */
@@ -1573,6 +1687,17 @@
 				text-transform: uppercase;
 			}
 
+
+
+
+
+
+
+/* assets/css/header.css */
+
+/**
+ * @version  1.1.1
+ */
 
 
 
@@ -1743,6 +1868,7 @@
 			display: inline-block;
 			padding: 25px 0 0;
 			margin: 0;
+			white-space: nowrap;
 		}
 			.logo.type-text {
 				padding: .37em 0;
@@ -2059,6 +2185,11 @@
 
 
 
+
+
+
+/* assets/css/slider.css */
+
 /**
  * Special slider area
  */
@@ -2148,8 +2279,15 @@
 
 
 
+
+
+
+/* assets/css/content.css */
+
 /**
  * Content
+ *
+ * @version  1.2.1
  */
 
 	.content-section {
@@ -2617,6 +2755,8 @@
 
 	/**
 	 * Previous/next post link
+	 *
+	 * @version  1.2.1
 	 */
 
 		.next-prev-post-in-tax {
@@ -2661,7 +2801,7 @@
 					}
 
 				.next-prev-post-in-tax a:before {
-					content: 'd';
+					content: 'f';
 					font-family: 'basic-icons';
 					font-size: 1em;
 					font-style: normal;
@@ -2674,10 +2814,15 @@
 					right: -24px;
 					padding: 0 24px 0 0;
 				}
-					.next-prev-post-in-tax .next:before {content: 'D'}
+					.next-prev-post-in-tax .next:before {content: 'F'}
 
 
 
+
+
+
+
+/* assets/css/comments.css */
 
 /**
  * Comments
@@ -2858,8 +3003,15 @@
 
 
 
+
+
+
+/* assets/css/sidebar.css */
+
 /**
  * Sidebar
+ *
+ * @version  1.2
  */
 
 	.sidebar {position: relative}
@@ -2950,11 +3102,14 @@
 
 	/**
 	 * WebMan Submenu, Pages and Menu widget
+	 * + bbPress Topic Views List, Forums List widgets
 	 */
 
 		.widget .page_item a:before,
 		.widget .menu-item a:before,
-		.widget .sub-nav a:before {
+		.widget .sub-nav a:before,
+		.widget_display_views a:before,
+		.widget_display_forums a:before {
 			content: 'F';
 			display: inline-block;
 			width: 1em;
@@ -3021,10 +3176,10 @@
 	 */
 
 		.textwidget p + ul,
-		.wm-content-module p + ul {margin-top: 1.62em}
+		.sidebar .wm-content-module p + ul {margin-top: 1.62em}
 
 			.textwidget ul > li,
-			.wm-content-module ul > li {
+			.sidebar .wm-content-module ul > li {
 				padding: 0;
 				margin-left: 1.62em;
 				list-style: disc;
@@ -3215,6 +3370,11 @@
 
 
 
+
+
+
+/* assets/css/footer.css */
+
 /**
  * Footer
  */
@@ -3224,7 +3384,9 @@
 		position: relative;
 		z-index: 1;
 	}
-		.footer-shadow {
+		.footer-shadow,
+		.woocommerce .footer-shadow,
+		.woocommerce-page .footer-shadow {
 			position: absolute;
 			width: 100%;
 			height: 30px;
@@ -3328,12 +3490,17 @@
 
 
 
+
+
+
+/* assets/css/prettyphoto.css */
+
 /**
  * PrettyPhoto v3.1.5
  *
  * WebMan Custom Skin
- * @version  1.0
  * @since    1.1
+ * @version  1.2.1
  *
  * Use these PrettyPhoto JS setup options:
  * overlay_gallery    : false,
@@ -3406,7 +3573,7 @@
 						left: 50%;
 						top: 50%;
 						margin: -12px 0 0 -12px;
-						background: url(../../img/prettyphoto/default/loader.gif) 50% 50% no-repeat;
+						background: url( '../../img/prettyphoto/default/loader.gif' ) 50% 50% no-repeat;
 					}
 
 				.pp_webman .pp_fade {display: none}
@@ -3499,7 +3666,7 @@
 						}
 						.pp_webman .pp_hoverContainer a.pp_previous {float: left}
 							.pp_webman .pp_hoverContainer a:before {
-								content: 'D';
+								content: 'F';
 								display: none;
 								position: absolute;
 								width: 40px;
@@ -3516,7 +3683,7 @@
 								color: #000;
 							}
 							.pp_webman .pp_hoverContainer a.pp_previous:before {
-								content: 'd';
+								content: 'f';
 								left: 0;
 								right: auto;
 							}
@@ -3577,12 +3744,12 @@
 			html[dir='rtl'] .pp_webman .pp_hoverContainer a {float: left}
 			html[dir='rtl'] .pp_webman .pp_hoverContainer a.pp_previous {float: right}
 				html[dir='rtl'] .pp_webman .pp_hoverContainer a:before {
-					content: 'd';
+					content: 'f';
 					right: auto;
 					left: 0;
 				}
 				html[dir='rtl'] .pp_webman .pp_hoverContainer a.pp_previous:before {
-					content: 'D';
+					content: 'F';
 					right: 0;
 					left: auto;
 				}
@@ -3596,9 +3763,22 @@
 
 
 
+
+
+
+/* assets/css/plugins.css */
+
 /**
  * Basic plugins support style tweaks
  */
+
+
+
+	/**
+	 * bbPress
+	 *
+	 * See the bbpress.css, responsive-plugins-bbpress.css and rtl-plugins-bbpress.css file.
+	 */
 
 
 
@@ -3913,6 +4093,14 @@
 
 
 	/**
+	 * WooCommerce
+	 *
+	 * See the woocommerce.css, responsive-plugins-woocommerce.css and rtl-plugins-woocommerce.css file.
+	 */
+
+
+
+	/**
 	 * WooSidebars
 	 *
 	 * No styles required.
@@ -3952,10 +4140,15 @@
 
 
 
+
+
+
+/* assets/css/shortcodes.css */
+
 /**
  * Shortcodes
  *
- * @version  1.1
+ * @version  1.2.1
  */
 
 
@@ -4011,7 +4204,8 @@
 		a.wm-button,
 		button,
 		input[type="button"],
-		input[type="submit"] {
+		input[type="submit"],
+		.bbp-logged-in a.button {
 			position: relative;
 			display: inline-block;
 			line-height: normal;
@@ -4030,17 +4224,20 @@
 			.wm-message,
 			button,
 			input[type="button"],
-			input[type="submit"] {border-radius: 4px}
+			input[type="submit"],
+			.bbp-logged-in a.button {border-radius: 4px}
 
 		/* Hover and active */
 			.wm-button:hover,
 			button:hover,
 			input[type="button"]:hover,
-			input[type="submit"]:hover {color: inherit}
+			input[type="submit"]:hover,
+			.bbp-logged-in a.button:hover {color: inherit}
 			.wm-button:active,
 			button:active,
 			input[type="button"]:active,
-			input[type="submit"]:active {
+			input[type="submit"]:active,
+			.bbp-logged-in a.button:active {
 				color: inherit;
 				-webkit-box-shadow: inset 0 1px 2px 0 rgba(0,0,0, .15);
 				        box-shadow: inset 0 1px 2px 0 rgba(0,0,0, .15);
@@ -4059,7 +4256,8 @@
 				.wm-button,
 				button,
 				input[type="button"],
-				input[type="submit"] {
+				input[type="submit"],
+				.bbp-logged-in a.button {
 					padding: .5em 1em;
 					font-size: 1em;
 				}
@@ -4094,7 +4292,7 @@
 			width: 100%;
 			padding: 1.62em 2.62em;
 			border-radius: 4px;
-			background: url(../../img/gradient-bottom.png) repeat-x 0 100%;
+			background: url( '../../img/gradient-bottom.png' ) repeat-x 0 100%;
 			background: -webkit-linear-gradient( top, rgba(255,255,255, .05) 33%, rgba(0,0,0, .05) 100% );
 			background:    -moz-linear-gradient( top, rgba(255,255,255, .05) 33%, rgba(0,0,0, .05) 100% );
 			background:     -ms-linear-gradient( top, rgba(255,255,255, .05) 33%, rgba(0,0,0, .05) 100% );
@@ -4743,28 +4941,14 @@
 					.social-youtube:hover {color: #e14d41 !important}
 
 			/* Social icon animation */
-				@-webkit-keyframes "moveIcon" {
+				@-webkit-keyframes moveIcon {
 					0% {top: 0;}
 					25% {top: -2em;}
 					50% {top: -2em;}
 					75% {top: .25em;}
 					100% {top: 0;}
 				}
-				@-moz-keyframes moveIcon {
-					0% {top: 0;}
-					25% {top: -2em;}
-					50% {top: -2em;}
-					75% {top: .25em;}
-					100% {top: 0;}
-				}
-				@-ms-keyframes "moveIcon" {
-					0% {top: 0;}
-					25% {top: -2em;}
-					50% {top: -2em;}
-					75% {top: .25em;}
-					100% {top: 0;}
-				}
-				@keyframes "moveIcon" {
+				@keyframes moveIcon {
 					0% {top: 0;}
 					25% {top: -2em;}
 					50% {top: -2em;}
@@ -4773,8 +4957,6 @@
 				}
 				.wm-social-icon:hover:before {
 					-webkit-animation: moveIcon .4s;
-					   -moz-animation: moveIcon .4s;
-					    -ms-animation: moveIcon .4s;
 					        animation: moveIcon .4s;
 				}
 
@@ -5394,7 +5576,7 @@
 					height: 100%;
 					left: 0;
 					top: 0;
-					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+					background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=' );
 					opacity: .25;
 				}
 
@@ -5787,6 +5969,8 @@
 
 		/**
 		 * Owl Carousel
+		 *
+		 * @version  1.2.1
 		 */
 
 			/**
@@ -5901,7 +6085,7 @@
 							cursor: pointer;
 						}
 							.owl-buttons div:before {
-								content: 'D';
+								content: 'F';
 								position: absolute;
 								display: block;
 								width: 100%;
@@ -5914,7 +6098,7 @@
 								color: #fff;
 								speak: none;
 							}
-							.owl-buttons .owl-prev:before {content: 'd'}
+							.owl-buttons .owl-prev:before {content: 'f'}
 
 			/* mouse grab */
 				.grabbing {cursor: e-resize}
@@ -5932,6 +6116,11 @@
 
 
 
+
+
+
+
+/* assets/css/borders.css */
 
 /**
  * Borders
@@ -5958,6 +6147,8 @@
 		.bordered, .type-bordered, .type-bordered-striped,
 		.breadcrumbs-separator[class*="iconwm-"],
 		.wm-pagination a, .wm-pagination span,
+		.woocommerce-pagination a, .woocommerce-pagination span,
+		.bbp-pagination-links a, .bbp-pagination-links a:hover, .bbp-pagination-links span,
 		.list-articles article,
 		.post-table-of-contents.top,
 		.wp-caption figure, figure.wp-caption,
@@ -6102,6 +6293,11 @@
 
 
 
+
+
+
+/* assets/css/ltr-borders.css */
+
 /**
  * Borders
  */
@@ -6150,8 +6346,15 @@
 
 
 
+
+
+
+/* assets/css/specials.css */
+
 /**
  * Special CSS classes and animations
+ *
+ * @version  1.2
  */
 
 
@@ -6509,7 +6712,7 @@
 					height: 2em;
 					left: -5%;
 					bottom: -2em;
-					background: url(../../img/shadow-bottom.png) no-repeat 50%;
+					background: url( '../../img/shadow-bottom.png' ) no-repeat 50%;
 					background-size: 100% 100%;
 				}
 				.ie8 .bottom-shadow:after,
@@ -6912,18 +7115,27 @@
 
 
 
+
+
+
+/* assets/css/high-dpi.css */
+
 /**
  * HiDPI / Retina styles
+ *
+ * @version  1.2
  */
 
 	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	       only screen and (min--moz-device-pixel-ratio: 1.5),
 	       only screen and (-moz-min-device-pixel-ratio: 1.5),
 	       only screen and (-o-min-device-pixel-ratio: 3/2),
 	       only screen and (min-device-pixel-ratio: 1.5),
+	       only screen and (min-resolution: 144dpi),
 	       only screen and (min-resolution: 1.5dppx) {
 
 		pre {
-			background-image: url(../../img/lines@2x.png);
+			background-image: url( '../../img/lines@2x.png' );
 			background-size: 10px 60px;
 		}
 
@@ -6983,18 +7195,36 @@
 		.wm-posts-wm_projects.wm-posts-layout-default .wm-posts-item:hover,
 		.wm-posts-wm_projects.wm-posts-layout-simple .wm-posts-item:hover .title,
 		.wm-posts-post.wm-posts-layout-simple .wm-posts-item:hover .title,
+		.floating-cart-switch,
+		.floating-cart-switch:hover,
+		.floating-cart-switch:active,
 		.background-color-accent,
 		.bg-color-accent,
 		.wm-iconbox-module .font-icon,
 		.wm-pagination > span,
 		.wm-pagination a:active,
-		.wm-pagination .current {
+		.wm-pagination .current,
+		.bbp-pagination .bbp-pagination-links > span,
+		.bbp-pagination .bbp-pagination-links a:active,
+		.bbp-pagination .bbp-pagination-links .current,
+		.woocommerce-pagination > span,
+		.woocommerce-pagination a:active,
+		.woocommerce-pagination .current {
 			background: #3d5b9b;
 			color: #ffffff;
 		}
-		#search-container input::-webkit-input-placeholder {color: #fff}
-		#search-container input::-moz-placeholder {color: #fff}
-		#search-container input:-ms-input-placeholder {color: #fff}
+
+		#search-container input::-webkit-input-placeholder {
+			color: #ffffff;
+		}
+
+		#search-container input::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		#search-container input:-ms-input-placeholder {
+			color: #ffffff;
+		}
 
 		.topbar,
 		.topbar-extra,
@@ -7008,7 +7238,13 @@
 		.topbar-extra,
 		.wm-pagination > span,
 		.wm-pagination a:active,
-		.wm-pagination .current {
+		.wm-pagination .current,
+		.bbp-pagination .bbp-pagination-links > span,
+		.bbp-pagination .bbp-pagination-links a:active,
+		.bbp-pagination .bbp-pagination-links .current,
+		.woocommerce-pagination > span,
+		.woocommerce-pagination a:active,
+		.woocommerce-pagination .current {
 			border-color: #345292;
 		}
 
@@ -7083,7 +7319,10 @@
 		input[type="submit"],
 		.wm-marker,
 		.wm-dropcap,
-		.wm-progress-bar {
+		.wm-progress-bar,
+		#bbpress-forums .quicktags-toolbar input,
+		#bbpress-forums .bbp-new-post-toggle .wm-item-title,
+		.bbp-logged-in a.button {
 			text-shadow: 0 -1px 0 rgba(0,0,0, .6);
 			color: #ffffff !important;
 			background-color: #3d5b9b;
@@ -7097,7 +7336,13 @@
 		.wm-button:active,
 		button:active,
 		input[type="button"]:active,
-		input[type="submit"]:active {
+		input[type="submit"]:active,
+		#bbpress-forums .quicktags-toolbar input:hover,
+		#bbpress-forums .quicktags-toolbar input:active,
+		#bbpress-forums .bbp-new-post-toggle .wm-item-title:hover,
+		#bbpress-forums .bbp-new-post-toggle .wm-item.active .wm-item-title,
+		.bbp-logged-in a.button:hover,
+		.bbp-logged-in a.button:active {
 			background-color: #4f6dad;
 			border-color: #2b4989;
 		}
@@ -7260,7 +7505,7 @@
 	/* Background: HTML and body */
 
 		html {
-			background: #3D5B9B;
+			background: #f6f6f6;
 		}
 
 
@@ -7429,6 +7674,11 @@
 			color: #333333;
 		}
 
+		.woocommerce-page .quantity .plus,
+		.woocommerce-page .quantity .minus {
+			color: #777777 !important;
+		}
+
 		.content-section .wm-accordion .wm-item.active .wm-item-title,
 		.content-section .wm-posts-post.wm-posts-layout-default .meta,
 		.content-section .wm-posts-forum .meta,
@@ -7446,7 +7696,18 @@
 		.content-section .bypostauthor .comment-author .fn,
 		.wm-pagination a,
 		.wm-pagination span,
-		.list-articles .entry-meta {
+		.bbp-pagination .bbp-pagination-links a,
+		.bbp-pagination .bbp-pagination-links span,
+		.woocommerce-pagination a,
+		.woocommerce-pagination span,
+		.list-articles .entry-meta,
+		.woocommerce-page .order-total th,
+		.woocommerce-page .order-total td,
+		.woocommerce-page #payment,
+		.bbp-large-topic,
+		#bbpress-forums div.bbp-reply-header,
+		#bbpress-forums .bbp-search-results div.bbp-forum-header,
+		#bbpress-forums .bbp-search-results div.bbp-topic-header {
 			background-color: #f6f6f6;
 		}
 
@@ -7472,7 +7733,11 @@
 		.content-section input[type="text"],
 		.content-section input[type="url"],
 		.content-section select,
-		.content-section textarea {
+		.content-section textarea,
+		.woocommerce .form-row .chosen-container,
+		.woocommerce-checkout .form-row .chosen-container,
+		#bbpress-forums #bbp-your-profile fieldset input,
+		#bbpress-forums #bbp-your-profile fieldset textarea {
 			background-color: #f6f6f6;
 		}
 
@@ -7511,11 +7776,7 @@
 	/* Background: Credits */
 
 
-	/**
-	 * Typography
-	 *
-	 * @version  1.1.1
-	 */
+	/* Typography */
 
 		body {
 			font-family: Open Sans, Helvetica, Arial, Verdana, sans-serif;
@@ -7546,19 +7807,22 @@
 
 		h1,
 		.h1,
-		.heading-style-1 {
+		.heading-style-1,
+		#bbpress-forums h1 {
 			font-size: 265%;
 		}
 
 		h2,
 		.h2,
-		.heading-style-2 {
+		.heading-style-2,
+		#bbpress-forums h2 {
 			font-size: 165%;
 		}
 
 		h3,
 		.h3,
-		.heading-style-3 {
+		.heading-style-3,
+		#bbpress-forums h3 {
 			font-size: 130%;
 		}
 
@@ -7570,7 +7834,10 @@
 		.h6,
 		.heading-style-4,
 		.heading-style-5,
-		.heading-style-6 {
+		.heading-style-6,
+		#bbpress-forums h4,
+		#bbpress-forums h5,
+		#bbpress-forums h6 {
 			font-size: 115%;
 		}
 
@@ -7579,21 +7846,26 @@
 
 
 	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (min--moz-device-pixel-ratio: 1.5),
 		only screen and (-moz-min-device-pixel-ratio: 1.5),
 		only screen and (-o-min-device-pixel-ratio: 3/2),
 		only screen and (min-device-pixel-ratio: 1.5),
+		only screen and (min-resolution: 144dpi),
 		only screen and (min-resolution: 1.5dppx) {
 
 
 	} /* /High DPI */
 
 
+	/* Logo padding - centering logo in header */
 
-/**
- * Mustang Lite specific
- */
+		.logo,
+		h1.logo {
+			padding-top: 19px;
+		}
 
-	.masonry-disabled[data-columns="4"] .footer-widgets-container > .widget.width-1-2 {width: 48%}
+
+	/* Using Mustang theme by WebMan - Oliver Juhas (http://www.webmandesign.eu), version 1.2.1. CSS generated on 2014/10/01 08:22, UTC. */
 
 
 

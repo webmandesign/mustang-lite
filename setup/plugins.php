@@ -6,7 +6,7 @@
  * @subpackage  Plugins
  * @copyright   2014 WebMan - Oliver Juhas
  * @since       1.0
- * @version     1.2
+ * @version     1.2.1
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -71,6 +71,11 @@
 							'bnxt' => array(
 								'name'     => 'Breadcrumb NavXT',
 								'slug'     => 'breadcrumb-navxt',
+								'required' => false,
+							),
+							'ms' => array(
+								'name'     => 'Master Slider - Responsive Touch Slider',
+								'slug'     => 'master-slider',
 								'required' => false,
 							),
 

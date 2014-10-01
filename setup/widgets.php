@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.1
+ * @version  1.2.1
  *
  * CONTENT:
  * - 1) Required files
@@ -42,6 +42,15 @@
  */
 
 	/**
+	 * Actions
+	 */
+
+		//Register widget areas
+			add_action( 'widgets_init', 'wm_register_widget_areas', 1 );
+
+
+
+	/**
 	 * Filters
 	 */
 
@@ -58,17 +67,23 @@
 
 	/**
 	 * Register predefined widget areas (sidebars)
+	 *
+	 * @since  1.2.1
 	 */
-	foreach( wm_helper_var( 'widget-areas' ) as $area ) {
-		register_sidebar( array(
-				'name'          => $area['name'],
-				'id'            => $area['id'],
-				'description'   => $area['description'],
-				'before_widget' => $area['before_widget'],
-				'after_widget'  => $area['after_widget'],
-				'before_title'  => $area['before_title'],
-				'after_title'   => $area['after_title']
-			) );
-	}
+	if ( ! function_exists( 'wm_register_widget_areas' ) ) {
+		function wm_register_widget_areas() {
+			foreach( wm_helper_var( 'widget-areas' ) as $area ) {
+				register_sidebar( array(
+						'name'          => $area['name'],
+						'id'            => $area['id'],
+						'description'   => $area['description'],
+						'before_widget' => $area['before_widget'],
+						'after_widget'  => $area['after_widget'],
+						'before_title'  => $area['before_title'],
+						'after_title'   => $area['after_title']
+					) );
+			}
+		}
+	} // /wm_register_widget_areas
 
 ?>

@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2
+ * @version  1.2.1
  *
  * CONTENT:
  * - 1) Required files
@@ -43,8 +43,8 @@
 	 */
 
 		//Styles and scripts
-			add_action( 'init', 'wm_register_assets', 10 );
-			add_action( 'wp_enqueue_scripts', 'wm_site_assets', 98 );
+			add_action( 'init',               'wm_register_assets', 10 );
+			add_action( 'wp_enqueue_scripts', 'wm_site_assets',     98 );
 		//Theme installation
 			add_action( 'after_setup_theme',              'wm_install',       10 );
 			add_action( 'wmhook_wmamp_plugin_activation', 'wm_default_setup', 10 );
@@ -58,36 +58,35 @@
 			//DOCTYPE
 				add_action( 'wmhook_html_before', 'wm_doctype', 10 );
 			//HEAD
-				add_action( 'wmhook_head_top', 'wm_head',                  10   );
-				add_action( 'wp_head',         'wm_head_custom_css',       9998 );
-				add_action( 'wp_footer',       'wm_footer_custom_scripts', 9998 );
+				add_action( 'wmhook_head_bottom', 'wm_head',                  10   );
+				add_action( 'wp_footer',          'wm_footer_custom_scripts', 9998 );
 			//Body
-				add_action( 'wmhook_body_top',       'wm_body_top',                 10  );
-				add_action( 'wmhook_body_bottom',    'wm_body_bottom',              100 );
+				add_action( 'wmhook_body_top',       'wm_body_top',               10  );
+				add_action( 'wmhook_body_bottom',    'wm_body_bottom',            100 );
 			//Topbar
-				add_action( 'wmhook_header_before',  'wm_section_topbar',           10 );
-				add_action( 'wmhook_header_before',  'wm_section_topbar_extra',     20 );
+				add_action( 'wmhook_header_before',  'wm_section_topbar',         10 );
+				add_action( 'wmhook_header_before',  'wm_section_topbar_extra',   20 );
 			//Header
-				add_action( 'wmhook_header_top',     'wm_section_header_top',       10 );
-				add_action( 'wmhook_header',         'wm_logo',                     10 );
-				add_action( 'wmhook_header',         'wm_navigation_special',       20 );
-				add_action( 'wmhook_header',         'wm_section_navigation',       30 );
-				add_action( 'wmhook_header',         'wm_header_search_form',       40 );
-				add_action( 'wmhook_header_bottom',  'wm_section_header_bottom',    10 );
+				add_action( 'wmhook_header_top',     'wm_section_header_top',     10 );
+				add_action( 'wmhook_header',         'wm_logo',                   10 );
+				add_action( 'wmhook_header',         'wm_navigation_special',     20 );
+				add_action( 'wmhook_header',         'wm_section_navigation',     30 );
+				add_action( 'wmhook_header',         'wm_header_search_form',     40 );
+				add_action( 'wmhook_header_bottom',  'wm_section_header_bottom',  10 );
 			//After header (slider and main heading)
-				add_action( 'wmhook_header_after',   'wm_section_slider',           10 );
-				add_action( 'wmhook_header_after',   'wm_section_heading',          20 );
+				add_action( 'wmhook_header_after',   'wm_section_slider',         10 );
+				add_action( 'wmhook_header_after',   'wm_section_heading',        20 );
 			//Content
-				add_action( 'wmhook_content_top',    'wm_section_content_top',      10 );
-				add_action( 'wmhook_entry_top',      'wm_entry_top',                10 );
-				add_action( 'wmhook_entry_bottom',   'wm_entry_bottom',             10 );
-				add_action( 'wmhook_entry_bottom',   'wm_hatom_microformats',       20 );
-				add_action( 'wmhook_content_bottom', 'wm_section_content_bottom',   10 );
-				add_action( 'wmhook_footer_before',  'wm_prevnext_post',            10 );
+				add_action( 'wmhook_content_top',    'wm_section_content_top',    10 );
+				add_action( 'wmhook_entry_top',      'wm_entry_top',              10 );
+				add_action( 'wmhook_entry_bottom',   'wm_entry_bottom',           10 );
+				add_action( 'wmhook_entry_bottom',   'wm_hatom_microformats',     20 );
+				add_action( 'wmhook_content_bottom', 'wm_section_content_bottom', 10 );
 			//Footer
-				add_action( 'wmhook_footer_top',     'wm_section_footer_top',       10 );
-				add_action( 'wmhook_footer',         'wm_section_footer',           10 );
-				add_action( 'wmhook_footer_bottom',  'wm_section_footer_bottom',    10 );
+				add_action( 'wmhook_footer_before',  'wm_prevnext_post',          10 );
+				add_action( 'wmhook_footer_top',     'wm_section_footer_top',     10 );
+				add_action( 'wmhook_footer',         'wm_section_footer',         10 );
+				add_action( 'wmhook_footer_bottom',  'wm_section_footer_bottom',  10 );
 
 		//Remove actions
 			remove_action( 'wp_head', 'wp_generator'     );
@@ -494,8 +493,8 @@
 				add_theme_support( 'admin-bar', array( 'callback' => 'wm_adminbar_css' ) );
 
 			//Custom header and background (do not integrate yet...)
-				//add_theme_support( 'custom-header' );
-				//add_theme_support( 'custom-background' );
+				// add_theme_support( 'custom-header' );
+				// add_theme_support( 'custom-background' );
 
 			//Thumbnails support
 				add_theme_support( 'post-thumbnails' );
@@ -628,15 +627,15 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.2.1
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
 			//Helper variables
 				$dev_suffix  = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( '.dev' ) : ( '' );
 				$stylesheets = array(
-						'global' => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/initial/global.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ) ),
-						'rtl'    => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) ? ( '' ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-rtl-css' ) ) ),
+						'global' => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) || ! file_exists( trailingslashit( get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-files' ) ) . 'global.css' ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/initial/global.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ) ),
+						'rtl'    => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) || ! file_exists( trailingslashit( get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-files' ) ) . 'global.css' ) ) ? ( '' ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-rtl-css' ) ) ),
 						'main'   => get_stylesheet_directory_uri() . '/style.css',
 						'print'  => wm_get_stylesheet_directory_uri( 'assets/css/print.css' ),
 					);
@@ -749,6 +748,7 @@
 		function wm_site_assets() {
 			//Helper variables
 				global $is_IE;
+
 				$enqueue_styles = $enqueue_scripts = array();
 
 			/**
@@ -778,6 +778,19 @@
 
 				foreach ( $enqueue_styles as $handle ) {
 					wp_enqueue_style( $handle );
+				}
+
+			/**
+			 * Styles - inline
+			 */
+
+				if (
+						is_singular()
+						&& $output = get_post_meta( get_the_id(), 'custom-css', true )
+					) {
+					$output = apply_filters( 'wmhook_wm_site_assets_inline_styles', "\r\n/* Custom singular styles */\r\n" . $output . "\r\n", $is_IE );
+
+					wp_add_inline_style( 'stylesheet', esc_attr( $output ) );
 				}
 
 			/**
@@ -888,7 +901,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  1.1.1
+	 * @version  1.2.1
 	 *
 	 * @param  array $classes
 	 */
@@ -925,8 +938,8 @@
 							)
 							&& ( function_exists( 'wma_meta_option' ) && wma_meta_option( 'layout', $post_id ) )
 						) {
-						$body_classes[0] = trim( wma_meta_option( 'layout', $post_id ) );
-						$body_classes[1] = 'post-meta-layout';
+						$body_classes[0]  = trim( wma_meta_option( 'layout', $post_id ) );
+						$body_classes[10] = 'post-meta-layout';
 					}
 
 					if ( wm_no_header_footer() ) {
@@ -934,19 +947,19 @@
 					}
 
 				//Topbar
-					if ( ! is_page_template( 'page-template/blank.php' ) ) {
+					if ( ! apply_filters( 'wmhook_disable_header', false ) ) {
 						if ( is_active_sidebar( 'topbar' ) ) {
-							$body_classes[2] = 'topbar-enabled';
+							$body_classes[20] = 'topbar-enabled';
 						}
 						if ( is_active_sidebar( 'topbar-extra' ) && ! apply_filters( 'wmhook_wm_section_topbar_extra_disable', false ) ) {
-							$body_classes[3] = 'topbar-extra-enabled';
+							$body_classes[30] = 'topbar-extra-enabled';
 						}
 					}
 
 				//Header layout
 					if ( wm_option( 'skin-header-sticky' ) ) {
-						$body_classes[4] = 'sticky-header';
-						$body_classes[5] = 'sticky-header-global';
+						$body_classes[40] = 'sticky-header';
+						$body_classes[50] = 'sticky-header-global';
 					}
 
 				//Slider type
@@ -954,26 +967,26 @@
 							function_exists( 'wma_meta_option' ) && wma_meta_option( 'slider', $post_id )
 							&& 2 > $paginated
 						) {
-						$body_classes[4] = 'sticky-header';
-						$body_classes[6] = 'slider-enabled slider-fade-out slider-type-' . wma_meta_option( 'slider', $post_id );
+						$body_classes[40] = 'sticky-header';
+						$body_classes[60] = 'slider-enabled slider-fade-out slider-type-' . wma_meta_option( 'slider', $post_id );
 					}
 
 				//One page layout
 					if ( is_page_template( 'page-template/one-page.php' ) ) {
-						$body_classes[4] = 'sticky-header';
-						$body_classes[7] = 'one-page-layout';
+						$body_classes[40] = 'sticky-header';
+						$body_classes[70] = 'one-page-layout';
 					}
 
 				//Full posts
 					if ( apply_filters( 'wmhook_enable_blog_full_posts', false ) && is_home() ) {
-						$body_classes[8] = 'list-articles-full';
+						$body_classes[80] = 'list-articles-full';
 					} else {
-						$body_classes[8] = 'list-articles-short';
+						$body_classes[80] = 'list-articles-short';
 					}
 
 				//Theme lightbox used
 					if ( ! wm_option( 'skin-disable-lightbox' ) ) {
-						$body_classes[9] = 'theme-lightbox-enabled';
+						$body_classes[90] = 'theme-lightbox-enabled';
 					}
 
 				//Requirements check
@@ -993,7 +1006,7 @@
 							|| ( is_page_template( 'home.php' ) && 'none' == wma_meta_option( 'sidebar', $post_id ) )
 							|| ( is_archive() && apply_filters( 'wmhook_archive_disable_sidebar', false ) )
 						) {
-						$body_classes[10] = 'no-sidebar';
+						$body_classes[100] = 'no-sidebar';
 					}
 
 				/**
@@ -1002,11 +1015,11 @@
 
 				//Page layout
 					if ( wma_meta_option( 'sidebar' ) ) {
-						$body_classes[14] = 'page-layout-' . wma_meta_option( 'sidebar' );
+						$body_classes[140] = 'page-layout-' . wma_meta_option( 'sidebar' );
 					}
 
 				//Responsiveness
-					$body_classes[15] = ( ! wm_option( 'skin-disable-responsive' ) ) ? ( 'responsive-design' ) : ( 'static-design' );
+					$body_classes[150] = ( ! wm_option( 'skin-disable-responsive' ) ) ? ( 'responsive-design' ) : ( 'static-design' );
 
 			//Output
 				$body_classes = apply_filters( 'wmhook_wm_body_classes_output', $body_classes );
@@ -1104,7 +1117,7 @@
 	 * Website HEAD
 	 *
 	 * @since    1.1
-	 * @version  1.2
+	 * @version  1.2.1
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
@@ -1115,30 +1128,27 @@
 
 			//Preparing output
 				$output[10] = '<!-- (c) Copyright ' . get_bloginfo( 'name' ) . ' -->';
-				$output[20] = '<meta charset="' . get_bloginfo( 'charset' ) . '" />';
 
 				if ( ! wm_option( 'skin-disable-responsive' ) ) {
-					$output[30] = '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
+					$output[20] = '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
 				}
-
-				$output[40] = '<title' . wm_schema_org( 'name' ) . '>' . wp_title( '', false ) . '</title>';
 
 				if ( function_exists( 'wma_amplifier' ) ) {
-					$output[50] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
+					$output[30] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
 				}
-				$output[60] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
-				$output[70] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
+				$output[40] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
+				$output[50] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
 
 				if ( $is_IE ) {
-					$output[80]  = '<!-- IE specific -->';
-					$output[80] .= '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
-					$output[80] .= '<!--[if lt IE 9]>';
-					$output[80] .= '<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>';
-					$output[80] .= '<script>window.html5 || document.write(\'<script src="' . wm_get_stylesheet_directory_uri( 'assets/js/html5.js' ) . '"><\/script>\')</script>';
-					$output[80] .= '<![endif]-->';
+					$output[60]  = '<!-- IE specific -->';
+					$output[60] .= '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
+					$output[60] .= '<!--[if lt IE 9]>';
+					$output[60] .= '<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>';
+					$output[60] .= '<script>window.html5 || document.write(\'<script src="' . wm_get_stylesheet_directory_uri( 'assets/js/html5.js' ) . '"><\/script>\')</script>';
+					$output[60] .= '<![endif]-->';
 				}
 
-				$output[90] = wm_favicon();
+				$output[70] = wm_favicon();
 
 				//Filter output array
 					$output = apply_filters( 'wmhook_wm_head_output_array', $output );
@@ -1147,29 +1157,6 @@
 				echo apply_filters( 'wmhook_wm_head_output', implode( "\r\n\t", $output ) );
 		}
 	} // /wm_head
-
-
-
-	/**
-	 * Website HEAD custom singular CSS
-	 */
-	if ( ! function_exists( 'wm_head_custom_css' ) ) {
-		function wm_head_custom_css() {
-			//Requirements check
-				if (
-						! is_singular()
-						|| ! $output = get_post_meta( get_the_id(), 'custom-css', true )
-					) {
-					return;
-				}
-
-			//Helper variables
-				$output = "\r\n\r\n<!--Custom singular styles -->\r\n<style type='text/css' media='screen'>\r\n" . esc_attr( $output ) . "\r\n</style>\r\n";
-
-			//Output
-				echo apply_filters( 'wmhook_wm_head_custom_css_output', $output );
-		}
-	} // /wm_head_custom_css
 
 
 
@@ -1401,6 +1388,9 @@
 
 		/**
 		 * Navigation addons
+		 *
+		 * @since    1.0
+		 * @version  1.2.1
 		 */
 		if ( ! function_exists( 'wm_navigation_special' ) ) {
 			function wm_navigation_special() {
@@ -1416,19 +1406,23 @@
 					}
 
 				//Helper variables
-					$output = $custom_nav = '';
+					$output     = array();
+					$custom_nav = '';
 
 					if ( function_exists( 'wma_meta_option' ) ) {
 						$custom_nav = wma_meta_option( 'navigation' );
 					}
 
 				//Preparing output
-					/**
-					 * @since  Mustang Lite (WooCommerce support removed)
-					 */
+						/**
+						 * @since  Mustang Lite (WooCommerce support removed)
+						 */
 
-					//Search button
-						$output .= apply_filters( 'wmhook_wm_navigation_special_search', '<li id="menu-search" class="menu-search"><a href="#search-container" class="menu-search-switch no-scroll-link"><span class="screen-reader-text">' . __( 'Search', 'wm_domain' ) . '</span></a></li>', $custom_nav );
+						//Search button
+							$output[20] = apply_filters( 'wmhook_wm_navigation_special_search', '<li id="menu-search" class="menu-search"><a href="#search-container" class="menu-search-switch no-scroll-link"><span class="screen-reader-text">' . __( 'Search', 'wm_domain' ) . '</span></a></li>', $custom_nav );
+
+						//Allow filtering the output array
+							$output = implode( '', (array) apply_filters( 'wmhook_wm_navigation_special_output_array', $output, $custom_nav ) );
 
 					//Wrapping output
 						if ( $output ) {
@@ -1895,7 +1889,7 @@
 			function wm_post_title( $title = true ) {
 				//Helper variables
 					$output    = '';
-					$is_single = ( is_home() && wm_option( 'blog-full-posts') ) ? ( true ) : ( is_single() );
+					$is_single = ( is_home() && wm_option( 'blog-full-posts' ) ) ? ( true ) : ( is_single() );
 					$link      = array( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
 					$suffix    = wm_paginated_suffix( 'small', 'post' );
 

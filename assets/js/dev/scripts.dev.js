@@ -185,7 +185,7 @@ jQuery( function() {
 
 		if ( jQuery( 'body' ).hasClass( 'slider-enabled') ) {
 
-			var wmSlider = jQuery( '#slider' ),
+			var wmSlider       = jQuery( '#slider' ),
 			    wmHeaderOffset = wmSlider.outerHeight();
 
 			wmSlider.imagesLoaded( function() {

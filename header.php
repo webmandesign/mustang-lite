@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2.1
  */
 
 
@@ -26,6 +26,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js"<?php echo wm_schema_org( 'html' ); ?> <?php language_attributes(); ?>><!--<![endif]-->
 
 <head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<?php
 
 	/**
@@ -33,6 +34,12 @@
 	 */
 
 	wmhook_head_top();
+
+	?>
+
+	<title><?php wp_title( '' ); ?></title>
+
+	<?php
 
 	wmhook_head_bottom();
 

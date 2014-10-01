@@ -1,7 +1,7 @@
 /**
  * Content
  *
- * @version  1.1.1
+ * @version  1.2.1
  */
 
 	.content-section {
@@ -469,6 +469,8 @@
 
 	/**
 	 * Previous/next post link
+	 *
+	 * @version  1.2.1
 	 */
 
 		.next-prev-post-in-tax {
@@ -513,7 +515,7 @@
 					}
 
 				.next-prev-post-in-tax a:before {
-					content: 'd';
+					content: 'f';
 					font-family: 'basic-icons';
 					font-size: 1em;
 					font-style: normal;
@@ -526,7 +528,7 @@
 					right: -24px;
 					padding: 0 24px 0 0;
 				}
-					.next-prev-post-in-tax .next:before {content: 'D'}
+					.next-prev-post-in-tax .next:before {content: 'F'}
 
 
 

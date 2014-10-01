@@ -5,8 +5,23 @@
  * @package    WebMan WordPress Theme Framework
  * @copyright  2014 WebMan - Oliver Juhas
  *
- * @since  1.1.1
+ * @since    1.1.1
+ * @version  1.2.1
  */
+
+
+
+/**
+ * Requirements check
+ *
+ * This is specially for plugins like WooCommerce
+ *
+ * @since  1.2.1
+ */
+
+	if ( function_exists( 'wma_sidebar' ) ) {
+		return;
+	}
 
 
 

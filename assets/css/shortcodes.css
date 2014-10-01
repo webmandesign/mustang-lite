@@ -1,7 +1,7 @@
 /**
  * Shortcodes
  *
- * @version  1.2
+ * @version  1.2.1
  *
  * @since  Mustang Lite (Removed bbPress styles)
  */
@@ -1819,6 +1819,8 @@
 
 		/**
 		 * Owl Carousel
+		 *
+		 * @version  1.2.1
 		 */
 
 			/**
@@ -1933,7 +1935,7 @@
 							cursor: pointer;
 						}
 							.owl-buttons div:before {
-								content: 'D';
+								content: 'F';
 								position: absolute;
 								display: block;
 								width: 100%;
@@ -1946,7 +1948,7 @@
 								color: #fff;
 								speak: none;
 							}
-							.owl-buttons .owl-prev:before {content: 'd'}
+							.owl-buttons .owl-prev:before {content: 'f'}
 
 			/* mouse grab */
 				.grabbing {cursor: e-resize}

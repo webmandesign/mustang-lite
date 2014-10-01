@@ -4,7 +4,7 @@
  * Adds support for languages written in a Right To Left (RTL) direction.
  * Styles are sorted in order in which they are included into main stylesheet file.
  *
- * @version  1.1
+ * @version  1.2.1
  *
  * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  *
@@ -465,8 +465,8 @@
 						padding: 0 0 0 24px;
 					}
 
-				.next-prev-post-in-tax a:before {content: 'D'}
-				.next-prev-post-in-tax .next:before {content: 'd'}
+				.next-prev-post-in-tax a:before {content: 'F'}
+				.next-prev-post-in-tax .next:before {content: 'f'}
 
 
 
@@ -1039,6 +1039,8 @@
 
 			/**
 			 * Owl Carousel
+			 *
+			 * @version  1.2.1
 			 */
 
 				.owl-carousel {direction: ltr}
@@ -1072,9 +1074,9 @@
 								margin-left: 0;
 								margin-right: 5px;
 							}
-							/* .owl-buttons div:before {content: 'd'} */ /* JS takes care of this... */
+							/* .owl-buttons div:before {content: 'f'} */ /* JS takes care of this... */
 							/* .owl-buttons .owl-prev {float: right} */ /* JS takes care of this... */
-							/* .owl-buttons .owl-prev:before {content: 'D'} */ /* JS takes care of this... */
+							/* .owl-buttons .owl-prev:before {content: 'F'} */ /* JS takes care of this... */
 
 
 

@@ -2,8 +2,8 @@
  * PrettyPhoto v3.1.5
  *
  * WebMan Custom Skin
- * @version  1.2
  * @since    1.1
+ * @version  1.2.1
  *
  * Use these PrettyPhoto JS setup options:
  * overlay_gallery    : false,
@@ -169,7 +169,7 @@
 						}
 						.pp_webman .pp_hoverContainer a.pp_previous {float: left}
 							.pp_webman .pp_hoverContainer a:before {
-								content: 'D';
+								content: 'F';
 								display: none;
 								position: absolute;
 								width: 40px;
@@ -186,7 +186,7 @@
 								color: #000;
 							}
 							.pp_webman .pp_hoverContainer a.pp_previous:before {
-								content: 'd';
+								content: 'f';
 								left: 0;
 								right: auto;
 							}
@@ -247,12 +247,12 @@
 			html[dir='rtl'] .pp_webman .pp_hoverContainer a {float: left}
 			html[dir='rtl'] .pp_webman .pp_hoverContainer a.pp_previous {float: right}
 				html[dir='rtl'] .pp_webman .pp_hoverContainer a:before {
-					content: 'd';
+					content: 'f';
 					right: auto;
 					left: 0;
 				}
 				html[dir='rtl'] .pp_webman .pp_hoverContainer a.pp_previous:before {
-					content: 'D';
+					content: 'F';
 					right: 0;
 					left: auto;
 				}
