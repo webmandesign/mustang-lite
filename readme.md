@@ -1,10 +1,10 @@
 ## Mustang Lite
 
-**Theme URI:** http://www.webmandesign.eu/mustang-lite/
-**Author:** WebMan
-**Author URI:** http://www.webmandesign.eu/
-**License:** GNU General Public License v2 or later
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+* **Theme URI:** http://www.webmandesign.eu/mustang-lite/
+* **Author:** WebMan
+* **Author URI:** http://www.webmandesign.eu/
+* **License:** GNU General Public License v2 or later
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description
 
