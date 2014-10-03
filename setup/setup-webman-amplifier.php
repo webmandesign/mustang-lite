@@ -171,7 +171,7 @@
 				$post_types['wm_projects'] = __( 'Projects', 'wm_domain' );
 
 			//Output
-				return $post_types
+				return $post_types;
 		} // /wm_widgets_posts_post_types
 
 		add_filter( 'wmhook_widgets_wm_posts_widget_form_post_type', 'wm_widgets_posts_post_types' );
@@ -193,7 +193,7 @@
 					);
 
 			//Output
-				return $taxonomies
+				return $taxonomies;
 		} // /wm_widgets_posts_taxonomies
 
 		add_filter( 'wmhook_widgets_wm_posts_widget_form_taxonomy', 'wm_widgets_posts_taxonomies' );
@@ -213,7 +213,7 @@
 					);
 
 			//Output
-				return $defaults
+				return $defaults;
 		} // /wm_widgets_posts_instance_defaults
 
 		add_filter( 'wmhook_widgets_wm_posts_widget_defaults', 'wm_widgets_posts_instance_defaults' );
