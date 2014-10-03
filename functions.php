@@ -24,7 +24,7 @@
  * @license    GPL-2.0+
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.2.1
+ * @version    1.2.2
  */
 
 
@@ -53,7 +53,7 @@
  * @since  Mustang Lite (Force theme lite version $theme_shortname to allow upgrade to premium)
  */
 
-	$theme_shortname = 'mustang';
+	$theme_shortname = str_replace( '-lite', '', $theme_shortname );
 
 
 
@@ -77,6 +77,9 @@
 		if ( ! defined( 'WM_DEFAULT_EXCERPT_LENGTH' ) )   define( 'WM_DEFAULT_EXCERPT_LENGTH',   40                                                           ); //words count
 		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )          define( 'WM_SCRIPTS_VERSION',          trim( WM_THEME_VERSION )                                     );
 		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )         define( 'WM_WP_COMPATIBILITY',         3.8                                                          );
+
+		if ( ! defined( 'WM_LITE_THEME' ) )               define( 'WM_LITE_THEME',               true                                                         );
+		if ( ! defined( 'WM_WEBMAN_AMPLIFIER_THEME' ) )   define( 'WM_WEBMAN_AMPLIFIER_THEME',   true                                                         );
 
 	//Dir constants
 		if ( ! defined( 'WM_LANGUAGES' ) )                define( 'WM_LANGUAGES',                get_template_directory() . '/languages'                      );

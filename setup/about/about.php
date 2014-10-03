@@ -6,7 +6,7 @@
  * @subpackage  About Page
  * @copyright   2014 WebMan - Oliver Juhas
  * @since       1.0
- * @version     1.1.1
+ * @version     1.2.2
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -28,6 +28,8 @@
 
 		//Display "About" page
 			add_action( 'admin_menu', 'wm_add_about_screen' );
+		//Display "About" page admin notice
+			add_action( 'current_screen', 'wm_about_screen_notice' );
 
 
 
@@ -63,6 +65,34 @@
  */
 
 	/**
+	 * Add "About" screen notice
+	 *
+	 * @since  1.2.2
+	 */
+	if ( ! function_exists( 'wm_about_screen_notice' ) ) {
+		function wm_about_screen_notice() {
+			//Output
+				if (
+						3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) )
+						&& ! isset( $wp_customize )
+					) {
+						$screen   = get_current_screen();
+
+						if (
+								isset( $screen->id )
+								&& 'themes' === $screen->id
+							) {
+							$message = '<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '" class="button button-primary button-hero" style="text-decoration: none; float: right;" title="Go to the ' . WM_THEME_NAME . ' about page">' . WM_THEME_NAME . ' setup »</a><span style="font-size: 1.25em;">Thank you for <a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '">installing <strong>' . WM_THEME_NAME . '</strong></a> WordPress theme by <a href="' . WM_DEVELOPER_URL . '" target="_blank">WebMan</a>!</span><br /><strong>Please, set the theme up according to "<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '"><em>' . sprintf( 'About %s', WM_THEME_NAME ) . '</em></a>" page first.</strong>';
+
+							set_transient( 'wm-admin-notice', array( $message, '', 'switch_themes' ), ( 60 * 60 * 24 ) );
+						}
+				}
+		}
+	} // /wm_about_screen_notice
+
+
+
+	/**
 	 * Add "About" screen to WordPress menu
 	 */
 	if ( ! function_exists( 'wm_add_about_screen' ) ) {
@@ -81,6 +111,9 @@
 
 	/**
 	 * Render the "About" screen content
+	 *
+	 * @since    1.0
+	 * @version  1.2.2
 	 */
 	if ( ! function_exists( 'wm_about_screen' ) ) {
 		function wm_about_screen() {
@@ -107,7 +140,9 @@
 
 						<div class="wm-notes special">
 							<h3 class="mt0">Lite Version Difference</h3>
-							<p>Please note that this lite version of the <strong><?php echo str_replace( array( ' Lite', ' lite' ), '', WM_THEME_NAME ); ?></strong> theme <strong>does not</strong> provide integration with WooCommerce and bbPress plugins. For easier content building the theme supports premium Visual Composer plugin (3rd party software), Master Slider and LayerSlider plugins which are not included with the lite version. Please upgrade to premium version of the theme to get more functionality and to support WebMan.</p>
+							<p>Please note that this lite version of the <strong><?php echo str_replace( array( ' Lite', ' lite' ), '', WM_THEME_NAME ); ?></strong> theme <strong>does not</strong> provide integration with WooCommerce and bbPress plugins. For easier content building the theme supports premium Visual Composer, Master Slider and LayerSlider plugins which are not included with the lite version (all of them are 3rd party software).</p>
+							<p>Please, consider <a href="<?php echo trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-lite#comparison'; ?>" target="_blank">upgrading to premium version</a> of the theme to get more functionality and to support WebMan.</p>
+							<a href="<?php echo trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-lite#comparison'; ?>" class="button button-primary button-hero" target="_blank"><strong style="text-transform: uppercase;">Upgrade the theme &raquo;</strong></a>
 						</div>
 
 						<div class="wm-notes special">

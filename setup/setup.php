@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.1
+ * @version  1.2.2
  *
  * CONTENT:
  * - 1) Required files
@@ -48,6 +48,8 @@
 		//Theme installation
 			add_action( 'after_setup_theme',              'wm_install',       10 );
 			add_action( 'wmhook_wmamp_plugin_activation', 'wm_default_setup', 10 );
+		//Register widget areas
+			add_action( 'widgets_init', 'wm_register_widget_areas', 1 );
 		//JetPack plugin infinite scroll
 			add_action( 'after_setup_theme', 'wm_jp_infinit_scroll', 20 );
 		//Pagination fallback
@@ -147,6 +149,9 @@
 			if ( ! function_exists( 'wma_amplifier' ) ) {
 				add_filter( 'wmhook_admin_modifications_enabled', '__return_false' );
 			}
+
+		//Remove filters
+			remove_filter( 'widget_title', 'esc_html' );
 
 		/**
 		 * @since  Mustang Lite
@@ -404,7 +409,7 @@
 	 * Theme installation
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.2.2
 	 */
 	if ( ! function_exists( 'wm_install' ) ) {
 		function wm_install() {
@@ -474,20 +479,20 @@
 					) );
 
 			//Post formats
-				add_theme_support( 'post-formats', array(
+				add_theme_support( 'post-formats', apply_filters( 'wmhook_wm_install_post_formats', array(
 						'audio',
 						'gallery',
 						'link',
 						'quote',
 						'status',
 						'video',
-					) );
+					) ) );
 
 			//Custom menus
 				add_theme_support( 'menus' );
-				register_nav_menus( array(
+				register_nav_menus( apply_filters( 'wmhook_wm_install_menus', array(
 						'main' => __( 'Main navigation', 'wm_domain' ),
-					) );
+					) ) );
 
 			//Custom WP Adminbar styles
 				add_theme_support( 'admin-bar', array( 'callback' => 'wm_adminbar_css' ) );
@@ -529,10 +534,15 @@
 
 					do_action( 'wmhook_wm_install_step_1' );
 
-					//When installation done, redirect to "About" page
-						if ( ! isset( $wp_customize ) ) {
+					//When installation done, redirect to "About" page (when not Lite theme version)
+						if (
+								! ( defined( 'WM_LITE_THEME' ) && WM_LITE_THEME )
+								&& ! isset( $wp_customize )
+							) {
+
 							wp_safe_redirect( admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) );
 							die ();
+
 						}
 				}
 
@@ -1117,7 +1127,7 @@
 	 * Website HEAD
 	 *
 	 * @since    1.1
-	 * @version  1.2.1
+	 * @version  1.2.2
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
@@ -1127,28 +1137,25 @@
 				$output = array();
 
 			//Preparing output
-				$output[10] = '<!-- (c) Copyright ' . get_bloginfo( 'name' ) . ' -->';
-
 				if ( ! wm_option( 'skin-disable-responsive' ) ) {
-					$output[20] = '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
+					$output[10] = '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
 				}
 
 				if ( function_exists( 'wma_amplifier' ) ) {
-					$output[30] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
+					$output[20] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
 				}
-				$output[40] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
-				$output[50] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
+				$output[30] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
+				$output[40] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
 
 				if ( $is_IE ) {
-					$output[60]  = '<!-- IE specific -->';
-					$output[60] .= '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
-					$output[60] .= '<!--[if lt IE 9]>';
-					$output[60] .= '<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>';
-					$output[60] .= '<script>window.html5 || document.write(\'<script src="' . wm_get_stylesheet_directory_uri( 'assets/js/html5.js' ) . '"><\/script>\')</script>';
-					$output[60] .= '<![endif]-->';
+					$output[50]  = '<!-- IE specific -->';
+					$output[50] .= '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
+					$output[50] .= '<!--[if lt IE 9]>';
+					$output[50] .= '<script src="' . wm_get_stylesheet_directory_uri( 'assets/js/html5.js' ) . '</script>';
+					$output[50] .= '<![endif]-->';
 				}
 
-				$output[70] = wm_favicon();
+				$output[60] = wm_favicon();
 
 				//Filter output array
 					$output = apply_filters( 'wmhook_wm_head_output_array', $output );
@@ -2239,6 +2246,29 @@
 /**
  * 60) Others
  */
+
+	/**
+	 * Register predefined widget areas (sidebars)
+	 *
+	 * @since  1.2.2
+	 */
+	if ( ! function_exists( 'wm_register_widget_areas' ) ) {
+		function wm_register_widget_areas() {
+			foreach( wm_helper_var( 'widget-areas' ) as $area ) {
+				register_sidebar( array(
+						'name'          => $area['name'],
+						'id'            => $area['id'],
+						'description'   => $area['description'],
+						'before_widget' => $area['before_widget'],
+						'after_widget'  => $area['after_widget'],
+						'before_title'  => $area['before_title'],
+						'after_title'   => $area['after_title']
+					) );
+			}
+		}
+	} // /wm_register_widget_areas
+
+
 
 	/**
 	 * Admin body classes

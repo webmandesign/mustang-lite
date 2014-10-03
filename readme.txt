@@ -7,7 +7,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Mustang Lite WordPress Theme lets you create beautiful, professional business websites. By default you get the basic blog design which can be extended to full power of the theme with additional WebMan Amplifier plugin installation. This theme is a free, lite version of premium Mustang Multipurpose WordPress Theme by WebMan. The lite version does not support WooCommerce eshop plugin and bbPress forums plugin and also does not contain the premium page builder and sliders plugins included in the paid version. Check out themes by WebMan at www.webmandesign.eu. Thank you for using one of WebMan's themes!
+Mustang Lite WordPress Theme lets you create beautiful, professional responsive and HiDPI (Retina) ready websites. With this theme you can create also a single one-page websites with ease! Mustang Lite is suitable for creative portfolio, business and corporate website projects, personal presentations and much more. You can set a custom design with background images and colors for every section of the theme. As the theme is translation ready and supports right-to-left languages as well, you can localize it for your multilingual website. By default you get the basic blog design which can be extended to full power of the theme with WebMan Amplifier plugin activation. This theme is a free, lite version of premium Mustang Multipurpose WordPress Theme by WebMan. The differences from paid version can be found at http://www.webmandesign.eu/mustan-lite/. Check out themes by WebMan at www.webmandesign.eu. Thank you for using one of WebMan's themes!
 
 Follow WebMan on Twitter [https://twitter.com/webmandesigneu] or become a fan on Facebook [https://www.facebook.com/webmandesigneu].
 
@@ -20,6 +20,20 @@ Theme user manual with demo data at [http://www.webmandesign.eu/manual/mustang/]
 http://themedemos.webmandesign.eu/mustang/
 
 == Changelog ==
+
+= 1.2.2 =
+* ADDED: Support for WebMan Amplifier widgets
+* UPDATED: Theme description text
+* UPDATED: Removed automatic redirect to "About" page after theme activation, displaying admin notice instead
+* UPDATED: Code flexibility improvements
+* UPDATED: Framework library version 3.4
+* UPDATED: Localization files
+* FIX: Default fallback footer widgets styles
+* FIX: Removed HTML5Shiv CDN link
+* REMOVED: All the widgets - they are part of WebMan Amplifier from now on
+
+Files removed: `setup/widgets.php, setup/widgets/w-contact.php, setup/widgets/w-module.php, setup/widgets/w-posts.php, setup/widgets/w-subnav.php, setup/widgets/w-tabbed-widgets.php, setup/widgets/w-twitter.php`
+Files changed: `functions.php, style.css, sidebar-footer.php, languages/wm_domain.pot, setup/setup.php, setup/setup-webman-amplifier.php, setup/about/about.php`
 
 = 1.2.1 =
 * UPDATED: Basic icons fully GPL compatible

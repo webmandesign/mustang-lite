@@ -18,7 +18,7 @@
  * @copyright  2014 WebMan
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2.2
  */
 
 
@@ -42,6 +42,12 @@
 			'cp-projects',
 			'cp-staff',
 			'cp-testimonials',
+			'widget-contact',
+			'widget-module',
+			'widget-posts',
+			'widget-subnav',
+			'widget-tabbed-widgets',
+			'widget-twitter',
 		) ) );
 
 	//WebMan Advanced Metaboxes
@@ -54,6 +60,20 @@
 		// add_filter( 'wmhook_shortcode_text_block_content', 'wm_default_content_filters', 10 );
 	//Disable the Isotope licence purchase admin notice
 		add_filter( 'wmhook_wmamp_notice_isotope_licence', '__return_false' );
+
+
+
+
+
+	/**
+	 * Deactivate plugin when theme changed
+	 *
+	 * @since  1.2.2
+	 */
+
+		if ( ! get_transient( 'wmamp-deactivate' ) ) {
+			set_transient( 'wmamp-deactivate', true, 60 * 60 * 24 * 7 );
+		}
 
 
 
@@ -126,6 +146,77 @@
 	} // /wm_pagination_next_prev
 
 	add_filter( 'wmhook_wmamp_wma_pagination_atts_defaults', 'wm_pagination_next_prev' );
+
+
+
+
+
+/**
+ * WIDGETS
+ *
+ * @since  1.2.2
+ */
+
+	/**
+	 * Posts widget modifications
+	 */
+
+		/**
+		 * Adding custom post types
+		 *
+		 * @param  array $post_types
+		 */
+		function wm_widgets_posts_post_types( $post_types = array() ) {
+			//Preparing output
+				$post_types['wm_projects'] = __( 'Projects', 'wm_domain' );
+
+			//Output
+				return $post_types
+		} // /wm_widgets_posts_post_types
+
+		add_filter( 'wmhook_widgets_wm_posts_widget_form_post_type', 'wm_widgets_posts_post_types' );
+
+
+
+		/**
+		 * Adding taxonomies
+		 *
+		 * @param  array $taxonomies
+		 */
+		function wm_widgets_posts_taxonomies( $taxonomies = array() ) {
+			//Preparing output
+				$taxonomies['wm_projects'] = array(
+						'optgroup'     => __( 'Projects tags', 'wm_domain' ),
+						'all'          => false,
+						'hierarchical' => '0',
+						'tax_name'     => 'project_tag',
+					);
+
+			//Output
+				return $taxonomies
+		} // /wm_widgets_posts_taxonomies
+
+		add_filter( 'wmhook_widgets_wm_posts_widget_form_taxonomy', 'wm_widgets_posts_taxonomies' );
+
+
+
+		/**
+		 * Instance defaults
+		 *
+		 * @param  array $defaults
+		 */
+		function wm_widgets_posts_instance_defaults( $defaults = array() ) {
+			//Preparing output
+				$defaults['layout'] = array(
+						'post'        => 'widget',
+						'wm_projects' => 'widget',
+					);
+
+			//Output
+				return $defaults
+		} // /wm_widgets_posts_instance_defaults
+
+		add_filter( 'wmhook_widgets_wm_posts_widget_defaults', 'wm_widgets_posts_instance_defaults' );
 
 
 

@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WordPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mustang Lite v1.2\n"
+"Project-Id-Version: Mustang Lite v1.2.2\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2014-09-24 12:00:00+00:00\n"
+"POT-Creation-Date: 2014-10-03 11:30:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,1803 +13,1488 @@ msgstr ""
 
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-module.php:135
-msgid " (tags: %s)"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid " - do not use Google Font"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "\"%s\" table of contents"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/updater/update-notifier.php:1
+#: library/updater/update-notifier.php:1
 msgid "%s Theme Updates"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "%s logo"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/updater/update-notifier.php:1
+#: library/updater/update-notifier.php:1
 msgid "%s update"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "&larr; Older comments"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "(page %s)"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "(part %s)"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
-msgid "- All posts/projects -"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-module.php:114
-msgid "- Select Content Module -"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "1 column"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "1/3 sidebar"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "1/4 sidebar"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "114x114 touch icon"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "144x144 touch icon"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "2 columns"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "3 columns"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "4 columns"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "5 columns"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "57x57 touch icon"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "72x72 touch icon"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "<big>The main theme CSS stylesheet was regenerated.<br /><strong>Please refresh your web browser's and server's cache</strong> <em>(if you are using a website server caching solution)</em>.</big>"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "<h2>Audio post format</h2>Displays audio player to play your audio files. Could be used for Podcasting. Please place the <code>[wm_audio]</code> shortcode as the first thing in post content. The audio description text can follow on next line."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "<h2>Gallery post format</h2>A standard post with a gallery of images in post content. Slideshow will be displayed on blog page from the first gallery found in post content. If no gallery found, featured image is displayed.<br />You can insert a <code>&#91;gallery]</code> shortcode anywhere in the post. This shortcode will not be stripped out from the post content on the single post page."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "<h2>Link post format</h2>Promotes interesting URL links. You can set the link anywhere in the post content. The link will be emphasized when post is displayed."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "<h2>Quote post format</h2>A quotation. Please place the actual quote (blockquote) directly into post content. To set a quote source use a <code>&lt;cite></code> HTML tag."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "<h2>Status post format</h2>A short status update, similar to a Twitter status update. Please place the actual status text directly into post content area."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</code> shortcode as the first thing in post content. The video description text can follow on next line."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "<span class=\"comments-title\">Comments: </span>%s"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "<strong>Please note that this is a special slider section setup.</strong><br />This slider will be displayed above the website header area. For standard sliders please use the shortcodes directly in the page content."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "<strong>Please, note</strong> that setting the name of the existing skin will overwrite the skin file with new settings."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "<strong>Please, note</strong> that the Customizer page will reload after saving the settings and skin will be applied on front end of your website too."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "<strong>Tags:</strong> %s"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Accent color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Accent color is being used globally throughout the whole theme. All of theme design colors are being calculated automatically based on this color, so if you only want the basic theme design, just set this color. If you need to tweak the design settings, feel free to explore theme sections options below."
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:182
-msgid "Access token secret:"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:177
-msgid "Access token:"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:110
-msgid "Address:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "All <code>[wm_row]</code> (and/or <code>[vc_row]</code>) shortcodes will be treated as fullwidth sections in \"Fullwidth sections\" page layout."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
-msgid "Alphabetically"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Anchor navigation"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Archive for %s"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Archives"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Auto color treshold"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Auto color treshold is being used to automatically calculate the additional colors in the theme (such as text color from the background color). You can tweak the calculation treshold here."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Back to top of the page"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/skinning.php:1
+#: library/skinning.php:1
 msgid "Background attachment"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/skinning.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: library/skinning.php:1
+#: setup/setup-theme-options.php:1
 msgid "Background color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/skinning.php:1
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: library/skinning.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Background image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/skinning.php:1
+#: library/skinning.php:1
 msgid "Background position"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/skinning.php:1
+#: library/skinning.php:1
 msgid "Background repeat"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Basic font size"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Blog"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Blog list image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Body text font"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Borders color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
+#: setup/setup.php:1
 msgid "Boxed"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Branding"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:115
-msgid "Business hours:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/widgets/w-subnav.php:110
-msgid "By date"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/widgets/w-subnav.php:110
-msgid "By name"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "CSS3 Animations"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/skinning.php:1
+#: library/skinning.php:1
 msgid "CSS3 background size"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Categories action"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Category"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
+#: setup/setup.php:1
 msgid "Center"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Center horizontally, bottom"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Center horizontally, top"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Close search form"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Columns"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Comment navigation"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/comments.php:1
+#: comments.php:1
 msgid "Comments are closed. You can not add new comments."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/comments.php:1
+#: comments.php:1
 msgid "Comments:"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/comments.php:1
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
+#: comments.php:1
 msgid "Comments: %s"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:167
-msgid "Consumer key:"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:172
-msgid "Consumer secret:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/widgets/w-contact.php:1
-msgid "Contact"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/widgets/w-contact.php:1
-msgid "Contact information"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Contain"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Content Area"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-module.php:1
-msgid "Content Module"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-module.php:112
-msgid "Content Module to display:"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Content width"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Continue reading <span class=\"screen-reader-text\">the \"%s\" </span>&raquo;"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Count"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Cover"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Credits"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Credits Widgets"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Credits only"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Credits or copyright area in the footer. Takes up to 3 widgets. When you insert 1 widget, it will be displayed fullwidth. When 2 widgets are in the area, first is displayed on left, the second on right. In case of 3 widgets in the area, first is displayed fullwidth, second and third below, on the left and on the right."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Custom preview slider"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Custom slider (use shortcode)"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
+#: setup/setup.php:1
 msgid "Default"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-tabbed-widgets.php:1
-msgid "Default widget area for Tabbed Widgets widget."
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Design"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-subnav.php:104
-msgid "Direct parent and children only"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Disable Animate.css library"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Disable lightbox effect"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Disable main heading"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Disable responsive design"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:151
-msgid "Display Twitter user info"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:156
-msgid "Display reply tweets"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Display shadow"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-subnav.php:94
-msgid "Displays a hierarchical list of subpages and sibling pages for the current page (page submenu)."
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-module.php:94
-msgid "Displays content of the specific Content Module custom post. Please choose the Content Module below."
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-posts.php:97
-msgid "Displays list of Posts or Projects."
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:132
-msgid "Displays recent tweets from specific Twitter account. Also displays Twitter account details. Tweets are being cached to optimize the page loading speeds."
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:97
-msgid "Displays specially styled contact information. JavaScript anti-spam protection will be applied on the email address (also, email will not be displayed when JavaScript is turned off)."
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/widgets/w-module.php:1
-msgid "Displays specific Content Module post"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-tabbed-widgets.php:108
-msgid "Displays widgets from selected widget area in tabbed interface."
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Do not repeat"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:126
-msgid "Email address:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Error 404"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Exclude or use the above categories?"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Exclude posts from these categories"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Favicon ICO"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Favicon PNG (32x32)"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Favicon for Internet Explorer browsers is set in ICO format. This format can contain multiple icon sizes, please include both 16x16 and 32x32 icon version for the high DPI displays compatibility. You can use an <a href=\"http://xiconeditor.com/\" target=\"_blank\">online tool to create your ICO file</a>."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Favicons and touch icons"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Featured Products"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Featured image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Featured image will be displayed in the special slider section.<br />Set the image caption (you can use shortcodes) and set the image caption position here."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Font icons"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Font sizes"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Font subset"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Fonts"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Footer"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Footer Widgets"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Footer consists of footer widgets area and credits (copyright) widgets area. Set the footer widgets layout below and backgrounds for both footer areas."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Footer layout"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Footer shadow"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Footer widgets"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Footer widgets layout"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Footer widgets will be layed out into columns using masonry script."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Forum"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Forums Index"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
+#: setup/setup.php:1
 msgid "Fullwidth"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Fullwidth sections"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "General Sidebar"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "General blue color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "General gray color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "General green color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "General orange color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "General red color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Global colors"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Golden ratio"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Header and navigation"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Header shadow"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Heading H1 font size"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Heading H2 font size"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Heading H3 font size"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Heading H4, H5 and H6 font size"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Heading font size is counted from the basic font size. Set the percentage of the basic font size for each heading."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Headings font"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Hide main heading section"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/skinning.php:1
+#: library/skinning.php:1
 msgid "High DPI background image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "High DPI logo"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Hover title"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Icon"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-subnav.php:99
-msgid "If you leave blank, the main parent page title will be displayed."
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "If you use a special image lightbox effect plugin, you should disable the theme native effect below."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "If you wish to resize the previously uploaded images to conform the new image ratios, you can use a plugin for this. Recommended plugins are <a href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\" target=\"_blank\">Regenerate Thumbnails</a> or <a href=\"http://wordpress.org/extend/plugins/ajax-thumbnail-rebuild/\" target=\"_blank\">AJAX Thumbnail Rebuild</a>."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/admin.php:1
+#: library/admin.php:1
 msgid "Image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Image caption position"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Image ratios"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Images"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:128
-msgid "JavaScript anti-spam protection applied"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Just Next/Prev button"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Landscape 16 to 9"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Landscape 2 to 1"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Landscape 3 to 1"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Landscape 3 to 2"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Landscape 4 to 3"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-webman-amplifier.php:1
+#: setup/setup-theme-options.php:1
 msgid "Layout"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-webman-amplifier.php:1
+#: setup/setup-theme-options.php:1
 msgid "Left"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Left sidebar"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Left, bottom"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Left, center vertically"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Left, top"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Like it!"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Liked already!"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-subnav.php:1
-msgid "List of subpages"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-subnav.php:108
-msgid "List order:"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:1
-msgid "Lists posts or projects"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Load a skin"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Load more..."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Logo"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Main Heading"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Main Heading Widgets"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Main navigation"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Masonry footer layout. Set up the columns number in theme admin panel."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Menu"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-subnav.php:110
-msgid "Menu order"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Mobile width"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Monthly Archives: <strong>%s</strong>"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Move on scrolling"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-tabbed-widgets.php:1
-msgid "Multiple widgets in tabs"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:105
-msgid "Name:"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Navigation design"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Navigation padding"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Navigation padding will affect the header height and logo position."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "New skin name"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "New theme version installed!"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Newer comments &rarr;"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
-msgid "Newest first"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Next item: %s"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Next/Prev + Pagination"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "No footer"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "No item found"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "No shadow"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "No sidebar"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "No special slider"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-twitter.php:185
-msgid "No tweets."
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Number of posts"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Number of products per page"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:145
-msgid "Number of tweets to display:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
-msgid "Oldest first"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "One page"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Open extra topbar"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-posts.php:191
-#: mustang-lite/setup/widgets/w-module.php:143
-msgid "Optional CSS class:"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-posts.php:142
-msgid "Optional posts taxonomy:"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-posts.php:125
-msgid "Ordering:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Output layout"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Page layout"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/404.php:24
+#: 404.php:24
 msgid "Page not found"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Page options"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Part %"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Part %d"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Password protected"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Permalink to %s"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:121
-msgid "Phone number:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Please decide on, and set the image ratios up for different website sections right after the theme activation. If you change the image sizes later on, the settings will apply only on newly uploaded images - the images you upload after you have made an image ratio change. All previous images will keep their original sizes."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Please note that this background is only visible when using boxed theme layout (set this under \"Skin Setup\" section)."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Portrait 2 to 3"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Portrait 3 to 4"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Post options"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Post title will not be displayed."
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-posts.php:105
-msgid "Post type:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
-msgid "Posts"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:1
-msgid "Posts and Projects"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Posts categories"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-posts.php:120
-msgid "Posts count:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Posts just from these categories"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
-msgid "Posts tags"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/library/includes/controls/class-WM_Customizer_Multiselect.php:1
+#: library/includes/controls/class-WM_Customizer_Multiselect.php:1
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Previous item: %s"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Product Categories"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Product Category"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Project - Complex"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Project - Simple"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
+#: setup/setup-webman-amplifier.php:1
 msgid "Projects"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
+#: setup/setup-webman-amplifier.php:1
 msgid "Projects tags"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-posts.php:144
-msgid "Randomly"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Recent Products"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Remove section inner container"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Remove the inner Section container to make the content fill the whole section without any paddings."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Repeat (tile)"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Repeat horizontally"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Repeat vertically"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/404.php:24
+#: 404.php:24
 msgid "Return to homepage"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-webman-amplifier.php:1
+#: setup/setup-theme-options.php:1
 msgid "Right"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Right sidebar"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Right, bottom"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Right, center vertically"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Right, top"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Search"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Search for \"%s\""
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Search for..."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Search for:"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Section background video URL"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Select a footer layout"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Select a sidebar position"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Select a sidebar position or enable fullwidth sections"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Select a slider type used as a special slider above the website header"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Select a website layout for this page"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Set a special anchor navigation for this page"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Set featured image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Set optional output layout name. You can use <code>simple</code> with <em>Posts</em> and <em>Projects</em> posts."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Set optional section background video URL. Video will be played automatically in a loop."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Set special slider"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Set the Google Font to be used for website headings and body text. You can additionally set a font subset for different character lists."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Set the custom slider shortcode"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Set up image ratios for the different theme items."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Sets the number of posts listed on this blog page only. Other archives will display posts according to WordPress settings.<br />Value of \"-1\" will display all posts. When you set the value of \"0\", WordPress settings are applied."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Settings"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Shop"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-webman-amplifier.php:1
+#: setup/setup-theme-options.php:1
 msgid "Sidebar position"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Sidebar width"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Skin Setup"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Skip to content"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Skip to navigation"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Slider"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Slider shortcode"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Special Slider"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Square"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Sticky header"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Styling"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-subnav.php:1
-msgid "Submenu"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Submit"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Subnav background"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Subnav colors will be also used to style the mobile navigation."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Subnav text color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Support and troubleshooting"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-tabbed-widgets.php:1
-msgid "Tabbed Widgets"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Tag Archives: <strong>%s</strong>"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Tag archive for \"%s\""
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Text color"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Text logo font"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "The default general sidebar."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "The image will cover the column background"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/404.php:24
+#: 404.php:24
 msgid "The page you are looking for was moved, deleted or does not exist. Maybe try searching:"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "The website width is being set up for the boxed layout. The actual website content width would be the website width minus the boxed layout paddings (160px). So if you set the width of 1480, the actual website content width will be 1320px (= 1480 - 160)."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/admin.php:1
+#: library/admin.php:1
 msgid "Theme Options"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/updater/update-notifier.php:1
+#: library/updater/update-notifier.php:1
 msgid "Theme Updates"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Theme customizer"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-module.php:135
-msgid "There are no Content Modules to choose from. Please add a new Content Module first."
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "These settings will affect both Topbar Widgets and Topbar Extra Widgets areas."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "This is only relevant when using \"Fullwidth sections\" page layout."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "This slider will be displayed on projects list only, instead of featured image. Please enter the slider shortcode."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "This will display your entire forum index. No parameters to be set."
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-subnav.php:97
-#: mustang-lite/setup/widgets/w-posts.php:100
-#: mustang-lite/setup/widgets/w-twitter.php:135
-#: mustang-lite/setup/widgets/w-contact.php:100
-#: mustang-lite/setup/widgets/w-module.php:97
-msgid "Title:"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "To load a skin, select it from a dropdown and save the settings. To save a new skin, set a new skin name and save the settings."
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:163
-msgid "To set the fields below you need to <a href=\"https://dev.twitter.com/apps\" target=\"_blank\">create a Twitter Application</a>. See theme user manual for more info."
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Top Bar"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Topbar Extra Widgets"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Topbar Extra widgets"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Topbar Widgets"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-twitter.php:1
-msgid "Twitter"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:162
-msgid "Twitter API settings"
-msgstr ""
-
-#. Text in echo
-#: mustang-lite/setup/widgets/w-twitter.php:140
-msgid "Twitter username:"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "URL link"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-contact.php:117
-msgid "Use comma to separate days and times<br />(such as \"Friday, 9:00 - 17:00\")"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Use this page template to place most (or all) of your website content on a single page. Set the ID for each section of the page (apply on row shortcode) and use them in custom navigation as anchors. You can set a navigation for this page below. Once you click the navigation link, the page will scroll to the section of a specific anchor ID."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "User manual"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Views count"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/library/core.php:1
+#: library/core.php:1
 msgid "Web page was not found"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Website Background"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-webman-amplifier.php:1
+#: setup/setup-theme-options.php:1
 msgid "Website layout"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "Website width"
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-tabbed-widgets.php:123
-msgid "Widget area conflict in Tabbed Widgets."
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Widget area displayed as extra topbar. It rolls out from top of the website when a button is clicked."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Widget area displayed as topbar of the website."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Widget area displayed in the Main Heading section."
 msgstr ""
 
-#. Text in echo
-#: mustang-lite/setup/widgets/w-tabbed-widgets.php:111
-msgid "Widget area to display"
-msgstr ""
-
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Widgets and credits"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "Widgets only"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup.php:1
+#: setup/setup.php:1
 msgid "Yearly Archives: <strong>%s</strong>"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "You can choose to display all posts or posts from a specific categories only. Press [+] button to add a category and select the category name from dropdown list."
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/widgets/w-twitter.php:1
-msgid "Your recent tweets"
-msgstr ""
-
-#. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "[gallery] shortcode image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-theme-options.php:1
+#: setup/setup-theme-options.php:1
 msgid "[wm_posts] shortcode image"
 msgstr ""
 
 #. Text in function
-#: mustang-lite/setup/setup-webman-amplifier.php:1
+#: setup/setup-webman-amplifier.php:1
 msgid "bbPress Shortcode"
 msgstr ""
