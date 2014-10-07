@@ -18,7 +18,7 @@
  * @copyright  2014 WebMan
  *
  * @since    1.0
- * @version  1.2.2
+ * @version  1.2.5
  */
 
 
@@ -68,11 +68,12 @@
 	/**
 	 * Deactivate plugin when theme changed
 	 *
-	 * @since  1.2.2
+	 * @since    1.2.2
+	 * @version  1.2.5
 	 */
 
-		if ( ! get_transient( 'wmamp-deactivate' ) ) {
-			set_transient( 'wmamp-deactivate', true, 60 * 60 * 24 * 7 );
+		if ( ! get_option( 'wmamp-deactivate' ) ) {
+			update_option( 'wmamp-deactivate', true );
 		}
 
 

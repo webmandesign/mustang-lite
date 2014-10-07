@@ -21,6 +21,12 @@ http://themedemos.webmandesign.eu/mustang/
 
 == Changelog ==
 
+= 1.2.5 =
+* UPDATED: WebMan Amplifier plugin moved from "required" to "recommended"
+* FIX: Projects shortcode layout on small screens
+
+Files changed: `readme.md, assets/css/responsive.css, setup/plugins.php, setup/setup-webman-amplifier.php`
+
 = 1.2.2 =
 * ADDED: Support for WebMan Amplifier widgets
 * UPDATED: Theme description text

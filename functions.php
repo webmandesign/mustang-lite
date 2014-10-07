@@ -24,7 +24,7 @@
  * @license    GPL-2.0+
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.2.2
+ * @version    1.2.5
  */
 
 

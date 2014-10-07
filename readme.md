@@ -8,7 +8,7 @@
 
 ## Description
 
-Mustang Lite WordPress Theme lets you create beautiful, professional business websites. By default you get the basic blog design which can be extended to full power of the theme with additional WebMan Amplifier plugin installation. This theme is a free, lite version of premium Mustang Multipurpose WordPress Theme by WebMan. The lite version does not support WooCommerce eshop plugin and bbPress forums plugin and also does not contain the premium page builder and sliders plugins included in the paid version. Check out themes by WebMan at www.webmandesign.eu. Thank you for using one of WebMan's themes!
+Mustang Lite WordPress Theme lets you create beautiful, professional responsive and HiDPI (Retina) ready websites. With this theme you can create also a single one-page websites with ease! Mustang Lite is suitable for creative portfolio, business and corporate website projects, personal presentations and much more. You can set a custom design with background images and colors for every section of the theme. As the theme is translation ready and supports right-to-left languages as well, you can localize it for your multilingual website. By default you get the basic blog design which can be extended to full power of the theme with WebMan Amplifier plugin activation. This theme is a free, lite version of premium Mustang Multipurpose WordPress Theme by WebMan. The differences from paid version can be found at http://www.webmandesign.eu/mustan-lite/. Check out themes by WebMan at www.webmandesign.eu. Thank you for using one of WebMan's themes!
 
 Follow WebMan on Twitter [https://twitter.com/webmandesigneu] or become a fan on Facebook [https://www.facebook.com/webmandesigneu].
 

@@ -6,7 +6,7 @@
  * @subpackage  Plugins
  * @copyright   2014 WebMan - Oliver Juhas
  * @since       1.0
- * @version     1.2.1
+ * @version     1.2.5
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -59,9 +59,8 @@
 							'wma' => array(
 								'name'     => 'WebMan Amplifier',
 								'slug'     => 'webman-amplifier',
-								'required' => true,
+								'required' => false,
 								'version'  => '1.0.9.8',
-								// 'force_activation' => true, //Can not be used with WordPress.org repository theme
 							),
 							'ws' => array(
 								'name'     => 'WooSidebars',
