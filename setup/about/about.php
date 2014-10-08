@@ -76,7 +76,7 @@
 						3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) )
 						&& ! isset( $wp_customize )
 					) {
-						$screen   = get_current_screen();
+						$screen = get_current_screen();
 
 						if (
 								isset( $screen->id )

@@ -1151,6 +1151,9 @@
 					$output[50]  = '<!-- IE specific -->';
 					$output[50] .= '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
 					$output[50] .= '<!--[if lt IE 9]>';
+					/**
+					 * @since  Mustang Lite (Removed HTML5Shiv CDN link)
+					 */
 					$output[50] .= '<script src="' . wm_get_stylesheet_directory_uri( 'assets/js/html5.js' ) . '</script>';
 					$output[50] .= '<![endif]-->';
 				}
