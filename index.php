@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.1
+ * @version  1.2.7
  */
 
 
@@ -39,15 +39,7 @@ get_header();
 
 	<div class="content-area site-content<?php echo $sidebar['class_main']; ?>">
 
-		<?php
-
-		wmhook_entry_before();
-
-		get_template_part( 'loop', 'index' );
-
-		wmhook_entry_after();
-
-		?>
+		<?php get_template_part( 'loop', 'index' ); ?>
 
 	</div>
 

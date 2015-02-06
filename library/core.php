@@ -1910,6 +1910,7 @@
 		 *
 		 * @since    3.0
 		 * @version  3.4
+		 * @version  1.2.8
 		 *
 		 * @param    boolean $args
 		 */
@@ -1973,15 +1974,17 @@
 
 				//Output
 					//Create the theme CSS folder
-						$theme_css_dir = wp_upload_dir();
-						$theme_css_url = trailingslashit( $theme_css_dir['baseurl'] ) . 'wmtheme-' . WM_THEME_SHORTNAME;
-						$theme_css_dir = trailingslashit( $theme_css_dir['basedir'] ) . 'wmtheme-' . WM_THEME_SHORTNAME;
+						$wp_upload_dir = wp_upload_dir();
+
+						$theme_css_url = trailingslashit( $wp_upload_dir['baseurl'] ) . 'wmtheme-' . WM_THEME_SHORTNAME;
+						$theme_css_dir = trailingslashit( $wp_upload_dir['basedir'] ) . 'wmtheme-' . WM_THEME_SHORTNAME;
 
 						if ( ! wma_create_folder( $theme_css_dir ) ) {
 							set_transient( 'wmamp-admin-notice', array( "<strong>ERROR: Wasn't able to create a theme CSS folder! Contact the theme support.</strong>", 'error', 'switch_themes', 2 ), ( 60 * 60 * 48 ) );
 
 							delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-css' );
 							delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-files' );
+
 							return false;
 						}
 
@@ -1996,7 +1999,7 @@
 
 						//Store the CSS files paths and urls in DB
 							update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-css',   $global_css_url );
-							update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-files', $theme_css_dir  );
+							update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-files', str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
 
 						//Admin notice
 							set_transient( 'wmamp-admin-notice', array( $args['message_before'] . $args['message'] . $args['message_after'], '', 'switch_themes' ), ( 60 * 60 * 24 ) );
@@ -2055,6 +2058,9 @@
 
 			/**
 			 * Regenerate the CSS when theme updated
+			 *
+			 * @since    1.0
+			 * @version  1.2.8
 			 */
 			if ( ! function_exists( 'wm_theme_update_regenerate_css' ) ) {
 				function wm_theme_update_regenerate_css() {
@@ -2069,10 +2075,7 @@
 							) {
 							update_option( WM_THEME_SETTINGS_VERSION, WM_THEME_VERSION );
 
-							wm_generate_main_css( array(
-									'message_before' => '<big><strong>' . __( 'New theme version installed!', 'wm_domain' ) . '</strong></big><br />',
-									'visual_editor'  => true,
-								) );
+							wm_generate_all_css();
 						}
 				}
 			} // /wm_theme_update_regenerate_css

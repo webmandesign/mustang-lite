@@ -22,7 +22,7 @@ http://themedemos.webmandesign.eu/mustang/
 
 ## Changelog
 
-*See the `readme.txt` file.*
+*See the `changelog.md` file.*
 
 ## Documentation
 

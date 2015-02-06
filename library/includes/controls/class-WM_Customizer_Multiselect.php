@@ -9,12 +9,13 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since       3.1
+ * @version  1.2.7
  */
 
 
 
 /**
- * Multicheckbox
+ * Multiselect
  */
 class WM_Customizer_Multiselect extends WP_Customize_Control {
 
@@ -31,6 +32,6 @@ class WM_Customizer_Multiselect extends WP_Customize_Control {
 		}
 	}
 
-} // /WM_Customizer_Multicheckbox
+} // /WM_Customizer_Multiselect
 
 ?>

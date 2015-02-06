@@ -24,36 +24,8 @@
  * @license    GPL-2.0+
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.2.5
+ * @version    1.2.7
  */
-
-
-
-
-
-/**
- * Helper variables
- */
-
-	$theme_shortname = get_template();
-	$theme_data      = wp_get_theme( $theme_shortname );
-	$theme_name      = $theme_data->Name;
-	$theme_version   = $theme_data->Version;
-	$page_templates  = wp_get_theme()->get_page_templates();
-
-	if( ! $theme_version ) {
-		$theme_version = '';
-	}
-
-	$theme_shortname = str_replace( '-v' . $theme_version, '', $theme_shortname );
-
-
-
-/**
- * @since  Mustang Lite (Force theme lite version $theme_shortname to allow upgrade to premium)
- */
-
-	$theme_shortname = str_replace( '-lite', '', $theme_shortname );
 
 
 
@@ -63,10 +35,13 @@
  * Constants
  */
 
+	//Helper variables
+		$theme_data = wp_get_theme();
+
 	//Basic constants
-		if ( ! defined( 'WM_THEME_NAME' ) )               define( 'WM_THEME_NAME',               $theme_name                                                  );
-		if ( ! defined( 'WM_THEME_SHORTNAME' ) )          define( 'WM_THEME_SHORTNAME',          $theme_shortname                                             );
-		if ( ! defined( 'WM_THEME_VERSION' ) )            define( 'WM_THEME_VERSION',            $theme_version                                               );
+		if ( ! defined( 'WM_THEME_NAME' ) )               define( 'WM_THEME_NAME',               $theme_data->Name                                            );
+		if ( ! defined( 'WM_THEME_SHORTNAME' ) )          define( 'WM_THEME_SHORTNAME',          str_replace( '-lite', '', get_template() )                   );
+		if ( ! defined( 'WM_THEME_VERSION' ) )            define( 'WM_THEME_VERSION',            $theme_data->Version                                         );
 
 		if ( ! defined( 'WM_THEME_SETTINGS_PREFIX' ) )    define( 'WM_THEME_SETTINGS_PREFIX',    'wm-'                                                        );
 		if ( ! defined( 'WM_THEME_SETTINGS' ) )           define( 'WM_THEME_SETTINGS',           WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME                );
@@ -75,7 +50,7 @@
 		if ( ! defined( 'WM_THEME_SETTINGS_VERSION' ) )   define( 'WM_THEME_SETTINGS_VERSION',   WM_THEME_SETTINGS . '-version'                               );
 
 		if ( ! defined( 'WM_DEFAULT_EXCERPT_LENGTH' ) )   define( 'WM_DEFAULT_EXCERPT_LENGTH',   40                                                           ); //words count
-		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )          define( 'WM_SCRIPTS_VERSION',          trim( WM_THEME_VERSION )                                     );
+		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )          define( 'WM_SCRIPTS_VERSION',          esc_attr( trim( WM_THEME_VERSION ) )                         );
 		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )         define( 'WM_WP_COMPATIBILITY',         3.8                                                          );
 
 		if ( ! defined( 'WM_LITE_THEME' ) )               define( 'WM_LITE_THEME',               true                                                         );
@@ -83,14 +58,14 @@
 
 	//Dir constants
 		if ( ! defined( 'WM_LANGUAGES' ) )                define( 'WM_LANGUAGES',                get_template_directory() . '/languages'                      );
-		if ( ! defined( 'WM_LIBRARY_DIR' ) )              define( 'WM_LIBRARY_DIR',              trailingslashit( 'library/' )                                );
+		if ( ! defined( 'WM_LIBRARY_DIR' ) )              define( 'WM_LIBRARY_DIR',              trailingslashit( 'library' )                                 );
 
 	//Setup dir
-		if ( ! defined( 'WM_SETUP_DIR' ) )                define( 'WM_SETUP_DIR',                trailingslashit( 'setup/' )                                  );
+		if ( ! defined( 'WM_SETUP_DIR' ) )                define( 'WM_SETUP_DIR',                trailingslashit( 'setup' )                                   );
 		if ( ! defined( 'WM_SETUP' ) )                    define( 'WM_SETUP',                    trailingslashit( get_template_directory() ) . WM_SETUP_DIR   );
 		if ( ! defined( 'WM_SETUP_CHILD' ) )              define( 'WM_SETUP_CHILD',              trailingslashit( get_stylesheet_directory() ) . WM_SETUP_DIR );
-		if ( ! defined( 'WM_SKINS' ) )                    define( 'WM_SKINS',                    WM_SETUP . 'skins/'                                          );
-		if ( ! defined( 'WM_SKINS_CHILD' ) )              define( 'WM_SKINS_CHILD',              WM_SETUP_CHILD . 'skins/'                                    );
+		if ( ! defined( 'WM_SKINS' ) )                    define( 'WM_SKINS',                    trailingslashit( WM_SETUP . 'skins' )                        );
+		if ( ! defined( 'WM_SKINS_CHILD' ) )              define( 'WM_SKINS_CHILD',              trailingslashit( WM_SETUP_CHILD . 'skins' )                  );
 
 	//URL constants
 		if ( ! defined( 'WM_DEVELOPER_URL' ) )            define( 'WM_DEVELOPER_URL',            'http://www.webmandesign.eu'                                 );
@@ -98,7 +73,7 @@
 		if ( ! defined( 'WM_ONLINE_MANUAL_URL' ) )        define( 'WM_ONLINE_MANUAL_URL',        WM_DEVELOPER_URL . '/manual/' . WM_THEME_SHORTNAME . '/'     );
 
 	//Theme design constants
-		if ( ! defined( 'WM_DEFAULT_LOGO_SIZE' ) )        define( 'WM_DEFAULT_LOGO_SIZE',        '156x40'                                                     );
+		if ( ! defined( 'WM_DEFAULT_LOGO_SIZE' ) )        define( 'WM_DEFAULT_LOGO_SIZE',        '157x40'                                                     );
 		if ( ! defined( 'WM_DEFAULT_IMAGE_SIZE' ) )       define( 'WM_DEFAULT_IMAGE_SIZE',       'ratio-169'                                                  );
 		if ( ! defined( 'WM_DEFAULT_SIDEBAR_POSITION' ) ) define( 'WM_DEFAULT_SIDEBAR_POSITION', 'right'                                                      ); // none/left/right
 		if ( ! defined( 'WM_DEFAULT_SIDEBAR_WIDTH' ) )    define( 'WM_DEFAULT_SIDEBAR_WIDTH',    ' pane three; pane nine'                                     );

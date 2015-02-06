@@ -9,6 +9,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since       3.1
+ * @version  1.2.7
  */
 
 
@@ -16,7 +17,7 @@
 /**
  * Add uploaded images tab to Image control
  */
-class WM_Customize_Image extends WP_Customize_Image_Control {
+class WM_Customizer_Image extends WP_Customize_Image_Control {
 
 	/**
 	 * Adding an .ico into supported image file formats
@@ -52,6 +53,6 @@ class WM_Customize_Image extends WP_Customize_Image_Control {
 		}
 	}
 
-} // /WM_Customize_Image
+} // /WM_Customizer_Image
 
 ?>

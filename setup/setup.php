@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.2
+ * @version  1.2.8
  *
  * CONTENT:
  * - 1) Required files
@@ -637,15 +637,18 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.2.1
+	 * @version  1.2.8
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
 			//Helper variables
-				$dev_suffix  = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( '.dev' ) : ( '' );
+				$wp_upload_dir    = wp_upload_dir();
+				$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_option( 'wm-' . WM_THEME_SHORTNAME . '-files' ) );
+				$dev_suffix       = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( '.dev' ) : ( '' );
+
 				$stylesheets = array(
-						'global' => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) || ! file_exists( trailingslashit( get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-files' ) ) . 'global.css' ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/initial/global.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ) ),
-						'rtl'    => ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) || ! file_exists( trailingslashit( get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-files' ) ) . 'global.css' ) ) ? ( '' ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-rtl-css' ) ) ),
+						'global' => ( ! file_exists( $theme_upload_dir . 'global.css' ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/initial/global.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ) ),
+						'rtl'    => ( ! file_exists( $theme_upload_dir . 'global-rtl.css' ) ) ? ( '' ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-rtl-css' ) ) ),
 						'main'   => get_stylesheet_directory_uri() . '/style.css',
 						'print'  => wm_get_stylesheet_directory_uri( 'assets/css/print.css' ),
 					);
@@ -680,7 +683,6 @@
 						'wm-admin'            => array( wm_get_stylesheet_directory_uri( 'library/assets/css/admin.css' ) ),
 						'wm-admin-rtl'        => array( wm_get_stylesheet_directory_uri( 'library/assets/css/rtl-admin.css' ) ),
 						'wm-admin-wc-rtl'     => array( wm_get_stylesheet_directory_uri( 'library/assets/css/rtl-admin-woocommerce.css' ) ),
-						'wm-basic-icons'      => array( wm_get_stylesheet_directory_uri( 'assets/css/icons-basic.css' ) ),
 						'wm-theme-customizer' => array( wm_get_stylesheet_directory_uri( 'library/assets/css/theme-customizer.css' ) ),
 					//Google Fonts
 						'wm-google-fonts' => array( '//fonts.googleapis.com/css' . wm_google_fonts() ),
@@ -1151,9 +1153,6 @@
 					$output[50]  = '<!-- IE specific -->';
 					$output[50] .= '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
 					$output[50] .= '<!--[if lt IE 9]>';
-					/**
-					 * @since  Mustang Lite (Removed HTML5Shiv CDN link)
-					 */
 					$output[50] .= '<script src="' . wm_get_stylesheet_directory_uri( 'assets/js/html5.js' ) . '</script>';
 					$output[50] .= '<![endif]-->';
 				}
@@ -2223,19 +2222,22 @@
 
 		/**
 		 * Website footer custom scripts
+		 *
+		 * @since    1.0
+		 * @version  1.2.7
 		 */
 		if ( ! function_exists( 'wm_footer_custom_scripts' ) ) {
 			function wm_footer_custom_scripts() {
 				//Requirements check
 					if (
 							! is_singular()
-							|| ! $output = get_post_meta( get_the_id(), 'custom-js', true )
+							|| ! ( $output = get_post_meta( get_the_id(), 'custom-js', true ) )
 						) {
 						return;
 					}
 
 				//Helper variables
-					$output = "\r\n\r\n<!--Custom singular JS -->\r\n<script type='text/javascript'>\r\n/* <![CDATA[ */\r\n" . wp_unslash( esc_js( $output ) ) . "\r\n/* ]]> */\r\n</script>\r\n";
+					$output = "\r\n\r\n<!--Custom singular JS -->\r\n<script type='text/javascript'>\r\n/* <![CDATA[ */\r\n" . wp_unslash( esc_js( str_replace( array( "\r", "\n", "\t" ), '', $output ) ) ) . "\r\n/* ]]> */\r\n</script>\r\n";
 
 				//Output
 					echo apply_filters( 'wmhook_wm_footer_custom_scripts_output', $output );

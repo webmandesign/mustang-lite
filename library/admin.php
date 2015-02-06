@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since       3.0
- * @version     3.4
+ * @version  1.2.7
  *
  * CONTENT:
  * - 1) Required files
@@ -74,7 +74,6 @@
 		//Admin customization
 			add_action( 'admin_head', 'wm_admin_head' );
 			add_action( 'admin_enqueue_scripts', 'wm_admin_include', 998 );
-			add_action( 'admin_footer', 'wm_admin_footer_scripts' );
 		//Disable comments
 			if (
 					is_admin()
@@ -140,46 +139,6 @@
 				wp_enqueue_script( 'wm-wp-admin' );
 		}
 	} // /wm_admin_include
-
-
-
-	/**
-	 * Admin scripts in footer
-	 */
-	if ( ! function_exists( 'wm_admin_footer_scripts' ) ) {
-		function wm_admin_footer_scripts() {
-			//Helper variables
-				global $current_screen, $page_templates;
-
-				$output = '';
-
-				$remove_page_templates = apply_filters( 'wmhook_wm_admin_footer_scripts_remove_page_templates', array() );
-
-			//Preparing output
-				//Remove page templates
-					if ( ! empty( $page_templates ) && ! empty( $remove_page_templates ) ) {
-						foreach ( $page_templates as $file => $name ) {
-							if ( in_array( $file, $remove_page_templates ) ) {
-								$output .= "\r\n" . 'jQuery( "#page_template option[value=\"' . $file . '\"]" ).remove();';
-							}
-						}
-					}
-
-			//Output
-				if ( $output ) {
-					$output = '
-						<script type="text/javascript">
-						//<![CDATA[
-						jQuery(function() {
-							' . $output . '
-						});
-						//]]>
-						</script>';
-
-					echo apply_filters( 'wmhook_wm_admin_footer_scripts_output', $output );
-				}
-		}
-	} // /wm_admin_footer_scripts
 
 
 

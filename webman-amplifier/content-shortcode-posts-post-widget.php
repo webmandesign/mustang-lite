@@ -13,6 +13,9 @@
  * @subpackage  Shortcodes
  *
  * @uses        array $helper  Contains shortcode $atts array plus additional helper variables.
+ *
+ * @since    1.0
+ * @version  1.2.7
  */
 
 
@@ -55,7 +58,7 @@ if ( $helper['link'] ) {
 	<?php
 	echo wm_post_meta( apply_filters( 'wmhook_widget_posts_meta_info', array(
 			'class'       => 'wm-posts-element wm-html-element meta entry-meta',
-			'date_format' => 'd M',
+			'date_format' => trim( str_replace( array( 'Y' ), '', get_option( 'date_format' ) ), ', ' ),
 			'meta'        => array( 'date', 'comments' )
 		) ) );
 	?>

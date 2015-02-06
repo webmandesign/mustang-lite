@@ -10,6 +10,7 @@
  *
  * @since       3.0
  * @version     3.4
+ * @version  1.2.7
  *
  * CONTENT:
  * - 1) Required files
@@ -48,10 +49,17 @@
 			add_action( 'customize_register', 'wm_theme_customizer' );
 		//Enqueue styles and scripts
 			add_action( 'customize_controls_enqueue_scripts', 'wm_theme_customizer_assets' );
-		//Save skin
-			add_action( 'customize_save_last-trigger-setting', 'wm_save_skin', 10 );
 		//Regenerating main stylesheet
-			add_action( 'customize_save_last-trigger-setting', 'wm_generate_all_css', 20 );
+			add_action( 'update_option_' . WM_THEME_SETTINGS_SKIN, 'wm_generate_all_css', 10 );
+
+
+
+	/**
+	 * Filters
+	 */
+
+		//Save skin
+			add_filter( 'pre_update_option_' . WM_THEME_SETTINGS_SKIN, 'wm_save_skin', 10, 2 );
 
 
 
@@ -178,7 +186,7 @@
 	/**
 	 * Registering sections and options for WP Customizer
 	 *
-	 * @version  3.3
+	 * @version  1.2.7
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */
@@ -198,7 +206,7 @@
 				locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Radiocustom.php', true );
 				locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Slider.php',      true );
 				if ( ! wm_check_wp_version( 4 ) ) {
-					locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Textarea.php',    true );
+					locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Textarea.php',  true );
 				}
 
 
@@ -367,7 +375,7 @@
 											)
 										);
 
-										$wp_customize->add_control( new WM_Customize_Image(
+										$wp_customize->add_control( new WM_Customizer_Image(
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url]',
 												array(
@@ -389,7 +397,7 @@
 											)
 										);
 
-										$wp_customize->add_control( new WM_Customize_Image(
+										$wp_customize->add_control( new WM_Customizer_Image(
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url-hidpi]',
 												array(
@@ -631,7 +639,7 @@
 											)
 										);
 
-									$wp_customize->add_control( new WM_Customize_Image(
+									$wp_customize->add_control( new WM_Customizer_Image(
 											$wp_customize,
 											WM_THEME_SETTINGS_SKIN . '[' . $option_id . ']',
 											array(
@@ -857,6 +865,7 @@
 										$wp_customize->add_control(
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . ']',
 												array(
+													'type'        => 'textarea',
 													'label'       => $skin_option['label'],
 													'description' => $description,
 													'section'     => $customizer_section,
@@ -928,46 +937,6 @@
 
 					} // /foreach
 
-
-
-					/**
-					 * THE CODE BELOW IS REQUIRED UNTIL WORDPRESS CREATES A HOOK TRIGGERED AFTER SAVING CUSTOMIZER OPTIONS
-					 *
-					 * Last hidden setting that triggers the main CSS file regeneration.
-					 *
-					 * @link  Idea from: http://wordpress.stackexchange.com/questions/57540/wp-3-4-what-action-hook-is-called-when-theme-customisation-is-saved
-					 * @link  Suggested: http://wordpress.org/extend/ideas/topic/do-customize_save-action-hook-after-the-settings-are-saved
-					 */
-
-						/**
-						 * Start of "trigger" option
-						 */
-
-							$wp_customize->add_setting(
-									'last-trigger-setting',
-									array(
-										'type'                 => 'option',
-										'default'              => 'true',
-										'transport'            => $transport,
-										'sanitize_callback'    => 'esc_attr',
-										'sanitize_js_callback' => 'esc_attr',
-									)
-								);
-
-							$wp_customize->add_control(
-									'last-trigger-setting',
-									array(
-										'type'     => 'hidden',
-										'label'    => 'TRIGGER OPTION',
-										'section'  => $customizer_section,
-										'priority' => $priority + 999,
-									)
-								);
-
-						/**
-						 * End of "trigger" option
-						 */
-
 				} // /if skin options are non-empty array
 
 			//Assets needed for customizer preview
@@ -989,52 +958,50 @@
 	/**
 	 * Saves and loads a skin
 	 *
-	 * Creates a new skin JSON file and/or
-	 * loads a selected skin settings.
+	 * Creates a new skin JSON file and/or loads a selected skin settings.
 	 *
-	 * @version  3.4
+	 * @version  1.2.7
+	 *
+	 * @param  array $value
+	 * @param  array $old_value
 	 */
 	if ( ! function_exists( 'wm_save_skin' ) ) {
-		function wm_save_skin() {
+		function wm_save_skin( $value = array(), $old_value = array() ) {
 			//Requirements check
-				if ( ! isset( $_POST['customized'] ) ) {
-					return false;
+				if ( empty( $value ) && ! is_array( $value ) ) {
+					return $value;
 				}
 
 			//Helper variables
 				$skin_new = $skin_load = '';
-				$output   = array();
 
-				$theme_skin_dir = wp_upload_dir();
-				$theme_skin_dir = trailingslashit( $theme_skin_dir['basedir'] ) . 'wmtheme-' . WM_THEME_SHORTNAME . '/skins';
-				$theme_skin_dir = apply_filters( 'wmhook_wm_save_skin_theme_skin_dir', $theme_skin_dir );
+				$wp_upload_dir  = wp_upload_dir();
+				$theme_skin_dir = apply_filters( 'wmhook_wm_save_skin_theme_skin_dir', trailingslashit( $wp_upload_dir['basedir'] ) . 'wmtheme-' . WM_THEME_SHORTNAME . '/skins' );
 
-			//Output
-				//Get customizer $_POST values
-					$customizer_values = json_decode( wp_unslash( $_POST['customized'] ), true );
-
-				//Process the customizer values and get only those from WM_THEME_SETTINGS_SKIN
-					foreach ( $customizer_values as $key => $value ) {
-						if (
-								false !== strpos( $key, WM_THEME_SETTINGS_SKIN )
-								&& false === strpos( $key, 'custom-title-' ) //ignore Customizer sections titles
-							) {
-							$key = str_replace( array( WM_THEME_SETTINGS_SKIN, '[', ']' ), '', $key );
-							$output[ $key ] = $value;
-						}
-					}
-
+			//Preparing output
 				//Set a new skin file name
-					if (
-							isset( $output[ WM_THEME_SETTINGS_PREFIX . 'skin-new' ] )
-							&& isset( $output[ WM_THEME_SETTINGS_PREFIX . 'skin-load' ] )
-						) {
-						$skin_load = $output[ WM_THEME_SETTINGS_PREFIX . 'skin-load' ];
-						$skin_new  = sanitize_title( $output[ WM_THEME_SETTINGS_PREFIX . 'skin-new' ] );
+					//New skin
+						if ( isset( $value[ WM_THEME_SETTINGS_PREFIX . 'skin-new' ] ) ) {
+							$skin_new = trim( sanitize_title( $value[ WM_THEME_SETTINGS_PREFIX . 'skin-new' ] ) );
+							unset( $value[ WM_THEME_SETTINGS_PREFIX . 'skin-new' ] );
+						}
 
-						unset( $output[ WM_THEME_SETTINGS_PREFIX . 'skin-load' ] );
-						unset( $output[ WM_THEME_SETTINGS_PREFIX . 'skin-new' ] );
-					}
+					//Load skin
+						if ( isset( $value[ WM_THEME_SETTINGS_PREFIX . 'skin-load' ] ) ) {
+							$skin_load = trim( $value[ WM_THEME_SETTINGS_PREFIX . 'skin-load' ] );
+
+							if ( $pos = strpos( $skin_load, ( trailingslashit( WM_SETUP_DIR ) . 'skins' ) ) ) {
+								$skin_load = substr( $skin_load, $pos, -4 );
+								if ( is_child_theme() ) {
+									$skin_load = trailingslashit( get_stylesheet_directory() ) . $skin_load;
+								} else {
+									$skin_load = trailingslashit( get_template_directory() ) . $skin_load;
+								}
+								$skin_load .= 'json';
+							}
+
+							unset( $value[ WM_THEME_SETTINGS_PREFIX . 'skin-load' ] );
+						}
 
 				//Create a new skin
 					if ( $skin_new ) {
@@ -1042,42 +1009,25 @@
 						//Create the theme skins folder
 							if ( ! wma_create_folder( $theme_skin_dir ) ) {
 								set_transient( 'wmamp-admin-notice', array( "<strong>ERROR: Wasn't able to create a theme skins folder! Contact the theme support.</strong>", 'error', 'switch_themes', 2 ), ( 60 * 60 * 48 ) );
-
 								delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-skins' );
-								return false;
 							}
 
 						//Write the skin JSON file
 							$json_path = apply_filters( 'wmhook_wm_save_skin_json_path', trailingslashit( $theme_skin_dir ) . $skin_new . '.json' );
 
-							if ( is_array( $output ) && ! empty( $output ) ) {
-								$output = apply_filters( 'wmhook_wm_save_skin_output', $output );
+							$value = apply_filters( 'wmhook_wm_save_skin_output', $value );
 
-								wma_write_local_file( $json_path, json_encode( $output ) );
-
-								//Remove load/save skin names from settings in DB
-									$skin_settings = get_option( WM_THEME_SETTINGS_SKIN );
-									unset( $skin_settings[ WM_THEME_SETTINGS_PREFIX . 'skin-load' ] );
-									unset( $skin_settings[ WM_THEME_SETTINGS_PREFIX . 'skin-new' ] );
-									update_option( WM_THEME_SETTINGS_SKIN, $skin_settings );
-
+							if ( wma_write_local_file( $json_path, json_encode( $value ) ) ) {
 								update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-skins', array_unique( array( WM_SKINS, WM_SKINS_CHILD, $theme_skin_dir ) ) );
-
-								//Run additional actions
-									do_action( 'wmhook_save_skin', $skin_new, $customizer_values );
-
-								return true;
+							} else {
+								delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-skins' );
 							}
 
-						delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-skins' );
+							//Run additional actions
+								do_action( 'wmhook_save_skin', $skin_new, $value, $old_value );
 
 				//Load a selected skin
-					} elseif ( $skin_load ) {
-
-						//Check if file exists
-							if ( ! file_exists( $skin_load ) ) {
-								return false;
-							}
+					} elseif ( $skin_load && file_exists( $skin_load ) ) {
 
 						//Get the skin slug
 							$skin_slug = str_replace( array( '.json', WM_SKINS, WM_SKINS_CHILD, $theme_skin_dir ), '', $skin_load );
@@ -1090,19 +1040,17 @@
 
 						//Decoding new imported skin JSON string and converting object to array
 							if ( ! empty( $skin_load ) ) {
-								$skin_load = json_decode( trim( $skin_load ), true );
-								update_option( WM_THEME_SETTINGS_SKIN, $skin_load );
+								$value = json_decode( trim( $skin_load ), true );
 								update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-skin-used', $skin_slug );
 							}
 
 						//Run additional actions
-							do_action( 'wmhook_load_skin', $skin_load, $customizer_values );
-
-						return true;
+							do_action( 'wmhook_load_skin', $skin_load, $value, $old_value );
 
 					}
 
-				return false;
+			//Output
+				return $value;
 		}
 	} // /wm_save_skin
 
