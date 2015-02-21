@@ -10,7 +10,7 @@
  *
  * @since       3.0
  * @version     3.4
- * @version  1.2.7
+ * @version  1.2.9
  *
  * CONTENT:
  * - 1) Required files
@@ -50,7 +50,7 @@
 		//Enqueue styles and scripts
 			add_action( 'customize_controls_enqueue_scripts', 'wm_theme_customizer_assets' );
 		//Regenerating main stylesheet
-			add_action( 'update_option_' . WM_THEME_SETTINGS_SKIN, 'wm_generate_all_css', 10 );
+			add_action( 'customize_save_after', 'wm_generate_all_css', 100 );
 
 
 

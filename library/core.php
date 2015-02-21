@@ -10,6 +10,7 @@
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
  * @version    3.4
+ * @version  1.2.9.5
  *
  * CONTENT:
  * - 1) Required files
@@ -58,8 +59,6 @@
 
 		//Make sure you are using the most current stylesheet
 			add_action( 'init', 'wm_theme_update_regenerate_css' );
-		//Modifying HTML head
-			add_action( 'wp_head', 'wm_schema_org_meta' );
 		//Posts list
 			if ( function_exists( 'wma_pagination' ) ) {
 				add_action( 'wmhook_postslist_after', 'wma_pagination', 10 );
@@ -467,34 +466,6 @@
 				return apply_filters( 'wmhook_wm_seo_title_output', esc_attr( $title ) );
 		}
 	} // /wm_seo_title
-
-
-
-	/**
-	 * Schema.org markup on HTML meta
-	 *
-	 * @link  http://leaves-and-love.net/how-to-improve-wordpress-seo-with-schema-org/
-	 *
-	 * @uses  WPSEO_Frontend class (WordPress SEO by Yoast plugin)
-	 * @uses  schema.org
-	 */
-	if ( ! function_exists( 'wm_schema_org_meta' ) ) {
-		function wm_schema_org_meta() {
-			if (
-					class_exists( 'WPSEO_Frontend' )
-					&& defined( 'WMAMP_HOOK_PREFIX' )
-					&& ! apply_filters( WMAMP_HOOK_PREFIX . 'disable_schema_org', true )
-				) {
-				global $wpseo_front;
-
-				$canonical = $wpseo_front->canonical( false );
-				echo '<link itemprop="url" href="' . esc_url( $canonical, null, 'other' ) . '" />' . "\n\r";
-
-				$metadesc = $wpseo_front->metadesc( false );
-				echo '<meta itemprop="description" content="' . esc_attr( strip_tags( stripslashes( $metadesc ) ) ) . '" />' . "\n\r";
-			}
-		}
-	} // /wm_schema_org_meta
 
 
 

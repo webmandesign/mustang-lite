@@ -1,5 +1,23 @@
 # Mustang Lite Changelog
 
+## 1.2.9.5
+
+* FIX: WordPress SEO by Yoast 1.7.2+ plugin support improved
+
+#### Files changed:
+
+	library/core.php
+
+
+## 1.2.9
+
+* FIX: Aplying Customizer settings on frontend
+
+#### Files changed:
+
+	library/skinning.php
+
+
 ## 1.2.8
 
 * UPDATE: Updated plugins: Master Slider 2.9.8, Visual Composer 4.4.2
