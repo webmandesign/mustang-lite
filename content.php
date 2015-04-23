@@ -7,12 +7,12 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.7
+ * @version  1.3
  */
 
 
 
-$is_single         = ( is_home() && apply_filters( 'wmhook_enable_blog_full_posts', false ) ) ? ( true ) : ( is_singular() );
+$is_single         = ( is_home() && apply_filters( 'wmhook_enable_blog_full_posts', false ) ) ? ( true ) : ( is_single( get_the_ID() ) || is_page( get_the_ID() ) );
 $pagination_suffix = wm_paginated_suffix( 'small', 'post' );
 
 ?>

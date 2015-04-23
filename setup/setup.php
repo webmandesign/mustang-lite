@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.8
+ * @version  1.4.5
  *
  * CONTENT:
  * - 1) Required files
@@ -42,6 +42,9 @@
 	 * Actions
 	 */
 
+		//Theme upgrade action
+			add_action( 'wmhook_theme_upgrade', 'wm_generate_all_css' );
+			add_action( 'after_setup_theme', 'wm_update_legacy_options', 998 ); //@todo  Move this into 'wmhook_theme_upgrade' in the future.
 		//Styles and scripts
 			add_action( 'init',               'wm_register_assets', 10 );
 			add_action( 'wp_enqueue_scripts', 'wm_site_assets',     98 );
@@ -112,7 +115,7 @@
 		//Placeholder images
 			add_filter( 'wmhook_wm_thumb_placeholder_image', '__return_empty_string' );
 		//Navigation improvements
-			add_filter( 'nav_menu_css_class',       'wm_nav_item_classes', 10, 3 );
+			add_filter( 'nav_menu_css_class',       'wm_nav_item_classes', 10, 4 );
 			add_filter( 'walker_nav_menu_start_el', 'wm_nav_item_process', 10, 4 );
 			add_filter( 'wp_nav_menu_objects',      'wm_nav_item_position_class' );
 			add_filter( 'wmhook_wm_navigation_special_one_page_disable', '__return_true' );
@@ -185,7 +188,7 @@
 	 * Theme helper variables
 	 *
 	 * @since    1.0
-	 * @version  1.1.1
+	 * @version  1.3
 	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key Additional key if the variable is array
@@ -216,7 +219,7 @@
 								),
 							'scroll'   => array(
 									'scroll' => '<span class="scroll-option">' . __( 'Move on scrolling', 'wm_domain' ) . '</span>',
-									'fixed'  => '<span class="scroll-option">' . __( 'Fixed position', 'wm_domain'  . '</span>')
+									'fixed'  => '<span class="scroll-option">' . __( 'Fixed position', 'wm_domain' ) . '</span>',
 								),
 							'size'     => array(
 									''        => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/default.png' ) . '" class="size-image" /><span class="size-option">' . __( 'Default', 'wm_domain' ) . '</span>',
@@ -404,6 +407,36 @@
 /**
  * 30) Theme installation
  */
+
+	/**
+	 * Updating legacy theme options
+	 *
+	 * Copies a theme options from old (pre v1.4) theme options
+	 * database record to new one
+	 *
+	 * @since    1.4
+	 * @version  1.4
+	 */
+	if ( ! function_exists( 'wm_update_legacy_options' ) ) {
+		function wm_update_legacy_options() {
+			//Helper variables
+				$options_old = get_option( WM_THEME_SETTINGS . '-skin' );
+
+			//Processing
+				if ( ! empty( $options_old ) ) {
+					//Get new options - there might be some, like menu locations setup,...
+						$options_new = (array) get_option( WM_THEME_SETTINGS_SKIN );
+
+					//Update the new options - append the old ones
+						update_option( WM_THEME_SETTINGS_SKIN, array_merge( $options_new, $options_old ) );
+
+					//Delete the old option when we upgraded
+						delete_option( WM_THEME_SETTINGS . '-skin' );
+				}
+		}
+	} // /wm_update_legacy_options
+
+
 
 	/**
 	 * Theme installation
@@ -637,7 +670,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.2.8
+	 * @version  1.4
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -703,29 +736,20 @@
 
 				$register_scripts = array(
 					//Frontend
-						'wm-theme-scripts' => array(
-								'src'  => wm_get_stylesheet_directory_uri( 'assets/js' . str_replace( '.', '/', $dev_suffix ) . '/scripts' . $dev_suffix . '.js' ),
+						'wm-scripts-global' => array(
+								'src'  => wm_get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ),
 								'deps' => array( 'jquery', 'wm-imagesloaded' ),
 							),
 						'respond' => array( wm_get_stylesheet_directory_uri( 'assets/js/respond.min.js' ) ),
 					//jQuery plugins
-						'jquery-appear' => array(
-								'src'  => wm_get_stylesheet_directory_uri( 'assets/js/appear/jquery.appear.min.js' ),
-								'deps' => array( 'jquery' ),
-							),
-						'jquery-prettyphoto' => array(
-								'src'  => wm_get_stylesheet_directory_uri( 'assets/js/prettyphoto/jquery.prettyPhoto.js' ),
-								'deps' => array( 'jquery' ),
-							),
+						'jquery-appear' => array( wm_get_stylesheet_directory_uri( 'assets/js/appear/jquery.appear.min.js' ) ),
+						'jquery-prettyphoto' => array( wm_get_stylesheet_directory_uri( 'assets/js/prettyphoto/jquery.prettyPhoto.js' ) ),
 					//Backend
 						'wm-customizer' => array(
 								'src'  => wm_get_stylesheet_directory_uri( 'library/assets/js/customizer.js' ),
 								'deps' => array( 'customize-controls' ),
 							),
-						'wm-wp-admin' => array(
-								'src'  => wm_get_stylesheet_directory_uri( 'library/assets/js/wm-scripts.js' ),
-								'deps' => array( 'jquery' ),
-							),
+						'wm-wp-admin' => array( wm_get_stylesheet_directory_uri( 'library/assets/js/wm-scripts.js' ) ),
 					);
 
 				if ( ! wp_script_is( 'wm-imagesloaded', 'registered' ) ) {
@@ -735,10 +759,10 @@
 				$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', $register_scripts );
 
 				foreach ( $register_scripts as $handle => $atts ) {
-					$src       = ( isset( $atts['src'] ) ) ? ( $atts['src'] ) : ( $atts[0] );
-					$deps      = ( isset( $atts['deps'] ) ) ? ( $atts['deps'] ) : ( false );
-					$ver       = ( isset( $atts['ver'] ) ) ? ( $atts['ver'] ) : ( WM_SCRIPTS_VERSION );
-					$in_footer = ( isset( $atts['in_footer'] ) ) ? ( $atts['in_footer'] ) : ( true );
+					$src       = ( isset( $atts['src'] )       ) ? ( $atts['src']       ) : ( $atts[0]           );
+					$deps      = ( isset( $atts['deps'] )      ) ? ( $atts['deps']      ) : ( array( 'jquery' )  );
+					$ver       = ( isset( $atts['ver'] )       ) ? ( $atts['ver']       ) : ( WM_SCRIPTS_VERSION );
+					$in_footer = ( isset( $atts['in_footer'] ) ) ? ( $atts['in_footer'] ) : ( true               );
 
 					wp_register_script( $handle, $src, $deps, $ver, $in_footer );
 				}
@@ -755,6 +779,9 @@
 
 	/**
 	 * Frontend HTML head assets
+	 *
+	 * @since    1.0
+	 * @version  1.4
 	 */
 	if ( ! function_exists( 'wm_site_assets' ) ) {
 		function wm_site_assets() {
@@ -826,7 +853,7 @@
 
 				//Global theme scripts
 					$enqueue_scripts[] = 'jquery-appear';
-					$enqueue_scripts[] = 'wm-theme-scripts';
+					$enqueue_scripts[] = 'wm-scripts-global';
 
 				//IE8 responsive (unfortunatelly, no way to target IE8 only here, so including it for all IEs)
 					if ( $is_IE && ! wm_option( 'skin-disable-responsive' ) ) {
@@ -1129,7 +1156,7 @@
 	 * Website HEAD
 	 *
 	 * @since    1.1
-	 * @version  1.2.2
+	 * @version  1.3
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
@@ -1143,9 +1170,7 @@
 					$output[10] = '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
 				}
 
-				if ( function_exists( 'wma_amplifier' ) ) {
-					$output[20] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
-				}
+				// $output[20] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
 				$output[30] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
 				$output[40] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
 
@@ -1451,10 +1476,15 @@
 		 * This is global for all menus, not just main navigation.
 		 *
 		 * @since    1.0
-		 * @version  1.1.1
+		 * @version  1.3
+		 *
+		 * @param  array  $classes The CSS classes that are applied to the menu item's `<li>` element.
+		 * @param  object $item    The current menu item.
+		 * @param  array  $args    An array of wp_nav_menu() arguments.
+		 * @param  int    $depth   Depth of menu item. Used for padding. Since WordPress 4.1.
 		 */
 		if ( ! function_exists( 'wm_nav_item_classes' ) ) {
-			function wm_nav_item_classes( $classes, $item, $args ) {
+			function wm_nav_item_classes( $classes, $item, $args, $depth = 0 ) {
 				//Requirements check
 					if ( ! isset( $item->title ) ) {
 						return $classes;
@@ -1584,7 +1614,7 @@
 	 * Slider
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.4
 	 */
 	if ( ! function_exists( 'wm_section_slider' ) ) {
 		function wm_section_slider() {
@@ -1657,6 +1687,8 @@
 							if ( has_post_thumbnail( $page_id ) ) {
 
 								$attachment = get_post( get_post_thumbnail_id( $page_id ) );
+
+								$image_title = $image_alt = $image_link = $image_caption = '';
 
 								if (
 										is_object( $attachment )
@@ -2433,6 +2465,9 @@
 	/**
 	 * Sidebar setup array
 	 *
+	 * @since    1.0
+	 * @version  1.3
+	 *
 	 * @param  string $return Specify which output array key to return.
 	 * @param  array $atts
 	 */
@@ -2471,7 +2506,7 @@
 
 				if (
 						( is_archive() && apply_filters( 'wmhook_archive_disable_sidebar', false ) )
-						|| is_singular( $sidebar_none_posts )
+						|| ( is_singular( $sidebar_none_posts ) && ! is_page_template( 'home.php' ) )
 					) {
 					$defaults['position'] = 'none';
 				}
@@ -2685,7 +2720,8 @@
 	 *
 	 * This pagination function is used only if the WebMan Amplifier not active.
 	 *
-	 * @since  1.1.1
+	 * @since    1.1.1
+	 * @version  1.4
 	 */
 	if ( ! function_exists( 'wm_pagination' ) ) {
 		function wm_pagination() {
@@ -2695,10 +2731,6 @@
 				$output = '';
 
 				$pagination = array(
-						'base'      => @add_query_arg( 'paged', '%#%' ),
-						'format'    => '',
-						'current'   => max( 1, get_query_var( 'paged' ) ),
-						'total'     => $wp_query->max_num_pages,
 						'prev_text' => '&laquo;',
 						'next_text' => '&raquo;',
 					);
@@ -2727,14 +2759,6 @@
 		/**
 		 * Breadcrumb NavXT
 		 */
-
-			/**
-			 * Define to pick the plugin settings from single site when
-			 * using WordPress multisite setup.
-			 */
-			define( 'BCN_SETTINGS_FAVOR_LOCAL', true );
-
-
 
 			/**
 			 * Don't display breadcrumbs settings for posts with no single view

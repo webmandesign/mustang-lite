@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.1
+ * @version  1.4
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -243,7 +243,7 @@
 	 * Set $wm_skin_design array
 	 *
 	 * @since    1.0
-	 * @version  1.2.1
+	 * @version  1.4
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -956,7 +956,7 @@
 									'step'          => 1,
 									'customizer_js' => array(
 											'css' => array(
-													'body' => array( array( 'font-size', 'px' ) ),
+													'html, body' => array( array( 'font-size', 'px' ) ),
 												),
 										),
 								),

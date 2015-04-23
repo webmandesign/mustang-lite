@@ -1,5 +1,5 @@
 /**
- * @version  1.1.1
+ * @version  1.4
  */
 
 
@@ -104,13 +104,18 @@
 /**
  * Header
  *
- * @version  1.1
+ * @version  1.4
  */
 
 	.header {
 		position: relative;
 		width: 100%;
 		z-index: 9;
+	}
+	.header,
+	.header-wrapper {
+		-webkit-backface-visibility: hidden;
+		        backface-visibility: hidden;
 	}
 		.header-container {position: relative}
 
@@ -244,6 +249,7 @@
 				}
 					.nav-main > ul > li > .inner,
 					.nav-main > div.menu > ul > li > .inner {
+						position: relative;
 						padding: .6em 1em;
 						border-radius: 1.4em;
 						-webkit-transition: all .2s ease-in-out;
@@ -262,15 +268,18 @@
 				.nav-main .menu-item-has-children > a:after,
 				.nav-main .menu-item-has-children > span.inner:after {
 					content: 'L';
-					display: inline-block;
-					position: relative;
-					height: 8px;
-					top: -2px;
-					margin: 0 -.5em 0 .75em;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					margin: 0;
+					line-height: 1;
 					font-family: 'basic-icons';
 					font-size: 8px;
 					font-weight: 300;
 					opacity: .5;
+					-webkit-transform: translateY( -50% );
+					    -ms-transform: translateY( -50% );
+					        transform: translateY( -50% );
 				}
 
 
@@ -326,13 +335,10 @@
 				.nav-main li .menu-item-has-children > a:after,
 				.nav-main li .menu-item-has-children > span.inner:after {
 					content: 's';
-					position: absolute;
-					top: 50%;
 					right: 10px;
-					margin: -9px 0 0;
 				}
 					.nav-main li .menu-item-has-children > a,
-					.nav-main li .menu-item-has-children > span.inner {padding-right: 2em}
+					.nav-main li .menu-item-has-children > span.inner { padding-right: 2em; }
 
 
 

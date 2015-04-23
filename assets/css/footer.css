@@ -1,6 +1,8 @@
 /**
  * Footer
  *
+ * @version  1.4
+ *
  * @since  Mustang Lite (Removed WooCommerce styles)
  */
 
@@ -8,6 +10,8 @@
 		clear: both;
 		position: relative;
 		z-index: 1;
+		-webkit-backface-visibility: hidden;
+		        backface-visibility: hidden;
 	}
 		.footer-shadow {
 			position: absolute;

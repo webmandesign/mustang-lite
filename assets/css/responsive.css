@@ -1,7 +1,8 @@
 /**
  * Responsive styles
  *
- * @version  1.2.5
+ * @since    1.0
+ * @version  1.3
  *
  * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  */
@@ -180,22 +181,14 @@
 
 						/* Submenu expander */
 							#nav-main .inner > i.expander {
-								float: left;
+								float: right;
 								display: block;
 								position: relative;
 								padding: .78em;
-								margin: -.78em 0 -.78em -.78em;
+								margin: -.78em 0;
 								font-size: 1.28em;
 								opacity: .5;
 								z-index: 10;
-							}
-							#nav-main li li .inner > i.expander {
-								margin-left: -1.4em;
-								margin-right: .48em;
-							}
-							#nav-main li li li .inner > i.expander {
-								margin-left: -2.02em;
-								margin-right: .96em;
 							}
 								#nav-main .inner > i.expander.expanded {opacity: 1}
 									#nav-main .inner > i.expander.expanded:before {content: 'l'}
@@ -239,12 +232,20 @@
 								#nav-main a[class*="icon-"]:before,
 								#nav-main .inner[class*="icon-"]:before {margin-left: 0}
 
-								#nav-main li li a,
-								#nav-main li li .inner {padding-left: 1.62em}
-								#nav-main li li li a,
-								#nav-main li li li .inner {padding-left: 2.24em}
-								#nav-main li li li li a,
-								#nav-main li li li li .inner {padding-left: 2.86em}
+								#nav-main li li a:before,
+								#nav-main li li .inner:before {
+									content: '';
+									display: inline;
+									margin: 0;
+									font-family: inherit;
+								}
+
+									#nav-main li li a:before,
+									#nav-main li li .inner:before { content: '\2013\2002'; }
+									#nav-main li li li a:before,
+									#nav-main li li li .inner:before { content: '\2013\2013\2002'; }
+									#nav-main li li li li a:before,
+									#nav-main li li li li .inner:before { content: '\2013\2013\2013\2002'; }
 
 								#nav-main .menu-item-has-children > a:after,
 								#nav-main .menu-item-has-children > .inner:after {display: none}

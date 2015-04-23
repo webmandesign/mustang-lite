@@ -10,7 +10,7 @@
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
  * @version    3.4
- * @version  1.2.9.5
+ * @version  1.4
  *
  * CONTENT:
  * - 1) Required files
@@ -57,8 +57,8 @@
 	 * Actions
 	 */
 
-		//Make sure you are using the most current stylesheet
-			add_action( 'init', 'wm_theme_update_regenerate_css' );
+		//Theme upgrade action
+			add_action( 'init', 'wm_theme_upgrade' );
 		//Posts list
 			if ( function_exists( 'wma_pagination' ) ) {
 				add_action( 'wmhook_postslist_after', 'wma_pagination', 10 );
@@ -207,6 +207,9 @@
 	/**
 	 * Get specific files from specific folder(s)
 	 *
+	 * @since    1.0
+	 * @version  1.4
+	 *
 	 * @param  array $args
 	 */
 	if ( ! function_exists( 'wm_get_files' ) ) {
@@ -215,15 +218,15 @@
 				$output = array();
 
 				//Parse arguments
-					$args = wp_parse_args( $args, apply_filters( 'wmhook_wm_get_files_args', array(
+					$args = wp_parse_args( $args, (array) apply_filters( 'wmhook_wm_get_files_args', array(
 							'empty_option'    => true,
 							'file_extenstion' => 'json',
 							'folders'         => array(),
 						) ) );
 
-					$args['folders'] = array_unique( $args['folders'] );
+					$args['folders'] = array_unique( (array) $args['folders'] );
 
-				$replacements = apply_filters( 'wmhook_wm_get_files_replacements', array(
+				$replacements = (array) apply_filters( 'wmhook_wm_get_files_replacements', array(
 						'.' . $args['file_extenstion'] => '',
 						'-'                            => ' ',
 						'_'                            => ' ',
@@ -478,6 +481,9 @@
 	/**
 	 * Modify blog page query
 	 *
+	 * @since    1.0
+	 * @version  1.4
+	 *
 	 * @param  object $query WordPress posts query
 	 */
 	if ( ! function_exists( 'wm_home_query' ) ) {
@@ -493,7 +499,7 @@
 					$page_id       = get_option( 'page_for_posts' );
 					$article_count = ( wma_meta_option( 'blog-posts-count', $page_id ) ) ? ( wma_meta_option( 'blog-posts-count', $page_id ) ) : ( false );
 					$cats_action   = ( wma_meta_option( 'blog-categories-action', $page_id ) ) ? ( wma_meta_option( 'blog-categories-action', $page_id ) ) : ( 'category__in' );
-					$cats          = ( wma_meta_option( 'blog-categories', $page_id ) ) ? ( array_filter( wma_meta_option( 'blog-categories', $page_id ) ) ) : ( array() );
+					$cats          = ( wma_meta_option( 'blog-categories', $page_id ) ) ? ( array_filter( (array) wma_meta_option( 'blog-categories', $page_id ) ) ) : ( array() );
 
 					if ( 0 < count( $cats ) ) {
 						$cat_temp = array();
@@ -516,7 +522,7 @@
 							}
 						}
 
-						array_filter( $cat_temp ); //remove empty (if any)
+						array_filter( (array) $cat_temp ); //remove empty (if any)
 
 						$cats = $cat_temp;
 					}
@@ -539,6 +545,9 @@
 
 	/**
 	 * Thumbnail image
+	 *
+	 * @since    1.0
+	 * @version  1.4
 	 *
 	 * @param   array $args Heading setup arguments
 	 *
@@ -581,7 +590,7 @@
 					$attachment_title[1] = ( isset( $attachment->post_excerpt ) ) ? ( trim( strip_tags( $attachment->post_excerpt ) ) ) : ( '' );
 
 					$args['attr-img'] = wp_parse_args( $args['attr-img'], array(
-							'title' => apply_filters( 'wmhook_wm_thumb_attachment_title', esc_attr( implode( ' | ', array_filter( $attachment_title ) ) ) )
+							'title' => apply_filters( 'wmhook_wm_thumb_attachment_title', esc_attr( implode( ' | ', array_filter( (array) $attachment_title ) ) ) )
 						) );
 
 					$image = '';
@@ -784,7 +793,8 @@
 	 *
 	 * Original source code from @link wp-includes/media.php
 	 *
-	 * @version  3.1
+	 * @since    1.0
+	 * @version  1.4
 	 *
 	 * @param  string $output
 	 * @param  array  $attr
@@ -937,7 +947,7 @@
 				$title_text       = array( ucfirst( $attachment->post_title ), $attachment->post_excerpt );
 				$title_text       = apply_filters( 'wmhook_wm_shortcode_gallery_image_title_array', $title_text );
 				$title_separator  = apply_filters( 'wmhook_wm_shortcode_gallery_image_title_separator', ' | ' );
-				$title_text       = esc_attr( implode( $title_separator, array_filter( $title_text ) ) );
+				$title_text       = esc_attr( implode( $title_separator, array_filter( (array) $title_text ) ) );
 
 				$image            = '<img src="' . $image_array[0] . '" alt="' . $title_text . '" title="' . $title_text . '" />';
 				$image_link       = '<a href="' . $full_image_array[0] . '" title="' . $title_text . '">' . $image . '</a>';
@@ -1452,6 +1462,35 @@
 			return apply_filters( 'wmhook_wm_check_wp_version_output', version_compare( (float) $wp_version, $version, '>=' ) );
 		}
 	} // /wm_check_wp_version
+
+
+
+	/**
+	 * Do action on theme version change
+	 *
+	 * @since    1.4
+	 * @version  1.4
+	 */
+	if ( ! function_exists( 'wm_theme_upgrade' ) ) {
+		function wm_theme_upgrade() {
+			//Helper variables
+				$current_theme_version = get_transient( WM_THEME_SETTINGS_VERSION );
+
+			//Processing
+				if (
+						empty( $current_theme_version )
+						|| WM_THEME_VERSION != $current_theme_version
+					) {
+
+					do_action( 'wmhook_theme_upgrade' );
+
+					set_transient( WM_THEME_SETTINGS_VERSION, WM_THEME_VERSION );
+
+					delete_option( WM_THEME_SETTINGS_VERSION );
+
+				}
+		}
+	} // /wm_theme_upgrade
 
 
 
@@ -2024,32 +2063,6 @@
 					}
 				}
 			} // /wm_generate_all_css
-
-
-
-			/**
-			 * Regenerate the CSS when theme updated
-			 *
-			 * @since    1.0
-			 * @version  1.2.8
-			 */
-			if ( ! function_exists( 'wm_theme_update_regenerate_css' ) ) {
-				function wm_theme_update_regenerate_css() {
-					//Helper variables
-						$current_theme_version = get_option( WM_THEME_SETTINGS_VERSION );
-
-					//Processing
-						if (
-								$current_theme_version
-								&& WM_THEME_VERSION != $current_theme_version
-								&& wm_generate_main_css()
-							) {
-							update_option( WM_THEME_SETTINGS_VERSION, WM_THEME_VERSION );
-
-							wm_generate_all_css();
-						}
-				}
-			} // /wm_theme_update_regenerate_css
 
 
 

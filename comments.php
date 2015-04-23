@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.1
+ * @version  1.3
  */
 
 
@@ -25,7 +25,7 @@ if ( post_password_required() ) {
  * and there are some comments to display
  */
 if (
-		( is_single() || is_singular( 'wm_project' ) || is_page() )
+		( is_single( get_the_ID() ) || is_singular( 'wm_project' ) || is_page( get_the_ID() ) )
 		&& ( comments_open() || have_comments() )
 		&& ! is_attachment()
 	) {

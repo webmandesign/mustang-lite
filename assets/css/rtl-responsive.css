@@ -5,7 +5,8 @@
  *
  * @link  http://codex.wordpress.org/Right_to_Left_Language_Support
  *
- * @version  1.2
+ * @since    1.0
+ * @version  1.3
  */
 
 
@@ -57,44 +58,20 @@
 					}
 
 						/* Submenu expander */
-							#nav-main .inner > i.expander {
-								float: right;
-								margin: -.78em -.78em -.78em 0;
-							}
-							#nav-main li li .inner > i.expander {
-								margin-right: -1.4em;
-								margin-left: .48em;
-							}
-							#nav-main li li li .inner > i.expander {
-								margin-right: -2.02em;
-								margin-left: .96em;
-							}
+							#nav-main .inner > i.expander { float: left; }
 
 					#nav-main li a,
 					#nav-main li li a,
 					#nav-main li .inner {text-align: right}
-
-					#nav-main li li a,
-					#nav-main li li .inner {
-						padding-left: 1em;
-						padding-right: 1.62em;
-					}
-					#nav-main li li li a,
-					#nav-main li li li .inner {
-						padding-left: .62em;
-						padding-right: 2.24em;
-					}
-					#nav-main li li li li a,
-					#nav-main li li li li .inner {
-						padding-left: .62em;
-						padding-right: 2.86em;
-					}
 
 					#nav-main a[class*="icon-"]:before,
 					#nav-main .inner[class*="icon-"]:before {
 						margin-right: 0;
 						margin-left: .62em;
 					}
+
+						#nav-main li li a:before,
+						#nav-main li li .inner:before { margin: 0; }
 
 					/* Mobile nav button */
 						.mobile-nav,

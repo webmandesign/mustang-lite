@@ -24,7 +24,9 @@
  * @license    GPL-2.0+
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.2.7
+ *
+ * @since    1.0
+ * @version  1.4
  */
 
 
@@ -46,12 +48,12 @@
 		if ( ! defined( 'WM_THEME_SETTINGS_PREFIX' ) )    define( 'WM_THEME_SETTINGS_PREFIX',    'wm-'                                                        );
 		if ( ! defined( 'WM_THEME_SETTINGS' ) )           define( 'WM_THEME_SETTINGS',           WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME                );
 		if ( ! defined( 'WM_THEME_SETTINGS_INSTALL' ) )   define( 'WM_THEME_SETTINGS_INSTALL',   WM_THEME_SETTINGS . '-install'                               );
-		if ( ! defined( 'WM_THEME_SETTINGS_SKIN' ) )      define( 'WM_THEME_SETTINGS_SKIN',      WM_THEME_SETTINGS . '-skin'                                  );
+		if ( ! defined( 'WM_THEME_SETTINGS_SKIN' ) )      define( 'WM_THEME_SETTINGS_SKIN',      'theme_mods_' . WM_THEME_SHORTNAME                           );
 		if ( ! defined( 'WM_THEME_SETTINGS_VERSION' ) )   define( 'WM_THEME_SETTINGS_VERSION',   WM_THEME_SETTINGS . '-version'                               );
 
 		if ( ! defined( 'WM_DEFAULT_EXCERPT_LENGTH' ) )   define( 'WM_DEFAULT_EXCERPT_LENGTH',   40                                                           ); //words count
 		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )          define( 'WM_SCRIPTS_VERSION',          esc_attr( trim( WM_THEME_VERSION ) )                         );
-		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )         define( 'WM_WP_COMPATIBILITY',         3.8                                                          );
+		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )         define( 'WM_WP_COMPATIBILITY',         4.0                                                          );
 
 		if ( ! defined( 'WM_LITE_THEME' ) )               define( 'WM_LITE_THEME',               true                                                         );
 		if ( ! defined( 'WM_WEBMAN_AMPLIFIER_THEME' ) )   define( 'WM_WEBMAN_AMPLIFIER_THEME',   true                                                         );

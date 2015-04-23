@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2
+ * @version  1.4
  *
  * CONTENT:
  * - 10) Anti-spam email jQuery plugin

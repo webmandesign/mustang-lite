@@ -5,8 +5,9 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Plugins
  * @copyright   2014 WebMan - Oliver Juhas
- * @since       1.0
- * @version     1.2.8
+ *
+ * @since    1.0
+ * @version  1.4
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -60,7 +61,7 @@
 								'name'     => 'WebMan Amplifier',
 								'slug'     => 'webman-amplifier',
 								'required' => false,
-								'version'  => '1.1.2',
+								'version'  => '1.1.6',
 							),
 							'ws' => array(
 								'name'     => 'WooSidebars',
@@ -75,6 +76,11 @@
 							'ms' => array(
 								'name'     => 'Master Slider - Responsive Touch Slider',
 								'slug'     => 'master-slider',
+								'required' => false,
+							),
+							'cei' => array(
+								'name'     => 'Customizer Export/Import',
+								'slug'     => 'customizer-export-import',
 								'required' => false,
 							),
 

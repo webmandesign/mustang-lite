@@ -18,7 +18,7 @@
  * @copyright  2014 WebMan
  *
  * @since    1.0
- * @version  1.2.5
+ * @version  1.4
  */
 
 
@@ -1127,6 +1127,22 @@
 		 * Remove default Visual Composer elements (shortcodes)
 		 */
 		add_theme_support( 'webman-shortcodes', array( 'remove_vc_shortcodes' ) );
+
+
+
+		/**
+		 * Deregister VC frontend JS
+		 *
+		 * This script is not needed and causing issues.
+		 *
+		 * @since    1.4
+		 * @version  1.4
+		 */
+		function wm_deregister_visual_composer_front_js() {
+			wp_deregister_script( 'wpb_composer_front_js' );
+		} // /wm_deregister_visual_composer_front_js
+
+		add_action( 'vc_base_register_front_js', 'wm_deregister_visual_composer_front_js' );
 
 
 

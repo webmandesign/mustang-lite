@@ -1,5 +1,70 @@
 # Mustang Lite Changelog
 
+## 1.4.5
+
+* UPDATE: TGM Plugin Activation class
+* FIX: Theme update theme options transfer
+
+#### Files changed:
+
+	library/includes/class-tgm-plugin-activation.php
+	setup/setup.php
+
+
+## 1.4
+
+* ADDED: Compatibility with Customizer Export/Import plugin
+* UPDATE: Tightened security
+* UPDATE: Improved code
+* UPDATE: Compatibility with newest WebMan Amplifier plugin
+* UPDATE: Scripts: TGM Plugin Activation 2.4.1, jQuery Appear 0.3.4
+* UPDATE: Customizer and styles
+* UPDATE: Providing unpacked global scripts file
+* UPDATE: Theme upgrade actions
+* FIX: Visual Composer Prettyphoto lightbox collision
+* FIX: Flickering sticky header on webkit browsers
+* FIX: Minor style issues
+
+#### Files changed:
+
+	functions.php
+	single.php
+	assets/css/_custom-styles.php
+	assets/css/footer.css
+	assets/css/header.css
+	assets/js/scripts-global.js
+	library/admin.php
+	library/core.php
+	setup/plugins.php
+	setup/setup-theme-options.php
+	setup/setup-webman-amplifier.php
+	setup/setup.php
+
+
+## 1.3
+
+* UPDATE: Full WordPress 4.1 support
+* UPDATE: Localization files
+* UPDATE: Removed author meta tag in HTML head
+* UPDATE: Improved CSS styles code
+* UPDATE: Improved responsive menu submenu - indentation added
+* FIX: Blog page template display
+* FIX: Closing bracket in wm_helper_var()
+
+#### Files changed:
+
+	comments.php
+	content.php
+	assets/css/_custom-styles.php
+	assets/css/forms.css
+	assets/css/reset.css
+	assets/css/responsive.css
+	assets/css/rtl-responsive.css
+	assets/css/rtl.css
+	library/assets/css/rtl-admin-woocommerce.css
+	setup/setup.php
+
+
 ## 1.2.9.5
 
 * FIX: WordPress SEO by Yoast 1.7.2+ plugin support improved

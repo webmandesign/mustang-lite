@@ -5,8 +5,8 @@
  * @package    WebMan WordPress Theme Framework
  * @copyright  2014 WebMan - Oliver Juhas
  *
- * @since      1.0
- * @version    1.1.1
+ * @since    1.0
+ * @version  1.4
  */
 
 
@@ -17,7 +17,7 @@
  * Applies on custom posts that don't need a single post view.
  */
 
-	$redirects = apply_filters( 'wmhook_custom_post_redirects', array(
+	$redirects = (array) apply_filters( 'wmhook_custom_post_redirects', array(
 			'wm_logos'        => home_url(),
 			'wm_modules'      => home_url(),
 			'wm_staff'        => home_url(),

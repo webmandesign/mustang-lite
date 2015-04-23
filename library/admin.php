@@ -6,8 +6,8 @@
  * @subpackage  Admin Functions
  * @copyright   2014 WebMan - Oliver Juhas
  *
- * @since       3.0
- * @version  1.2.7
+ * @since    3.0
+ * @version  1.4
  *
  * CONTENT:
  * - 1) Required files
@@ -262,6 +262,9 @@
 	/**
 	 * Admin post list columns content
 	 *
+	 * @since    1.0
+	 * @version  1.4
+	 *
 	 * @param  array $column
 	 */
 	if ( ! function_exists( 'wm_post_columns_render' ) ) {
@@ -269,7 +272,7 @@
 			//Thumbnail renderer
 				if ( 'wmamp-thumb' === $column ) {
 
-					$size  = ( defined( 'WMAMP_HOOK_PREFIX' ) ) ? ( apply_filters( WMAMP_HOOK_PREFIX . 'cp_admin_thumb_size', 'admin-thumbnail' ) ) : ( 'thumbnail' );
+					$size  = ( class_exists( 'WM_Amplifier' ) ) ? ( apply_filters( 'wmhook_wmamp_' . 'cp_admin_thumb_size', 'admin-thumbnail' ) ) : ( 'thumbnail' );
 					$image = ( has_post_thumbnail() ) ? ( get_the_post_thumbnail( null, $size ) ) : ( '' );
 
 					$hasThumb = ( $image ) ? ( ' has-thumb' ) : ( ' no-thumb' );

@@ -5,8 +5,9 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Custom CSS Styles Generator
  * @copyright   2014 WebMan - Oliver Juhas
- * @since       1.0
- * @version     1.2
+ *
+ * @since    1.0
+ * @version  1.4
  */
 
 
@@ -15,6 +16,9 @@
 
 /**
  * Output custom skin styles
+ *
+ * @since    1.0
+ * @version  1.4
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */
@@ -68,7 +72,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 							 */
 						),
 					'text_color'     => 200,
-					'treshold'       => ( defined( 'WMAMP_HOOK_PREFIX' ) ) ? ( apply_filters( WMAMP_HOOK_PREFIX . 'wma_contrast_color' . '_default_treshold', 127 ) ) : ( 127 ),
+					'treshold'       => ( class_exists( 'WM_Amplifier' ) ) ? ( apply_filters( 'wmhook_wmamp_' . 'wma_contrast_color' . '_default_treshold', 127 ) ) : ( 127 ),
 					'visual_editor'  => $visual_editor,
 				);
 			$helper['google_fonts'][''] = '';
@@ -451,9 +455,10 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 									)
 								),
 								'topbar-' . 30 => array(
-									'selector' => array( $helper['elements']['headings'], '.topbar-extra' ),
-									'styles'   => array(
-										'color' => ( $helper['treshold'] < wma_color_brightness( wm_option( $helper['prefix'] . 'topbar-bg-color' ) ) ) ? ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-color' ), $helper['headings_color'] ) ) : ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-color' ), -$helper['headings_color'] ) ),
+									'condition' => trim( wm_option( $helper['prefix'] . 'topbar-color' ) ),
+									'selector'  => array( $helper['elements']['headings'], '.topbar-extra' ),
+									'styles'    => array(
+										'color' => ( $helper['treshold'] > wma_color_brightness( wm_option( $helper['prefix'] . 'topbar-color', 'color' ) ) ) ? ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-color' ), $helper['headings_color'] ) ) : ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-color' ), -$helper['headings_color'] ) ),
 									)
 								),
 
@@ -575,9 +580,10 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 										)
 									),
 									'topbar-extra-' . 30 => array(
-										'selector' => array( $helper['elements']['headings'], '.topbar-extra' ),
-										'styles'   => array(
-											'color' => ( $helper['treshold'] < wma_color_brightness( wm_option( $helper['prefix'] . 'topbar-extra-bg-color' ) ) ) ? ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-extra-color' ), $helper['headings_color'] ) ) : ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-extra-color' ), -$helper['headings_color'] ) ),
+										'condition' => trim( wm_option( $helper['prefix'] . 'topbar-extra-color' ) ),
+										'selector'  => array( $helper['elements']['headings'], '.topbar-extra' ),
+										'styles'    => array(
+											'color' => ( $helper['treshold'] > wma_color_brightness( wm_option( $helper['prefix'] . 'topbar-extra-color', 'color' ) ) ) ? ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-extra-color' ), $helper['headings_color'] ) ) : ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'topbar-extra-color' ), -$helper['headings_color'] ) ),
 										)
 									),
 
@@ -1120,7 +1126,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 						'fonts-body' => array(
 							'selector' => 'body',
 							'styles'   => array(
-								'font-family' => $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-body' ) ] . ', Helvetica, Arial, Verdana, sans-serif',
+								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-body' ) ] . '", Helvetica, Arial, Verdana, sans-serif',
 								'font-size'   => wm_option( $helper['prefix'] . 'font-size-body', '', 'px' ),
 							)
 						),
@@ -1133,14 +1139,14 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 						'fonts-headings' => array(
 							'selector' => '.logo.type-text, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"], blockquote',
 							'styles'   => array(
-								'font-family' => $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-headings' ) ] . ', Helvetica, Arial, Verdana, sans-serif',
+								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-headings' ) ] . '", Helvetica, Arial, Verdana, sans-serif',
 							)
 						),
 						'fonts-logo' => array(
 							'condition' => ( ! wm_option( $helper['prefix'] . 'logo' ) && wm_option( $helper['prefix'] . 'font-logo' ) ),
 							'selector'  => '.logo.type-text',
 							'styles'    => array(
-								'font-family' => $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-logo' ) ] . ', Helvetica, Arial, Verdana, sans-serif',
+								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-logo' ) ] . '", Helvetica, Arial, Verdana, sans-serif',
 							)
 						),
 
@@ -1361,16 +1367,18 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 						've-' . 'typography' => array( 'custom' => '/* Typography */' ),
 
 						've-' . 'fonts-body' => array(
-							'selector' => 'body',
-							'styles'   => array(
-								'font-family' => $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-body' ) ] . ', Helvetica, Arial, Verdana, sans-serif',
+							'condition' => wm_option( $helper['prefix'] . 'font-body' ),
+							'selector'  => 'body',
+							'styles'    => array(
+								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-body' ) ] . '", Helvetica, Arial, Verdana, sans-serif',
 								'font-size'   => wm_option( $helper['prefix'] . 'font-size-body', '', 'px' ),
 							)
 						),
 						've-' . 'fonts-headings' => array(
-							'selector' => 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"]',
-							'styles'   => array(
-								'font-family' => $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-headings' ) ] . ', Helvetica, Arial, Verdana, sans-serif',
+							'condition' => wm_option( $helper['prefix'] . 'font-headings' ),
+							'selector'  => 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"]',
+							'styles'    => array(
+								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-headings' ) ] . '", Helvetica, Arial, Verdana, sans-serif',
 							)
 						),
 

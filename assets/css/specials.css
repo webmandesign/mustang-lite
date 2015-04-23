@@ -448,7 +448,7 @@
 				.wm-button.white-transparent:active,
 				.wm-button.black-transparent:active {
 					text-transform: uppercase;
-					text-shadow: none !important;;
+					text-shadow: none !important;
 					letter-spacing: .1em;
 					background: transparent !important;
 					color: #fff !important;

@@ -6,6 +6,7 @@
  *
  * @since      3.0
  * @version    3.0
+ * @version  1.3
  */
 
 	.woocommerce table.form-table .color_box,
@@ -28,8 +29,6 @@
 	.woocommerce_options_panel select,
 	.wc-metabox-content img.ui-datepicker-trigger,
 	.woocommerce_options_panel img.ui-datepicker-trigger,
-	.woocommerce_options_panel .chosen-container-multi,
-	.chosen-container-multi .chosen-choices li,
 	.column-coupon_code .code,
 	ul.wc_coupon_list .code,
 	.woocommerce-reports-wide .postbox .chart-with-sidebar .chart-sidebar,
@@ -130,7 +129,6 @@
 		.woocommerce_options_panel legend {margin: 0 -150px 0 0}
 		img.help_tip {margin: 0 9px 0 0}
 		.woocommerce_options_panel .description {margin: 0 7px 0 0}
-		.chosen-container-multi .chosen-choices li {margin: 3px 5px 3px 0}
 		.column-coupon_code .code,
 		ul.wc_coupon_list .code {margin: 0 0 0 8px}
 
@@ -197,16 +195,5 @@
 		.wc-metaboxes-wrapper button.add_attribute,
 		.wc-metaboxes-wrapper button.add_variable_attribute,
 		.wc-metaboxes-wrapper select.attribute_taxonomy {margin: 0 6px 0 0}
-
-
-
-	/**
-	 * Chose JS layout fixes
-	 */
-
-		.chosen-container .chosen-drop {
-			left: auto;
-			right: -9999px;
-		}
 
 /* End of file */
