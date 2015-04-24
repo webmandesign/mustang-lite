@@ -1,5 +1,15 @@
 # Mustang Lite Changelog
 
+## 1.4.6
+
+* UPDATE: TGM Plugin Activation class
+
+#### Files changed:
+
+	library/includes/class-tgm-plugin-activation.php
+	setup/setup.php
+
+
 ## 1.4.5
 
 * UPDATE: TGM Plugin Activation class

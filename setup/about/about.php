@@ -82,7 +82,7 @@
 								isset( $screen->id )
 								&& 'themes' === $screen->id
 							) {
-							$message = '<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '" class="button button-primary button-hero" style="text-decoration: none; float: right;" title="Go to the ' . WM_THEME_NAME . ' about page">' . WM_THEME_NAME . ' setup »</a><span style="font-size: 1.25em;">Thank you for <a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '">installing <strong>' . WM_THEME_NAME . '</strong></a> WordPress theme by <a href="' . WM_DEVELOPER_URL . '" target="_blank">WebMan</a>!</span><br /><strong>Please, set the theme up according to "<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '"><em>' . sprintf( 'About %s', WM_THEME_NAME ) . '</em></a>" page first.</strong>';
+							$message = '<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '" class="button button-primary button-hero" style="text-decoration: none; float: right;" title="Go to the ' . WM_THEME_NAME . ' about page">' . WM_THEME_NAME . ' setup &raquo;</a><span style="font-size: 1.25em;">Thank you for <a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '">installing <strong>' . WM_THEME_NAME . '</strong></a> WordPress theme by <a href="' . WM_DEVELOPER_URL . '" target="_blank">WebMan</a>!</span><br /><strong>Please, set the theme up according to "<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '"><em>' . sprintf( 'About %s', WM_THEME_NAME ) . '</em></a>" page first.</strong>';
 
 							set_transient( 'wm-admin-notice', array( $message, '', 'switch_themes' ), ( 60 * 60 * 24 ) );
 						}
