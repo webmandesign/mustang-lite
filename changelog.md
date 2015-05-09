@@ -1,5 +1,18 @@
 # Mustang Lite Changelog
 
+## 1.4.7
+
+* UPDATE: Adding text domain to `style.css` file
+* UPDATE: Scripts: TGM Plugin Activation 2.4.2
+* FIX: Contact widget antispam on email
+
+#### Files changed:
+
+	style.css
+	assets/js/scripts-global.js
+	library/includes/class-tgm-plugin-activation.php
+
+
 ## 1.4.6
 
 * UPDATE: TGM Plugin Activation class
@@ -7,7 +20,6 @@
 #### Files changed:
 
 	library/includes/class-tgm-plugin-activation.php
-	setup/setup.php
 
 
 ## 1.4.5

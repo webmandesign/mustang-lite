@@ -5,56 +5,23 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.4.7
  *
  * CONTENT:
- * - 10) Anti-spam email jQuery plugin
- * - 20) Basics
- * - 30) Special slider
- * - 40) Header, navigation and topbar
- * - 50) Masonry footer
- * - 60) Masonry gallery
- * - 70) YouTube embed fix
- * - 80) Image lightbox
- * - 90) Tabbed widget
- * - 100) Appear animations
- * - 110) Row video background
- * - 120) Columns tweaks
+ * - 10) Basics
+ * - 20) Special slider
+ * - 30) Header, navigation and topbar
+ * - 40) Masonry footer
+ * - 50) Masonry gallery
+ * - 60) YouTube embed fix
+ * - 70) Image lightbox
+ * - 80) Tabbed widget
+ * - 90) Appear animations
+ * - 100) Row video background
+ * - 110) Columns tweaks
  */
 
 
-
-
-
-/**
- * 10) Anti-spam email jQuery plugin
- */
-
-	jQuery.fn.nospam = function( settings ) {
-
-		return this.each( function() {
-
-			var e     = null,
-			    $this = jQuery( this );
-
-			if ( jQuery( this ).is( 'a[data-address]' ) ) {
-				e = $this.data( 'address' ).split( '' ).reverse().join( '' ).replace( '[at]', '@' ).replace( /\//g, '.' );
-			} else {
-				e = $this.text().split( '' ).reverse().join( '' ).replace( '[at]', '@' ).replace( /\//g, '.' );
-			}
-
-			if ( e ) {
-				if ( $this.is( 'a[data-address]' ) ) {
-					$this.attr( 'href', 'mailto:' + e );
-					$this.text( e );
-				} else {
-					$this.text( e );
-				}
-			}
-
-		} );
-
-	};
 
 
 
@@ -63,7 +30,7 @@ jQuery( function() {
 
 
 	/**
-	 * 20) Basics
+	 * 10) Basics
 	 */
 
 		/**
@@ -91,14 +58,6 @@ jQuery( function() {
 				jQuery( '.filter-this' ).isotope( { transitionDuration : 0 } );
 
 			} // /isotope
-
-
-
-		/**
-		 * Email anti-spam protection
-		 */
-
-			jQuery( 'a.email-nospam' ).nospam();
 
 
 
@@ -180,7 +139,7 @@ jQuery( function() {
 
 
 	/**
-	 * 30) Special slider
+	 * 20) Special slider
 	 */
 
 		if ( jQuery( 'body' ).hasClass( 'slider-enabled') ) {
@@ -233,7 +192,7 @@ jQuery( function() {
 
 
 	/**
-	 * 40) Header, navigation and topbar
+	 * 30) Header, navigation and topbar
 	 */
 
 		/**
@@ -462,7 +421,7 @@ jQuery( function() {
 
 
 	/**
-	 * 50) Masonry footer
+	 * 40) Masonry footer
 	 */
 
 		if ( jQuery().masonry && 1 < jQuery( '.footer-widgets.masonry-enabled' ).data( 'columns' ) ) {
@@ -486,7 +445,7 @@ jQuery( function() {
 
 
 	/**
-	 * 60) Masonry gallery
+	 * 50) Masonry gallery
 	 */
 
 		if ( jQuery().masonry ) {
@@ -508,7 +467,7 @@ jQuery( function() {
 
 
 	/**
-	 * 70) YouTube embed fix
+	 * 60) YouTube embed fix
 	 */
 
 		jQuery( 'iframe[src*="youtube.com"]' ).each( function( item ) {
@@ -528,7 +487,7 @@ jQuery( function() {
 
 
 	/**
-	 * 80) Image lightbox
+	 * 70) Image lightbox
 	 */
 
 		if ( jQuery().prettyPhoto && jQuery( 'body' ).hasClass( 'theme-lightbox-enabled' ) ) {
@@ -573,7 +532,7 @@ jQuery( function() {
 
 
 	/**
-	 * 90) Tabbed widget
+	 * 80) Tabbed widget
 	 *
 	 * IMPORTANT: Supports only one instance of the widget on a page!
 	 */
@@ -595,7 +554,7 @@ jQuery( function() {
 
 
 	/**
-	 * 100) Appear animations
+	 * 90) Appear animations
 	 */
 
 		//Viewport animations
@@ -681,7 +640,7 @@ jQuery( function() {
 
 
 	/**
-	 * 110) Row video background
+	 * 100) Row video background
 	 */
 
 		if ( jQuery( '.wm-section > .wm-row-video' ).length ) {
@@ -727,7 +686,7 @@ jQuery( function() {
 
 
 	/**
-	 * 120) Columns tweaks
+	 * 110) Columns tweaks
 	 */
 
 		//Uniform column height
