@@ -9,8 +9,9 @@
  * @license    GPL-2.0+
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
+ *
  * @version    3.4
- * @version  1.4
+ * @version  1.5
  *
  * CONTENT:
  * - 1) Required files
@@ -82,6 +83,8 @@
 
 		//Minify CSS
 			add_filter( 'wmhook_wm_generate_main_css_output_min', 'wm_minify_css', 10 );
+		//Escape inline CSS
+			add_filter( 'wmhook_esc_css', 'wm_esc_css' );
 		//Meta title
 			add_filter( 'wp_title', 'wm_seo_title', 10, 2 );
 		//Excerpt
@@ -357,46 +360,6 @@
 
 
 
-	/**
-	 * Favicon and touch icon
-	 */
-	if ( ! function_exists( 'wm_favicon' ) ) {
-		function wm_favicon() {
-			//Helper variables
-				$output = '';
-
-			//Preparing output
-				if ( wm_option( 'skin-touch-icon-144' ) ) {
-					$output .= '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . esc_url( wm_option( 'skin-touch-icon-144' ) ) . '" /> <!-- for retina iPad -->' . "\r\n";
-				}
-				if ( wm_option( 'skin-touch-icon-114' ) ) {
-					$output .= '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . esc_url( wm_option( 'skin-touch-icon-114' ) ) . '" /> <!-- for retina iPhone -->' . "\r\n";
-				}
-				if ( wm_option( 'skin-touch-icon-72' ) ) {
-					$output .= '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . esc_url( wm_option( 'skin-touch-icon-72' ) ) . '" /> <!-- for legacy iPad -->' . "\r\n";
-				}
-				if ( wm_option( 'skin-touch-icon-57' ) ) {
-					$output .= '<link rel="apple-touch-icon-precomposed" href="' . esc_url( wm_option( 'skin-touch-icon-57' ) ) . '" /> <!-- for non-retina devices -->' . "\r\n";
-				}
-
-				if ( wm_option( 'skin-favicon-png' ) ) {
-					$output .= '<link rel="icon" type="image/png" href="' . esc_url( wm_option( 'skin-favicon-png' ) ) . '" /> <!-- standard favicon -->' . "\r\n";
-				}
-				if ( wm_option( 'skin-favicon-ico' ) ) {
-					$output .= '<link rel="shortcut icon" href="' . esc_url( wm_option( 'skin-favicon-ico' ) ) . '" /> <!-- IE favicon -->' . "\r\n";
-				}
-
-				if ( $output ) {
-					$output = "<!-- icons and favicon -->\r\n" . $output . "\r\n";
-				}
-
-			//Output
-				return apply_filters( 'wmhook_wm_favicon_output', $output );
-		}
-	} // /wm_favicon
-
-
-
 
 
 /**
@@ -482,7 +445,7 @@
 	 * Modify blog page query
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.5
 	 *
 	 * @param  object $query WordPress posts query
 	 */
@@ -528,7 +491,6 @@
 					}
 
 				//Modify the query
-					do_action( 'wmhook_wm_home_query', $query );
 
 					if ( $article_count ) {
 						$query->set( 'posts_per_page', absint( $article_count ) );
@@ -1896,22 +1858,55 @@
 		 * CSS minifier
 		 *
 		 * @since    3.0
-		 * @version  3.1
+		 * @version  1.5
 		 *
 		 * @param    string $css Code to minimize
 		 */
 		if ( ! function_exists( 'wm_minify_css' ) ) {
 			function wm_minify_css( $css ) {
+				//Requirements check
+					if (
+							! is_string( $css )
+							&& ! apply_filters( 'wmhook_wm_minify_css_disable', false )
+						) {
+						return $css;
+					}
+
 				//Praparing output
+					$css = apply_filters( 'wmhook_wm_minify_css_pre', $css );
+
 					//Remove CSS comments
 						$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
 					//Remove tabs, spaces, line breaks, etc.
-						$css = str_replace( array( "\r\n", "\r", "\n", "\t", "  ", "    " ), '', $css );
+						$css = str_replace( array( "\r\n", "\r", "\n", "\t" ), '', $css );
+						$css = str_replace( array( '  ', '   ', '    ', '     ' ), ' ', $css );
+						$css = str_replace( array( ' { ', ': ', '; }' ), array( '{', ':', '}' ), $css );
 
 				//Output
 					return apply_filters( 'wmhook_wm_minify_css_output', $css );
 			}
 		} // /wm_minify_css
+
+
+
+		/**
+		 * CSS escaping
+		 *
+		 * Use this for custom CSS output only!
+		 * Uses `esc_attr()` while keeping quote marks.
+		 *
+		 * @uses  esc_attr()
+		 *
+		 * @since    1.5
+		 * @version  1.5
+		 *
+		 * @param  string $css Code to escape
+		 */
+		if ( ! function_exists( 'wm_esc_css' ) ) {
+			function wm_esc_css( $css ) {
+				return str_replace( array( '&gt;', '&quot;', '&#039;' ), array( '>', '"', '\'' ), esc_attr( (string) $css ) );
+			}
+		} // /wm_esc_css
 
 
 

@@ -5,9 +5,11 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Main CSS Stylesheet Generator
  * @copyright   2014 WebMan - Oliver Juhas
- * @since       1.0
- * @version     1.2
+ *
  * @uses        Custom CSS Styles Generator
+ *
+ * @since    1.0
+ * @version  1.5
  */
 
 
@@ -20,13 +22,12 @@
 
 	$output = '';
 
-	$wm_css_content      = array();
-	$wm_theme_responsive = ( ! wm_option( 'skin-disable-responsive' ) ) ? ( 'responsive' ) : ( 'static' );
-	$wm_theme_css_files  = array(
+	$wm_css_content     = array();
+	$wm_theme_css_files = array(
 			10   => 'reset',
 			20   => 'icons-basic',
 			30   => 'core',
-			40   => 'columns-' . $wm_theme_responsive,
+			40   => 'columns',
 			50   => 'typography',
 			60   => 'wp-styles',
 			70   => 'forms',
@@ -44,13 +45,9 @@
 			190  => 'ltr-borders',
 			200  => 'animate',
 			210  => 'specials',
+			400  => 'responsive',
 			1000 => 'high-dpi',
 		);
-
-		//Responsive support
-			if ( 'responsive' === $wm_theme_responsive ) {
-				$wm_theme_css_files[400] = 'responsive';
-			}
 
 		//RTL languages support
 			if ( is_rtl() ) {
@@ -162,6 +159,6 @@
  * Output
  */
 
-	echo $output;
+	echo apply_filters( 'wmhook_esc_css', $output );
 
 ?>

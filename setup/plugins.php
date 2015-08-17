@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.5
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -61,8 +61,9 @@
 								'name'     => 'WebMan Amplifier',
 								'slug'     => 'webman-amplifier',
 								'required' => false,
-								'version'  => '1.1.6',
+								'version'  => '1.2.4',
 							),
+
 							'ws' => array(
 								'name'     => 'WooSidebars',
 								'slug'     => 'woosidebars',
@@ -71,11 +72,6 @@
 							'bnxt' => array(
 								'name'     => 'Breadcrumb NavXT',
 								'slug'     => 'breadcrumb-navxt',
-								'required' => false,
-							),
-							'ms' => array(
-								'name'     => 'Master Slider - Responsive Touch Slider',
-								'slug'     => 'master-slider',
 								'required' => false,
 							),
 							'cei' => array(

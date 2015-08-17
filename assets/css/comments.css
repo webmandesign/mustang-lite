@@ -1,5 +1,7 @@
 /**
  * Comments
+ *
+ * @version  1.5
  */
 
 	.comments-area {
@@ -90,7 +92,12 @@
 			.comment-author {float: left}
 			.bypostauthor .comment-author .fn {
 				padding: 0 .5em;
-				background: {{bg-color-brighter}};
+				/*(*/
+				background: #f6f6f6;
+				/*)*/
+				/*//
+				background: ___bg_color_brighter;
+				//*/
 				border-radius: 4px;
 			}
 

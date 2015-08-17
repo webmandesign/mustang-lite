@@ -3,8 +3,8 @@
 * **Theme URI:** http://www.webmandesign.eu/mustang-lite/
 * **Author:** WebMan
 * **Author URI:** http://www.webmandesign.eu/
-* **License:** GNU General Public License v2 or later
-* **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+* **License:** GNU General Public License v3
+* **License URI:** http://www.gnu.org/licenses/gpl-3.0.html
 
 ## Description
 
@@ -44,11 +44,6 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 git.io/normalize
 
-**HTML5 Shiv**
-Copyright (c) 2014 Alexander Farkas
-Licensed under MIT/GPL2
-https://github.com/aFarkas/html5shiv
-
 **imagesLoaded**
 Copyright (c) 2014 Tomas Sardyha (@Darsain) and David DeSandro (@desandro)
 Licensed under the MIT license - http://opensource.org/licenses/MIT
@@ -69,11 +64,6 @@ http://www.no-margin-for-errors.com
 Copyright (c) 2008-2009 Mika Tuupola
 Licensed under the MIT license
 http://www.appelsiini.net/projects/viewport
-
-**Respond.js**
-Copyright 2014 Scott Jehl
-Licensed under MIT
-http://j.mp/respondjs
 
 **Fontello font icons**
 Please see assets/font/basic-icons/LICENCE.txt file for more info.

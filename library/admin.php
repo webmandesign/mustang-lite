@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.0
- * @version  1.4
+ * @version  1.5
  *
  * CONTENT:
  * - 1) Required files
@@ -83,8 +83,13 @@
 			}
 		//Display admin notice
 			add_action( 'admin_notices', 'wm_admin_notice' );
-		//Admin bar link
-			add_action( 'admin_bar_menu', 'wm_theme_options_admin_bar', 998 );
+		//Posts list table
+			//Posts
+				add_action( 'manage_post_posts_columns',       'wm_post_columns_register', 10    );
+				add_action( 'manage_post_posts_custom_column', 'wm_post_columns_render',   10, 2 );
+			//Pages
+				add_action( 'manage_pages_columns',            'wm_post_columns_register', 10    );
+				add_action( 'manage_pages_custom_column',      'wm_post_columns_render',   10, 2 );
 
 
 
@@ -101,13 +106,7 @@
 			add_filter( 'login_headertitle', 'wm_login_headertitle' );
 			add_filter( 'login_headerurl', 'wm_login_headerurl' );
 		//Admin customization
-			if ( is_admin() ) {
-				add_filter( 'admin_footer_text', 'wm_admin_footer' );
-				add_filter( 'manage_post_posts_columns', 'wm_post_columns_register' );
-				add_filter( 'manage_post_posts_custom_column', 'wm_post_columns_render', 10 );
-				add_filter( 'manage_pages_columns', 'wm_post_columns_register' );
-				add_filter( 'manage_pages_custom_column', 'wm_post_columns_render', 10 );
-			}
+			add_filter( 'admin_footer_text', 'wm_admin_footer' );
 		//User profile
 			add_filter( 'user_contactmethods', 'wm_user_contact_methods' );
 
@@ -193,6 +192,9 @@
 
 	/**
 	 * Admin HTML head
+	 *
+	 * @since    1.0
+	 * @version  1.5
 	 */
 	if ( ! function_exists( 'wm_admin_head' ) ) {
 		function wm_admin_head() {
@@ -208,30 +210,6 @@
 						$output .= "\r\n" . '.row-actions .view, #view-post-btn, #preview-action {display: none}';
 					}
 
-				//Homepage and front page colorize
-					if ( 'edit-page' == $current_screen->id ) {
-						$output .= '.hentry.post-' . get_option( 'page_on_front' ) . ' {background: #d7eef4}' . "\r\n" . '.hentry.post-' . get_option( 'page_for_posts' ) . ' {background: #d7f4e3}' . "\r\n";
-					}
-
-				//WooCommerce pages colorize
-					if (
-							class_exists( 'Woocommerce' )
-							&& function_exists( 'wc_get_page_id' )
-							&& 'edit-page' == $current_screen->id
-						) {
-						$output .= //"Products" WC settings tab
-						           '.hentry.post-' . wc_get_page_id( 'shop' )       . ' .check-column {background: #CC99C2}' . "\r\n" .
-						           //"Checkout" WC settings tab
-						           '.hentry.post-' . wc_get_page_id( 'cart' )       . ' .check-column {background: #CC99C2}' . "\r\n" .
-						           '.hentry.post-' . wc_get_page_id( 'checkout' )   . ' .check-column {background: #CC99C2}' . "\r\n" .
-						           '.hentry.post-' . wc_get_page_id( 'terms' )      . ' .check-column {background: #CC99C2}' . "\r\n" .
-						           //"Accounts" WC settings tab
-						           '.hentry.post-' . wc_get_page_id( 'myaccount' )  . ' .check-column {background: #CC99C2}' . "\r\n" .
-						           //Other WC pages
-						           '.hentry.post-' . wc_get_page_id( 'view_order' ) . ' .check-column {background: #CC99C2}' . "\r\n" .
-						           '.hentry.post-' . wc_get_page_id( 'logout' )     . ' .check-column {background: #CC99C2}' . "\r\n";
-					}
-
 			//Output
 				if ( $output ) {
 					echo apply_filters( 'wmhook_wm_admin_head_output', '<style type="text/css">' . "\r\n" . $output . '</style>' . "\r\n" );
@@ -244,16 +222,19 @@
 	/**
 	 * Admin post list columns
 	 *
+	 * @since    1.0
+	 * @version  1.5
+	 *
 	 * @param  array $columns
 	 */
 	if ( ! function_exists( 'wm_post_columns_register' ) ) {
 		function wm_post_columns_register( $columns ) {
 			//Helper variables
-				$add                = array_slice( $columns, 0, 1 );
+				$add                = array_slice( $columns, 0, 2 );
 				$add['wmamp-thumb'] = __( 'Image', 'wm_domain' );
 
 			//Output
-				return apply_filters( 'wmhook_wm_post_columns_register_output', array_merge( $add, array_slice( $columns, 1 ) ) );
+				return apply_filters( 'wmhook_wm_post_columns_register_output', array_merge( $add, array_slice( $columns, 2 ) ) );
 		}
 	} // /wm_post_columns_register
 
@@ -263,12 +244,13 @@
 	 * Admin post list columns content
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.5
 	 *
-	 * @param  array $column
+	 * @param  string $column
+	 * @param  absint $post_id
 	 */
 	if ( ! function_exists( 'wm_post_columns_render' ) ) {
-		function wm_post_columns_render( $column ) {
+		function wm_post_columns_render( $column, $post_id ) {
 			//Thumbnail renderer
 				if ( 'wmamp-thumb' === $column ) {
 
@@ -353,49 +335,6 @@
 /**
  * 60) Other functions
  */
-
-	/**
-	 * Adds a Theme Options links to WordPress admin bar
-	 */
-	if ( ! function_exists( 'wm_theme_options_admin_bar' ) ) {
-		function wm_theme_options_admin_bar() {
-			//Requirements check
-				if ( ! current_user_can( 'switch_themes' ) ) {
-					return;
-				}
-
-			//Helper variables
-				global $wp_admin_bar;
-
-				//Requirements check
-					if ( ! is_admin_bar_showing() ) {
-						return;
-					}
-
-				$submenu = apply_filters( 'wmhook_wm_theme_options_admin_bar_submenu', array() );
-
-			//Add admin bar links
-				$wp_admin_bar->add_menu( apply_filters( 'wmhook_wm_theme_options_admin_bar_parent', array(
-						'id'    => 'wm_theme_options',
-						'title' => __( 'Theme Options', 'wm_domain' ),
-						'href'  => admin_url( 'customize.php' )
-					) ) );
-
-				//Submenu items
-					if ( is_array( $submenu ) && ! empty( $submenu ) ) {
-						foreach ( $submenu as $title => $url ) {
-							$wp_admin_bar->add_menu( apply_filters( 'wmhook_wm_theme_options_admin_bar_child_wm_theme_options-' . sanitize_title( $title ), array(
-									'parent' => 'wm_theme_options',
-									'id'     => WM_THEME_SHORTNAME . '_theme_options-' . sanitize_title( $title ),
-									'title'  => $title,
-									'href'   => $url,
-								) ) );
-						}
-					}
-		}
-	} // /wm_theme_options_admin_bar
-
-
 
 	/**
 	 * WordPress admin notices

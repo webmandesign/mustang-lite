@@ -5,10 +5,12 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Main CSS Stylesheet Generator
  * @copyright   2014 WebMan - Oliver Juhas
- * @since       1.0
- * @version     1.2
+ *
  * @uses        Custom CSS Styles Generator
  * @uses        require() instead of require_once() due to previous inclusion of files when building global CSS stylesheet
+ *
+ * @since    1.0
+ * @version  1.5
  */
 
 
@@ -21,17 +23,11 @@
 
 	$output = '';
 
-	$wm_css_content      = array();
-	$wm_theme_responsive = ( ! wm_option( 'skin-disable-responsive' ) ) ? ( 'responsive' ) : ( 'static' );
-	$wm_theme_css_files  = array(
+	$wm_css_content     = array();
+	$wm_theme_css_files = array(
 			10  => 'rtl',
 			20  => 'rtl-responsive',
 		);
-
-		//Responsive support
-			if ( 'static' === $wm_theme_responsive ) {
-				unset( $wm_theme_css_files[20] );
-			}
 
 
 
@@ -124,6 +120,6 @@
  * Output
  */
 
-	echo $output;
+	echo apply_filters( 'wmhook_esc_css', $output );
 
 ?>

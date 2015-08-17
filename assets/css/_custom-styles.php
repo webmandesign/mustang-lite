@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.5
  */
 
 
@@ -18,7 +18,7 @@
  * Output custom skin styles
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.5
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */
@@ -49,7 +49,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 									'border-left'  => '.wm-call-to-action.cta-button-{p}',
 									'hover-active' => '.wm-button{p}:hover, button{p}:hover, input[type="button"]{p}:hover, input[type="submit"]{p}:hover, .wm-button{p}:active, button{p}:active, input[type="button"]{p}:active, input[type="submit"]{p}:active',
 								),
-							'forms'       => '{p} input[type="date"], {p} input[type="email"], {p} input[type="file"], {p} input[type="number"], {p} input[type="search"], {p} input[type="password"], {p} input[type="text"], {p} input[type="url"], {p} select, {p} textarea',
+							'forms'       => '{p} input[type="date"], {p} input[type="email"], {p} input[type="file"], {p} input[type="number"], {p} input[type="search"], {p} input[type="password"], {p} input[type="text"], {p} input[type="url"], {p} input[type="tel"], {p} select, {p} textarea',
 							'headings'    => '{p} h1, {p} h2, {p} h3, {p} h4, {p} h5, {p} h6, {p} .h1, {p} .h2, {p} .h3, {p} .h4, {p} .h5, {p} .h6, {p} [class*="heading-style-"], {p} .no-icon-background .wm-iconbox-module .wm-content-module-element.image, {p} .no-icon-bg .wm-iconbox-module .wm-content-module-element.image',
 							'pagination'  => array(
 									/**
@@ -1137,6 +1137,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 								)
 							),
 						'fonts-headings' => array(
+							'condition' => wm_option( $helper['prefix'] . 'font-headings' ),
 							'selector' => '.logo.type-text, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"], blockquote',
 							'styles'   => array(
 								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-headings' ) ] . '", Helvetica, Arial, Verdana, sans-serif',

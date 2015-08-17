@@ -1,14 +1,21 @@
 /**
  * Borders
  *
- * @version  1.1
+ * @version  1.5
  *
  * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  */
 
 	.no-border {border: 0 !important}
 
-	.content-section {border-color: {{border-color}};} /* default cotnent border color */
+	.content-section {
+		/*(*/
+		border-color: #e3e3e3;
+		/*)*/
+		/*//
+		border-color: ___border_color;
+		//*/
+	}
 
 
 
@@ -40,7 +47,7 @@
 		.sidebar > .widget,
 		.widget .tagcloud a,
 		.lie8 .nav-main li ul {
-			border: 1px solid {{border-color}};
+			border: 1px solid;
 			border-color: inherit;
 		}
 
@@ -59,7 +66,7 @@
 		.wm-tabs.layout-right .wm-tab-links li:first-child,
 		.wm-price-features li, .wm-price-feature-row,
 		.post-table-of-contents {
-			border-top: 1px solid {{border-color}};
+			border-top: 1px solid;
 			border-color: inherit;
 		}
 
@@ -67,7 +74,7 @@
 			.comment-list,
 			.comment-list .children,
 			.wm-testimonials .source {
-				border-top: 1px dashed {{border-color}};
+				border-top: 1px dashed;
 				border-color: inherit;
 			}
 
@@ -84,20 +91,20 @@
 		.wm-price.type-legend h3.wm-price-caption, .wm-price.type-legend .wm-price-features ul,
 		.wm-separator-heading .pattern-holder:before,
 		.list-articles .entry-header .entry-meta + .entry-meta {
-			border-top: 1px solid {{border-color}};
-			border-bottom: 1px solid {{border-color}};
+			border-top: 1px solid;
+			border-bottom: 1px solid;
 			border-color: inherit;
 		}
 
 		/* Dotted */
 			.wm-divider.type-dotted {
-				border-top: 2px dotted {{border-color}};
+				border-top: 2px dotted;
 				border-color: inherit;
 			}
 
 		/* Dashed */
 			.wm-divider.type-dashed {
-				border-top: 2px dashed {{border-color}};
+				border-top: 2px dashed;
 				border-color: inherit;
 			}
 
@@ -117,7 +124,7 @@
 		.wm-tabs .wm-tour-nav.bottom,
 		.wm-posts-wm_staff .title,
 		.widget-heading {
-			border-bottom: 1px solid {{border-color}};
+			border-bottom: 1px solid;
 			border-color: inherit;
 		}
 			.topbar-extra {border-bottom-width: 5px}
@@ -127,7 +134,7 @@
 			.comment-list .children > li,
 			.nav-main li.megamenu > ul > li > span.inner,
 			.nav-main li.megamenu > ul > li > a {
-				border-bottom: 1px dashed {{border-color}};
+				border-bottom: 1px dashed;
 				border-color: inherit;
 			}
 
@@ -138,7 +145,7 @@
 	 */
 
 		.border-left {
-			border-left: 1px solid {{border-color}};
+			border-left: 1px solid;
 			border-color: inherit;
 		}
 
@@ -149,7 +156,7 @@
 	 */
 
 		.border-right {
-			border-right: 1px solid {{border-color}};
+			border-right: 1px solid;
 			border-color: inherit;
 		}
 
@@ -161,8 +168,8 @@
 
 		.wm-tabs.layout-left .wm-tab-links li,
 		.wm-tabs.layout-right .wm-tab-links li {
-			border-left: 1px solid {{border-color}};
-			border-right: 1px solid {{border-color}};
+			border-left: 1px solid;
+			border-right: 1px solid;
 			border-color: inherit;
 		}
 

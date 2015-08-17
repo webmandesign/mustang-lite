@@ -26,7 +26,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.5
  */
 
 
@@ -53,7 +53,7 @@
 
 		if ( ! defined( 'WM_DEFAULT_EXCERPT_LENGTH' ) )   define( 'WM_DEFAULT_EXCERPT_LENGTH',   40                                                           ); //words count
 		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )          define( 'WM_SCRIPTS_VERSION',          esc_attr( trim( WM_THEME_VERSION ) )                         );
-		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )         define( 'WM_WP_COMPATIBILITY',         4.0                                                          );
+		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )         define( 'WM_WP_COMPATIBILITY',         4.1                                                          );
 
 		if ( ! defined( 'WM_LITE_THEME' ) )               define( 'WM_LITE_THEME',               true                                                         );
 		if ( ! defined( 'WM_WEBMAN_AMPLIFIER_THEME' ) )   define( 'WM_WEBMAN_AMPLIFIER_THEME',   true                                                         );

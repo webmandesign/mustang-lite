@@ -2,7 +2,7 @@
  * Responsive styles
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.5
  *
  * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  */
@@ -180,18 +180,12 @@
 					#nav-main > .menu {padding-left: 32px}
 
 						/* Submenu expander */
-							#nav-main .inner > i.expander {
-								float: right;
-								display: block;
-								position: relative;
-								padding: .78em;
-								margin: -.78em 0;
-								font-size: 1.28em;
-								opacity: .5;
-								z-index: 10;
+
+							.nav-main .expander {
+								width: 24px;
+								height: 24px;
+								line-height: 21px;
 							}
-								#nav-main .inner > i.expander.expanded {opacity: 1}
-									#nav-main .inner > i.expander.expanded:before {content: 'l'}
 
 						#nav-main li ul,
 						#nav-main li li ul {
@@ -767,7 +761,7 @@
 							text-align: center;
 						}
 							.responsive-design .wm-tab-links li {
-								border: 1px solid {{border-color}} !important;
+								border: 1px solid !important;
 								border-color: inherit !important;
 							}
 

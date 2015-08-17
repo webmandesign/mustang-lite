@@ -1,7 +1,7 @@
 /**
  * Content
  *
- * @version  1.2.1
+ * @version  1.5
  */
 
 	.content-section {
@@ -369,7 +369,7 @@
 					.author.entry-meta-element:before {content: 'r'}
 					.comments-link.entry-meta-element:before {content: 'V'}
 					.entry-date.entry-meta-element:before {content: 'c'}
-					.tag-links.entry-meta-element:before {content: '>'}
+					.tag-links.entry-meta-element:before {content: '\3e'}
 
 					.entry-permalink.entry-meta-element {float: right}
 						.entry-permalink.entry-meta-element a:before {
@@ -405,7 +405,12 @@
 						padding-left: 20px;
 						padding-right: 20px;
 						margin: -20px -20px 0;
-						background: {{bg-color-brighter}};
+						/*(*/
+						background: #f6f6f6;
+						/*)*/
+						/*//
+						background: ___bg_color_brighter;
+						//*/
 					}
 						.list-articles .entry-meta.entry-meta-categories {
 							background: none;
@@ -491,7 +496,12 @@
 				padding: 0 0 0 24px;
 				line-height: 100px;
 				text-align: center;
-				background: {{accent-color}};
+				/*(*/
+				background: #3b5998;
+				/*)*/
+				/*//
+				background: ___accent_color;
+				//*/
 				color: #999;
 				border-radius: 4px;
 				-webkit-box-shadow: 0 0 20px rgba(0,0,0, .15);

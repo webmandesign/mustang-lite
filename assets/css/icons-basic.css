@@ -2,12 +2,25 @@
  * Basic global icon font
  *
  * @version  20140930
+ * @version  1.5
  */
 
 	@font-face {
 		font-family: 'basic-icons';
-		src: url( '{{theme_assets_url}}font/basic-icons/fontello.eot' );
-		src: url( '{{theme_assets_url}}font/basic-icons/fontello.eot?#iefix' ) format( 'embedded-opentype' ), url( '{{theme_assets_url}}font/basic-icons/fontello.woff' ) format( 'woff' ), url( '{{theme_assets_url}}font/basic-icons/fontello.ttf' ) format( 'truetype' ), url( '{{theme_assets_url}}font/basic-icons/fontello.svg#fontello' ) format( 'svg' );
+		/*(*/
+		src: url('../font/basic-icons/fontello.eot');
+		src: url('../font/basic-icons/fontello.eot?#iefix') format('embedded-opentype'),
+		     url('../font/basic-icons/fontello.woff') format('woff'),
+		     url('../font/basic-icons/fontello.ttf') format('truetype'),
+		     url('../font/basic-icons/fontello.svg#fontello') format('svg');
+		/*)*/
+		/*//
+		src: url('___theme_assets_url/font/basic-icons/fontello.eot');
+		src: url('___theme_assets_url/font/basic-icons/fontello.eot?#iefix') format('embedded-opentype'),
+		     url('___theme_assets_url/font/basic-icons/fontello.woff') format('woff'),
+		     url('___theme_assets_url/font/basic-icons/fontello.ttf') format('truetype'),
+		     url('___theme_assets_url/font/basic-icons/fontello.svg#fontello') format('svg');
+		//*/
 		font-weight: normal;
 		font-style: normal;
 	}

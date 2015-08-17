@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4.5
+ * @version  1.5.1
  *
  * CONTENT:
  * - 1) Required files
@@ -188,7 +188,7 @@
 	 * Theme helper variables
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.5
 	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key Additional key if the variable is array
@@ -212,19 +212,19 @@
 									'100% 100%' => '<span class="position-option">' . __( 'Right, bottom', 'wm_domain' ) . '</span>',
 								),
 							'repeat'   => array(
-									'no-repeat' => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/no-repeat.png' ) . '" class="repeat-image" /><span class="repeat-option">' . __( 'Do not repeat', 'wm_domain' ) . '</span>',
-									'repeat-x'  => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/repeat-x.png' ) . '" class="repeat-image" /><span class="repeat-option">' . __( 'Repeat horizontally', 'wm_domain' ) . '</span>',
-									'repeat-y'  => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/repeat-y.png' ) . '" class="repeat-image" /><span class="repeat-option">' . __( 'Repeat vertically', 'wm_domain' ) . '</span>',
-									'repeat'    => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/repeat.png' ) . '" class="repeat-image" /><span class="repeat-option">' . __( 'Repeat (tile)', 'wm_domain' ) . '</span>',
+									'no-repeat' => __( 'Do not repeat', 'wm_domain' ),
+									'repeat-x'  => __( 'Repeat horizontally', 'wm_domain' ),
+									'repeat-y'  => __( 'Repeat vertically', 'wm_domain' ),
+									'repeat'    => __( 'Repeat (tile)', 'wm_domain' ),
 								),
 							'scroll'   => array(
-									'scroll' => '<span class="scroll-option">' . __( 'Move on scrolling', 'wm_domain' ) . '</span>',
-									'fixed'  => '<span class="scroll-option">' . __( 'Fixed position', 'wm_domain' ) . '</span>',
+									'scroll' => __( 'Move on scrolling', 'wm_domain' ),
+									'fixed'  => __( 'Fixed position', 'wm_domain' ),
 								),
 							'size'     => array(
-									''        => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/default.png' ) . '" class="size-image" /><span class="size-option">' . __( 'Default', 'wm_domain' ) . '</span>',
-									'cover'   => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/cover.png' ) . '" class="size-image" /><span class="size-option">' . __( 'Cover', 'wm_domain' ) . '</span>',
-									'contain' => '<img alt="" src="' . wm_get_stylesheet_directory_uri( 'library/assets/img/contain.png' ) . '" class="size-image" /><span class="size-option">' . __( 'Contain', 'wm_domain' ) . '</span>',
+									''        => __( 'Default', 'wm_domain' ),
+									'cover'   => __( 'Cover', 'wm_domain' ),
+									'contain' => __( 'Contain', 'wm_domain' ),
 								),
 						);
 
@@ -442,7 +442,7 @@
 	 * Theme installation
 	 *
 	 * @since    1.0
-	 * @version  1.2.2
+	 * @version  1.5.1
 	 */
 	if ( ! function_exists( 'wm_install' ) ) {
 		function wm_install() {
@@ -488,13 +488,25 @@
 				//WordPress visual editor CSS stylesheets
 					$visual_editor_css = array();
 					if ( wm_google_fonts() ) {
-						$visual_editor_css[] = str_replace( ',', '%2C', '//fonts.googleapis.com/css' . wm_google_fonts() );
+						$visual_editor_css[] = esc_url_raw( str_replace( ',', '%2C', '//fonts.googleapis.com/css' . wm_google_fonts() ) );
 					}
 					$visual_editor_css[] = get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-ve-css' );
 					$visual_editor_css   = apply_filters( 'wmhook_wm_install_visual_editor_css', array_filter( $visual_editor_css ) );
 
-			//Localization
-				load_theme_textdomain( 'wm_domain', WM_LANGUAGES );
+			/**
+			 * Localization
+			 *
+			 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
+			 */
+
+				//wp-content/languages/theme-name/it_IT.mo
+					load_theme_textdomain( 'wm_domain', trailingslashit( WP_LANG_DIR ) . 'themes/' . WM_THEME_SHORTNAME );
+
+				//wp-content/themes/child-theme-name/languages/it_IT.mo
+					load_theme_textdomain( 'wm_domain', get_stylesheet_directory() . '/languages' );
+
+				//wp-content/themes/theme-name/languages/it_IT.mo
+					load_theme_textdomain( 'wm_domain', get_template_directory() . '/languages' );
 
 			//Visual editor styles
 				add_editor_style( $visual_editor_css );
@@ -670,7 +682,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.5
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -680,7 +692,7 @@
 				$dev_suffix       = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( '.dev' ) : ( '' );
 
 				$stylesheets = array(
-						'global' => ( ! file_exists( $theme_upload_dir . 'global.css' ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/initial/global.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ) ),
+						'global' => ( ! file_exists( $theme_upload_dir . 'global.css' ) || isset( $_GET['__fallback'] ) ) ? ( wm_get_stylesheet_directory_uri( 'assets/css/__fallback.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-css' ) ) ),
 						'rtl'    => ( ! file_exists( $theme_upload_dir . 'global-rtl.css' ) ) ? ( '' ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-rtl-css' ) ) ),
 						'main'   => get_stylesheet_directory_uri() . '/style.css',
 						'print'  => wm_get_stylesheet_directory_uri( 'assets/css/print.css' ),
@@ -718,7 +730,7 @@
 						'wm-admin-wc-rtl'     => array( wm_get_stylesheet_directory_uri( 'library/assets/css/rtl-admin-woocommerce.css' ) ),
 						'wm-theme-customizer' => array( wm_get_stylesheet_directory_uri( 'library/assets/css/theme-customizer.css' ) ),
 					//Google Fonts
-						'wm-google-fonts' => array( '//fonts.googleapis.com/css' . wm_google_fonts() ),
+						'wm-google-fonts' => array( esc_url_raw( '//fonts.googleapis.com/css' . wm_google_fonts() ) ),
 					), $stylesheets );
 
 				foreach ( $register_styles as $handle => $atts ) {
@@ -740,10 +752,9 @@
 								'src'  => wm_get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ),
 								'deps' => array( 'jquery', 'wm-imagesloaded' ),
 							),
-						'respond' => array( wm_get_stylesheet_directory_uri( 'assets/js/respond.min.js' ) ),
 					//jQuery plugins
 						'jquery-appear' => array( wm_get_stylesheet_directory_uri( 'assets/js/appear/jquery.appear.min.js' ) ),
-						'jquery-prettyphoto' => array( wm_get_stylesheet_directory_uri( 'assets/js/prettyphoto/jquery.prettyPhoto.js' ) ),
+						'jquery-prettyphoto' => array( wm_get_stylesheet_directory_uri( 'assets/js/prettyphoto/jquery.prettyPhoto.min.js' ) ),
 					//Backend
 						'wm-customizer' => array(
 								'src'  => wm_get_stylesheet_directory_uri( 'library/assets/js/customizer.js' ),
@@ -767,11 +778,6 @@
 					wp_register_script( $handle, $src, $deps, $ver, $in_footer );
 				}
 
-			/**
-			 * Custom actions
-			 */
-
-				do_action( 'wmhook_wm_register_assets', $stylesheets );
 		}
 	} // /wm_register_assets
 
@@ -781,13 +787,11 @@
 	 * Frontend HTML head assets
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.5
 	 */
 	if ( ! function_exists( 'wm_site_assets' ) ) {
 		function wm_site_assets() {
 			//Helper variables
-				global $is_IE;
-
 				$enqueue_styles = $enqueue_scripts = array();
 
 			/**
@@ -813,7 +817,7 @@
 				//Default theme/child theme style.css file
 					$enqueue_styles[] = 'stylesheet';
 
-				$enqueue_styles = apply_filters( 'wmhook_wm_site_assets_enqueue_styles', $enqueue_styles, $is_IE );
+				$enqueue_styles = apply_filters( 'wmhook_wm_site_assets_enqueue_styles', $enqueue_styles );
 
 				foreach ( $enqueue_styles as $handle ) {
 					wp_enqueue_style( $handle );
@@ -827,9 +831,9 @@
 						is_singular()
 						&& $output = get_post_meta( get_the_id(), 'custom-css', true )
 					) {
-					$output = apply_filters( 'wmhook_wm_site_assets_inline_styles', "\r\n/* Custom singular styles */\r\n" . $output . "\r\n", $is_IE );
+					$output = apply_filters( 'wmhook_wm_site_assets_inline_styles', "\r\n/* Custom singular styles */\r\n" . $output . "\r\n" );
 
-					wp_add_inline_style( 'stylesheet', esc_attr( $output ) );
+					wp_add_inline_style( 'stylesheet', apply_filters( 'wmhook_esc_css', $output ) );
 				}
 
 			/**
@@ -855,12 +859,7 @@
 					$enqueue_scripts[] = 'jquery-appear';
 					$enqueue_scripts[] = 'wm-scripts-global';
 
-				//IE8 responsive (unfortunatelly, no way to target IE8 only here, so including it for all IEs)
-					if ( $is_IE && ! wm_option( 'skin-disable-responsive' ) ) {
-						$enqueue_scripts[] = 'respond';
-					}
-
-				$enqueue_scripts = apply_filters( 'wmhook_wm_site_assets_enqueue_scripts', $enqueue_scripts, $is_IE );
+				$enqueue_scripts = apply_filters( 'wmhook_wm_site_assets_enqueue_scripts', $enqueue_scripts );
 
 				foreach ( $enqueue_scripts as $handle ) {
 					wp_enqueue_script( $handle );
@@ -875,11 +874,6 @@
 						wp_enqueue_script( 'comment-reply', false, false, false, true );
 					}
 
-			/**
-			 * Custom actions
-			 */
-
-				do_action( 'wmhook_wm_site_assets', $is_IE );
 		}
 	} // /wm_site_assets
 
@@ -940,7 +934,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  1.2.1
+	 * @version  1.5
 	 *
 	 * @param  array $classes
 	 */
@@ -1058,7 +1052,7 @@
 					}
 
 				//Responsiveness
-					$body_classes[150] = ( ! wm_option( 'skin-disable-responsive' ) ) ? ( 'responsive-design' ) : ( 'static-design' );
+					$body_classes[150] = 'responsive-design';
 
 			//Output
 				$body_classes = apply_filters( 'wmhook_wm_body_classes_output', $body_classes );
@@ -1156,33 +1150,19 @@
 	 * Website HEAD
 	 *
 	 * @since    1.1
-	 * @version  1.3
+	 * @version  1.5
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
 			//Helper variables
-				global $is_IE;
-
 				$output = array();
 
 			//Preparing output
-				if ( ! wm_option( 'skin-disable-responsive' ) ) {
-					$output[10] = '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
-				}
+				$output[10] = '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
 
 				// $output[20] = apply_filters( 'wmhook_meta_author', '<meta name="author" content="WebMan, ' . WM_DEVELOPER_URL . '" />' );
 				$output[30] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
 				$output[40] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
-
-				if ( $is_IE ) {
-					$output[50]  = '<!-- IE specific -->';
-					$output[50] .= '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
-					$output[50] .= '<!--[if lt IE 9]>';
-					$output[50] .= '<script src="' . wm_get_stylesheet_directory_uri( 'assets/js/html5.js' ) . '</script>';
-					$output[50] .= '<![endif]-->';
-				}
-
-				$output[60] = wm_favicon();
 
 				//Filter output array
 					$output = apply_filters( 'wmhook_wm_head_output_array', $output );
@@ -1545,11 +1525,13 @@
 		 * Navigation item improvements
 		 *
 		 * @since    1.0
-		 * @version  1.1.1
+		 * @version  1.5
 		 */
 		if ( ! function_exists( 'wm_nav_item_process' ) ) {
 			function wm_nav_item_process( $item_output, $item, $depth, $args ) {
-				//Requirements check
+
+				// Requirements check
+
 					if (
 							! is_object( $args )
 							|| ! isset( $args->theme_location )
@@ -1559,41 +1541,51 @@
 						return $item_output;
 					}
 
-				//Helper variables
+
+				// Helper variables
+
 					$classes       = 'inner';
 					$allowed_tags  = apply_filters( 'wmhook_wm_nav_item_process_allowed_tags', '<br><code><em><i><img><mark><span><strong>' );
 					$classes_array = ( empty( $item->classes ) ) ? ( array() ) : ( (array) $item->classes );
 
-				//Preparing output
-					//Get font icon class if applied
+
+				// Processing
+
+					// Get font icon class if applied
+
 						foreach ( $classes_array as $class ) {
 							if ( 0 === strpos( $class, 'icon-' ) || 0 === strpos( $class, 'iconwm-' ) ) {
 								$classes .= ' ' . $class;
 							}
 						}
 
-					//Link and title processing
+					// Link and title processing
+
 						if (
 								'#' !== $item->url
 								&& 2 > strlen( str_replace( array( 'http://', 'https://' ), '', $item->url ) )
 							) {
 
-							//Replacing link tag with span.inner if no url set
+							// Replacing link tag with span.inner if no url set
+
 								$item_output = '<span class="' . $classes . '">' . strip_tags( $item_output, $allowed_tags ) . '</span>';
 
-							//Remove link or span.inner for empty menu titles (value of "-" is considered being empty)
+							// Remove link or span.inner for empty menu titles (value of "-" is considered being empty)
+
 								if ( ! trim( str_replace( '-', '', $item->title ) ) ) {
 									$item_output = '';
 								}
 
 						} else {
 
-							//Applying classes on menu item link
+							// Applying classes on menu item link
+
 								$item_output = str_replace( '<a ', '<a class="' . trim( $classes ) . '" ', $item_output );
 
 						}
 
-					//Display item description (overwrites the item title)
+					// Display item description (overwrites the item title)
+
 						if (
 								trim( $item->post_content )
 								&& 0 < $depth
@@ -1603,8 +1595,11 @@
 
 						}
 
-				//Output
+
+				// Output
+
 					return $item_output;
+
 			}
 		} // /wm_nav_item_process
 

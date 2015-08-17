@@ -1,5 +1,5 @@
 /**
- * @version  1.4
+ * @version  1.5
  */
 
 
@@ -235,7 +235,7 @@
 				.nav-main > ul > li,
 				.nav-main > div.menu > ul > li {
 					padding: 25px 0;
-					margin: 0 .28em;
+					margin: 0 1px;
 				}
 
 			/* Navigation item title */
@@ -262,24 +262,34 @@
 				.nav-main a[class*="icon-"]:before,
 				.nav-main span.inner[class*="icon-"]:before {margin: 0 .62em 0 -.28em}
 
-				.nav-main .inner > i.expander {display: none}
+			/* Submenu expander button */
 
-			/* Arrows for menu item with submenu */
-				.nav-main .menu-item-has-children > a:after,
-				.nav-main .menu-item-has-children > span.inner:after {
-					content: 'L';
+				.nav-main .expander {
+					display: inline-block;
 					position: absolute;
+					width: 16px;
+					height: 16px;
+					right: .62em;
 					top: 50%;
-					right: 0;
-					margin: 0;
-					line-height: 1;
-					font-family: 'basic-icons';
-					font-size: 8px;
-					font-weight: 300;
-					opacity: .5;
-					-webkit-transform: translateY( -50% );
-					    -ms-transform: translateY( -50% );
-					        transform: translateY( -50% );
+					margin-left: 2px;
+					line-height: 13px;
+					text-align: center;
+					font-size: 14px;
+					font-weight: 400;
+					border: 1px solid;
+					border-radius: 50%;
+					-webkit-transform: translateY(-50%);
+					    -ms-transform: translateY(-50%);
+					        transform: translateY(-50%);
+				}
+
+				.megamenu li .expander { display: none; }
+
+					.nav-main .expander::before { content: '+'; }
+
+				.nav-main li.menu-item-has-children > .inner {
+					position: relative;
+					padding-right: 2.38em;
 				}
 
 
@@ -324,7 +334,8 @@
 					}
 					.nav-main li li iframe {display: none}
 
-			.nav-main li:hover > ul {
+			.nav-main li:hover > ul,
+			.nav-main li[aria-expanded="true"] > ul {
 				visibility: visible;
 				top: 100%;
 				opacity: 1;
@@ -357,7 +368,8 @@
 				    -ms-transition: opacity .2s, right .2s ease-in-out;
 				        transition: opacity .2s, right .2s ease-in-out;
 			}
-				.nav-main li li:hover > ul {
+				.nav-main li li:hover > ul,
+				.nav-main li li[aria-expanded="true"] > ul {
 					left: auto;
 					right: 100%;
 					top: -10px;

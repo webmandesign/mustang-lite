@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4.7
+ * @version  1.5
  *
  * CONTENT:
  * - 10) Basics
@@ -55,7 +55,22 @@ jQuery( function() {
 
 			if ( jQuery().isotope ) {
 
-				jQuery( '.filter-this' ).isotope( { transitionDuration : 0 } );
+				var $filterThis = jQuery( '.filter-this' );
+
+				$filterThis
+					.isotope( { transitionDuration : 0 } );
+
+				jQuery( window )
+					.on( 'resize orientationchange', function( e ) {
+
+						setInterval( function() {
+
+							$filterThis
+								.isotope( 'layout' );
+
+						}, 100 );
+
+					} );
 
 			} // /isotope
 
@@ -381,24 +396,34 @@ jQuery( function() {
 					} );
 
 				//Submenu expanders
-					jQuery( '<i class="iconwm-down expander"></i>' ).appendTo( '#nav-main .menu-item-has-children > .inner' );
+					jQuery( '<span class="expander"></span>' )
+						.appendTo( '#nav-main .menu-item-has-children > .inner' );
 
-					jQuery( '#nav-main' ).on( 'click', '.expander', function( e ) {
+					jQuery( '#nav-main' )
+						.on( 'click', '.expander', function( e ) {
 
-						e.preventDefault();
+							e.preventDefault();
 
-						var $this    = jQuery( this ),
-						    wmIsMega = $this.closest( '.menu-item' ).hasClass( 'megamenu' );
+							var $this      = jQuery( this ),
+							    wmIsMega   = $this.closest( '.menu-item' ).hasClass( 'megamenu' ),
+							    wmNotHover = ! $this.is( ':hover' );
 
-						$this.toggleClass( 'expanded' );
+							if ( 1024 > document.body.clientWidth ) {
+								wmNotHover = true;
+							}
+							console.log( wmNotHover );
 
-						if ( wmIsMega ) {
-							$this.closest( '.menu-item' ).find( '> .sub-menu, .empty-menu-item > .sub-menu' ).slideToggle( 200 );
-						} else {
-							$this.parent( '.inner' ).next( '.sub-menu' ).slideToggle( 200 );
-						}
+							if ( wmNotHover ) {
 
-					} );
+								if ( wmIsMega ) {
+									$this.closest( '.menu-item' ).find( '> .sub-menu, .empty-menu-item > .sub-menu' ).slideToggle( 200 );
+								} else {
+									$this.parent( '.inner' ).next( '.sub-menu' ).slideToggle( 200 );
+								}
+
+							}
+
+						} );
 
 			} // /responsive-design
 

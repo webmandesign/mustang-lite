@@ -6,6 +6,7 @@
  *
  * @since      3.0
  * @version    3.0
+ * @version  1.5
  */
 
 
@@ -105,16 +106,6 @@
 
 	select.widefat {background-color: #fff}
 	select[multiple] {height: 80px !important}
-
-
-
-/**
- * Colorize posts
- */
-
-	/* by post status */
-		.status-draft,
-		.status-pending {background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAXGjEh8YyD7LEwAzAFJggTgHJAAAE+uAzjGgU3wAAAAAElFTkSuQmCC) repeat}
 
 
 

@@ -1,5 +1,87 @@
 # Mustang Lite Changelog
 
+## 1.5.1
+
+* **Fix**: Localization loading
+* **Fix**: Customizer PHP error
+
+#### Files changed:
+
+	style.css
+	languages/readme.md
+	languages/xx_XX.pot
+	library/skinning.php
+	setup/setup.php
+
+
+## 1.5
+
+* **Add**: WordPress 4.3 support
+* **Add**: Touch enabled navigation
+* **Update**: Licensed under GPLv3
+* **Update**: Admin interface
+* **Update**: Removed obsolete files and added new ones
+* **Update**: Removed predefined skins - available as Customizer Export / Import plugin preset from now on (downloadable via user manual)
+* **Update**: Removing support for Internet Explorer 8
+* **Update**: Security improvements
+* **Update**: Stylesheet generator improvements
+* **Update**: Reorganized and improved Customizer
+* **Update**: Improved `style.css` loading in Customizer
+* **Update**: Improved CSS minification
+* **Update**: Removed option to disable responsiveness
+* **Update**: Removed favicons setup (in favour of WordPress 4.3 Site Icon feature)
+* **Update**: Demo content XML file (available for download via user manual)
+* **Update**: Removed "Theme Options" from WordPress toolbar (admin bar)
+* **Update**: Localization file
+* **Update**: Updated scripts: TGM Plugin Activation 2.5.2, Normalize 3.0.2, jQuery.prettyPhoto 3.1.6
+* **Update**: Documentation (user manual)
+* **Fix**: Google Fonts URL function subset issue
+* **Fix**: Issue with filtered Content Modules
+* **Fix**: Issue with filtered Posts (Custom Posts) when changing screen size / orientation
+* **Fix**: Styles of updated Contact widget
+
+#### Files changed:
+
+	functions.php
+	license.txt
+	readme.md
+	style.css
+	assets/css/__fallback.css
+	assets/css/_custom-styles.php
+	assets/css/_generate-css.php
+	assets/css/_generate-rtl-css.php
+	assets/css/_generate-ve-css.php
+	assets/css/borders.css
+	assets/css/comments.css
+	assets/css/content.css
+	assets/css/core.css
+	assets/css/forms.css
+	assets/css/header.css
+	assets/css/high-dpi.css
+	assets/css/icons-basic.css
+	assets/css/ltr-borders.css
+	assets/css/plugins.css
+	assets/css/prettyphoto.css
+	assets/css/reset.css
+	assets/css/responsive.css
+	assets/css/rtl-borders.css
+	assets/css/rtl.css
+	assets/css/shortcodes.css
+	assets/css/sidebar.css
+	assets/css/specials.css
+	assets/css/visual-editor.css
+	assets/js/scripts-global.js
+	library/admin.php
+	library/core.php
+	library/skinning.php
+	library/assets/css/admin.css
+	library/assets/css/theme-customizer.css
+	library/includes/controls/class-WM_Customizer_Range.php
+	setup/plugins.php
+	setup/setup-theme-options.php
+	setup/setup.php
+
+
 ## 1.4.7
 
 * UPDATE: Adding text domain to `style.css` file

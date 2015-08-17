@@ -1,7 +1,7 @@
 /**
  * Sidebar
  *
- * @version  1.2
+ * @version  1.5
  *
  * @since  Mustang Lite (Removed bbPress styles)
  */
@@ -198,6 +198,9 @@
 			.widget .address-container .hours:before {content: 'c'}
 			.widget .address-container .phone:before {content: 'N'}
 			.widget .address-container .email:before {content: '?'}
+
+			.contact-info p,
+			.contact-info table { margin: 0; }
 
 		.widget .address-container .hours table {
 			width: auto;

@@ -1,7 +1,7 @@
 /**
  * WordPress Visual Editor Core Styles
  *
- * @version  1.2
+ * @version  1.5
  */
 
 	body {
@@ -14,7 +14,7 @@
 	/* General */
 		ins {
 			color: inherit;
-			border-bottom: 1px dotted {{border-color}};
+			border-bottom: 1px dotted;
 			border-color: inherit;
 		}
 		td, th {color: inherit}

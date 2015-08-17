@@ -1,9 +1,25 @@
 /**
  * Borders
+ *
+ * @version  1.5
  */
 
-	blockquote {border-left: .5em solid {{accent-color}}} /* accent color */
-	blockquote.alignleft {border-right: .5em solid {{accent-color}}} /* accent color */
+	blockquote {
+		/*(*/
+		border-left: .5em solid #3b5998;
+		/*)*/
+		/*//
+		border-left: .5em solid ___accent_color;
+		//*/
+	}
+	blockquote.alignleft {
+		/*(*/
+		border-right: .5em solid #3b5998;
+		/*)*/
+		/*//
+		border-right: .5em solid ___accent_color;
+		//*/
+	}
 
 
 
@@ -19,14 +35,14 @@
 		.wm-accordion .wm-item-content,
 		.wm-tab-links li:first-child,
 		.nav-main li.megamenu > ul > li {
-			border-left: 1px solid {{border-color}};
+			border-left: 1px solid;
 			border-color: inherit;
 		}
 			.wm-call-to-action {border-left-width: .62em}
 
 		/* Dotted */
 			.wm-countdown-timer .dash {
-				border-left: 2px dotted {{border-color}};
+				border-left: 2px dotted;
 				border-color: inherit;
 			}
 
@@ -39,7 +55,7 @@
 		.border-right,
 		.wm-accordion .wm-item-content,
 		.wm-tab-links li {
-			border-right: 1px solid {{border-color}};
+			border-right: 1px solid;
 			border-color: inherit;
 		}
 

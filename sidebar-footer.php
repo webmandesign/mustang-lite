@@ -63,7 +63,7 @@
 								<h3 class="widget-heading">About Mustang Lite</h3>
 								<div class="widget-content">
 									<strong>Mustang Lite</strong> WordPress Theme lets you create beautiful, professional business websites. By default you get the basic blog design which can be extended to full power of the theme with additional <a href="http://wordpress.org/plugins/webman-amplifier/" target="_blank"><strong>WebMan Amplifier</strong> plugin installation</a> (see the <a href="http://themedemos.webmandesign.eu/mustang/">full theme demo website</a>). This theme is a free, lite version of premium <a href="https://creativemarket.com/webmandesign/45467-Mustang-Multipurpose-WordPress-Theme?ref=mustang-lite" target="_blank"><strong>Mustang Multipurpose WordPress Theme</strong> by WebMan</a>. The lite version <strong>does not</strong> support WooCommerce eshop plugin, bbPress forums plugin and also does not contain the premium page builder and sliders plugins included in the paid version. Check out themes by WebMan at <a href="http://www.webmandesign.eu">www.webmandesign.eu</a>. Thank you for using Mustang Lite!<br /><br />
-									Theme user manual with demo data can be found on <a href="http://www.webmandesign.eu/manual/mustang/">www.webmandesign.eu/manual/mustang/</a>.
+									Theme user manual with demo data can be found at <a href="http://www.webmandesign.eu/manual/mustang/">www.webmandesign.eu/manual/mustang/</a>.
 								</div>
 							</div>
 

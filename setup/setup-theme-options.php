@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.5.1
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -26,8 +26,6 @@
 	 * Filters
 	 */
 
-		//Admin bar links
-			add_filter( 'wmhook_wm_theme_options_admin_bar_submenu', 'wm_admin_bar_links', 10 );
 		//CSS file generator replacements
 			add_filter( 'wmhook_generate_css_replacements', 'wm_generate_css_replacements', 10 );
 		//Contextual help texts
@@ -44,41 +42,10 @@
  */
 
 	/**
-	 * Admin bar links
-	 *
-	 * @since    1.0
-	 * @version  1.1
-	 *
-	 * @param  array $links
-	 */
-	if ( ! function_exists( 'wm_admin_bar_links' ) ) {
-		function wm_admin_bar_links( $links = array() ) {
-			//Requirements check
-				if ( ! function_exists( 'wma_amplifier' ) ) {
-					return $links;
-				}
-
-			//Preparing output
-				$links = array(
-						__( 'Theme customizer', 'wm_domain' ) => admin_url( 'customize.php' ),
-						__( 'Font icons', 'wm_domain' )       => admin_url( 'themes.php?page=icon-font' ),
-						__( 'User manual', 'wm_domain' )      => WM_ONLINE_MANUAL_URL,
-						/**
-						 * @since  Mustang Lite (Removed support link)
-						 */
-					);
-
-			//Output
-				return $links;
-		}
-	} // /wm_admin_bar_links
-
-
-
-	/**
 	 * CSS generator replacements
 	 *
-	 * @version  1.2
+	 * @since    1.0
+	 * @version  1.5
 	 *
 	 * @param  array $replacements
 	 */
@@ -86,17 +53,20 @@
 		function wm_generate_css_replacements( $replacements = array() ) {
 			//Preparing output
 				$replacements = array(
-						'{{accent-color}}'                 => '#3b5998',
-						'{{bg-color-brighter}}'            => '#f6f6f6',
-						'{{border-color}}'                 => '#e3e3e3',
-						'{{get_template_directory}}'       => trailingslashit( get_template_directory() ),
-						'{{get_stylesheet_directory}}'     => trailingslashit( get_stylesheet_directory() ),
-						'{{theme_assets_dir}}'             => trailingslashit( get_template_directory() ) . 'assets/',
-						'{{child_theme_assets_dir}}'       => trailingslashit( get_stylesheet_directory() ) . 'assets/',
-						'{{get_template_directory_uri}}'   => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_template_directory_uri() ) ),
-						'{{get_stylesheet_directory_uri}}' => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_stylesheet_directory_uri() ) ),
-						'{{theme_assets_url}}'             => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_template_directory_uri() ) . 'assets/' ),
-						'{{child_theme_assets_url}}'       => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_stylesheet_directory_uri() ) . 'assets/' ),
+
+						'/* End of file */'             => "\r\n\r\n",
+						'/*(*/'                         => '/** ', // Open a comment
+						'/*)*/'                         => ' **/', // Close a comment
+						'/*//'                          => '', // Remove a comment opening
+						'//*/'                          => '', // Remove a comment closing
+
+						'___get_template_directory_uri' => str_replace( array( 'http:', 'https:' ), '', untrailingslashit( get_template_directory_uri() ) ),
+						'___theme_assets_url'           => str_replace( array( 'http:', 'https:' ), '', trailingslashit( get_template_directory_uri() ) . 'assets' ),
+
+						'___accent_color'               => '#3b5998',
+						'___bg_color_brighter'          => '#f6f6f6',
+						'___border_color'               => '#e3e3e3',
+
 					);
 
 			//Output
@@ -109,7 +79,7 @@
 	/**
 	 * Set $wm_options array
 	 *
-	 * @version  1.2
+	 * @version  1.5.1
 	 *
 	 * @param  array $wm_options
 	 */
@@ -228,7 +198,7 @@
 								array(
 									'tab-id'      => 'wm-support',
 									'tab-title'   => __( 'Support and troubleshooting', 'wm_domain' ),
-									'tab-content' => '<table class="wm-table">' . $support_table_content . '</table>',
+									'tab-content' => '<p>' . sprintf( __( 'If you have any difficulties with the theme or need a help customizing it, please visit the %s.<br />The troubleshooting information below may be requested by support staff to resolve your query. Please, provide them when asked.', 'wm_domain' ), '<a href="' . WM_SUPPORT_URL . '/forums/forum/' . WM_THEME_SHORTNAME . '" target="_blank">WebMan Support Forum</a>' )  . '</p><table class="wm-table">' . $support_table_content . '</table>',
 								)
 							);
 
@@ -243,7 +213,7 @@
 	 * Set $wm_skin_design array
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.5
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -259,164 +229,18 @@
 
 					$wm_skin_design = array(
 
-						/**
-						 * Skin
-						 */
-						'skin' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Skin Setup', 'wm_domain' )
-						),
-
-							'skin' . 10 => array(
-								'type'    => 'theme-customizer-html',
-								'content' => '<p class="description">' . __( 'To load a skin, select it from a dropdown and save the settings. To save a new skin, set a new skin name and save the settings.', 'wm_domain' ) . '</p>',
-							),
-
-								'skin' . 20 => array(
-									'type'  => 'select',
-									'id'    => $prefix . 'load',
-									'label' => __( 'Load a skin', 'wm_domain' ),
-									'options' => ( function_exists( 'wma_asort' ) ) ? ( wma_asort( wm_get_files( array( 'folders' => get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-skins' ) ) ) ) ) : ( wm_get_files( array( 'folders' => get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-skins' ) ) ) ),
-								),
-									'skin' . 25 => array(
-										'type'    => 'theme-customizer-html',
-										'content' => '<p class="description">' . __( '<strong>Please, note</strong> that the Customizer page will reload after saving the settings and skin will be applied on front end of your website too.', 'wm_domain' ) . '</p>',
-									),
-									'skin' . 36 => array(
-										'type' => 'hidden',
-										'id'   => $prefix . 'css',
-									),
-								'skin' . 30 => array(
-									'type'  => 'text',
-									'id'    => $prefix . 'new',
-									'label' => __( 'New skin name', 'wm_domain' ),
-								),
-									'skin' . 35 => array(
-										'type'    => 'theme-customizer-html',
-										'content' => '<p class="description">' . __( '<strong>Please, note</strong> that setting the name of the existing skin will overwrite the skin file with new settings.', 'wm_domain' ) . '</p>',
-									),
-
-							'skin' . 40 => array(
-								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Layout', 'wm_domain' ) . '</h3>',
-							),
-
-								'skin' . 50 => array(
-									'type'    => 'select',
-									'id'      => $prefix . 'layout',
-									'label'   => __( 'Website layout', 'wm_domain' ),
-									'options' => array(
-											'fullwidth' => __( 'Fullwidth', 'wm_domain' ),
-											'boxed'     => __( 'Boxed', 'wm_domain' )
-										),
-								),
-								'skin' . 60 => array(
-									'type'  => 'checkbox',
-									'id'    => $prefix . 'disable-responsive',
-									'label' => __( 'Disable responsive design', 'wm_domain' ),
-								),
-								'skin' . 70 => array(
-									'type'          => 'slider',
-									'id'            => $prefix . 'website-width',
-									'label'         => __( 'Website width', 'wm_domain' ),
-									'default'       => 1020,
-									'min'           => 1020,
-									'max'           => 1920,
-									'step'          => 20,
-									'customizer_js' => array(
-											'css' => array(
-													'.boxed .wrap, .wrap.boxed, body.boxed.page-meta-layout .wrap, .wrap-inner' => array( array( 'width', 'px' ) ),
-												),
-										),
-								),
-									'skin' . 75 => array(
-										'type'    => 'theme-customizer-html',
-										'content' => '<p class="description">' . __( 'The website width is being set up for the boxed layout. The actual website content width would be the website width minus the boxed layout paddings (160px). So if you set the width of 1480, the actual website content width will be 1320px (= 1480 - 160).', 'wm_domain' ) . '</p>',
-									),
-
-							'skin' . 80 => array(
-								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Global colors', 'wm_domain' ) . '</h3>',
-							),
-
-								'skin' . 90 => array(
-									'type'  => 'color',
-									'id'    => $prefix . 'accent-color',
-									'label' => __( 'Accent color', 'wm_domain' ),
-								),
-									'skin' . 100 => array(
-										'type'    => 'theme-customizer-html',
-										'content' => '<p class="description">' . __( 'Accent color is being used globally throughout the whole theme. All of theme design colors are being calculated automatically based on this color, so if you only want the basic theme design, just set this color. If you need to tweak the design settings, feel free to explore theme sections options below.', 'wm_domain' ) . '</p>',
-									),
-
-								//blue
-									'skin' . 110 => array(
-										'type'  => 'color',
-										'id'    => $prefix . 'blue-color',
-										'label' => __( 'General blue color', 'wm_domain' ),
-									),
-								//gray
-									'skin' . 120 => array(
-										'type'  => 'color',
-										'id'    => $prefix . 'gray-color',
-										'label' => __( 'General gray color', 'wm_domain' ),
-									),
-								//green
-									'skin' . 130 => array(
-										'type'  => 'color',
-										'id'    => $prefix . 'green-color',
-										'label' => __( 'General green color', 'wm_domain' ),
-									),
-								//orange
-									'skin' . 140 => array(
-										'type'  => 'color',
-										'id'    => $prefix . 'orange-color',
-										'label' => __( 'General orange color', 'wm_domain' ),
-									),
-								//red
-									'skin' . 150 => array(
-										'type'  => 'color',
-										'id'    => $prefix . 'red-color',
-										'label' => __( 'General red color', 'wm_domain' ),
-									),
-
-								'skin' . 160 => array(
-									'type'    => 'slider',
-									'id'      => $prefix . 'text-color-treshold',
-									'label'   => __( 'Auto color treshold', 'wm_domain' ),
-									'default' => 0,
-									'min'     => -50,
-									'max'     => 50,
-									'step'    => 1,
-								),
-									'skin' . 170 => array(
-										'type'    => 'theme-customizer-html',
-										'content' => '<p class="description">' . __( 'Auto color treshold is being used to automatically calculate the additional colors in the theme (such as text color from the background color). You can tweak the calculation treshold here.', 'wm_domain' ) . '</p>',
-									),
-
-							'skin' . 180 => array(
-								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'CSS3 Animations', 'wm_domain' ) . '</h3>',
-							),
-
-								'skin' . 190 => array(
-									'type'  => 'checkbox',
-									'id'    => $prefix . 'disable-animatecss',
-									'label' => __( 'Disable Animate.css library', 'wm_domain' ),
-								),
-
-
 
 						/**
 						 * Top Bar
 						 */
 						'topbar' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Top Bar', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Section: Top Bar', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'topbar' . 10 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<p class="description">' . __( 'These settings will affect both Topbar Widgets and Topbar Extra Widgets areas.', 'wm_domain' ) . '</p>',
 							),
 
@@ -441,7 +265,7 @@
 								),
 
 							'topbar-extra' . 10 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Topbar Extra widgets', 'wm_domain' ) . '</h3>',
 							),
 
@@ -472,8 +296,9 @@
 						 * Header
 						 */
 						'header' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Header and navigation', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Section: Header', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'header' . 10 => array(
@@ -492,7 +317,7 @@
 							),
 
 							'header' . 30 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Design', 'wm_domain' ) . '</h3>',
 							),
 
@@ -517,16 +342,16 @@
 								),
 
 							'header' . 140 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Navigation design', 'wm_domain' ) . '</h3>',
 							),
 
 								'header' . 150 => array(
-									'type'    => 'theme-customizer-html',
+									'type'    => 'html',
 									'content' => '<p class="description">' . __( 'Navigation padding will affect the header height and logo position.', 'wm_domain' ) . '</p>',
 								),
 									'header' . 160 => array(
-										'type'    => 'slider',
+										'type'    => 'range',
 										'id'      => $prefix . 'nav' . '-padding',
 										'label'   => __( 'Navigation padding', 'wm_domain' ),
 										'default' => 25,
@@ -552,7 +377,7 @@
 									'label' => __( 'Subnav background', 'wm_domain' ),
 								),
 									'header' . 200 => array(
-										'type'    => 'theme-customizer-html',
+										'type'    => 'html',
 										'content' => '<p class="description">' . __( 'Subnav colors will be also used to style the mobile navigation.', 'wm_domain' ) . '</p>',
 									),
 
@@ -561,29 +386,30 @@
 						/**
 						 * Special Slider
 						 */
-						'slider' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Special Slider', 'wm_domain' )
+						'range' => array(
+							'type'           => 'section',
+							'create_section' => __( 'Section: Special Slider', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
-							'slider' . 10 => array(
+							'range' . 10 => array(
 								'type'  => 'color',
-								'id'    => $prefix . 'slider' . '-color',
+								'id'    => $prefix . 'range' . '-color',
 								'label' => __( 'Text color', 'wm_domain' ),
 							),
-							'slider' . 20 => array(
+							'range' . 20 => array(
 								'type'  => 'color',
-								'id'    => $prefix . 'slider' . '-accent-color',
+								'id'    => $prefix . 'range' . '-accent-color',
 								'label' => __( 'Accent color', 'wm_domain' ),
 							),
-							'slider' . 30 => array(
+							'range' . 30 => array(
 								'type'  => 'color',
-								'id'    => $prefix . 'slider' . '-border-color',
+								'id'    => $prefix . 'range' . '-border-color',
 								'label' => __( 'Borders color', 'wm_domain' ),
 							),
-							'slider' . 40 => array(
+							'range' . 40 => array(
 								'type'  => 'color',
-								'id'    => $prefix . 'slider' . '-bg-color',
+								'id'    => $prefix . 'range' . '-bg-color',
 								'label' => __( 'Background color', 'wm_domain' ),
 							),
 
@@ -593,8 +419,9 @@
 						 * Main Heading
 						 */
 						'heading' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Main Heading', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Section: Main Heading', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'heading' . 10 => array(
@@ -623,8 +450,9 @@
 						 * Content Area
 						 */
 						'content' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Content Area', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Section: Content', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'content' . 10 => array(
@@ -650,7 +478,7 @@
 							),
 
 							'content' . 30 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Design', 'wm_domain' ) . '</h3>',
 							),
 
@@ -680,12 +508,13 @@
 						 * Footer
 						 */
 						'footer' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Footer', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Section: Footer', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'footer' . 10 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<p class="description">' . __( 'Footer consists of footer widgets area and credits (copyright) widgets area. Set the footer widgets layout below and backgrounds for both footer areas.', 'wm_domain' ) . '</p>',
 							),
 
@@ -700,7 +529,7 @@
 							),
 
 							'footer' . 20 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Footer widgets', 'wm_domain' ) . '</h3>',
 							),
 
@@ -717,7 +546,7 @@
 										),
 								),
 									'footer' . 40 => array(
-										'type'    => 'theme-customizer-html',
+										'type'    => 'html',
 										'content' => '<p class="description">' . __( 'Footer widgets will be layed out into columns using masonry script.', 'wm_domain' ) . '</p>',
 									),
 
@@ -742,7 +571,7 @@
 								),
 
 							'footer' . 150 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Credits', 'wm_domain' ) . '</h3>',
 							),
 
@@ -772,19 +601,97 @@
 						 * Website Background
 						 */
 						'website-background' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Website Background', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Background', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'website-background' . 5 => array(
-								'type'    => 'theme-customizer-html',
-								'content' => '<p class="description">' . __( 'Please note that this background is only visible when using boxed theme layout (set this under "Skin Setup" section).', 'wm_domain' ) . '</p>',
+								'type'    => 'html',
+								'content' => '<h3>' . __( 'Website background', 'wm_domain' ) . '</h3>'
+									. '<p class="description">' . __( 'Please note that this background is only visible when using boxed theme layout (set this under "Setup" section).', 'wm_domain' ) . '</p>',
 							),
 
-							'website-background' . 10 => array(
-								'type'          => 'background',
-								'id'            => $prefix . 'html',
+								'website-background' . 10 => array(
+									'type' => 'background',
+									'id'   => $prefix . 'html',
+								),
+
+
+
+						/**
+						 * Global colors
+						 */
+						'colors-global' => array(
+							'type'           => 'section',
+							'create_section' => __( 'Colors', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
+						),
+
+							'colors-global' . 10 => array(
+								'type'    => 'html',
+								'content' => '<h3>' . __( 'Global colors', 'wm_domain' ) . '</h3>',
 							),
+
+								'colors-global' . 20 => array(
+									'type'  => 'color',
+									'id'    => $prefix . 'accent-color',
+									'label' => __( 'Accent color', 'wm_domain' ),
+								),
+									'colors-global' . 30 => array(
+										'type'    => 'html',
+										'content' => '<p class="description">' . __( 'Accent color is being used globally throughout the whole theme. All of theme design colors are being calculated automatically based on this color, so if you only want the basic theme design, just set this color. If you need to tweak the design settings, feel free to explore theme sections options below.', 'wm_domain' ) . '</p>',
+									),
+
+								//blue
+									'colors-global' . 40 => array(
+										'type'  => 'color',
+										'id'    => $prefix . 'blue-color',
+										'label' => __( 'General blue color', 'wm_domain' ),
+									),
+								//gray
+									'colors-global' . 50 => array(
+										'type'  => 'color',
+										'id'    => $prefix . 'gray-color',
+										'label' => __( 'General gray color', 'wm_domain' ),
+									),
+								//green
+									'colors-global' . 60 => array(
+										'type'  => 'color',
+										'id'    => $prefix . 'green-color',
+										'label' => __( 'General green color', 'wm_domain' ),
+									),
+								//orange
+									'colors-global' . 70 => array(
+										'type'  => 'color',
+										'id'    => $prefix . 'orange-color',
+										'label' => __( 'General orange color', 'wm_domain' ),
+									),
+								//red
+									'colors-global' . 80 => array(
+										'type'  => 'color',
+										'id'    => $prefix . 'red-color',
+										'label' => __( 'General red color', 'wm_domain' ),
+									),
+
+							'colors-global' . 90 => array(
+								'type'    => 'html',
+								'content' => '<h3>' . __( 'Color treshold', 'wm_domain' ) . '</h3>',
+							),
+
+								'colors-global' . 100 => array(
+									'type'    => 'range',
+									'id'      => $prefix . 'text-color-treshold',
+									'label'   => __( 'Auto color treshold', 'wm_domain' ),
+									'default' => 0,
+									'min'     => -50,
+									'max'     => 50,
+									'step'    => 1,
+								),
+									'colors-global' . 110 => array(
+										'type'    => 'html',
+										'content' => '<p class="description">' . __( 'Auto color treshold is being used to automatically calculate the additional colors in the theme (such as text color from the background color). You can tweak the calculation treshold here.', 'wm_domain' ) . '</p>',
+									),
 
 
 
@@ -792,8 +699,9 @@
 						 * Branding
 						 */
 						'branding' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Branding', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Logo', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'branding' . 10 => array(
@@ -807,73 +715,39 @@
 								'label' => __( 'High DPI logo', 'wm_domain' ),
 							),
 
-							'branding' . 30 => array(
-								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Favicons and touch icons', 'wm_domain' ) . '</h3>',
-							),
-
-								'branding' . 40 => array(
-									'type'  => 'image',
-									'id'    => $prefix . 'touch-icon-144',
-									'label' => __( '144x144 touch icon', 'wm_domain' ),
-								),
-								'branding' . 50 => array(
-									'type'  => 'image',
-									'id'    => $prefix . 'touch-icon-114',
-									'label' => __( '114x114 touch icon', 'wm_domain' ),
-								),
-								'branding' . 60 => array(
-									'type'  => 'image',
-									'id'    => $prefix . 'touch-icon-72',
-									'label' => __( '72x72 touch icon', 'wm_domain' ),
-								),
-								'branding' . 70 => array(
-									'type'  => 'image',
-									'id'    => $prefix . 'touch-icon-57',
-									'label' => __( '57x57 touch icon', 'wm_domain' ),
-								),
-								'branding' . 80 => array(
-									'type'  => 'image',
-									'id'    => $prefix . 'favicon-png',
-									'label' => __( 'Favicon PNG (32x32)', 'wm_domain' ),
-								),
-								'branding' . 90 => array(
-									'type'  => 'image',
-									'id'    => $prefix . 'favicon-ico',
-									'label' => __( 'Favicon ICO', 'wm_domain' ),
-								),
-									'branding' . 100 => array(
-										'type'    => 'theme-customizer-html',
-										'content' => '<p class="description">' . __( 'Favicon for Internet Explorer browsers is set in ICO format. This format can contain multiple icon sizes, please include both 16x16 and 32x32 icon version for the high DPI displays compatibility. You can use an <a href="http://xiconeditor.com/" target="_blank">online tool to create your ICO file</a>.', 'wm_domain' ) . '</p>',
-									),
-
 
 
 						/**
 						 * Images
 						 */
 						'images' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Images', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Images', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
-							'images' . 10 => array(
-								'type'    => 'theme-customizer-html',
-								'content' => '<p class="description">' . __( 'If you use a special image lightbox effect plugin, you should disable the theme native effect below.', 'wm_domain' ) . '</p>',
-							),
-							'images' . 20 => array(
-								'type'  => 'checkbox',
-								'id'    => $prefix . 'disable-lightbox',
-								'label' => __( 'Disable lightbox effect', 'wm_domain' ),
+							'images' . 5 => array(
+								'type'    => 'html',
+								'content' => '<h3>' . __( 'Lightbox', 'wm_domain' ) . '</h3>',
 							),
 
+								'images' . 10 => array(
+									'type'    => 'html',
+									'content' => '<p class="description">' . __( 'If you use a special image lightbox effect plugin, you should disable the theme native effect below.', 'wm_domain' ) . '</p>',
+								),
+								'images' . 20 => array(
+									'type'  => 'checkbox',
+									'id'    => $prefix . 'disable-lightbox',
+									'label' => __( 'Disable lightbox effect', 'wm_domain' ),
+								),
+
 							'images' . 30 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Image ratios', 'wm_domain' ) . '</h3>',
 							),
 
 								'images' . 40 => array(
-									'type'    => 'theme-customizer-html',
+									'type'    => 'html',
 									'content' => '<p class="description">' . __( 'Set up image ratios for the different theme items.', 'wm_domain' ) . '</p>',
 								),
 								'images' . 50 => array(
@@ -896,7 +770,7 @@
 								),
 
 							'images' . 80 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<p class="description">' . __( 'Please decide on, and set the image ratios up for different website sections right after the theme activation. If you change the image sizes later on, the settings will apply only on newly uploaded images - the images you upload after you have made an image ratio change. All previous images will keep their original sizes.', 'wm_domain' ) . '</p><p class="description">' . __( 'If you wish to resize the previously uploaded images to conform the new image ratios, you can use a plugin for this. Recommended plugins are <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/" target="_blank">Regenerate Thumbnails</a> or <a href="http://wordpress.org/extend/plugins/ajax-thumbnail-rebuild/" target="_blank">AJAX Thumbnail Rebuild</a>.', 'wm_domain' ) . '</p>',
 							),
 
@@ -906,12 +780,13 @@
 						 * Fonts
 						 */
 						'fonts' => array(
-							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Fonts', 'wm_domain' )
+							'type'           => 'section',
+							'create_section' => __( 'Fonts', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							'fonts' . 10 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<p class="description">' . __( 'Set the Google Font to be used for website headings and body text. You can additionally set a font subset for different character lists.', 'wm_domain' ) . '</p>',
 							),
 
@@ -942,12 +817,12 @@
 								),
 
 							'fonts' . 50 => array(
-								'type'    => 'theme-customizer-html',
+								'type'    => 'html',
 								'content' => '<h3>' . __( 'Font sizes', 'wm_domain' ) . '</h3>',
 							),
 
 								'fonts' . 60 => array(
-									'type'          => 'slider',
+									'type'          => 'range',
 									'id'            => $prefix . 'font' . '-size-body',
 									'label'         => __( 'Basic font size', 'wm_domain' ),
 									'default'       => 14,
@@ -962,12 +837,12 @@
 								),
 
 								'fonts' . 70 => array(
-									'type'    => 'theme-customizer-html',
+									'type'    => 'html',
 									'content' => '<p class="description">' . __( 'Heading font size is counted from the basic font size. Set the percentage of the basic font size for each heading.', 'wm_domain' ) . '</p>',
 								),
 
 									'fonts' . 80 => array(
-										'type'          => 'slider',
+										'type'          => 'range',
 										'id'            => $prefix . 'font' . '-size-h1',
 										'label'         => __( 'Heading H1 font size', 'wm_domain' ),
 										'default'       => 100,
@@ -981,7 +856,7 @@
 											),
 									),
 									'fonts' . 90 => array(
-										'type'          => 'slider',
+										'type'          => 'range',
 										'id'            => $prefix . 'font' . '-size-h2',
 										'label'         => __( 'Heading H2 font size', 'wm_domain' ),
 										'default'       => 100,
@@ -995,7 +870,7 @@
 											),
 									),
 									'fonts' . 100 => array(
-										'type'          => 'slider',
+										'type'          => 'range',
 										'id'            => $prefix . 'font' . '-size-h3',
 										'label'         => __( 'Heading H3 font size', 'wm_domain' ),
 										'default'       => 100,
@@ -1009,7 +884,7 @@
 											),
 									),
 									'fonts' . 110 => array(
-										'type'          => 'slider',
+										'type'          => 'range',
 										'id'            => $prefix . 'font' . '-size-h4',
 										'label'         => __( 'Heading H4, H5 and H6 font size', 'wm_domain' ),
 										'default'       => 100,
@@ -1022,6 +897,73 @@
 													),
 											),
 									),
+
+
+
+						/**
+						 * Layout
+						 */
+						'layout' => array(
+							'type'           => 'section',
+							'create_section' => __( 'Layout', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
+						),
+
+							'layout' . 10 => array(
+								'type'    => 'html',
+								'content' => '<h3>' . __( 'Layout', 'wm_domain' ) . '</h3>',
+							),
+
+								'layout' . 20 => array(
+									'type'    => 'select',
+									'id'      => $prefix . 'layout',
+									'label'   => __( 'Website layout', 'wm_domain' ),
+									'options' => array(
+											'fullwidth' => __( 'Fullwidth', 'wm_domain' ),
+											'boxed'     => __( 'Boxed', 'wm_domain' )
+										),
+								),
+
+								'layout' . 40 => array(
+									'type'          => 'range',
+									'id'            => $prefix . 'website-width',
+									'label'         => __( 'Website width', 'wm_domain' ),
+									'default'       => 1020,
+									'min'           => 1020,
+									'max'           => 1920,
+									'step'          => 20,
+									'customizer_js' => array(
+											'css' => array(
+													'.boxed .wrap, .wrap.boxed, body.boxed.page-meta-layout .wrap, .wrap-inner' => array( array( 'width', 'px' ) ),
+												),
+										),
+								),
+									'layout' . 45 => array(
+										'type'    => 'html',
+										'content' => '<p class="description">' . __( 'The website width is being set up for the boxed layout. The actual website content width would be the website width minus the boxed layout paddings (160px). So if you set the width of 1480, the actual website content width will be 1320px (= 1480 - 160).', 'wm_domain' ) . '</p>',
+									),
+
+
+
+						/**
+						 * Others
+						 */
+						'others' => array(
+							'type'           => 'section',
+							'create_section' => __( 'Others', 'wm_domain' ),
+							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
+						),
+
+							'others' . 10 => array(
+								'type'    => 'html',
+								'content' => '<h3>' . __( 'CSS3 Animations', 'wm_domain' ) . '</h3>',
+							),
+
+								'others' . 20 => array(
+									'type'  => 'checkbox',
+									'id'    => $prefix . 'disable-animatecss',
+									'label' => __( 'Disable Animate.css library', 'wm_domain' ),
+								),
 
 					);
 
