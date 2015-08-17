@@ -10,7 +10,7 @@
  *
  * @since       3.0
  * @version     3.4
- * @version  1.5.1
+ * @version  1.5.2
  *
  * CONTENT:
  * - 1) Required files
@@ -950,7 +950,7 @@
 	 * Active callback: Is the background image set?
 	 *
 	 * @since    1.5
-	 * @version  1.5.1
+	 * @version  1.5.2
 	 *
 	 * @param  obj $control
 	 */
@@ -980,7 +980,8 @@
 					$control_image
 					&& $control->manager->get_setting( $control_image )
 				) {
-				$output = ! empty( $control->manager->get_setting( $control_image )->value() );
+				$value  = $control->manager->get_setting( $control_image )->value();
+				$output = ! empty( $value );
 			}
 
 

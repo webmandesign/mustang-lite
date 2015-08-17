@@ -1,5 +1,16 @@
 # Mustang Lite Changelog
 
+## 1.5.2
+
+* **Fix**: Issue when using older version of PHP (pre 5.5)
+
+#### Files changed:
+
+	style.css
+	library/skinning.php
+	setup/setup.php
+
+
 ## 1.5.1
 
 * **Fix**: Localization loading

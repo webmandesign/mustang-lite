@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.5.1
+ * @version  1.5.2
  *
  * CONTENT:
  * - 1) Required files
@@ -1525,7 +1525,7 @@
 		 * Navigation item improvements
 		 *
 		 * @since    1.0
-		 * @version  1.5
+		 * @version  1.5.2
 		 */
 		if ( ! function_exists( 'wm_nav_item_process' ) ) {
 			function wm_nav_item_process( $item_output, $item, $depth, $args ) {
@@ -1546,7 +1546,7 @@
 
 					$classes       = 'inner';
 					$allowed_tags  = apply_filters( 'wmhook_wm_nav_item_process_allowed_tags', '<br><code><em><i><img><mark><span><strong>' );
-					$classes_array = ( empty( $item->classes ) ) ? ( array() ) : ( (array) $item->classes );
+					$classes_array = (array) $item->classes;
 
 
 				// Processing
