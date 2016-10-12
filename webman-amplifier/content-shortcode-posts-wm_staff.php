@@ -13,6 +13,8 @@
  * @package     WebMan Amplifier
  * @subpackage  Shortcodes
  *
+ * @version  1.6
+ *
  * @uses        array $helper  Contains shortcode $atts array plus additional helper variables.
  */
 
@@ -77,7 +79,7 @@ if ( $helper['link'] ) {
 				if ( $contact['link'] ) {
 					$output_contacts .= '<a href="' . esc_url( $contact['link'] ) . '" class="' . esc_attr( $contact['icon'] ) . '"' . $title_attr . '><span class="screen-reader-text">' . $contact['title'] . '</span></a>';
 				} else {
-					$output_contacts .= '<i class="' . esc_attr( $contact['icon'] ) . '"' . $title_attr . '></i><span class="screen-reader-text">' . $contact['title'] . '</span>';
+					$output_contacts .= '<span class="' . esc_attr( $contact['icon'] ) . '"' . $title_attr . '></span><span class="screen-reader-text">' . $contact['title'] . '</span>';
 				}
 				$output_contacts .= '</li>';
 			}

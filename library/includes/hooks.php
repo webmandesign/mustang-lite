@@ -9,8 +9,9 @@
  * @subpackage  Theme Framework Hooks
  * @copyright   2014 WebMan - Oliver Juhas
  *
- * @since       3.0
- * @version     3.0
+ * @since    3.0
+ * @version  3.0
+ * @version  1.6.1
  */
 
 
@@ -339,5 +340,3 @@
 			do_action( 'wmhook_footer_bottom' );
 			do_action( 'tha_footer_bottom' );
 		} // /wmhook_footer_bottom
-
-?>

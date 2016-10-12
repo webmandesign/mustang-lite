@@ -10,6 +10,7 @@
  *
  * @since       3.1
  * @version     3.3
+ * @version  1.6.1
  */
 
 
@@ -54,5 +55,3 @@ if ( ! function_exists( 'wm_sanitize_return_value' ) ) {
 		return apply_filters( 'wmhook_wm_sanitize_return_value_output', $value );
 	}
 } // /wm_sanitize_return_value
-
-?>

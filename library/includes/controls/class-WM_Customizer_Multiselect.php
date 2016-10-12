@@ -9,7 +9,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since       3.1
- * @version  1.2.7
+ * @version  1.6.1
  */
 
 
@@ -27,11 +27,9 @@ class WM_Customizer_Multiselect extends WP_Customize_Control {
 				echo '<option value="' . $value . '" ' . selected( $this->value(), $value, false ) . '>' . $name . '</option>';
 			}
 			echo '</select>';
-			echo '<em>' . __( 'Press CTRL key for multiple selection.', 'wm_domain' ) . '</em>';
+			echo '<em>' . __( 'Press CTRL key for multiple selection.', 'mustang' ) . '</em>';
 			echo '</label>';
 		}
 	}
 
 } // /WM_Customizer_Multiselect
-
-?>

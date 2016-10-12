@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.1
+ * @version  1.6
  */
 
 
@@ -27,7 +27,7 @@ if ( have_posts() ) {
 
 			$output .= '<header class="entry-header"><h1 class="entry-title"' . wm_schema_org( 'name' ) . '>';
 				if ( has_post_thumbnail() ) {
-					$thumb_size = ( ! function_exists( 'wma_amplifier' ) ) ? ( array( 100, 100 ) ) : ( 'admin-thumbnail' );
+					$thumb_size = 'admin-thumbnail';
 
 					$output .= '<a href="' . get_permalink() . '" title="' . esc_attr( get_the_title() ) . '">';
 					$output .= get_the_post_thumbnail( get_the_ID(), $thumb_size );
@@ -61,5 +61,3 @@ if ( have_posts() ) {
 }
 
 wp_reset_query();
-
-?>

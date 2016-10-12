@@ -7,7 +7,7 @@
  * This fallback stylesheet is not compatible with RTL.
  *
  * @since    1.1.1
- * @version  1.5
+ * @version  1.6.1
  */
 
 /* Base */
@@ -57,6 +57,16 @@
 @import url( 'responsive.css' );
 
 @import url( 'high-dpi.css' );
+
+/* Plugins */
+
+@import url( '../../setup/premium/assets/css/plugins-bbpress.css' );
+
+@import url( '../../setup/premium/assets/css/responsive-plugins-bbpress.css' );
+
+@import url( '../../setup/premium/assets/css/plugins-woocommerce.css' );
+
+@import url( '../../setup/premium/assets/css/responsive-plugins-woocommerce.css' );
 
 
 
@@ -180,7 +190,8 @@
 			color: #ffffff;
 		}
 
-		.wm-iconbox-module.wm-content-module-item:hover .image i:before {
+		.wm-iconbox-module.wm-content-module-item:hover .image [class^="icon-"]:before,
+		.wm-iconbox-module.wm-content-module-item:hover .image [class*=" icon-"]:before {
 			text-shadow: 0 0 .5em rgba(0,0,0, .62);
 		}
 
@@ -584,7 +595,8 @@
 			color: #202020;
 		}
 
-		.slider .wm-iconbox-module.wm-content-module-item:hover .image i:before {
+		.slider .wm-iconbox-module.wm-content-module-item:hover .image [class^="icon-"]:before,
+		.slider .wm-iconbox-module.wm-content-module-item:hover .image [class*=" icon-"]:before {
 			text-shadow: 0 0 .5em rgba(255,255,255, .75);
 		}
 
@@ -849,6 +861,3 @@
 		h1.logo {
 			padding-top: 19px;
 		}
-
-
-	/* Using Mustang theme by WebMan - Oliver Juhas (http://www.webmandesign.eu), version 1.5 */

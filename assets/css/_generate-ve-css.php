@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6.1
  *
  * @uses        Custom CSS Styles Generator
  * @uses        require() instead of require_once() due to previous inclusion of files when building global CSS stylesheet
@@ -130,5 +130,3 @@
  */
 
 	echo apply_filters( 'wmhook_esc_css', $output );
-
-?>

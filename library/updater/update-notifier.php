@@ -11,8 +11,8 @@
  * @link        http://themeforest.net/user/unisphere
  * @link        http://twitter.com/unispheredesign
  *
- * @since       3.0
- * @version     3.1
+ * @since    3.0
+ * @version  1.6
  *
  * CONTENT:
  * - 1) Constants
@@ -75,19 +75,18 @@
 			}
 
 			$xml = get_latest_theme_version( NOTIFIER_CACHE_INTERVAL ); //Get the latest remote XML file on our server
+			$version = WM_THEME_VERSION;
 
-			//support for nested point releases (such as v1.0.1) - works for versions of up to 9.9
-			$latestVersion    = sanitize_title( str_replace( '.', '', $xml->latest ) ); //1.0.1 => 101
-			$latestVersion    = substr( $latestVersion, 0, 1 ) . '.' . substr( $latestVersion, 1 ); //101 => 1.01
-			$installedVersion = sanitize_title( str_replace( '.', '', WM_THEME_VERSION ) ); //1.0.1 => 101
-			$installedVersion = substr( $installedVersion, 0, 1 ) . '.' . substr( $installedVersion, 1 ); //101 => 1.01
+			if (
+					isset( $xml->latest )
+					&& version_compare( $xml->latest, WM_THEME_VERSION, '>' )
+				) {
 
-			if ( (float) $latestVersion > (float) $installedVersion ) { //Compare current theme version with the remote XML version
 				add_theme_page(
 					//page_title
-					sprintf( __( '%s Theme Updates', 'wm_domain' ), WM_THEME_NAME ),
+					sprintf( __( '%s Theme Updates', 'mustang' ), WM_THEME_NAME ),
 					//menu_title
-					__( 'Theme Updates', 'wm_domain' ) . ' <span class="update-plugins count-1"><span class="update-count">1</span></span>',
+					__( 'Theme Updates', 'mustang' ) . ' <span class="update-plugins count-1"><span class="update-count">1</span></span>',
 					//capability
 					'switch_themes',
 					//menu_slug
@@ -95,7 +94,9 @@
 					//function
 					'update_notifier'
 				);
+
 			}
+
 		}
 	} // /update_notifier_menu
 
@@ -111,27 +112,27 @@
 				return;
 			}
 
-			global $wp_admin_bar, $wpdb;
+			global $wp_admin_bar;
 
 			$xml = get_latest_theme_version( NOTIFIER_CACHE_INTERVAL ); //Get the latest remote XML file on our server
 
-			//support for nested point releases (such as v1.0.1) - works for versions of up to 9.9
-			$latestVersion    = sanitize_title( str_replace( '.', '', $xml->latest ) ); //1.0.1 => 101
-			$latestVersion    = substr( $latestVersion, 0, 1 ) . '.' . substr( $latestVersion, 1 ); //101 => 1.01
-			$installedVersion = sanitize_title( str_replace( '.', '', WM_THEME_VERSION ) ); //1.0.1 => 101
-			$installedVersion = substr( $installedVersion, 0, 1 ) . '.' . substr( $installedVersion, 1 ); //101 => 1.01
+			if (
+					isset( $xml->latest )
+					&& version_compare( $xml->latest, WM_THEME_VERSION, '>' )
+				) {
 
-			if( (float) $latestVersion > (float) $installedVersion ) { //Compare current theme version with the remote XML version
 				$adminURL = get_admin_url() . 'themes.php?page=theme-update-notifier';
 				if ( class_exists( 'Envato_WP_Toolkit' ) && ! isset( $xml->noenvato ) ) {
 					$adminURL = network_admin_url( 'admin.php?page=envato-wordpress-toolkit' );
 				}
 				$wp_admin_bar->add_menu( array(
 						'id'    => 'update_notifier',
-						'title' => sprintf( __( '%s update', 'wm_domain' ), WM_THEME_NAME ) . ' <span id="ab-updates">1</span>',
+						'title' => sprintf( __( '%s update', 'mustang' ), WM_THEME_NAME ) . ' <span id="ab-updates">1</span>',
 						'href'  => $adminURL
 					) );
+
 			}
+
 		}
 	} // /update_notifier_bar_menu
 
@@ -147,80 +148,151 @@
 	 * Notifier page renderer
 	 */
 	function update_notifier() {
-		//Requirements check
+
+		// Requirements check
+
 			if ( ! is_super_admin() ) {
 				return;
 			}
 
-		$xml = get_latest_theme_version( NOTIFIER_CACHE_INTERVAL ); // Get the latest remote XML file on our server
-		?>
-		<div class="wrap update-notifier">
 
-			<div id="icon-tools" class="icon32"></div>
-			<h2><strong><?php echo WM_THEME_NAME; ?></strong> Theme Updates</h2>
+		// Helper variables
 
-			<br />
+			$xml = get_latest_theme_version( NOTIFIER_CACHE_INTERVAL ); // Get the latest remote XML file on our server
 
-			<div id="message" class="error">
-				<p>
-				<?php
-				if ( isset( $xml->message ) && trim( $xml->message ) ) {
-					echo '<strong>' . trim( $xml->message ) . '</strong><br />';
-				}
-				echo 'You have version ' . WM_THEME_VERSION . ' installed. <strong>Update to version ' . trim( $xml->latest ) . ' now.</strong>';
-				?>
-				</p>
-			</div>
 
-			<div id="instructions">
-				<img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="" class="theme-img" />
+		// Processing
 
-				<h3>Update Download and Instructions</h3>
+			/**
+			 * No need for translations, english only.
+			 */
+			?>
 
-				<p>To update the theme you need to <strong>re-download it from the marketplace</strong> you have bought it on.</p>
+			<div class="wrap update-notifier">
 
-				<p>Use one of these options to update the theme:</p>
+				<h2><strong><?php echo WM_THEME_NAME; ?></strong> Theme Updates</h2>
 
-				<?php
-				if ( isset( $xml->important ) ) {
-					echo '<div class="important-note">' . $xml->important . '</div>';
-				}
-				?>
+				<br />
 
-				<ul>
-					<?php
-					if ( class_exists( 'Envato_WP_Toolkit' ) && ! isset( $xml->noenvato ) ) {
-						echo '<li><h4>Automatic theme update:</h4><a href="' . network_admin_url( 'admin.php?page=envato-wordpress-toolkit' ) . '" class="button button-primary button-hero">Update the Theme Automatically &raquo;</a></li>';
+				<div class="message error">
+
+					<p><?php
+
+					if ( isset( $xml->message ) && trim( $xml->message ) ) {
+						echo '<strong>' . trim( $xml->message ) . '</strong><br />';
 					}
+
+					echo 'You have version ' . WM_THEME_VERSION . ' installed. <strong>Update to version ' . trim( $xml->latest ) . ' now.</strong>';
+
+					?></p>
+
+				</div>
+
+				<div class="instructions">
+
+					<?php
+
+					if ( isset( $xml->instructions ) && trim( $xml->instructions ) ) {
+
+						echo trim( $xml->instructions );
+
+					} else {
+
 					?>
-					<li>
-						<h4>Easier, but might take longer time:</h4>
-						<ol>
-							<li>Unzip the zipped theme file (you have just downloaded) on your computer.</li>
-							<li>Upload the unzipped theme folder using FTP client to your server (into <code>YOUR_WORDPRESS_INSTALLATION/wp-content/themes/</code>) overwriting all the current theme files.</li>
-						</ol>
-					</li>
-					<li>
-						<h4>More advanced, quicker:</h4>
-						<ol>
-							<li>Upload the theme installation ZIP file using FTP client to your server (into <code>YOUR_WORDPRESS_INSTALLATION/wp-content/themes/</code>).</li>
-							<li>Using your FTP client, rename the old theme folder (for example from <code><?php echo WM_THEME_SHORTNAME; ?></code> to <code><?php echo WM_THEME_SHORTNAME; ?>-old</code>).</li>
-							<li>When the old theme folder is renamed, unzip the theme installation zip file directly on the server (you might need to use a web-based FTP tool for this; hosting companies provides such tools).</li>
-							<li>After checking whether the theme works fine, delete the renamed old theme folder from the server.</li>
-						</ol>
-					</li>
-				</ul>
+
+						<img src="<?php echo esc_url( wp_get_theme( 'mustang' )->get_screenshot() ); ?>" alt="" class="theme-img" />
+
+						<h3>Update Download and Instructions</h3>
+
+						<p>First, please, re-download the new theme update from the source where you've originally obtained the theme.</p>
+
+						<p>Use one of these options to update your theme:</p>
+
+						<?php
+
+						if ( isset( $xml->important ) ) {
+
+							echo '<div class="important-note">' . $xml->important . '</div>';
+
+						}
+
+						?>
+
+						<ul>
+
+							<?php
+
+							if ( class_exists( 'Envato_WP_Toolkit' ) && ! isset( $xml->noenvato ) ) {
+								echo '<li><h4>Automatic theme update:</h4><a href="' . network_admin_url( 'admin.php?page=envato-wordpress-toolkit' ) . '" class="button button-primary button-hero">Update the Theme Automatically &raquo;</a></li>';
+							}
+
+							?>
+
+							<li>
+
+								<h4>Preferred, safer, quicker procedure:</h4>
+
+								<ol>
+									<li>Upload the theme installation ZIP file using FTP client to your server (into <code>YOUR_WORDPRESS_INSTALLATION/wp-content/themes/</code>).</li>
+									<li>Using your FTP client, rename the old theme folder (for example from <code>my-theme</code> to <code>my-theme-bak</code>).</li>
+									<li>When the old theme folder is renamed, unzip the theme installation zip file directly on the server (you might need to use a web-based FTP tool for this - hosting companies provides such tools).</li>
+									<li>After checking whether the theme works fine, delete the renamed old theme folder from the server (the <code>my-theme-bak</code> folder in our case).</li>
+								</ol>
+
+							</li>
+
+							<li>
+
+								<h4>Easier, slower procedure:</h4>
+
+								<ol>
+									<li>Unzip the zipped theme file (you have just downloaded) on your computer.</li>
+									<li>Upload the unzipped theme folder using FTP client to your server (into <code>YOUR_WORDPRESS_INSTALLATION/wp-content/themes/</code>) overwriting all the current theme files. Please note that if some files were removed from the theme in the new update, you will have to delete these files additionally from your server. For removed files please check the changelog on the right.</li>
+								</ol>
+
+							</li>
+
+						</ul>
+
+
+					<?php
+
+					} // /Custom instructions check
+
+					?>
+
+				</div>
+
+				<div class="changelog note">
+
+					<h2>Changelog</h2>
+
+					<?php
+
+					if ( isset( $xml->changelog ) ) {
+						echo $xml->changelog;
+					}
+
+					?>
+
+					<hr />
+
+					<h3>Files changed:</h3>
+
+					<code><?php
+
+					if ( isset( $xml->changefiles ) ) {
+						echo str_replace( ', ', '</code><br /><code>', $xml->changefiles );
+					}
+
+					?></code>
+
+				</div>
+
 			</div>
 
-			<div id="changelog" class="note">
-				<div class="icon32 icon32-posts-page" id="icon-edit-pages"><br /></div><h2>Changelog</h2>
-				<?php echo $xml->changelog; ?>
-				<hr />
-				<h3>Files changed:</h3>
-				<code><?php echo str_replace( ', ', '</code><br /><code>', $xml->changefiles ); ?></code>
-			</div>
-		</div>
-		<?php
+			<?php
+
 	} // /update_notifier
 
 
@@ -252,15 +324,45 @@
 		$interval                    = absint( $interval );
 
 		//check the cache
-		if ( ! $last || ( ( $now - $last ) > $interval ) || 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) {
+		if (
+				! $last
+				|| ( time() - $last ) > absint( $interval )
+				|| 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) )
+			) {
 
 			//cache doesn't exist, or is old, so refresh it
 			$response = wp_remote_get( NOTIFIER_XML_FILE );
+
 			if ( is_wp_error( $response ) ) {
+
 				$error = $response->get_error_message();
-				$cache = '<?xml version="1.0" encoding="UTF-8"?><notifier><latest>1.0</latest><message><![CDATA[<span style="font-size:125%;color:#f33">Something went wrong: ' . $error . '</span>]]></message><changelog></changelog><changefiles></changefiles></notifier>';
+
+				$cache  = '<?xml version="1.0" encoding="UTF-8"?>';
+				$cache .= '<notifier>';
+					$cache .= '<latest>1.0</latest>';
+					$cache .= '<message><![CDATA[<span style="font-size:125%;color:#f33">Something went wrong: ' . wp_kses(
+							$error,
+							array(
+								'a' => array(
+										'href' => true,
+										'class' => true,
+									),
+								'span' => array(
+										'class' => true,
+									),
+								'strong' => array(
+										'class' => true,
+									),
+							)
+						) . '</span>]]></message>';
+					$cache .= '<changelog></changelog>';
+					$cache .= '<changefiles></changefiles>';
+				$cache .= '</notifier>';
+
 			} else {
+
 				$cache = $response['body'];
+
 			}
 
 			if ( $cache ) {
@@ -282,7 +384,15 @@
 		//Let's see if the $xml data was returned as we expected it to.
 		//If it didn't, use the default 1.0 as the latest version so that we don't have problems when the remote server hosting the XML file is down
 		if ( strpos( (string) $notifier_data, '<notifier>' ) === false ) {
-			$notifier_data = '<?xml version="1.0" encoding="UTF-8"?><notifier><latest>1.0</latest><message></message><changelog></changelog><changefiles></changefiles></notifier>';
+
+			$notifier_data  = '<?xml version="1.0" encoding="UTF-8"?>';
+			$notifier_data .= '<notifier>';
+				$notifier_data .= '<latest>1.0</latest>';
+				$notifier_data .= '<message></message>';
+				$notifier_data .= '<changelog></changelog>';
+				$notifier_data .= '<changefiles></changefiles>';
+			$notifier_data .= '</notifier>';
+
 		}
 
 		//Load the remote XML data into a variable and return it
@@ -290,5 +400,3 @@
 
 		return $xml;
 	} // /get_latest_theme_version
-
-?>

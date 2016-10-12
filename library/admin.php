@@ -7,16 +7,14 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.0
- * @version  1.5
+ * @version  1.6.1
  *
  * CONTENT:
  * - 1) Required files
  * - 10) Actions and filters
  * - 20) Styles and scripts
- * - 30) Admin login
- * - 40) Admin dashboard customization
- * - 50) Visual editor improvements
- * - 60) Other functions
+ * - 30) Visual editor improvements
+ * - 40) Other functions
  */
 
 
@@ -54,7 +52,7 @@
 	//Theme updater
 		if (
 				is_admin()
-				&& ! ( wm_option( 'general-disable-update-notifier' ) || apply_filters( 'wmhook_disable_update_notifier', false ) )
+				&& ! ( wm_option( 'general-disable-update-notifier' ) || apply_filters( 'wmhook_disable_update_notifier', true ) )
 			) {
 			locate_template( WM_LIBRARY_DIR . 'updater/update-notifier.php', true );
 		}
@@ -72,24 +70,10 @@
 	 */
 
 		//Admin customization
-			add_action( 'admin_head', 'wm_admin_head' );
 			add_action( 'admin_enqueue_scripts', 'wm_admin_include', 998 );
-		//Disable comments
-			if (
-					is_admin()
-					&& ( wm_option( 'general-comments' ) || apply_filters( 'wmhook_admin_comments', '' ) )
-				) {
-				add_action ( 'admin_footer', 'wm_comments_off' );
-			}
+
 		//Display admin notice
 			add_action( 'admin_notices', 'wm_admin_notice' );
-		//Posts list table
-			//Posts
-				add_action( 'manage_post_posts_columns',       'wm_post_columns_register', 10    );
-				add_action( 'manage_post_posts_custom_column', 'wm_post_columns_render',   10, 2 );
-			//Pages
-				add_action( 'manage_pages_columns',            'wm_post_columns_register', 10    );
-				add_action( 'manage_pages_custom_column',      'wm_post_columns_render',   10, 2 );
 
 
 
@@ -102,13 +86,6 @@
 				add_filter( 'tiny_mce_before_init', 'wm_custom_mce_format' );
 				add_filter( 'mce_buttons', 'wm_add_buttons_row1' );
 			}
-		//Login customization
-			add_filter( 'login_headertitle', 'wm_login_headertitle' );
-			add_filter( 'login_headerurl', 'wm_login_headerurl' );
-		//Admin customization
-			add_filter( 'admin_footer_text', 'wm_admin_footer' );
-		//User profile
-			add_filter( 'user_contactmethods', 'wm_user_contact_methods' );
 
 
 
@@ -129,7 +106,7 @@
 				//RTL languages support
 					if ( is_rtl() ) {
 						wp_enqueue_style( 'wm-admin-rtl' );
-						if ( class_exists( 'Woocommerce' ) ) {
+						if ( function_exists( 'wm_is_woocommerce' ) ) {
 							wp_enqueue_style( 'wm-admin-wc-rtl' );
 						}
 					}
@@ -144,141 +121,7 @@
 
 
 /**
- * 30) Admin login
- */
-
-	/**
-	 * Login logo title
-	 */
-	if ( ! function_exists( 'wm_login_headertitle' ) ) {
-		function wm_login_headertitle() {
-			return apply_filters( 'wmhook_wm_login_headertitle_output', get_bloginfo( 'name' ) );
-		}
-	} // /wm_login_headertitle
-
-
-
-	/**
-	 * Login logo URL
-	 */
-	if ( ! function_exists( 'wm_login_headerurl' ) ) {
-		function wm_login_headerurl() {
-			return apply_filters( 'wmhook_wm_login_headerurl_output', home_url() );
-		}
-	} // /wm_login_headerurl
-
-
-
-
-
-/**
- * 40) Admin dashboard customization
- */
-
-	/**
-	 * Admin footer text customization
-	 */
-	if ( ! function_exists( 'wm_admin_footer' ) ) {
-		function wm_admin_footer() {
-			//Helper variables
-				$output = '&copy; ' . get_bloginfo( 'name' ) . ' | Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a> | Theme created by <a href="' . WM_DEVELOPER_URL . '" target="_blank">WebMan</a>';
-
-			//Output
-				echo apply_filters( 'wmhook_wm_admin_footer_output', $output );
-		}
-	} // /wm_admin_footer
-
-
-
-	/**
-	 * Admin HTML head
-	 *
-	 * @since    1.0
-	 * @version  1.5
-	 */
-	if ( ! function_exists( 'wm_admin_head' ) ) {
-		function wm_admin_head() {
-			//Helper variables
-				global $current_screen;
-
-				$output     = '';
-				$no_preview = apply_filters( 'wmhook_wm_admin_head_no_preview',  array( 'wm_logos', 'wm_modules', 'wm_staff' ) );
-
-			//Preparing output
-				//Removing unnecessary view buttons
-					if ( in_array( $current_screen->post_type, $no_preview ) ) {
-						$output .= "\r\n" . '.row-actions .view, #view-post-btn, #preview-action {display: none}';
-					}
-
-			//Output
-				if ( $output ) {
-					echo apply_filters( 'wmhook_wm_admin_head_output', '<style type="text/css">' . "\r\n" . $output . '</style>' . "\r\n" );
-				}
-		}
-	} // /wm_admin_head
-
-
-
-	/**
-	 * Admin post list columns
-	 *
-	 * @since    1.0
-	 * @version  1.5
-	 *
-	 * @param  array $columns
-	 */
-	if ( ! function_exists( 'wm_post_columns_register' ) ) {
-		function wm_post_columns_register( $columns ) {
-			//Helper variables
-				$add                = array_slice( $columns, 0, 2 );
-				$add['wmamp-thumb'] = __( 'Image', 'wm_domain' );
-
-			//Output
-				return apply_filters( 'wmhook_wm_post_columns_register_output', array_merge( $add, array_slice( $columns, 2 ) ) );
-		}
-	} // /wm_post_columns_register
-
-
-
-	/**
-	 * Admin post list columns content
-	 *
-	 * @since    1.0
-	 * @version  1.5
-	 *
-	 * @param  string $column
-	 * @param  absint $post_id
-	 */
-	if ( ! function_exists( 'wm_post_columns_render' ) ) {
-		function wm_post_columns_render( $column, $post_id ) {
-			//Thumbnail renderer
-				if ( 'wmamp-thumb' === $column ) {
-
-					$size  = ( class_exists( 'WM_Amplifier' ) ) ? ( apply_filters( 'wmhook_wmamp_' . 'cp_admin_thumb_size', 'admin-thumbnail' ) ) : ( 'thumbnail' );
-					$image = ( has_post_thumbnail() ) ? ( get_the_post_thumbnail( null, $size ) ) : ( '' );
-
-					$hasThumb = ( $image ) ? ( ' has-thumb' ) : ( ' no-thumb' );
-
-					echo '<span class="wm-image-container' . $hasThumb . '">';
-
-					if ( get_edit_post_link() ) {
-						edit_post_link( $image );
-					} else {
-						echo '<a href="' . get_permalink() . '">' . $image . '</a>';
-					}
-
-					echo '</span>';
-
-				}
-		}
-	} // /wm_post_columns_render
-
-
-
-
-
-/**
- * 50) Visual editor improvements
+ * 30) Visual editor improvements
  */
 
 	/**
@@ -333,7 +176,7 @@
 
 
 /**
- * 60) Other functions
+ * 40) Other functions
  */
 
 	/**
@@ -400,77 +243,3 @@
 				}
 		}
 	} // /wm_admin_notice
-
-
-
-	/**
-	 * WordPress user profile contact fields
-	 *
-	 * @param  array $user_contactmethods
-	 */
-	if ( ! function_exists( 'wm_user_contact_methods' ) ) {
-		function wm_user_contact_methods( $user_contactmethods ) {
-			//Preparing output
-				if ( ! isset( $user_contactmethods['twitter'] ) ) {
-					$user_contactmethods['twitter'] = 'Twitter';
-				}
-				if ( ! isset( $user_contactmethods['facebook'] ) ) {
-					$user_contactmethods['facebook'] = 'Facebook';
-				}
-				if ( ! isset( $user_contactmethods['googleplus'] ) ) {
-					$user_contactmethods['googleplus'] = 'Google+';
-				}
-
-			//Output
-				return apply_filters( 'wmhook_wm_user_contact_methods_output', $user_contactmethods );
-		}
-	} // /wm_user_contact_methods
-
-
-
-	/**
-	 * Switch comments and pingbacks off
-	 */
-	if ( ! function_exists( 'wm_comments_off' ) ) {
-		function wm_comments_off() {
-			//Helper variables
-				global $current_screen;
-
-				$output = '';
-
-				$post_types = apply_filters( 'wmhook_admin_comments', wm_option( 'general-comments' ) );
-
-				if ( ! is_array( $post_types ) ) {
-					$post_types = explode( ',', $post_types );
-				}
-				$post_types = apply_filters( 'wmhook_wm_comments_off_post_types', array_filter( $post_types ) );
-
-			//Requirements check
-				if (
-						empty( $post_types )
-						|| ! isset( $current_screen->post_type )
-						|| ! isset( $current_screen->action )
-					) {
-					return;
-				}
-
-			//Preparing output
-				if ( in_array( $current_screen->post_type, $post_types ) && 'add' == $current_screen->action ) {
-					$output .= '<script><!--
-						if ( document.post ) {
-							var the_comment = document.post.comment_status,
-							    the_ping    = document.post.ping_status;
-							if ( the_comment && the_ping ) {
-								the_comment.checked = false;
-								the_ping.checked    = false;
-							}
-						}
-						//--></script>';
-				}
-
-			//Output
-				echo apply_filters( 'wmhook_wm_comments_off_output', $output );
-		}
-	} // /wm_comments_off
-
-?>

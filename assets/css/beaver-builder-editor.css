@@ -1,0 +1,94 @@
+/**
+ * Beaver Builder editor styles
+ *
+ * @since    1.6
+ * @version  1.6
+ */
+
+.fl-builder .header,
+.fl-builder .main-heading,
+.fl-builder .footer {
+	z-index: 0;
+}
+
+.fl-lightbox button,
+.fl-lightbox input[type="button"],
+.fl-lightbox input[type="submit"] {
+	text-shadow: none;
+	color: inherit !important;
+	box-shadow: none;
+}
+
+.fl-lightbox h1 + div,
+.fl-lightbox h2 + div,
+.fl-lightbox h3 + div {
+	margin-top: auto;
+}
+
+.ui-draggable-dragging .fl-lightbox-content-wrap {
+	opacity: 0;
+}
+.ui-draggable-dragging.fl-lightbox {
+	background: transparent;
+	border: 1px dotted #dfdfdf;
+	box-shadow: rgba(0, 0, 0, 0.33) 0 4px 20px;
+}
+
+.wm-posts .comments-area,
+.posts .comments-area {
+	display: none;
+}
+
+.fl-row:not(:hover) {
+	z-index: 0;
+}
+.fl-col-content .fl-module:hover {
+	position: relative;
+	z-index: 999;
+}
+
+.wm-accordion .wm-item-content {
+	display: none;
+}
+.wm-accordion[data-active="1"] .wm-item:nth-child(1) .wm-item-content,
+.wm-accordion[data-active="2"] .wm-item:nth-child(2) .wm-item-content,
+.wm-accordion[data-active="3"] .wm-item:nth-child(3) .wm-item-content,
+.wm-accordion[data-active="4"] .wm-item:nth-child(4) .wm-item-content,
+.wm-accordion[data-active="5"] .wm-item:nth-child(5) .wm-item-content,
+.wm-accordion[data-active="6"] .wm-item:nth-child(6) .wm-item-content,
+.wm-accordion[data-active="7"] .wm-item:nth-child(7) .wm-item-content,
+.wm-accordion[data-active="8"] .wm-item:nth-child(8) .wm-item-content,
+.wm-accordion[data-active="9"] .wm-item:nth-child(9) .wm-item-content {
+	display: block !important;
+}
+
+[class*="scrollable-"] .wm-items-container:not(.slick-slider) .wm-column {
+	display: none;
+}
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="1"] .wm-column:nth-child(1),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="2"] .wm-column:nth-child(1),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="2"] .wm-column:nth-child(2),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="3"] .wm-column:nth-child(1),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="3"] .wm-column:nth-child(2),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="3"] .wm-column:nth-child(3),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="4"] .wm-column:nth-child(1),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="4"] .wm-column:nth-child(2),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="4"] .wm-column:nth-child(3),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="4"] .wm-column:nth-child(4),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="5"] .wm-column:nth-child(1),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="5"] .wm-column:nth-child(2),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="5"] .wm-column:nth-child(3),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="5"] .wm-column:nth-child(4),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="5"] .wm-column:nth-child(5),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="6"] .wm-column:nth-child(1),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="6"] .wm-column:nth-child(2),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="6"] .wm-column:nth-child(3),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="6"] .wm-column:nth-child(4),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="6"] .wm-column:nth-child(5),
+[class*="scrollable-"] .wm-items-container:not(.slick-slider)[data-columns="6"] .wm-column:nth-child(6) {
+	display: block;
+}
+
+.fl-builder-content .wm-divider.type-whitespace {
+	border: 4px dashed rgba(255, 255, 255, 0.5);
+}

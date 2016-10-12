@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6
  *
  * CONTENT:
  * - 10) Basics
@@ -19,6 +19,7 @@
  * - 90) Appear animations
  * - 100) Row video background
  * - 110) Columns tweaks
+ * - 120) WooCommerce floating cart
  */
 
 
@@ -133,8 +134,8 @@ jQuery( function() {
 
 			var $logo = jQuery( '.logo img' );
 
-			if ( wmIsHighDPI() && $logo.data( 'highdpi' ) ) {
-				$logo.attr( 'src', $logo.data( 'highdpi' ) );
+			if ( wmIsHighDPI() && $logo.data( 'hidpi' ) ) {
+				$logo.attr( 'src', $logo.data( 'hidpi' ) );
 			}
 
 
@@ -296,33 +297,52 @@ jQuery( function() {
 
 				//Clicking the navigation
 					jQuery( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
-							var $this         = jQuery( this ),
-							    $anchor       = $this.not( '.mobile-nav' ).attr( 'href' ),
-							    $scrollObject = jQuery( 'html, body' ),
-							    wmScrollSpeed = ( 1024 >= document.body.clientWidth ) ? ( 0 ) : ( 600 );
 
-							if (
-									'#' !== $this.attr( 'href' )
-									&& ! $this.data( 'tab' )
-									&& ! $this.data( 'filter' )
-									&& ! $this.hasClass( 'no-scroll-link' )
-								) {
-								e.preventDefault();
+							// Requirements check
+
+								// Do nothing when editing page with Beaver Builder
+
+									if ( jQuery( 'html' ).hasClass( 'fl-builder-edit' ) ) {
+										e.preventDefault();
+										return;
+									}
+
+
+							// Helper variables
+
+								var $this         = jQuery( this ),
+								    $anchor       = $this.not( '.mobile-nav' ).attr( 'href' ),
+								    $scrollObject = jQuery( 'html, body' ),
+								    wmScrollSpeed = ( 1024 >= document.body.clientWidth ) ? ( 0 ) : ( 600 );
+
+
+							// Processing
 
 								if (
-										$this.hasClass( 'inner' )
-										&& ! jQuery( e.target ).is( '.expander' )
-										&& jQuery( 'body' ).hasClass( 'responsive-design' )
+										'#' !== $this.attr( 'href' )
+										&& ! $this.data( 'tab' )
+										&& ! $this.data( 'filter' )
+										&& ! $this.hasClass( 'no-scroll-link' )
 									) {
-									wmToggleMobileNavigation();
+
+									e.preventDefault();
+
+									if (
+											$this.hasClass( 'inner' )
+											&& ! jQuery( e.target ).is( '.expander' )
+											&& jQuery( 'body' ).hasClass( 'responsive-design' )
+										) {
+										wmToggleMobileNavigation();
+									}
+
+									if ( $anchor && '#' !== $anchor ) {
+										$scrollObject.stop().animate( {
+												scrollTop : jQuery( $anchor ).offset().top - wmHeaderHeight + 2 + 'px'
+											}, wmScrollSpeed );
+									}
+
 								}
 
-								if ( $anchor && '#' !== $anchor ) {
-									$scrollObject.stop().animate( {
-											scrollTop : jQuery( $anchor ).offset().top - wmHeaderHeight + 2 + 'px'
-										}, wmScrollSpeed );
-								}
-							}
 						} );
 
 			if ( jQuery( 'body' ).hasClass( 'page' ) ) {
@@ -411,7 +431,6 @@ jQuery( function() {
 							if ( 1024 > document.body.clientWidth ) {
 								wmNotHover = true;
 							}
-							console.log( wmNotHover );
 
 							if ( wmNotHover ) {
 
@@ -748,6 +767,31 @@ jQuery( function() {
 			if ( jQuery( 'body' ).hasClass( 'page-layout-sections' ) ) {
 				jQuery( '.extend-bg-before, .extend-background-before, .extend-bg-after, .extend-background-after' ).closest( '.wm-section' ).addClass( 'overflow-hidden' );
 			}
+
+
+
+	/**
+	 * 120) WooCommerce floating cart
+	 */
+
+		if ( jQuery( '#floating-cart-switch' ).length ) {
+
+			/*
+			jQuery( '#floating-cart-switch' ).on( 'click', function( e ) {
+					e.preventDefault();
+				} );
+			*/
+
+			jQuery( 'body' ).bind( 'added_to_cart', function() {
+					jQuery( '#floating-cart' ).css( 'z-index', 99999 );
+
+					jQuery( '#floating-cart-switch' ).animate( { fontSize : '1.28em', marginTop : '1em' }, 400, function() {
+							jQuery( this ).animate( { fontSize : '1em', marginTop : 0 }, 400 );
+							jQuery( '#floating-cart' ).css( 'z-index', 999 );
+						} );
+				} );
+
+		}
 
 
 

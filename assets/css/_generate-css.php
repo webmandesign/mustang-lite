@@ -9,7 +9,7 @@
  * @uses        Custom CSS Styles Generator
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6.1
  */
 
 
@@ -67,20 +67,10 @@
 
 
 		/**
-		 * Modify the CSS files array upon plugins installed
-		 */
-
-			/**
-			 * @since  Mustang Lite (WooCommerce and bbPress stylesheets removed)
-			 */
-
-
-
-		/**
 		 * Allow filtering of the CSS files array
 		 */
 
-			$wm_theme_css_files = apply_filters( 'wmhook_wm_theme_css_files', $wm_theme_css_files );
+			$wm_theme_css_files = apply_filters( 'wmhook_wm_theme_css_files', $wm_theme_css_files, 'ltr' );
 
 			ksort( $wm_theme_css_files );
 
@@ -160,5 +150,3 @@
  */
 
 	echo apply_filters( 'wmhook_esc_css', $output );
-
-?>

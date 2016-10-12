@@ -7,11 +7,11 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6.1
  *
  * CONTENT:
  * - 10) Actions and filters
- * - 20) Funcions
+ * - 20) Functions
  */
 
 
@@ -34,7 +34,7 @@
 
 
 /**
- * 20) Funcions
+ * 20) Functions
  */
 
 	/**
@@ -51,34 +51,26 @@
 			 */
 			$plugins = apply_filters( 'wmhook_wm_register_required_plugins', array(
 
-					/**
-					 * WordPress Repository plugins
-					 */
+					// Recommended
 
-						//Recommended
+						'webman-amplifier' => array(
+							'name'     => esc_html__( 'WebMan Amplifier (adding theme features)', 'mustang' ),
+							'slug'     => 'webman-amplifier',
+							'required' => false,
+						),
 
-							'wma' => array(
-								'name'     => 'WebMan Amplifier',
-								'slug'     => 'webman-amplifier',
-								'required' => false,
-								'version'  => '1.2.4',
-							),
+						'beaver-builder' => array(
+							'name'        => esc_html__( 'Beaver Builder (easy page builder)', 'mustang' ),
+							'slug'        => 'beaver-builder-lite-version',
+							'required'    => false,
+							'is_callable' => 'FLBuilder::init',
+						),
 
-							'ws' => array(
-								'name'     => 'WooSidebars',
-								'slug'     => 'woosidebars',
-								'required' => false,
-							),
-							'bnxt' => array(
-								'name'     => 'Breadcrumb NavXT',
-								'slug'     => 'breadcrumb-navxt',
-								'required' => false,
-							),
-							'cei' => array(
-								'name'     => 'Customizer Export/Import',
-								'slug'     => 'customizer-export-import',
-								'required' => false,
-							),
+						'one-click-demo-import' => array(
+							'name'     => esc_html__( 'One Click Demo Import (for installing theme demo content)', 'mustang' ),
+							'slug'     => 'one-click-demo-import',
+							'required' => false,
+						),
 
 				) );
 
@@ -98,5 +90,3 @@
 
 		}
 	} // /wm_register_required_plugins
-
-?>

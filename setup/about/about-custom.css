@@ -4,68 +4,111 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  About Page
  * @copyright   2014 WebMan - Oliver Juhas
- * @since       1.0
- * @version     1.2
+ *
+ * @since    1.0
+ * @version  1.6
  */
 
+.mt0 {
+	margin-top: 0 !important;
+}
 
+#setting-error-tgmpa {
+	display: none;
+}
 
-	.appearance_page_mustang-about .wm-notice {display: none !important}
+.wm-actions {
+	margin-top: 2em;
+}
 
-	.appearance_page_mustang-about #wpbody-content {overflow: hidden !important}
-		.appearance_page_mustang-about #wpcontent {
-			padding: 0;
-			margin-left: 160px;
-		}
-		.appearance_page_mustang-about.folded #wpcontent {margin-left: 36px}
-		.appearance_page_mustang-about .about-wrap {
-			padding-left: 40px;
-			margin-left: 0;
-		}
+.welcome-wrap h1 {
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: 300;
+}
 
-	.appearance_page_mustang-about #wpwrap,
-	.dashboard_page_mustang-about #wpwrap {background: url(bg-about.png) repeat-x 0 -80px}
+.welcome-wrap h1 strong {
+	font-weight: 800;
+}
 
-	.about-wrap h1 {
-		color: #fff;
-		text-shadow: 0 0 20px rgba(0,0,0, .25);
-	}
-		.about-wrap .about-text {
-			color: #fff;
-			text-shadow: 1px 1px 1px rgba(0,0,0, .25);
-		}
-			.about-wrap .about-text a {color: #ddd}
+.welcome-wrap h1 small {
+	font-size: .5em;
+}
 
-	.about-wrap .dropcap {
-		padding: .5em .75em;
-		font-size: 24px;
-		background: #3B5998;
-		color: #fff;
-	}
+.welcome-wrap hr {
+	height: 0;
+	margin: 2em 0;
+	border: 0;
+	border-top: 1px solid #caccce;
+}
 
-	.about-wrap .dropcap {border-radius: 0}
+.welcome-wrap .feature-section {
+	padding: 0;
+	border: 0;
+}
 
-	.about-wrap .wm-notes {
-		padding: 2.62em 999em 2.62em 40px;
-		margin: 40px -999em 1.62em -40px;
-		border-top: 1px solid #ccc;
-		border-bottom: 1px solid #ccc;
-		border-radius: 0;
-		-webkit-box-shadow: none;
-		        box-shadow: none;
-	}
-		.about-wrap .wm-notes .dropcap {
-			display: inline-block;
-			float: none;
-			margin-bottom: 1em;
-		}
-	.about-wrap .wm-notes.special {
-		font-size: 1.28em;
-		font-style: normal;
-		background: #fff;
-		color: #000;
-	}
-		.about-wrap .wm-notes.special p {font-size: 1em}
-		.about-wrap .wm-notes.special small {font-size: .62em}
+.welcome-wrap .feature-section.col h4 {
+	margin: 1em 0;
+}
 
-/* End of file */
+.welcome-wrap .dropcap {
+	display: inline-block;
+	padding: .75em;
+	margin: 0 .5em .25em;
+	margin-left: 0;
+	font-size: 24px;
+	font-weight: 700;
+	background: #23282d;
+	color: #fff;
+}
+
+.welcome-wrap .welcome-text {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.welcome-wrap .welcome-text a {
+	color: #6a6c6e;
+}
+
+.welcome-wrap .twitter-share-button {
+	vertical-align: middle;
+	margin-left: 3px;
+}
+
+.welcome-wrap .wm-notes {
+
+	padding: 2.62em;
+	margin: 40px 0 1.62em;
+	line-height: 1.4em;
+	font-size: .8em;
+	font-style: italic;
+	background: #fafcfe;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	border-radius: 0;
+}
+
+.welcome-wrap .wm-notes.special {
+	font-size: 1.28em;
+	font-style: normal;
+	background: #fff;
+	color: #000;
+}
+
+.welcome-wrap .wm-notes.special p {
+	font-size: 1em;
+}
+
+.welcome-wrap .wm-notes.special small {
+	font-size: .62em;
+}
+
+.welcome-wrap .congrats {
+	padding: 1em 0 0;
+}
+
+.welcome-wrap .congrats p {
+	font-size: 1.15em;
+}

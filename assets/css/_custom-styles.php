@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6.1
  */
 
 
@@ -18,7 +18,7 @@
  * Output custom skin styles
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6.1
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */
@@ -52,11 +52,8 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 							'forms'       => '{p} input[type="date"], {p} input[type="email"], {p} input[type="file"], {p} input[type="number"], {p} input[type="search"], {p} input[type="password"], {p} input[type="text"], {p} input[type="url"], {p} input[type="tel"], {p} select, {p} textarea',
 							'headings'    => '{p} h1, {p} h2, {p} h3, {p} h4, {p} h5, {p} h6, {p} .h1, {p} .h2, {p} .h3, {p} .h4, {p} .h5, {p} .h6, {p} [class*="heading-style-"], {p} .no-icon-background .wm-iconbox-module .wm-content-module-element.image, {p} .no-icon-bg .wm-iconbox-module .wm-content-module-element.image',
 							'pagination'  => array(
-									/**
-									 * @since  Mustang Lite (Removed WooCommerce and bbPress selectors)
-									 */
-									'base'   => ', .wm-pagination a, .wm-pagination span',
-									'active' => ', .wm-pagination > span, .wm-pagination a:active, .wm-pagination .current',
+									'base'   => ', .wm-pagination a, .wm-pagination span, .bbp-pagination .bbp-pagination-links a, .bbp-pagination .bbp-pagination-links span, .woocommerce-pagination a, .woocommerce-pagination span',
+									'active' => ', .wm-pagination > span, .wm-pagination a:active, .wm-pagination .current, .bbp-pagination .bbp-pagination-links > span, .bbp-pagination .bbp-pagination-links a:active, .bbp-pagination .bbp-pagination-links .current, .woocommerce-pagination > span, .woocommerce-pagination a:active, .woocommerce-pagination .current',
 								),
 							'shortcodes'  => array(
 									'brighter-bg'            => '{p} .wm-accordion .wm-item.active .wm-item-title, {p} .wm-posts-post.wm-posts-layout-default .meta, {p} .wm-posts-forum .meta, {p} .wm-posts-wm_staff .title, {p} .wm-price-header, {p} .wm-price-feature-row, {p} .wm-progress, {p} .wm-tabs .wm-tab-links li.active, {p} .wm-tabs.layout-top .wm-tab-links li.active, {p} .wm-tabs-items .wm-item, {p} .wm-table.type-striped tr.even th, {p} .wm-table.type-striped tr.even td, {p} .wm-table.type-bordered-striped tr.even th, {p} .wm-table.type-bordered-striped tr.even td, {p} .bypostauthor .comment-author .fn',
@@ -67,9 +64,10 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 									'iconbox-link-color'     => '{p}.wm-iconbox-module .font-icon a',
 									'iconbox-text-shadow'    => '{p}.wm-iconbox-module.wm-content-module-item:hover .image i:before',
 								),
-							/**
-							 * @since  Mustang Lite (Removed WooCommerce selectors)
-							 */
+							'woocommerce' => array(
+									'buttons'              => '.woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-MyAccount-navigation .is-active a',
+									'buttons-hover-active' => '.woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce a.button:active, .woocommerce button.button:active, .woocommerce input.button:active, .woocommerce-page a.button:active, .woocommerce-page button.button:active, .woocommerce-page input.button:active, .woocommerce-page #respond input#submit:active, .woocommerce-page a.button.alt:active, .woocommerce-page button.button.alt:active, .woocommerce-page input.button.alt:active, .woocommerce-page #respond input#submit.alt:active',
+								),
 						),
 					'text_color'     => 200,
 					'treshold'       => ( class_exists( 'WM_Amplifier' ) ) ? ( apply_filters( 'wmhook_wmamp_' . 'wma_contrast_color' . '_default_treshold', 127 ) ) : ( 127 ),
@@ -117,6 +115,12 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 								'width' => wm_option( $helper['prefix'] . 'website-width', '', 'px' ),
 							)
 						),
+						'layout-' . 15 => array(
+							'selector' => '.fl-builder .fl-row-fixed-width',
+							'styles'   => array(
+								'max-width' => absint( wm_option( $helper['prefix'] . 'website-width' ) - 2 * 60 ) . 'px',
+							)
+						),
 						'layout-' . 20 => array(
 							'selector' => '.nav-main > ul > li',
 							'styles'   => array(
@@ -130,7 +134,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 					/**
 					 * Global colors
 					 *
-					 * @version  1.1.1 (removed floating cart from colors-bg-10 selectors)
+					 * @version  1.1.1
 					 */
 
 						'colors' => array( 'custom' => '/* Accent color */' ),
@@ -153,7 +157,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 								'colors-bg' => array( 'custom' => '/* Colors: Global backgrounds based on accent color */' ),
 
 								'colors-bg-' . 10 => array(
-									'selector' => array( '.header, #search-container input, .mobile-nav, .footer-widgets, ol > li:before, .next-prev-post-in-tax a, .wm-posts-wm_staff .wm-posts-item:hover .title, .content-section .custom-font-color .wm-posts-wm_staff .wm-posts-item:hover .title, .wm-posts-wm_projects.wm-posts-layout-default .wm-posts-item:hover, .wm-posts-wm_projects.wm-posts-layout-simple .wm-posts-item:hover .title, .wm-posts-post.wm-posts-layout-simple .wm-posts-item:hover .title, .background-color-accent, .bg-color-accent, ' . $helper['elements']['shortcodes']['iconbox'] . $helper['elements']['pagination']['active'], '' ),
+									'selector' => array( '.header, #search-container input, .mobile-nav, .footer-widgets, ol > li:before, .next-prev-post-in-tax a, .wm-posts-wm_staff .wm-posts-item:hover .title, .content-section .custom-font-color .wm-posts-wm_staff .wm-posts-item:hover .title, .wm-posts-wm_projects.wm-posts-layout-default .wm-posts-item:hover, .wm-posts-wm_projects.wm-posts-layout-simple .wm-posts-item:hover .title, .wm-posts-post.wm-posts-layout-simple .wm-posts-item:hover .title, .floating-cart-switch, .floating-cart-switch:hover, .floating-cart-switch:active, .background-color-accent, .bg-color-accent, ' . $helper['elements']['shortcodes']['iconbox'] . $helper['elements']['pagination']['active'], '' ),
 									'styles'   => array(
 										'background' => wm_option( $helper['prefix'] . 'accent-color', 'color' ),
 										'color'      => wma_contrast_color( wm_option( $helper['prefix'] . 'accent-color' ), $helper['text_color'] ),
@@ -247,7 +251,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 						/**
 						 * Predefined colors
 						 *
-						 * @version  1.1.1 (removed bbPress from colors-shortcodes-10 and colors-shortcodes-20 selectors, removed WooCommerce styles - colors-shortcodes-40, colors-shortcodes-50, colors-red-40)
+						 * @version  1.1.1
 						 */
 
 							//Shortcodes default colors
@@ -255,7 +259,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 								'colors-shortcodes' => array( 'custom' => '/* Colors: Shortcodes default colors */' ),
 
 								'colors-shortcodes-' . 10 => array(
-									'selector' => '.wm-button, button, input[type="button"], input[type="submit"], .wm-marker, .wm-dropcap, .wm-progress-bar',
+									'selector' => '.wm-button, button, input[type="button"], input[type="submit"], .wm-marker, .wm-dropcap, .wm-progress-bar, #bbpress-forums .quicktags-toolbar input, #bbpress-forums .bbp-new-post-toggle .wm-item-title, .bbp-logged-in a.button',
 									'styles'   => array(
 										'text-shadow'      => ( $helper['treshold'] > wma_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ) ) ) ? ( '0 -1px 0 rgba(0,0,0, .6)' ) : ( '0 1px 0 rgba(255,255,255, .6)' ),
 										'color'            => wma_contrast_color( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['text_color'], ' !important' ),
@@ -264,7 +268,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 									)
 								),
 									'colors-shortcodes-' . 20 => array(
-										'selector' => '.wm-button:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, .wm-button:active, button:active, input[type="button"]:active, input[type="submit"]:active',
+										'selector' => '.wm-button:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, .wm-button:active, button:active, input[type="button"]:active, input[type="submit"]:active, #bbpress-forums .quicktags-toolbar input:hover, #bbpress-forums .quicktags-toolbar input:active, #bbpress-forums .bbp-new-post-toggle .wm-item-title:hover, #bbpress-forums .bbp-new-post-toggle .wm-item.active .wm-item-title, .bbp-logged-in a.button:hover, .bbp-logged-in a.button:active',
 										'styles'   => array(
 											'background-color' => wma_alter_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['multiplier'] * $helper['brighter_color'] ),
 											'border-color'     => wma_alter_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['multiplier'] * $helper['darker_color'] ),
@@ -274,6 +278,25 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 										'selector' => '.wm-call-to-action',
 										'styles'   => array(
 											'border-left-color' => wm_option( $helper['prefix'] . $helper['button_color'] . '-color', 'color' ),
+										)
+									),
+
+								'colors-shortcodes-' . 40 => array(
+									'condition' => function_exists( 'wm_is_woocommerce' ),
+									'selector'  => $helper['elements']['woocommerce']['buttons'],
+									'styles'    => array(
+										'text-shadow'      => ( $helper['treshold'] > wma_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ) ) ) ? ( '0 -1px 0 rgba(0,0,0, .6)' ) : ( '0 1px 0 rgba(255,255,255, .6)' ),
+										'color'        => wma_contrast_color( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['text_color'], ' !important' ),
+										'background'   => wm_option( $helper['prefix'] . $helper['button_color'] . '-color', 'color' ),
+										'border-color' => wma_alter_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['darker_color'] ),
+									)
+								),
+									'colors-shortcodes-' . 50 => array(
+										'condition' => function_exists( 'wm_is_woocommerce' ),
+										'selector'  => $helper['elements']['woocommerce']['buttons-hover-active'],
+										'styles'    => array(
+											'background'   => wma_alter_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['multiplier'] * $helper['brighter_color'] ),
+											'border-color' => wma_alter_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['multiplier'] * $helper['darker_color'] ),
 										)
 									),
 
@@ -411,6 +434,14 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 											'border-left-color' => wm_option( $helper['prefix'] . 'red-color', 'color' ),
 										)
 									),
+
+								'colors-red-' . 40 => array(
+									'condition' => ( function_exists( 'wm_is_woocommerce' ) || function_exists( 'wm_is_bbpress' ) ),
+									'selector'  => '.woocommerce-page .woocommerce-error, div.bbp-template-notice.error, div.bbp-template-notice.warning',
+									'styles'    => array(
+										'border-color' => wm_option( $helper['prefix'] . 'red-color', 'color' ),
+									)
+								),
 
 
 
@@ -835,7 +866,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 						/**
 						 * Content
 						 *
-						 * @version  1.1.1 (removed WooCommerce styles - content-30, content-accent-70, content-accent-80, removed WooCommerce and bbPress selectors from content-50, content-forms, content-accent-40)
+						 * @version  1.1.1
 						 */
 
 							'content' => array( 'custom' => '/* Background: Content area */' ),
@@ -854,11 +885,18 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 										'color' => ( $helper['treshold'] < wma_color_brightness( wm_option( $helper['prefix'] . 'content-bg-color' ) ) ) ? ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'content-color' ), $helper['headings_color'] ) ) : ( wma_alter_color_brightness( wm_option( $helper['prefix'] . 'content-color' ), -$helper['headings_color'] ) ),
 									)
 								),
+								'content-' . 30 => array(
+									'condition' => function_exists( 'wm_is_woocommerce' ),
+									'selector'  => '.woocommerce-page .quantity .plus, .woocommerce-page .quantity .minus',
+									'styles'    => array(
+										'color' => wm_option( $helper['prefix'] . 'content-color', 'color', ' !important' ),
+									)
+								),
 
 							//Brighter background
 
 								'content-' . 50 => array(
-									'selector' => array( $helper['elements']['shortcodes']['brighter-bg'] . $helper['elements']['pagination']['base'] . ', .list-articles .entry-meta', '.content-section' ),
+									'selector' => array( $helper['elements']['shortcodes']['brighter-bg'] . $helper['elements']['pagination']['base'] . ', .list-articles .entry-meta, .woocommerce-page .order-total th, .woocommerce-page .order-total td, .woocommerce-page #payment, .bbp-large-topic, #bbpress-forums div.bbp-reply-header, #bbpress-forums .bbp-search-results div.bbp-forum-header, #bbpress-forums .bbp-search-results div.bbp-topic-header', '.content-section' ),
 									'styles'   => array(
 										'background-color' => wma_contrast_color( wm_option( $helper['prefix'] . 'content-bg-color' ), $helper['brighter_color'] ),
 									)
@@ -882,7 +920,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 										)
 									),
 								'content-' . 'forms' => array(
-									'selector' => array( $helper['elements']['forms'], '.content-section' ),
+									'selector' => array( $helper['elements']['forms'] . ', .woocommerce .form-row .select2-container, .woocommerce-checkout .form-row .select2-container, #bbpress-forums #bbp-your-profile fieldset input, #bbpress-forums #bbp-your-profile fieldset textarea', '.content-section' ),
 									'styles'   => array(
 										'background-color' => wma_contrast_color( wm_option( $helper['prefix'] . 'content-bg-color' ), $helper['brighter_color'] ),
 									)
@@ -911,7 +949,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 								),
 
 								'content-accent-' . 40 => array(
-									'selector' => array( $helper['elements']['shortcodes']['iconbox'], '.content-section ' ),
+									'selector' => array( $helper['elements']['shortcodes']['iconbox'] . ', .floating-cart-switch, .floating-cart-switch:hover, .floating-cart-switch:active', '.content-section ' ),
 									'styles'   => array(
 										'background' => wm_option( $helper['prefix'] . 'content-accent-color', 'color' ),
 										'color'      => wma_contrast_color( wm_option( $helper['prefix'] . 'content-accent-color' ), $helper['text_color'] ),
@@ -930,6 +968,25 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 												'text-shadow' => ( $helper['treshold'] > wma_color_brightness( wm_option( $helper['prefix'] . 'content-accent-color' ) ) ) ? ( '0 0 .5em rgba(0,0,0, .62)' ) : ( '0 0 .5em rgba(255,255,255, .75)' ),
 											)
 										),
+
+								'colors-accent-' . 70 => array(
+									'condition' => ( function_exists( 'wm_is_woocommerce' ) && trim( wm_option( $helper['prefix'] . 'content-accent-color' ) ) ),
+									'selector'  => $helper['elements']['woocommerce']['buttons'],
+									'styles'    => array(
+										'text-shadow'  => ( $helper['treshold'] > wma_color_brightness( wm_option( $helper['prefix'] . 'content-accent-color' ) ) ) ? ( '0 -1px 0 rgba(0,0,0, .6)' ) : ( '0 1px 0 rgba(255,255,255, .6)' ),
+										'color'        => wma_contrast_color( wm_option( $helper['prefix'] . 'content-accent-color' ), $helper['text_color'], ' !important' ),
+										'background'   => wm_option( $helper['prefix'] . 'content-accent-color', 'color' ),
+										'border-color' => wma_alter_color_brightness( wm_option( $helper['prefix'] . 'content-accent-color' ), $helper['darker_color'] ),
+									)
+								),
+									'colors-accent-' . 80 => array(
+										'condition' => ( function_exists( 'wm_is_woocommerce' ) && trim( wm_option( $helper['prefix'] . 'content-accent-color' ) ) ),
+										'selector'  => $helper['elements']['woocommerce']['buttons-hover-active'],
+										'styles'    => array(
+											'background'   => wma_alter_color_brightness( wm_option( $helper['prefix'] . 'content-accent-color' ), $helper['multiplier'] * $helper['brighter_color'] ),
+											'border-color' => wma_alter_color_brightness( wm_option( $helper['prefix'] . 'content-accent-color' ), $helper['multiplier'] * $helper['darker_color'] ),
+										)
+									),
 
 
 
@@ -1118,7 +1175,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 					/**
 					 * Typography
 					 *
-					 * @version  1.2 (removed bbPress selectors from font-size-h1, font-size-h2, font-size-h3, font-size-h4)
+					 * @version  1.2
 					 */
 
 						'typography' => array( 'custom' => '/* Typography */' ),
@@ -1138,8 +1195,8 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 							),
 						'fonts-headings' => array(
 							'condition' => wm_option( $helper['prefix'] . 'font-headings' ),
-							'selector' => '.logo.type-text, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"], blockquote',
-							'styles'   => array(
+							'selector'  => '.logo.type-text, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"], blockquote',
+							'styles'    => array(
 								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-headings' ) ] . '", Helvetica, Arial, Verdana, sans-serif',
 							)
 						),
@@ -1152,25 +1209,25 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 						),
 
 						'fonts-size-h1' => array(
-							'selector' => 'h1, .h1, .heading-style-1',
+							'selector' => 'h1, .h1, .heading-style-1, #bbpress-forums h1',
 							'styles'   => array(
 								'font-size' => wm_option( $helper['prefix'] . 'font-size-h1', '', '%' ),
 							)
 						),
 						'fonts-size-h2' => array(
-							'selector' => 'h2, .h2, .heading-style-2',
+							'selector' => 'h2, .h2, .heading-style-2, #bbpress-forums h2',
 							'styles'   => array(
 								'font-size' => wm_option( $helper['prefix'] . 'font-size-h2', '', '%' ),
 							)
 						),
 						'fonts-size-h3' => array(
-							'selector' => 'h3, .h3, .heading-style-3',
+							'selector' => 'h3, .h3, .heading-style-3, #bbpress-forums h3',
 							'styles'   => array(
 								'font-size' => wm_option( $helper['prefix'] . 'font-size-h3', '', '%' ),
 							)
 						),
 						'fonts-size-h4' => array(
-							'selector' => 'h4, h5, h6, .h4, .h5, .h6, .heading-style-4, .heading-style-5, .heading-style-6',
+							'selector' => 'h4, h5, h6, .h4, .h5, .h6, .heading-style-4, .heading-style-5, .heading-style-6, #bbpress-forums h4, #bbpress-forums h5, #bbpress-forums h6',
 							'styles'   => array(
 								'font-size' => wm_option( $helper['prefix'] . 'font-size-h4', '', '%' ),
 							)

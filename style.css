@@ -3,15 +3,15 @@
  * Theme URI:    http://www.webmandesign.eu/mustang-lite/
  * Author:       WebMan
  * Author URI:   http://www.webmandesign.eu/
- * Description:  <strong>Mustang Lite</strong> WordPress Theme lets you create beautiful, professional responsive and HiDPI (Retina) ready websites. With this theme you can create also a single one-page websites with ease! Mustang Lite is suitable for creative portfolio, business and corporate website projects, personal presentations and much more. You can set a custom design with background images and colors for every section of the theme. As the theme is translation ready and supports right-to-left languages as well, you can localize it for your multilingual website. By default you get the basic blog design which can be extended to full power of the theme with WebMan Amplifier plugin activation. This theme is a free, lite version of premium <strong>Mustang Multipurpose WordPress Theme</strong> by WebMan. The differences from paid version can be found at http://www.webmandesign.eu/mustan-lite/. Check out themes by WebMan at www.webmandesign.eu. Thank you for using one of WebMan's themes! Demo at http://themedemos.webmandesign.eu/mustang/
- * Version:      1.5.2
+ * Version:      1.6.1
+ * Text Domain:  mustang-lite
  * License:      GNU General Public License v3
  * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
- * Tags:         left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
- * Text Domain:  wm_domain
+ * Description:  Mustang Lite lets you create beautiful, professional responsive and high resolution display ready websites. It is suitable for creative portfolio, business and corporate website projects, personal presentations and much more. The theme is completely customizable so you can make it your own. As the theme is translation ready and supports right-to-left (RTL) languages as well, you can use it for your multilingual websites. When used with powerful WebMan Amplifier plugin you unleash the true potential of the theme. You can also use popular Beaver Builder page builder with this theme as it is fully compatible. Mustang Lite is a free, lite version of premium Mustang theme which contains e-commerce (WooCommerce) and forum (bbPress) functionality support. Theme demo can be found at https://themedemos.webmandesign.eu/mustang/ and theme documentation at https://webmandesign.eu/manual/mustang/
+ * Tags:         one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
  *
- * Mustang Lite WordPress Theme, Copyright 2014 WebMan [http://www.webmandesign.eu/]
- * Mustang Lite is distributed under the terms of the GNU GPL
+ * This theme, like WordPress, is licensed under the GPL.
+ * Use it to make something cool, have fun, and share what you've learned with others.
  */
 
 
@@ -19,8 +19,29 @@
 /**
  * IMPORTANT NOTE:
  *
- * It is highly recommended to place your custom CSS styles into a new child theme
- * as you might loose all your custom CSS once you update the theme and overwrite this file.
+ * It is highly recommended to place your custom CSS styles into a new child theme as you might
+ * loose all your custom CSS once you update the theme and overwrite this file!
  *
  * @link  http://www.webmandesign.eu/manual/mustang/#child-theme
  */
+
+
+
+
+
+/**
+ * The CSS below is added to comply WordPress theme checker.
+ * The actual CSS styles are situated in the `assets/css/*.css` files.
+ *
+ * @link  http://plugins.svn.wordpress.org/theme-check/tags/20150818.1/checks/style_needed.php
+ */
+
+.sticky,
+.bypostauthor,
+.alignleft,
+.alignright,
+.aligncenter,
+.wp-caption,
+.wp-caption-text,
+.gallery-caption,
+.screen-reader-text {}

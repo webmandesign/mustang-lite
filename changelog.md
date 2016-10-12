@@ -1,5 +1,101 @@
 # Mustang Lite Changelog
 
+## 1.6.1
+
+* **Update**: Documentation
+* **Fix**: Removing obsolete code
+
+#### Files changed:
+
+	changelog.md
+	functions.php
+	style.css
+	documentation/documentation.html
+	library/core.php
+	
+
+## 1.6
+
+* **Add**: Beaver Builder compatibility
+* **Add**: WooCommerce 2.6+ support
+* **Add**: One-click demo content import
+* **Update**: Bundled premium plugins removed
+* **Update**: 100% passing Theme Check
+* **Update**: Theme tags
+* **Update**: Supporting `<span>` icons markup
+* **Update**: WebMan Amplifier compatibility
+* **Update**: Widening mobile menu
+* **Update**: Removing Schema.org code in favor of specialized plugins
+* **Update**: Not removing Visual Composer native modules
+* **Update**: Removing Visual Composer custom templates
+* **Update**: Removing custom WooCommerce Visual Composer modules
+* **Update**: Recommended plugins list
+* **Update**: Admin "Welcome" page
+* **Update**: Child themes support
+* **Update**: Localization textdomain and texts
+* **Update**: Documentation
+* **Update**: Demo website and content
+* **Fix**: Retina logo display
+* **Fix**: Visual Composer column background
+* **Fix**: Submenu item "s" suffix
+* **Fix**: Comments form fields not accessible
+* **Fix**: Headings styles and color
+* **Fix**: Boxed layout theme width customizer preview
+* **Fix**: Responsive layout
+* **Fix**: Blank page template layout
+* **Fix**: Child theme update notification
+* **Fix**: WooCommerce PHP class name
+
+#### Files changed:
+
+	changelog.md
+	functions.php
+	header.php
+	loop-theme-search.php
+	screenshot.jpg
+	sidebar-footer.php
+	sidebar.php
+	style.css
+	assets/css/__fallback.css
+	assets/css/_custom-styles.php
+	assets/css/_generate-css.php
+	assets/css/_generate-rtl-css.php
+	assets/css/beaver-builder-editor.css
+	assets/css/beaver-builder.css
+	assets/css/content.css
+	assets/css/forms.css
+	assets/css/header.css
+	assets/css/plugins-woocommerce.css
+	assets/css/responsive.css
+	assets/css/rtl-responsive.css
+	assets/css/rtl.css
+	assets/css/shortcodes.css
+	assets/css/specials.css
+	assets/css/typography.css
+	assets/img/webman-32x32.png
+	assets/js/scripts-global.js
+	documentation/documentation.html
+	documentation/css/custom.css
+	languages/mustang.pot
+	languages/readme.md
+	library/admin.php
+	library/core.php
+	library/assets/css/admin.css
+	library/assets/css/rtl-admin.css
+	library/includes/class-tgm-plugin-activation.php
+	library/updater/update-notifier.php
+	setup/plugins.php
+	setup/setup-beaver-builder.php
+	setup/setup-one-click-demo-import.php
+	setup/setup-theme-options.php
+	setup/setup-webman-amplifier.php
+	setup/setup-woocommerce.php
+	setup/setup.php
+	setup/about/about-custom.css
+	setup/about/about.php
+	webman-amplifier/content-shortcode-posts-wm_staff.php
+	
+
 ## 1.5.2
 
 * **Fix**: Issue when using older version of PHP (pre 5.5)
@@ -274,7 +370,7 @@
 	functions.php
 	style.css
 	sidebar-footer.php
-	languages/wm_domain.pot
+	languages/mustang-lite.pot
 	setup/setup.php
 	setup/setup-webman-amplifier.php
 	setup/about/about.php
@@ -446,7 +542,7 @@
 	assets/css/wp-styles.css
 	assets/js/scripts.js
 	assets/js/dev/scripts.dev.js
-	languages/wm_domain.pot
+	languages/mustang-lite.pot
 	library/*.*
 	setup/plugins.php
 	setup/setup-theme-options.php

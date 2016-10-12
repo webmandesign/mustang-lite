@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.6.1
  */
 
 
@@ -34,13 +34,13 @@ if (
 
 	$output .= '<div id="comments" class="comments-area">';
 
-		$output .= '<h2 id="comments-title" class="comments-title" title="' . sprintf( __( 'Comments: %s', 'wm_domain' ), get_comments_number() ) . '"><span class="screen-reader-text">' . __( 'Comments:', 'wm_domain' ) . '</span><span class="comments-count">' . get_comments_number() . '</span></h2>';
+		$output .= '<h2 id="comments-title" class="comments-title" title="' . sprintf( __( 'Comments: %s', 'mustang' ), get_comments_number() ) . '"><span class="screen-reader-text">' . __( 'Comments:', 'mustang' ) . '</span><span class="comments-count">' . get_comments_number() . '</span></h2>';
 
 
 		if ( have_comments() ) {
 
 			if ( ! comments_open() ) {
-				$output .= '<h3 class="comments-closed">' . __( 'Comments are closed. You can not add new comments.', 'wm_domain' ) . '</h3>';
+				$output .= '<h3 class="comments-closed">' . __( 'Comments are closed. You can not add new comments.', 'mustang' ) . '</h3>';
 			}
 
 			//Paginated comments
@@ -87,5 +87,3 @@ if (
 	wmhook_comments_after();
 
 }
-
-?>

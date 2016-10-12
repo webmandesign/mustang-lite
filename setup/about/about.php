@@ -5,14 +5,31 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  About Page
  * @copyright   2014 WebMan - Oliver Juhas
- * @since       1.0
- * @version     1.2.2
+ *
+ * @since    1.0
+ * @version  1.6
  *
  * CONTENT:
- * - 10) Actions and filters
- * - 20) Styles and scripts
- * - 30) Renderer
+ *  1) Requirements check
+ * 10) Actions and filters
+ * 20) Styles and scripts
+ * 30) Renderer
  */
+
+
+
+
+
+/**
+ * 1) Requirements check
+ */
+
+	if (
+			! is_admin()
+			|| wm_option( 'skin-disable-welcome' )
+		) {
+		return;
+	}
 
 
 
@@ -66,12 +83,19 @@
 
 	/**
 	 * Add "About" screen notice
-	 *
-	 * @since  1.2.2
 	 */
 	if ( ! function_exists( 'wm_about_screen_notice' ) ) {
 		function wm_about_screen_notice() {
-			//Output
+
+			// Requirements check
+
+				if ( ! function_exists( 'get_current_screen' ) ) {
+					return;
+				}
+
+
+			// Processing
+
 				if (
 						3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) )
 						&& ! isset( $wp_customize )
@@ -82,11 +106,12 @@
 								isset( $screen->id )
 								&& 'themes' === $screen->id
 							) {
-							$message = '<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '" class="button button-primary button-hero" style="text-decoration: none; float: right;" title="Go to the ' . WM_THEME_NAME . ' about page">' . WM_THEME_NAME . ' setup &raquo;</a><span style="font-size: 1.25em;">Thank you for <a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '">installing <strong>' . WM_THEME_NAME . '</strong></a> WordPress theme by <a href="' . WM_DEVELOPER_URL . '" target="_blank">WebMan</a>!</span><br /><strong>Please, set the theme up according to "<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '"><em>' . sprintf( 'About %s', WM_THEME_NAME ) . '</em></a>" page first.</strong>';
+							$message = '<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '" class="button button-primary button-hero" style="text-decoration: none; float: right;" title="Go to the ' . WM_THEME_NAME . ' about page">' . WM_THEME_NAME . ' setup $raquo;</a><span style="font-size: 1.25em;">Thank you for <a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '">installing <strong>' . WM_THEME_NAME . '</strong></a> WordPress theme by <a href="' . WM_DEVELOPER_URL . '" target="_blank">WebMan</a>!</span><br /><strong>Please, set the theme up according to "<a href="' . admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) . '"><em>' . sprintf( 'About %s', WM_THEME_NAME ) . '</em></a>" page first.</strong>';
 
 							set_transient( 'wm-admin-notice', array( $message, '', 'switch_themes' ), ( 60 * 60 * 24 ) );
 						}
 				}
+
 		}
 	} // /wm_about_screen_notice
 
@@ -94,16 +119,25 @@
 
 	/**
 	 * Add "About" screen to WordPress menu
+	 *
+	 * @version  1.6
 	 */
 	if ( ! function_exists( 'wm_add_about_screen' ) ) {
 		function wm_add_about_screen() {
-			//Output
-				if ( 3 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) {
-					$page_title = sprintf( 'About %s', WM_THEME_NAME );
-					$screen     = add_theme_page( $page_title, $page_title, 'switch_themes', WM_THEME_SHORTNAME . '-about', 'wm_about_screen' );
 
-					add_action( 'admin_print_styles-' . $screen, 'wm_about_css' );
-				}
+			// Processing
+
+				$page_title = esc_html__( 'Welcome', 'mustang' );
+				$screen     = add_theme_page(
+						$page_title,
+						$page_title,
+						'switch_themes',
+						WM_THEME_SHORTNAME . '-about',
+						'wm_about_screen'
+					);
+
+				add_action( 'admin_print_styles-' . $screen, 'wm_about_css' );
+
 		}
 	} // /wm_add_about_screen
 
@@ -113,104 +147,181 @@
 	 * Render the "About" screen content
 	 *
 	 * @since    1.0
-	 * @version  1.2.2
+	 * @version  1.6
 	 */
 	if ( ! function_exists( 'wm_about_screen' ) ) {
 		function wm_about_screen() {
-			?>
-			<div class="wrap about-wrap">
 
-				<!-- header -->
-					<h1><?php printf( 'Welcome to <strong>%s</strong> <small>v%s</small>', WM_THEME_NAME, WM_THEME_VERSION ); ?></h1>
+			// Output
 
-					<div class="about-text">
-						Thank you for downloading the free lite version of the powerful <strong><?php echo str_replace( array( ' Lite', ' lite' ), '', WM_THEME_NAME ); ?></strong> WordPress theme by <a href="<?php echo WM_DEVELOPER_URL; ?>" target="_blank">WebMan</a>!<br />Let's unleash the power of flexibility and bring it to HiDPI/Retina displays!<br />Please take time to read the 3 steps below to set the theme up.
-					</div>
+				?>
 
-					<p class="wm-actions">
-						<a href="<?php echo admin_url( 'themes.php?page=tgmpa-install-plugins' ); ?>" class="button button-primary button-hero" target="_blank" title="Opens in new tab/window">Install <strong>WebMan Amplifier</strong> &raquo;</a>
-						<a href="<?php echo WM_ONLINE_MANUAL_URL; ?>" class="button button-primary button-hero" target="_blank">User Manual</a>
-						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://themedemos.webmandesign.eu/<?php echo WM_THEME_SHORTNAME; ?>/" data-text="I'm using awesome <?php echo str_replace( array( ' Lite', ' lite' ), '', WM_THEME_NAME ); ?> WordPress theme!" data-via="WebMan" data-size="large" data-hashtags="webmandesigneu">Tweet</a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-					</p>
+				<div class="wrap welcome-wrap about-wrap">
 
-				<!-- content -->
+					<!-- Header -->
 
-					<div class="changelog">
+						<h1>
+							<?php
 
-						<div class="wm-notes special">
-							<h3 class="mt0">Lite Version Difference</h3>
-							<p>Please note that this lite version of the <strong><?php echo str_replace( array( ' Lite', ' lite' ), '', WM_THEME_NAME ); ?></strong> theme <strong>does not</strong> provide integration with WooCommerce and bbPress plugins. For easier content building the theme supports premium Visual Composer, Master Slider and LayerSlider plugins which are not included with the lite version (all of them are 3rd party software).</p>
-							<p>Please, consider <a href="<?php echo trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-lite#comparison'; ?>" target="_blank">upgrading to premium version</a> of the theme to get more functionality and to support WebMan.</p>
-							<a href="<?php echo trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-lite#comparison'; ?>" class="button button-primary button-hero" target="_blank"><strong style="text-transform: uppercase;">Upgrade the theme &raquo;</strong></a>
+							printf(
+								esc_html_x( 'Welcome to %1$s %2$s', '1: theme name, 2: theme version number.', 'mustang' ),
+								'<strong>' . WM_THEME_NAME . '</strong>',
+								'<small>' . WM_THEME_VERSION . '</small>'
+							);
+
+							?>
+						</h1>
+
+						<div class="welcome-text about-text">
+							<?php
+
+							printf(
+								esc_html_x( 'Thank you for using %1$s WordPress theme by %2$s!', '1: theme name, 2: theme developer link.', 'mustang' ),
+								'<strong>' . WM_THEME_NAME . '</strong>',
+								'<a href="http://www.webmandesign.eu" target="_blank"><strong>WebMan Design</strong></a>'
+							);
+
+							?>
+							<br>
+							<?php esc_html_e( 'Please take time to read the steps below to set up your website.', 'mustang' ); ?>
 						</div>
 
-						<div class="wm-notes special">
-							<span class="dropcap">1</span>
-							<h3 class="mt0">IMPORTANT!</h3>
-							<h4 class="mt0">READ BEFORE YOU SET UP THE THEME</h4>
-							<p>To keep the theme as flexible, open and future-proof, as possible, it uses the <strong>WebMan Amplifier</strong> plugin.<br /><strong>Please, install and activate this plugin before you set the theme up.</strong></p>
-							<a href="<?php echo admin_url( 'themes.php?page=tgmpa-install-plugins' ); ?>" class="button button-primary button-hero" target="_blank" title="Opens in new tab/window">Install <strong>WebMan Amplifier</strong> plugin &raquo;</a>
-						</div>
+						<!-- Action links / buttons -->
 
-						<div class="feature-section col two-col">
+							<p class="wm-actions">
 
-							<h3 class="mt0">Quick-start Guide</h3>
+								<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/mustang/' ); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'mustang' ); ?></a>
 
-							<div>
-								<h4>Start with WordPress settings</h4>
-								<p>
+								<a href="<?php echo esc_url( 'http://support.webmandesign.eu' ); ?>" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Forum', 'mustang' ); ?></a>
+
+							</p>
+
+					<!-- Content -->
+
+						<div class="welcome-content">
+
+						<!-- Quickstart steps -->
+
+							<hr />
+
+							<h2 class="screen-reader-text"><?php esc_html_e( 'Quickstart Guide', 'mustang' ); ?></h2>
+
+							<div class="feature-section three-col">
+
+								<div class="first-feature col">
+
+									<span class="dropcap">1</span>
+
+									<h3><?php esc_html_e( 'WebMan Amplifier', 'mustang' ); ?></h3>
+
+									<p>
+										<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'mustang' ), '<a href="https://wordpress.org/plugins/webman-amplifier/" target="_blank"><strong>WebMan Amplifier</strong></a>' ); ?>
+										<?php esc_html_e( 'Please, install and activate this plugin to unveil the additional functionality.', 'mustang' ); ?>
+									</p>
+
+									<?php if ( ! class_exists( 'WM_Amplifier' ) ) : ?>
+
+										<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><?php printf( esc_html_x( 'Install %s &raquo;', '%s: plugin name.', 'mustang' ), '<strong>WebMan Amplifier</strong>' ); ?></a>
+
+									<?php endif; ?>
+
+								</div>
+
+								<div class="feature col">
+
 									<span class="dropcap">2</span>
-									Please navigate to <strong>Settings</strong> section of the main WordPress admin menu and go through the subsections and options..
-								</p>
-								<p>
-									<small><strong>Tip:</strong> <em>
-									For better Search Engine Optimization (SEO) it is recommended to set permalinks structure to "Post name".
-									</em></small>
-								</p>
-								<p>
-									<small><strong>Tip:</strong> <em>
-									Read more about <a href="http://codex.wordpress.org/Administration_Screens#Settings_-_Configuration_Settings" target="_blank">WordPress settings</a>.
-									</em></small>
-								</p>
-								<p>
-									<small><strong>Tip:</strong> <em>
-									If you are new to WordPress, you can find some instructions on how to use this system in <a href='http://codex.wordpress.org/WordPress_Lessons' target='_blank'>WordPress lessons</a> or in <a href="http://wordpress.tv/category/how-to/" target="_blank">WordPress TV</a>.
-									</em></small>
-								</p>
-								<a class="button button-primary button-hero" href="<?php echo admin_url( 'options-general.php' ); ?>" target="_blank" title="Opens in new tab/window">Set up WordPress &raquo;</a>
+
+									<h3><?php esc_html_e( 'The WordPress settings', 'mustang' ); ?></h3>
+
+									<p>
+										<?php esc_html_e( 'Do not forget to set up your WordPress in "Settings" section of the WordPress dashboard.', 'mustang' ); ?>
+										<?php esc_html_e( 'Please go through all the subsections and options.', 'mustang' ); ?>
+										<?php esc_html_e( 'This step is required for all WordPress websites.', 'mustang' ); ?>
+									</p>
+
+									<a class="button button-hero" href="<?php echo esc_url( admin_url( 'options-general.php' ) ); ?>"><?php esc_html_e( 'Set Up WordPress &raquo;', 'mustang' ); ?></a>
+
+								</div>
+
+								<div class="last-feature col">
+
+									<span class="dropcap">3</span>
+
+									<h3><?php esc_html_e( 'Customize the theme', 'mustang' ); ?></h3>
+
+									<p>
+										<?php esc_html_e( 'You can customize the theme using live-preview editor.', 'mustang' ); ?>
+										<?php esc_html_e( 'Customization changes will go live only after you save them!', 'mustang' ); ?>
+									</p>
+
+									<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary button-hero"><?php esc_html_e( 'Customize the Theme &raquo;', 'mustang' ); ?></a>
+
+								</div>
+
 							</div>
 
-							<div class="last-feature">
-								<h4>Customize the theme</h4>
-								<p><small><strong>IMPORTANT: This step is available only after WebMan Amplifier plugin activation.</strong></small></p>
+						<!-- Filesystem notice -->
+
+							<hr />
+
+							<h3>
+								<em>
+									<strong>
+										<?php esc_html_e( 'Important:', 'mustang' ); ?>
+									</strong>
+								</em>
+							</h3>
+
+							<p>
+								<em>
+									<?php esc_html_e( 'For the best performance, the theme generates a single CSS stylesheet file using WordPress native filesystem API.', 'mustang' ); ?>
+									<?php esc_html_e( 'The file is being generated after saving theme customizer settings.', 'mustang' ); ?>
+									<?php esc_html_e( 'If you notice an error message in WordPress dashboard after leaving the theme customizer, please check whether you should set up the FTP credentials in your "wp-config.php" file.', 'mustang' ); ?>
+									<a href="http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants" target="_blank"><?php esc_html_e( 'In that case please read the instructions &raquo;', 'mustang' ); ?></a>
+								</em>
+							</p>
+
+						<!-- Special note -->
+
+							<div class="wm-notes special">
+
+								<h2 class="mt0"><strong><?php esc_html_e( 'Installing the theme demo content', 'mustang' ); ?></strong></h2>
+
 								<p>
-									<span class="dropcap">3</span>
-									<?php echo WM_THEME_NAME; ?> will let you customize its appearance using <abbr title="What You See Is What You Get">WYSIWYG</abbr> editor. You can apply a certain design changes with no fear of them being displayed on your live website. Nothing is going live until you save the changes! Keep your designs and save them in skins!
+									<?php esc_html_e( 'You can install the theme demo content including pages, posts, custom post types, layouts, menus and widgets directly from your WordPress dashboard by clicking the button bellow.', 'mustang' ); ?>
 								</p>
+
 								<p>
-									<small><strong>IMPORTANT:</strong> <em>
-									Saving apperance customization will regenerate and rebuild the existing main theme CSS stylesheet file. Also, the main stylesheet file will be regenerated after activation of certain plugins. Please refer to <a href="<?php echo WM_ONLINE_MANUAL_URL; ?>" target="_blank">theme user manual</a> for supported plugins list.
+									<?php esc_html_e( 'Alternatively (such as when the automated installation fails) you can follow theme documentation instructions for manual demo content installation.', 'mustang' ); ?>
+									<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/mustang/#demo-content' ); ?>" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'mustang' ); ?></a>
+								</p>
+
+								<?php if ( ! class_exists( 'PT_One_Click_Demo_Import' ) ) : ?>
+
+									<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><strong><?php esc_html_e( 'Install and run "One Click Demo Import" plugin', 'mustang' ); ?></strong></a>
+
+								<?php else : ?>
+
+									<a href="<?php echo esc_url( 'themes.php?page=pt-one-click-demo-import' ); ?>" class="button button-hero button-primary"><strong><?php esc_html_e( 'Install theme demo content', 'mustang' ); ?></strong></a>
+
+									<br>
+									<small><em>
+										<?php esc_html_e( 'Or head over to Appearance &raquo; Import Demo Data to start the import process.', 'mustang' ); ?>
 									</em></small>
-								</p>
-								<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary button-hero" target="_blank" title="Opens in new tab/window">Customize the Theme &raquo;</a>
+
+								<?php endif; ?>
+
 							</div>
 
 						</div>
 
-					</div>
+					<!-- Footer note -->
 
-				<!-- footer -->
+						<p><small><em><?php esc_html_e( 'You can disable this page in Appearance &raquo; Customize &raquo; Theme &raquo; Others.', 'mustang' ); ?></em></small></p>
 
-					<hr />
+				</div>
 
-					<div class="feature-section congrats">
-						<p><strong>And that's it! Once again, thank you and enjoy your theme! :)</strong></p>
-						<p style="font-family: Georgia, serif;"><em><a href="<?php echo WM_DEVELOPER_URL; ?>" target="_blank" style="text-decoration: none;">WebMan Design</a></em></p>
-					</div>
-			</div>
-			<?php
+				<?php
+
 		}
 	} // /wm_about_screen
-
-?>

@@ -9,6 +9,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since       3.1
+ * @version  1.6.1
  */
 
 
@@ -46,5 +47,3 @@ class WM_Customizer_Radiocustom extends WP_Customize_Control {
 	}
 
 } // /WM_Customizer_Radiocustom
-
-?>

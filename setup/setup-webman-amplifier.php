@@ -18,7 +18,7 @@
  * @copyright  2014 WebMan
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.6.1
  */
 
 
@@ -48,33 +48,16 @@
 			'widget-subnav',
 			'widget-tabbed-widgets',
 			'widget-twitter',
+			'disable-isotope-notice',
 		) ) );
 
-	//WebMan Advanced Metaboxes
+	// WebMan Advanced Metaboxes
+
 		add_filter( 'wmhook_metabox_visual_wrapper_toggle', '__return_true' );
-	//Enable Schema.org
-		add_filter( 'wmhook_wmamp_disable_schema_org', '__return_false' );
-	//Dequeue plugin shortcodes stylesheet
-		add_filter( 'wmhook_shortcode_enqueue_shortcode_css', '__return_false' );
-	//Visual Composer text block content filters
+
+	// Visual Composer text block content filters
+
 		// add_filter( 'wmhook_shortcode_text_block_content', 'wm_default_content_filters', 10 );
-	//Disable the Isotope licence purchase admin notice
-		add_filter( 'wmhook_wmamp_notice_isotope_licence', '__return_false' );
-
-
-
-
-
-	/**
-	 * Deactivate plugin when theme changed
-	 *
-	 * @since    1.2.2
-	 * @version  1.2.5
-	 */
-
-		if ( ! get_option( 'wmamp-deactivate' ) ) {
-			update_option( 'wmamp-deactivate', true );
-		}
 
 
 
@@ -127,29 +110,6 @@
 
 
 
-	/**
-	 * Pagination left/right buttons
-	 *
-	 * @param  array $atts
-	 */
-	function wm_pagination_next_prev( $atts ) {
-		//Preparing output
-			if ( ! is_rtl() ) {
-				$atts['label_next']     = '<i class="iconwm-arrow-right-thin-small"></i>';
-				$atts['label_previous'] = '<i class="iconwm-arrow-left-thin-small"></i>';
-			} else {
-				$atts['label_next']     = '<i class="iconwm-arrow-left-thin-small"></i>';
-				$atts['label_previous'] = '<i class="iconwm-arrow-right-thin-small"></i>';
-			}
-
-		//Output
-			return $atts;
-	} // /wm_pagination_next_prev
-
-	add_filter( 'wmhook_wmamp_wma_pagination_atts_defaults', 'wm_pagination_next_prev' );
-
-
-
 
 
 /**
@@ -169,7 +129,7 @@
 		 */
 		function wm_widgets_posts_post_types( $post_types = array() ) {
 			//Preparing output
-				$post_types['wm_projects'] = __( 'Projects', 'wm_domain' );
+				$post_types['wm_projects'] = __( 'Projects', 'mustang' );
 
 			//Output
 				return $post_types;
@@ -187,7 +147,7 @@
 		function wm_widgets_posts_taxonomies( $taxonomies = array() ) {
 			//Preparing output
 				$taxonomies['wm_projects'] = array(
-						'optgroup'     => __( 'Projects tags', 'wm_domain' ),
+						'optgroup'     => __( 'Projects tags', 'mustang' ),
 						'all'          => false,
 						'hierarchical' => '0',
 						'tax_name'     => 'project_tag',
@@ -245,7 +205,7 @@
 				$fields[20] = array(
 						'id'          => 'post-format-audio',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Audio post format</h2>Displays audio player to play your audio files. Could be used for Podcasting. Please place the <code>[wm_audio]</code> shortcode as the first thing in post content. The audio description text can follow on next line.', 'wm_domain' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Audio post format</h2>Displays audio player to play your audio files. Could be used for Podcasting. Please place the <code>[wm_audio]</code> shortcode as the first thing in post content. The audio description text can follow on next line.', 'mustang' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -260,7 +220,7 @@
 				$fields[25] = array(
 						'id'          => 'post-format-gallery',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Gallery post format</h2>A standard post with a gallery of images in post content. Slideshow will be displayed on blog page from the first gallery found in post content. If no gallery found, featured image is displayed.<br />You can insert a <code>&#91;gallery]</code> shortcode anywhere in the post. This shortcode will not be stripped out from the post content on the single post page.', 'wm_domain' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Gallery post format</h2>A standard post with a gallery of images in post content. Slideshow will be displayed on blog page from the first gallery found in post content. If no gallery found, featured image is displayed.<br />You can insert a <code>&#91;gallery]</code> shortcode anywhere in the post. This shortcode will not be stripped out from the post content on the single post page.', 'mustang' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -275,7 +235,7 @@
 				$fields[30] = array(
 						'id'          => 'post-format-link',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Link post format</h2>Promotes interesting URL links. You can set the link anywhere in the post content. The link will be emphasized when post is displayed.', 'wm_domain' ) . '<br />' . __( 'Post title will not be displayed.', 'wm_domain' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Link post format</h2>Promotes interesting URL links. You can set the link anywhere in the post content. The link will be emphasized when post is displayed.', 'mustang' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -290,7 +250,7 @@
 				$fields[35] = array(
 						'id'          => 'post-format-quote',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Quote post format</h2>A quotation. Please place the actual quote (blockquote) directly into post content. To set a quote source use a <code>&lt;cite></code> HTML tag.', 'wm_domain' ) . '<br />' . __( 'Post title will not be displayed.', 'wm_domain' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Quote post format</h2>A quotation. Please place the actual quote (blockquote) directly into post content. To set a quote source use a <code>&lt;cite></code> HTML tag.', 'mustang' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -305,7 +265,7 @@
 				$fields[40] = array(
 						'id'          => 'post-format-status',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Status post format</h2>A short status update, similar to a Twitter status update. Please place the actual status text directly into post content area.', 'wm_domain' ) . '<br />' . __( 'Post title will not be displayed.', 'wm_domain' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Status post format</h2>A short status update, similar to a Twitter status update. Please place the actual status text directly into post content area.', 'mustang' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -320,7 +280,7 @@
 				$fields[45] = array(
 						'id'          => 'post-format-video',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</code> shortcode as the first thing in post content. The video description text can follow on next line.', 'wm_domain' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</code> shortcode as the first thing in post content. The video description text can follow on next line.', 'mustang' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -354,7 +314,7 @@
 			function wm_post_metafields( $fields = array() ) {
 				//Helper variables
 					$helper = array(
-							'sidebars' => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'wm_domain' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
+							'sidebars' => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'mustang' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
 						);
 
 					if ( isset( $helper['sidebars']['sections'] ) ) {
@@ -365,21 +325,21 @@
 					$fields[100] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-options-section',
-							'title' => __( 'Settings', 'wm_domain' ),
+							'title' => __( 'Settings', 'mustang' ),
 						);
 
 						$fields[120] = array(
 								'type'        => 'checkbox',
 								'id'          => 'disable-heading',
-								'label'       => __( 'Disable main heading', 'wm_domain' ),
-								'description' => __( 'Hide main heading section', 'wm_domain' ),
+								'label'       => __( 'Disable main heading', 'mustang' ),
+								'description' => __( 'Hide main heading section', 'mustang' ),
 							);
 
 						$fields[140] = array(
 								'type'        => 'select',
 								'id'          => 'sidebar',
-								'label'       => __( 'Sidebar position', 'wm_domain' ),
-								'description' => __( 'Select a sidebar position', 'wm_domain' ),
+								'label'       => __( 'Sidebar position', 'mustang' ),
+								'description' => __( 'Select a sidebar position', 'mustang' ),
 								'options'     => $helper['sidebars'],
 							);
 
@@ -411,7 +371,7 @@
 					'pages' => array( 'post' ),
 
 					// Meta box title.
-					'title' => __( 'Post options', 'wm_domain' ),
+					'title' => __( 'Post options', 'mustang' ),
 
 					// Function callback of form fields displayed immediately after
 				 	// visual editor on 1st tab.
@@ -427,7 +387,7 @@
 			/**
 			 * Page metabox metafields
 			 *
-			 * @version  1.1
+			 * @version  1.6.1
 			 *
 			 * @param   array $fields Array of predefined metafields
 			 *
@@ -441,7 +401,7 @@
 
 					$menus  = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
 					$helper = array(
-							'menus'    => array( '' => __( 'Default', 'wm_domain' ) ),
+							'menus'    => array( '' => __( 'Default', 'mustang' ) ),
 							'sidebars' => $wm_layouts['sidebars'],
 							'website'  => $wm_layouts['website'],
 						);
@@ -461,7 +421,7 @@
 					$fields[100] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-options-section',
-							'title' => __( 'Settings', 'wm_domain' ),
+							'title' => __( 'Settings', 'mustang' ),
 							'page'  => array(
 									'templates' => array( 'page-template/blank.php' ),
 									'operand'   => 'IS_NOT'
@@ -471,49 +431,36 @@
 						$fields[120] = array(
 								'type'        => 'checkbox',
 								'id'          => 'disable-heading',
-								'label'       => __( 'Disable main heading', 'wm_domain' ),
-								'description' => __( 'Hide main heading section', 'wm_domain' ),
+								'label'       => __( 'Disable main heading', 'mustang' ),
+								'description' => __( 'Hide main heading section', 'mustang' ),
 							);
 
 						$fields[140] = array(
 								'type'        => 'select',
 								'id'          => 'sidebar',
-								'label'       => __( 'Page layout', 'wm_domain' ),
-								'description' => __( 'Select a sidebar position or enable fullwidth sections', 'wm_domain' ),
+								'label'       => esc_html__( 'Page layout', 'mustang' ),
+								'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang' ),
 								'options'     => $helper['sidebars'],
 							);
-							$fields[145] = array(
-									'id'      => 'sections-description',
-									'type'    => 'html',
-									'content' => '<div class="box blue">' . __( 'All <code>[wm_row]</code> (and/or <code>[vc_row]</code>) shortcodes will be treated as fullwidth sections in "Fullwidth sections" page layout.', 'wm_domain' ) . '</div>',
-									'conditional' => array(
-											'option'       => array(
-													'tag'  => 'select',
-													'name' => 'wm-sidebar',
-												),
-											'option_value' => array( 'sections' ),
-											'operand'      => 'IS',
-										),
-								);
 
 						$fields[160] = array(
 								'type'        => 'select',
 								'id'          => 'layout',
-								'label'       => __( 'Website layout', 'wm_domain' ),
-								'description' => __( 'Select a website layout for this page', 'wm_domain' ),
+								'label'       => __( 'Website layout', 'mustang' ),
+								'description' => __( 'Select a website layout for this page', 'mustang' ),
 								'options'     => $helper['website'],
 							);
 
 						$fields[180] = array(
 								'type'        => 'select',
 								'id'          => 'footer',
-								'label'       => __( 'Footer layout', 'wm_domain' ),
-								'description' => __( 'Select a footer layout', 'wm_domain' ),
+								'label'       => __( 'Footer layout', 'mustang' ),
+								'description' => __( 'Select a footer layout', 'mustang' ),
 								'options'     => array(
-										''        => __( 'Widgets and credits', 'wm_domain' ),
-										'widgets' => __( 'Widgets only', 'wm_domain' ),
-										'credits' => __( 'Credits only', 'wm_domain' ),
-										'none'    => __( 'No footer', 'wm_domain' ),
+										''        => __( 'Widgets and credits', 'mustang' ),
+										'widgets' => __( 'Widgets only', 'mustang' ),
+										'credits' => __( 'Credits only', 'mustang' ),
+										'none'    => __( 'No footer', 'mustang' ),
 									),
 							);
 
@@ -526,7 +473,7 @@
 					$fields[2000] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-slider-section',
-							'title' => __( 'Slider', 'wm_domain' ),
+							'title' => __( 'Slider', 'mustang' ),
 							'page'  => array(
 									'templates' => array( 'page-template/blank.php' ),
 									'operand'   => 'IS_NOT'
@@ -535,26 +482,26 @@
 
 						$fields[2020] = array(
 								'type'    => 'html',
-								'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( '<strong>Please note that this is a special slider section setup.</strong><br />This slider will be displayed above the website header area. For standard sliders please use the shortcodes directly in the page content.', 'wm_domain' ) . '</div></td></tr>',
+								'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( '<strong>Please note that this is a special slider section setup.</strong><br />This slider will be displayed above the website header area. For standard sliders please use the shortcodes directly in the page content.', 'mustang' ) . '</div></td></tr>',
 							);
 
 						$fields[2040] = array(
 								'type'        => 'select',
 								'id'          => 'slider',
-								'label'       => __( 'Set special slider', 'wm_domain' ),
-								'description' => __( 'Select a slider type used as a special slider above the website header', 'wm_domain' ),
+								'label'       => __( 'Set special slider', 'mustang' ),
+								'description' => __( 'Select a slider type used as a special slider above the website header', 'mustang' ),
 								'options'     => array(
-										''       => __( 'No special slider', 'wm_domain' ),
-										'custom' => __( 'Custom slider (use shortcode)', 'wm_domain' ),
-										'static' => __( 'Featured image', 'wm_domain' ),
+										''       => __( 'No special slider', 'mustang' ),
+										'custom' => __( 'Custom slider (use shortcode)', 'mustang' ),
+										'static' => __( 'Featured image', 'mustang' ),
 									),
 							);
 
 						$fields[2060] = array(
 								'type'        => 'text',
 								'id'          => 'slider-shortcode',
-								'label'       => __( 'Slider shortcode', 'wm_domain' ),
-								'description' => __( 'Set the custom slider shortcode', 'wm_domain' ),
+								'label'       => __( 'Slider shortcode', 'mustang' ),
+								'description' => __( 'Set the custom slider shortcode', 'mustang' ),
 								'conditional' => array(
 										'option'       => array(
 												'tag'  => 'select',
@@ -569,12 +516,12 @@
 						$fields[2080] = array(
 								'type'        => 'select',
 								'id'          => 'slider-static',
-								'label'       => __( 'Image caption position', 'wm_domain' ),
-								'description' => __( 'Featured image will be displayed in the special slider section.<br />Set the image caption (you can use shortcodes) and set the image caption position here.', 'wm_domain' ) . '<br /><a href="#" class="button-primary button-set-featured-image" style="margin-top: .5em">' . __( 'Set featured image', 'wm_domain' ) . '</a>',
+								'label'       => __( 'Image caption position', 'mustang' ),
+								'description' => __( 'Featured image will be displayed in the special slider section.<br />Set the image caption (you can use shortcodes) and set the image caption position here.', 'mustang' ) . '<br /><a href="#" class="button-primary button-set-featured-image" style="margin-top: .5em">' . __( 'Set featured image', 'mustang' ) . '</a>',
 								'options'     => array(
-										'center' => __( 'Center', 'wm_domain' ),
-										'left'   => __( 'Left', 'wm_domain' ),
-										'right'  => __( 'Right', 'wm_domain' ),
+										'center' => __( 'Center', 'mustang' ),
+										'left'   => __( 'Left', 'mustang' ),
+										'right'  => __( 'Right', 'mustang' ),
 									),
 								'conditional' => array(
 										'option'       => array(
@@ -596,7 +543,7 @@
 					$fields[4000] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-blog-section',
-							'title' => __( 'Blog', 'wm_domain' ),
+							'title' => __( 'Blog', 'mustang' ),
 							'page'  => array(
 									'templates' => array( 'home.php' ),
 									'operand'   => 'IS'
@@ -606,8 +553,8 @@
 						$fields[4020] = array(
 								'type'        => 'slider',
 								'id'          => 'blog-posts-count',
-								'label'       => __( 'Number of posts', 'wm_domain' ),
-								'description' => __( 'Sets the number of posts listed on this blog page only. Other archives will display posts according to WordPress settings.<br />Value of "-1" will display all posts. When you set the value of "0", WordPress settings are applied.', 'wm_domain' ),
+								'label'       => __( 'Number of posts', 'mustang' ),
+								'description' => __( 'Sets the number of posts listed on this blog page only. Other archives will display posts according to WordPress settings.<br />Value of "-1" will display all posts. When you set the value of "0", WordPress settings are applied.', 'mustang' ),
 								'default'     => 0,
 								'min'         => -1,
 								'max'         => 25,
@@ -620,26 +567,26 @@
 						$category_fields[] = array(
 								'type'    => 'select',
 								'id'      => 'category',
-								'label'   => __( 'Category', 'wm_domain' ),
+								'label'   => __( 'Category', 'mustang' ),
 								'options' => wma_taxonomy_array(),
 							);
 						$fields[4040] = array(
 								'type'        => 'repeater',
 								'id'          => 'blog-categories',
-								'label'       => __( 'Posts categories', 'wm_domain' ),
-								'description' => __( 'You can choose to display all posts or posts from a specific categories only. Press [+] button to add a category and select the category name from dropdown list.', 'wm_domain' ),
+								'label'       => __( 'Posts categories', 'mustang' ),
+								'description' => __( 'You can choose to display all posts or posts from a specific categories only. Press [+] button to add a category and select the category name from dropdown list.', 'mustang' ),
 								'fields'      => $category_fields,
 							);
 
 						$fields[4060] = array(
 								'type'        => 'radio',
 								'id'          => 'blog-categories-action',
-								'label'       => __( 'Categories action', 'wm_domain' ),
-								'description' => __( 'Exclude or use the above categories?', 'wm_domain' ),
+								'label'       => __( 'Categories action', 'mustang' ),
+								'description' => __( 'Exclude or use the above categories?', 'mustang' ),
 								'default'     => 'category__in',
 								'options'     => array(
-										'category__in'     => __( 'Posts just from these categories', 'wm_domain' ),
-										'category__not_in' => __( 'Exclude posts from these categories', 'wm_domain' ),
+										'category__in'     => __( 'Posts just from these categories', 'mustang' ),
+										'category__not_in' => __( 'Exclude posts from these categories', 'mustang' ),
 									),
 							);
 
@@ -650,9 +597,9 @@
 
 				//"One page" tab
 					if (
-							! class_exists( 'Woocommerce' )
+							! function_exists( 'wm_is_woocommerce' )
 							|| ! (
-								class_exists( 'Woocommerce' )
+								function_exists( 'wm_is_woocommerce' )
 								&& $post_id
 								&& $post_id == wc_get_page_id( 'shop' )
 							)
@@ -661,7 +608,7 @@
 						$fields[6000] = array(
 								'type'  => 'section-open',
 								'id'    => 'page-one-section',
-								'title' => __( 'One page', 'wm_domain' ),
+								'title' => __( 'One page', 'mustang' ),
 								'page'  => array(
 										'templates' => array( 'page-template/one-page.php' ),
 										'operand'   => 'IS'
@@ -670,14 +617,14 @@
 
 							$fields[6020] = array(
 									'type'    => 'html',
-									'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( 'Use this page template to place most (or all) of your website content on a single page. Set the ID for each section of the page (apply on row shortcode) and use them in custom navigation as anchors. You can set a navigation for this page below. Once you click the navigation link, the page will scroll to the section of a specific anchor ID.', 'wm_domain' ) . '</div></td></tr>',
+									'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( 'Use this page template to place most (or all) of your website content on a single page. Set the ID for each section of the page (apply on row shortcode) and use them in custom navigation as anchors. You can set a navigation for this page below. Once you click the navigation link, the page will scroll to the section of a specific anchor ID.', 'mustang' ) . '</div></td></tr>',
 								);
 
 							$fields[6040] = array(
 									'type'        => 'select',
 									'id'          => 'navigation',
-									'label'       => __( 'Anchor navigation', 'wm_domain' ),
-									'description' => __( 'Set a special anchor navigation for this page', 'wm_domain' ),
+									'label'       => __( 'Anchor navigation', 'mustang' ),
+									'description' => __( 'Set a special anchor navigation for this page', 'mustang' ),
 									'options'     => $helper['menus'],
 								);
 
@@ -711,7 +658,7 @@
 					'pages' => array( 'page' ),
 
 					// Meta box title.
-					'title' => __( 'Page options', 'wm_domain' ),
+					'title' => __( 'Page options', 'mustang' ),
 				) );
 
 
@@ -736,19 +683,19 @@
 						$fields[] = array(
 								'type'    => 'select',
 								'id'      => 'icon',
-								'label'   => __( 'Icon', 'wm_domain' ),
+								'label'   => __( 'Icon', 'mustang' ),
 								'options' => $fonticons,
 							);
 					}
 					$fields[] = array(
 							'type'  => 'text',
 							'id'    => 'title',
-							'label' => __( 'Hover title', 'wm_domain' ),
+							'label' => __( 'Hover title', 'mustang' ),
 						);
 					$fields[] = array(
 							'type'  => 'text',
 							'id'    => 'link',
-							'label' => __( 'URL link', 'wm_domain' ),
+							'label' => __( 'URL link', 'mustang' ),
 						);
 
 				//Output
@@ -766,7 +713,7 @@
 			/**
 			 * Projects metabox fields alteration
 			 *
-			 * @version  1.1
+			 * @version  1.6
 			 *
 			 * @param   array $fields Array of predefined metafields
 			 *
@@ -774,33 +721,20 @@
 			 */
 			function wm_project_metafields( $fields = array() ) {
 				//Preparing output
-					$fields[1000]['title'] = __( 'Settings', 'wm_domain' );
+					$fields[1000]['title'] = __( 'Settings', 'mustang' );
 					$fields[1010] = array(
 							'type'        => 'select',
 							'id'          => 'sidebar',
-							'label'       => __( 'Page layout', 'wm_domain' ),
-							'description' => __( 'Select a sidebar position or enable fullwidth sections', 'wm_domain' ),
-							'options'     => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'wm_domain' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
+							'label'       => __( 'Page layout', 'mustang' ),
+							'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang' ),
+							'options'     => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'mustang' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
 						);
-						$fields[1011] = array(
-								'id'      => 'sections-description',
-								'type'    => 'html',
-								'content' => '<div class="box blue">' . __( 'All <code>[wm_row]</code> (and/or <code>[vc_row]</code>) shortcodes will be treated as fullwidth sections in "Fullwidth sections" page layout.', 'wm_domain' ) . '</div>',
-								'conditional' => array(
-										'option'       => array(
-												'tag'  => 'select',
-												'name' => 'wm-sidebar',
-											),
-										'option_value' => array( 'sections' ),
-										'operand'      => 'IS',
-									),
-							);
 
 					$fields[1015] = array(
 							'type'        => 'text',
 							'id'          => 'slider',
-							'label'       => __( 'Custom preview slider', 'wm_domain' ),
-							'description' => __( 'This slider will be displayed on projects list only, instead of featured image. Please enter the slider shortcode.', 'wm_domain' ),
+							'label'       => __( 'Custom preview slider', 'mustang' ),
+							'description' => __( 'This slider will be displayed on projects list only, instead of featured image. Please enter the slider shortcode.', 'mustang' ),
 						);
 
 					$fields[1040]['options'][''] = '';
@@ -1072,38 +1006,51 @@
 
 		/**
 		 * Shortcode markup: column
+		 *
+		 * @version  1.6
 		 */
 		function wm_column_markup( $output, $atts ) {
-			//Validation
-				//style
-					$atts['style'] = '';
-				//bg_image
-					$atts['bg_image'] = trim( $atts['bg_image'] );
-					if ( $atts['bg_image' ] ) {
 
-						$atts['class'] .= ' match-height';
+			// Helper variables
 
-						if ( is_numeric( $atts['bg_image'] ) ) {
-							$image_size = apply_filters( 'wmhook_shortcode_column_image_size', 'full' );
-							$image      = wp_get_attachment_image_src( absint( $atts['bg_image'] ), $image_size );
+				$atts['bg_image'] = trim( $atts['bg_image'] );
 
-							if ( is_array( $image ) && isset( $image[0] ) && $image[0] ) {
-								$atts['style'] .= ' background-image: url(' . esc_url( $image[0] ) . ');';
-							}
-						} elseif ( $atts['bg_image'] ) {
-							$atts['style'] .= ' background-image: url(' . esc_url( $atts['bg_image'] ) . ');';
-						}
 
-						$atts['style'] .= ' background-repeat: repeat;';
-						$atts['style'] .= ' background-position: 50% 50%;';
-						$atts['style'] .= ' background-size: cover;';
+			// Requirements check
 
-						$atts['style'] = ' style="' . esc_attr( $atts['style'] ) . '"';
+				if ( ! $atts['bg_image' ] ) {
+					return $output;
+				}
 
+
+			// Processing
+
+				$atts['attributes']['style'] = '';
+
+				$atts['class'] .= ' match-height';
+
+				if ( is_numeric( $atts['bg_image'] ) ) {
+					$image_size = apply_filters( 'wmhook_shortcode_column_image_size', 'full' );
+					$image      = wp_get_attachment_image_src( absint( $atts['bg_image'] ), $image_size );
+
+					if ( is_array( $image ) && isset( $image[0] ) && $image[0] ) {
+						$atts['attributes']['style'] .= ' background-image: url(' . esc_url( $image[0] ) . ');';
 					}
+				} elseif ( $atts['bg_image'] ) {
+					$atts['attributes']['style'] .= ' background-image: url(' . esc_url( $atts['bg_image'] ) . ');';
+				}
 
-			//Output
-				return '<div class="' . $atts['class'] . '"' . $atts['style'] . '>' . $atts['content'] . '</div>';
+				$atts['attributes']['style'] .= ' background-repeat: repeat;';
+				$atts['attributes']['style'] .= ' background-position: 50% 50%;';
+				$atts['attributes']['style'] .= ' background-size: cover;';
+
+				$atts['attributes']['style'] = ' style="' . esc_attr( $atts['attributes']['style'] ) . '"';
+
+
+			// Output
+
+				return '<div class="' . esc_attr( $atts['class'] ) . '"' . implode( ' ', $atts['attributes'] ) . '>' . $atts['content'] . '</div>';
+
 		} // /wm_column_markup
 
 		add_filter( 'wmhook_shortcode_column_output',    'wm_column_markup', 10, 2 );
@@ -1112,50 +1059,71 @@
 
 
 	/**
-	 * VISUAL COMPOSER PLUGIN SUPPORT
+	 * Modifying page builder parameters
 	 *
-	 * Please note that this is 3rd party plugin. The WebMan Amplifier plugin
-	 * just integrates its shortcodes feature with the Visual Composer plugin
-	 * to make it easier to create content. If you have any difficulties
-	 * with Visual Composer plugin, please contact its developers.
-	 *
-	 * @link  http://codecanyon.net/item/visual-composer-for-wordpress/242431
+	 * @version  1.6.1
 	 */
-	if ( function_exists( 'wma_is_active_vc' ) && wma_is_active_vc() ) {
+	function wm_modify_shortcodes_definitions( $definitions ) {
 
-		/**
-		 * Remove default Visual Composer elements (shortcodes)
-		 */
-		add_theme_support( 'webman-shortcodes', array( 'remove_vc_shortcodes' ) );
+		// Processing
 
+			// Beaver Builder
 
+				// Content Module
 
-		/**
-		 * Deregister VC frontend JS
-		 *
-		 * This script is not needed and causing issues.
-		 *
-		 * @since    1.4
-		 * @version  1.4
-		 */
-		function wm_deregister_visual_composer_front_js() {
-			wp_deregister_script( 'wpb_composer_front_js' );
-		} // /wm_deregister_visual_composer_front_js
+					unset( $definitions['content_module']['bb_plugin']['form']['general']['sections']['multiple']['fields']['filter'] );
+					unset( $definitions['content_module']['bb_plugin']['form']['general']['sections']['multiple']['fields']['pagination'] );
+					unset( $definitions['content_module']['bb_plugin']['form']['description'] );
+					unset( $definitions['content_module']['bb_plugin']['form']['others']['sections']['general']['fields']['no_margin'] );
+					unset( $definitions['content_module']['bb_plugin']['form']['others']['sections']['general']['fields']['image_size'] );
+					unset( $definitions['content_module']['bb_plugin']['form']['others']['sections']['general']['fields']['layout'] );
 
-		add_action( 'vc_base_register_front_js', 'wm_deregister_visual_composer_front_js' );
+				// Posts
 
+					unset( $definitions['posts']['bb_plugin']['form']['description'] );
+					unset( $definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['filter_layout'] );
+					unset( $definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['related'] );
+					unset( $definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['image_size'] );
 
+					// Adding "layout" parameter
 
-		/**
-		 * Section (row) shortcode modifications
-		 */
+						$definitions['posts']['bb_plugin']['output'] = str_replace( '[PREFIX_posts', '[PREFIX_posts{{layout}}', (string) $definitions['posts']['bb_plugin']['output'] );
+						$definitions['posts']['bb_plugin']['params'] = array_merge( array( 'layout' ), (array) $definitions['posts']['bb_plugin']['params'] );
 
-			/**
-			 * Additional Visual Composer parameters
-			 */
-			function wm_modify_shortcodes_definitions( $definitions ) {
-				//Preparing output
-					//Posts shortcode
+						$definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['layout'] = array(
+								'type' => 'select',
+								//description
+								'label' => esc_html__( 'Layout', 'mustang' ),
+								//type specific
+								'options' => array(
+									''       => esc_html__( 'Default layout', 'mustang' ),
+									'simple' => esc_html__( 'Simple posts or projects layout', 'mustang' ),
+								),
+								//preview
+								'preview' => array( 'type' => 'refresh' ),
+							);
+
+				// Testimonials
+
+					unset( $definitions['testimonials']['bb_plugin']['form']['description'] );
+					unset( $definitions['testimonials']['bb_plugin']['form']['others']['sections']['general']['fields']['no_margin'] );
+
+			// Visual Composer
+
+				if ( function_exists( 'wma_is_active_vc' ) && wma_is_active_vc() ) {
+
+					foreach ( $definitions as $key => $atts ) {
+						if (
+								! in_array( $key, array( 'vc_row', 'vc_row_inner' ) )
+								&& isset( $atts['vc_plugin'] )
+							) {
+							$definitions[ $key ]['vc_plugin']['category'] = esc_html__( 'Theme Modules', 'mustang' );
+							$definitions[ $key ]['vc_plugin']['icon']     = wm_get_stylesheet_directory_uri( 'assets/img/webman-32x32.png' );
+						}
+					}
+
+					// Posts
+
 						$definitions['posts']['vc_plugin']['params'][30]['value'] = array(
 								1 => 1,
 								2 => 2,
@@ -1169,44 +1137,46 @@
 							);
 
 						$definitions['posts']['vc_plugin']['params'][145] = array(
-								'heading'     => __( 'Output layout', 'wm_domain' ),
-								'description' => __( 'Set optional output layout name. You can use <code>simple</code> with <em>Posts</em> and <em>Projects</em> posts.', 'wm_domain' ),
+								'heading'     => __( 'Output layout', 'mustang' ),
+								'description' => __( 'Set optional output layout name. You can use <code>simple</code> with <em>Posts</em> and <em>Projects</em> posts.', 'mustang' ),
 								'type'        => 'textfield',
 								'param_name'  => 'layout',
 								'value'       => '',
 								'holder'      => 'hidden',
 								'class'       => '',
-								'group'       => __( 'Layout', 'wm_domain' ),
+								'group'       => __( 'Layout', 'mustang' ),
 							);
 
-					//Row shortcode
+					// Row
+
 						$definitions['vc_row']['vc_plugin']['params'][5] = array(
-								'heading'     => __( 'Remove section inner container', 'wm_domain' ),
-								'description' => __( 'This is only relevant when using "Fullwidth sections" page layout.', 'wm_domain' ),
+								'heading'     => __( 'Remove section inner container', 'mustang' ),
+								'description' => __( 'This is only relevant when using "Fullwidth sections" page layout.', 'mustang' ),
 								'type'        => 'checkbox',
 								'param_name'  => 'disable_container',
 								'value'       => '',
 								'value'       => array(
-										__( 'Remove the inner Section container to make the content fill the whole section without any paddings.', 'wm_domain' ) => 1,
+										__( 'Remove the inner Section container to make the content fill the whole section without any paddings.', 'mustang' ) => 1,
 									),
 								'holder'      => 'hidden',
 								'class'       => '',
 							);
 						$definitions['vc_row']['vc_plugin']['params'][90] = array(
-								'heading'     => __( 'Section background video URL', 'wm_domain' ),
-								'description' => __( 'Set optional section background video URL. Video will be played automatically in a loop.', 'wm_domain' ),
+								'heading'     => __( 'Section background video URL', 'mustang' ),
+								'description' => __( 'Set optional section background video URL. Video will be played automatically in a loop.', 'mustang' ),
 								'type'        => 'textfield',
 								'param_name'  => 'video_url',
 								'value'       => '',
 								'holder'      => 'hidden',
 								'class'       => '',
-								'group'       => __( 'Styling', 'wm_domain' ),
+								'group'       => __( 'Styling', 'mustang' ),
 							);
 
-					//Column shortcode
+					// Column
+
 						$definitions['vc_column']['vc_plugin']['params'][5] = array(
-								'heading'     => __( 'Background image', 'wm_domain' ),
-								'description' => __( 'The image will cover the column background', 'wm_domain' ),
+								'heading'     => __( 'Background image', 'mustang' ),
+								'description' => __( 'The image will cover the column background', 'mustang' ),
 								'type'        => 'attach_image',
 								'param_name'  => 'bg_image',
 								'value'       => '',
@@ -1214,27 +1184,29 @@
 								'class'       => '',
 							);
 
-					//Slideshow shortcode
+					// Slideshow
+
 						$definitions['slideshow']['vc_plugin']['params'][20]['value'] = array(
-								__( 'Just Next/Prev button', 'wm_domain' )  => '',
-								__( 'Next/Prev + Pagination', 'wm_domain' ) => 'pagination',
+								__( 'Just Next/Prev button', 'mustang' )  => '',
+								__( 'Next/Prev + Pagination', 'mustang' ) => 'pagination',
 								//Removed custom thumbnail pagination as we are using Owl Carousel (@todo Make custom thumbnail pagination work with Owl Carousel too.)
 							);
 
-					//bbPress shortcodes
-						if ( class_exists( 'bbPress' ) ) {
+					// bbPress
+
+						if ( function_exists( 'wm_is_bbpress' ) ) {
 							//Forum index
 								$definitions['bbp-forum-index'] = array(
 										'vc_plugin' => array(
-											'name'                    => __( 'Forums Index', 'wm_domain' ),
+											'name'                    => __( 'Forums Index', 'mustang' ),
 											'base'                    => 'bbp-forum-index',
 											'class'                   => 'wm-shortcode-vc-bbp-forum-index',
-											'category'                => __( 'Forum', 'wm_domain' ),
+											'category'                => __( 'Forum', 'mustang' ),
 											'show_settings_on_create' => false,
 											'params'                  => array(
 													10 => array(
-														'heading'     => '<a href="http://codex.bbpress.org/shortcodes/" target="_blank"><strong>' . __( 'bbPress Shortcode', 'wm_domain' ) . '</strong></a>',
-														'description' => __( 'This will display your entire forum index. No parameters to be set.', 'wm_domain' ),
+														'heading'     => '<a href="http://codex.bbpress.org/shortcodes/" target="_blank"><strong>' . __( 'bbPress Shortcode', 'mustang' ) . '</strong></a>',
+														'description' => __( 'This will display your entire forum index. No parameters to be set.', 'mustang' ),
 														'type'        => 'wm_html',
 														'param_name'  => 'forums',
 														'value'       => '',
@@ -1246,216 +1218,81 @@
 									);
 						}
 
-					//WooCommerce shortcodes
-						if ( class_exists( 'Woocommerce' ) ) {
-							//Product categories
-								$definitions['product_categories'] = array(
-										'vc_plugin' => array(
-											'name'                    => __( 'Product Categories', 'wm_domain' ),
-											'base'                    => 'product_categories',
-											'class'                   => 'wm-shortcode-vc-product_categories',
-											'category'                => __( 'Shop', 'wm_domain' ),
-											'show_settings_on_create' => false,
-											'params'                  => array(
-													10 => array(
-														'heading'     => __( 'Count', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'textfield',
-														'param_name'  => 'number',
-														'value'       => '',
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-													20 => array(
-														'heading'     => __( 'Columns', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'dropdown',
-														'param_name'  => 'columns',
-														'value'       => array(
-																3 => 3,
-																4 => 4,
-																5 => 5,
-															),
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-												)
-										)
-									);
-
-							//Single product category
-								$definitions['product_category'] = array(
-										'vc_plugin' => array(
-											'name'                    => __( 'Product Category', 'wm_domain' ),
-											'base'                    => 'product_category',
-											'class'                   => 'wm-shortcode-vc-product_category',
-											'category'                => __( 'Shop', 'wm_domain' ),
-											'show_settings_on_create' => true,
-											'params'                  => array(
-													10 => array(
-														'heading'     => __( 'Category', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'dropdown',
-														'param_name'  => 'category',
-														'value'       => array_flip( wma_taxonomy_array( array(
-																									'all_post_type' => 'product',
-																									'all_text'      => '',
-																									'hierarchical'  => '0',
-																									'tax_name'      => 'product_cat'
-																								) )
-																							),
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-													20 => array(
-														'heading'     => __( 'Number of products per page', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'textfield',
-														'param_name'  => 'per_page',
-														'value'       => '',
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-													30 => array(
-														'heading'     => __( 'Columns', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'dropdown',
-														'param_name'  => 'columns',
-														'value'       => array(
-																3 => 3,
-																4 => 4,
-																5 => 5,
-															),
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-												)
-										)
-									);
-
-							//Recent products
-								$definitions['recent_products'] = array(
-										'vc_plugin' => array(
-											'name'                    => __( 'Recent Products', 'wm_domain' ),
-											'base'                    => 'recent_products',
-											'class'                   => 'wm-shortcode-vc-recent_products',
-											'category'                => __( 'Shop', 'wm_domain' ),
-											'show_settings_on_create' => true,
-											'params'                  => array(
-													10 => array(
-														'heading'     => __( 'Number of products per page', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'textfield',
-														'param_name'  => 'per_page',
-														'value'       => '',
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-													20 => array(
-														'heading'     => __( 'Columns', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'dropdown',
-														'param_name'  => 'columns',
-														'value'       => array(
-																3 => 3,
-																4 => 4,
-																5 => 5,
-															),
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-												)
-										)
-									);
-
-							//Featured products
-								$definitions['featured_products'] = array(
-										'vc_plugin' => array(
-											'name'                    => __( 'Featured Products', 'wm_domain' ),
-											'base'                    => 'featured_products',
-											'class'                   => 'wm-shortcode-vc-featured_products',
-											'category'                => __( 'Shop', 'wm_domain' ),
-											'show_settings_on_create' => true,
-											'params'                  => array(
-													10 => array(
-														'heading'     => __( 'Number of products per page', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'textfield',
-														'param_name'  => 'per_page',
-														'value'       => '',
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-													20 => array(
-														'heading'     => __( 'Columns', 'wm_domain' ),
-														'description' => '',
-														'type'        => 'dropdown',
-														'param_name'  => 'columns',
-														'value'       => array(
-																3 => 3,
-																4 => 4,
-																5 => 5,
-															),
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-												)
-										)
-									);
-						}
-
-				//Output
-					return $definitions;
-			} // /wm_modify_shortcodes_definitions
-
-			add_filter( 'wmhook_shortcode_definitions', 'wm_modify_shortcodes_definitions', 10 );
-
-
-
-		/**
-		 * Enable Visual Composer for custom post types
-		 */
-
-			//Set post types, where Visual Composer should be always enabled
-				$vc_post_types = array(
-						'page',
-						'wm_projects',
-					);
-
-			//Comparing and altering the Visual Composer settings
-				$vc_post_types_diff = array_diff( $vc_post_types, (array) get_option( 'wpb_js_content_types' ) );
-
-				if ( ! empty( $vc_post_types_diff ) ) {
-					$vc_post_types_new = array_filter( array_merge( (array) get_option( 'wpb_js_content_types' ), $vc_post_types_diff ) );
-					update_option( 'wpb_js_content_types', $vc_post_types_new );
 				}
 
 
+		// Output
 
-		/**
-		 * Add custom Visual Composer templates
-		 *
-		 * Please note that this procedure works with Visual Composer version 4.3 and above.
-		 *
-		 * @since  1.1
-		 */
-		if ( function_exists( 'vc_add_default_templates' ) ) {
-			$wm_custom_vc_templates = array(
-				'project-simple' => array(
-						'name'    => __( 'Project - Simple', 'wm_domain' ),
-						'content' => '[vc_row][vc_column width="1/3"][wm_text_block]Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.[/wm_text_block][wm_divider type="dashed"][wm_accordion behaviour="accordion" active="1"][wm_item title="Client"][wm_text_block]<p><strong>Company Name</strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p><a href="http://www.wordpress.org" target="_blank">www.wordpress.org</a></p>[/wm_text_block][/wm_item][wm_item title="Our Task"][wm_text_block]Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.[/wm_text_block][/wm_item][wm_item title="Skills Required"][wm_text_block]<p><strong>Skills involved:</strong></p><ul><li>Lorem ipsum dolor sit amet</li><li>Ut wisi enim ad minim veniam</li><li>Duis autem vel eum</li><li>Nam liber tempor cum soluta</li><li>Typi non habent claritatem insitam</li></ul>[/wm_text_block][/wm_item][/wm_accordion][/vc_column][vc_column width="2/3"][wm_video src="http://vimeo.com/67658001" class="frame bottom-shadow"][/vc_column][/vc_row][vc_row bg_color="#f6f6f6" class="border-top inner-shadow"][vc_column width="1/1"][wm_posts post_type="wm_projects" count="3" columns="3" order="random" align="left" layout="simple" related="project_category"]<h3><strong>Related</strong> projects</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>[/wm_posts][/vc_column][/vc_row]',
-					),
-				'project-complex' => array(
-						'name'    => __( 'Project - Complex', 'wm_domain' ),
-						'content' => '[vc_row disable_container="1"][vc_column width="1/1"][layerslider_vc id="1"][/vc_column][/vc_row][vc_row class="border-top"][vc_column width="1/2" class="animation-fadeInLeftBig"][wm_separator_heading tag="h2" align="right"]The Chalenge[/wm_separator_heading][wm_text_block class="text-right"]Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.[/wm_text_block][/vc_column][vc_column width="1/2" class="animation-fadeInRightBig"][wm_separator_heading tag="h2" align="left"]The Solution[/wm_separator_heading][wm_text_block]Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit.[/wm_text_block][/vc_column][/vc_row][vc_row parallax="0.1" padding="200px 0" class="text-center" bg_image="82"][vc_column width="1/1"][wm_text_block]<h2 class="heading-style-1"><strong>Complete</strong> Corporate Branding</h2>[/wm_text_block][wm_divider type="line"][wm_button url="#" color="green" size="xl" icon="icon-award"]Contact Us Today![/wm_button][/vc_column][/vc_row][vc_row class="border-top"][vc_column width="1/2"][wm_separator_heading tag="h2" align="left"]<strong>Client</strong> Details[/wm_separator_heading][wm_text_block]<img class="alignleft" alt="" src="http://placehold.it/150x150" width="150" height="150" /><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p><p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>[/wm_text_block][/vc_column][vc_column width="1/2"][wm_separator_heading tag="h2" align="left"]More <strong>Info</strong>[/wm_separator_heading][wm_tabs layout="right" active="1"][wm_item title="Some info" icon="icon-help-circled"][wm_text_block]Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.[/wm_text_block][/wm_item][wm_item title="More info" icon="icon-info-circled"][wm_text_block]Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.[/wm_text_block][/wm_item][wm_item title="Yet another one" icon="icon-thumbs-up-alt"][wm_text_block]Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.[/wm_text_block][wm_message color="blue" size="s" icon="icon-basket"]Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.[/wm_message][/wm_item][/wm_tabs][/vc_column][/vc_row][vc_row class="background-color-accent" font_color="#ffffff"][vc_column width="2/3"][wm_image src="89" class="animation-bounceInLeft"][/vc_column][vc_column width="1/3"][wm_divider type="whitespace"][wm_text_block]<h3><strong>WordPress</strong> Design</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>[/wm_text_block][wm_divider type="whitespace" space_before="30"][wm_button url="#" color="green" size="l"]Contact Us[/wm_button][/vc_column][/vc_row][vc_row font_color="#ffffff" parallax="0.1" bg_image="91"][vc_column width="1/1"][wm_content_module multiple="1" count="4" columns="4" order="new" tag="features" align="left" class="text-center"][/wm_content_module][/vc_column][/vc_row][vc_row class="animation-flipInX" disable_container="1"][vc_column width="1/1"][wm_posts post_type="wm_projects" count="8" columns="4" order="new" align="left" layout="simple" no_margin="1"][/wm_posts][/vc_column][/vc_row]',
-					),
-				);
+			return $definitions;
 
-			foreach ( $wm_custom_vc_templates as $template ) {
-				vc_add_default_templates( (array) $template );
+	} // /wm_modify_shortcodes_definitions
+
+	add_filter( 'wmhook_shortcode_definitions', 'wm_modify_shortcodes_definitions', 10 );
+
+
+
+	/**
+	 * Prefix page builder modules names
+	 *
+	 * @since    1.6
+	 * @version  1.6
+	 *
+	 * @param  array  $output
+	 * @param  string $shortcode
+	 */
+	function wm_page_builder_module_name_prefix( $output, $shortcode ) {
+
+		// Processing
+
+			if ( '-' !== $output['name'] ) {
+				$output['name'] = 'WM ' . $output['name'];
 			}
-		} // check if vc_add_default_templates() exists
 
-	} // /wma_is_active_vc() check
 
-?>
+		// Output
+
+			return $output;
+
+	} // /wm_page_builder_module_name_prefix
+
+	add_filter( 'wmhook_shortcode_wma_bb_shortcode_def_output', 'wm_page_builder_module_name_prefix', 10, 2 );
+
+
+
+	/**
+	 * Shortcodes attributes: forced
+	 *
+	 * @since    1.6
+	 * @version  1.6
+	 *
+	 * @param  array  $atts
+	 * @param  string $shortcode
+	 */
+	function wm_shortcode_attributes( $atts, $shortcode ) {
+
+		// Processing
+
+			switch ( $shortcode ) {
+
+				case 'content_module':
+				case 'posts':
+
+					// Isotope - force masonry layout (default is `fitRows`)
+
+						$atts['filter_layout'] = 'masonry';
+
+				break;
+
+				default:
+				break;
+
+			}
+
+
+		// Output
+
+			return $atts;
+
+	} // /wm_shortcode_attributes
+
+	add_filter( 'wmhook_shortcode__attributes', 'wm_shortcode_attributes', 10, 2 );

@@ -26,7 +26,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6.1
  */
 
 
@@ -38,7 +38,7 @@
  */
 
 	//Helper variables
-		$theme_data = wp_get_theme();
+		$theme_data = wp_get_theme( 'mustang-lite' );
 
 	//Basic constants
 		if ( ! defined( 'WM_THEME_NAME' ) )               define( 'WM_THEME_NAME',               $theme_data->Name                                            );
@@ -111,5 +111,3 @@
 
 	//Admin functions
 		locate_template( WM_LIBRARY_DIR . 'admin.php', true );
-
-?>

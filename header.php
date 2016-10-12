@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.1
+ * @version  1.6
  */
 
 
@@ -34,12 +34,6 @@
 	 */
 
 	wmhook_head_top();
-
-	?>
-
-	<title><?php wp_title( '' ); ?></title>
-
-	<?php
 
 	wmhook_head_bottom();
 
@@ -88,5 +82,3 @@
 			wmhook_content_top();
 
 	} // /wmhook_disable_header
-
-?>

@@ -4,6 +4,9 @@
  *
  * @package    WebMan WordPress Theme Framework
  * @copyright  2014 WebMan - Oliver Juhas
+ *
+ * @since    1.0
+ * @version  1.6.1
  */
 
 
@@ -52,5 +55,3 @@ if ( $blog_posts->have_posts() ) {
 }
 
 wp_reset_query();
-
-?>

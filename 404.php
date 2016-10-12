@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.1
+ * @version  1.6
  */
 
 
@@ -25,10 +25,10 @@ get_header(); ?>
 
 			wmhook_entry_top();
 
-			$output  = '<h1>' . __( 'Page not found', 'wm_domain' ) . '</h1>';
-			$output .= '<p>' . __( 'The page you are looking for was moved, deleted or does not exist. Maybe try searching:', 'wm_domain' ) . '</p>';
+			$output  = '<h1>' . __( 'Page not found', 'mustang' ) . '</h1>';
+			$output .= '<p>' . __( 'The page you are looking for was moved, deleted or does not exist. Maybe try searching:', 'mustang' ) . '</p>';
 			$output .= '<div class="error-404-search">' . get_search_form( false ) . '</div>';
-			$output .= '<p>' . sprintf( '<a href="%s" class="wm-button">' . __( 'Return to homepage', 'wm_domain' ) . '</a>', home_url() ) . '</p>';
+			$output .= '<p>' . sprintf( '<a href="%s" class="wm-button">' . __( 'Return to homepage', 'mustang' ) . '</a>', home_url() ) . '</p>';
 
 			echo do_shortcode( $output );
 

@@ -5,7 +5,8 @@
  * @package    WebMan WordPress Theme Framework
  * @copyright  2014 WebMan - Oliver Juhas
  *
- * @since  1.1.1
+ * @since    1.1.1
+ * @version  1.6.1
  */
 
 
@@ -33,5 +34,3 @@ echo "\r\n\r\n" . '<div class="wrap-inner">';
 	get_sidebar();
 
 echo "\r\n" . '</div> <!-- /wrap-inner -->' . "\r\n\r\n";
-
-?>

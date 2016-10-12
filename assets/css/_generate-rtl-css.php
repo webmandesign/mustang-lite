@@ -10,7 +10,7 @@
  * @uses        require() instead of require_once() due to previous inclusion of files when building global CSS stylesheet
  *
  * @since    1.0
- * @version  1.5
+ * @version  1.6.1
  */
 
 
@@ -25,15 +25,9 @@
 
 	$wm_css_content     = array();
 	$wm_theme_css_files = array(
-			10  => 'rtl',
-			20  => 'rtl-responsive',
+			10 => 'rtl',
+			20 => 'rtl-responsive',
 		);
-
-
-
-		/**
-		 * @since  Mustang Lite (WooCommerce and bbPress stylesheets removed)
-		 */
 
 
 
@@ -41,7 +35,7 @@
 		 * Allow filtering of the CSS files array
 		 */
 
-			$wm_theme_css_files = apply_filters( 'wmhook_wm_theme_css_files_rtl', $wm_theme_css_files );
+			$wm_theme_css_files = apply_filters( 'wmhook_wm_theme_css_files', $wm_theme_css_files, 'rtl' );
 
 			ksort( $wm_theme_css_files );
 
@@ -121,5 +115,3 @@
  */
 
 	echo apply_filters( 'wmhook_esc_css', $output );
-
-?>

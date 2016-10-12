@@ -10,7 +10,7 @@
  *
  * @since       3.0
  * @version     3.4
- * @version  1.5.2
+ * @version  1.6.1
  *
  * CONTENT:
  * - 1) Required files
@@ -369,7 +369,7 @@
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-color]',
 												array(
-													'label'    => __( 'Background color', 'wm_domain' ),
+													'label'    => __( 'Background color', 'mustang' ),
 													'section'  => $customizer_section,
 													'priority' => $priority,
 												)
@@ -390,7 +390,7 @@
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url]',
 												array(
-													'label'    => __( 'Background image', 'wm_domain' ),
+													'label'    => __( 'Background image', 'mustang' ),
 													'section'  => $customizer_section,
 													'priority' => ++$priority,
 													'context'  => WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url]',
@@ -412,7 +412,7 @@
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url-hidpi]',
 												array(
-													'label'           => __( 'High DPI background image', 'wm_domain' ),
+													'label'           => __( 'High DPI background image', 'mustang' ),
 													'section'         => $customizer_section,
 													'priority'        => ++$priority,
 													'context'         => WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url-hidpi]',
@@ -437,7 +437,7 @@
 													$wp_customize,
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-position]',
 													array(
-														'label'           => __( 'Background position', 'wm_domain' ),
+														'label'           => __( 'Background position', 'mustang' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'choices'         => wm_helper_var( 'bg-css', 'position' ),
@@ -460,7 +460,7 @@
 											$wp_customize->add_control(
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-repeat]',
 													array(
-														'label'           => __( 'Background repeat', 'wm_domain' ),
+														'label'           => __( 'Background repeat', 'mustang' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'type'            => 'select',
@@ -483,7 +483,7 @@
 											$wp_customize->add_control(
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-attachment]',
 													array(
-														'label'           => __( 'Background attachment', 'wm_domain' ),
+														'label'           => __( 'Background attachment', 'mustang' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'type'            => 'select',
@@ -506,7 +506,7 @@
 											$wp_customize->add_control(
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-size]',
 													array(
-														'label'           => __( 'CSS3 background size', 'wm_domain' ),
+														'label'           => __( 'CSS3 background size', 'mustang' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'type'            => 'select',
@@ -990,5 +990,3 @@
 			return $output;
 
 	} // /wm_active_callback_background_image
-
-?>
