@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mustang\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2016-10-13 10:39+0200\n"
+"POT-Creation-Date: 2016-10-13 15:38+0200\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -597,12 +597,12 @@ msgstr ""
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
-#: library/skinning.php:372 setup/setup-theme-options.php:290
-#: setup/setup-theme-options.php:413
+#: library/skinning.php:372 setup/setup-theme-options.php:155
+#: setup/setup-theme-options.php:278
 msgid "Background color"
 msgstr ""
 
-#: library/skinning.php:393 setup/setup-webman-amplifier.php:1178
+#: library/skinning.php:393 setup/setup-webman-amplifier.php:1173
 msgid "Background image"
 msgstr ""
 
@@ -912,326 +912,215 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: setup/setup-theme-options.php:101
-msgid "WordPress and Theme"
-msgstr ""
-
-#: setup/setup-theme-options.php:106
-msgid "WP Version"
-msgstr ""
-
-#: setup/setup-theme-options.php:110
-msgid "WP Multisite Enabled"
-msgstr ""
-
-#: setup/setup-theme-options.php:111 setup/setup-theme-options.php:139
-msgid "Yes"
-msgstr ""
-
-#: setup/setup-theme-options.php:111 setup/setup-theme-options.php:139
-msgid "No"
-msgstr ""
-
-#: setup/setup-theme-options.php:114
-msgid "WP Language"
-msgstr ""
-
-#: setup/setup-theme-options.php:115 setup/setup-webman-amplifier.php:317
-#: setup/setup-webman-amplifier.php:404 setup/setup-webman-amplifier.php:730
-#: setup/setup.php:220 setup/setup.php:295 setup/setup.php:302
-msgid "Default"
-msgstr ""
-
-#: setup/setup-theme-options.php:118
-msgid "Home URL"
-msgstr ""
-
-#: setup/setup-theme-options.php:122
-msgid "Site URL"
-msgstr ""
-
-#: setup/setup-theme-options.php:126
-msgid "Theme Name"
-msgstr ""
-
-#: setup/setup-theme-options.php:130
-msgid "Theme Shortname"
-msgstr ""
-
-#: setup/setup-theme-options.php:134
-msgid "Theme Version"
-msgstr ""
-
-#: setup/setup-theme-options.php:138
-msgid "WP Debug Mode"
-msgstr ""
-
-#: setup/setup-theme-options.php:142
-msgid "WP Memory Limit"
-msgstr ""
-
-#: setup/setup-theme-options.php:146
-msgid "WP Max Upload Size"
-msgstr ""
-
-#: setup/setup-theme-options.php:152
-msgid "Server Info"
-msgstr ""
-
-#: setup/setup-theme-options.php:157
-msgid "Web Server Info"
-msgstr ""
-
-#: setup/setup-theme-options.php:161
-msgid "PHP Version"
-msgstr ""
-
-#: setup/setup-theme-options.php:165
-msgid "MySQL Version"
-msgstr ""
-
-#: setup/setup-theme-options.php:173
-msgid "PHP memory_limit"
-msgstr ""
-
-#: setup/setup-theme-options.php:177
-msgid "PHP post_max_size"
-msgstr ""
-
-#: setup/setup-theme-options.php:181
-msgid "PHP upload_max_filesize"
-msgstr ""
-
-#: setup/setup-theme-options.php:185
-msgid "PHP max_execution_time"
-msgstr ""
-
-#: setup/setup-theme-options.php:189
-msgid "PHP max_input_vars"
-msgstr ""
-
-#: setup/setup-theme-options.php:200
-msgid "Support and troubleshooting"
-msgstr ""
-
-#: setup/setup-theme-options.php:201
-#, php-format
-msgid ""
-"If you have any difficulties with the theme or need a help customizing it, "
-"please visit the %s.<br />The troubleshooting information below may be "
-"requested by support staff to resolve your query. Please, provide them when "
-"asked."
-msgstr ""
-
-#: setup/setup-theme-options.php:238
+#: setup/setup-theme-options.php:103
 msgid "Section: Top Bar"
 msgstr ""
 
-#: setup/setup-theme-options.php:239 setup/setup-theme-options.php:301
-#: setup/setup-theme-options.php:392 setup/setup-theme-options.php:424
-#: setup/setup-theme-options.php:455 setup/setup-theme-options.php:513
-#: setup/setup-theme-options.php:606 setup/setup-theme-options.php:628
-#: setup/setup-theme-options.php:704 setup/setup-theme-options.php:726
-#: setup/setup-theme-options.php:785 setup/setup-theme-options.php:909
-#: setup/setup-theme-options.php:952
+#: setup/setup-theme-options.php:104 setup/setup-theme-options.php:166
+#: setup/setup-theme-options.php:257 setup/setup-theme-options.php:289
+#: setup/setup-theme-options.php:320 setup/setup-theme-options.php:378
+#: setup/setup-theme-options.php:471 setup/setup-theme-options.php:493
+#: setup/setup-theme-options.php:569 setup/setup-theme-options.php:591
+#: setup/setup-theme-options.php:650 setup/setup-theme-options.php:774
+#: setup/setup-theme-options.php:817
 msgctxt "Customizer panel title."
 msgid "Theme"
 msgstr ""
 
-#: setup/setup-theme-options.php:244
+#: setup/setup-theme-options.php:109
 msgid ""
 "These settings will affect both Topbar Widgets and Topbar Extra Widgets "
 "areas."
 msgstr ""
 
-#: setup/setup-theme-options.php:250 setup/setup-theme-options.php:275
-#: setup/setup-theme-options.php:327 setup/setup-theme-options.php:398
-#: setup/setup-theme-options.php:430 setup/setup-theme-options.php:488
-#: setup/setup-theme-options.php:556 setup/setup-theme-options.php:581
+#: setup/setup-theme-options.php:115 setup/setup-theme-options.php:140
+#: setup/setup-theme-options.php:192 setup/setup-theme-options.php:263
+#: setup/setup-theme-options.php:295 setup/setup-theme-options.php:353
+#: setup/setup-theme-options.php:421 setup/setup-theme-options.php:446
 msgid "Text color"
 msgstr ""
 
-#: setup/setup-theme-options.php:255 setup/setup-theme-options.php:280
-#: setup/setup-theme-options.php:332 setup/setup-theme-options.php:403
-#: setup/setup-theme-options.php:435 setup/setup-theme-options.php:493
-#: setup/setup-theme-options.php:561 setup/setup-theme-options.php:586
-#: setup/setup-theme-options.php:639
+#: setup/setup-theme-options.php:120 setup/setup-theme-options.php:145
+#: setup/setup-theme-options.php:197 setup/setup-theme-options.php:268
+#: setup/setup-theme-options.php:300 setup/setup-theme-options.php:358
+#: setup/setup-theme-options.php:426 setup/setup-theme-options.php:451
+#: setup/setup-theme-options.php:504
 msgid "Accent color"
 msgstr ""
 
-#: setup/setup-theme-options.php:260 setup/setup-theme-options.php:285
-#: setup/setup-theme-options.php:337 setup/setup-theme-options.php:372
-#: setup/setup-theme-options.php:408 setup/setup-theme-options.php:440
-#: setup/setup-theme-options.php:498 setup/setup-theme-options.php:566
-#: setup/setup-theme-options.php:591
+#: setup/setup-theme-options.php:125 setup/setup-theme-options.php:150
+#: setup/setup-theme-options.php:202 setup/setup-theme-options.php:237
+#: setup/setup-theme-options.php:273 setup/setup-theme-options.php:305
+#: setup/setup-theme-options.php:363 setup/setup-theme-options.php:431
+#: setup/setup-theme-options.php:456
 msgid "Borders color"
 msgstr ""
 
-#: setup/setup-theme-options.php:269
+#: setup/setup-theme-options.php:134
 msgid "Topbar Extra widgets"
 msgstr ""
 
-#: setup/setup-theme-options.php:300
+#: setup/setup-theme-options.php:165
 msgid "Section: Header"
 msgstr ""
 
-#: setup/setup-theme-options.php:307
+#: setup/setup-theme-options.php:172
 msgid "Header shadow"
 msgstr ""
 
-#: setup/setup-theme-options.php:309 setup/setup-theme-options.php:526
+#: setup/setup-theme-options.php:174 setup/setup-theme-options.php:391
 msgid "No shadow"
 msgstr ""
 
-#: setup/setup-theme-options.php:310 setup/setup-theme-options.php:527
+#: setup/setup-theme-options.php:175 setup/setup-theme-options.php:392
 msgid "Display shadow"
 msgstr ""
 
-#: setup/setup-theme-options.php:316
+#: setup/setup-theme-options.php:181
 msgid "Sticky header"
 msgstr ""
 
-#: setup/setup-theme-options.php:321 setup/setup-theme-options.php:482
+#: setup/setup-theme-options.php:186 setup/setup-theme-options.php:347
 msgid "Design"
 msgstr ""
 
-#: setup/setup-theme-options.php:346
+#: setup/setup-theme-options.php:211
 msgid "Navigation design"
 msgstr ""
 
-#: setup/setup-theme-options.php:351
+#: setup/setup-theme-options.php:216
 msgid "Navigation padding will affect the header height and logo position."
 msgstr ""
 
-#: setup/setup-theme-options.php:356
+#: setup/setup-theme-options.php:221
 msgid "Navigation padding"
 msgstr ""
 
-#: setup/setup-theme-options.php:367
+#: setup/setup-theme-options.php:232
 msgid "Subnav text color"
 msgstr ""
 
-#: setup/setup-theme-options.php:377
+#: setup/setup-theme-options.php:242
 msgid "Subnav background"
 msgstr ""
 
-#: setup/setup-theme-options.php:381
+#: setup/setup-theme-options.php:246
 msgid "Subnav colors will be also used to style the mobile navigation."
 msgstr ""
 
-#: setup/setup-theme-options.php:391
+#: setup/setup-theme-options.php:256
 msgid "Section: Special Slider"
 msgstr ""
 
-#: setup/setup-theme-options.php:423
+#: setup/setup-theme-options.php:288
 msgid "Section: Main Heading"
 msgstr ""
 
-#: setup/setup-theme-options.php:454
+#: setup/setup-theme-options.php:319
 msgid "Section: Content"
 msgstr ""
 
-#: setup/setup-theme-options.php:461 setup/setup-webman-amplifier.php:341
+#: setup/setup-theme-options.php:326 setup/setup-webman-amplifier.php:329
 msgid "Sidebar position"
 msgstr ""
 
-#: setup/setup-theme-options.php:463 setup/setup-webman-amplifier.php:523
+#: setup/setup-theme-options.php:328 setup/setup-webman-amplifier.php:511
 msgid "Left"
 msgstr ""
 
-#: setup/setup-theme-options.php:464 setup/setup-webman-amplifier.php:524
+#: setup/setup-theme-options.php:329 setup/setup-webman-amplifier.php:512
 msgid "Right"
 msgstr ""
 
-#: setup/setup-theme-options.php:471
+#: setup/setup-theme-options.php:336
 msgid "Sidebar width"
 msgstr ""
 
-#: setup/setup-theme-options.php:473
+#: setup/setup-theme-options.php:338
 msgid "1/4 sidebar"
 msgstr ""
 
-#: setup/setup-theme-options.php:474
+#: setup/setup-theme-options.php:339
 msgid "1/3 sidebar"
 msgstr ""
 
-#: setup/setup-theme-options.php:475
+#: setup/setup-theme-options.php:340
 msgid "Golden ratio"
 msgstr ""
 
-#: setup/setup-theme-options.php:512
+#: setup/setup-theme-options.php:377
 msgid "Section: Footer"
 msgstr ""
 
-#: setup/setup-theme-options.php:518
+#: setup/setup-theme-options.php:383
 msgid ""
 "Footer consists of footer widgets area and credits (copyright) widgets area. "
 "Set the footer widgets layout below and backgrounds for both footer areas."
 msgstr ""
 
-#: setup/setup-theme-options.php:524
+#: setup/setup-theme-options.php:389
 msgid "Footer shadow"
 msgstr ""
 
-#: setup/setup-theme-options.php:533
+#: setup/setup-theme-options.php:398
 msgid "Footer widgets"
 msgstr ""
 
-#: setup/setup-theme-options.php:539
+#: setup/setup-theme-options.php:404
 msgid "Footer widgets layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:541
+#: setup/setup-theme-options.php:406
 msgid "1 column"
 msgstr ""
 
-#: setup/setup-theme-options.php:542
+#: setup/setup-theme-options.php:407
 msgid "2 columns"
 msgstr ""
 
-#: setup/setup-theme-options.php:543
+#: setup/setup-theme-options.php:408
 msgid "3 columns"
 msgstr ""
 
-#: setup/setup-theme-options.php:544
+#: setup/setup-theme-options.php:409
 msgid "4 columns"
 msgstr ""
 
-#: setup/setup-theme-options.php:545
+#: setup/setup-theme-options.php:410
 msgid "5 columns"
 msgstr ""
 
-#: setup/setup-theme-options.php:550
+#: setup/setup-theme-options.php:415
 msgid "Footer widgets will be layed out into columns using masonry script."
 msgstr ""
 
-#: setup/setup-theme-options.php:575
+#: setup/setup-theme-options.php:440
 msgid "Credits"
 msgstr ""
 
-#: setup/setup-theme-options.php:605
+#: setup/setup-theme-options.php:470
 msgid "Background"
 msgstr ""
 
-#: setup/setup-theme-options.php:611
+#: setup/setup-theme-options.php:476
 msgid "Website background"
 msgstr ""
 
-#: setup/setup-theme-options.php:612
+#: setup/setup-theme-options.php:477
 msgid ""
 "Please note that this background is only visible when using boxed theme "
 "layout (set this under \"Setup\" section)."
 msgstr ""
 
-#: setup/setup-theme-options.php:627
+#: setup/setup-theme-options.php:492
 msgid "Colors"
 msgstr ""
 
-#: setup/setup-theme-options.php:633
+#: setup/setup-theme-options.php:498
 msgid "Global colors"
 msgstr ""
 
-#: setup/setup-theme-options.php:643
+#: setup/setup-theme-options.php:508
 msgid ""
 "Accent color is being used globally throughout the whole theme. All of theme "
 "design colors are being calculated automatically based on this color, so if "
@@ -1239,88 +1128,88 @@ msgid ""
 "tweak the design settings, feel free to explore theme sections options below."
 msgstr ""
 
-#: setup/setup-theme-options.php:650
+#: setup/setup-theme-options.php:515
 msgid "General blue color"
 msgstr ""
 
-#: setup/setup-theme-options.php:656
+#: setup/setup-theme-options.php:521
 msgid "General gray color"
 msgstr ""
 
-#: setup/setup-theme-options.php:662
+#: setup/setup-theme-options.php:527
 msgid "General green color"
 msgstr ""
 
-#: setup/setup-theme-options.php:668
+#: setup/setup-theme-options.php:533
 msgid "General orange color"
 msgstr ""
 
-#: setup/setup-theme-options.php:674
+#: setup/setup-theme-options.php:539
 msgid "General red color"
 msgstr ""
 
-#: setup/setup-theme-options.php:679
+#: setup/setup-theme-options.php:544
 msgid "Color treshold"
 msgstr ""
 
-#: setup/setup-theme-options.php:685
+#: setup/setup-theme-options.php:550
 msgid "Auto color treshold"
 msgstr ""
 
-#: setup/setup-theme-options.php:693
+#: setup/setup-theme-options.php:558
 msgid ""
 "Auto color treshold is being used to automatically calculate the additional "
 "colors in the theme (such as text color from the background color). You can "
 "tweak the calculation treshold here."
 msgstr ""
 
-#: setup/setup-theme-options.php:703 setup/setup-theme-options.php:710
+#: setup/setup-theme-options.php:568 setup/setup-theme-options.php:575
 msgid "Logo"
 msgstr ""
 
-#: setup/setup-theme-options.php:715
+#: setup/setup-theme-options.php:580
 msgid "High DPI logo"
 msgstr ""
 
-#: setup/setup-theme-options.php:725
+#: setup/setup-theme-options.php:590
 msgid "Images"
 msgstr ""
 
-#: setup/setup-theme-options.php:731
+#: setup/setup-theme-options.php:596
 msgid "Lightbox"
 msgstr ""
 
-#: setup/setup-theme-options.php:736
+#: setup/setup-theme-options.php:601
 msgid ""
 "If you use a special image lightbox effect plugin, you should disable the "
 "theme native effect below."
 msgstr ""
 
-#: setup/setup-theme-options.php:741
+#: setup/setup-theme-options.php:606
 msgid "Disable lightbox effect"
 msgstr ""
 
-#: setup/setup-theme-options.php:746
+#: setup/setup-theme-options.php:611
 msgid "Image ratios"
 msgstr ""
 
-#: setup/setup-theme-options.php:751
+#: setup/setup-theme-options.php:616
 msgid "Set up image ratios for the different theme items."
 msgstr ""
 
-#: setup/setup-theme-options.php:756
+#: setup/setup-theme-options.php:621
 msgid "Blog list image"
 msgstr ""
 
-#: setup/setup-theme-options.php:762
+#: setup/setup-theme-options.php:627
 msgid "[wm_posts] shortcode image"
 msgstr ""
 
-#: setup/setup-theme-options.php:768
+#: setup/setup-theme-options.php:633
 msgid "[gallery] shortcode image"
 msgstr ""
 
-#: setup/setup-theme-options.php:774
+#: setup/setup-theme-options.php:639
 msgid ""
 "Please decide on, and set the image ratios up for different website sections "
 "right after the theme activation. If you change the image sizes later on, "
@@ -1329,7 +1218,7 @@ msgid ""
 "keep their original sizes."
 msgstr ""
 
-#: setup/setup-theme-options.php:774
+#: setup/setup-theme-options.php:639
 msgid ""
 "If you wish to resize the previously uploaded images to conform the new "
 "image ratios, you can use a plugin for this. Recommended plugins are <a href="
@@ -1339,84 +1228,84 @@ msgid ""
 "Rebuild</a>."
 msgstr ""
 
-#: setup/setup-theme-options.php:784
+#: setup/setup-theme-options.php:649
 msgid "Fonts"
 msgstr ""
 
-#: setup/setup-theme-options.php:790
+#: setup/setup-theme-options.php:655
 msgid ""
 "Set the Google Font to be used for website headings and body text. You can "
 "additionally set a font subset for different character lists."
 msgstr ""
 
-#: setup/setup-theme-options.php:796
+#: setup/setup-theme-options.php:661
 msgid "Text logo font"
 msgstr ""
 
-#: setup/setup-theme-options.php:802
+#: setup/setup-theme-options.php:667
 msgid "Headings font"
 msgstr ""
 
-#: setup/setup-theme-options.php:808
+#: setup/setup-theme-options.php:673
 msgid "Body text font"
 msgstr ""
 
-#: setup/setup-theme-options.php:815
+#: setup/setup-theme-options.php:680
 msgid "Font subset"
 msgstr ""
 
-#: setup/setup-theme-options.php:821
+#: setup/setup-theme-options.php:686
 msgid "Font sizes"
 msgstr ""
 
-#: setup/setup-theme-options.php:827
+#: setup/setup-theme-options.php:692
 msgid "Basic font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:841
+#: setup/setup-theme-options.php:706
 msgid ""
 "Heading font size is counted from the basic font size. Set the percentage of "
 "the basic font size for each heading."
 msgstr ""
 
-#: setup/setup-theme-options.php:847
+#: setup/setup-theme-options.php:712
 msgid "Heading H1 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:861
+#: setup/setup-theme-options.php:726
 msgid "Heading H2 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:875
+#: setup/setup-theme-options.php:740
 msgid "Heading H3 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:889
+#: setup/setup-theme-options.php:754
 msgid "Heading H4, H5 and H6 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:908 setup/setup-theme-options.php:914
-#: setup/setup-webman-amplifier.php:1096 setup/setup-webman-amplifier.php:1147
+#: setup/setup-theme-options.php:773 setup/setup-theme-options.php:779
+#: setup/setup-webman-amplifier.php:1091 setup/setup-webman-amplifier.php:1142
 msgid "Layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:920 setup/setup-webman-amplifier.php:449
+#: setup/setup-theme-options.php:785 setup/setup-webman-amplifier.php:437
 msgid "Website layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:922 setup/setup.php:303
+#: setup/setup-theme-options.php:787 setup/setup.php:303
 msgid "Fullwidth"
 msgstr ""
 
-#: setup/setup-theme-options.php:923 setup/setup.php:304
+#: setup/setup-theme-options.php:788 setup/setup.php:304
 msgid "Boxed"
 msgstr ""
 
-#: setup/setup-theme-options.php:930
+#: setup/setup-theme-options.php:795
 msgid "Website width"
 msgstr ""
 
-#: setup/setup-theme-options.php:941
+#: setup/setup-theme-options.php:806
 msgid ""
 "The website width is being set up for the boxed layout. The actual website "
 "content width would be the website width minus the boxed layout paddings "
@@ -1424,35 +1313,35 @@ msgid ""
 "will be 1320px (= 1480 - 160)."
 msgstr ""
 
-#: setup/setup-theme-options.php:951
+#: setup/setup-theme-options.php:816
 msgid "Others"
 msgstr ""
 
-#: setup/setup-theme-options.php:957
+#: setup/setup-theme-options.php:822
 msgid "CSS3 Animations"
 msgstr ""
 
-#: setup/setup-theme-options.php:963
+#: setup/setup-theme-options.php:828
 msgid "Disable Animate.css library"
 msgstr ""
 
-#: setup/setup-theme-options.php:968
+#: setup/setup-theme-options.php:833
 msgid "Welcome page"
 msgstr ""
 
-#: setup/setup-theme-options.php:974
+#: setup/setup-theme-options.php:839
 msgid "Disable Appearance &raquo; Welcome page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:132
+#: setup/setup-webman-amplifier.php:120
 msgid "Projects"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:150
+#: setup/setup-webman-amplifier.php:138
 msgid "Projects tags"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:208
+#: setup/setup-webman-amplifier.php:196
 msgid ""
 "<h2>Audio post format</h2>Displays audio player to play your audio files. "
 "Could be used for Podcasting. Please place the <code>[wm_audio]</code> "
@@ -1460,7 +1349,7 @@ msgid ""
 "follow on next line."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:223
+#: setup/setup-webman-amplifier.php:211
 msgid ""
 "<h2>Gallery post format</h2>A standard post with a gallery of images in post "
 "content. Slideshow will be displayed on blog page from the first gallery "
@@ -1470,167 +1359,173 @@ msgid ""
 "post page."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:238
+#: setup/setup-webman-amplifier.php:226
 msgid ""
 "<h2>Link post format</h2>Promotes interesting URL links. You can set the "
 "link anywhere in the post content. The link will be emphasized when post is "
 "displayed."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:238 setup/setup-webman-amplifier.php:253
-#: setup/setup-webman-amplifier.php:268
+#: setup/setup-webman-amplifier.php:226 setup/setup-webman-amplifier.php:241
+#: setup/setup-webman-amplifier.php:256
 msgid "Post title will not be displayed."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:253
+#: setup/setup-webman-amplifier.php:241
 msgid ""
 "<h2>Quote post format</h2>A quotation. Please place the actual quote "
 "(blockquote) directly into post content. To set a quote source use a "
 "<code>&lt;cite></code> HTML tag."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:268
+#: setup/setup-webman-amplifier.php:256
 msgid ""
 "<h2>Status post format</h2>A short status update, similar to a Twitter "
 "status update. Please place the actual status text directly into post "
 "content area."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:283
+#: setup/setup-webman-amplifier.php:271
 msgid ""
 "<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</"
 "code> shortcode as the first thing in post content. The video description "
 "text can follow on next line."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:328 setup/setup-webman-amplifier.php:424
-#: setup/setup-webman-amplifier.php:724
+#: setup/setup-webman-amplifier.php:305 setup/setup-webman-amplifier.php:392
+#: setup/setup-webman-amplifier.php:718 setup/setup.php:220 setup/setup.php:295
+#: setup/setup.php:302
+msgid "Default"
+msgstr ""
+
+#: setup/setup-webman-amplifier.php:316 setup/setup-webman-amplifier.php:412
+#: setup/setup-webman-amplifier.php:712
 msgid "Settings"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:334 setup/setup-webman-amplifier.php:434
+#: setup/setup-webman-amplifier.php:322 setup/setup-webman-amplifier.php:422
 msgid "Disable main heading"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:335 setup/setup-webman-amplifier.php:435
+#: setup/setup-webman-amplifier.php:323 setup/setup-webman-amplifier.php:423
 msgid "Hide main heading section"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:342
+#: setup/setup-webman-amplifier.php:330
 msgid "Select a sidebar position"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:374
+#: setup/setup-webman-amplifier.php:362
 msgid "Post options"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:441 setup/setup-webman-amplifier.php:728
+#: setup/setup-webman-amplifier.php:429 setup/setup-webman-amplifier.php:716
 msgid "Page layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:442 setup/setup-webman-amplifier.php:729
+#: setup/setup-webman-amplifier.php:430 setup/setup-webman-amplifier.php:717
 msgid "Select a sidebar position or enable fullwidth sections."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:442 setup/setup-webman-amplifier.php:729
+#: setup/setup-webman-amplifier.php:430 setup/setup-webman-amplifier.php:717
 msgid "Fullwidth sections page layout is suitable for use with page builders."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:450
+#: setup/setup-webman-amplifier.php:438
 msgid "Select a website layout for this page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:457
+#: setup/setup-webman-amplifier.php:445
 msgid "Footer layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:458
+#: setup/setup-webman-amplifier.php:446
 msgid "Select a footer layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:460
+#: setup/setup-webman-amplifier.php:448
 msgid "Widgets and credits"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:461
+#: setup/setup-webman-amplifier.php:449
 msgid "Widgets only"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:462
+#: setup/setup-webman-amplifier.php:450
 msgid "Credits only"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:463
+#: setup/setup-webman-amplifier.php:451
 msgid "No footer"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:476
+#: setup/setup-webman-amplifier.php:464
 msgid "Slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:485
+#: setup/setup-webman-amplifier.php:473
 msgid ""
 "<strong>Please note that this is a special slider section setup.</"
 "strong><br />This slider will be displayed above the website header area. "
 "For standard sliders please use the shortcodes directly in the page content."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:491
+#: setup/setup-webman-amplifier.php:479
 msgid "Set special slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:492
+#: setup/setup-webman-amplifier.php:480
 msgid "Select a slider type used as a special slider above the website header"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:494
+#: setup/setup-webman-amplifier.php:482
 msgid "No special slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:495
+#: setup/setup-webman-amplifier.php:483
 msgid "Custom slider (use shortcode)"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:496
+#: setup/setup-webman-amplifier.php:484
 msgid "Featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:503
+#: setup/setup-webman-amplifier.php:491
 msgid "Slider shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:504
+#: setup/setup-webman-amplifier.php:492
 msgid "Set the custom slider shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:519
+#: setup/setup-webman-amplifier.php:507
 msgid "Image caption position"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:520
+#: setup/setup-webman-amplifier.php:508
 msgid ""
 "Featured image will be displayed in the special slider section.<br />Set the "
 "image caption (you can use shortcodes) and set the image caption position "
 "here."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:520
+#: setup/setup-webman-amplifier.php:508
 msgid "Set featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:522 setup/setup.php:203
+#: setup/setup-webman-amplifier.php:510 setup/setup.php:203
 msgid "Center"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:546
+#: setup/setup-webman-amplifier.php:534
 msgid "Blog"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:556
+#: setup/setup-webman-amplifier.php:544
 msgid "Number of posts"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:557
+#: setup/setup-webman-amplifier.php:545
 msgid ""
 "Sets the number of posts listed on this blog page only. Other archives will "
 "display posts according to WordPress settings.<br />Value of \"-1\" will "
@@ -1638,42 +1533,42 @@ msgid ""
 "applied."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:570
+#: setup/setup-webman-amplifier.php:558
 msgid "Category"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:576
+#: setup/setup-webman-amplifier.php:564
 msgid "Posts categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:577
+#: setup/setup-webman-amplifier.php:565
 msgid ""
 "You can choose to display all posts or posts from a specific categories "
 "only. Press [+] button to add a category and select the category name from "
 "dropdown list."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:584
+#: setup/setup-webman-amplifier.php:572
 msgid "Categories action"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:585
+#: setup/setup-webman-amplifier.php:573
 msgid "Exclude or use the above categories?"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:588
+#: setup/setup-webman-amplifier.php:576
 msgid "Posts just from these categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:589
+#: setup/setup-webman-amplifier.php:577
 msgid "Exclude posts from these categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:611
+#: setup/setup-webman-amplifier.php:599
 msgid "One page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:620
+#: setup/setup-webman-amplifier.php:608
 msgid ""
 "Use this page template to place most (or all) of your website content on a "
 "single page. Set the ID for each section of the page (apply on row "
@@ -1682,115 +1577,107 @@ msgid ""
 "will scroll to the section of a specific anchor ID."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:626
+#: setup/setup-webman-amplifier.php:614
 msgid "Anchor navigation"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:627
+#: setup/setup-webman-amplifier.php:615
 msgid "Set a special anchor navigation for this page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:661
+#: setup/setup-webman-amplifier.php:649
 msgid "Page options"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:686
+#: setup/setup-webman-amplifier.php:674
 msgid "Icon"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:693
+#: setup/setup-webman-amplifier.php:681
 msgid "Hover title"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:698
+#: setup/setup-webman-amplifier.php:686
 msgid "URL link"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:736
+#: setup/setup-webman-amplifier.php:724
 msgid "Custom preview slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:737
+#: setup/setup-webman-amplifier.php:725
 msgid ""
 "This slider will be displayed on projects list only, instead of featured "
 "image. Please enter the slider shortcode."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1099
+#: setup/setup-webman-amplifier.php:1094
 msgid "Default layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1100
+#: setup/setup-webman-amplifier.php:1095
 msgid "Simple posts or projects layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1120
+#: setup/setup-webman-amplifier.php:1115
 msgid "Theme Modules"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1140
+#: setup/setup-webman-amplifier.php:1135
 msgid "Output layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1141
+#: setup/setup-webman-amplifier.php:1136
 msgid ""
 "Set optional output layout name. You can use <code>simple</code> with "
 "<em>Posts</em> and <em>Projects</em> posts."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1153
+#: setup/setup-webman-amplifier.php:1148
 msgid "Remove section inner container"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1154
+#: setup/setup-webman-amplifier.php:1149
 msgid "This is only relevant when using \"Fullwidth sections\" page layout."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1159
+#: setup/setup-webman-amplifier.php:1154
 msgid ""
 "Remove the inner Section container to make the content fill the whole "
 "section without any paddings."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1165
+#: setup/setup-webman-amplifier.php:1160
 msgid "Section background video URL"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1166
+#: setup/setup-webman-amplifier.php:1161
 msgid ""
 "Set optional section background video URL. Video will be played "
 "automatically in a loop."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1172
+#: setup/setup-webman-amplifier.php:1167
 msgid "Styling"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1179
+#: setup/setup-webman-amplifier.php:1174
 msgid "The image will cover the column background"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1190
-msgid "Just Next/Prev button"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1191
-msgid "Next/Prev + Pagination"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1201
+#: setup/setup-webman-amplifier.php:1188
 msgid "Forums Index"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1204
+#: setup/setup-webman-amplifier.php:1191
 msgid "Forum"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1208
+#: setup/setup-webman-amplifier.php:1195
 msgid "bbPress Shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1209
+#: setup/setup-webman-amplifier.php:1196
 msgid "This will display your entire forum index. No parameters to be set."
 msgstr ""
 

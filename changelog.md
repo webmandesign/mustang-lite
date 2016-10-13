@@ -1,25 +1,67 @@
 # Mustang Lite Changelog
 
-## 1.6.1
+## 1.7
 
+* **Update**: Theme description
+* **Update**: Improved files organizations 
+* **Update**: Removed closing `?>` from the end of PHP files
+* **Update**: Using Slick Slider script instead of Owl Carousel
+* **Update**: Removed support info from WordPress help tabs
+* **Update**: Localization
 * **Update**: Documentation
 * **Fix**: Removing obsolete code
 
-#### Files changed:
+### Files changed:
 
 	changelog.md
+	comments.php
 	functions.php
+	loop-blog.php
+	loop-page.php
+	loop-post.php
+	loop-singular.php
+	loop.php
+	page.php
+	screenshot.jpg
+	single.php
 	style.css
+	taxonomy.php
+	assets/css/__fallback.css
+	assets/css/_custom-styles.php
+	assets/css/_generate-css.php
+	assets/css/_generate-rtl-css.php
+	assets/css/_generate-ve-css.php
+	assets/css/beaver-builder-editor.css
+	assets/css/plugins.css
+	assets/css/responsive.css
+	assets/css/rtl-responsive.css
+	assets/css/rtl.css
+	assets/css/shortcodes.css
 	documentation/documentation.html
+	languages/mustang.pot
+	library/admin.php
 	library/core.php
-	
+	library/skinning.php
+	library/includes/hooks.php
+	library/includes/sanitize.php
+	library/includes/controls/class-WM_Customizer_Hidden.php
+	library/includes/controls/class-WM_Customizer_HTML.php
+	library/includes/controls/class-WM_Customizer_Multiselect.php
+	library/includes/controls/class-WM_Customizer_Radiocustom.php
+	library/includes/controls/class-WM_Customizer_Range.php
+	page-template/blank.php
+	page-template/one-page.php
+	setup/plugins.php
+	setup/setup-one-click-demo-import.php
+	setup/setup-theme-options.php
+	setup/setup-webman-amplifier.php
+	setup/setup.php
+
 
 ## 1.6
 
 * **Add**: Beaver Builder compatibility
-* **Add**: WooCommerce 2.6+ support
 * **Add**: One-click demo content import
-* **Update**: Bundled premium plugins removed
 * **Update**: 100% passing Theme Check
 * **Update**: Theme tags
 * **Update**: Supporting `<span>` icons markup
@@ -28,7 +70,6 @@
 * **Update**: Removing Schema.org code in favor of specialized plugins
 * **Update**: Not removing Visual Composer native modules
 * **Update**: Removing Visual Composer custom templates
-* **Update**: Removing custom WooCommerce Visual Composer modules
 * **Update**: Recommended plugins list
 * **Update**: Admin "Welcome" page
 * **Update**: Child themes support
@@ -44,9 +85,8 @@
 * **Fix**: Responsive layout
 * **Fix**: Blank page template layout
 * **Fix**: Child theme update notification
-* **Fix**: WooCommerce PHP class name
 
-#### Files changed:
+### Files changed:
 
 	changelog.md
 	functions.php
@@ -65,7 +105,6 @@
 	assets/css/content.css
 	assets/css/forms.css
 	assets/css/header.css
-	assets/css/plugins-woocommerce.css
 	assets/css/responsive.css
 	assets/css/rtl-responsive.css
 	assets/css/rtl.css
@@ -89,7 +128,6 @@
 	setup/setup-one-click-demo-import.php
 	setup/setup-theme-options.php
 	setup/setup-webman-amplifier.php
-	setup/setup-woocommerce.php
 	setup/setup.php
 	setup/about/about-custom.css
 	setup/about/about.php
@@ -100,7 +138,7 @@
 
 * **Fix**: Issue when using older version of PHP (pre 5.5)
 
-#### Files changed:
+### Files changed:
 
 	style.css
 	library/skinning.php
@@ -112,7 +150,7 @@
 * **Fix**: Localization loading
 * **Fix**: Customizer PHP error
 
-#### Files changed:
+### Files changed:
 
 	style.css
 	languages/readme.md
@@ -147,7 +185,7 @@
 * **Fix**: Issue with filtered Posts (Custom Posts) when changing screen size / orientation
 * **Fix**: Styles of updated Contact widget
 
-#### Files changed:
+### Files changed:
 
 	functions.php
 	license.txt
@@ -195,7 +233,7 @@
 * UPDATE: Scripts: TGM Plugin Activation 2.4.2
 * FIX: Contact widget antispam on email
 
-#### Files changed:
+### Files changed:
 
 	style.css
 	assets/js/scripts-global.js
@@ -206,7 +244,7 @@
 
 * UPDATE: TGM Plugin Activation class
 
-#### Files changed:
+### Files changed:
 
 	library/includes/class-tgm-plugin-activation.php
 
@@ -216,7 +254,7 @@
 * UPDATE: TGM Plugin Activation class
 * FIX: Theme update theme options transfer
 
-#### Files changed:
+### Files changed:
 
 	library/includes/class-tgm-plugin-activation.php
 	setup/setup.php
@@ -236,7 +274,7 @@
 * FIX: Flickering sticky header on webkit browsers
 * FIX: Minor style issues
 
-#### Files changed:
+### Files changed:
 
 	functions.php
 	single.php
@@ -262,7 +300,7 @@
 * FIX: Blog page template display
 * FIX: Closing bracket in wm_helper_var()
 
-#### Files changed:
+### Files changed:
 
 	comments.php
 	content.php
@@ -280,7 +318,7 @@
 
 * FIX: WordPress SEO by Yoast 1.7.2+ plugin support improved
 
-#### Files changed:
+### Files changed:
 
 	library/core.php
 
@@ -289,7 +327,7 @@
 
 * FIX: Aplying Customizer settings on frontend
 
-#### Files changed:
+### Files changed:
 
 	library/skinning.php
 
