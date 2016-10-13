@@ -240,20 +240,20 @@
 
 					$field['options'] = array(
 
-							'' => esc_html__( '- Choose from predefined classes -', 'mustang' ),
+							'' => esc_html__( '- Choose from predefined classes -', 'mustang-lite' ),
 
 							// Layout classes
 
 								'optgroup-layout' => array(
-									'label'   => esc_html__( 'Layout:', 'mustang' ),
+									'label'   => esc_html__( 'Layout:', 'mustang-lite' ),
 									'options' => array(
 
-										'masonry'     => esc_html__( 'Masonry items layout', 'mustang' ),
+										'masonry'     => esc_html__( 'Masonry items layout', 'mustang-lite' ),
 
-										'text-center' => esc_html__( 'Text center', 'mustang' ),
-										'text-right'  => esc_html__( 'Text right', 'mustang' ),
+										'text-center' => esc_html__( 'Text center', 'mustang-lite' ),
+										'text-right'  => esc_html__( 'Text right', 'mustang-lite' ),
 
-										'fullwidth'   => esc_html__( 'Fullwidth elements', 'mustang' ),
+										'fullwidth'   => esc_html__( 'Fullwidth elements', 'mustang-lite' ),
 
 									),
 								),
@@ -261,12 +261,12 @@
 							// Content Module layouts classes
 
 								'optgroup-content-module' => array(
-									'label'   => esc_html__( 'Content Module specific:', 'mustang' ),
+									'label'   => esc_html__( 'Content Module specific:', 'mustang-lite' ),
 									'options' => array(
 
-										'text-center '       => esc_html__( 'Content Module: Icon above, text centered', 'mustang' ),
-										'small-icons'        => esc_html__( 'Content Module: Small icons', 'mustang' ),
-										'no-icon-background' => esc_html__( 'Content Module: No icon background', 'mustang' ),
+										'text-center '       => esc_html__( 'Content Module: Icon above, text centered', 'mustang-lite' ),
+										'small-icons'        => esc_html__( 'Content Module: Small icons', 'mustang-lite' ),
+										'no-icon-background' => esc_html__( 'Content Module: No icon background', 'mustang-lite' ),
 
 									),
 								),
@@ -274,11 +274,11 @@
 							// Decoration classes
 
 								'optgroup-decoration' => array(
-									'label'   => esc_html__( 'Decoration:', 'mustang' ),
+									'label'   => esc_html__( 'Decoration:', 'mustang-lite' ),
 									'options' => array(
 
-										'frame-items'         => esc_html__( 'Border around items (working with Posts and Testimonials)', 'mustang' ),
-										'bottom-shadow-items' => esc_html__( 'Bottom shadow on items (working with Posts and Testimonials)', 'mustang' ),
+										'frame-items'         => esc_html__( 'Border around items (working with Posts and Testimonials)', 'mustang-lite' ),
+										'bottom-shadow-items' => esc_html__( 'Bottom shadow on items (working with Posts and Testimonials)', 'mustang-lite' ),
 
 									),
 								),

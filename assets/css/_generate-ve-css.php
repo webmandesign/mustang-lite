@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.6.1
+ * @version  1.7
  *
  * @uses        Custom CSS Styles Generator
  * @uses        require() instead of require_once() due to previous inclusion of files when building global CSS stylesheet

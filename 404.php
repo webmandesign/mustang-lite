@@ -25,10 +25,10 @@ get_header(); ?>
 
 			wmhook_entry_top();
 
-			$output  = '<h1>' . __( 'Page not found', 'mustang' ) . '</h1>';
-			$output .= '<p>' . __( 'The page you are looking for was moved, deleted or does not exist. Maybe try searching:', 'mustang' ) . '</p>';
+			$output  = '<h1>' . __( 'Page not found', 'mustang-lite' ) . '</h1>';
+			$output .= '<p>' . __( 'The page you are looking for was moved, deleted or does not exist. Maybe try searching:', 'mustang-lite' ) . '</p>';
 			$output .= '<div class="error-404-search">' . get_search_form( false ) . '</div>';
-			$output .= '<p>' . sprintf( '<a href="%s" class="wm-button">' . __( 'Return to homepage', 'mustang' ) . '</a>', home_url() ) . '</p>';
+			$output .= '<p>' . sprintf( '<a href="%s" class="wm-button">' . __( 'Return to homepage', 'mustang-lite' ) . '</a>', home_url() ) . '</p>';
 
 			echo do_shortcode( $output );
 

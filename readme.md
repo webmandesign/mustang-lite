@@ -1,36 +1,46 @@
-# Mustang Lite
+# Mustang
 
-* **Theme URI:** http://www.webmandesign.eu/mustang-lite/
-* **Author:** WebMan
-* **Author URI:** http://www.webmandesign.eu/
-* **License:** GNU General Public License v3
-* **License URI:** http://www.gnu.org/licenses/gpl-3.0.html
+* **Theme URI:**          https://www.webmandesign.eu/mustang-wordpress-theme/  
+* **Author:**             WebMan Design  
+* **Author URI:**         https://www.webmandesign.eu  
+* **License:**            GNU General Public License v3  
+* **License URI:**        http://www.gnu.org/licenses/gpl-3.0.html  
+* **Requires at least:**  4.4
+
 
 ## Description
 
-Mustang Lite WordPress Theme lets you create beautiful, professional responsive and HiDPI (Retina) ready websites. With this theme you can create also a single one-page websites with ease! Mustang Lite is suitable for creative portfolio, business and corporate website projects, personal presentations and much more. You can set a custom design with background images and colors for every section of the theme. As the theme is translation ready and supports right-to-left languages as well, you can localize it for your multilingual website. By default you get the basic blog design which can be extended to full power of the theme with WebMan Amplifier plugin activation. This theme is a free, lite version of premium Mustang Multipurpose WordPress Theme by WebMan. The differences from paid version can be found at http://www.webmandesign.eu/mustan-lite/. Check out themes by WebMan at www.webmandesign.eu. Thank you for using one of WebMan's themes!
+Mustang theme lets you create beautiful, professional responsive and high-resolution-display-ready websites. It is suitable for creative portfolio, business, corporate website projects, personal presentations and much more. 
 
-Follow WebMan on Twitter [https://twitter.com/webmandesigneu] or become a fan on Facebook [https://www.facebook.com/webmandesigneu].
+The theme is completely customizable so you can make it your own. As the theme is translation ready and supports right-to-left (RTL) languages, you can successfully built a multilingual website with it. 
 
-Full theme demo website at [http://themedemos.webmandesign.eu/mustang/].
+When used with powerful WebMan Amplifier plugin you unleash the true potential of the theme! You can also use popular Beaver Builder page builder with this theme as it is fully compatible! 
 
-Theme user manual with demo data at [http://www.webmandesign.eu/manual/mustang/].
+Premium version of Mustang theme contains additional e-commerce (WooCommerce) and forum (bbPress) functionality support. 
+
+To stay up to date, please follow WebMan Design on Twitter [https://twitter.com/webmandesigneu] and/or become a fan on Facebook [https://www.facebook.com/webmandesigneu].
+
 
 ## Demo
 
 http://themedemos.webmandesign.eu/mustang/
 
+
 ## Changelog
 
 *See the `changelog.md` file.*
 
+
 ## Documentation
 
-User manual available at http://www.webmandesign.eu/manual/mustang/
+Up to date version of theme user manual is available online at http://www.webmandesign.eu/manual/mustang/
+
+Off-line version can be found in `documentation` directory of the theme folder.
+
 
 ## Copyright
 
-**Mustang Lite WordPress Theme**
+**Mustang WordPress Theme**
 Copyright 2014 WebMan [http://www.webmandesign.eu/]
 Distributed under the terms of the GNU GPL
 

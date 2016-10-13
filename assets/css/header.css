@@ -1,5 +1,5 @@
 /**
- * @version  1.5
+ * @version  1.6
  */
 
 
@@ -167,7 +167,7 @@
 	/**
 	 * Logo
 	 *
-	 * @version  1.1.1
+	 * @version  1.6
 	 */
 
 		.logo,
@@ -182,6 +182,11 @@
 				padding: .37em 0;
 				margin-top: 20px;
 			}
+
+			.is-sticky .logo.type-text {
+				margin-top: 0;
+			}
+
 			.logo a,
 			.logo a:hover,
 			.logo a:active {
@@ -272,10 +277,6 @@
 					right: .62em;
 					top: 50%;
 					margin-left: 2px;
-					line-height: 13px;
-					text-align: center;
-					font-size: 14px;
-					font-weight: 400;
 					border: 1px solid;
 					border-radius: 50%;
 					-webkit-transform: translateY(-50%);
@@ -285,7 +286,27 @@
 
 				.megamenu li .expander { display: none; }
 
-					.nav-main .expander::before { content: '+'; }
+					.nav-main .expander::after,
+					.nav-main .expander::before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						border-width: 1px;
+						border-style: solid;
+					}
+
+					.nav-main .expander::before {
+						width: 8px;
+						height: 2px;
+						margin: -1px -4px;
+					}
+
+					.nav-main .expander::after {
+						width: 2px;
+						height: 8px;
+						margin: -4px -1px;
+					}
 
 				.nav-main li.menu-item-has-children > .inner {
 					position: relative;
@@ -343,13 +364,9 @@
 				.nav-main li:hover li iframe {display: block}
 
 			/* Arrows for menu item with submenu */
-				.nav-main li .menu-item-has-children > a:after,
-				.nav-main li .menu-item-has-children > span.inner:after {
-					content: 's';
-					right: 10px;
-				}
-					.nav-main li .menu-item-has-children > a,
-					.nav-main li .menu-item-has-children > span.inner { padding-right: 2em; }
+
+				.nav-main li .menu-item-has-children > a,
+				.nav-main li .menu-item-has-children > span.inner { padding-right: 2em; }
 
 
 

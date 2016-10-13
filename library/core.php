@@ -11,7 +11,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @version  3.4
- * @version  1.6.1
+ * @version  1.7
  *
  * CONTENT:
  * - 1) Required files
@@ -299,7 +299,7 @@
 							$logo_url_hiDPI = ( $img_id_hiDPI ) ? ( wp_get_attachment_image_src( $img_id_hiDPI, 'full' ) ) : ( array( '' ) );
 
 							$atts = (array) apply_filters( 'wmhook_wm_logo_image_atts', array(
-									'alt'        => esc_attr( sprintf( __( '%s logo', 'mustang' ), trim( get_bloginfo( 'name' ) ) ) ),
+									'alt'        => esc_attr( sprintf( __( '%s logo', 'mustang-lite' ), trim( get_bloginfo( 'name' ) ) ) ),
 									'title'      => esc_attr( $args['description'] ),
 									'class'      => '',
 									'data-hidpi' => ( $logo_url_hiDPI[0] ) ? ( $logo_url_hiDPI[0] ) : ( $logo_url[0] ),
@@ -309,7 +309,7 @@
 
 						} else {
 
-							$args['logo_image'] = '<img width="' . $args['logo_size'][0] . '" height="' . $args['logo_size'][1] . '" src="' . $args['logo_image'][0] . '" alt="' . esc_attr( sprintf( __( '%s logo', 'mustang' ), trim( get_bloginfo( 'name' ) ) ) ) . '" title="' . esc_attr( $args['description'] ) . '" data-hidpi="' . $args['logo_image'][1] . '" />';
+							$args['logo_image'] = '<img width="' . $args['logo_size'][0] . '" height="' . $args['logo_size'][1] . '" src="' . $args['logo_image'][0] . '" alt="' . esc_attr( sprintf( __( '%s logo', 'mustang-lite' ), trim( get_bloginfo( 'name' ) ) ) ) . '" title="' . esc_attr( $args['description'] ) . '" data-hidpi="' . $args['logo_image'][1] . '" />';
 
 						}
 
@@ -601,7 +601,7 @@
 			//Helper variables
 				global $page, $numpages, $multipage, $post;
 
-				$title_text = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title_text', sprintf( __( '"%s" table of contents', 'mustang' ), get_the_title() ) );
+				$title_text = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title_text', sprintf( __( '"%s" table of contents', 'mustang-lite' ), get_the_title() ) );
 				$title      = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title', '<h2 class="screen-reader-text">' . $title_text . '</h2>' );
 
 				//Requirements check
@@ -637,7 +637,7 @@
 								preg_match( '/<' . $atts['tag'] . '(.*?)>(.*?)<\/' . $atts['tag'] . '>/', $part, $matches );
 							//Fallback to "Part #" if no post part heading found
 								if ( ! isset( $matches[2] ) || ! $matches[2] ) {
-									$matches[2] = sprintf( __( 'Part %d', 'mustang' ), $i );
+									$matches[2] = sprintf( __( 'Part %d', 'mustang-lite' ), $i );
 								}
 
 							$atts['links'][$i] = apply_filters( 'wmhook_wm_nextpage_table_of_contents_part', '<li>' . _wp_link_page( $i ) . $matches[2] . '</a></li>', $matches, $i );
@@ -898,7 +898,7 @@
 				if ( ! post_password_required() ) {
 					$output .= apply_filters( 'wmhook_content_filters', $excerpt );
 				} else {
-					$output .= '<strong>' . __( 'Password protected', 'mustang' ) . '</strong>';
+					$output .= '<strong>' . __( 'Password protected', 'mustang-lite' ) . '</strong>';
 				}
 				$output .= '</div>';
 
@@ -959,7 +959,7 @@
 						}
 						$output .= ( $content_filters ) ? ( apply_filters( 'wmhook_content_filters', get_the_content( '' ) ) ) : ( get_the_content( '' ) );
 					} else {
-						$output .= '<strong>' . __( 'Password protected', 'mustang' ) . '</strong>';
+						$output .= '<strong>' . __( 'Password protected', 'mustang-lite' ) . '</strong>';
 					}
 					$output .= '</div>';
 
@@ -1014,7 +1014,7 @@
 				$args = wp_parse_args( $args, apply_filters( 'wmhook_wm_more_defaults', array(
 						'attributes' => '',
 						'class'      => 'more-link',
-						'content'    => sprintf( __( 'Continue reading <span class="screen-reader-text">the "%s" </span>&raquo;', 'mustang' ), get_the_title() ),
+						'content'    => sprintf( __( 'Continue reading <span class="screen-reader-text">the "%s" </span>&raquo;', 'mustang-lite' ), get_the_title() ),
 						'html'       => '<a href="{link}" class="{class}"{attributes}>{content}</a>',
 						'link'       => get_permalink(),
 					) ) );
@@ -1132,7 +1132,7 @@
 									$replacements = array(
 											'{attributes}' => '',
 											'{class}'      => 'comments-link entry-meta-element',
-											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . $element_id . '" title="' . esc_attr( sprintf( __( 'Comments: %s', 'mustang' ), get_comments_number( $args['post_id'] ) ) ) . '">' . sprintf( __( '<span class="comments-title">Comments: </span>%s', 'mustang' ), '<span class="comments-count">' . get_comments_number( $args['post_id'] ) . '</span>' ) . '</a>',
+											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . $element_id . '" title="' . esc_attr( sprintf( __( 'Comments: %s', 'mustang-lite' ), get_comments_number( $args['post_id'] ) ) ) . '">' . sprintf( __( '<span class="comments-title">Comments: </span>%s', 'mustang-lite' ), '<span class="comments-count">' . get_comments_number( $args['post_id'] ) . '</span>' ) . '</a>',
 										);
 									$replacements = apply_filters( 'wmhook_wm_post_meta_replacements_comments', $replacements );
 
@@ -1174,7 +1174,7 @@
 									$replacements = array(
 											'{attributes}' => wm_schema_org( 'bookmark' ),
 											'{class}'      => 'entry-permalink entry-meta-element',
-											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'mustang' ), the_title_attribute( $the_title_attribute_args ) ) ) . '" rel="bookmark"><span>' . get_the_title( $args['post_id'] ) . '</span></a>',
+											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'mustang-lite' ), the_title_attribute( $the_title_attribute_args ) ) ) . '" rel="bookmark"><span>' . get_the_title( $args['post_id'] ) . '</span></a>',
 										);
 									$replacements = apply_filters( 'wmhook_wm_post_meta_replacements_permalink', $replacements );
 
@@ -1192,7 +1192,7 @@
 									$replacements = array(
 											'{attributes}' => wm_schema_org( 'itemprop="keywords"' ),
 											'{class}'      => 'tag-links entry-meta-element',
-											'{content}'    => sprintf( __( '<strong>Tags:</strong> %s', 'mustang' ), get_the_tag_list( '', ', ', '', $args['post_id'] ) ),
+											'{content}'    => sprintf( __( '<strong>Tags:</strong> %s', 'mustang-lite' ), get_the_tag_list( '', ', ', '', $args['post_id'] ) ),
 										);
 									$replacements = apply_filters( 'wmhook_wm_post_meta_replacements_tags', $replacements );
 
@@ -1233,7 +1233,7 @@
 				'before'         => '<p class="pagination post-parts">',
 				'after'          => '</p>',
 				'next_or_number' => 'number',
-				'pagelink'       => '<span class="page-numbers">' . __( 'Part %', 'mustang' ) . '</span>',
+				'pagelink'       => '<span class="page-numbers">' . __( 'Part %', 'mustang-lite' ) . '</span>',
 				'echo'           => $echo,
 			) );
 		}
@@ -1281,9 +1281,9 @@
 
 			//Preparing output
 				if ( 1 < $page ) {
-					$output = ' ' . $tag[0] . sprintf( __( '(part %s)', 'mustang' ), $page ) . $tag[1];
+					$output = ' ' . $tag[0] . sprintf( __( '(part %s)', 'mustang-lite' ), $page ) . $tag[1];
 				} elseif ( 1 < $paged ) {
-					$output = ' ' . $tag[0] . sprintf( __( '(page %s)', 'mustang' ), $paged ) . $tag[1];
+					$output = ' ' . $tag[0] . sprintf( __( '(page %s)', 'mustang-lite' ), $paged ) . $tag[1];
 				}
 
 			//Output
@@ -1300,7 +1300,7 @@
 		function wm_not_found() {
 			//Helper variables
 				$output  = '<article class="not-found">';
-				$output .= '<h1>' . __( 'No item found', 'mustang' ) . '</h1>';
+				$output .= '<h1>' . __( 'No item found', 'mustang-lite' ) . '</h1>';
 				$output .= '</article>';
 
 			//Output
@@ -1531,9 +1531,9 @@
 				$html_array = array();
 				$atts       = apply_filters( 'wmhook_wm_search_form_atts', array(
 						'action'      => home_url( '/' ),
-						'label'       => __( 'Search for:', 'mustang' ),
+						'label'       => __( 'Search for:', 'mustang-lite' ),
 						'name'        => 's',
-						'placeholder' => __( 'Search for...', 'mustang' ),
+						'placeholder' => __( 'Search for...', 'mustang-lite' ),
 					) );
 				$value      = ( ! empty( $_GET[ $atts['name'] ] ) ) ? ( get_search_query() ) : ( '' );
 
@@ -1543,7 +1543,7 @@
 					$html_array[15] = '<label class="screen-reader-text">' . $atts['label'] . '</label>';
 				}
 				$html_array[20]   = '<input type="text" name="' . $atts['name'] . '" value="' . $value . '" placeholder="' . $atts['placeholder'] . '" />';
-				$html_array[90]   = '<input type="submit" class="submit" value="' . __( 'Submit', 'mustang' ) . '" />';
+				$html_array[90]   = '<input type="submit" class="submit" value="' . __( 'Submit', 'mustang-lite' ) . '" />';
 				$html_array[100]  = '</fieldset></form>';
 
 				$html_array = apply_filters( 'wmhook_wm_search_form_html_array', $html_array );
@@ -1611,9 +1611,9 @@
 
 			//Preparing output
 				$output[10] = '<nav id="' . $container_id . '" class="navigation comment-navigation ' . $container_id . '" role="navigation">';
-				$output[20] = '<h3 class="screen-reader-text">' . __( 'Comment navigation', 'mustang' ) . '</h3>';
-				$output[30] = '<div class="nav-previous">' . get_previous_comments_link( __( '&larr; Older comments', 'mustang' ) ) . '</div>';
-				$output[40] = '<div class="nav-next">' . get_next_comments_link( __( 'Newer comments &rarr;', 'mustang' ) ) . '</div>';
+				$output[20] = '<h3 class="screen-reader-text">' . __( 'Comment navigation', 'mustang-lite' ) . '</h3>';
+				$output[30] = '<div class="nav-previous">' . get_previous_comments_link( __( '&larr; Older comments', 'mustang-lite' ) ) . '</div>';
+				$output[40] = '<div class="nav-next">' . get_next_comments_link( __( 'Newer comments &rarr;', 'mustang-lite' ) ) . '</div>';
 				$output[50] = '</nav>';
 
 			//Output
@@ -1633,8 +1633,8 @@
 		function wm_accessibility_skip_link( $type ) {
 			//Helper variables
 				$links = apply_filters( 'wmhook_wm_accessibility_skip_links', array(
-					'to_content'    => '<a class="screen-reader-text" href="#content-section">' . __( 'Skip to content', 'mustang' ) . '</a>',
-					'to_navigation' => '<a class="screen-reader-text" href="#nav-main">' . __( 'Skip to navigation', 'mustang' ) . '</a>',
+					'to_content'    => '<a class="screen-reader-text" href="#content-section">' . __( 'Skip to content', 'mustang-lite' ) . '</a>',
+					'to_navigation' => '<a class="screen-reader-text" href="#nav-main">' . __( 'Skip to navigation', 'mustang-lite' ) . '</a>',
 				) );
 
 			//Output
@@ -1851,7 +1851,7 @@
 				//Helper viariables
 					$args = wp_parse_args( $args, apply_filters( 'wmhook_wm_generate_main_css_args', array(
 							'gzip'           => false,
-							'message'        => __( "<big>The main theme CSS stylesheet was regenerated.<br /><strong>Please refresh your web browser's and server's cache</strong> <em>(if you are using a website server caching solution)</em>.</big>", 'mustang' ),
+							'message'        => __( "<big>The main theme CSS stylesheet was regenerated.<br /><strong>Please refresh your web browser's and server's cache</strong> <em>(if you are using a website server caching solution)</em>.</big>", 'mustang-lite' ),
 							'message_after'  => '',
 							'message_before' => '',
 							'type'           => '',

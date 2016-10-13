@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.6.1
+ * @version  1.7
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -54,20 +54,20 @@
 					// Recommended
 
 						'webman-amplifier' => array(
-							'name'     => esc_html__( 'WebMan Amplifier (adding theme features)', 'mustang' ),
+							'name'     => esc_html__( 'WebMan Amplifier (adding theme features)', 'mustang-lite' ),
 							'slug'     => 'webman-amplifier',
 							'required' => false,
 						),
 
 						'beaver-builder' => array(
-							'name'        => esc_html__( 'Beaver Builder (easy page builder)', 'mustang' ),
+							'name'        => esc_html__( 'Beaver Builder (easy page builder)', 'mustang-lite' ),
 							'slug'        => 'beaver-builder-lite-version',
 							'required'    => false,
 							'is_callable' => 'FLBuilder::init',
 						),
 
 						'one-click-demo-import' => array(
-							'name'     => esc_html__( 'One Click Demo Import (for installing theme demo content)', 'mustang' ),
+							'name'     => esc_html__( 'One Click Demo Import (for installing theme demo content)', 'mustang-lite' ),
 							'slug'     => 'one-click-demo-import',
 							'required' => false,
 						),

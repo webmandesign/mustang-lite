@@ -2,8 +2,6 @@
  * Borders
  *
  * @version  1.5
- *
- * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  */
 
 	.no-border {border: 0 !important}
@@ -32,6 +30,8 @@
 		.bordered, .type-bordered, .type-bordered-striped,
 		.breadcrumbs-separator[class*="iconwm-"],
 		.wm-pagination a, .wm-pagination span,
+		.woocommerce-pagination a, .woocommerce-pagination span,
+		.bbp-pagination-links a, .bbp-pagination-links a:hover, .bbp-pagination-links span,
 		.list-articles article,
 		.post-table-of-contents.top,
 		.wp-caption figure, figure.wp-caption,

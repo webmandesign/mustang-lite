@@ -2,8 +2,6 @@
  * Core styles
  *
  * @version  1.5
- *
- * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
  */
 
 
@@ -285,17 +283,23 @@
 	/**
 	 * Pagination
 	 *
-	 * Supports WP-PageNavi.
+	 * Supports WP-PageNavi, bbPress and WooCommerce plugin.
 	 */
 
-		.wm-pagination {
+		.wm-pagination,
+		.bbp-pagination .bbp-pagination-links,
+		.woocommerce-page nav.woocommerce-pagination {
 			clear: both;
 			padding: 1.62em 0 0;
 			text-align: right;
 		}
 		.list-articles + .wm-pagination {margin-top: 2.62em}
 			.wm-pagination a,
-			.wm-pagination span {
+			.wm-pagination span,
+			.bbp-pagination .bbp-pagination-links a,
+			.bbp-pagination .bbp-pagination-links span,
+			.woocommerce-pagination a,
+			.woocommerce-pagination span {
 				display: inline-block;
 				width: 3em;
 				height: 3em;
@@ -313,7 +317,9 @@
 				color: #666;
 				border-radius: 1.5em;
 			}
-				.wm-pagination a span { /* post pages */
+				.wm-pagination a span,
+				.bbp-pagination .bbp-pagination-links a span,
+				.woocommerce-pagination a span { /* post pages */
 					display: inline;
 					min-width: auto;
 					padding: 0;
@@ -321,7 +327,9 @@
 					background: transparent;
 					border: 0;
 				}
-				.wm-pagination a:hover {
+				.wm-pagination a:hover,
+				.bbp-pagination .bbp-pagination-links a:hover,
+				.woocommerce-pagination a:hover {
 					-webkit-box-shadow: inset 0 1px 10px rgba(0,0,0, .25);
 					        box-shadow: inset 0 1px 10px rgba(0,0,0, .25);
 				}
@@ -329,7 +337,13 @@
 			/* Pagination link active, current page */
 				.wm-pagination > span,
 				.wm-pagination a:active,
-				.wm-pagination .current {
+				.wm-pagination .current,
+				.bbp-pagination .bbp-pagination-links > span,
+				.bbp-pagination .bbp-pagination-links a:active,
+				.bbp-pagination .bbp-pagination-links .current,
+				.woocommerce-pagination > span,
+				.woocommerce-pagination a:active,
+				.woocommerce-pagination .current {
 					/*(*/
 					background: #3b5998;
 					/*)*/
@@ -342,7 +356,9 @@
 
 			/* Dots */
 				.wm-pagination > span.dots,
-				.wm-pagination .extend {
+				.wm-pagination .extend,
+				.bbp-pagination .bbp-pagination-links > span.dots,
+				.woocommerce-pagination > span.dots {
 					min-width: auto;
 					padding: 0 .5em;
 					background: transparent;

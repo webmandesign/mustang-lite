@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.6.1
+ * @version  1.7
  */
 
 
@@ -18,7 +18,7 @@
  * Output custom skin styles
  *
  * @since    1.0
- * @version  1.6.1
+ * @version  1.7
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */

@@ -1,7 +1,7 @@
 /**
  * Special CSS classes and animations
  *
- * @version  1.5
+ * @version  1.6
  */
 
 
@@ -596,6 +596,8 @@
 				/* Remove icon background */
 					.no-icon-background .wm-iconbox-module .wm-content-module-element {padding-left: 80px}
 					.no-icon-background.small-icons .wm-iconbox-module .wm-content-module-element {padding-left: 58px}
+					.no-icon-background.text-center .wm-iconbox-module .wm-content-module-element,
+					.text-center .no-icon-background .wm-iconbox-module .wm-content-module-element,
 					.no-icon-background.text-center .wm-iconbox-module .wm-content-module-element {padding-left: 0}
 
 					.no-icon-background .wm-iconbox-module .font-icon,
@@ -619,9 +621,11 @@
 						}
 							.no-icon-background.text-center.small-icons .wm-iconbox-module .font-icon {font-size: 48px}
 
-					.no-icon-background .wm-iconbox-module.wm-content-module-item:hover .image i:before {text-shadow: none !important}
+					.no-icon-background .wm-iconbox-module.wm-content-module-item:hover .image [class^="icon-"]:before,
+					.no-icon-background .wm-iconbox-module.wm-content-module-item:hover .image [class*=" icon-"]:before {text-shadow: none !important}
 
-					.no-icon-background .wm-iconbox-module.wm-content-module-item:hover .image i:before {
+					.no-icon-background .wm-iconbox-module.wm-content-module-item:hover .image [class^="icon-"]:before,
+					.no-icon-background .wm-iconbox-module.wm-content-module-item:hover .image [class*=" icon-"]:before {
 						-webkit-transform: none;
 						   -moz-transform: none;
 						    -ms-transform: none;

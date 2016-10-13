@@ -10,7 +10,7 @@
  *
  * @since       3.0
  * @version     3.4
- * @version  1.6.1
+ * @version  1.7
  *
  * CONTENT:
  * - 1) Required files
@@ -369,7 +369,7 @@
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-color]',
 												array(
-													'label'    => __( 'Background color', 'mustang' ),
+													'label'    => __( 'Background color', 'mustang-lite' ),
 													'section'  => $customizer_section,
 													'priority' => $priority,
 												)
@@ -390,7 +390,7 @@
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url]',
 												array(
-													'label'    => __( 'Background image', 'mustang' ),
+													'label'    => __( 'Background image', 'mustang-lite' ),
 													'section'  => $customizer_section,
 													'priority' => ++$priority,
 													'context'  => WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url]',
@@ -412,7 +412,7 @@
 												$wp_customize,
 												WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url-hidpi]',
 												array(
-													'label'           => __( 'High DPI background image', 'mustang' ),
+													'label'           => __( 'High DPI background image', 'mustang-lite' ),
 													'section'         => $customizer_section,
 													'priority'        => ++$priority,
 													'context'         => WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-url-hidpi]',
@@ -437,7 +437,7 @@
 													$wp_customize,
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-position]',
 													array(
-														'label'           => __( 'Background position', 'mustang' ),
+														'label'           => __( 'Background position', 'mustang-lite' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'choices'         => wm_helper_var( 'bg-css', 'position' ),
@@ -460,7 +460,7 @@
 											$wp_customize->add_control(
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-repeat]',
 													array(
-														'label'           => __( 'Background repeat', 'mustang' ),
+														'label'           => __( 'Background repeat', 'mustang-lite' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'type'            => 'select',
@@ -483,7 +483,7 @@
 											$wp_customize->add_control(
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-attachment]',
 													array(
-														'label'           => __( 'Background attachment', 'mustang' ),
+														'label'           => __( 'Background attachment', 'mustang-lite' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'type'            => 'select',
@@ -506,7 +506,7 @@
 											$wp_customize->add_control(
 													WM_THEME_SETTINGS_SKIN . '[' . $option_id . '-bg-size]',
 													array(
-														'label'           => __( 'CSS3 background size', 'mustang' ),
+														'label'           => __( 'CSS3 background size', 'mustang-lite' ),
 														'section'         => $customizer_section,
 														'priority'        => ++$priority,
 														'type'            => 'select',

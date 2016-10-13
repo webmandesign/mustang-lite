@@ -1,7 +1,7 @@
 /**
  * Content
  *
- * @version  1.5
+ * @version  1.6
  */
 
 	.content-section {
@@ -465,9 +465,14 @@
 			height: 100%;
 			vertical-align: middle;
 		}
+
 			.page-template-page-templateblank-php .website-container {
 				display: table-cell;
 				vertical-align: middle;
+			}
+
+			.page-template-page-templateblank-php .content-section .wrap-inner {
+				width: 100%;
 			}
 
 

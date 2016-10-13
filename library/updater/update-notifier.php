@@ -84,9 +84,9 @@
 
 				add_theme_page(
 					//page_title
-					sprintf( __( '%s Theme Updates', 'mustang' ), WM_THEME_NAME ),
+					sprintf( __( '%s Theme Updates', 'mustang-lite' ), WM_THEME_NAME ),
 					//menu_title
-					__( 'Theme Updates', 'mustang' ) . ' <span class="update-plugins count-1"><span class="update-count">1</span></span>',
+					__( 'Theme Updates', 'mustang-lite' ) . ' <span class="update-plugins count-1"><span class="update-count">1</span></span>',
 					//capability
 					'switch_themes',
 					//menu_slug
@@ -127,7 +127,7 @@
 				}
 				$wp_admin_bar->add_menu( array(
 						'id'    => 'update_notifier',
-						'title' => sprintf( __( '%s update', 'mustang' ), WM_THEME_NAME ) . ' <span id="ab-updates">1</span>',
+						'title' => sprintf( __( '%s update', 'mustang-lite' ), WM_THEME_NAME ) . ' <span id="ab-updates">1</span>',
 						'href'  => $adminURL
 					) );
 

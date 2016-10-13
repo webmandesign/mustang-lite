@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.1.1
- * @version  1.6.1
+ * @version  1.7
  */
 
 

@@ -6,9 +6,7 @@
  * @link  http://typeplate.com
  * @link  http://www.pearsonified.com/typography/
  *
- * @version  1.1.1
- *
- * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
+ * @version  1.6
  */
 
 
@@ -60,6 +58,10 @@
 		}
 			* + p {margin-top: 1.62em}
 
+			.screen-reader-text + p {
+				margin-top: 0;
+			}
+
 
 
 		/**
@@ -95,7 +97,7 @@
 		blockquote cite,
 		ol > li:before,
 		.breadcrumbs,
-		.wm-pagination,
+		.wm-pagination, .woocommerce-pagination, .bbp-pagination,
 		.topbar,
 		.logo .description,
 		.sidebar .widget-heading,
@@ -120,7 +122,6 @@
 		.wm-progress-caption,
 		.wm-testimonials .source,
 		.wm-posts .content,
-		.wm-posts-wm_projects.wm-posts-layout-simple .title h3,
 		.white-transparent, .black-transparent,
 		.post-table-of-contents {font-size: .9em}
 
@@ -128,6 +129,9 @@
 		blockquote blockquote,
 		.logo.type-img, h1.logo.type-img,
 		.wm-accordion .wm-item-title,
+		.wm-posts-wm_projects.wm-posts-layout-simple .title h2,
+		.wm-posts-wm_projects.wm-posts-layout-simple .title h3,
+		.wm-posts-wm_projects.wm-posts-layout-simple .title h4,
 		.wm-testimonials blockquote {font-size: 1em}
 
 		h4, h5, h6,
@@ -143,7 +147,13 @@
 		.wm-posts-wm_staff .contacts,
 		.comments-title {font-size: 1.28em}
 
-		.wm-content-module.small-icons .wm-iconbox-module .title h3 {font-size: 1.38em}
+		.wm-content-module.small-icons .wm-iconbox-module .title h2,
+		.wm-content-module.small-icons .wm-iconbox-module .title h3,
+		.wm-content-module.small-icons .wm-iconbox-module .title h4 {font-size: 1.38em}
+
+		.wm-posts .title h2,
+		.wm-posts .title h3,
+		.wm-posts .title h4 {font-size: 1.38em}
 
 		h2,
 		.h2, .heading-style-2,
@@ -152,7 +162,9 @@
 		.list-articles-short .list-articles .entry-title {font-size: 1.62em}
 
 		#search-container input,
-		.wm-iconbox-module h3 {font-size: 2em}
+		.wm-iconbox-module h2,
+		.wm-iconbox-module h3,
+		.wm-iconbox-module h4 {font-size: 2em}
 
 		h1,
 		.h1, .heading-style-1,
@@ -167,7 +179,9 @@
 		h1, h2, h3, h4, h5, h6,
 		.h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"],
 		.nav-main,
-		.wm-posts.wm-posts-wm_staff .title h3 {font-weight: 300}
+		.wm-posts.wm-posts-wm_staff .title h2,
+		.wm-posts.wm-posts-wm_staff .title h3,
+		.wm-posts.wm-posts-wm_staff .title h4 {font-weight: 300}
 
 		.nav-main li li {font-weight: 400}
 
@@ -188,7 +202,9 @@
 		.widget .current-menu-item > .inner,
 		.widget .current_page_item > a,
 		.wm-filter li.active a,
+		.wm-posts .title h2,
 		.wm-posts .title h3,
+		.wm-posts .title h4,
 		.wm-accordion .wm-item-title:before,
 		.wm-accordion .wm-item.active .wm-item-title,
 		.white-transparent, .black-transparent,
@@ -230,7 +246,9 @@
 		h1, h2, h3, h4, h5, h6,
 		.h1, .h2, .h3, .h4, .h5, .h6, [class*="heading-style-"],
 		table,
+		.wm-iconbox-module h2,
 		.wm-iconbox-module h3,
+		.wm-iconbox-module h4,
 		.wm-testimonials .source,
 		.wp-caption .wp-caption-text {line-height: 1.28em}
 

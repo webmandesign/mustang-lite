@@ -5,9 +5,7 @@
  * Styles are sorted in order in which they are included into main stylesheet file.
  *
  * @since    1.0
- * @version  1.5
- *
- * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
+ * @version  1.7
  *
  * @link  http://codex.wordpress.org/Right_to_Left_Language_Support
  */
@@ -58,7 +56,9 @@
 				}
 
 		/* Pagination */
-			.wm-pagination {text-align: left}
+			.wm-pagination,
+			.bbp-pagination .bbp-pagination-links,
+			.woocommerce-page nav.woocommerce-pagination {text-align: left}
 
 			/* WP-PageNavi plugin support */
 				.wm-pagination .pages {float: right}
@@ -116,15 +116,21 @@
 
 		/* Search form */
 			.form-search,
-			#searchform {text-align: right}
+			.woocommerce-product-search,
+			#searchform,
+			#bbp-search-form {text-align: right}
 
 			.form-search:before,
+			.woocommerce-product-search:before,
 			#searchform:before,
+			#bbp-search-form:before,
 			#menu-search a:before {content: '\3e'}
 
 				.form-search input[type="text"],
 				.widget .form-search input[type="text"],
-				#searchform input[type="text"] {
+				.widget .woocommerce-product-search input[type="search"],
+				#searchform input[type="text"],
+				#bbp-search-form input[type="text"] {
 					left: auto;
 					right: 0;
 					padding-left: .62em;
@@ -132,7 +138,9 @@
 				}
 
 			.form-search input[type="submit"],
-			#searchform input[type="submit"] {
+			.widget .woocommerce-product-search input[type="submit"],
+			#searchform input[type="submit"],
+			#bbp-search-form input[type="submit"] {
 				left: auto;
 				right: 0;
 				text-indent: 999em;
@@ -262,6 +270,8 @@
 
 		/* Header */
 			.header-shadow,
+			.woocommerce .header-shadow,
+			.woocommerce-page .header-shadow,
 			.header-wrapper.is-sticky {
 				left: auto;
 				right: 0;
@@ -553,10 +563,12 @@
 				margin-right: 1.62em;
 			}
 
-		/* WebMan Submenu, Pages and Menu widget */
+		/* WebMan Submenu, Pages and Menu widget + bbPress Topic Views List, Forums List widgets */
 			.widget .page_item a:before,
 			.widget .menu-item a:before,
-			.widget .sub-nav a:before {
+			.widget .sub-nav a:before,
+			.widget_display_views a:before,
+			.widget_display_forums a:before {
 				content: 'f';
 				text-align: right;
 			}
@@ -821,7 +833,8 @@
 			h4 .wm-icon,
 			h5 .wm-icon,
 			h6 .wm-icon,
-			.wm-button i,
+			.wm-button [class^="icon-"],
+			.wm-button [class*=" icon-"],
 			.wm-progress-caption .wm-icon {
 				margin-right: 0;
 				margin-left: .28em;
@@ -1037,46 +1050,48 @@
 
 
 			/**
-			 * Owl Carousel
-			 *
-			 * @version  1.2.1
+			 * Slick Slider
 			 */
 
-				.owl-carousel {direction: ltr}
+				.slick-prev::before {
+					content: "F";
+				}
 
-				.owl-wrapper {direction: rtl}
+				.slick-next::before {
+					content: "f";
+				}
 
-				/* items */
-					/* .owl-item {float: right} */ /* JS takes care of this... */
+				.slick-prev {
+					left: auto;
+					right: 0;
+					-webkit-transform: translateX(25%) translateY(-50%);
+					-ms-transform: translateX(25%) translateY(-50%);
+					transform: translateX(25%) translateY(-50%);
+				}
 
-				/* controls */
-					/* pager */
-						.owl-pagination {
-							left: auto;
-							right: 1em;
-						}
-						/* .owl-page {float: right} */ /* JS takes care of this... */
-							.owl-page span {margin: .62em 0 .62em .62em}
+				.slick-next {
+					left: 0;
+					right: auto;
+					-webkit-transform: translateX(-25%) translateY(-50%);
+					-ms-transform: translateX(-25%) translateY(-50%);
+					transform: translateX(-25%) translateY(-50%);
+				}
 
-					/* next/prev */
-						.owl-buttons {
-							right: auto;
-							left: 0;
-						}
-						.scrollable-auto .owl-buttons,
-						.scrollable-manual .owl-buttons {
-							right: auto;
-							left: 2%;
-						}
-							.owl-buttons div {
-								/* float: left; */ /* JS takes care of this... */
-								margin-left: 0;
-								margin-right: 5px;
-							}
-							/* .owl-buttons div:before {content: 'f'} */ /* JS takes care of this... */
-							/* .owl-buttons .owl-prev {float: right} */ /* JS takes care of this... */
-							/* .owl-buttons .owl-prev:before {content: 'F'} */ /* JS takes care of this... */
+				@media only screen and (min-width: 80em) {
 
+					.slick-prev {
+						-webkit-transform: translateX(75%) translateY(-50%);
+						-ms-transform: translateX(75%) translateY(-50%);
+						transform: translateX(75%) translateY(-50%);
+					}
+
+					.slick-next {
+						-webkit-transform: translateX(-75%) translateY(-50%);
+						-ms-transform: translateX(-75%) translateY(-50%);
+						transform: translateX(-75%) translateY(-50%);
+					}
+
+				}
 
 
 	/**

@@ -2,8 +2,6 @@
  * Sidebar
  *
  * @version  1.5
- *
- * @since  Mustang Lite (Removed bbPress styles)
  */
 
 	.sidebar {position: relative}
@@ -94,11 +92,14 @@
 
 	/**
 	 * WebMan Submenu, Pages and Menu widget
+	 * + bbPress Topic Views List, Forums List widgets
 	 */
 
 		.widget .page_item a:before,
 		.widget .menu-item a:before,
-		.widget .sub-nav a:before {
+		.widget .sub-nav a:before,
+		.widget_display_views a:before,
+		.widget_display_forums a:before {
 			content: 'F';
 			display: inline-block;
 			width: 1em;

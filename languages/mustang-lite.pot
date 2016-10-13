@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mustang Lite\n"
+"Project-Id-Version: Mustang\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2015-08-14 08:05+0200\n"
+"POT-Creation-Date: 2016-10-13 10:39+0200\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -34,11 +34,7 @@ msgstr ""
 msgid "Return to homepage"
 msgstr ""
 
-#: bbpress/content-single-forum.php:52 setup/setup-bbpress.php:486
-msgid "Create a new topic"
-msgstr ""
-
-#: comments.php:37 library/core.php:1213
+#: comments.php:37 library/core.php:1135
 #, php-format
 msgid "Comments: %s"
 msgstr ""
@@ -51,169 +47,145 @@ msgstr ""
 msgid "Comments are closed. You can not add new comments."
 msgstr ""
 
-#: library/admin.php:234
-msgid "Image"
-msgstr ""
-
-#: library/core.php:305 library/core.php:315
+#: library/core.php:302 library/core.php:312
 #, php-format
 msgid "%s logo"
 msgstr ""
 
-#: library/core.php:392
-#, php-format
-msgid "Tag archive for \"%s\""
-msgstr ""
-
-#: library/core.php:397
-#, php-format
-msgid "Search for \"%s\""
-msgstr ""
-
-#: library/core.php:402
-#, php-format
-msgid "Archive for %s"
-msgstr ""
-
-#: library/core.php:412
-msgid "Web page was not found"
-msgstr ""
-
-#: library/core.php:682
+#: library/core.php:604
 #, php-format
 msgid "\"%s\" table of contents"
 msgstr ""
 
-#: library/core.php:718
+#: library/core.php:640
 #, php-format
 msgid "Part %d"
 msgstr ""
 
-#: library/core.php:979 library/core.php:1040
+#: library/core.php:901 library/core.php:962
 msgid "Password protected"
 msgstr ""
 
-#: library/core.php:1095
+#: library/core.php:1017
 #, php-format
 msgid ""
 "Continue reading <span class=\"screen-reader-text\">the \"%s\" </span>&raquo;"
 msgstr ""
 
-#: library/core.php:1213
+#: library/core.php:1135
 #, php-format
 msgid "<span class=\"comments-title\">Comments: </span>%s"
 msgstr ""
 
-#: library/core.php:1255
+#: library/core.php:1177
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: library/core.php:1273
+#: library/core.php:1195
 #, php-format
 msgid "<strong>Tags:</strong> %s"
 msgstr ""
 
-#: library/core.php:1314
+#: library/core.php:1236
 msgid "Part %"
 msgstr ""
 
-#: library/core.php:1362
+#: library/core.php:1284
 #, php-format
 msgid "(part %s)"
 msgstr ""
 
-#: library/core.php:1364
+#: library/core.php:1286
 #, php-format
 msgid "(page %s)"
 msgstr ""
 
-#: library/core.php:1381
+#: library/core.php:1303
 msgid "No item found"
 msgstr ""
 
-#: library/core.php:1612
+#: library/core.php:1534
 msgid "Search for:"
 msgstr ""
 
-#: library/core.php:1614
+#: library/core.php:1536
 msgid "Search for..."
 msgstr ""
 
-#: library/core.php:1624
+#: library/core.php:1546
 msgid "Submit"
 msgstr ""
 
-#: library/core.php:1692
+#: library/core.php:1614
 msgid "Comment navigation"
 msgstr ""
 
-#: library/core.php:1693
+#: library/core.php:1615
 msgid "&larr; Older comments"
 msgstr ""
 
-#: library/core.php:1694
+#: library/core.php:1616
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: library/core.php:1714
+#: library/core.php:1636
 msgid "Skip to content"
 msgstr ""
 
-#: library/core.php:1715
+#: library/core.php:1637
 msgid "Skip to navigation"
 msgstr ""
 
-#: library/core.php:1932
+#: library/core.php:1854
 msgid ""
 "<big>The main theme CSS stylesheet was regenerated.<br /><strong>Please "
 "refresh your web browser's and server's cache</strong> <em>(if you are using "
 "a website server caching solution)</em>.</big>"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:333
+#: library/includes/class-tgm-plugin-activation.php:346
 msgid "Install Required Plugins"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:334
+#: library/includes/class-tgm-plugin-activation.php:347
 msgid "Install Plugins"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:335
+#. translators: %s: plugin name.
+#: library/includes/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:336
+#. translators: %s: plugin name.
+#: library/includes/class-tgm-plugin-activation.php:351
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: library/includes/class-tgm-plugin-activation.php:352
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:338
+#. translators: 1: plugin name(s).
+#: library/includes/class-tgm-plugin-activation.php:355
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:343
+#. translators: 1: plugin name(s).
+#: library/includes/class-tgm-plugin-activation.php:361
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:348
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: library/includes/class-tgm-plugin-activation.php:353
+#. translators: 1: plugin name(s).
+#: library/includes/class-tgm-plugin-activation.php:367
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -224,210 +196,197 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:358
+#. translators: 1: plugin name(s).
+#: library/includes/class-tgm-plugin-activation.php:373
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:363
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: library/includes/class-tgm-plugin-activation.php:368
+#. translators: 1: plugin name(s).
+#: library/includes/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:373
+#. translators: 1: plugin name(s).
+#: library/includes/class-tgm-plugin-activation.php:385
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:378
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: library/includes/class-tgm-plugin-activation.php:383
+#: library/includes/class-tgm-plugin-activation.php:390
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:388
+#: library/includes/class-tgm-plugin-activation.php:395
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:393
+#: library/includes/class-tgm-plugin-activation.php:400
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:397
+#: library/includes/class-tgm-plugin-activation.php:404
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:398
-msgid "Return to the dashboard"
+#: library/includes/class-tgm-plugin-activation.php:405
+#: library/includes/class-tgm-plugin-activation.php:846
+#: library/includes/class-tgm-plugin-activation.php:2552
+#: library/includes/class-tgm-plugin-activation.php:3599
+msgid "Return to the Dashboard"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:399
-#: library/includes/class-tgm-plugin-activation.php:3029
+#: library/includes/class-tgm-plugin-activation.php:406
+#: library/includes/class-tgm-plugin-activation.php:3178
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:400
-#: library/includes/class-tgm-plugin-activation.php:2832
+#: library/includes/class-tgm-plugin-activation.php:407
+#: library/includes/class-tgm-plugin-activation.php:2971
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:401
+#. translators: 1: plugin name.
+#: library/includes/class-tgm-plugin-activation.php:409
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:402
+#. translators: 1: plugin name.
+#: library/includes/class-tgm-plugin-activation.php:411
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:403
+#. translators: 1: dashboard link.
+#: library/includes/class-tgm-plugin-activation.php:413
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:404
+#: library/includes/class-tgm-plugin-activation.php:414
 msgid "Dismiss this notice"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:405
+#: library/includes/class-tgm-plugin-activation.php:415
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: library/includes/class-tgm-plugin-activation.php:416
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:520
+#: library/includes/class-tgm-plugin-activation.php:541
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:521
+#: library/includes/class-tgm-plugin-activation.php:542
 msgid "Update Required"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:635
-msgid "Set the parent_slug config variable instead."
-msgstr ""
-
-#: library/includes/class-tgm-plugin-activation.php:828
-#: library/includes/class-tgm-plugin-activation.php:3438
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: library/includes/class-tgm-plugin-activation.php:935
+#: library/includes/class-tgm-plugin-activation.php:953
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:935
-#: library/includes/class-tgm-plugin-activation.php:938
+#: library/includes/class-tgm-plugin-activation.php:953
+#: library/includes/class-tgm-plugin-activation.php:956
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:938
+#: library/includes/class-tgm-plugin-activation.php:956
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:1116
-#: library/includes/class-tgm-plugin-activation.php:2828
+#: library/includes/class-tgm-plugin-activation.php:1140
+#: library/includes/class-tgm-plugin-activation.php:2967
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:1881
+#. translators: %s: version number
+#: library/includes/class-tgm-plugin-activation.php:2001
 #, php-format
-msgctxt "%s = version number"
 msgid "TGMPA v%s"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2167
+#: library/includes/class-tgm-plugin-activation.php:2292
 msgid "Required"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2170
+#: library/includes/class-tgm-plugin-activation.php:2295
 msgid "Recommended"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2186
+#: library/includes/class-tgm-plugin-activation.php:2311
 msgid "WordPress Repository"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2189
+#: library/includes/class-tgm-plugin-activation.php:2314
 msgid "External Source"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2192
+#: library/includes/class-tgm-plugin-activation.php:2317
 msgid "Pre-Packaged"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2209
+#: library/includes/class-tgm-plugin-activation.php:2334
 msgid "Not Installed"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2213
+#: library/includes/class-tgm-plugin-activation.php:2338
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2215
+#: library/includes/class-tgm-plugin-activation.php:2340
 msgid "Active"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2221
+#: library/includes/class-tgm-plugin-activation.php:2346
 msgid "Required Update not Available"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2224
+#: library/includes/class-tgm-plugin-activation.php:2349
 msgid "Requires Update"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2227
+#: library/includes/class-tgm-plugin-activation.php:2352
 msgid "Update recommended"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2235
+#. translators: 1: install status, 2: update status
+#: library/includes/class-tgm-plugin-activation.php:2361
 #, php-format
-msgctxt "%1$s = install status, %2$s = update status"
+msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2280
+#. translators: 1: number of plugins.
+#: library/includes/class-tgm-plugin-activation.php:2407
 #, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -435,194 +394,201 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:2283
+#. translators: 1: number of plugins.
+#: library/includes/class-tgm-plugin-activation.php:2411
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:2286
+#. translators: 1: number of plugins.
+#: library/includes/class-tgm-plugin-activation.php:2415
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:2289
+#. translators: 1: number of plugins.
+#: library/includes/class-tgm-plugin-activation.php:2419
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/class-tgm-plugin-activation.php:2371
+#: library/includes/class-tgm-plugin-activation.php:2501
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2379
+#: library/includes/class-tgm-plugin-activation.php:2509
 msgid "Installed version:"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2387
+#: library/includes/class-tgm-plugin-activation.php:2517
 msgid "Minimum required version:"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2399
+#: library/includes/class-tgm-plugin-activation.php:2529
 msgid "Available version:"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2422
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
+#: library/includes/class-tgm-plugin-activation.php:2552
+msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2436
+#: library/includes/class-tgm-plugin-activation.php:2566
 msgid "Plugin"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2437
+#: library/includes/class-tgm-plugin-activation.php:2567
 msgid "Source"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2438
+#: library/includes/class-tgm-plugin-activation.php:2568
 msgid "Type"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2442
+#: library/includes/class-tgm-plugin-activation.php:2572
 msgid "Version"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2443
+#: library/includes/class-tgm-plugin-activation.php:2573
 msgid "Status"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2491
+#. translators: %2$s: plugin name in screen reader markup
+#: library/includes/class-tgm-plugin-activation.php:2622
 #, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Install %2$s"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2495
+#. translators: %2$s: plugin name in screen reader markup
+#: library/includes/class-tgm-plugin-activation.php:2627
 #, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Update %2$s"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2500
+#. translators: %2$s: plugin name in screen reader markup
+#: library/includes/class-tgm-plugin-activation.php:2633
 #, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Activate %2$s"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2570
+#: library/includes/class-tgm-plugin-activation.php:2703
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2603
+#: library/includes/class-tgm-plugin-activation.php:2736
 msgid "Install"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2609
+#: library/includes/class-tgm-plugin-activation.php:2742
 msgid "Update"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2612
+#: library/includes/class-tgm-plugin-activation.php:2745
 msgid "Activate"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2643
+#: library/includes/class-tgm-plugin-activation.php:2776
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2645
+#: library/includes/class-tgm-plugin-activation.php:2778
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2681
+#: library/includes/class-tgm-plugin-activation.php:2819
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2683
+#: library/includes/class-tgm-plugin-activation.php:2821
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2788
+#: library/includes/class-tgm-plugin-activation.php:2927
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:2814
+#: library/includes/class-tgm-plugin-activation.php:2953
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3028
+#: library/includes/class-tgm-plugin-activation.php:3177
 msgid "Plugin activation failed."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3362
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: library/includes/class-tgm-plugin-activation.php:3517
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3364
+#. translators: 1: plugin name, 2: error message.
+#: library/includes/class-tgm-plugin-activation.php:3520
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3365
+#. translators: 1: plugin name.
+#: library/includes/class-tgm-plugin-activation.php:3522
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3369
+#: library/includes/class-tgm-plugin-activation.php:3526
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3370
+#. translators: 1: plugin name.
+#: library/includes/class-tgm-plugin-activation.php:3528
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3370
-#: library/includes/class-tgm-plugin-activation.php:3376
+#: library/includes/class-tgm-plugin-activation.php:3528
+#: library/includes/class-tgm-plugin-activation.php:3536
 msgid "Show Details"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3370
-#: library/includes/class-tgm-plugin-activation.php:3376
+#: library/includes/class-tgm-plugin-activation.php:3528
+#: library/includes/class-tgm-plugin-activation.php:3536
 msgid "Hide Details"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3371
+#: library/includes/class-tgm-plugin-activation.php:3529
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3372
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: library/includes/class-tgm-plugin-activation.php:3531
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3375
+#: library/includes/class-tgm-plugin-activation.php:3534
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3376
+#. translators: 1: plugin name.
+#: library/includes/class-tgm-plugin-activation.php:3536
 #, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3377
+#: library/includes/class-tgm-plugin-activation.php:3537
 msgid "All installations have been completed."
 msgstr ""
 
-#: library/includes/class-tgm-plugin-activation.php:3378
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: library/includes/class-tgm-plugin-activation.php:3539
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
@@ -636,7 +602,7 @@ msgstr ""
 msgid "Background color"
 msgstr ""
 
-#: library/skinning.php:393 setup/setup-webman-amplifier.php:1208
+#: library/skinning.php:393 setup/setup-webman-amplifier.php:1178
 msgid "Background image"
 msgstr ""
 
@@ -660,44 +626,290 @@ msgstr ""
 msgid "CSS3 background size"
 msgstr ""
 
-#: library/updater/update-notifier.php:88
+#: library/updater/update-notifier.php:87
 #, php-format
 msgid "%s Theme Updates"
 msgstr ""
 
-#: library/updater/update-notifier.php:90
+#: library/updater/update-notifier.php:89
 msgid "Theme Updates"
 msgstr ""
 
-#: library/updater/update-notifier.php:131
+#: library/updater/update-notifier.php:130
 #, php-format
 msgid "%s update"
 msgstr ""
 
-#: setup/setup-bbpress.php:250
-msgid "in reply to: "
+#: setup/about/about.php:130
+msgid "Welcome"
 msgstr ""
 
-#: setup/setup-bbpress.php:370
+#: setup/about/about.php:167
 #, php-format
-msgid "<strong>Topics</strong> in \"%s\":"
+msgctxt "1: theme name, 2: theme version number."
+msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: setup/setup-bbpress.php:385
+#: setup/about/about.php:179
 #, php-format
-msgid "<strong>Forums</strong> in \"%s\":"
+msgctxt "1: theme name, 2: theme developer link."
+msgid "Thank you for using %1$s WordPress theme by %2$s!"
 msgstr ""
 
-#: setup/setup-bbpress.php:554
-msgid "Last update"
+#: setup/about/about.php:186
+msgid "Please take time to read the steps below to set up your website."
 msgstr ""
 
-#: setup/setup-bbpress.php:557
-msgid "Topics count"
+#: setup/about/about.php:193
+msgid "Theme Documentation"
 msgstr ""
 
-#: setup/setup-bbpress.php:560
-msgid "Replies count"
+#: setup/about/about.php:195
+msgid "Support Forum"
+msgstr ""
+
+#: setup/about/about.php:207
+msgid "Quickstart Guide"
+msgstr ""
+
+#: setup/about/about.php:215
+msgid "WebMan Amplifier"
+msgstr ""
+
+#: setup/about/about.php:218
+#, php-format
+msgctxt "%s: plugin name."
+msgid ""
+"To make the theme highly flexible, open and future-proof, it uses the %s "
+"plugin."
+msgstr ""
+
+#: setup/about/about.php:219
+msgid ""
+"Please, install and activate this plugin to unveil the additional "
+"functionality."
+msgstr ""
+
+#: setup/about/about.php:224
+#, php-format
+msgctxt "%s: plugin name."
+msgid "Install %s &raquo;"
+msgstr ""
+
+#: setup/about/about.php:234
+msgid "The WordPress settings"
+msgstr ""
+
+#: setup/about/about.php:237
+msgid ""
+"Do not forget to set up your WordPress in \"Settings\" section of the "
+"WordPress dashboard."
+msgstr ""
+
+#: setup/about/about.php:238
+msgid "Please go through all the subsections and options."
+msgstr ""
+
+#: setup/about/about.php:239
+msgid "This step is required for all WordPress websites."
+msgstr ""
+
+#: setup/about/about.php:242
+msgid "Set Up WordPress &raquo;"
+msgstr ""
+
+#: setup/about/about.php:250
+msgid "Customize the theme"
+msgstr ""
+
+#: setup/about/about.php:253
+msgid "You can customize the theme using live-preview editor."
+msgstr ""
+
+#: setup/about/about.php:254
+msgid "Customization changes will go live only after you save them!"
+msgstr ""
+
+#: setup/about/about.php:257
+msgid "Customize the Theme &raquo;"
+msgstr ""
+
+#: setup/about/about.php:270
+msgid "Important:"
+msgstr ""
+
+#: setup/about/about.php:277
+msgid ""
+"For the best performance, the theme generates a single CSS stylesheet file "
+"using WordPress native filesystem API."
+msgstr ""
+
+#: setup/about/about.php:278
+msgid "The file is being generated after saving theme customizer settings."
+msgstr ""
+
+#: setup/about/about.php:279
+msgid ""
+"If you notice an error message in WordPress dashboard after leaving the "
+"theme customizer, please check whether you should set up the FTP credentials "
+"in your \"wp-config.php\" file."
+msgstr ""
+
+#: setup/about/about.php:280
+msgid "In that case please read the instructions &raquo;"
+msgstr ""
+
+#: setup/about/about.php:288
+msgid "Installing the theme demo content"
+msgstr ""
+
+#: setup/about/about.php:291
+msgid ""
+"You can install the theme demo content including pages, posts, custom post "
+"types, layouts, menus and widgets directly from your WordPress dashboard by "
+"clicking the button bellow."
+msgstr ""
+
+#: setup/about/about.php:295
+msgid ""
+"Alternatively (such as when the automated installation fails) you can follow "
+"theme documentation instructions for manual demo content installation."
+msgstr ""
+
+#: setup/about/about.php:296
+msgid "Read the instructions &raquo;"
+msgstr ""
+
+#: setup/about/about.php:301
+msgid "Install and run \"One Click Demo Import\" plugin"
+msgstr ""
+
+#: setup/about/about.php:305
+msgid "Install theme demo content"
+msgstr ""
+
+#: setup/about/about.php:309
+msgid ""
+"Or head over to Appearance &raquo; Import Demo Data to start the import "
+"process."
+msgstr ""
+
+#: setup/about/about.php:320
+msgid ""
+"You can disable this page in Appearance &raquo; Customize &raquo; Theme "
+"&raquo; Others."
+msgstr ""
+
+#: setup/plugins.php:57
+msgid "WebMan Amplifier (adding theme features)"
+msgstr ""
+
+#: setup/plugins.php:63
+msgid "Beaver Builder (easy page builder)"
+msgstr ""
+
+#: setup/plugins.php:70
+msgid "One Click Demo Import (for installing theme demo content)"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:243
+msgid "- Choose from predefined classes -"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:248
+msgid "Layout:"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:251
+msgid "Masonry items layout"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:253
+msgid "Text center"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:254
+msgid "Text right"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:256
+msgid "Fullwidth elements"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:264
+msgid "Content Module specific:"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:267
+msgid "Content Module: Icon above, text centered"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:268
+msgid "Content Module: Small icons"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:269
+msgid "Content Module: No icon background"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:277
+msgid "Decoration:"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:280
+msgid "Border around items (working with Posts and Testimonials)"
+msgstr ""
+
+#: setup/setup-beaver-builder.php:281
+msgid "Bottom shadow on items (working with Posts and Testimonials)"
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:109
+msgid "Theme demo content"
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:141
+msgid "Media files quality"
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:145
+msgid ""
+"Please note that imported media files (such as images, video and audio "
+"files) are of low quality to prevent copyright infringement."
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:146
+msgid ""
+"Please read \"Credits\" section of theme documentation for reference where "
+"the demo media files were obtained from."
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:147
+msgid "Get media for your website &raquo;"
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:155
+msgid "Install required plugins!"
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:159
+msgid ""
+"Please read the information about the theme demo required plugins first."
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:160
+msgid ""
+"If you do not install and activate demo required plugins, some of the "
+"content will not be imported."
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:161
+msgid ""
+"Read the information before you run the theme demo content import process."
+msgstr ""
+
+#: setup/setup-one-click-demo-import.php:162
+msgid "View the list of required plugins &raquo;"
 msgstr ""
 
 #: setup/setup-theme-options.php:101
@@ -724,9 +936,9 @@ msgstr ""
 msgid "WP Language"
 msgstr ""
 
-#: setup/setup-theme-options.php:115 setup/setup-webman-amplifier.php:357
-#: setup/setup-webman-amplifier.php:444 setup/setup-webman-amplifier.php:783
-#: setup/setup.php:220 setup/setup.php:300 setup/setup.php:307
+#: setup/setup-theme-options.php:115 setup/setup-webman-amplifier.php:317
+#: setup/setup-webman-amplifier.php:404 setup/setup-webman-amplifier.php:730
+#: setup/setup.php:220 setup/setup.php:295 setup/setup.php:302
 msgid "Default"
 msgstr ""
 
@@ -821,7 +1033,7 @@ msgstr ""
 #: setup/setup-theme-options.php:606 setup/setup-theme-options.php:628
 #: setup/setup-theme-options.php:704 setup/setup-theme-options.php:726
 #: setup/setup-theme-options.php:785 setup/setup-theme-options.php:909
-#: setup/setup-theme-options.php:954
+#: setup/setup-theme-options.php:952
 msgctxt "Customizer panel title."
 msgid "Theme"
 msgstr ""
@@ -919,15 +1131,15 @@ msgstr ""
 msgid "Section: Content"
 msgstr ""
 
-#: setup/setup-theme-options.php:461 setup/setup-webman-amplifier.php:381
+#: setup/setup-theme-options.php:461 setup/setup-webman-amplifier.php:341
 msgid "Sidebar position"
 msgstr ""
 
-#: setup/setup-theme-options.php:463 setup/setup-webman-amplifier.php:576
+#: setup/setup-theme-options.php:463 setup/setup-webman-amplifier.php:523
 msgid "Left"
 msgstr ""
 
-#: setup/setup-theme-options.php:464 setup/setup-webman-amplifier.php:577
+#: setup/setup-theme-options.php:464 setup/setup-webman-amplifier.php:524
 msgid "Right"
 msgstr ""
 
@@ -1184,19 +1396,19 @@ msgid "Heading H4, H5 and H6 font size"
 msgstr ""
 
 #: setup/setup-theme-options.php:908 setup/setup-theme-options.php:914
-#: setup/setup-webman-amplifier.php:1179
+#: setup/setup-webman-amplifier.php:1096 setup/setup-webman-amplifier.php:1147
 msgid "Layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:920 setup/setup-webman-amplifier.php:502
+#: setup/setup-theme-options.php:920 setup/setup-webman-amplifier.php:449
 msgid "Website layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:922 setup/setup.php:308
+#: setup/setup-theme-options.php:922 setup/setup.php:303
 msgid "Fullwidth"
 msgstr ""
 
-#: setup/setup-theme-options.php:923 setup/setup.php:309
+#: setup/setup-theme-options.php:923 setup/setup.php:304
 msgid "Boxed"
 msgstr ""
 
@@ -1204,7 +1416,7 @@ msgstr ""
 msgid "Website width"
 msgstr ""
 
-#: setup/setup-theme-options.php:943
+#: setup/setup-theme-options.php:941
 msgid ""
 "The website width is being set up for the boxed layout. The actual website "
 "content width would be the website width minus the boxed layout paddings "
@@ -1212,27 +1424,35 @@ msgid ""
 "will be 1320px (= 1480 - 160)."
 msgstr ""
 
-#: setup/setup-theme-options.php:953
+#: setup/setup-theme-options.php:951
 msgid "Others"
 msgstr ""
 
-#: setup/setup-theme-options.php:959
+#: setup/setup-theme-options.php:957
 msgid "CSS3 Animations"
 msgstr ""
 
-#: setup/setup-theme-options.php:965
+#: setup/setup-theme-options.php:963
 msgid "Disable Animate.css library"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:172
+#: setup/setup-theme-options.php:968
+msgid "Welcome page"
+msgstr ""
+
+#: setup/setup-theme-options.php:974
+msgid "Disable Appearance &raquo; Welcome page"
+msgstr ""
+
+#: setup/setup-webman-amplifier.php:132
 msgid "Projects"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:190
+#: setup/setup-webman-amplifier.php:150
 msgid "Projects tags"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:248
+#: setup/setup-webman-amplifier.php:208
 msgid ""
 "<h2>Audio post format</h2>Displays audio player to play your audio files. "
 "Could be used for Podcasting. Please place the <code>[wm_audio]</code> "
@@ -1240,7 +1460,7 @@ msgid ""
 "follow on next line."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:263
+#: setup/setup-webman-amplifier.php:223
 msgid ""
 "<h2>Gallery post format</h2>A standard post with a gallery of images in post "
 "content. Slideshow will be displayed on blog page from the first gallery "
@@ -1250,169 +1470,167 @@ msgid ""
 "post page."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:278
+#: setup/setup-webman-amplifier.php:238
 msgid ""
 "<h2>Link post format</h2>Promotes interesting URL links. You can set the "
 "link anywhere in the post content. The link will be emphasized when post is "
 "displayed."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:278 setup/setup-webman-amplifier.php:293
-#: setup/setup-webman-amplifier.php:308
+#: setup/setup-webman-amplifier.php:238 setup/setup-webman-amplifier.php:253
+#: setup/setup-webman-amplifier.php:268
 msgid "Post title will not be displayed."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:293
+#: setup/setup-webman-amplifier.php:253
 msgid ""
 "<h2>Quote post format</h2>A quotation. Please place the actual quote "
 "(blockquote) directly into post content. To set a quote source use a "
 "<code>&lt;cite></code> HTML tag."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:308
+#: setup/setup-webman-amplifier.php:268
 msgid ""
 "<h2>Status post format</h2>A short status update, similar to a Twitter "
 "status update. Please place the actual status text directly into post "
 "content area."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:323
+#: setup/setup-webman-amplifier.php:283
 msgid ""
 "<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</"
 "code> shortcode as the first thing in post content. The video description "
 "text can follow on next line."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:368 setup/setup-webman-amplifier.php:464
-#: setup/setup-webman-amplifier.php:777
+#: setup/setup-webman-amplifier.php:328 setup/setup-webman-amplifier.php:424
+#: setup/setup-webman-amplifier.php:724
 msgid "Settings"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:374 setup/setup-webman-amplifier.php:474
+#: setup/setup-webman-amplifier.php:334 setup/setup-webman-amplifier.php:434
 msgid "Disable main heading"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:375 setup/setup-webman-amplifier.php:475
+#: setup/setup-webman-amplifier.php:335 setup/setup-webman-amplifier.php:435
 msgid "Hide main heading section"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:382
+#: setup/setup-webman-amplifier.php:342
 msgid "Select a sidebar position"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:414
+#: setup/setup-webman-amplifier.php:374
 msgid "Post options"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:481 setup/setup-webman-amplifier.php:781
+#: setup/setup-webman-amplifier.php:441 setup/setup-webman-amplifier.php:728
 msgid "Page layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:482 setup/setup-webman-amplifier.php:782
-msgid "Select a sidebar position or enable fullwidth sections"
+#: setup/setup-webman-amplifier.php:442 setup/setup-webman-amplifier.php:729
+msgid "Select a sidebar position or enable fullwidth sections."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:488 setup/setup-webman-amplifier.php:788
-msgid ""
-"All <code>[wm_row]</code> (and/or <code>[vc_row]</code>) shortcodes will be "
-"treated as fullwidth sections in \"Fullwidth sections\" page layout."
+#: setup/setup-webman-amplifier.php:442 setup/setup-webman-amplifier.php:729
+msgid "Fullwidth sections page layout is suitable for use with page builders."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:503
+#: setup/setup-webman-amplifier.php:450
 msgid "Select a website layout for this page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:510
+#: setup/setup-webman-amplifier.php:457
 msgid "Footer layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:511
+#: setup/setup-webman-amplifier.php:458
 msgid "Select a footer layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:513
+#: setup/setup-webman-amplifier.php:460
 msgid "Widgets and credits"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:514
+#: setup/setup-webman-amplifier.php:461
 msgid "Widgets only"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:515
+#: setup/setup-webman-amplifier.php:462
 msgid "Credits only"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:516
+#: setup/setup-webman-amplifier.php:463
 msgid "No footer"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:529
+#: setup/setup-webman-amplifier.php:476
 msgid "Slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:538
+#: setup/setup-webman-amplifier.php:485
 msgid ""
 "<strong>Please note that this is a special slider section setup.</"
 "strong><br />This slider will be displayed above the website header area. "
 "For standard sliders please use the shortcodes directly in the page content."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:544
+#: setup/setup-webman-amplifier.php:491
 msgid "Set special slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:545
+#: setup/setup-webman-amplifier.php:492
 msgid "Select a slider type used as a special slider above the website header"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:547
+#: setup/setup-webman-amplifier.php:494
 msgid "No special slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:548
+#: setup/setup-webman-amplifier.php:495
 msgid "Custom slider (use shortcode)"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:549
+#: setup/setup-webman-amplifier.php:496
 msgid "Featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:556
+#: setup/setup-webman-amplifier.php:503
 msgid "Slider shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:557
+#: setup/setup-webman-amplifier.php:504
 msgid "Set the custom slider shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:572
+#: setup/setup-webman-amplifier.php:519
 msgid "Image caption position"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:573
+#: setup/setup-webman-amplifier.php:520
 msgid ""
 "Featured image will be displayed in the special slider section.<br />Set the "
 "image caption (you can use shortcodes) and set the image caption position "
 "here."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:573
+#: setup/setup-webman-amplifier.php:520
 msgid "Set featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:575 setup/setup.php:203
+#: setup/setup-webman-amplifier.php:522 setup/setup.php:203
 msgid "Center"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:599
+#: setup/setup-webman-amplifier.php:546
 msgid "Blog"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:609
+#: setup/setup-webman-amplifier.php:556
 msgid "Number of posts"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:610
+#: setup/setup-webman-amplifier.php:557
 msgid ""
 "Sets the number of posts listed on this blog page only. Other archives will "
 "display posts according to WordPress settings.<br />Value of \"-1\" will "
@@ -1420,42 +1638,42 @@ msgid ""
 "applied."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:623 setup/setup-webman-amplifier.php:1296
+#: setup/setup-webman-amplifier.php:570
 msgid "Category"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:629
+#: setup/setup-webman-amplifier.php:576
 msgid "Posts categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:630
+#: setup/setup-webman-amplifier.php:577
 msgid ""
 "You can choose to display all posts or posts from a specific categories "
 "only. Press [+] button to add a category and select the category name from "
 "dropdown list."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:637
+#: setup/setup-webman-amplifier.php:584
 msgid "Categories action"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:638
+#: setup/setup-webman-amplifier.php:585
 msgid "Exclude or use the above categories?"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:641
+#: setup/setup-webman-amplifier.php:588
 msgid "Posts just from these categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:642
+#: setup/setup-webman-amplifier.php:589
 msgid "Exclude posts from these categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:664
+#: setup/setup-webman-amplifier.php:611
 msgid "One page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:673
+#: setup/setup-webman-amplifier.php:620
 msgid ""
 "Use this page template to place most (or all) of your website content on a "
 "single page. Set the ID for each section of the page (apply on row "
@@ -1464,164 +1682,116 @@ msgid ""
 "will scroll to the section of a specific anchor ID."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:679
+#: setup/setup-webman-amplifier.php:626
 msgid "Anchor navigation"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:680
+#: setup/setup-webman-amplifier.php:627
 msgid "Set a special anchor navigation for this page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:714
+#: setup/setup-webman-amplifier.php:661
 msgid "Page options"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:739
+#: setup/setup-webman-amplifier.php:686
 msgid "Icon"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:746
+#: setup/setup-webman-amplifier.php:693
 msgid "Hover title"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:751
+#: setup/setup-webman-amplifier.php:698
 msgid "URL link"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:802
+#: setup/setup-webman-amplifier.php:736
 msgid "Custom preview slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:803
+#: setup/setup-webman-amplifier.php:737
 msgid ""
 "This slider will be displayed on projects list only, instead of featured "
 "image. Please enter the slider shortcode."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1172
+#: setup/setup-webman-amplifier.php:1099
+msgid "Default layout"
+msgstr ""
+
+#: setup/setup-webman-amplifier.php:1100
+msgid "Simple posts or projects layout"
+msgstr ""
+
+#: setup/setup-webman-amplifier.php:1120
+msgid "Theme Modules"
+msgstr ""
+
+#: setup/setup-webman-amplifier.php:1140
 msgid "Output layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1173
+#: setup/setup-webman-amplifier.php:1141
 msgid ""
 "Set optional output layout name. You can use <code>simple</code> with "
 "<em>Posts</em> and <em>Projects</em> posts."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1184
+#: setup/setup-webman-amplifier.php:1153
 msgid "Remove section inner container"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1185
+#: setup/setup-webman-amplifier.php:1154
 msgid "This is only relevant when using \"Fullwidth sections\" page layout."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1190
+#: setup/setup-webman-amplifier.php:1159
 msgid ""
 "Remove the inner Section container to make the content fill the whole "
 "section without any paddings."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1196
+#: setup/setup-webman-amplifier.php:1165
 msgid "Section background video URL"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1197
+#: setup/setup-webman-amplifier.php:1166
 msgid ""
 "Set optional section background video URL. Video will be played "
 "automatically in a loop."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1203
+#: setup/setup-webman-amplifier.php:1172
 msgid "Styling"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1209
+#: setup/setup-webman-amplifier.php:1179
 msgid "The image will cover the column background"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1219
+#: setup/setup-webman-amplifier.php:1190
 msgid "Just Next/Prev button"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1220
+#: setup/setup-webman-amplifier.php:1191
 msgid "Next/Prev + Pagination"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1229
+#: setup/setup-webman-amplifier.php:1201
 msgid "Forums Index"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1232
+#: setup/setup-webman-amplifier.php:1204
 msgid "Forum"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1236
+#: setup/setup-webman-amplifier.php:1208
 msgid "bbPress Shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1237
+#: setup/setup-webman-amplifier.php:1209
 msgid "This will display your entire forum index. No parameters to be set."
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1254
-msgid "Product Categories"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1257 setup/setup-webman-amplifier.php:1292
-#: setup/setup-webman-amplifier.php:1342 setup/setup-webman-amplifier.php:1377
-msgid "Shop"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1261
-msgid "Count"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1270 setup/setup-webman-amplifier.php:1320
-#: setup/setup-webman-amplifier.php:1355 setup/setup-webman-amplifier.php:1390
-msgid "Columns"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1289
-msgid "Product Category"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1311 setup/setup-webman-amplifier.php:1346
-#: setup/setup-webman-amplifier.php:1381
-msgid "Number of products per page"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1339
-msgid "Recent Products"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1374
-msgid "Featured Products"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1445
-msgid "Project - Simple"
-msgstr ""
-
-#: setup/setup-webman-amplifier.php:1449
-msgid "Project - Complex"
-msgstr ""
-
-#: setup/setup-woocommerce.php:376
-msgid "Product details &raquo;"
-msgstr ""
-
-#: setup/setup-woocommerce.php:453
-#, php-format
-msgid "Number of items in cart: %s"
-msgstr ""
-
-#: setup/setup-woocommerce.php:467
-msgid "Products"
-msgstr ""
-
-#: setup/setup-woocommerce.php:529 setup/setup.php:1441
-msgid "Show cart"
 msgstr ""
 
 #: setup/setup.php:199
@@ -1724,69 +1894,69 @@ msgstr ""
 msgid "Portrait 2 to 3"
 msgstr ""
 
-#: setup/setup.php:301
+#: setup/setup.php:296
 msgid "Right sidebar"
 msgstr ""
 
-#: setup/setup.php:302
+#: setup/setup.php:297
 msgid "Left sidebar"
 msgstr ""
 
-#: setup/setup.php:303
+#: setup/setup.php:298
 msgid "No sidebar"
 msgstr ""
 
-#: setup/setup.php:304
+#: setup/setup.php:299
 msgid "Fullwidth sections"
 msgstr ""
 
-#: setup/setup.php:316
+#: setup/setup.php:311
 msgid "General Sidebar"
 msgstr ""
 
-#: setup/setup.php:318
+#: setup/setup.php:313
 msgid "The default general sidebar."
 msgstr ""
 
-#: setup/setup.php:325
+#: setup/setup.php:320
 msgid "Topbar Widgets"
 msgstr ""
 
-#: setup/setup.php:327
+#: setup/setup.php:322
 msgid "Widget area displayed as topbar of the website."
 msgstr ""
 
-#: setup/setup.php:334
+#: setup/setup.php:329
 msgid "Topbar Extra Widgets"
 msgstr ""
 
-#: setup/setup.php:336
+#: setup/setup.php:331
 msgid ""
 "Widget area displayed as extra topbar. It rolls out from top of the website "
 "when a button is clicked."
 msgstr ""
 
-#: setup/setup.php:343
+#: setup/setup.php:338
 msgid "Main Heading Widgets"
 msgstr ""
 
-#: setup/setup.php:345
+#: setup/setup.php:340
 msgid "Widget area displayed in the Main Heading section."
 msgstr ""
 
-#: setup/setup.php:352
+#: setup/setup.php:347
 msgid "Footer Widgets"
 msgstr ""
 
-#: setup/setup.php:354
+#: setup/setup.php:349
 msgid "Masonry footer layout. Set up the columns number in theme admin panel."
 msgstr ""
 
-#: setup/setup.php:361
+#: setup/setup.php:356
 msgid "Credits Widgets"
 msgstr ""
 
-#: setup/setup.php:363
+#: setup/setup.php:358
 msgid ""
 "Credits or copyright area in the footer. Takes up to 3 widgets. When you "
 "insert 1 widget, it will be displayed fullwidth. When 2 widgets are in the "
@@ -1795,141 +1965,145 @@ msgid ""
 "left and on the right."
 msgstr ""
 
-#: setup/setup.php:373
+#: setup/setup.php:368
 msgid "Floating cart"
 msgstr ""
 
-#: setup/setup.php:375
+#: setup/setup.php:370
 msgid "Widget area displayed as floating shoping cart."
 msgstr ""
 
-#: setup/setup.php:530
+#: setup/setup.php:548
 msgid "Main navigation"
 msgstr ""
 
-#: setup/setup.php:1312
+#: setup/setup.php:1320
 msgid "Open extra topbar"
 msgstr ""
 
-#: setup/setup.php:1365
+#: setup/setup.php:1373
 msgid "Close search form"
 msgstr ""
 
-#: setup/setup.php:1402
+#: setup/setup.php:1410
 msgid "Menu"
 msgstr ""
 
-#: setup/setup.php:1445
+#: setup/setup.php:1449
+msgid "Show cart"
+msgstr ""
+
+#: setup/setup.php:1453
 msgid "Search"
-msgstr ""
-
-#: setup/setup.php:1844
-#, php-format
-msgid "Daily Archives: <strong>%s</strong>"
-msgstr ""
-
-#: setup/setup.php:1846
-#, php-format
-msgid "Monthly Archives: <strong>%s</strong>"
-msgstr ""
-
-#: setup/setup.php:1846
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: setup/setup.php:1848
-#, php-format
-msgid "Yearly Archives: <strong>%s</strong>"
-msgstr ""
-
-#: setup/setup.php:1848
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: setup/setup.php:1850
-#, php-format
-msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
 #: setup/setup.php:1852
 #, php-format
-msgid "Tag Archives: <strong>%s</strong>"
+msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
 #: setup/setup.php:1854
 #, php-format
+msgid "Monthly Archives: <strong>%s</strong>"
+msgstr ""
+
+#: setup/setup.php:1854
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: setup/setup.php:1856
+#, php-format
+msgid "Yearly Archives: <strong>%s</strong>"
+msgstr ""
+
+#: setup/setup.php:1856
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: setup/setup.php:1858
+#, php-format
+msgid "Category Archives: <strong>%s</strong>"
+msgstr ""
+
+#: setup/setup.php:1860
+#, php-format
+msgid "Tag Archives: <strong>%s</strong>"
+msgstr ""
+
+#: setup/setup.php:1862
+#, php-format
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1857
+#: setup/setup.php:1865
 #, php-format
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
-#: setup/setup.php:1861
+#: setup/setup.php:1869
 msgid "Archives"
 msgstr ""
 
-#: setup/setup.php:1892
+#: setup/setup.php:1900
 msgid "Error 404"
 msgstr ""
 
-#: setup/setup.php:1898
+#: setup/setup.php:1906
 #, php-format
 msgid "%s forums"
 msgstr ""
 
-#: setup/setup.php:1901
+#: setup/setup.php:1909
 #, php-format
 msgid "Forum: %s"
 msgstr ""
 
-#: setup/setup.php:1904
+#: setup/setup.php:1912
 #, php-format
 msgid "Topic: %s"
 msgstr ""
 
-#: setup/setup.php:1912
+#: setup/setup.php:1920
 #, php-format
 msgid " / Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:2165
+#: setup/setup.php:2173
 msgid "Back to top of the page"
 msgstr ""
 
-#: setup/setup.php:2429
+#: setup/setup.php:2440
 msgid "Content width"
 msgstr ""
 
-#: setup/setup.php:2430
+#: setup/setup.php:2441
 msgid "Mobile width"
 msgstr ""
 
-#: setup/setup.php:2479
+#: setup/setup.php:2488
 #, php-format
 msgid "Previous item: %s"
 msgstr ""
 
-#: setup/setup.php:2482
+#: setup/setup.php:2491
 #, php-format
 msgid "Next item: %s"
 msgstr ""
 
-#: setup/setup.php:2934
+#: setup/setup.php:2933
 msgid "Load more..."
 msgstr ""
 
-#: setup/setup.php:2976
+#: setup/setup.php:2978
 msgid "Like it!"
 msgstr ""
 
-#: setup/setup.php:2976
+#: setup/setup.php:2978
 msgid "Liked already!"
 msgstr ""
 
-#: setup/setup.php:2982
+#: setup/setup.php:2984
 msgid "Views count"
 msgstr ""

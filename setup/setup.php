@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.6.1
+ * @version  1.7
  *
  * CONTENT:
  * - 1) Required files
@@ -183,7 +183,7 @@
 	 * Theme helper variables
 	 *
 	 * @since    1.0
-	 * @version  1.6.1
+	 * @version  1.7
 	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key Additional key if the variable is array
@@ -196,36 +196,36 @@
 				//Background CSS settings
 					$output['bg-css'] = array(
 							'position' => array(
-									'0 0'       => '<span class="position-option">' . __( 'Left, top', 'mustang' ) . '</span>',
-									'50% 0'     => '<span class="position-option">' . __( 'Center horizontally, top', 'mustang' ) . '</span>',
-									'100% 0'    => '<span class="position-option">' . __( 'Right, top', 'mustang' ) . '</span>',
-									'0 50%'     => '<span class="position-option">' . __( 'Left, center vertically', 'mustang' ) . '</span>',
-									'50% 50%'   => '<span class="position-option">' . __( 'Center', 'mustang' ) . '</span>',
-									'100% 50%'  => '<span class="position-option">' . __( 'Right, center vertically', 'mustang' ) . '</span>',
-									'0 100%'    => '<span class="position-option">' . __( 'Left, bottom', 'mustang' ) . '</span>',
-									'50% 100%'  => '<span class="position-option">' . __( 'Center horizontally, bottom', 'mustang' ) . '</span>',
-									'100% 100%' => '<span class="position-option">' . __( 'Right, bottom', 'mustang' ) . '</span>',
+									'0 0'       => '<span class="position-option">' . __( 'Left, top', 'mustang-lite' ) . '</span>',
+									'50% 0'     => '<span class="position-option">' . __( 'Center horizontally, top', 'mustang-lite' ) . '</span>',
+									'100% 0'    => '<span class="position-option">' . __( 'Right, top', 'mustang-lite' ) . '</span>',
+									'0 50%'     => '<span class="position-option">' . __( 'Left, center vertically', 'mustang-lite' ) . '</span>',
+									'50% 50%'   => '<span class="position-option">' . __( 'Center', 'mustang-lite' ) . '</span>',
+									'100% 50%'  => '<span class="position-option">' . __( 'Right, center vertically', 'mustang-lite' ) . '</span>',
+									'0 100%'    => '<span class="position-option">' . __( 'Left, bottom', 'mustang-lite' ) . '</span>',
+									'50% 100%'  => '<span class="position-option">' . __( 'Center horizontally, bottom', 'mustang-lite' ) . '</span>',
+									'100% 100%' => '<span class="position-option">' . __( 'Right, bottom', 'mustang-lite' ) . '</span>',
 								),
 							'repeat'   => array(
-									'no-repeat' => __( 'Do not repeat', 'mustang' ),
-									'repeat-x'  => __( 'Repeat horizontally', 'mustang' ),
-									'repeat-y'  => __( 'Repeat vertically', 'mustang' ),
-									'repeat'    => __( 'Repeat (tile)', 'mustang' ),
+									'no-repeat' => __( 'Do not repeat', 'mustang-lite' ),
+									'repeat-x'  => __( 'Repeat horizontally', 'mustang-lite' ),
+									'repeat-y'  => __( 'Repeat vertically', 'mustang-lite' ),
+									'repeat'    => __( 'Repeat (tile)', 'mustang-lite' ),
 								),
 							'scroll'   => array(
-									'scroll' => __( 'Move on scrolling', 'mustang' ),
-									'fixed'  => __( 'Fixed position', 'mustang' ),
+									'scroll' => __( 'Move on scrolling', 'mustang-lite' ),
+									'fixed'  => __( 'Fixed position', 'mustang-lite' ),
 								),
 							'size'     => array(
-									''        => __( 'Default', 'mustang' ),
-									'cover'   => __( 'Cover', 'mustang' ),
-									'contain' => __( 'Contain', 'mustang' ),
+									''        => __( 'Default', 'mustang-lite' ),
+									'cover'   => __( 'Cover', 'mustang-lite' ),
+									'contain' => __( 'Contain', 'mustang-lite' ),
 								),
 						);
 
 				//Google Fonts
 					$output['google-fonts'] = array(
-							' '                         => __( ' - do not use Google Font', 'mustang' ),
+							' '                         => __( ' - do not use Google Font', 'mustang-lite' ),
 							'Abril Fatface'             => 'Abril Fatface',
 							'Arvo'                      => 'Arvo',
 							'Comfortaa:400,300'         => 'Comfortaa',
@@ -277,85 +277,85 @@
 
 				//Image ratio
 					$output['image-ratio'] = array(
-							'ratio-11'    => __( 'Square', 'mustang' ),
+							'ratio-11'    => __( 'Square', 'mustang-lite' ),
 							//Landscapes
-								'ratio-43'  => __( 'Landscape 4 to 3', 'mustang' ),
-								'ratio-32'  => __( 'Landscape 3 to 2', 'mustang' ),
-								'ratio-169' => __( 'Landscape 16 to 9', 'mustang' ),
-								'ratio-21'  => __( 'Landscape 2 to 1', 'mustang' ),
-								'ratio-31'  => __( 'Landscape 3 to 1', 'mustang' ),
+								'ratio-43'  => __( 'Landscape 4 to 3', 'mustang-lite' ),
+								'ratio-32'  => __( 'Landscape 3 to 2', 'mustang-lite' ),
+								'ratio-169' => __( 'Landscape 16 to 9', 'mustang-lite' ),
+								'ratio-21'  => __( 'Landscape 2 to 1', 'mustang-lite' ),
+								'ratio-31'  => __( 'Landscape 3 to 1', 'mustang-lite' ),
 							//Portraits
-								'ratio-34'  => __( 'Portrait 3 to 4', 'mustang' ),
-								'ratio-23'  => __( 'Portrait 2 to 3', 'mustang' ),
+								'ratio-34'  => __( 'Portrait 3 to 4', 'mustang-lite' ),
+								'ratio-23'  => __( 'Portrait 2 to 3', 'mustang-lite' ),
 						);
 
 				//Layouts
 					$output['layouts'] = array(
 							'sidebars' => array(
-									''         => __( 'Default', 'mustang' ),
-									'right'    => __( 'Right sidebar', 'mustang' ),
-									'left'     => __( 'Left sidebar', 'mustang' ),
-									'none'     => __( 'No sidebar', 'mustang' ),
-									'sections' => __( 'Fullwidth sections', 'mustang' ),
+									''         => __( 'Default', 'mustang-lite' ),
+									'right'    => __( 'Right sidebar', 'mustang-lite' ),
+									'left'     => __( 'Left sidebar', 'mustang-lite' ),
+									'none'     => __( 'No sidebar', 'mustang-lite' ),
+									'sections' => __( 'Fullwidth sections', 'mustang-lite' ),
 								),
 							'website'  => array(
-									''          => __( 'Default', 'mustang' ),
-									'fullwidth' => __( 'Fullwidth', 'mustang' ),
-									'boxed'     => __( 'Boxed', 'mustang' ),
+									''          => __( 'Default', 'mustang-lite' ),
+									'fullwidth' => __( 'Fullwidth', 'mustang-lite' ),
+									'boxed'     => __( 'Boxed', 'mustang-lite' ),
 								),
 						);
 
 				//Widget areas
 					$output['widget-areas'] = array(
 							'general'              => array(
-								'name'          => __( 'General Sidebar', 'mustang' ),
+								'name'          => __( 'General Sidebar', 'mustang-lite' ),
 								'id'            => 'general',
-								'description'   => __( 'The default general sidebar.', 'mustang' ),
+								'description'   => __( 'The default general sidebar.', 'mustang-lite' ),
 								'before_widget' => '<div class="widget %1$s %2$s">',
 								'after_widget'  => '</div>',
 								'before_title'  => '<h3 class="widget-heading">',
 								'after_title'   => '</h3>'
 							),
 							'topbar'          => array(
-								'name'          => __( 'Topbar Widgets', 'mustang' ),
+								'name'          => __( 'Topbar Widgets', 'mustang-lite' ),
 								'id'            => 'topbar',
-								'description'   => __( 'Widget area displayed as topbar of the website.', 'mustang' ),
+								'description'   => __( 'Widget area displayed as topbar of the website.', 'mustang-lite' ),
 								'before_widget' => '<div class="widget %1$s %2$s">',
 								'after_widget'  => '</div>',
 								'before_title'  => '<p class="widget-heading">',
 								'after_title'   => '</p>'
 							),
 							'topbar-extra'    => array(
-								'name'          => __( 'Topbar Extra Widgets', 'mustang' ),
+								'name'          => __( 'Topbar Extra Widgets', 'mustang-lite' ),
 								'id'            => 'topbar-extra',
-								'description'   => __( 'Widget area displayed as extra topbar. It rolls out from top of the website when a button is clicked.', 'mustang' ),
+								'description'   => __( 'Widget area displayed as extra topbar. It rolls out from top of the website when a button is clicked.', 'mustang-lite' ),
 								'before_widget' => '<div class="widget %1$s %2$s">',
 								'after_widget'  => '</div>',
 								'before_title'  => '<h4 class="widget-heading">',
 								'after_title'   => '</h4>'
 							),
 							'main-heading-widgets' => array(
-								'name'          => __( 'Main Heading Widgets', 'mustang' ),
+								'name'          => __( 'Main Heading Widgets', 'mustang-lite' ),
 								'id'            => 'main-heading-widgets',
-								'description'   => __( 'Widget area displayed in the Main Heading section.', 'mustang' ),
+								'description'   => __( 'Widget area displayed in the Main Heading section.', 'mustang-lite' ),
 								'before_widget' => '<div class="widget %1$s %2$s">',
 								'after_widget'  => '</div>',
 								'before_title'  => '<p class="widget-heading">',
 								'after_title'   => '</p>'
 							),
 							'footer-widgets'       => array(
-								'name'          => __( 'Footer Widgets', 'mustang' ),
+								'name'          => __( 'Footer Widgets', 'mustang-lite' ),
 								'id'            => 'footer-widgets',
-								'description'   => __( 'Masonry footer layout. Set up the columns number in theme admin panel.', 'mustang' ),
+								'description'   => __( 'Masonry footer layout. Set up the columns number in theme admin panel.', 'mustang-lite' ),
 								'before_widget' => '<div class="widget %1$s %2$s">',
 								'after_widget'  => '</div>',
 								'before_title'  => '<h3 class="widget-heading">',
 								'after_title'   => '</h3>'
 							),
 							'footer-credits'       => array(
-								'name'          => __( 'Credits Widgets', 'mustang' ),
+								'name'          => __( 'Credits Widgets', 'mustang-lite' ),
 								'id'            => 'credits',
-								'description'   => __( 'Credits or copyright area in the footer. Takes up to 3 widgets. When you insert 1 widget, it will be displayed fullwidth. When 2 widgets are in the area, first is displayed on left, the second on right. In case of 3 widgets in the area, first is displayed fullwidth, second and third below, on the left and on the right.', 'mustang' ),
+								'description'   => __( 'Credits or copyright area in the footer. Takes up to 3 widgets. When you insert 1 widget, it will be displayed fullwidth. When 2 widgets are in the area, first is displayed on left, the second on right. In case of 3 widgets in the area, first is displayed fullwidth, second and third below, on the left and on the right.', 'mustang-lite' ),
 								'before_widget' => '<div class="widget %1$s %2$s">',
 								'after_widget'  => '</div>',
 								'before_title'  => '<h4 class="widget-heading">',
@@ -365,9 +365,9 @@
 
 					if ( function_exists( 'wm_is_woocommerce' ) ) {
 						$output['widget-areas']['floating-cart'] = array(
-								'name'          => __( 'Floating cart', 'mustang' ),
+								'name'          => __( 'Floating cart', 'mustang-lite' ),
 								'id'            => 'floating-cart',
-								'description'   => __( 'Widget area displayed as floating shoping cart.', 'mustang' ),
+								'description'   => __( 'Widget area displayed as floating shoping cart.', 'mustang-lite' ),
 								'before_widget' => '<div class="widget %1$s %2$s">',
 								'after_widget'  => '</div>',
 								'before_title'  => '<h4 class="widget-heading">',
@@ -545,7 +545,7 @@
 			//Custom menus
 				add_theme_support( 'menus' );
 				register_nav_menus( apply_filters( 'wmhook_wm_install_menus', array(
-						'main' => __( 'Main navigation', 'mustang' ),
+						'main' => __( 'Main navigation', 'mustang-lite' ),
 					) ) );
 
 			//Custom WP Adminbar styles
@@ -588,17 +588,6 @@
 					update_option( WM_THEME_SETTINGS_INSTALL, 1 );
 
 					do_action( 'wmhook_wm_install_step_1' );
-
-					//When installation done, redirect to "About" page (when not Lite theme version)
-						if (
-								! ( defined( 'WM_LITE_THEME' ) && WM_LITE_THEME )
-								&& ! isset( $wp_customize )
-							) {
-
-							wp_safe_redirect( admin_url( 'themes.php?page=' . WM_THEME_SHORTNAME . '-about' ) );
-							die ();
-
-						}
 				}
 
 				/**
@@ -944,7 +933,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  1.6.1
+	 * @version  1.7
 	 *
 	 * @param  array $classes
 	 */
@@ -1328,7 +1317,7 @@
 							$output .= apply_filters( 'wmhook_section_inner_wrappers', '' );
 							$output .= $widgets;
 							$output .= apply_filters( 'wmhook_section_inner_wrappers_close', '' );
-							$output .= '<a href="#topbar-extra" class="topbar-extra-switch no-scroll-link">' . apply_filters( 'wmhook_wm_section_topbar_extra_switch', '<span class="screen-reader-text">' . __( 'Open extra topbar', 'mustang' ) . '</span>' ) . '</a>';
+							$output .= '<a href="#topbar-extra" class="topbar-extra-switch no-scroll-link">' . apply_filters( 'wmhook_wm_section_topbar_extra_switch', '<span class="screen-reader-text">' . __( 'Open extra topbar', 'mustang-lite' ) . '</span>' ) . '</a>';
 						$output .= "\r\n" . '</section>' . "\r\n";
 					}
 
@@ -1381,7 +1370,7 @@
 		if ( ! function_exists( 'wm_header_search_form' ) ) {
 			function wm_header_search_form() {
 				//Preparing output
-					$output = '<div id="search-container" class="menu-search-form">' . get_search_form( false ) . '<a href="#search-container" class="form-close search-form-close-switch no-scroll-link"><span class="screen-reader-text">' . __( 'Close search form', 'mustang' ) . '</span></a></div>';
+					$output = '<div id="search-container" class="menu-search-form">' . get_search_form( false ) . '<a href="#search-container" class="form-close search-form-close-switch no-scroll-link"><span class="screen-reader-text">' . __( 'Close search form', 'mustang-lite' ) . '</span></a></div>';
 
 				//Output
 					echo apply_filters( 'wmhook_wm_header_search_form_output', $output );
@@ -1418,7 +1407,7 @@
 				$output .= wm_accessibility_skip_link( 'to_content' );
 				$output .= wp_nav_menu( $args );
 				$output .= '</nav>';
-				$output .= '<a href="#nav-main" id="mobile-nav" class="mobile-nav"><span class="screen-reader-text">' . __( 'Menu', 'mustang' ) . '</span></a>';
+				$output .= '<a href="#nav-main" id="mobile-nav" class="mobile-nav"><span class="screen-reader-text">' . __( 'Menu', 'mustang-lite' ) . '</span></a>';
 
 			//Output
 				echo apply_filters( 'wmhook_wm_section_navigation_output', $output );
@@ -1431,7 +1420,7 @@
 		 * Navigation addons
 		 *
 		 * @since    1.0
-		 * @version  1.6.1
+		 * @version  1.7
 		 */
 		if ( ! function_exists( 'wm_navigation_special' ) ) {
 			function wm_navigation_special() {
@@ -1457,11 +1446,11 @@
 				//Preparing output
 						//WooCommerce support
 							if ( function_exists( 'wm_is_woocommerce' ) ) {
-								$output[10] = apply_filters( 'wmhook_wm_navigation_special_cart', '<li id="menu-cart" class="menu-cart"><a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '"><span class="screen-reader-text">' . __( 'Show cart', 'mustang' ) . '</span></a></li>', $custom_nav );
+								$output[10] = apply_filters( 'wmhook_wm_navigation_special_cart', '<li id="menu-cart" class="menu-cart"><a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '"><span class="screen-reader-text">' . __( 'Show cart', 'mustang-lite' ) . '</span></a></li>', $custom_nav );
 							}
 
 						//Search button
-							$output[20] = apply_filters( 'wmhook_wm_navigation_special_search', '<li id="menu-search" class="menu-search"><a href="#search-container" class="menu-search-switch no-scroll-link"><span class="screen-reader-text">' . __( 'Search', 'mustang' ) . '</span></a></li>', $custom_nav );
+							$output[20] = apply_filters( 'wmhook_wm_navigation_special_search', '<li id="menu-search" class="menu-search"><a href="#search-container" class="menu-search-switch no-scroll-link"><span class="screen-reader-text">' . __( 'Search', 'mustang-lite' ) . '</span></a></li>', $custom_nav );
 
 						//Allow filtering the output array
 							$output = implode( '', (array) apply_filters( 'wmhook_wm_navigation_special_output_array', $output, $custom_nav ) );
@@ -1637,7 +1626,7 @@
 	 * Slider
 	 *
 	 * @since    1.0
-	 * @version  1.6.1
+	 * @version  1.7
 	 */
 	if ( ! function_exists( 'wm_section_slider' ) ) {
 		function wm_section_slider() {
@@ -1779,7 +1768,7 @@
 	 * Main heading (title)
 	 *
 	 * @since    1.0
-	 * @version  1.6.1
+	 * @version  1.7
 	 *
 	 * @param  array $args Heading setup arguments
 	 */
@@ -1860,24 +1849,24 @@
 			//Preparing output
 				//Archives
 					if ( is_day() ) {
-						$args['title'] = sprintf( __( 'Daily Archives: <strong>%s</strong>', 'mustang' ), get_the_date() );
+						$args['title'] = sprintf( __( 'Daily Archives: <strong>%s</strong>', 'mustang-lite' ), get_the_date() );
 					} elseif ( is_month() ) {
-						$args['title'] = sprintf( __( 'Monthly Archives: <strong>%s</strong>', 'mustang' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'mustang' ) ) );
+						$args['title'] = sprintf( __( 'Monthly Archives: <strong>%s</strong>', 'mustang-lite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'mustang-lite' ) ) );
 					} elseif ( is_year() ) {
-						$args['title'] = sprintf( __( 'Yearly Archives: <strong>%s</strong>', 'mustang' ), get_the_date( _x( 'Y', 'yearly archives date format', 'mustang' ) ) );
+						$args['title'] = sprintf( __( 'Yearly Archives: <strong>%s</strong>', 'mustang-lite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'mustang-lite' ) ) );
 					} elseif ( is_category() ) {
-						$args['title'] = sprintf( __( 'Category Archives: <strong>%s</strong>', 'mustang' ), single_cat_title( '', false ) );
+						$args['title'] = sprintf( __( 'Category Archives: <strong>%s</strong>', 'mustang-lite' ), single_cat_title( '', false ) );
 					} elseif ( is_tag() ) {
-						$args['title'] = sprintf( __( 'Tag Archives: <strong>%s</strong>', 'mustang' ), single_tag_title( '', false ) );
+						$args['title'] = sprintf( __( 'Tag Archives: <strong>%s</strong>', 'mustang-lite' ), single_tag_title( '', false ) );
 					} elseif ( is_search() ) {
-						$args['title'] = sprintf( __( 'Search Results for: <strong>%s</strong>', 'mustang' ), get_search_query() );
+						$args['title'] = sprintf( __( 'Search Results for: <strong>%s</strong>', 'mustang-lite' ), get_search_query() );
 					} elseif ( is_author() ) {
 						$author = get_userdata( get_query_var( 'author' ) );
-						$args['title'] = sprintf( __( '<strong>%s</strong> archives', 'mustang' ), $author->display_name );
+						$args['title'] = sprintf( __( '<strong>%s</strong> archives', 'mustang-lite' ), $author->display_name );
 					} elseif ( is_tax() ) {
 						$args['title'] = single_term_title( '', false );
 					} elseif ( is_archive() ) {
-						$args['title'] = __( 'Archives', 'mustang' );
+						$args['title'] = __( 'Archives', 'mustang-lite' );
 					}
 
 					if ( is_category() || is_tag() || is_tax() ) {
@@ -1908,19 +1897,19 @@
 
 				//404 page
 					if ( is_404() ) {
-						$args['title']  = __( 'Error 404', 'mustang' );
+						$args['title']  = __( 'Error 404', 'mustang-lite' );
 					}
 
 				//bbPress support
 					if ( function_exists( 'wm_is_bbpress' ) ) {
 						if ( bbp_is_forum_archive() ) {
-							$args['title'] = sprintf( __( '%s forums', 'mustang' ), get_bloginfo( 'name' ) );
+							$args['title'] = sprintf( __( '%s forums', 'mustang-lite' ), get_bloginfo( 'name' ) );
 						}
 						if ( bbp_is_single_forum() && ! bbp_is_forum_category() ) {
-							$args['title'] = sprintf( __( 'Forum: %s', 'mustang' ), $args['title'] );
+							$args['title'] = sprintf( __( 'Forum: %s', 'mustang-lite' ), $args['title'] );
 						}
 						if ( bbp_is_single_topic() ) {
-							$args['title'] = sprintf( __( 'Topic: %s', 'mustang' ), $args['title'] );
+							$args['title'] = sprintf( __( 'Topic: %s', 'mustang-lite' ), $args['title'] );
 						}
 					}
 
@@ -1928,7 +1917,7 @@
 					if ( $wc_shop && ! is_tax() ) {
 						$args['title'] = ( 2 > $paginated ) ? ( get_the_title( $page_id ) ) : ( '<a href="' . get_permalink( $page_id ) . '">' . get_the_title( $page_id ) . '</a>' );
 						if ( is_search() ) {
-							$args['title'] .= sprintf( __( ' / Results for: <strong>%s</strong>', 'mustang' ), get_search_query() );
+							$args['title'] .= sprintf( __( ' / Results for: <strong>%s</strong>', 'mustang-lite' ), get_search_query() );
 						}
 					}
 
@@ -2116,7 +2105,7 @@
 	 * Footer
 	 *
 	 * @since    1.0
-	 * @version  1.6.1
+	 * @version  1.7
 	 */
 	if ( ! function_exists( 'wm_section_footer' ) ) {
 		function wm_section_footer() {
@@ -2181,7 +2170,7 @@
 					}
 
 				//Top of page button
-					$output[30] = '<a href="#top" class="top-of-page" title="' . __( 'Back to top of the page', 'mustang' ) . '"></a>';
+					$output[30] = '<a href="#top" class="top-of-page" title="' . __( 'Back to top of the page', 'mustang-lite' ) . '"></a>';
 
 			//Output
 				$output = apply_filters( 'wmhook_wm_section_footer_output', $output );
@@ -2195,7 +2184,7 @@
 		 * Footer top
 		 *
 		 * @since    1.0
-		 * @version  1.6.1
+		 * @version  1.7
 		 */
 		if ( ! function_exists( 'wm_section_footer_top' ) ) {
 			function wm_section_footer_top() {
@@ -2230,7 +2219,7 @@
 		 * Footer bottom
 		 *
 		 * @since    1.0
-		 * @version  1.6.1
+		 * @version  1.7
 		 */
 		if ( ! function_exists( 'wm_section_footer_bottom' ) ) {
 			function wm_section_footer_bottom() {
@@ -2363,7 +2352,7 @@
 	 * Admin body classes
 	 *
 	 * @since    1.0
-	 * @version  1.6.1
+	 * @version  1.7
 	 *
 	 * @param  string $classes
 	 */
@@ -2448,8 +2437,8 @@
 	if ( ! function_exists( 'wm_media_uploader_image_sizes' ) ) {
 		function wm_media_uploader_image_sizes( $sizes ) {
 			//Modify sizes array
-				$sizes['content-width'] = __( 'Content width', 'mustang' );
-				$sizes['mobile']        = __( 'Mobile width', 'mustang' );
+				$sizes['content-width'] = __( 'Content width', 'mustang-lite' );
+				$sizes['mobile']        = __( 'Mobile width', 'mustang-lite' );
 
 			//Output
 				return apply_filters( 'wmhook_wm_media_uploader_image_sizes_output', $sizes );
@@ -2496,10 +2485,10 @@
 
 			//Preparing output
 				if ( $posts[0] ) {
-					$output .= '<a href="' . get_permalink( $posts[0]->ID ) . '" title="' . sprintf( __( 'Previous item: %s', 'mustang' ), esc_attr( strip_tags( get_the_title( $posts[0]->ID ) ) ) ) . '" class="prev"><span class="screen-reader-text">' . trim( get_the_title( $posts[0]->ID ) ) . '</span></a>';
+					$output .= '<a href="' . get_permalink( $posts[0]->ID ) . '" title="' . sprintf( __( 'Previous item: %s', 'mustang-lite' ), esc_attr( strip_tags( get_the_title( $posts[0]->ID ) ) ) ) . '" class="prev"><span class="screen-reader-text">' . trim( get_the_title( $posts[0]->ID ) ) . '</span></a>';
 				}
 				if ( $posts[1] ) {
-					$output .= '<a href="' . get_permalink( $posts[1]->ID ) . '" title="' . sprintf( __( 'Next item: %s', 'mustang' ), esc_attr( strip_tags( get_the_title( $posts[1]->ID ) ) ) ) . '" class="next"><span class="screen-reader-text">' . trim( get_the_title( $posts[1]->ID ) ) . '</span></a>';
+					$output .= '<a href="' . get_permalink( $posts[1]->ID ) . '" title="' . sprintf( __( 'Next item: %s', 'mustang-lite' ), esc_attr( strip_tags( get_the_title( $posts[1]->ID ) ) ) ) . '" class="next"><span class="screen-reader-text">' . trim( get_the_title( $posts[1]->ID ) ) . '</span></a>';
 				}
 
 				if ( $output ) {
@@ -2517,7 +2506,7 @@
 	 * Sidebar setup array
 	 *
 	 * @since    1.0
-	 * @version  1.6.1
+	 * @version  1.7
 	 *
 	 * @param  string $return Specify which output array key to return.
 	 * @param  array $atts
@@ -2941,7 +2930,7 @@
 
 					// Processing
 
-						$js_settings['text'] = '<span class="iconwm-plus-circle" title="' . __( 'Load more...', 'mustang' ) . '"></span>';
+						$js_settings['text'] = '<span class="iconwm-plus-circle" title="' . __( 'Load more...', 'mustang-lite' ) . '"></span>';
 
 
 					// Output
@@ -2986,13 +2975,13 @@
 
 							} elseif ( function_exists( 'lip_love_it_link' ) ) {
 
-								$meta_output = lip_love_it_link( null, __( 'Like it!', 'mustang' ), __( 'Liked already!', 'mustang' ), false );
+								$meta_output = lip_love_it_link( null, __( 'Like it!', 'mustang-lite' ), __( 'Liked already!', 'mustang-lite' ), false );
 
 							}
 
 						} elseif ( 'views' === $meta ) {
 
-							$title       = __( 'Views count', 'mustang' );
+							$title       = __( 'Views count', 'mustang-lite' );
 							$meta_output = bawpvc_views_sc( array() );
 
 						}
@@ -3047,8 +3036,8 @@
 		/**
 		 * Premium features?
 		 *
-		 * @since    1.6.1
-		 * @version  1.6.1
+		 * @since    1.7
+		 * @version  1.7
 		 */
 
 			locate_template( WM_SETUP_DIR . 'premium/setup-premium.php', true );

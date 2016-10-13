@@ -10,7 +10,7 @@
  * @uses        require() instead of require_once() due to previous inclusion of files when building global CSS stylesheet
  *
  * @since    1.0
- * @version  1.6.1
+ * @version  1.7
  */
 
 

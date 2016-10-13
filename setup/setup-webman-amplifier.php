@@ -2,23 +2,11 @@
 /**
  * WebMan Amplifier plugin setup
  *
- * THEME IMPLEMENTATION
- * Copy this file into your theme's folder and inlude it in the theme's
- * "functions.php" file with "require_once( 'webman-amplifier-setup.php' );"
- * command. Edit the file to your needs.
- *
- * PLUGIN LOCALIZATION
- * Note that custom translation files inside the plugin folder
- * will be removed on plugin updates. If you're creating custom
- * translation files, please use the global WordPress language folder.
- * Just create a "wp-content/languages/wm-amplifier" folder and place
- * your plugin localization files in there.
- *
  * @author     WebMan
  * @copyright  2014 WebMan
  *
  * @since    1.0
- * @version  1.6.1
+ * @version  1.7
  */
 
 
@@ -129,7 +117,7 @@
 		 */
 		function wm_widgets_posts_post_types( $post_types = array() ) {
 			//Preparing output
-				$post_types['wm_projects'] = __( 'Projects', 'mustang' );
+				$post_types['wm_projects'] = __( 'Projects', 'mustang-lite' );
 
 			//Output
 				return $post_types;
@@ -147,7 +135,7 @@
 		function wm_widgets_posts_taxonomies( $taxonomies = array() ) {
 			//Preparing output
 				$taxonomies['wm_projects'] = array(
-						'optgroup'     => __( 'Projects tags', 'mustang' ),
+						'optgroup'     => __( 'Projects tags', 'mustang-lite' ),
 						'all'          => false,
 						'hierarchical' => '0',
 						'tax_name'     => 'project_tag',
@@ -205,7 +193,7 @@
 				$fields[20] = array(
 						'id'          => 'post-format-audio',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Audio post format</h2>Displays audio player to play your audio files. Could be used for Podcasting. Please place the <code>[wm_audio]</code> shortcode as the first thing in post content. The audio description text can follow on next line.', 'mustang' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Audio post format</h2>Displays audio player to play your audio files. Could be used for Podcasting. Please place the <code>[wm_audio]</code> shortcode as the first thing in post content. The audio description text can follow on next line.', 'mustang-lite' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -220,7 +208,7 @@
 				$fields[25] = array(
 						'id'          => 'post-format-gallery',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Gallery post format</h2>A standard post with a gallery of images in post content. Slideshow will be displayed on blog page from the first gallery found in post content. If no gallery found, featured image is displayed.<br />You can insert a <code>&#91;gallery]</code> shortcode anywhere in the post. This shortcode will not be stripped out from the post content on the single post page.', 'mustang' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Gallery post format</h2>A standard post with a gallery of images in post content. Slideshow will be displayed on blog page from the first gallery found in post content. If no gallery found, featured image is displayed.<br />You can insert a <code>&#91;gallery]</code> shortcode anywhere in the post. This shortcode will not be stripped out from the post content on the single post page.', 'mustang-lite' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -235,7 +223,7 @@
 				$fields[30] = array(
 						'id'          => 'post-format-link',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Link post format</h2>Promotes interesting URL links. You can set the link anywhere in the post content. The link will be emphasized when post is displayed.', 'mustang' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Link post format</h2>Promotes interesting URL links. You can set the link anywhere in the post content. The link will be emphasized when post is displayed.', 'mustang-lite' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang-lite' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -250,7 +238,7 @@
 				$fields[35] = array(
 						'id'          => 'post-format-quote',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Quote post format</h2>A quotation. Please place the actual quote (blockquote) directly into post content. To set a quote source use a <code>&lt;cite></code> HTML tag.', 'mustang' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Quote post format</h2>A quotation. Please place the actual quote (blockquote) directly into post content. To set a quote source use a <code>&lt;cite></code> HTML tag.', 'mustang-lite' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang-lite' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -265,7 +253,7 @@
 				$fields[40] = array(
 						'id'          => 'post-format-status',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Status post format</h2>A short status update, similar to a Twitter status update. Please place the actual status text directly into post content area.', 'mustang' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Status post format</h2>A short status update, similar to a Twitter status update. Please place the actual status text directly into post content area.', 'mustang-lite' ) . '<br />' . __( 'Post title will not be displayed.', 'mustang-lite' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -280,7 +268,7 @@
 				$fields[45] = array(
 						'id'          => 'post-format-video',
 						'type'        => 'html',
-						'content'     => '<div class="box blue">' . __( '<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</code> shortcode as the first thing in post content. The video description text can follow on next line.', 'mustang' ) . '</div>',
+						'content'     => '<div class="box blue">' . __( '<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</code> shortcode as the first thing in post content. The video description text can follow on next line.', 'mustang-lite' ) . '</div>',
 						'conditional' => array(
 								'option'       => array(
 										'tag'  => 'input',
@@ -314,7 +302,7 @@
 			function wm_post_metafields( $fields = array() ) {
 				//Helper variables
 					$helper = array(
-							'sidebars' => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'mustang' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
+							'sidebars' => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'mustang-lite' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
 						);
 
 					if ( isset( $helper['sidebars']['sections'] ) ) {
@@ -325,21 +313,21 @@
 					$fields[100] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-options-section',
-							'title' => __( 'Settings', 'mustang' ),
+							'title' => __( 'Settings', 'mustang-lite' ),
 						);
 
 						$fields[120] = array(
 								'type'        => 'checkbox',
 								'id'          => 'disable-heading',
-								'label'       => __( 'Disable main heading', 'mustang' ),
-								'description' => __( 'Hide main heading section', 'mustang' ),
+								'label'       => __( 'Disable main heading', 'mustang-lite' ),
+								'description' => __( 'Hide main heading section', 'mustang-lite' ),
 							);
 
 						$fields[140] = array(
 								'type'        => 'select',
 								'id'          => 'sidebar',
-								'label'       => __( 'Sidebar position', 'mustang' ),
-								'description' => __( 'Select a sidebar position', 'mustang' ),
+								'label'       => __( 'Sidebar position', 'mustang-lite' ),
+								'description' => __( 'Select a sidebar position', 'mustang-lite' ),
 								'options'     => $helper['sidebars'],
 							);
 
@@ -371,7 +359,7 @@
 					'pages' => array( 'post' ),
 
 					// Meta box title.
-					'title' => __( 'Post options', 'mustang' ),
+					'title' => __( 'Post options', 'mustang-lite' ),
 
 					// Function callback of form fields displayed immediately after
 				 	// visual editor on 1st tab.
@@ -387,7 +375,7 @@
 			/**
 			 * Page metabox metafields
 			 *
-			 * @version  1.6.1
+			 * @version  1.7
 			 *
 			 * @param   array $fields Array of predefined metafields
 			 *
@@ -401,7 +389,7 @@
 
 					$menus  = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
 					$helper = array(
-							'menus'    => array( '' => __( 'Default', 'mustang' ) ),
+							'menus'    => array( '' => __( 'Default', 'mustang-lite' ) ),
 							'sidebars' => $wm_layouts['sidebars'],
 							'website'  => $wm_layouts['website'],
 						);
@@ -421,7 +409,7 @@
 					$fields[100] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-options-section',
-							'title' => __( 'Settings', 'mustang' ),
+							'title' => __( 'Settings', 'mustang-lite' ),
 							'page'  => array(
 									'templates' => array( 'page-template/blank.php' ),
 									'operand'   => 'IS_NOT'
@@ -431,36 +419,36 @@
 						$fields[120] = array(
 								'type'        => 'checkbox',
 								'id'          => 'disable-heading',
-								'label'       => __( 'Disable main heading', 'mustang' ),
-								'description' => __( 'Hide main heading section', 'mustang' ),
+								'label'       => __( 'Disable main heading', 'mustang-lite' ),
+								'description' => __( 'Hide main heading section', 'mustang-lite' ),
 							);
 
 						$fields[140] = array(
 								'type'        => 'select',
 								'id'          => 'sidebar',
-								'label'       => esc_html__( 'Page layout', 'mustang' ),
-								'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang' ),
+								'label'       => esc_html__( 'Page layout', 'mustang-lite' ),
+								'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang-lite' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang-lite' ),
 								'options'     => $helper['sidebars'],
 							);
 
 						$fields[160] = array(
 								'type'        => 'select',
 								'id'          => 'layout',
-								'label'       => __( 'Website layout', 'mustang' ),
-								'description' => __( 'Select a website layout for this page', 'mustang' ),
+								'label'       => __( 'Website layout', 'mustang-lite' ),
+								'description' => __( 'Select a website layout for this page', 'mustang-lite' ),
 								'options'     => $helper['website'],
 							);
 
 						$fields[180] = array(
 								'type'        => 'select',
 								'id'          => 'footer',
-								'label'       => __( 'Footer layout', 'mustang' ),
-								'description' => __( 'Select a footer layout', 'mustang' ),
+								'label'       => __( 'Footer layout', 'mustang-lite' ),
+								'description' => __( 'Select a footer layout', 'mustang-lite' ),
 								'options'     => array(
-										''        => __( 'Widgets and credits', 'mustang' ),
-										'widgets' => __( 'Widgets only', 'mustang' ),
-										'credits' => __( 'Credits only', 'mustang' ),
-										'none'    => __( 'No footer', 'mustang' ),
+										''        => __( 'Widgets and credits', 'mustang-lite' ),
+										'widgets' => __( 'Widgets only', 'mustang-lite' ),
+										'credits' => __( 'Credits only', 'mustang-lite' ),
+										'none'    => __( 'No footer', 'mustang-lite' ),
 									),
 							);
 
@@ -473,7 +461,7 @@
 					$fields[2000] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-slider-section',
-							'title' => __( 'Slider', 'mustang' ),
+							'title' => __( 'Slider', 'mustang-lite' ),
 							'page'  => array(
 									'templates' => array( 'page-template/blank.php' ),
 									'operand'   => 'IS_NOT'
@@ -482,26 +470,26 @@
 
 						$fields[2020] = array(
 								'type'    => 'html',
-								'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( '<strong>Please note that this is a special slider section setup.</strong><br />This slider will be displayed above the website header area. For standard sliders please use the shortcodes directly in the page content.', 'mustang' ) . '</div></td></tr>',
+								'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( '<strong>Please note that this is a special slider section setup.</strong><br />This slider will be displayed above the website header area. For standard sliders please use the shortcodes directly in the page content.', 'mustang-lite' ) . '</div></td></tr>',
 							);
 
 						$fields[2040] = array(
 								'type'        => 'select',
 								'id'          => 'slider',
-								'label'       => __( 'Set special slider', 'mustang' ),
-								'description' => __( 'Select a slider type used as a special slider above the website header', 'mustang' ),
+								'label'       => __( 'Set special slider', 'mustang-lite' ),
+								'description' => __( 'Select a slider type used as a special slider above the website header', 'mustang-lite' ),
 								'options'     => array(
-										''       => __( 'No special slider', 'mustang' ),
-										'custom' => __( 'Custom slider (use shortcode)', 'mustang' ),
-										'static' => __( 'Featured image', 'mustang' ),
+										''       => __( 'No special slider', 'mustang-lite' ),
+										'custom' => __( 'Custom slider (use shortcode)', 'mustang-lite' ),
+										'static' => __( 'Featured image', 'mustang-lite' ),
 									),
 							);
 
 						$fields[2060] = array(
 								'type'        => 'text',
 								'id'          => 'slider-shortcode',
-								'label'       => __( 'Slider shortcode', 'mustang' ),
-								'description' => __( 'Set the custom slider shortcode', 'mustang' ),
+								'label'       => __( 'Slider shortcode', 'mustang-lite' ),
+								'description' => __( 'Set the custom slider shortcode', 'mustang-lite' ),
 								'conditional' => array(
 										'option'       => array(
 												'tag'  => 'select',
@@ -516,12 +504,12 @@
 						$fields[2080] = array(
 								'type'        => 'select',
 								'id'          => 'slider-static',
-								'label'       => __( 'Image caption position', 'mustang' ),
-								'description' => __( 'Featured image will be displayed in the special slider section.<br />Set the image caption (you can use shortcodes) and set the image caption position here.', 'mustang' ) . '<br /><a href="#" class="button-primary button-set-featured-image" style="margin-top: .5em">' . __( 'Set featured image', 'mustang' ) . '</a>',
+								'label'       => __( 'Image caption position', 'mustang-lite' ),
+								'description' => __( 'Featured image will be displayed in the special slider section.<br />Set the image caption (you can use shortcodes) and set the image caption position here.', 'mustang-lite' ) . '<br /><a href="#" class="button-primary button-set-featured-image" style="margin-top: .5em">' . __( 'Set featured image', 'mustang-lite' ) . '</a>',
 								'options'     => array(
-										'center' => __( 'Center', 'mustang' ),
-										'left'   => __( 'Left', 'mustang' ),
-										'right'  => __( 'Right', 'mustang' ),
+										'center' => __( 'Center', 'mustang-lite' ),
+										'left'   => __( 'Left', 'mustang-lite' ),
+										'right'  => __( 'Right', 'mustang-lite' ),
 									),
 								'conditional' => array(
 										'option'       => array(
@@ -543,7 +531,7 @@
 					$fields[4000] = array(
 							'type'  => 'section-open',
 							'id'    => 'page-blog-section',
-							'title' => __( 'Blog', 'mustang' ),
+							'title' => __( 'Blog', 'mustang-lite' ),
 							'page'  => array(
 									'templates' => array( 'home.php' ),
 									'operand'   => 'IS'
@@ -553,8 +541,8 @@
 						$fields[4020] = array(
 								'type'        => 'slider',
 								'id'          => 'blog-posts-count',
-								'label'       => __( 'Number of posts', 'mustang' ),
-								'description' => __( 'Sets the number of posts listed on this blog page only. Other archives will display posts according to WordPress settings.<br />Value of "-1" will display all posts. When you set the value of "0", WordPress settings are applied.', 'mustang' ),
+								'label'       => __( 'Number of posts', 'mustang-lite' ),
+								'description' => __( 'Sets the number of posts listed on this blog page only. Other archives will display posts according to WordPress settings.<br />Value of "-1" will display all posts. When you set the value of "0", WordPress settings are applied.', 'mustang-lite' ),
 								'default'     => 0,
 								'min'         => -1,
 								'max'         => 25,
@@ -567,26 +555,26 @@
 						$category_fields[] = array(
 								'type'    => 'select',
 								'id'      => 'category',
-								'label'   => __( 'Category', 'mustang' ),
+								'label'   => __( 'Category', 'mustang-lite' ),
 								'options' => wma_taxonomy_array(),
 							);
 						$fields[4040] = array(
 								'type'        => 'repeater',
 								'id'          => 'blog-categories',
-								'label'       => __( 'Posts categories', 'mustang' ),
-								'description' => __( 'You can choose to display all posts or posts from a specific categories only. Press [+] button to add a category and select the category name from dropdown list.', 'mustang' ),
+								'label'       => __( 'Posts categories', 'mustang-lite' ),
+								'description' => __( 'You can choose to display all posts or posts from a specific categories only. Press [+] button to add a category and select the category name from dropdown list.', 'mustang-lite' ),
 								'fields'      => $category_fields,
 							);
 
 						$fields[4060] = array(
 								'type'        => 'radio',
 								'id'          => 'blog-categories-action',
-								'label'       => __( 'Categories action', 'mustang' ),
-								'description' => __( 'Exclude or use the above categories?', 'mustang' ),
+								'label'       => __( 'Categories action', 'mustang-lite' ),
+								'description' => __( 'Exclude or use the above categories?', 'mustang-lite' ),
 								'default'     => 'category__in',
 								'options'     => array(
-										'category__in'     => __( 'Posts just from these categories', 'mustang' ),
-										'category__not_in' => __( 'Exclude posts from these categories', 'mustang' ),
+										'category__in'     => __( 'Posts just from these categories', 'mustang-lite' ),
+										'category__not_in' => __( 'Exclude posts from these categories', 'mustang-lite' ),
 									),
 							);
 
@@ -608,7 +596,7 @@
 						$fields[6000] = array(
 								'type'  => 'section-open',
 								'id'    => 'page-one-section',
-								'title' => __( 'One page', 'mustang' ),
+								'title' => __( 'One page', 'mustang-lite' ),
 								'page'  => array(
 										'templates' => array( 'page-template/one-page.php' ),
 										'operand'   => 'IS'
@@ -617,14 +605,14 @@
 
 							$fields[6020] = array(
 									'type'    => 'html',
-									'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( 'Use this page template to place most (or all) of your website content on a single page. Set the ID for each section of the page (apply on row shortcode) and use them in custom navigation as anchors. You can set a navigation for this page below. Once you click the navigation link, the page will scroll to the section of a specific anchor ID.', 'mustang' ) . '</div></td></tr>',
+									'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( 'Use this page template to place most (or all) of your website content on a single page. Set the ID for each section of the page (apply on row shortcode) and use them in custom navigation as anchors. You can set a navigation for this page below. Once you click the navigation link, the page will scroll to the section of a specific anchor ID.', 'mustang-lite' ) . '</div></td></tr>',
 								);
 
 							$fields[6040] = array(
 									'type'        => 'select',
 									'id'          => 'navigation',
-									'label'       => __( 'Anchor navigation', 'mustang' ),
-									'description' => __( 'Set a special anchor navigation for this page', 'mustang' ),
+									'label'       => __( 'Anchor navigation', 'mustang-lite' ),
+									'description' => __( 'Set a special anchor navigation for this page', 'mustang-lite' ),
 									'options'     => $helper['menus'],
 								);
 
@@ -658,7 +646,7 @@
 					'pages' => array( 'page' ),
 
 					// Meta box title.
-					'title' => __( 'Page options', 'mustang' ),
+					'title' => __( 'Page options', 'mustang-lite' ),
 				) );
 
 
@@ -683,19 +671,19 @@
 						$fields[] = array(
 								'type'    => 'select',
 								'id'      => 'icon',
-								'label'   => __( 'Icon', 'mustang' ),
+								'label'   => __( 'Icon', 'mustang-lite' ),
 								'options' => $fonticons,
 							);
 					}
 					$fields[] = array(
 							'type'  => 'text',
 							'id'    => 'title',
-							'label' => __( 'Hover title', 'mustang' ),
+							'label' => __( 'Hover title', 'mustang-lite' ),
 						);
 					$fields[] = array(
 							'type'  => 'text',
 							'id'    => 'link',
-							'label' => __( 'URL link', 'mustang' ),
+							'label' => __( 'URL link', 'mustang-lite' ),
 						);
 
 				//Output
@@ -721,20 +709,20 @@
 			 */
 			function wm_project_metafields( $fields = array() ) {
 				//Preparing output
-					$fields[1000]['title'] = __( 'Settings', 'mustang' );
+					$fields[1000]['title'] = __( 'Settings', 'mustang-lite' );
 					$fields[1010] = array(
 							'type'        => 'select',
 							'id'          => 'sidebar',
-							'label'       => __( 'Page layout', 'mustang' ),
-							'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang' ),
-							'options'     => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'mustang' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
+							'label'       => __( 'Page layout', 'mustang-lite' ),
+							'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang-lite' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang-lite' ),
+							'options'     => ( ! function_exists( 'wm_helper_var' ) ) ? ( array( '' => __( 'Default', 'mustang-lite' ) ) ) : ( wm_helper_var( 'layouts', 'sidebars' ) ),
 						);
 
 					$fields[1015] = array(
 							'type'        => 'text',
 							'id'          => 'slider',
-							'label'       => __( 'Custom preview slider', 'mustang' ),
-							'description' => __( 'This slider will be displayed on projects list only, instead of featured image. Please enter the slider shortcode.', 'mustang' ),
+							'label'       => __( 'Custom preview slider', 'mustang-lite' ),
+							'description' => __( 'This slider will be displayed on projects list only, instead of featured image. Please enter the slider shortcode.', 'mustang-lite' ),
 						);
 
 					$fields[1040]['options'][''] = '';
@@ -762,14 +750,21 @@
 	 *
 	 * Use this to declare the plugin version that your theme supports.
 	 * It is possible that in future versions of the plugin there will be more
-	 * shortcodes added and your theme might not suppot them out of the box.
+	 * shortcodes added and your theme might not support them out of the box.
 	 * Setting this version number will make sure only the shortcodes included
 	 * with the specific plugin version will be available to your theme users.
 	 *
 	 * To use this function just uncomment the "add_filter" below
+	 *
+	 * @since    1.0
+	 * @version  1.7
 	 */
 	function wm_supported_shortcode_until_version() {
-		return '1.0.9'; //Set the plugin version your theme supports
+
+		// Output
+
+			return '1.3';
+
 	} // /wm_supported_shortcode_until_version
 
 	add_filter( 'wmhook_shortcode_supported_version', 'wm_supported_shortcode_until_version' );
@@ -1061,7 +1056,7 @@
 	/**
 	 * Modifying page builder parameters
 	 *
-	 * @version  1.6.1
+	 * @version  1.7
 	 */
 	function wm_modify_shortcodes_definitions( $definitions ) {
 
@@ -1093,11 +1088,11 @@
 						$definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['layout'] = array(
 								'type' => 'select',
 								//description
-								'label' => esc_html__( 'Layout', 'mustang' ),
+								'label' => esc_html__( 'Layout', 'mustang-lite' ),
 								//type specific
 								'options' => array(
-									''       => esc_html__( 'Default layout', 'mustang' ),
-									'simple' => esc_html__( 'Simple posts or projects layout', 'mustang' ),
+									''       => esc_html__( 'Default layout', 'mustang-lite' ),
+									'simple' => esc_html__( 'Simple posts or projects layout', 'mustang-lite' ),
 								),
 								//preview
 								'preview' => array( 'type' => 'refresh' ),
@@ -1117,7 +1112,7 @@
 								! in_array( $key, array( 'vc_row', 'vc_row_inner' ) )
 								&& isset( $atts['vc_plugin'] )
 							) {
-							$definitions[ $key ]['vc_plugin']['category'] = esc_html__( 'Theme Modules', 'mustang' );
+							$definitions[ $key ]['vc_plugin']['category'] = esc_html__( 'Theme Modules', 'mustang-lite' );
 							$definitions[ $key ]['vc_plugin']['icon']     = wm_get_stylesheet_directory_uri( 'assets/img/webman-32x32.png' );
 						}
 					}
@@ -1137,59 +1132,51 @@
 							);
 
 						$definitions['posts']['vc_plugin']['params'][145] = array(
-								'heading'     => __( 'Output layout', 'mustang' ),
-								'description' => __( 'Set optional output layout name. You can use <code>simple</code> with <em>Posts</em> and <em>Projects</em> posts.', 'mustang' ),
+								'heading'     => __( 'Output layout', 'mustang-lite' ),
+								'description' => __( 'Set optional output layout name. You can use <code>simple</code> with <em>Posts</em> and <em>Projects</em> posts.', 'mustang-lite' ),
 								'type'        => 'textfield',
 								'param_name'  => 'layout',
 								'value'       => '',
 								'holder'      => 'hidden',
 								'class'       => '',
-								'group'       => __( 'Layout', 'mustang' ),
+								'group'       => __( 'Layout', 'mustang-lite' ),
 							);
 
 					// Row
 
 						$definitions['vc_row']['vc_plugin']['params'][5] = array(
-								'heading'     => __( 'Remove section inner container', 'mustang' ),
-								'description' => __( 'This is only relevant when using "Fullwidth sections" page layout.', 'mustang' ),
+								'heading'     => __( 'Remove section inner container', 'mustang-lite' ),
+								'description' => __( 'This is only relevant when using "Fullwidth sections" page layout.', 'mustang-lite' ),
 								'type'        => 'checkbox',
 								'param_name'  => 'disable_container',
 								'value'       => '',
 								'value'       => array(
-										__( 'Remove the inner Section container to make the content fill the whole section without any paddings.', 'mustang' ) => 1,
+										__( 'Remove the inner Section container to make the content fill the whole section without any paddings.', 'mustang-lite' ) => 1,
 									),
 								'holder'      => 'hidden',
 								'class'       => '',
 							);
 						$definitions['vc_row']['vc_plugin']['params'][90] = array(
-								'heading'     => __( 'Section background video URL', 'mustang' ),
-								'description' => __( 'Set optional section background video URL. Video will be played automatically in a loop.', 'mustang' ),
+								'heading'     => __( 'Section background video URL', 'mustang-lite' ),
+								'description' => __( 'Set optional section background video URL. Video will be played automatically in a loop.', 'mustang-lite' ),
 								'type'        => 'textfield',
 								'param_name'  => 'video_url',
 								'value'       => '',
 								'holder'      => 'hidden',
 								'class'       => '',
-								'group'       => __( 'Styling', 'mustang' ),
+								'group'       => __( 'Styling', 'mustang-lite' ),
 							);
 
 					// Column
 
 						$definitions['vc_column']['vc_plugin']['params'][5] = array(
-								'heading'     => __( 'Background image', 'mustang' ),
-								'description' => __( 'The image will cover the column background', 'mustang' ),
+								'heading'     => __( 'Background image', 'mustang-lite' ),
+								'description' => __( 'The image will cover the column background', 'mustang-lite' ),
 								'type'        => 'attach_image',
 								'param_name'  => 'bg_image',
 								'value'       => '',
 								'holder'      => 'hidden',
 								'class'       => '',
-							);
-
-					// Slideshow
-
-						$definitions['slideshow']['vc_plugin']['params'][20]['value'] = array(
-								__( 'Just Next/Prev button', 'mustang' )  => '',
-								__( 'Next/Prev + Pagination', 'mustang' ) => 'pagination',
-								//Removed custom thumbnail pagination as we are using Owl Carousel (@todo Make custom thumbnail pagination work with Owl Carousel too.)
 							);
 
 					// bbPress
@@ -1198,15 +1185,15 @@
 							//Forum index
 								$definitions['bbp-forum-index'] = array(
 										'vc_plugin' => array(
-											'name'                    => __( 'Forums Index', 'mustang' ),
+											'name'                    => __( 'Forums Index', 'mustang-lite' ),
 											'base'                    => 'bbp-forum-index',
 											'class'                   => 'wm-shortcode-vc-bbp-forum-index',
-											'category'                => __( 'Forum', 'mustang' ),
+											'category'                => __( 'Forum', 'mustang-lite' ),
 											'show_settings_on_create' => false,
 											'params'                  => array(
 													10 => array(
-														'heading'     => '<a href="http://codex.bbpress.org/shortcodes/" target="_blank"><strong>' . __( 'bbPress Shortcode', 'mustang' ) . '</strong></a>',
-														'description' => __( 'This will display your entire forum index. No parameters to be set.', 'mustang' ),
+														'heading'     => '<a href="http://codex.bbpress.org/shortcodes/" target="_blank"><strong>' . __( 'bbPress Shortcode', 'mustang-lite' ) . '</strong></a>',
+														'description' => __( 'This will display your entire forum index. No parameters to be set.', 'mustang-lite' ),
 														'type'        => 'wm_html',
 														'param_name'  => 'forums',
 														'value'       => '',

@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.0
- * @version  1.6.1
+ * @version  1.7
  *
  * CONTENT:
  * - 1) Required files

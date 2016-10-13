@@ -2,8 +2,6 @@
  * Footer
  *
  * @version  1.4
- *
- * @since  Mustang Lite (Removed WooCommerce styles)
  */
 
 	.footer {
@@ -13,7 +11,9 @@
 		-webkit-backface-visibility: hidden;
 		        backface-visibility: hidden;
 	}
-		.footer-shadow {
+		.footer-shadow,
+		.woocommerce .footer-shadow,
+		.woocommerce-page .footer-shadow {
 			position: absolute;
 			width: 100%;
 			height: 30px;

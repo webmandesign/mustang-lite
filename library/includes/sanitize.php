@@ -10,7 +10,7 @@
  *
  * @since       3.1
  * @version     3.3
- * @version  1.6.1
+ * @version  1.7
  */
 
 

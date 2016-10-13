@@ -2,9 +2,7 @@
  * Responsive styles
  *
  * @since    1.0
- * @version  1.5
- *
- * @since  Mustang Lite (Removed WooCommerce and bbPress styles)
+ * @version  1.7
  */
 
 	/**
@@ -119,7 +117,12 @@
 
 				.responsive-design.admin-bar .header-wrapper.is-sticky {top: 0}
 
-				.responsive-design .header-wrapper {position: relative !important}
+				.responsive-design .header-wrapper {
+					position: relative !important;
+					-webkit-animation: none !important;
+					        animation: none !important;
+				}
+
 				.responsive-design.one-page-layout .header-wrapper {
 					position: fixed !important;
 					width: 100%;
@@ -130,7 +133,11 @@
 					.responsive-design.admin-bar.one-page-layout .header-wrapper {top: 32px}
 
 				.responsive-design .header-shadow,
-				.responsive-design .footer-shadow {height: 1em}
+				.woocommerce .header-shadow,
+				.woocommerce-page .header-shadow,
+				.responsive-design .footer-shadow,
+				.woocommerce .footer-shadow,
+				.woocommerce-page .footer-shadow {height: 1em}
 
 				/* Topbar */
 					.responsive-design .topbar {display: none}
@@ -162,7 +169,7 @@
 				/* Navigation */
 					#nav-main {
 						position: fixed;
-						width: 75%;
+						width: 90%;
 						min-width: 280px;
 						max-width: 400px;
 						height: 100%;
@@ -177,7 +184,7 @@
 						.admin-bar #nav-main,
 						.admin-bar #nav-main a.mobile-nav {padding-top: 32px}
 
-					#nav-main > .menu {padding-left: 32px}
+					#nav-main > .menu {padding-left: 48px}
 
 						/* Submenu expander */
 
@@ -297,14 +304,18 @@
 							float: none;
 							position: absolute;
 							display: block;
-							width: 32px;
+							width: 48px;
 							height: 100%;
 							left: 0;
 							top: 0;
 							padding: .62em 0;
 							font-size: 2em;
 						}
-							#nav-main .mobile-nav:before {margin-left: -.28em}
+							#nav-main .mobile-nav:before {
+								position: relative;
+								top: 4%;
+								margin-left: -.28em;
+							}
 
 					/* Special navigation */
 						#navigation-special li {
@@ -398,6 +409,9 @@
 						line-height: 40px;
 					}
 
+				/* Floating cart */
+					#floating-cart {display: none}
+
 				/* Blank page template */
 					.responsive-design.page-template-page-templateblank-php,
 					.responsive-design.page-template-page-templateblank-php .website-container {
@@ -418,7 +432,9 @@
 					 */
 
 						/* Make the default layout small size */
-							.responsive-design .wm-content-module .wm-iconbox-module .title h3 {font-size: 1.38em}
+							.responsive-design .wm-content-module .wm-iconbox-module .title h2,
+							.responsive-design .wm-content-module .wm-iconbox-module .title h3,
+							.responsive-design .wm-content-module .wm-iconbox-module .title h4 {font-size: 1.38em}
 							.responsive-design .wm-iconbox-module .wm-content-module-element {padding-left: 68px}
 							.responsive-design .wm-iconbox-module .wm-content-module-element.image,
 							.responsive-design .text-center .wm-iconbox-module .wm-content-module-element {padding-left: 0}
@@ -429,6 +445,7 @@
 								font-size: 24px;
 							}
 							.responsive-design .no-icon-background .wm-iconbox-module .wm-content-module-element {padding-left: 58px}
+							.responsive-design .text-center .wm-iconbox-module .wm-content-module-element,
 							.responsive-design .no-icon-background .wm-iconbox-module .image {padding-left: 0}
 							.responsive-design .no-icon-background .wm-iconbox-module .font-icon {
 								width: 40px;
@@ -470,7 +487,6 @@
 					/**
 					 * Isotope
 					 * Masonry
-					 * Owl Carousel
 					 */
 
 						/* Isotope, Masonry */
@@ -628,9 +644,16 @@
 					}
 
 				/* Pagination */
-					.responsive-design .wm-pagination {text-align: center}
+					.responsive-design .wm-pagination,
+					.responsive-design .bbp-pagination .bbp-pagination-links,
+					.responsive-design nav.woocommerce-pagination,
+					.woocommerce-page nav.woocommerce-pagination {text-align: center}
 					.responsive-design .wm-pagination a,
-					.responsive-design .wm-pagination span {margin-top: .15em}
+					.responsive-design .wm-pagination span,
+					.responsive-design .bbp-pagination .bbp-pagination-links a,
+					.responsive-design .bbp-pagination .bbp-pagination-links span,
+					.responsive-design .woocommerce-pagination a,
+					.responsive-design .woocommerce-pagination span {margin-top: .15em}
 
 
 
@@ -771,18 +794,9 @@
 						.responsive-design .wm-tabs .wm-tour-nav.top {display: none}
 
 					/**
-					 * Owl Carousel
 					 * Isotope
 					 * Masonry
 					 */
-
-						/* Owl Carousel */
-							.responsive-design .owl-controls {visibility: visible}
-
-							.responsive-design .wm-testimonials .owl-buttons {
-								top: auto;
-								bottom: 0;
-							}
 
 						/* Isotope, Masonry */
 							.responsive-design .filter-this.with-margin,
@@ -898,7 +912,8 @@
 						a.wm-button,
 						button,
 						input[type="button"],
-						input[type="submit"] {white-space: normal}
+						input[type="submit"],
+						.bbp-logged-in a.button {white-space: normal}
 
 						/* Button groups */
 							.responsive-design .wm-button.group,
@@ -938,7 +953,6 @@
 					/**
 					 * Isotope
 					 * Masonry
-					 * Owl Carousel
 					 */
 
 						/* Isotope */
