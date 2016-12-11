@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.7.1
  *
  * CONTENT:
  * - 1) Required files
@@ -3024,10 +3024,10 @@
 		 * One Click Demo Import
 		 *
 		 * @since    1.6
-		 * @version  1.6
+		 * @version  1.7.1
 		 */
 
-			if ( class_exists( 'PT_One_Click_Demo_Import' ) && is_admin() ) {
+			if ( ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) && is_admin() ) {
 				locate_template( WM_SETUP_DIR . 'setup-one-click-demo-import.php', true );
 			}
 

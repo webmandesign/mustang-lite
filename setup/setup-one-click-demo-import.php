@@ -6,14 +6,15 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.7
+ * @version  1.7.1
  *
  * Contents:
  *
- *  0) Init
- * 10) Files
- * 20) Texts
- * 30) Setup
+ *   0) Init
+ *  10) Files
+ *  20) Texts
+ *  30) Setup
+ * 100) Helpers
  */
 class Mustang_One_Click_Demo_Import {
 
@@ -33,16 +34,9 @@ class Mustang_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    1.6
-		 * @version  1.6
+		 * @version  1.7.1
 		 */
 		private function __construct() {
-
-			// Requirements check
-
-				if ( ! class_exists( 'PT_One_Click_Demo_Import' ) || ! is_admin() ) {
-					return;
-				}
-
 
 			// Processing
 
@@ -50,9 +44,11 @@ class Mustang_One_Click_Demo_Import {
 
 					// Actions
 
+						add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles', 99 );
+
 						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
-						add_action( 'pt-ocdi/before_widgets_import ', __CLASS__ . '::before_widgets_import ' );
+						add_action( 'pt-ocdi/before_widgets_import', __CLASS__ . '::before_widgets_import' );
 
 					// Filters
 
@@ -184,7 +180,7 @@ class Mustang_One_Click_Demo_Import {
 		 * After import actions
 		 *
 		 * @since    1.6
-		 * @version  1.6
+		 * @version  1.7.1
 		 *
 		 * @param  string $selected_import
 		 */
@@ -196,13 +192,17 @@ class Mustang_One_Click_Demo_Import {
 
 					self::front_and_blog_page();
 
-				// WooCommerce pages
-
-					self::woocommerce_pages();
-
 				// Menu locations
 
 					self::menu_locations();
+
+				// Widgets
+
+					self::widgets();
+
+				// Beaver Builder setup
+
+					self::beaver_builder();
 
 		} // /after
 
@@ -237,45 +237,6 @@ class Mustang_One_Click_Demo_Import {
 
 
 		/**
-		 * Setup WooCommerce pages
-		 *
-		 * @since    1.6
-		 * @version  1.7
-		 */
-		public static function woocommerce_pages() {
-
-			// Requirements check
-
-				if ( ! function_exists( 'wm_is_woocommerce' ) ) {
-					return;
-				}
-
-
-			// Processing
-
-				// Shop page
-
-					$page_front = get_page_by_path( 'shop' );
-
-					update_option( 'woocommerce_shop_page_id', $page_front->ID );
-
-				// Cart page
-
-					$page_blog = get_page_by_path( 'shopping-cart' );
-
-					update_option( 'woocommerce_cart_page_id', $page_blog->ID );
-
-				// Checkout page
-
-					$page_blog = get_page_by_path( 'checkout' );
-
-					update_option( 'woocommerce_checkout_page_id', $page_blog->ID );
-
-		} // /woocommerce_pages
-
-
-
-		/**
 		 * Setup navigation menu locations
 		 *
 		 * @since    1.6
@@ -303,15 +264,106 @@ class Mustang_One_Click_Demo_Import {
 		 * Remove all widgets from sidebars first
 		 *
 		 * @since    1.6
-		 * @version  1.6
+		 * @version  1.7.1
 		 */
 		public static function before_widgets_import() {
 
 			// Processing
 
-				update_option( 'sidebars_widgets', array() );
+				delete_option( 'sidebars_widgets' );
 
 		} // /before_widgets_import
+
+
+
+		/**
+		 * Setup widgets
+		 *
+		 * @since    1.7.1
+		 * @version  1.7.1
+		 */
+		public static function widgets() {
+
+			// Helper variables
+
+				// Custom Menu widget
+
+					$widget_settings_nav_menu = get_option( 'widget_nav_menu' );
+
+					$menu         = array();
+					$menu['main'] = get_term_by( 'slug', 'main', 'nav_menu' );
+
+					$setup_widgets = array( 'main' );
+
+
+			// Processing
+
+				// Custom Menu widget
+
+					$i = 0;
+
+					foreach ( $widget_settings_nav_menu as $key => $instance ) {
+						if (
+								isset( $instance['nav_menu'] )
+								&& isset( $menu[ $setup_widgets[ $i ] ]->term_id )
+							) {
+
+							$widget_settings_nav_menu[ $key ]['nav_menu'] = $menu[ $setup_widgets[ $i++ ] ]->term_id;
+
+						}
+					} // /foreach
+
+					update_option( 'widget_nav_menu', $widget_settings_nav_menu );
+
+		} // /widgets
+
+
+
+		/**
+		 * Setup Beaver Builder
+		 *
+		 * @since    1.7.1
+		 * @version  1.7.1
+		 */
+		public static function beaver_builder() {
+
+			// Processing
+
+				// Page builder enabled post types
+
+					update_option( '_fl_builder_post_types', array(
+							'page',
+							'wm_projects',
+						) );
+
+		} // /beaver_builder
+
+
+
+
+
+	/**
+	 * 100) Helpers
+	 */
+
+		/**
+		 * OCDI plugin admin page styles
+		 *
+		 * @since    1.7.1
+		 * @version  1.7.1
+		 */
+		public static function styles() {
+
+			// Processing
+
+				// OCDI 2.0 styling fix
+
+					wp_add_inline_style(
+							'ocdi-main-css',
+							'.ocdi.about-wrap { max-width: 66em; }'
+						);
+
+		} // /styles
 
 
 

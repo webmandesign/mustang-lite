@@ -1,9 +1,25 @@
 # Mustang Lite Changelog
 
+## 1.7.1
+
+* **Update**: Removing custom scrollbar styles
+* **Update**: Removing slideshow from gallery post format
+* **Update**: One Click Demo Import plugin version 2.0 compatible
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/css/core.css
+	setup/setup-one-click-demo-import.php
+	setup/setup.php
+	setup/about/about.php
+
+
 ## 1.7
 
 * **Update**: Theme description
-* **Update**: Improved files organizations 
+* **Update**: Improved files organizations
 * **Update**: Removed closing `?>` from the end of PHP files
 * **Update**: Using Slick Slider script instead of Owl Carousel
 * **Update**: Removed support info from WordPress help tabs
@@ -132,7 +148,7 @@
 	setup/about/about-custom.css
 	setup/about/about.php
 	webman-amplifier/content-shortcode-posts-wm_staff.php
-	
+
 
 ## 1.5.2
 

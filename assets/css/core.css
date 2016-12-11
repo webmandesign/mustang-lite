@@ -1,7 +1,7 @@
 /**
  * Core styles
  *
- * @version  1.5
+ * @version  1.7.1
  */
 
 
@@ -377,33 +377,6 @@
 				}
 				.wm-pagination .first,
 				.wm-pagination .last {display: none}
-
-
-
-	/**
-	 * Scrollbars
-	 *
-	 * @since  1.1
-	 */
-
-		::-webkit-scrollbar {width: 8px}
-
-		/* Track */
-			::-webkit-scrollbar-track {
-				background: rgba(255,255,255, .5);
-				-webkit-border-radius: 10px;
-				        border-radius: 10px;
-				-webkit-box-shadow: 0 0 0 1px rgba(255,255,255, .3), inset 0 0 6px rgba(0,0,0, .3);
-			}
-
-		/* Handle */
-			::-webkit-scrollbar-thumb {
-				background: rgba(0,0,0, .5);
-				-webkit-border-radius: 10px;
-				        border-radius: 10px;
-				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0, .3);
-			}
-			::-webkit-scrollbar-thumb:window-inactive {background: rgba(0,0,0, .25)}
 
 
 

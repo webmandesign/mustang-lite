@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.6
+ * @version  1.7.1
  *
  * CONTENT:
  *  1) Requirements check
@@ -147,7 +147,7 @@
 	 * Render the "About" screen content
 	 *
 	 * @since    1.0
-	 * @version  1.6
+	 * @version  1.7.1
 	 */
 	if ( ! function_exists( 'wm_about_screen' ) ) {
 		function wm_about_screen() {
@@ -296,7 +296,7 @@
 									<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/mustang/#demo-content' ); ?>" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'mustang-lite' ); ?></a>
 								</p>
 
-								<?php if ( ! class_exists( 'PT_One_Click_Demo_Import' ) ) : ?>
+								<?php if ( ! ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) ) : ?>
 
 									<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><strong><?php esc_html_e( 'Install and run "One Click Demo Import" plugin', 'mustang-lite' ); ?></strong></a>
 
