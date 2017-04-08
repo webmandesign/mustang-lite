@@ -1,5 +1,22 @@
 # Mustang Lite Changelog
 
+## 1.8.0
+
+* **Update**: Removing branding of One Click Demo Install plugin
+* **Update**: Removing obsolete ImagesLoaded script files in favor of WordPress native ones
+* **Fix**: Mobile submenu expanding on screens of 1024px width
+
+### Files changed:
+
+	changelog.md
+	readme.md
+	style.css
+	assets/js/scripts-global.js
+	documentation/documentation.html
+	setup/setup-one-click-demo-import.php
+	setup/setup.php
+
+
 ## 1.7.1
 
 * **Update**: Removing custom scrollbar styles

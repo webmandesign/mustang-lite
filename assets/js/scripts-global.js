@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.6
+ * @version  1.8.0
  *
  * CONTENT:
  * - 10) Basics
@@ -428,7 +428,7 @@ jQuery( function() {
 							    wmIsMega   = $this.closest( '.menu-item' ).hasClass( 'megamenu' ),
 							    wmNotHover = ! $this.is( ':hover' );
 
-							if ( 1024 > document.body.clientWidth ) {
+							if ( 1024 >= document.body.clientWidth ) {
 								wmNotHover = true;
 							}
 

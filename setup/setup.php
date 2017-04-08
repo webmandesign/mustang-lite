@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7.1
+ * @version  1.8.0
  *
  * CONTENT:
  * - 1) Required files
@@ -681,7 +681,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.5
+	 * @version  1.8.0
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -749,7 +749,7 @@
 					//Frontend
 						'wm-scripts-global' => array(
 								'src'  => wm_get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ),
-								'deps' => array( 'jquery', 'wm-imagesloaded' ),
+								'deps' => array( 'jquery', 'imagesloaded' ),
 							),
 					//jQuery plugins
 						'jquery-appear' => array( wm_get_stylesheet_directory_uri( 'assets/js/appear/jquery.appear.min.js' ) ),
@@ -761,10 +761,6 @@
 							),
 						'wm-wp-admin' => array( wm_get_stylesheet_directory_uri( 'library/assets/js/wm-scripts.js' ) ),
 					);
-
-				if ( ! wp_script_is( 'wm-imagesloaded', 'registered' ) ) {
-					$register_scripts['wm-imagesloaded'] = array( wm_get_stylesheet_directory_uri( 'assets/js/imagesloaded/imagesloaded.min.js' ) );
-				}
 
 				$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', $register_scripts );
 

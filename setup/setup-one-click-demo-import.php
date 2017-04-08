@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.7.1
+ * @version  1.8.0
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Mustang_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    1.6
-		 * @version  1.7.1
+		 * @version  1.8.0
 		 */
 		private function __construct() {
 
@@ -55,6 +55,8 @@ class Mustang_One_Click_Demo_Import {
 						add_filter( 'pt-ocdi/import_files', __CLASS__ . '::files' );
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
+
+						add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 		} // /__construct
 

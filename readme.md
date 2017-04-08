@@ -54,11 +54,6 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 git.io/normalize
 
-**imagesLoaded**
-Copyright (c) 2014 Tomas Sardyha (@Darsain) and David DeSandro (@desandro)
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-https://github.com/desandro/imagesloaded
-
 **jquery.appear.js**
 Copyright (c) 2012 Andrey Sidorov
 Licensed under MIT
