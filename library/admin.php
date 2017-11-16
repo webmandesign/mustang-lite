@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.0
- * @version  1.7
+ * @version  1.8.1
  *
  * CONTENT:
  * - 1) Required files
@@ -45,7 +45,7 @@
 		}
 
 	//Skinning functionality
-		if ( function_exists( 'wma_amplifier' ) ) {
+		if ( class_exists( 'WM_Amplifier' ) ) {
 			locate_template( WM_LIBRARY_DIR . 'skinning.php', true );
 		}
 

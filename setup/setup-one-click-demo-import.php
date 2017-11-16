@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.8.0
+ * @version  1.8.1
  *
  * Contents:
  *
@@ -125,7 +125,7 @@ class Mustang_One_Click_Demo_Import {
 		 * Info texts
 		 *
 		 * @since    1.6
-		 * @version  1.6
+		 * @version  1.8.1
 		 *
 		 * @param  string $text  Default intro text.
 		 */
@@ -142,7 +142,7 @@ class Mustang_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'mustang-lite' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'mustang-lite' );
-					$text .= ' <a href="https://www.webmandesign.eu/manual/mustang/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'mustang-lite' ) . '</a>';
+					$text .= ' <a href="https://webmandesign.github.io/docs/mustang/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'mustang-lite' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';

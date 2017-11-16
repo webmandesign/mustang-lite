@@ -1,22 +1,22 @@
 # Mustang
 
-* **Theme URI:**          https://www.webmandesign.eu/mustang-wordpress-theme/  
-* **Author:**             WebMan Design  
-* **Author URI:**         https://www.webmandesign.eu  
-* **License:**            GNU General Public License v3  
-* **License URI:**        http://www.gnu.org/licenses/gpl-3.0.html  
+* **Theme URI:**          https://www.webmandesign.eu/mustang-wordpress-theme/
+* **Author:**             WebMan Design
+* **Author URI:**         https://www.webmandesign.eu
+* **License:**            GNU General Public License v3
+* **License URI:**        http://www.gnu.org/licenses/gpl-3.0.html
 * **Requires at least:**  4.4
 
 
 ## Description
 
-Mustang theme lets you create beautiful, professional responsive and high-resolution-display-ready websites. It is suitable for creative portfolio, business, corporate website projects, personal presentations and much more. 
+Mustang theme lets you create beautiful, professional responsive and high-resolution-display-ready websites. It is suitable for creative portfolio, business, corporate website projects, personal presentations and much more.
 
-The theme is completely customizable so you can make it your own. As the theme is translation ready and supports right-to-left (RTL) languages, you can successfully built a multilingual website with it. 
+The theme is completely customizable so you can make it your own. As the theme is translation ready and supports right-to-left (RTL) languages, you can successfully built a multilingual website with it.
 
-When used with powerful WebMan Amplifier plugin you unleash the true potential of the theme! You can also use popular Beaver Builder page builder with this theme as it is fully compatible! 
+When used with powerful WebMan Amplifier plugin you unleash the true potential of the theme! You can also use popular Beaver Builder page builder with this theme as it is fully compatible!
 
-Premium version of Mustang theme contains additional e-commerce (WooCommerce) and forum (bbPress) functionality support. 
+Premium version of Mustang theme contains additional e-commerce (WooCommerce) and forum (bbPress) functionality support.
 
 To stay up to date, please follow WebMan Design on Twitter [https://twitter.com/webmandesigneu] and/or become a fan on Facebook [https://www.facebook.com/webmandesigneu].
 
@@ -33,7 +33,7 @@ http://themedemos.webmandesign.eu/mustang/
 
 ## Documentation
 
-Up to date version of theme user manual is available online at http://www.webmandesign.eu/manual/mustang/
+Up to date version of theme user manual is available online at https://webmandesign.github.io/docs/mustang/
 
 Off-line version can be found in `documentation` directory of the theme folder.
 

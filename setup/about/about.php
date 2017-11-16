@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7.1
+ * @version  1.8.1
  *
  * CONTENT:
  *  1) Requirements check
@@ -147,7 +147,7 @@
 	 * Render the "About" screen content
 	 *
 	 * @since    1.0
-	 * @version  1.7.1
+	 * @version  1.8.1
 	 */
 	if ( ! function_exists( 'wm_about_screen' ) ) {
 		function wm_about_screen() {
@@ -190,9 +190,9 @@
 
 							<p class="wm-actions">
 
-								<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/mustang/' ); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'mustang-lite' ); ?></a>
+								<a href="https://webmandesign.github.io/docs/mustang/" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'mustang-lite' ); ?></a>
 
-								<a href="<?php echo esc_url( 'http://support.webmandesign.eu' ); ?>" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Forum', 'mustang-lite' ); ?></a>
+								<a href="http://support.webmandesign.eu" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Forum', 'mustang-lite' ); ?></a>
 
 							</p>
 
@@ -293,7 +293,7 @@
 
 								<p>
 									<?php esc_html_e( 'Alternatively (such as when the automated installation fails) you can follow theme documentation instructions for manual demo content installation.', 'mustang-lite' ); ?>
-									<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/mustang/#demo-content' ); ?>" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'mustang-lite' ); ?></a>
+									<a href="https://webmandesign.github.io/docs/mustang/#demo-content" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'mustang-lite' ); ?></a>
 								</p>
 
 								<?php if ( ! ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) ) : ?>

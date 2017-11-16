@@ -10,7 +10,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.1
+ * @version  1.8.1
  */
 
 
@@ -24,7 +24,7 @@
 	$page_id = ( is_home() ) ? ( get_option( 'page_for_posts' ) ) : ( null );
 	$sidebar = wm_sidebar_setup( false, array( 'page_id' => $page_id ) );
 
-	if ( ! function_exists( 'wma_amplifier' ) ) {
+	if ( ! class_exists( 'WM_Amplifier' ) ) {
 		$sidebar['class_main'] = ' eight pane';
 	}
 
@@ -78,7 +78,7 @@ get_header();
 		wmhook_entry_after();
 
 		//Blog posts list
-			if ( function_exists( 'wma_amplifier' ) ) {
+			if ( class_exists( 'WM_Amplifier' ) ) {
 				$loop_type = ( is_page_template( 'home.php' ) && ! is_home() ) ? ( 'blog' ) : ( 'index' );
 				get_template_part( 'loop', $loop_type );
 			} else {
@@ -96,7 +96,7 @@ get_header();
 	 * Output
 	 */
 
-		if ( ! function_exists( 'wma_amplifier' ) ) {
+		if ( ! class_exists( 'WM_Amplifier' ) ) {
 			get_sidebar();
 		} else {
 			echo $sidebar['output'];

@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.1
  */
 
 
@@ -941,7 +941,7 @@
 					$sections_layout = true;
 				}
 
-				//video_url
+				// video_url
 					$atts['video_url'] = array_filter( explode( ',', str_replace( ' ', '', $atts['video_url'] ) ) );
 					if ( ! empty( $atts['video_url'] ) ) {
 						if ( 1 === count( $atts['video_url'] ) ) {
@@ -1054,195 +1054,225 @@
 
 
 	/**
-	 * Modifying page builder parameters
+	 * Modifying page builder shortcode definitions: Beaver Builder
 	 *
-	 * @version  1.7
+	 * @since    1.8.1
+	 * @version  1.8.1
 	 */
-	function wm_modify_shortcodes_definitions( $definitions ) {
+	function wm_modify_shortcodes_definitions_bb( $definitions ) {
+
+		// Helper variables
+
+			$key = '';
+			if ( isset( $definitions['posts']['compatibility/beaver-builder'] ) ) {
+				$key = 'compatibility/beaver-builder';
+			} elseif ( isset( $definitions['posts']['bb_plugin'] ) ) {
+				$key = 'bb_plugin'; // Backwards compatibility
+			}
+
+
+		// Requirements check
+
+			if ( empty( $key ) ) {
+				return $definitions;
+			}
+
 
 		// Processing
 
-			// Beaver Builder
+			// Content Module
 
-				// Content Module
+				unset( $definitions['content_module'][ $key ]['form']['general']['sections']['multiple']['fields']['filter'] );
+				unset( $definitions['content_module'][ $key ]['form']['general']['sections']['multiple']['fields']['pagination'] );
+				unset( $definitions['content_module'][ $key ]['form']['description'] );
+				unset( $definitions['content_module'][ $key ]['form']['others']['sections']['general']['fields']['no_margin'] );
+				unset( $definitions['content_module'][ $key ]['form']['others']['sections']['general']['fields']['image_size'] );
+				unset( $definitions['content_module'][ $key ]['form']['others']['sections']['general']['fields']['layout'] );
 
-					unset( $definitions['content_module']['bb_plugin']['form']['general']['sections']['multiple']['fields']['filter'] );
-					unset( $definitions['content_module']['bb_plugin']['form']['general']['sections']['multiple']['fields']['pagination'] );
-					unset( $definitions['content_module']['bb_plugin']['form']['description'] );
-					unset( $definitions['content_module']['bb_plugin']['form']['others']['sections']['general']['fields']['no_margin'] );
-					unset( $definitions['content_module']['bb_plugin']['form']['others']['sections']['general']['fields']['image_size'] );
-					unset( $definitions['content_module']['bb_plugin']['form']['others']['sections']['general']['fields']['layout'] );
+			// Posts
 
-				// Posts
+				unset( $definitions['posts'][ $key ]['form']['description'] );
+				unset( $definitions['posts'][ $key ]['form']['others']['sections']['general']['fields']['filter_layout'] );
+				unset( $definitions['posts'][ $key ]['form']['others']['sections']['general']['fields']['related'] );
+				unset( $definitions['posts'][ $key ]['form']['others']['sections']['general']['fields']['image_size'] );
 
-					unset( $definitions['posts']['bb_plugin']['form']['description'] );
-					unset( $definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['filter_layout'] );
-					unset( $definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['related'] );
-					unset( $definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['image_size'] );
+				// Adding "layout" parameter
 
-					// Adding "layout" parameter
+					$definitions['posts'][ $key ]['output'] = str_replace( '[PREFIX_posts', '[PREFIX_posts{{layout}}', (string) $definitions['posts'][ $key ]['output'] );
+					$definitions['posts'][ $key ]['params'] = array_merge( array( 'layout' ), (array) $definitions['posts'][ $key ]['params'] );
 
-						$definitions['posts']['bb_plugin']['output'] = str_replace( '[PREFIX_posts', '[PREFIX_posts{{layout}}', (string) $definitions['posts']['bb_plugin']['output'] );
-						$definitions['posts']['bb_plugin']['params'] = array_merge( array( 'layout' ), (array) $definitions['posts']['bb_plugin']['params'] );
+					$definitions['posts'][ $key ]['form']['others']['sections']['general']['fields']['layout'] = array(
+						'type' => 'select',
+						'label' => esc_html__( 'Layout', 'mustang-lite' ),
+						'options' => array(
+							''       => esc_html__( 'Default layout', 'mustang-lite' ),
+							'simple' => esc_html__( 'Simple posts or projects layout', 'mustang-lite' ),
+						),
+						'preview' => array( 'type' => 'refresh' ),
+					);
 
-						$definitions['posts']['bb_plugin']['form']['others']['sections']['general']['fields']['layout'] = array(
-								'type' => 'select',
-								//description
-								'label' => esc_html__( 'Layout', 'mustang-lite' ),
-								//type specific
-								'options' => array(
-									''       => esc_html__( 'Default layout', 'mustang-lite' ),
-									'simple' => esc_html__( 'Simple posts or projects layout', 'mustang-lite' ),
-								),
-								//preview
-								'preview' => array( 'type' => 'refresh' ),
-							);
+			// Testimonials
 
-				// Testimonials
-
-					unset( $definitions['testimonials']['bb_plugin']['form']['description'] );
-					unset( $definitions['testimonials']['bb_plugin']['form']['others']['sections']['general']['fields']['no_margin'] );
-
-			// Visual Composer
-
-				if ( function_exists( 'wma_is_active_vc' ) && wma_is_active_vc() ) {
-
-					foreach ( $definitions as $key => $atts ) {
-						if (
-								! in_array( $key, array( 'vc_row', 'vc_row_inner' ) )
-								&& isset( $atts['vc_plugin'] )
-							) {
-							$definitions[ $key ]['vc_plugin']['category'] = esc_html__( 'Theme Modules', 'mustang-lite' );
-							$definitions[ $key ]['vc_plugin']['icon']     = wm_get_stylesheet_directory_uri( 'assets/img/webman-32x32.png' );
-						}
-					}
-
-					// Posts
-
-						$definitions['posts']['vc_plugin']['params'][30]['value'] = array(
-								1 => 1,
-								2 => 2,
-								3 => 3,
-								4 => 4,
-								5 => 5,
-								6 => 6,
-								7 => 7,
-								8 => 8,
-								9 => 9,
-							);
-
-						$definitions['posts']['vc_plugin']['params'][145] = array(
-								'heading'     => __( 'Output layout', 'mustang-lite' ),
-								'description' => __( 'Set optional output layout name. You can use <code>simple</code> with <em>Posts</em> and <em>Projects</em> posts.', 'mustang-lite' ),
-								'type'        => 'textfield',
-								'param_name'  => 'layout',
-								'value'       => '',
-								'holder'      => 'hidden',
-								'class'       => '',
-								'group'       => __( 'Layout', 'mustang-lite' ),
-							);
-
-					// Row
-
-						$definitions['vc_row']['vc_plugin']['params'][5] = array(
-								'heading'     => __( 'Remove section inner container', 'mustang-lite' ),
-								'description' => __( 'This is only relevant when using "Fullwidth sections" page layout.', 'mustang-lite' ),
-								'type'        => 'checkbox',
-								'param_name'  => 'disable_container',
-								'value'       => '',
-								'value'       => array(
-										__( 'Remove the inner Section container to make the content fill the whole section without any paddings.', 'mustang-lite' ) => 1,
-									),
-								'holder'      => 'hidden',
-								'class'       => '',
-							);
-						$definitions['vc_row']['vc_plugin']['params'][90] = array(
-								'heading'     => __( 'Section background video URL', 'mustang-lite' ),
-								'description' => __( 'Set optional section background video URL. Video will be played automatically in a loop.', 'mustang-lite' ),
-								'type'        => 'textfield',
-								'param_name'  => 'video_url',
-								'value'       => '',
-								'holder'      => 'hidden',
-								'class'       => '',
-								'group'       => __( 'Styling', 'mustang-lite' ),
-							);
-
-					// Column
-
-						$definitions['vc_column']['vc_plugin']['params'][5] = array(
-								'heading'     => __( 'Background image', 'mustang-lite' ),
-								'description' => __( 'The image will cover the column background', 'mustang-lite' ),
-								'type'        => 'attach_image',
-								'param_name'  => 'bg_image',
-								'value'       => '',
-								'holder'      => 'hidden',
-								'class'       => '',
-							);
-
-					// bbPress
-
-						if ( function_exists( 'wm_is_bbpress' ) ) {
-							//Forum index
-								$definitions['bbp-forum-index'] = array(
-										'vc_plugin' => array(
-											'name'                    => __( 'Forums Index', 'mustang-lite' ),
-											'base'                    => 'bbp-forum-index',
-											'class'                   => 'wm-shortcode-vc-bbp-forum-index',
-											'category'                => __( 'Forum', 'mustang-lite' ),
-											'show_settings_on_create' => false,
-											'params'                  => array(
-													10 => array(
-														'heading'     => '<a href="http://codex.bbpress.org/shortcodes/" target="_blank"><strong>' . __( 'bbPress Shortcode', 'mustang-lite' ) . '</strong></a>',
-														'description' => __( 'This will display your entire forum index. No parameters to be set.', 'mustang-lite' ),
-														'type'        => 'wm_html',
-														'param_name'  => 'forums',
-														'value'       => '',
-														'holder'      => 'hidden',
-														'class'       => '',
-													),
-												)
-										)
-									);
-						}
-
-				}
+				unset( $definitions['testimonials'][ $key ]['form']['description'] );
+				unset( $definitions['testimonials'][ $key ]['form']['others']['sections']['general']['fields']['no_margin'] );
 
 
 		// Output
 
 			return $definitions;
 
-	} // /wm_modify_shortcodes_definitions
+	} // /wm_modify_shortcodes_definitions_bb
 
-	add_filter( 'wmhook_shortcode_definitions', 'wm_modify_shortcodes_definitions', 10 );
+	add_filter( 'wmhook_shortcode_definitions', 'wm_modify_shortcodes_definitions_bb' );
 
 
 
 	/**
-	 * Prefix page builder modules names
+	 * Modifying page builder shortcode definitions: Visual Composer
 	 *
-	 * @since    1.6
-	 * @version  1.6
-	 *
-	 * @param  array  $output
-	 * @param  string $shortcode
+	 * @since    1.8.1
+	 * @version  1.8.1
 	 */
-	function wm_page_builder_module_name_prefix( $output, $shortcode ) {
+	function wm_modify_shortcodes_definitions_vc( $definitions ) {
+
+		// Helper variables
+
+			$key = '';
+			if ( isset( $definitions['posts']['compatibility/js-composer'] ) ) {
+				$key = 'compatibility/js-composer';
+			} elseif ( isset( $definitions['posts']['vc_plugin'] ) ) {
+				$key = 'vc_plugin'; // Backwards compatibility
+			}
+
+
+		// Requirements check
+
+			if ( empty( $key ) ) {
+				return $definitions;
+			}
+
 
 		// Processing
 
-			if ( '-' !== $output['name'] ) {
-				$output['name'] = 'WM ' . $output['name'];
+			if (
+				is_callable( 'WM_Amplifier_JS_Composer::is_active' )
+				&& WM_Amplifier_JS_Composer::is_active()
+			) {
+
+				foreach ( $definitions as $shortcode => $definition ) {
+					if (
+						isset( $definition[ $key ] )
+						&& ! in_array( $shortcode, array(
+							'vc_row',
+							'vc_row_inner',
+						) )
+					) {
+						$definitions[ $shortcode ][ $key ]['category'] = esc_html__( 'Theme Modules', 'mustang-lite' );
+						$definitions[ $shortcode ][ $key ]['icon']     = wm_get_stylesheet_directory_uri( 'assets/img/webman-32x32.png' );
+					}
+				}
+
+				// Posts
+
+					$definitions['posts'][ $key ]['params'][30]['value'] = array(
+						1 => 1,
+						2 => 2,
+						3 => 3,
+						4 => 4,
+						5 => 5,
+						6 => 6,
+						7 => 7,
+						8 => 8,
+						9 => 9,
+					);
+
+					$definitions['posts'][ $key ]['params'][145] = array(
+						'heading'     => __( 'Output layout', 'mustang-lite' ),
+						'description' => __( 'Set optional output layout name. You can use <code>simple</code> with <em>Posts</em> and <em>Projects</em> posts.', 'mustang-lite' ),
+						'type'        => 'textfield',
+						'param_name'  => 'layout',
+						'value'       => '',
+						'holder'      => 'hidden',
+						'class'       => '',
+						'group'       => __( 'Layout', 'mustang-lite' ),
+					);
+
+				// Row
+
+					$definitions['vc_row'][ $key ]['params'][5] = array(
+						'heading'     => __( 'Remove section inner container', 'mustang-lite' ),
+						'description' => __( 'This is only relevant when using "Fullwidth sections" page layout.', 'mustang-lite' ),
+						'type'        => 'checkbox',
+						'param_name'  => 'disable_container',
+						'value'       => '',
+						'value'       => array(
+							__( 'Remove the inner Section container to make the content fill the whole section without any paddings.', 'mustang-lite' ) => 1,
+						),
+						'holder'      => 'hidden',
+						'class'       => '',
+					);
+
+					$definitions['vc_row'][ $key ]['params'][90] = array(
+						'heading'     => __( 'Section background video URL', 'mustang-lite' ),
+						'description' => __( 'Set optional section background video URL. Video will be played automatically in a loop.', 'mustang-lite' ),
+						'type'        => 'textfield',
+						'param_name'  => 'video_url',
+						'value'       => '',
+						'holder'      => 'hidden',
+						'class'       => '',
+						'group'       => __( 'Styling', 'mustang-lite' ),
+					);
+
+				// Column
+
+					$definitions['vc_column'][ $key ]['params'][5] = array(
+						'heading'     => __( 'Background image', 'mustang-lite' ),
+						'description' => __( 'The image will cover the column background', 'mustang-lite' ),
+						'type'        => 'attach_image',
+						'param_name'  => 'bg_image',
+						'value'       => '',
+						'holder'      => 'hidden',
+						'class'       => '',
+					);
+
+				// bbPress
+
+					// Adding Forum index
+					if ( function_exists( 'wm_is_bbpress' ) ) {
+						$definitions['bbp-forum-index'] = array(
+							$key => array(
+								'name'                    => __( 'Forums Index', 'mustang-lite' ),
+								'base'                    => 'bbp-forum-index',
+								'class'                   => 'wm-shortcode-vc-bbp-forum-index',
+								'category'                => __( 'Forum', 'mustang-lite' ),
+								'show_settings_on_create' => false,
+								'params'                  => array(
+
+									10 => array(
+										'heading'     => '<a href="http://codex.bbpress.org/shortcodes/" target="_blank"><strong>' . __( 'bbPress Shortcode', 'mustang-lite' ) . '</strong></a>',
+										'description' => __( 'This will display your entire forum index. No parameters to be set.', 'mustang-lite' ),
+										'type'        => 'wm_html',
+										'param_name'  => 'forums',
+										'value'       => '',
+										'holder'      => 'hidden',
+										'class'       => '',
+									),
+
+								),
+							),
+						);
+					}
+
 			}
 
 
 		// Output
 
-			return $output;
+			return $definitions;
 
-	} // /wm_page_builder_module_name_prefix
+	} // /wm_modify_shortcodes_definitions_vc
 
-	add_filter( 'wmhook_shortcode_wma_bb_shortcode_def_output', 'wm_page_builder_module_name_prefix', 10, 2 );
+	add_filter( 'wmhook_shortcode_definitions', 'wm_modify_shortcodes_definitions_vc' );
 
 
 

@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.0
+ * @version  1.8.1
  *
  * CONTENT:
  * - 1) Required files
@@ -149,7 +149,7 @@
 				add_filter( 'wmhook_wm_post_meta', 'wm_post_custom_metas', 10, 3 );
 			}
 		//Fallback when not using WebMan Amplifier
-			if ( ! function_exists( 'wma_amplifier' ) ) {
+			if ( ! class_exists( 'WM_Amplifier' ) ) {
 				add_filter( 'wmhook_admin_modifications_enabled', '__return_false' );
 			}
 
@@ -183,7 +183,7 @@
 	 * Theme helper variables
 	 *
 	 * @since    1.0
-	 * @version  1.7
+	 * @version  1.8.1
 	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key Additional key if the variable is array
@@ -375,7 +375,7 @@
 							);
 					}
 
-					if ( ! function_exists( 'wma_amplifier' ) ) {
+					if ( ! class_exists( 'WM_Amplifier' ) ) {
 						unset( $output['widget-areas']['topbar'] );
 						unset( $output['widget-areas']['topbar-extra'] );
 						unset( $output['widget-areas']['main-heading-widgets'] );
@@ -2786,7 +2786,7 @@
 		 * WebMan Amplifier plugin integration
 		 */
 
-			if ( function_exists( 'wma_amplifier' ) ) {
+			if ( class_exists( 'WM_Amplifier' ) ) {
 				locate_template( WM_SETUP_DIR . 'setup-webman-amplifier.php', true );
 			}
 

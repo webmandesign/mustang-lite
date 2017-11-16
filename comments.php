@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.1
  */
 
 
@@ -78,7 +78,7 @@ if (
 
 	wmhook_comments_before();
 
-	if ( ! function_exists( 'wma_amplifier' ) ) {
+	if ( ! class_exists( 'WM_Amplifier' ) ) {
 		echo '<div class="wm-row clearfix row-shortcode">' . $output . '</div>';
 	} else {
 		echo do_shortcode( '[wm_row]' . $output . '[/wm_row]' );

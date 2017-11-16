@@ -1,5 +1,32 @@
 # Mustang Lite Changelog
 
+## 1.8.1
+
+* **Update**: WordPress 4.9 compatible
+* **Update**: Documentation link
+* **Update**: Improved compatibility with WebMan Amplifier
+* **Update**: Media player styles
+
+### Files changed:
+
+	changelog.md
+	comments.php
+	home.php
+	index.php
+	page.php
+	single.php
+	style.css
+	assets/css/core.css
+	library/admin.php
+	library/core.php
+	page-template/blank.php
+	page-template/one-page.php
+	setup/setup-one-click-demo-import.php
+	setup/setup-webman-amplifier.php
+	setup/setup.php
+	setup/about/about.php
+
+
 ## 1.8.0
 
 * **Update**: Removing branding of One Click Demo Install plugin

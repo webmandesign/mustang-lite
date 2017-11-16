@@ -3,12 +3,12 @@
  * Theme URI:    http://www.webmandesign.eu/mustang-wordpress-theme/
  * Author:       WebMan
  * Author URI:   http://www.webmandesign.eu/
- * Version:      1.8.0
+ * Version:      1.8.1
  * Text Domain:  mustang-lite
  * Domain Path:  /languages
  * License:      GNU General Public License v3
  * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
- * Description:  Mustang theme lets you create beautiful, professional responsive and high-resolution-display-ready websites. It is suitable for creative portfolio, business, corporate website projects, personal presentations and much more. The theme is completely customizable so you can make it your own. As the theme is translation ready and supports right-to-left (RTL) languages, you can successfully built a multilingual website with it. When used with powerful WebMan Amplifier plugin you unleash the true potential of the theme! You can also use popular Beaver Builder page builder with this theme as it is fully compatible! Premium version of Mustang theme contains additional e-commerce (WooCommerce) and forum (bbPress) functionality support. Theme demo can be found at https://themedemos.webmandesign.eu/mustang/ and theme documentation at https://webmandesign.eu/manual/mustang/
+ * Description:  Mustang theme lets you create beautiful, professional responsive and high-resolution-display-ready websites. It is suitable for creative portfolio, business, corporate website projects, personal presentations and much more. The theme is completely customizable so you can make it your own. As the theme is translation ready and supports right-to-left (RTL) languages, you can successfully built a multilingual website with it. When used with powerful WebMan Amplifier plugin you unleash the true potential of the theme! You can also use popular Beaver Builder page builder with this theme as it is fully compatible! Premium version of Mustang theme contains additional e-commerce (WooCommerce) and forum (bbPress) functionality support. Theme demo can be found at https://themedemos.webmandesign.eu/mustang/ and theme documentation at https://webmandesign.github.io/docs/mustang/
  * Tags:         one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
  *
  * This theme, like WordPress, is licensed under the GPL.
@@ -23,7 +23,7 @@
  * It is highly recommended to place your custom CSS styles into a new child theme as you might
  * loose all your custom CSS once you update the theme and overwrite this file!
  *
- * @link  http://www.webmandesign.eu/manual/mustang/#child-theme
+ * @link  https://webmandesign.github.io/docs/mustang/#child-theme
  */
 
 

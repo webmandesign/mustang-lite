@@ -11,7 +11,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @version  3.4
- * @version  1.7
+ * @version  1.8.1
  *
  * CONTENT:
  * - 1) Required files
@@ -1837,14 +1837,14 @@
 		 *
 		 * @since    3.0
 		 * @version  3.4
-		 * @version  1.2.8
+		 * @version  1.8.1
 		 *
 		 * @param    boolean $args
 		 */
 		if ( ! function_exists( 'wm_generate_main_css' ) ) {
 			function wm_generate_main_css( $args = array() ) {
 				//Requirements check
-					if ( ! function_exists( 'wma_amplifier' ) ) {
+					if ( ! class_exists( 'WM_Amplifier' ) ) {
 						return false;
 					}
 
