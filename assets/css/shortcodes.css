@@ -1,7 +1,7 @@
 /**
  * Shortcodes
  *
- * @version  1.7
+ * @version  1.8.2
  */
 
 
@@ -56,8 +56,8 @@
 		.wm-button,
 		a.wm-button,
 		button,
-		input[type="button"],
-		input[type="submit"],
+		[type="button"],
+		[type="submit"],
 		.bbp-logged-in a.button {
 			position: relative;
 			display: inline-block;
@@ -76,20 +76,20 @@
 			.wm-button,
 			.wm-message,
 			button,
-			input[type="button"],
-			input[type="submit"],
+			[type="button"],
+			[type="submit"],
 			.bbp-logged-in a.button {border-radius: 4px}
 
 		/* Hover and active */
 			.wm-button:hover,
 			button:hover,
-			input[type="button"]:hover,
-			input[type="submit"]:hover,
+			[type="button"]:hover,
+			[type="submit"]:hover,
 			.bbp-logged-in a.button:hover {color: inherit}
 			.wm-button:active,
 			button:active,
-			input[type="button"]:active,
-			input[type="submit"]:active,
+			[type="button"]:active,
+			[type="submit"]:active,
 			.bbp-logged-in a.button:active {
 				color: inherit;
 				-webkit-box-shadow: inset 0 1px 2px 0 rgba(0,0,0, .15);
@@ -100,16 +100,16 @@
 			/* s */
 				.wm-button.size-small,
 				button.size-small,
-				input[type="button"].size-small,
-				input[type="submit"].size-small {
+				[type="button"].size-small,
+				[type="submit"].size-small {
 					padding: .25em .75em;
 					font-size: .8em;
 				}
 			/* m, default */
 				.wm-button,
 				button,
-				input[type="button"],
-				input[type="submit"],
+				[type="button"],
+				[type="submit"],
 				.bbp-logged-in a.button {
 					padding: .5em 1em;
 					font-size: 1em;
@@ -117,16 +117,16 @@
 			/* l */
 				.wm-button.size-large,
 				button.size-large,
-				input[type="button"].size-large,
-				input[type="submit"].size-large {
+				[type="button"].size-large,
+				[type="submit"].size-large {
 					padding: .75em 1.25em;
 					font-size: 1.15em;
 				}
 			/* xl */
 				.wm-button.size-extra-large,
 				button.size-extra-large,
-				input[type="button"].size-extra-large,
-				input[type="submit"].size-extra-large {
+				[type="button"].size-extra-large,
+				[type="submit"].size-extra-large {
 					padding: 1em 2em;
 					font-size: 1.25em;
 				}

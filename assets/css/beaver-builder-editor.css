@@ -2,7 +2,7 @@
  * Beaver Builder editor styles
  *
  * @since    1.6
- * @version  1.7
+ * @version  1.8.2
  */
 
 .fl-builder .header,
@@ -12,8 +12,8 @@
 }
 
 .fl-lightbox button,
-.fl-lightbox input[type="button"],
-.fl-lightbox input[type="submit"] {
+.fl-lightbox [type="button"],
+.fl-lightbox [type="submit"] {
 	text-shadow: none;
 	color: inherit !important;
 	box-shadow: none;

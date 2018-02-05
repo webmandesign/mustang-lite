@@ -2,7 +2,7 @@
  * Form styles
  *
  * @since    1.0
- * @version  1.6
+ * @version  1.8.2
  */
 
 
@@ -21,8 +21,8 @@
 			color: inherit;
 			outline: 0;
 		}
-		input[type="checkbox"],
-		input[type="radio"] {padding: 0}
+		[type="checkbox"],
+		[type="radio"] {padding: 0}
 		fieldset {
 			padding: 0;
 			margin: 0;
@@ -65,17 +65,17 @@
 				vertical-align: middle;
 			}
 				button,
-				input[type="button"],
-				input[type="submit"],
-				input[type="date"],
-				input[type="email"],
-				input[type="file"],
-				input[type="number"],
-				input[type="search"],
-				input[type="password"],
-				input[type="text"],
-				input[type="url"],
-				input[type="tel"],
+				[type="button"],
+				[type="submit"],
+				[type="date"],
+				[type="email"],
+				[type="file"],
+				[type="number"],
+				[type="search"],
+				[type="password"],
+				[type="text"],
+				[type="url"],
+				[type="tel"],
 				select,
 				textarea {
 					line-height: 1.62em;
@@ -87,22 +87,22 @@
 					//*/
 					border-radius: 4px;
 				}
-					input[type="date"]:focus,
-					input[type="email"]:focus,
-					input[type="file"]:focus,
-					input[type="number"]:focus,
-					input[type="search"]:focus,
-					input[type="password"]:focus,
-					input[type="text"]:focus,
-					input[type="url"]:focus,
-					input[type="tel"]:focus,
+					[type="date"]:focus,
+					[type="email"]:focus,
+					[type="file"]:focus,
+					[type="number"]:focus,
+					[type="search"]:focus,
+					[type="password"]:focus,
+					[type="text"]:focus,
+					[type="url"]:focus,
+					[type="tel"]:focus,
 					select:focus,
 					textarea:focus {
 						-webkit-box-shadow: 0 1px .62em rgba(0,0,0, .15);
 						        box-shadow: 0 1px .62em rgba(0,0,0, .15);
 					}
-				input[type="button"],
-				input[type="submit"] {
+				[type="button"],
+				[type="submit"] {
 					height: 2.62em;
 					line-height: 2.62em;
 				}
@@ -116,14 +116,14 @@
 				textarea.stretch {width: 100% !important}
 
 		/* Text input */
-			input[type="date"],
-			input[type="email"],
-			input[type="number"],
-			input[type="search"],
-			input[type="password"],
-			input[type="text"],
-			input[type="url"],
-			input[type="tel"] {width: 17em}
+			[type="date"],
+			[type="email"],
+			[type="number"],
+			[type="search"],
+			[type="password"],
+			[type="text"],
+			[type="url"],
+			[type="tel"] {width: 17em}
 
 			textarea {
 				vertical-align: top;
@@ -132,11 +132,11 @@
 				resize: vertical;
 			}
 
-			input[type="search"] { box-sizing: border-box; }
+			[type="search"] { box-sizing: border-box; }
 
 		/* Checkboxes and radio buttons */
-			input[type="checkbox"],
-			input[type="radio"] {
+			[type="checkbox"],
+			[type="radio"] {
 				position: relative;
 				width: 1em;
 				height: 1em;
@@ -144,7 +144,7 @@
 				margin-right: .28em;
 				vertical-align: baseline;
 			}
-			label + input[type="checkbox"] {margin-left: .28em}
+			label + [type="checkbox"] {margin-left: .28em}
 
 		/* Select */
 			select {
@@ -155,8 +155,8 @@
 			}
 
 		/* Submit buttons */
-			input[type="button"],
-			input[type="submit"] {
+			[type="button"],
+			[type="submit"] {
 				padding: 0 1em;
 				line-height: normal;
 				cursor: pointer;
@@ -207,11 +207,11 @@
 			.sidebar .woocommerce-product-search,
 			.sidebar #searchform {width: 100%}
 
-			.form-search input[type="text"],
-			.widget .form-search input[type="text"],
-			.widget .woocommerce-product-search input[type="search"],
-			#searchform input[type="text"],
-			#bbp-search-form input[type="text"] {
+			.form-search [type="text"],
+			.widget .form-search [type="text"],
+			.widget .woocommerce-product-search [type="search"],
+			#searchform [type="text"],
+			#bbp-search-form [type="text"] {
 				position: absolute;
 				width: 100%;
 				left: 0;
@@ -219,16 +219,16 @@
 				padding-left: 2em;
 				z-index: 0;
 			}
-			.lie8 .form-search input[type="text"],
-			.lie8 .widget .form-search input[type="text"],
-			.lie8 .widget .woocommerce-product-search input[type="search"],
-			.lie8 #searchform input[type="text"],
-			.lie8 #bbp-search-form input[type="text"] {z-index: -1}
+			.lie8 .form-search [type="text"],
+			.lie8 .widget .form-search [type="text"],
+			.lie8 .widget .woocommerce-product-search [type="search"],
+			.lie8 #searchform [type="text"],
+			.lie8 #bbp-search-form [type="text"] {z-index: -1}
 
-			.form-search input[type="submit"],
-			.widget .woocommerce-product-search input[type="submit"],
-			#searchform input[type="submit"],
-			#bbp-search-form input[type="submit"] {
+			.form-search [type="submit"],
+			.widget .woocommerce-product-search [type="submit"],
+			#searchform [type="submit"],
+			#bbp-search-form [type="submit"] {
 				position: absolute;
 				width: 2em;
 				height: 2.62em;
@@ -242,21 +242,21 @@
 				-webkit-box-shadow: none;
 				        box-shadow: none;
 			}
-			.lie8 .form-search input[type="submit"],
-			.lie8 .widget .woocommerce-product-search input[type="submit"],
-			.lie8 #searchform input[type="submit"],
-			.lie8 #bbp-search-form input[type="submit"] {
+			.lie8 .form-search [type="submit"],
+			.lie8 .widget .woocommerce-product-search [type="submit"],
+			.lie8 #searchform [type="submit"],
+			.lie8 #bbp-search-form [type="submit"] {
 				background: #fff !important;
 				filter: alpha(opacity=1);
 			}
-				.form-search input[type="submit"]:hover,
-				.form-search input[type="submit"]:active,
-				.widget .woocommerce-product-search input[type="submit"]:hover,
-				.widget .woocommerce-product-search input[type="submit"]:active,
-				#searchform input[type="submit"]:hover,
-				#searchform input[type="submit"]:active,
-				#bbp-search-form input[type="submit"]:hover,
-				#bbp-search-form input[type="submit"]:active {
+				.form-search [type="submit"]:hover,
+				.form-search [type="submit"]:active,
+				.widget .woocommerce-product-search [type="submit"]:hover,
+				.widget .woocommerce-product-search [type="submit"]:active,
+				#searchform [type="submit"]:hover,
+				#searchform [type="submit"]:active,
+				#bbp-search-form [type="submit"]:hover,
+				#bbp-search-form [type="submit"]:active {
 					-webkit-box-shadow: none;
 					        box-shadow: none;
 				}
@@ -305,7 +305,7 @@
 						-webkit-box-shadow: none;
 						        box-shadow: none;
 					}
-					#search-container input[type="submit"] {display: none}
+					#search-container [type="submit"] {display: none}
 
 				#search-container .form-close {
 					left: auto;

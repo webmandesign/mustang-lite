@@ -7,7 +7,7 @@
  * This fallback stylesheet is not compatible with RTL.
  *
  * @since    1.1.1
- * @version  1.7
+ * @version  1.8.2
  */
 
 /* Base */
@@ -195,43 +195,43 @@
 			text-shadow: 0 0 .5em rgba(0,0,0, .62);
 		}
 
-		.topbar-extra input[type="date"],
-		.topbar-extra input[type="email"],
-		.topbar-extra input[type="file"],
-		.topbar-extra input[type="number"],
-		.topbar-extra input[type="search"],
-		.topbar-extra input[type="password"],
-		.topbar-extra input[type="text"],
-		.topbar-extra input[type="url"],
-		.topbar-extra input[type="tel"],
+		.topbar-extra [type="date"],
+		.topbar-extra [type="email"],
+		.topbar-extra [type="file"],
+		.topbar-extra [type="number"],
+		.topbar-extra [type="search"],
+		.topbar-extra [type="password"],
+		.topbar-extra [type="text"],
+		.topbar-extra [type="url"],
+		.topbar-extra [type="tel"],
 		.topbar-extra select,
 		.topbar-extra textarea {
 			background-color: #3d5b9b;
 		}
 
-		.footer-widgets input[type="date"],
-		.footer-widgets input[type="email"],
-		.footer-widgets input[type="file"],
-		.footer-widgets input[type="number"],
-		.footer-widgets input[type="search"],
-		.footer-widgets input[type="password"],
-		.footer-widgets input[type="text"],
-		.footer-widgets input[type="url"],
-		.footer-widgets input[type="tel"],
+		.footer-widgets [type="date"],
+		.footer-widgets [type="email"],
+		.footer-widgets [type="file"],
+		.footer-widgets [type="number"],
+		.footer-widgets [type="search"],
+		.footer-widgets [type="password"],
+		.footer-widgets [type="text"],
+		.footer-widgets [type="url"],
+		.footer-widgets [type="tel"],
 		.footer-widgets select,
 		.footer-widgets textarea {
 			background-color: #4664a4;
 		}
 
-		.credits input[type="date"],
-		.credits input[type="email"],
-		.credits input[type="file"],
-		.credits input[type="number"],
-		.credits input[type="search"],
-		.credits input[type="password"],
-		.credits input[type="text"],
-		.credits input[type="url"],
-		.credits input[type="tel"],
+		.credits [type="date"],
+		.credits [type="email"],
+		.credits [type="file"],
+		.credits [type="number"],
+		.credits [type="search"],
+		.credits [type="password"],
+		.credits [type="text"],
+		.credits [type="url"],
+		.credits [type="tel"],
 		.credits select,
 		.credits textarea {
 			background-color: #3d5b9b;
@@ -242,8 +242,8 @@
 
 		.wm-button,
 		button,
-		input[type="button"],
-		input[type="submit"],
+		[type="button"],
+		[type="submit"],
 		.wm-marker,
 		.wm-dropcap,
 		.wm-progress-bar,
@@ -258,12 +258,12 @@
 
 		.wm-button:hover,
 		button:hover,
-		input[type="button"]:hover,
-		input[type="submit"]:hover,
+		[type="button"]:hover,
+		[type="submit"]:hover,
 		.wm-button:active,
 		button:active,
-		input[type="button"]:active,
-		input[type="submit"]:active,
+		[type="button"]:active,
+		[type="submit"]:active,
 		#bbpress-forums .quicktags-toolbar input:hover,
 		#bbpress-forums .quicktags-toolbar input:active,
 		#bbpress-forums .bbp-new-post-toggle .wm-item-title:hover,
@@ -327,8 +327,8 @@
 		.color-blue,
 		.wm-button.color-blue,
 		button.color-blue,
-		input[type="button"].color-blue,
-		input[type="submit"].color-blue {
+		[type="button"].color-blue,
+		[type="submit"].color-blue {
 			text-shadow: 0 -1px 0 rgba(0,0,0, .6);
 			color: #ffffff !important;
 			background-color: #3d5b9b;
@@ -337,12 +337,12 @@
 
 		.wm-button.color-blue:hover,
 		button.color-blue:hover,
-		input[type="button"].color-blue:hover,
-		input[type="submit"].color-blue:hover,
+		[type="button"].color-blue:hover,
+		[type="submit"].color-blue:hover,
 		.wm-button.color-blue:active,
 		button.color-blue:active,
-		input[type="button"].color-blue:active,
-		input[type="submit"].color-blue:active {
+		[type="button"].color-blue:active,
+		[type="submit"].color-blue:active {
 			background-color: #4f6dad;
 			border-color: #2b4989;
 		}
@@ -357,8 +357,8 @@
 		.color-gray,
 		.wm-button.color-gray,
 		button.color-gray,
-		input[type="button"].color-gray,
-		input[type="submit"].color-gray {
+		[type="button"].color-gray,
+		[type="submit"].color-gray {
 			text-shadow: 0 1px 0 rgba(255,255,255, .6);
 			color: #151515 !important;
 			background-color: #dddddd;
@@ -367,12 +367,12 @@
 
 		.wm-button.color-gray:hover,
 		button.color-gray:hover,
-		input[type="button"].color-gray:hover,
-		input[type="submit"].color-gray:hover,
+		[type="button"].color-gray:hover,
+		[type="submit"].color-gray:hover,
 		.wm-button.color-gray:active,
 		button.color-gray:active,
-		input[type="button"].color-gray:active,
-		input[type="submit"].color-gray:active {
+		[type="button"].color-gray:active,
+		[type="submit"].color-gray:active {
 			background-color: #efefef;
 			border-color: #cbcbcb;
 		}
@@ -387,8 +387,8 @@
 		.color-green,
 		.wm-button.color-green,
 		button.color-green,
-		input[type="button"].color-green,
-		input[type="submit"].color-green {
+		[type="button"].color-green,
+		[type="submit"].color-green {
 			text-shadow: 0 1px 0 rgba(255,255,255, .6);
 			color: #e2ffff !important;
 			background-color: #1abc9c;
@@ -397,12 +397,12 @@
 
 		.wm-button.color-green:hover,
 		button.color-green:hover,
-		input[type="button"].color-green:hover,
-		input[type="submit"].color-green:hover,
+		[type="button"].color-green:hover,
+		[type="submit"].color-green:hover,
 		.wm-button.color-green:active,
 		button.color-green:active,
-		input[type="button"].color-green:active,
-		input[type="submit"].color-green:active {
+		[type="button"].color-green:active,
+		[type="submit"].color-green:active {
 			background-color: #2cceae;
 			border-color: #08aa8a;
 		}
@@ -417,8 +417,8 @@
 		.color-orange,
 		.wm-button.color-orange,
 		button.color-orange,
-		input[type="button"].color-orange,
-		input[type="submit"].color-orange {
+		[type="button"].color-orange,
+		[type="submit"].color-orange {
 			text-shadow: 0 1px 0 rgba(255,255,255, .6);
 			color: #250000 !important;
 			background-color: #edaa4e;
@@ -427,12 +427,12 @@
 
 		.wm-button.color-orange:hover,
 		button.color-orange:hover,
-		input[type="button"].color-orange:hover,
-		input[type="submit"].color-orange:hover,
+		[type="button"].color-orange:hover,
+		[type="submit"].color-orange:hover,
 		.wm-button.color-orange:active,
 		button.color-orange:active,
-		input[type="button"].color-orange:active,
-		input[type="submit"].color-orange:active {
+		[type="button"].color-orange:active,
+		[type="submit"].color-orange:active {
 			background-color: #ffbc60;
 			border-color: #db983c;
 		}
@@ -447,8 +447,8 @@
 		.color-red,
 		.wm-button.color-red,
 		button.color-red,
-		input[type="button"].color-red,
-		input[type="submit"].color-red {
+		[type="button"].color-red,
+		[type="submit"].color-red {
 			text-shadow: 0 -1px 0 rgba(0,0,0, .6);
 			color: #ffffff !important;
 			background-color: #e74c3c;
@@ -457,12 +457,12 @@
 
 		.wm-button.color-red:hover,
 		button.color-red:hover,
-		input[type="button"].color-red:hover,
-		input[type="submit"].color-red:hover,
+		[type="button"].color-red:hover,
+		[type="submit"].color-red:hover,
 		.wm-button.color-red:active,
 		button.color-red:active,
-		input[type="button"].color-red:active,
-		input[type="submit"].color-red:active {
+		[type="button"].color-red:active,
+		[type="submit"].color-red:active {
 			background-color: #f95e4e;
 			border-color: #d53a2a;
 		}
@@ -562,15 +562,15 @@
 			border-left-color: #ededed;
 		}
 
-		.slider input[type="date"],
-		.slider input[type="email"],
-		.slider input[type="file"],
-		.slider input[type="number"],
-		.slider input[type="search"],
-		.slider input[type="password"],
-		.slider input[type="text"],
-		.slider input[type="url"],
-		.slider input[type="tel"],
+		.slider [type="date"],
+		.slider [type="email"],
+		.slider [type="file"],
+		.slider [type="number"],
+		.slider [type="search"],
+		.slider [type="password"],
+		.slider [type="text"],
+		.slider [type="url"],
+		.slider [type="tel"],
 		.slider select,
 		.slider textarea {
 			background-color: #ededed;
@@ -609,15 +609,15 @@
 			border-color: #e9e9e9 !important;
 		}
 
-		.main-heading input[type="date"],
-		.main-heading input[type="email"],
-		.main-heading input[type="file"],
-		.main-heading input[type="number"],
-		.main-heading input[type="search"],
-		.main-heading input[type="password"],
-		.main-heading input[type="text"],
-		.main-heading input[type="url"],
-		.main-heading input[type="tel"],
+		.main-heading [type="date"],
+		.main-heading [type="email"],
+		.main-heading [type="file"],
+		.main-heading [type="number"],
+		.main-heading [type="search"],
+		.main-heading [type="password"],
+		.main-heading [type="text"],
+		.main-heading [type="url"],
+		.main-heading [type="tel"],
 		.main-heading select,
 		.main-heading textarea {
 			background-color: #ededed;
@@ -703,15 +703,15 @@
 			border-left-color: #f6f6f6;
 		}
 
-		.content-section input[type="date"],
-		.content-section input[type="email"],
-		.content-section input[type="file"],
-		.content-section input[type="number"],
-		.content-section input[type="search"],
-		.content-section input[type="password"],
-		.content-section input[type="text"],
-		.content-section input[type="url"],
-		.content-section input[type="tel"],
+		.content-section [type="date"],
+		.content-section [type="email"],
+		.content-section [type="file"],
+		.content-section [type="number"],
+		.content-section [type="search"],
+		.content-section [type="password"],
+		.content-section [type="text"],
+		.content-section [type="url"],
+		.content-section [type="tel"],
 		.content-section select,
 		.content-section textarea,
 		.woocommerce .form-row .select2-container,

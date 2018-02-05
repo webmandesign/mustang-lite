@@ -2,7 +2,7 @@
  * Responsive styles
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.2
  */
 
 	/**
@@ -911,8 +911,8 @@
 						.wm-button,
 						a.wm-button,
 						button,
-						input[type="button"],
-						input[type="submit"],
+						[type="button"],
+						[type="submit"],
 						.bbp-logged-in a.button {white-space: normal}
 
 						/* Button groups */

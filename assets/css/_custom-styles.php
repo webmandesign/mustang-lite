@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.2
  */
 
 
@@ -18,7 +18,7 @@
  * Output custom skin styles
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.2
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */
@@ -45,11 +45,11 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 									'hover-active' => '{p}a:hover, {p}a:active',
 								),
 							'colored'     => array(
-									'base'         => '{p}, .wm-button{p}, button{p}, input[type="button"]{p}, input[type="submit"]{p}',
+									'base'         => '{p}, .wm-button{p}, button{p}, [type="button"]{p}, [type="submit"]{p}',
 									'border-left'  => '.wm-call-to-action.cta-button-{p}',
-									'hover-active' => '.wm-button{p}:hover, button{p}:hover, input[type="button"]{p}:hover, input[type="submit"]{p}:hover, .wm-button{p}:active, button{p}:active, input[type="button"]{p}:active, input[type="submit"]{p}:active',
+									'hover-active' => '.wm-button{p}:hover, button{p}:hover, [type="button"]{p}:hover, [type="submit"]{p}:hover, .wm-button{p}:active, button{p}:active, [type="button"]{p}:active, [type="submit"]{p}:active',
 								),
-							'forms'       => '{p} input[type="date"], {p} input[type="email"], {p} input[type="file"], {p} input[type="number"], {p} input[type="search"], {p} input[type="password"], {p} input[type="text"], {p} input[type="url"], {p} input[type="tel"], {p} select, {p} textarea',
+							'forms'       => '{p} [type="date"], {p} [type="email"], {p} [type="file"], {p} [type="number"], {p} [type="search"], {p} [type="password"], {p} [type="text"], {p} [type="url"], {p} [type="tel"], {p} select, {p} textarea',
 							'headings'    => '{p} h1, {p} h2, {p} h3, {p} h4, {p} h5, {p} h6, {p} .h1, {p} .h2, {p} .h3, {p} .h4, {p} .h5, {p} .h6, {p} [class*="heading-style-"], {p} .no-icon-background .wm-iconbox-module .wm-content-module-element.image, {p} .no-icon-bg .wm-iconbox-module .wm-content-module-element.image',
 							'pagination'  => array(
 									'base'   => ', .wm-pagination a, .wm-pagination span, .bbp-pagination .bbp-pagination-links a, .bbp-pagination .bbp-pagination-links span, .woocommerce-pagination a, .woocommerce-pagination span',
@@ -259,7 +259,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 								'colors-shortcodes' => array( 'custom' => '/* Colors: Shortcodes default colors */' ),
 
 								'colors-shortcodes-' . 10 => array(
-									'selector' => '.wm-button, button, input[type="button"], input[type="submit"], .wm-marker, .wm-dropcap, .wm-progress-bar, #bbpress-forums .quicktags-toolbar input, #bbpress-forums .bbp-new-post-toggle .wm-item-title, .bbp-logged-in a.button',
+									'selector' => '.wm-button, button, [type="button"], [type="submit"], .wm-marker, .wm-dropcap, .wm-progress-bar, #bbpress-forums .quicktags-toolbar input, #bbpress-forums .bbp-new-post-toggle .wm-item-title, .bbp-logged-in a.button',
 									'styles'   => array(
 										'text-shadow'      => ( $helper['treshold'] > wma_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ) ) ) ? ( '0 -1px 0 rgba(0,0,0, .6)' ) : ( '0 1px 0 rgba(255,255,255, .6)' ),
 										'color'            => wma_contrast_color( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['text_color'], ' !important' ),
@@ -268,7 +268,7 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 									)
 								),
 									'colors-shortcodes-' . 20 => array(
-										'selector' => '.wm-button:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, .wm-button:active, button:active, input[type="button"]:active, input[type="submit"]:active, #bbpress-forums .quicktags-toolbar input:hover, #bbpress-forums .quicktags-toolbar input:active, #bbpress-forums .bbp-new-post-toggle .wm-item-title:hover, #bbpress-forums .bbp-new-post-toggle .wm-item.active .wm-item-title, .bbp-logged-in a.button:hover, .bbp-logged-in a.button:active',
+										'selector' => '.wm-button:hover, button:hover, [type="button"]:hover, [type="submit"]:hover, .wm-button:active, button:active, [type="button"]:active, [type="submit"]:active, #bbpress-forums .quicktags-toolbar input:hover, #bbpress-forums .quicktags-toolbar input:active, #bbpress-forums .bbp-new-post-toggle .wm-item-title:hover, #bbpress-forums .bbp-new-post-toggle .wm-item.active .wm-item-title, .bbp-logged-in a.button:hover, .bbp-logged-in a.button:active',
 										'styles'   => array(
 											'background-color' => wma_alter_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['multiplier'] * $helper['brighter_color'] ),
 											'border-color'     => wma_alter_color_brightness( wm_option( $helper['prefix'] . $helper['button_color'] . '-color' ), $helper['multiplier'] * $helper['darker_color'] ),

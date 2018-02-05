@@ -104,12 +104,12 @@
 		/* Basic form styles */
 
 			/* Checkboxes and radio buttons */
-				input[type="checkbox"],
-				input[type="radio"] {
+				[type="checkbox"],
+				[type="radio"] {
 					margin-right: 0;
 					margin-left: .28em;
 				}
-				label + input[type="checkbox"] {
+				label + [type="checkbox"] {
 					margin-left: 0;
 					margin-right: .28em;
 				}
@@ -126,21 +126,21 @@
 			#bbp-search-form:before,
 			#menu-search a:before {content: '\3e'}
 
-				.form-search input[type="text"],
-				.widget .form-search input[type="text"],
-				.widget .woocommerce-product-search input[type="search"],
-				#searchform input[type="text"],
-				#bbp-search-form input[type="text"] {
+				.form-search [type="text"],
+				.widget .form-search [type="text"],
+				.widget .woocommerce-product-search [type="search"],
+				#searchform [type="text"],
+				#bbp-search-form [type="text"] {
 					left: auto;
 					right: 0;
 					padding-left: .62em;
 					padding-right: 2em;
 				}
 
-			.form-search input[type="submit"],
-			.widget .woocommerce-product-search input[type="submit"],
-			#searchform input[type="submit"],
-			#bbp-search-form input[type="submit"] {
+			.form-search [type="submit"],
+			.widget .woocommerce-product-search [type="submit"],
+			#searchform [type="submit"],
+			#bbp-search-form [type="submit"] {
 				left: auto;
 				right: 0;
 				text-indent: 999em;

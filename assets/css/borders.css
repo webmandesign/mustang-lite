@@ -1,7 +1,7 @@
 /**
  * Borders
  *
- * @version  1.5
+ * @version  1.8.2
  */
 
 	.no-border {border: 0 !important}
@@ -38,7 +38,7 @@
 		.wm-call-to-action,
 		.color-blue, .color-gray, .color-green, .color-orange, .color-red,
 		.wm-message,
-		.wm-button, button, input[type="button"], input[type="submit"],
+		.wm-button, button, [type="button"], [type="submit"],
 		.wm-accordion .wm-item-title,
 		.wm-tabs .wm-item,
 		.wm-tour-nav,
