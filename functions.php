@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.2
  */
 
 
@@ -141,3 +141,5 @@
 	locate_template( WM_SETUP_DIR . 'setup.php',   true );
 
 	locate_template( WM_LIBRARY_DIR . 'admin.php', true );
+
+	require WM_SETUP_DIR . 'functions.php';

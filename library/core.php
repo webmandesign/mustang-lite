@@ -11,7 +11,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @version  3.4
- * @version  1.8.1
+ * @version  1.8.2
  *
  * CONTENT:
  * - 1) Required files
@@ -20,6 +20,7 @@
  * - 30) Branding
  * - 40) Post/page
  * - 50) Other functions
+ * 100) Filesystem
  */
 
 
@@ -1837,109 +1838,153 @@
 		 *
 		 * @since    3.0
 		 * @version  3.4
-		 * @version  1.8.1
+		 * @version  1.8.2
 		 *
-		 * @param    boolean $args
+		 * @param  boolean $args
 		 */
 		if ( ! function_exists( 'wm_generate_main_css' ) ) {
 			function wm_generate_main_css( $args = array() ) {
-				//Requirements check
+
+				// Requirements check
+
 					if ( ! class_exists( 'WM_Amplifier' ) ) {
 						return false;
 					}
 
-				//Helper viariables
-					$args = wp_parse_args( $args, apply_filters( 'wmhook_wm_generate_main_css_args', array(
-							'gzip'           => false,
-							'message'        => __( "<big>The main theme CSS stylesheet was regenerated.<br /><strong>Please refresh your web browser's and server's cache</strong> <em>(if you are using a website server caching solution)</em>.</big>", 'mustang-lite' ),
-							'message_after'  => '',
-							'message_before' => '',
-							'type'           => '',
-						) ) );
+
+				// Helper variables
+
+					$args = wp_parse_args( $args, (array) apply_filters( 'wmhook_wm_generate_main_css_args', array(
+						'type' => '',
+					) ) );
+					$args['type'] = trim( $args['type'] );
 
 					$output = $output_min = '';
 
-					if ( ! $args['gzip'] ) {
-						$args['gzip'] = wm_option( 'general-gzip' ) || wm_option( 'skin-gzip' );
+					$filesystem = wm_get_filesystem();
+
+
+					$css_dir_child      = get_stylesheet_directory() . '/assets/css/';
+					$css_generator_file = '_generate' . $args['type'] . '-css.php';
+
+					if ( file_exists( $css_dir_child . $css_generator_file ) ) {
+						$required_file = $css_dir_child . $css_generator_file;
+					} else {
+						$required_file = get_template_directory() . '/assets/css/' . $css_generator_file;
 					}
-					$args['gzip'] = apply_filters( 'wmhook_wm_generate_main_css_gzip', $args['gzip'], $args );
 
-					$args['type'] = trim( $args['type'] );
 
-				//Preparing output
-					//Get the file content with output buffering
-						if ( $args['gzip'] ) {
-						//GZIP enabled
-							ob_start( 'ob_gzhandler' );
-						} else {
-						//no GZIP
-							ob_start();
+				// Requirements check
+
+					if (
+						! file_exists( $required_file )
+						|| ! $filesystem
+						|| ! is_callable( array( $filesystem, 'put_contents' ) )
+						|| ! function_exists( 'wp_mkdir_p' )
+					) {
+						return;
+					}
+
+
+				// Processing
+
+					// Get the file content with output buffering
+
+						ob_start();
+						locate_template( 'assets/css/' . $css_generator_file, true );
+						$output = trim( ob_get_clean() );
+
+					// Requirements check
+
+						if ( ! $output ) {
+							return;
 						}
 
-						//Get the file from child theme if exists
-							$css_dir_child      = get_stylesheet_directory() . '/assets/css/';
-							$css_generator_file = '_generate' . $args['type'] . '-css.php';
+					// Minify output if set
 
-							if ( file_exists( $css_dir_child . $css_generator_file ) ) {
-								$css_generator_file_check = $css_dir_child . $css_generator_file;
-							} else {
-								$css_generator_file_check = get_template_directory() . '/assets/css/' . $css_generator_file;
-							}
+						$output_min = (string) apply_filters( 'wmhook_wm_generate_main_css_output_min', $output, $args );
 
-							if ( file_exists( $css_generator_file_check ) ) {
-								locate_template( 'assets/css/' . $css_generator_file, true );
-							}
+					// Create the theme CSS folder
 
-						$output = ob_get_clean();
-
-					if ( ! $output ) {
-						return false;
-					}
-
-					//Minify output if set
-						$output_min = apply_filters( 'wmhook_wm_generate_main_css_output_min', $output, $args );
-
-				//Output
-					//Create the theme CSS folder
 						$wp_upload_dir = wp_upload_dir();
 
 						$theme_css_url = trailingslashit( $wp_upload_dir['baseurl'] ) . 'wmtheme-' . WM_THEME_SHORTNAME;
 						$theme_css_dir = trailingslashit( $wp_upload_dir['basedir'] ) . 'wmtheme-' . WM_THEME_SHORTNAME;
 
-						if ( ! wma_create_folder( $theme_css_dir ) ) {
-							set_transient( 'wmamp-admin-notice', array( "<strong>ERROR: Wasn't able to create a theme CSS folder! Contact the theme support.</strong>", 'error', 'switch_themes', 2 ), ( 60 * 60 * 48 ) );
+						if (
+							! ( file_exists( $theme_css_dir ) && is_dir( $theme_css_dir ) )
+							&& ! wp_mkdir_p( $theme_css_dir )
+						) {
+
+							/**
+							 * Display admin notice if we can not write the file,
+							 * and exit the method returning `false`.
+							 */
+
+							set_transient(
+								'wmamp-admin-notice',
+								array(
+									'<strong>' . esc_html__( "ERROR: Wasn't able to create a theme CSS folder! Contact the theme support.", 'mustang-lite' ) . '</strong>',
+									'notice-error',
+									'edit_theme_options',
+									2
+								),
+								( 60 * 60 * 48 )
+							);
 
 							delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-css' );
 							delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-files' );
 
 							return false;
+
 						}
 
-					$css_file_name       = apply_filters( 'wmhook_wm_generate_main_css_css_file_name',       'global' . $args['type'],                                        $args                 );
-					$global_css_path     = apply_filters( 'wmhook_wm_generate_main_css_global_css_path',     trailingslashit( $theme_css_dir ) . $css_file_name . '.css',     $args, $css_file_name );
-					$global_css_url      = apply_filters( 'wmhook_wm_generate_main_css_global_css_url',      trailingslashit( $theme_css_url ) . $css_file_name . '.css',     $args, $css_file_name );
-					$global_css_path_dev = apply_filters( 'wmhook_wm_generate_main_css_global_css_path_dev', trailingslashit( $theme_css_dir ) . $css_file_name . '.dev.css', $args, $css_file_name );
+					// Create the theme CSS files
 
-					if ( $output ) {
-						wma_write_local_file( $global_css_path, $output_min );
-						wma_write_local_file( $global_css_path_dev, $output );
+						$file_name = apply_filters( 'wmhook_wm_generate_main_css_css_file_name', 'global' . $args['type'], $args );
 
-						//Store the CSS files paths and urls in DB
-							update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-css',   $global_css_url );
-							update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-files', str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
+						$global_css_path     = apply_filters( 'wmhook_wm_generate_main_css_global_css_path', trailingslashit( $theme_css_dir ) . $file_name . '.css', $args, $file_name, $theme_css_dir );
+						$global_css_path_dev = apply_filters( 'wmhook_wm_generate_main_css_global_css_path_dev', trailingslashit( $theme_css_dir ) . $file_name . '.dev.css', $args, $file_name, $theme_css_dir );
 
-						//Admin notice
-							set_transient( 'wmamp-admin-notice', array( $args['message_before'] . $args['message'] . $args['message_after'], '', 'switch_themes' ), ( 60 * 60 * 24 ) );
+						$global_css_url = apply_filters( 'wmhook_wm_generate_main_css_global_css_url', trailingslashit( $theme_css_url ) . $file_name . '.css', $args, $file_name, $theme_css_url );
 
-						//Run custom actions
-							do_action( 'wmhook_wm_generate_main_css', $args );
+						if (
+							$output
+							&& $filesystem->put_contents( $global_css_path, $output_min )
+						) {
 
-						return true;
-					}
+							/**
+							 * Alright, we've got a CSS string to write,
+							 * and we have already successfully created a main stylesheet file.
+							 *
+							 * Now create unminified stylesheet file (with `dev-` prefix),
+							 * and save all generated files paths and URLs in theme mods (for easier access),
+							 * and run action hook afterwards,
+							 * and then confirm a success returning `true` :)
+							 */
 
-					delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-css' );
-					delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-files' );
-					return false;
+							$filesystem->put_contents( $global_css_path_dev, $output );
+
+							// Store the CSS files paths and urls in DB
+
+								update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-css', $global_css_url );
+								update_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-files', str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
+
+							// Run custom actions
+
+								do_action( 'wmhook_wm_generate_main_css', $args );
+
+							return true;
+
+						}
+
+					// Well, if we've got down here, there is really nothing we can do...
+
+						delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-css' );
+						delete_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . $args['type'] . '-files' );
+
+						return false;
+
 			}
 		} // /wm_generate_main_css
 
@@ -2117,3 +2162,82 @@
 					return apply_filters( 'wmhook_wm_css_background_output', $output[ $args['return'] ], $args );
 			}
 		} // /wm_css_background
+
+
+
+
+
+/**
+ * 100) Filesystem
+ */
+
+	/**
+	 * Get WP_Filesystem
+	 *
+	 * Possible filesystem methods: 'direct', 'ssh2', 'ftpext' or 'ftpsockets'.
+	 *
+	 * No need to use `request_filesystem_credentials()` if using 'direct' method.
+	 * @see  http://aquagraphite.com/2012/11/using-wp_filesystem-to-generate-dynamic-css/
+	 *
+	 * If not using 'direct' method, display an admin notice about setting up
+	 * the FTP credentials in `wp-config.php`.
+	 * @see  http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants
+	 *
+	 * @see  https://codex.wordpress.org/Filesystem_API
+	 * @see  http://ottopress.com/2011/tutorial-using-the-wp_filesystem/
+	 * @see  http://wordpress.findincity.net/view/63538464303732726692954/using-wpfilesystem-in-plugins-to-store-customizer-settings
+	 *
+	 * @since    1.8.2
+	 * @version  1.8.2
+	 */
+	if ( ! function_exists( 'wm_get_filesystem' ) ) {
+		function wm_get_filesystem() {
+
+			// Requirements check
+
+				// Require the WordPress filesystem functionality if not found
+
+					if (
+						! function_exists( 'get_filesystem_method' )
+						&& ABSPATH
+					) {
+						require_once( ABSPATH . 'wp-admin/includes/file.php' );
+					}
+
+				// Check the filesystem method
+
+					if (
+						'direct' !== get_filesystem_method()
+						&& ! defined( 'FTP_USER' )
+					) {
+
+						// If we don't have filesystem access, display an admin notice
+
+							set_transient(
+								'wmamp-admin-notice',
+								array(
+									esc_html__( 'The theme writes a files to your server. You do not appear to have your FTP credentials set up in "wp-config.php" file.', 'mustang-lite' ) . ' <a href="http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants" target="_blank">' . esc_html__( 'Please set your FTP credentials first.', 'mustang-lite' ) . '</a>',
+									'notice-error',
+									'edit_theme_options'
+								),
+								( 60 * 60 * 24 )
+							);
+
+						return false;
+
+					}
+
+
+			// Processing
+
+				WP_Filesystem();
+
+				global $wp_filesystem;
+
+
+			// Output
+
+				return $wp_filesystem;
+
+		}
+	} // /wm_get_filesystem

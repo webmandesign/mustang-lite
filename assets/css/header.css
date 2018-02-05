@@ -1,5 +1,5 @@
 /**
- * @version  1.6
+ * @version  1.8.2
  */
 
 
@@ -202,12 +202,6 @@
 				.lie8 .logo img,
 				.lie8 .logo .text-logo,
 				.lie8 .logo .description {width: auto} /* IE8 required */
-
-			/* description text */
-				.logo .description {
-					position: absolute;
-					clip: rect(1px, 1px, 1px, 1px);
-				}
 
 
 

@@ -1,7 +1,7 @@
 /**
  * Core styles
  *
- * @version  1.8.1
+ * @version  1.8.2
  */
 
 
@@ -170,29 +170,41 @@
 				height: 1.62em;
 			}
 
+			.logo .description,
+			.comments-link .comments-title,
+			.entry-permalink.entry-meta-element span,
+			.woocommerce-page #review_form #respond p.comment-form-rating label,
 			.screen-reader-text {
-				position: absolute;
-				clip: rect(1px, 1px, 1px, 1px);
+				position: absolute !important;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				line-height: 1px;
+				word-wrap: normal !important;
+				clip-path: inset( 50% );
+				clip: rect( 1px, 1px, 1px, 1px );
+				overflow: hidden;
 			}
 				.screen-reader-text:focus {
-					clip: auto;
-					position: absolute;
-					display: block;
-					width: auto;
+					position: static !important;
 					height: auto;
-					left: 5px;
-					top: 5px;
-					padding: 15px 23px 14px;
-					line-height: normal;
+					width: auto;
+					left: .38rem;
+					top: .38rem;
+					padding: 1rem;
+					line-height: inherit;
+					word-wrap: break-word !important;
+					clip-path: none;
+					clip: auto;
+					overflow: visible;
+
 					text-decoration: none;
-					text-transform: none;
-					font-size: 14px;
-					font-weight: bold;
-					background-color: #f1f1f1;
-					color: #21759b;
-					border-radius: 3px;
-					box-shadow: 0 0 2px 2px rgba(0,0,0, .6);
-					z-index: 100000; /* Above WP toolbar */
+					font-size: .81rem;
+					font-weight: 700;
+					background-color: #47c;
+					color: #fff;
+					z-index: 100000; /* Above WP toolbar. */
 				}
 
 			.image-container {position: relative}

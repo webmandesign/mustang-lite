@@ -1,4 +1,4 @@
-{
+<?php $skin_json = '{
 	"wm-skin-css"                         : "",
 	"wm-skin-layout"                      : "fullwidth",
 	"wm-skin-website-width"               : 1560,
@@ -109,4 +109,4 @@
 	"wm-skin-font-size-h2"                : 165,
 	"wm-skin-font-size-h3"                : 130,
 	"wm-skin-font-size-h4"                : 115
-}
+}';

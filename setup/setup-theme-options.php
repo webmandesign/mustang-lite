@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.2
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -78,7 +78,7 @@
 	 * Set $wm_skin_design array
 	 *
 	 * @since    1.0
-	 * @version  1.6
+	 * @version  1.8.2
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -659,19 +659,19 @@
 									'type'    => 'select',
 									'id'      => $prefix . 'font' . '-logo',
 									'label'   => __( 'Text logo font', 'mustang-lite' ),
-									'options' => ( function_exists( 'wma_asort' ) ) ? ( wma_asort( wm_helper_var( 'google-fonts' ) ) ) : ( wm_helper_var( 'google-fonts' ) ),
+									'options' => wm_helper_var( 'google-fonts' ),
 								),
 								'fonts' . 20 => array(
 									'type'    => 'select',
 									'id'      => $prefix . 'font' . '-headings',
 									'label'   => __( 'Headings font', 'mustang-lite' ),
-									'options' => ( function_exists( 'wma_asort' ) ) ? ( wma_asort( wm_helper_var( 'google-fonts' ) ) ) : ( wm_helper_var( 'google-fonts' ) ),
+									'options' => wm_helper_var( 'google-fonts' ),
 								),
 								'fonts' . 30 => array(
 									'type'    => 'select',
 									'id'      => $prefix . 'font' . '-body',
 									'label'   => __( 'Body text font', 'mustang-lite' ),
-									'options' => ( function_exists( 'wma_asort' ) ) ? ( wma_asort( wm_helper_var( 'google-fonts' ) ) ) : ( wm_helper_var( 'google-fonts' ) ),
+									'options' => wm_helper_var( 'google-fonts' ),
 								),
 
 								'fonts' . 40 => array(

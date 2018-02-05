@@ -5,7 +5,7 @@
  * Styles are sorted in order in which they are included into main stylesheet file.
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.8.2
  *
  * @link  http://codex.wordpress.org/Right_to_Left_Language_Support
  */
@@ -52,7 +52,7 @@
 			/* Classes */
 				.screen-reader-text:focus {
 					left: auto;
-					right: 5px;
+					right: .38rem;
 				}
 
 		/* Pagination */

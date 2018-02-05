@@ -1,5 +1,14 @@
 # Mustang Lite Changelog
 
+## 1.8.2
+
+* **Add**:
+* **Update**:
+* **Fix**:
+
+### Files changed:
+
+
 ## 1.8.1
 
 * **Update**: WordPress 4.9 compatible

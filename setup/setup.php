@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.1
+ * @version  1.8.2
  *
  * CONTENT:
  * - 1) Required files
@@ -632,40 +632,35 @@
 	 * This function must run after WebMan Amplifier is active!
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.8.2
 	 */
 	if ( ! function_exists( 'wm_default_setup' ) ) {
 		function wm_default_setup() {
-			//Requirements check
-				if ( ! function_exists( 'wma_read_local_file' ) ) {
-					return;
-				}
 
-			//Processing
+			// Processing
+
 				/**
 				 * Theme installation: Step 2
 				 */
 				if ( 2 > absint( get_option( WM_THEME_SETTINGS_INSTALL ) ) ) {
-					//Files setup
-						$file_path = WM_SKINS . 'default.json';
+					$file_path = WM_SKINS . 'default.php';
 
-					//Check if file exists
-						if ( file_exists( $file_path ) ) {
+					if ( file_exists( $file_path ) ) {
+						$replacements = (array) apply_filters( 'wmhook_generate_css_replacements', array() );
 
-							//Save default theme skin
-								$replacements = (array) apply_filters( 'wmhook_generate_css_replacements', array() );
-								$saving       = strtr( wma_read_local_file( $file_path ), $replacements );
-								$saving       = json_decode( trim( $saving ), true );
+						$skin_json = '';
+						include_once $file_path;
 
-								update_option( WM_THEME_SETTINGS_SKIN, $saving );
+						$skin_json = strtr( $skin_json, $replacements );
+						$skin_json = json_decode( trim( $skin_json ), true );
 
-							//Step 2 of theme installation done!
-								update_option( WM_THEME_SETTINGS_INSTALL, 2 );
+						update_option( WM_THEME_SETTINGS_SKIN, $skin_json );
+						update_option( WM_THEME_SETTINGS_INSTALL, 2 );
 
-							do_action( 'wmhook_wm_install_step_2' );
-
-						}
+						do_action( 'wmhook_wm_install_step_2' );
+					}
 				}
+
 		}
 	} // /wm_default_setup
 
@@ -878,38 +873,47 @@
 	 * Get Google Fonts link
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.8.2
 	 */
 	if ( ! function_exists( 'wm_google_fonts' ) ) {
 		function wm_google_fonts() {
-			//Helper variables
+
+			// Helper variables
+
 				$output = array();
 				$subset = wm_option( 'skin-font-subset' );
 
-				$fonts_sections = array( wm_option( 'skin-font-body' ), wm_option( 'skin-font-headings' ) );
+				$fonts_sections = array(
+					wm_option( 'skin-font-body' ),
+					wm_option( 'skin-font-headings' )
+				);
+
 				if (
-						! wm_option( 'skin-logo' )
-						&& wm_option( 'skin-font-logo' )
-					)  {
+					! wm_option( 'skin-logo' )
+					&& wm_option( 'skin-font-logo' )
+				) {
 					$fonts_sections[] = wm_option( 'skin-font-logo' );
 				}
-				$fonts_sections = apply_filters( 'wmhook_wm_google_fonts_sections', array_filter( $fonts_sections ) );
 
-			//Preparing output
+				$fonts_sections = array_unique( array_filter( (array) apply_filters( 'wmhook_wm_google_fonts_sections', $fonts_sections ) ) );
+
+
+			// Processing
+
 				foreach ( $fonts_sections as $section ) {
-					$font = trim( $section );
-					if ( $font ) {
+					if ( $font = trim( $section ) ) {
 						$output[] = str_replace( ' ', '+', $font );
 					}
 				}
+
 				$output = implode( '|', array_unique( $output ) );
 
 				if ( $output ) {
 					$output = '?family=' . $output;
 					if ( is_array( $subset ) ) {
-						$output .= '&amp;subset=' . implode( ',', $subset );
+						$output .= '&amp;subset=' . esc_attr( implode( ',', $subset ) );
 					} elseif ( $subset ) {
-						$output .= '&amp;subset=' . $subset;
+						$output .= '&amp;subset=' . esc_attr( (string) $subset );
 					}
 				}
 
@@ -918,8 +922,11 @@
 				 * ?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
 				 */
 
-			//Output
+
+			// Output
+
 				return apply_filters( 'wmhook_wm_google_fonts_output', $output );
+
 		}
 	} // /wm_google_fonts
 

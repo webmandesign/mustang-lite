@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mustang\n"
-"Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2016-10-13 15:38+0200\n"
+"Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
+"POT-Creation-Date: 2018-02-05 17:28+0100\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Return to homepage"
 msgstr ""
 
-#: comments.php:37 library/core.php:1135
+#: comments.php:37 library/core.php:1136
 #, php-format
 msgid "Comments: %s"
 msgstr ""
@@ -47,101 +47,109 @@ msgstr ""
 msgid "Comments are closed. You can not add new comments."
 msgstr ""
 
-#: library/core.php:302 library/core.php:312
+#: library/core.php:303 library/core.php:313
 #, php-format
 msgid "%s logo"
 msgstr ""
 
-#: library/core.php:604
+#: library/core.php:605
 #, php-format
 msgid "\"%s\" table of contents"
 msgstr ""
 
-#: library/core.php:640
+#: library/core.php:641
 #, php-format
 msgid "Part %d"
 msgstr ""
 
-#: library/core.php:901 library/core.php:962
+#: library/core.php:902 library/core.php:963
 msgid "Password protected"
 msgstr ""
 
-#: library/core.php:1017
+#: library/core.php:1018
 #, php-format
 msgid ""
 "Continue reading <span class=\"screen-reader-text\">the \"%s\" </span>&raquo;"
 msgstr ""
 
-#: library/core.php:1135
+#: library/core.php:1136
 #, php-format
 msgid "<span class=\"comments-title\">Comments: </span>%s"
 msgstr ""
 
-#: library/core.php:1177
+#: library/core.php:1178
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: library/core.php:1195
+#: library/core.php:1196
 #, php-format
 msgid "<strong>Tags:</strong> %s"
 msgstr ""
 
-#: library/core.php:1236
+#: library/core.php:1237
 msgid "Part %"
 msgstr ""
 
-#: library/core.php:1284
+#: library/core.php:1285
 #, php-format
 msgid "(part %s)"
 msgstr ""
 
-#: library/core.php:1286
+#: library/core.php:1287
 #, php-format
 msgid "(page %s)"
 msgstr ""
 
-#: library/core.php:1303
+#: library/core.php:1304
 msgid "No item found"
 msgstr ""
 
-#: library/core.php:1534
+#: library/core.php:1535
 msgid "Search for:"
 msgstr ""
 
-#: library/core.php:1536
+#: library/core.php:1537
 msgid "Search for..."
 msgstr ""
 
-#: library/core.php:1546
+#: library/core.php:1547
 msgid "Submit"
 msgstr ""
 
-#: library/core.php:1614
+#: library/core.php:1615
 msgid "Comment navigation"
 msgstr ""
 
-#: library/core.php:1615
+#: library/core.php:1616
 msgid "&larr; Older comments"
 msgstr ""
 
-#: library/core.php:1616
+#: library/core.php:1617
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: library/core.php:1636
+#: library/core.php:1637
 msgid "Skip to content"
 msgstr ""
 
-#: library/core.php:1637
+#: library/core.php:1638
 msgid "Skip to navigation"
 msgstr ""
 
-#: library/core.php:1854
+#: library/core.php:1927
 msgid ""
-"<big>The main theme CSS stylesheet was regenerated.<br /><strong>Please "
-"refresh your web browser's and server's cache</strong> <em>(if you are using "
-"a website server caching solution)</em>.</big>"
+"ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
+msgstr ""
+
+#: library/core.php:2219
+msgid ""
+"The theme writes a files to your server. You do not appear to have your FTP "
+"credentials set up in \"wp-config.php\" file."
+msgstr ""
+
+#: library/core.php:2219
+msgid "Please set your FTP credentials first."
 msgstr ""
 
 #: library/includes/class-tgm-plugin-activation.php:346
@@ -602,7 +610,7 @@ msgstr ""
 msgid "Background color"
 msgstr ""
 
-#: library/skinning.php:393 setup/setup-webman-amplifier.php:1173
+#: library/skinning.php:393 setup/setup-webman-amplifier.php:1229
 msgid "Background image"
 msgstr ""
 
@@ -640,43 +648,43 @@ msgstr ""
 msgid "%s update"
 msgstr ""
 
-#: setup/about/about.php:130
+#: setup/about/about.php:133
 msgid "Welcome"
 msgstr ""
 
-#: setup/about/about.php:167
+#: setup/about/about.php:170
 #, php-format
 msgctxt "1: theme name, 2: theme version number."
 msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: setup/about/about.php:179
+#: setup/about/about.php:182
 #, php-format
 msgctxt "1: theme name, 2: theme developer link."
 msgid "Thank you for using %1$s WordPress theme by %2$s!"
 msgstr ""
 
-#: setup/about/about.php:186
+#: setup/about/about.php:189
 msgid "Please take time to read the steps below to set up your website."
 msgstr ""
 
-#: setup/about/about.php:193
+#: setup/about/about.php:196
 msgid "Theme Documentation"
 msgstr ""
 
-#: setup/about/about.php:195
+#: setup/about/about.php:198
 msgid "Support Forum"
 msgstr ""
 
-#: setup/about/about.php:207
+#: setup/about/about.php:210
 msgid "Quickstart Guide"
 msgstr ""
 
-#: setup/about/about.php:215
+#: setup/about/about.php:218
 msgid "WebMan Amplifier"
 msgstr ""
 
-#: setup/about/about.php:218
+#: setup/about/about.php:221
 #, php-format
 msgctxt "%s: plugin name."
 msgid ""
@@ -684,120 +692,124 @@ msgid ""
 "plugin."
 msgstr ""
 
-#: setup/about/about.php:219
+#: setup/about/about.php:222
 msgid ""
 "Please, install and activate this plugin to unveil the additional "
 "functionality."
 msgstr ""
 
-#: setup/about/about.php:224
+#: setup/about/about.php:227
 #, php-format
 msgctxt "%s: plugin name."
 msgid "Install %s &raquo;"
 msgstr ""
 
-#: setup/about/about.php:234
+#: setup/about/about.php:237
 msgid "The WordPress settings"
 msgstr ""
 
-#: setup/about/about.php:237
+#: setup/about/about.php:240
 msgid ""
 "Do not forget to set up your WordPress in \"Settings\" section of the "
 "WordPress dashboard."
 msgstr ""
 
-#: setup/about/about.php:238
+#: setup/about/about.php:241
 msgid "Please go through all the subsections and options."
 msgstr ""
 
-#: setup/about/about.php:239
+#: setup/about/about.php:242
 msgid "This step is required for all WordPress websites."
 msgstr ""
 
-#: setup/about/about.php:242
+#: setup/about/about.php:245
 msgid "Set Up WordPress &raquo;"
 msgstr ""
 
-#: setup/about/about.php:250
+#: setup/about/about.php:253
 msgid "Customize the theme"
 msgstr ""
 
-#: setup/about/about.php:253
+#: setup/about/about.php:256
 msgid "You can customize the theme using live-preview editor."
 msgstr ""
 
-#: setup/about/about.php:254
+#: setup/about/about.php:257
 msgid "Customization changes will go live only after you save them!"
 msgstr ""
 
-#: setup/about/about.php:257
+#: setup/about/about.php:260
 msgid "Customize the Theme &raquo;"
 msgstr ""
 
-#: setup/about/about.php:270
+#: setup/about/about.php:273
 msgid "Important:"
 msgstr ""
 
-#: setup/about/about.php:277
+#: setup/about/about.php:280
 msgid ""
 "For the best performance, the theme generates a single CSS stylesheet file "
 "using WordPress native filesystem API."
 msgstr ""
 
-#: setup/about/about.php:278
+#: setup/about/about.php:281
 msgid "The file is being generated after saving theme customizer settings."
 msgstr ""
 
-#: setup/about/about.php:279
+#: setup/about/about.php:282
 msgid ""
 "If you notice an error message in WordPress dashboard after leaving the "
 "theme customizer, please check whether you should set up the FTP credentials "
 "in your \"wp-config.php\" file."
 msgstr ""
 
-#: setup/about/about.php:280
+#: setup/about/about.php:283
 msgid "In that case please read the instructions &raquo;"
 msgstr ""
 
-#: setup/about/about.php:288
+#: setup/about/about.php:291
 msgid "Installing the theme demo content"
 msgstr ""
 
-#: setup/about/about.php:291
+#: setup/about/about.php:294
 msgid ""
 "You can install the theme demo content including pages, posts, custom post "
 "types, layouts, menus and widgets directly from your WordPress dashboard by "
 "clicking the button bellow."
 msgstr ""
 
-#: setup/about/about.php:295
+#: setup/about/about.php:298
 msgid ""
 "Alternatively (such as when the automated installation fails) you can follow "
 "theme documentation instructions for manual demo content installation."
 msgstr ""
 
-#: setup/about/about.php:296
+#: setup/about/about.php:299
 msgid "Read the instructions &raquo;"
 msgstr ""
 
-#: setup/about/about.php:301
+#: setup/about/about.php:304
 msgid "Install and run \"One Click Demo Import\" plugin"
 msgstr ""
 
-#: setup/about/about.php:305
+#: setup/about/about.php:308
 msgid "Install theme demo content"
 msgstr ""
 
-#: setup/about/about.php:309
+#: setup/about/about.php:312
 msgid ""
 "Or head over to Appearance &raquo; Import Demo Data to start the import "
 "process."
 msgstr ""
 
-#: setup/about/about.php:320
+#: setup/about/about.php:323
 msgid ""
 "You can disable this page in Appearance &raquo; Customize &raquo; Theme "
 "&raquo; Others."
+msgstr ""
+
+#: setup/functions.php:230
+msgid "All posts"
 msgstr ""
 
 #: setup/plugins.php:57
@@ -864,51 +876,51 @@ msgstr ""
 msgid "Bottom shadow on items (working with Posts and Testimonials)"
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:109
+#: setup/setup-one-click-demo-import.php:107
 msgid "Theme demo content"
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:141
+#: setup/setup-one-click-demo-import.php:139
 msgid "Media files quality"
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:145
+#: setup/setup-one-click-demo-import.php:143
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:146
+#: setup/setup-one-click-demo-import.php:144
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:147
+#: setup/setup-one-click-demo-import.php:145
 msgid "Get media for your website &raquo;"
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:155
+#: setup/setup-one-click-demo-import.php:153
 msgid "Install required plugins!"
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:159
+#: setup/setup-one-click-demo-import.php:157
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:160
+#: setup/setup-one-click-demo-import.php:158
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:161
+#: setup/setup-one-click-demo-import.php:159
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 
-#: setup/setup-one-click-demo-import.php:162
+#: setup/setup-one-click-demo-import.php:160
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
@@ -1285,7 +1297,7 @@ msgid "Heading H4, H5 and H6 font size"
 msgstr ""
 
 #: setup/setup-theme-options.php:773 setup/setup-theme-options.php:779
-#: setup/setup-webman-amplifier.php:1091 setup/setup-webman-amplifier.php:1142
+#: setup/setup-webman-amplifier.php:1106 setup/setup-webman-amplifier.php:1197
 msgid "Layout"
 msgstr ""
 
@@ -1611,73 +1623,73 @@ msgid ""
 "image. Please enter the slider shortcode."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1094
+#: setup/setup-webman-amplifier.php:1108
 msgid "Default layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1095
+#: setup/setup-webman-amplifier.php:1109
 msgid "Simple posts or projects layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1115
+#: setup/setup-webman-amplifier.php:1170
 msgid "Theme Modules"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1135
+#: setup/setup-webman-amplifier.php:1190
 msgid "Output layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1136
+#: setup/setup-webman-amplifier.php:1191
 msgid ""
 "Set optional output layout name. You can use <code>simple</code> with "
 "<em>Posts</em> and <em>Projects</em> posts."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1148
+#: setup/setup-webman-amplifier.php:1203
 msgid "Remove section inner container"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1149
+#: setup/setup-webman-amplifier.php:1204
 msgid "This is only relevant when using \"Fullwidth sections\" page layout."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1154
+#: setup/setup-webman-amplifier.php:1209
 msgid ""
 "Remove the inner Section container to make the content fill the whole "
 "section without any paddings."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1160
+#: setup/setup-webman-amplifier.php:1216
 msgid "Section background video URL"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1161
+#: setup/setup-webman-amplifier.php:1217
 msgid ""
 "Set optional section background video URL. Video will be played "
 "automatically in a loop."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1167
+#: setup/setup-webman-amplifier.php:1223
 msgid "Styling"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1174
+#: setup/setup-webman-amplifier.php:1230
 msgid "The image will cover the column background"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1188
+#: setup/setup-webman-amplifier.php:1244
 msgid "Forums Index"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1191
+#: setup/setup-webman-amplifier.php:1247
 msgid "Forum"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1195
+#: setup/setup-webman-amplifier.php:1252
 msgid "bbPress Shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1196
+#: setup/setup-webman-amplifier.php:1253
 msgid "This will display your entire forum index. No parameters to be set."
 msgstr ""
 
@@ -1864,133 +1876,133 @@ msgstr ""
 msgid "Main navigation"
 msgstr ""
 
-#: setup/setup.php:1320
+#: setup/setup.php:1323
 msgid "Open extra topbar"
 msgstr ""
 
-#: setup/setup.php:1373
+#: setup/setup.php:1376
 msgid "Close search form"
 msgstr ""
 
-#: setup/setup.php:1410
+#: setup/setup.php:1413
 msgid "Menu"
 msgstr ""
 
-#: setup/setup.php:1449
+#: setup/setup.php:1452
 msgid "Show cart"
 msgstr ""
 
-#: setup/setup.php:1453
+#: setup/setup.php:1456
 msgid "Search"
 msgstr ""
 
-#: setup/setup.php:1852
+#: setup/setup.php:1855
 #, php-format
 msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1854
+#: setup/setup.php:1857
 #, php-format
 msgid "Monthly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1854
+#: setup/setup.php:1857
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: setup/setup.php:1856
+#: setup/setup.php:1859
 #, php-format
 msgid "Yearly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1856
+#: setup/setup.php:1859
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: setup/setup.php:1858
+#: setup/setup.php:1861
 #, php-format
 msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1860
+#: setup/setup.php:1863
 #, php-format
 msgid "Tag Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1862
+#: setup/setup.php:1865
 #, php-format
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1865
+#: setup/setup.php:1868
 #, php-format
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
-#: setup/setup.php:1869
+#: setup/setup.php:1872
 msgid "Archives"
 msgstr ""
 
-#: setup/setup.php:1900
+#: setup/setup.php:1903
 msgid "Error 404"
-msgstr ""
-
-#: setup/setup.php:1906
-#, php-format
-msgid "%s forums"
 msgstr ""
 
 #: setup/setup.php:1909
 #, php-format
-msgid "Forum: %s"
+msgid "%s forums"
 msgstr ""
 
 #: setup/setup.php:1912
 #, php-format
+msgid "Forum: %s"
+msgstr ""
+
+#: setup/setup.php:1915
+#, php-format
 msgid "Topic: %s"
 msgstr ""
 
-#: setup/setup.php:1920
+#: setup/setup.php:1923
 #, php-format
 msgid " / Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:2173
+#: setup/setup.php:2176
 msgid "Back to top of the page"
 msgstr ""
 
-#: setup/setup.php:2440
+#: setup/setup.php:2443
 msgid "Content width"
 msgstr ""
 
-#: setup/setup.php:2441
+#: setup/setup.php:2444
 msgid "Mobile width"
-msgstr ""
-
-#: setup/setup.php:2488
-#, php-format
-msgid "Previous item: %s"
 msgstr ""
 
 #: setup/setup.php:2491
 #, php-format
+msgid "Previous item: %s"
+msgstr ""
+
+#: setup/setup.php:2494
+#, php-format
 msgid "Next item: %s"
 msgstr ""
 
-#: setup/setup.php:2933
+#: setup/setup.php:2936
 msgid "Load more..."
 msgstr ""
 
-#: setup/setup.php:2978
+#: setup/setup.php:2981
 msgid "Like it!"
 msgstr ""
 
-#: setup/setup.php:2978
+#: setup/setup.php:2981
 msgid "Liked already!"
 msgstr ""
 
-#: setup/setup.php:2984
+#: setup/setup.php:2987
 msgid "Views count"
 msgstr ""
