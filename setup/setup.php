@@ -936,7 +936,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  1.7
+	 * @version  1.8.2
 	 *
 	 * @param  array $classes
 	 */
@@ -1043,17 +1043,6 @@
 							|| ( is_archive() && apply_filters( 'wmhook_archive_disable_sidebar', false ) )
 						) {
 						$body_classes[100] = 'no-sidebar';
-					}
-
-				//WooCommerce support
-					if ( function_exists( 'wm_is_woocommerce' ) ) {
-						if ( is_woocommerce() ) {
-							$body_classes[110] = 'shop-columns-' . wm_wc_products_columns();
-						}
-
-						if ( function_exists( 'wm_wc_floating_cart' ) && wm_wc_floating_cart( true ) ) {
-							$body_classes[120] = 'floating-cart-enabled';
-						}
 					}
 
 				//bbPress support

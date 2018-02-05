@@ -3,10 +3,47 @@
 ## 1.8.2
 
 * **Add**:
+* **Add**:
+* **Add**:
+* **Add**:
+* **Add**:
+* **Add**:
 * **Update**:
+* **Update**:
+* **Update**:
+* **Update**:
+* **Update**:
+* **Update**:
+* **Fix**:
+* **Fix**:
+* **Fix**:
+* **Fix**:
+* **Fix**:
 * **Fix**:
 
 ### Files changed:
+
+	changelog.md
+	functions.php
+	style.css
+	assets/css/__fallback.css
+	assets/css/_custom-styles.php
+	assets/css/beaver-builder-editor.css
+	assets/css/beaver-builder.css
+	assets/css/borders.css
+	assets/css/content.css
+	assets/css/core.css
+	assets/css/forms.css
+	assets/css/header.css
+	assets/css/reset.css
+	assets/css/responsive.css
+	assets/css/rtl.css
+	assets/css/shortcodes.css
+	library/core.php
+	setup/functions.php
+	setup/setup-theme-options.php
+	setup/setup.php
+	setup/about/about.php
 
 
 ## 1.8.1
