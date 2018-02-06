@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.0
+ * @version  1.8.2
  *
  * CONTENT:
  * - 10) Basics
@@ -553,7 +553,7 @@ jQuery( function() {
 						};
 
 			//WooCommerce support
-				jQuery( '.product > .images a' ).attr( 'rel', 'prettyPhoto[product-gallery]' );
+				// jQuery( '.product > .images a' ).attr( 'rel', 'prettyPhoto[product-gallery]' );
 
 			jQuery( '.gallery, .tiled-gallery, .wm-slideshow' ).each( function() {
 				var $this           = jQuery( this ),

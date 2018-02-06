@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mustang\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2018-02-05 17:28+0100\n"
+"POT-Creation-Date: 2018-02-06 08:54+0100\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -1876,133 +1876,133 @@ msgstr ""
 msgid "Main navigation"
 msgstr ""
 
-#: setup/setup.php:1323
+#: setup/setup.php:1312
 msgid "Open extra topbar"
 msgstr ""
 
-#: setup/setup.php:1376
+#: setup/setup.php:1365
 msgid "Close search form"
 msgstr ""
 
-#: setup/setup.php:1413
+#: setup/setup.php:1402
 msgid "Menu"
 msgstr ""
 
-#: setup/setup.php:1452
+#: setup/setup.php:1441
 msgid "Show cart"
 msgstr ""
 
-#: setup/setup.php:1456
+#: setup/setup.php:1445
 msgid "Search"
 msgstr ""
 
-#: setup/setup.php:1855
+#: setup/setup.php:1844
 #, php-format
 msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1857
+#: setup/setup.php:1846
 #, php-format
 msgid "Monthly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1857
+#: setup/setup.php:1846
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: setup/setup.php:1859
+#: setup/setup.php:1848
 #, php-format
 msgid "Yearly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1859
+#: setup/setup.php:1848
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: setup/setup.php:1861
+#: setup/setup.php:1850
 #, php-format
 msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1863
+#: setup/setup.php:1852
 #, php-format
 msgid "Tag Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1865
+#: setup/setup.php:1854
 #, php-format
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1868
+#: setup/setup.php:1857
 #, php-format
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
-#: setup/setup.php:1872
+#: setup/setup.php:1861
 msgid "Archives"
 msgstr ""
 
-#: setup/setup.php:1903
+#: setup/setup.php:1892
 msgid "Error 404"
 msgstr ""
 
-#: setup/setup.php:1909
+#: setup/setup.php:1898
 #, php-format
 msgid "%s forums"
 msgstr ""
 
-#: setup/setup.php:1912
+#: setup/setup.php:1901
 #, php-format
 msgid "Forum: %s"
 msgstr ""
 
-#: setup/setup.php:1915
+#: setup/setup.php:1904
 #, php-format
 msgid "Topic: %s"
 msgstr ""
 
-#: setup/setup.php:1923
+#: setup/setup.php:1912
 #, php-format
 msgid " / Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:2176
+#: setup/setup.php:2165
 msgid "Back to top of the page"
 msgstr ""
 
-#: setup/setup.php:2443
+#: setup/setup.php:2432
 msgid "Content width"
 msgstr ""
 
-#: setup/setup.php:2444
+#: setup/setup.php:2433
 msgid "Mobile width"
 msgstr ""
 
-#: setup/setup.php:2491
+#: setup/setup.php:2480
 #, php-format
 msgid "Previous item: %s"
 msgstr ""
 
-#: setup/setup.php:2494
+#: setup/setup.php:2483
 #, php-format
 msgid "Next item: %s"
 msgstr ""
 
-#: setup/setup.php:2936
+#: setup/setup.php:2925
 msgid "Load more..."
 msgstr ""
 
-#: setup/setup.php:2981
+#: setup/setup.php:2970
 msgid "Like it!"
 msgstr ""
 
-#: setup/setup.php:2981
+#: setup/setup.php:2970
 msgid "Liked already!"
 msgstr ""
 
-#: setup/setup.php:2987
+#: setup/setup.php:2976
 msgid "Views count"
 msgstr ""

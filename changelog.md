@@ -2,24 +2,12 @@
 
 ## 1.8.2
 
-* **Add**:
-* **Add**:
-* **Add**:
-* **Add**:
-* **Add**:
-* **Add**:
-* **Update**:
-* **Update**:
-* **Update**:
-* **Update**:
-* **Update**:
-* **Update**:
-* **Fix**:
-* **Fix**:
-* **Fix**:
-* **Fix**:
-* **Fix**:
-* **Fix**:
+* **Update**: Styles improvements and fixes
+* **Update**: CSS Normalize 7.0.0
+* **Update**: Localization
+* **Update**: Theme URL
+* **Update**: Preventing WebMan Amplifier legacy functions deprecation
+* **Fix**: Typos
 
 ### Files changed:
 
@@ -39,6 +27,8 @@
 	assets/css/responsive.css
 	assets/css/rtl.css
 	assets/css/shortcodes.css
+	assets/js/scripts-global.js
+	languages/mustang-lite.pot
 	library/core.php
 	setup/functions.php
 	setup/setup-theme-options.php
