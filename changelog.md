@@ -1,5 +1,16 @@
 # Mustang Lite Changelog
 
+## 1.8.3
+
+* **Fix**: Compatibility with Beaver Builder 2.1+
+
+### Files changed:
+
+	changelog.md
+	style.css
+	setup/setup-beaver-builder.php
+
+
 ## 1.8.2
 
 * **Update**: Styles improvements and fixes

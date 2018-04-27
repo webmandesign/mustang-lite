@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.6
+ * @version  1.8.3
  *
  * Contents:
  *
@@ -152,25 +152,30 @@
 	/**
 	 * Late load layout assets
 	 *
-	 * @since    1.6
-	 * @version  1.6
+	 * @since    1.8.3
+	 * @version  1.8.3
 	 */
 	if ( ! function_exists( 'wm_bb_assets_layout' ) ) {
 		function wm_bb_assets_layout() {
 
+			// Helper variables
+
+				$priority  = 120;
+				$callbacks = array(
+					'FLBuilder::enqueue_all_layouts_styles_scripts'     => 10,
+					'FLBuilder::enqueue_ui_styles_scripts'              => 11,
+					'FLBuilderUISettingsForms::enqueue_settings_config' => 11,
+				);
+
+				$order = 0;
+
+
 			// Processing
 
-				// Layout stylesheets
-
-					remove_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_all_layouts_styles_scripts' );
-
-					add_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_all_layouts_styles_scripts', 198 );
-
-				// UI stylesheets
-
-					remove_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_ui_styles_scripts' );
-
-					add_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_ui_styles_scripts', 198 );
+				foreach ( $callbacks as $callback => $default_priority ) {
+					remove_action( 'wp_enqueue_scripts', $callback, $default_priority );
+					   add_action( 'wp_enqueue_scripts', $callback, $priority + $order++ );
+				}
 
 		}
 	} // /wm_bb_assets_layout
