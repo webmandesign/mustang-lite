@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.8.4
+ * @version  1.9.0
  *
  * Contents:
  *
@@ -236,7 +236,7 @@
 	 * Add predefined classes helper dropdown
 	 *
 	 * @since    1.6
-	 * @version  1.6
+	 * @version  1.9.0
 	 */
 	if ( ! function_exists( 'wm_bb_predefined_classes_dropdown' ) ) {
 		function wm_bb_predefined_classes_dropdown($field, $name ) {
@@ -302,4 +302,4 @@
 		}
 	} // /wm_bb_predefined_classes_dropdown
 
-	add_filter( 'fl_builder_render_settings_field', 'wm_bb_predefined_classes_dropdown', 10, 2 );
+	add_filter( 'fl_builder_field_js_config', 'wm_bb_predefined_classes_dropdown', 10, 2 );

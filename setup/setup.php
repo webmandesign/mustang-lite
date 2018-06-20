@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.2
+ * @version  1.9.0
  *
  * CONTENT:
  * - 1) Required files
@@ -440,7 +440,7 @@
 	 * Theme installation
 	 *
 	 * @since    1.0
-	 * @version  1.6
+	 * @version  1.9.0
 	 */
 	if ( ! function_exists( 'wm_install' ) ) {
 		function wm_install() {
@@ -543,7 +543,6 @@
 					) ) );
 
 			//Custom menus
-				add_theme_support( 'menus' );
 				register_nav_menus( apply_filters( 'wmhook_wm_install_menus', array(
 						'main' => __( 'Main navigation', 'mustang-lite' ),
 					) ) );

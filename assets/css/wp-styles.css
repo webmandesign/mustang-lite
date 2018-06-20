@@ -1,7 +1,7 @@
 /**
  * WordPress required styles
  *
- * @version  1.1
+ * @version  1.9.0
  */
 
 
@@ -106,7 +106,7 @@
 	 * Sticky posts
 	 */
 
-		.sticky {}
+		.sticky { /* No specific styles here. */ }
 
 
 

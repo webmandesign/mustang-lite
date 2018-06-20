@@ -3,7 +3,7 @@
  * Theme URI:    https://www.webmandesign.eu/portfolio/mustang-wordpress-theme/
  * Author:       WebMan
  * Author URI:   http://www.webmandesign.eu/
- * Version:      1.8.4
+ * Version:      1.9.0
  * Text Domain:  mustang-lite
  * Domain Path:  /languages
  * License:      GNU General Public License v3
@@ -25,24 +25,3 @@
  *
  * @link  https://webmandesign.github.io/docs/mustang/#child-theme
  */
-
-
-
-
-
-/**
- * The CSS below is added to comply WordPress theme checker.
- * The actual CSS styles are situated in the `assets/css/*.css` files.
- *
- * @link  http://plugins.svn.wordpress.org/theme-check/tags/20150818.1/checks/style_needed.php
- */
-
-.sticky,
-.bypostauthor,
-.alignleft,
-.alignright,
-.aligncenter,
-.wp-caption,
-.wp-caption-text,
-.gallery-caption,
-.screen-reader-text {}

@@ -6,26 +6,25 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.9.0
  */
 
 
 
+	/**
+	 * Content
+	 */
+
+		wmhook_content_bottom();
+
+		wmhook_content_after();
+
+
+
+	/**
+	 * Footer
+	 */
 	if ( ! apply_filters( 'wmhook_disable_footer', false ) ) {
-
-		/**
-		 * Content
-		 */
-
-			wmhook_content_bottom();
-
-			wmhook_content_after();
-
-
-
-		/**
-		 * Footer
-		 */
 
 			wmhook_footer_before();
 

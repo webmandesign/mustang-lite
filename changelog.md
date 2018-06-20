@@ -1,5 +1,22 @@
 # Mustang Lite Changelog
 
+## 1.9.0
+
+* **Update**: Beaver Builder compatibility
+* **Update**: Improved header and footer disabling
+
+### Files changed:
+
+	changelog.md
+	footer.php
+	header.php
+	style.css
+	assets/css/wp-styles.css
+	page-template/blank.php
+	setup/setup.php
+	setup/setup-beaver-builder.php
+
+
 ## 1.8.4
 
 * **Fix**: Backwards compatibility with Beaver Builder pre-2.1

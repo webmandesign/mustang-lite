@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.6
+ * @version  1.9.0
  */
 
 
@@ -55,11 +55,10 @@
 
 
 
+	/**
+	 * Header
+	 */
 	if ( ! apply_filters( 'wmhook_disable_header', false ) ) {
-
-		/**
-		 * Header
-		 */
 
 			wmhook_header_before();
 
@@ -71,14 +70,14 @@
 
 			wmhook_header_after();
 
-
-
-		/**
-		 * Content
-		 */
-
-			wmhook_content_before();
-
-			wmhook_content_top();
-
 	} // /wmhook_disable_header
+
+
+
+	/**
+	 * Content
+	 */
+
+		wmhook_content_before();
+
+		wmhook_content_top();
