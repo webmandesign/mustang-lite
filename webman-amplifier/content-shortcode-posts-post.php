@@ -15,7 +15,7 @@
  * @uses        array $helper  Contains shortcode $atts array plus additional helper variables.
  *
  * @since    1.0
- * @version  1.2.7
+ * @version  1.9.1
  */
 
 
@@ -27,7 +27,7 @@ if ( $helper['link'] ) {
 }
 ?>
 
-<article class="<?php echo $helper['item_class']; ?>"<?php echo wm_schema_org( 'article' ); ?>>
+<article class="<?php echo esc_attr( $helper['item_class'] ); ?>"<?php echo wm_schema_org( 'article' ); ?>>
 
 	<?php
 	if ( has_post_thumbnail( $helper['post_id'] ) ) {
@@ -44,7 +44,7 @@ if ( $helper['link'] ) {
 	?>
 
 	<div class="wm-posts-element wm-html-element title"><?php
-		echo '<' . $helper['atts']['heading_tag'] . wm_schema_org( 'name' ) . '>';
+		echo '<' . tag_escape( $helper['atts']['heading_tag'] ) . wm_schema_org( 'name' ) . '>';
 
 			echo $link_output[0];
 
@@ -52,7 +52,7 @@ if ( $helper['link'] ) {
 
 			echo $link_output[1];
 
-		echo '</' . $helper['atts']['heading_tag'] . '>';
+		echo '</' . tag_escape( $helper['atts']['heading_tag'] ) . '>';
 	?></div>
 
 	<?php

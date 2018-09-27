@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.0
- * @version  1.8.1
+ * @version  1.9.1
  *
  * CONTENT:
  * - 1) Required files
@@ -47,14 +47,6 @@
 	//Skinning functionality
 		if ( class_exists( 'WM_Amplifier' ) ) {
 			locate_template( WM_LIBRARY_DIR . 'skinning.php', true );
-		}
-
-	//Theme updater
-		if (
-				is_admin()
-				&& ! ( wm_option( 'general-disable-update-notifier' ) || apply_filters( 'wmhook_disable_update_notifier', true ) )
-			) {
-			locate_template( WM_LIBRARY_DIR . 'updater/update-notifier.php', true );
 		}
 
 

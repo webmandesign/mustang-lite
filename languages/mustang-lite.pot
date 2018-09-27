@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mustang\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2018-02-06 08:54+0100\n"
+"POT-Creation-Date: 2018-09-27 20:44+0200\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Return to homepage"
 msgstr ""
 
-#: comments.php:37 library/core.php:1136
+#: comments.php:37 library/core.php:1133
 #, php-format
 msgid "Comments: %s"
 msgstr ""
@@ -62,93 +62,93 @@ msgstr ""
 msgid "Part %d"
 msgstr ""
 
-#: library/core.php:902 library/core.php:963
+#: library/core.php:902 library/core.php:960
 msgid "Password protected"
 msgstr ""
 
-#: library/core.php:1018
+#: library/core.php:1015
 #, php-format
 msgid ""
 "Continue reading <span class=\"screen-reader-text\">the \"%s\" </span>&raquo;"
 msgstr ""
 
-#: library/core.php:1136
+#: library/core.php:1133
 #, php-format
 msgid "<span class=\"comments-title\">Comments: </span>%s"
 msgstr ""
 
-#: library/core.php:1178
+#: library/core.php:1175
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: library/core.php:1196
+#: library/core.php:1193
 #, php-format
 msgid "<strong>Tags:</strong> %s"
 msgstr ""
 
-#: library/core.php:1237
+#: library/core.php:1234
 msgid "Part %"
 msgstr ""
 
-#: library/core.php:1285
+#: library/core.php:1280
 #, php-format
 msgid "(part %s)"
 msgstr ""
 
-#: library/core.php:1287
+#: library/core.php:1282
 #, php-format
 msgid "(page %s)"
 msgstr ""
 
-#: library/core.php:1304
+#: library/core.php:1299
 msgid "No item found"
 msgstr ""
 
-#: library/core.php:1535
+#: library/core.php:1530
 msgid "Search for:"
 msgstr ""
 
-#: library/core.php:1537
+#: library/core.php:1532
 msgid "Search for..."
 msgstr ""
 
-#: library/core.php:1547
+#: library/core.php:1542
 msgid "Submit"
 msgstr ""
 
-#: library/core.php:1615
+#: library/core.php:1610
 msgid "Comment navigation"
 msgstr ""
 
-#: library/core.php:1616
+#: library/core.php:1611
 msgid "&larr; Older comments"
 msgstr ""
 
-#: library/core.php:1617
+#: library/core.php:1612
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: library/core.php:1637
+#: library/core.php:1632
 msgid "Skip to content"
 msgstr ""
 
-#: library/core.php:1638
+#: library/core.php:1633
 msgid "Skip to navigation"
 msgstr ""
 
-#: library/core.php:1927
+#: library/core.php:1922
 msgid ""
 "ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
 msgstr ""
 
-#: library/core.php:2219
+#: library/core.php:2214
 msgid ""
 "The theme writes a files to your server. You do not appear to have your FTP "
 "credentials set up in \"wp-config.php\" file."
 msgstr ""
 
-#: library/core.php:2219
+#: library/core.php:2214
 msgid "Please set your FTP credentials first."
 msgstr ""
 
@@ -634,20 +634,6 @@ msgstr ""
 msgid "CSS3 background size"
 msgstr ""
 
-#: library/updater/update-notifier.php:87
-#, php-format
-msgid "%s Theme Updates"
-msgstr ""
-
-#: library/updater/update-notifier.php:89
-msgid "Theme Updates"
-msgstr ""
-
-#: library/updater/update-notifier.php:130
-#, php-format
-msgid "%s update"
-msgstr ""
-
 #: setup/about/about.php:133
 msgid "Welcome"
 msgstr ""
@@ -824,55 +810,55 @@ msgstr ""
 msgid "One Click Demo Import (for installing theme demo content)"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:243
+#: setup/setup-beaver-builder.php:250
 msgid "- Choose from predefined classes -"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:248
+#: setup/setup-beaver-builder.php:255
 msgid "Layout:"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:251
+#: setup/setup-beaver-builder.php:258
 msgid "Masonry items layout"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:253
+#: setup/setup-beaver-builder.php:260
 msgid "Text center"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:254
+#: setup/setup-beaver-builder.php:261
 msgid "Text right"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:256
+#: setup/setup-beaver-builder.php:263
 msgid "Fullwidth elements"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:264
+#: setup/setup-beaver-builder.php:271
 msgid "Content Module specific:"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:267
+#: setup/setup-beaver-builder.php:274
 msgid "Content Module: Icon above, text centered"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:268
+#: setup/setup-beaver-builder.php:275
 msgid "Content Module: Small icons"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:269
+#: setup/setup-beaver-builder.php:276
 msgid "Content Module: No icon background"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:277
+#: setup/setup-beaver-builder.php:284
 msgid "Decoration:"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:280
+#: setup/setup-beaver-builder.php:287
 msgid "Border around items (working with Posts and Testimonials)"
 msgstr ""
 
-#: setup/setup-beaver-builder.php:281
+#: setup/setup-beaver-builder.php:288
 msgid "Bottom shadow on items (working with Posts and Testimonials)"
 msgstr ""
 
@@ -1305,11 +1291,11 @@ msgstr ""
 msgid "Website layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:787 setup/setup.php:303
+#: setup/setup-theme-options.php:787 setup/setup.php:300
 msgid "Fullwidth"
 msgstr ""
 
-#: setup/setup-theme-options.php:788 setup/setup.php:304
+#: setup/setup-theme-options.php:788 setup/setup.php:301
 msgid "Boxed"
 msgstr ""
 
@@ -1405,8 +1391,8 @@ msgid ""
 msgstr ""
 
 #: setup/setup-webman-amplifier.php:305 setup/setup-webman-amplifier.php:392
-#: setup/setup-webman-amplifier.php:718 setup/setup.php:220 setup/setup.php:295
-#: setup/setup.php:302
+#: setup/setup-webman-amplifier.php:718 setup/setup.php:217 setup/setup.php:292
+#: setup/setup.php:299
 msgid "Default"
 msgstr ""
 
@@ -1525,7 +1511,7 @@ msgstr ""
 msgid "Set featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:510 setup/setup.php:203
+#: setup/setup-webman-amplifier.php:510 setup/setup.php:200
 msgid "Center"
 msgstr ""
 
@@ -1693,169 +1679,169 @@ msgstr ""
 msgid "This will display your entire forum index. No parameters to be set."
 msgstr ""
 
-#: setup/setup.php:199
+#: setup/setup.php:196
 msgid "Left, top"
 msgstr ""
 
-#: setup/setup.php:200
+#: setup/setup.php:197
 msgid "Center horizontally, top"
 msgstr ""
 
-#: setup/setup.php:201
+#: setup/setup.php:198
 msgid "Right, top"
 msgstr ""
 
-#: setup/setup.php:202
+#: setup/setup.php:199
 msgid "Left, center vertically"
 msgstr ""
 
-#: setup/setup.php:204
+#: setup/setup.php:201
 msgid "Right, center vertically"
 msgstr ""
 
-#: setup/setup.php:205
+#: setup/setup.php:202
 msgid "Left, bottom"
 msgstr ""
 
-#: setup/setup.php:206
+#: setup/setup.php:203
 msgid "Center horizontally, bottom"
 msgstr ""
 
-#: setup/setup.php:207
+#: setup/setup.php:204
 msgid "Right, bottom"
 msgstr ""
 
-#: setup/setup.php:210
+#: setup/setup.php:207
 msgid "Do not repeat"
 msgstr ""
 
-#: setup/setup.php:211
+#: setup/setup.php:208
 msgid "Repeat horizontally"
 msgstr ""
 
-#: setup/setup.php:212
+#: setup/setup.php:209
 msgid "Repeat vertically"
 msgstr ""
 
-#: setup/setup.php:213
+#: setup/setup.php:210
 msgid "Repeat (tile)"
 msgstr ""
 
-#: setup/setup.php:216
+#: setup/setup.php:213
 msgid "Move on scrolling"
 msgstr ""
 
-#: setup/setup.php:217
+#: setup/setup.php:214
 msgid "Fixed position"
 msgstr ""
 
-#: setup/setup.php:221
+#: setup/setup.php:218
 msgid "Cover"
 msgstr ""
 
-#: setup/setup.php:222
+#: setup/setup.php:219
 msgid "Contain"
 msgstr ""
 
-#: setup/setup.php:228
+#: setup/setup.php:225
 msgid " - do not use Google Font"
 msgstr ""
 
-#: setup/setup.php:280
+#: setup/setup.php:277
 msgid "Square"
 msgstr ""
 
-#: setup/setup.php:282
+#: setup/setup.php:279
 msgid "Landscape 4 to 3"
 msgstr ""
 
-#: setup/setup.php:283
+#: setup/setup.php:280
 msgid "Landscape 3 to 2"
 msgstr ""
 
-#: setup/setup.php:284
+#: setup/setup.php:281
 msgid "Landscape 16 to 9"
 msgstr ""
 
-#: setup/setup.php:285
+#: setup/setup.php:282
 msgid "Landscape 2 to 1"
 msgstr ""
 
-#: setup/setup.php:286
+#: setup/setup.php:283
 msgid "Landscape 3 to 1"
 msgstr ""
 
-#: setup/setup.php:288
+#: setup/setup.php:285
 msgid "Portrait 3 to 4"
 msgstr ""
 
-#: setup/setup.php:289
+#: setup/setup.php:286
 msgid "Portrait 2 to 3"
 msgstr ""
 
-#: setup/setup.php:296
+#: setup/setup.php:293
 msgid "Right sidebar"
 msgstr ""
 
-#: setup/setup.php:297
+#: setup/setup.php:294
 msgid "Left sidebar"
 msgstr ""
 
-#: setup/setup.php:298
+#: setup/setup.php:295
 msgid "No sidebar"
 msgstr ""
 
-#: setup/setup.php:299
+#: setup/setup.php:296
 msgid "Fullwidth sections"
 msgstr ""
 
-#: setup/setup.php:311
+#: setup/setup.php:308
 msgid "General Sidebar"
 msgstr ""
 
-#: setup/setup.php:313
+#: setup/setup.php:310
 msgid "The default general sidebar."
 msgstr ""
 
-#: setup/setup.php:320
+#: setup/setup.php:317
 msgid "Topbar Widgets"
 msgstr ""
 
-#: setup/setup.php:322
+#: setup/setup.php:319
 msgid "Widget area displayed as topbar of the website."
 msgstr ""
 
-#: setup/setup.php:329
+#: setup/setup.php:326
 msgid "Topbar Extra Widgets"
 msgstr ""
 
-#: setup/setup.php:331
+#: setup/setup.php:328
 msgid ""
 "Widget area displayed as extra topbar. It rolls out from top of the website "
 "when a button is clicked."
 msgstr ""
 
-#: setup/setup.php:338
+#: setup/setup.php:335
 msgid "Main Heading Widgets"
 msgstr ""
 
-#: setup/setup.php:340
+#: setup/setup.php:337
 msgid "Widget area displayed in the Main Heading section."
 msgstr ""
 
-#: setup/setup.php:347
+#: setup/setup.php:344
 msgid "Footer Widgets"
 msgstr ""
 
-#: setup/setup.php:349
+#: setup/setup.php:346
 msgid "Masonry footer layout. Set up the columns number in theme admin panel."
 msgstr ""
 
-#: setup/setup.php:356
+#: setup/setup.php:353
 msgid "Credits Widgets"
 msgstr ""
 
-#: setup/setup.php:358
+#: setup/setup.php:355
 msgid ""
 "Credits or copyright area in the footer. Takes up to 3 widgets. When you "
 "insert 1 widget, it will be displayed fullwidth. When 2 widgets are in the "
@@ -1864,145 +1850,145 @@ msgid ""
 "left and on the right."
 msgstr ""
 
-#: setup/setup.php:368
+#: setup/setup.php:365
 msgid "Floating cart"
 msgstr ""
 
-#: setup/setup.php:370
+#: setup/setup.php:367
 msgid "Widget area displayed as floating shoping cart."
 msgstr ""
 
-#: setup/setup.php:548
+#: setup/setup.php:544
 msgid "Main navigation"
 msgstr ""
 
-#: setup/setup.php:1312
+#: setup/setup.php:1274
 msgid "Open extra topbar"
 msgstr ""
 
-#: setup/setup.php:1365
+#: setup/setup.php:1327
 msgid "Close search form"
 msgstr ""
 
-#: setup/setup.php:1402
+#: setup/setup.php:1364
 msgid "Menu"
 msgstr ""
 
-#: setup/setup.php:1441
+#: setup/setup.php:1403
 msgid "Show cart"
 msgstr ""
 
-#: setup/setup.php:1445
+#: setup/setup.php:1407
 msgid "Search"
 msgstr ""
 
-#: setup/setup.php:1844
+#: setup/setup.php:1793
 #, php-format
 msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1846
+#: setup/setup.php:1795
 #, php-format
 msgid "Monthly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1846
+#: setup/setup.php:1795
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: setup/setup.php:1848
+#: setup/setup.php:1797
 #, php-format
 msgid "Yearly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1848
+#: setup/setup.php:1797
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: setup/setup.php:1850
+#: setup/setup.php:1799
 #, php-format
 msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1852
+#: setup/setup.php:1801
 #, php-format
 msgid "Tag Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1854
+#: setup/setup.php:1803
 #, php-format
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1857
+#: setup/setup.php:1806
 #, php-format
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
-#: setup/setup.php:1861
+#: setup/setup.php:1810
 msgid "Archives"
 msgstr ""
 
-#: setup/setup.php:1892
+#: setup/setup.php:1841
 msgid "Error 404"
 msgstr ""
 
-#: setup/setup.php:1898
+#: setup/setup.php:1847
 #, php-format
 msgid "%s forums"
 msgstr ""
 
-#: setup/setup.php:1901
+#: setup/setup.php:1850
 #, php-format
 msgid "Forum: %s"
 msgstr ""
 
-#: setup/setup.php:1904
+#: setup/setup.php:1853
 #, php-format
 msgid "Topic: %s"
 msgstr ""
 
-#: setup/setup.php:1912
+#: setup/setup.php:1861
 #, php-format
 msgid " / Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:2165
+#: setup/setup.php:2114
 msgid "Back to top of the page"
 msgstr ""
 
-#: setup/setup.php:2432
+#: setup/setup.php:2381
 msgid "Content width"
 msgstr ""
 
-#: setup/setup.php:2433
+#: setup/setup.php:2382
 msgid "Mobile width"
 msgstr ""
 
-#: setup/setup.php:2480
+#: setup/setup.php:2429
 #, php-format
 msgid "Previous item: %s"
 msgstr ""
 
-#: setup/setup.php:2483
+#: setup/setup.php:2432
 #, php-format
 msgid "Next item: %s"
 msgstr ""
 
-#: setup/setup.php:2925
+#: setup/setup.php:2872
 msgid "Load more..."
 msgstr ""
 
-#: setup/setup.php:2970
+#: setup/setup.php:2917
 msgid "Like it!"
 msgstr ""
 
-#: setup/setup.php:2970
+#: setup/setup.php:2917
 msgid "Liked already!"
 msgstr ""
 
-#: setup/setup.php:2976
+#: setup/setup.php:2923
 msgid "Views count"
 msgstr ""

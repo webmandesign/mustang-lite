@@ -1,5 +1,32 @@
 # Mustang Lite Changelog
 
+## 1.9.1
+
+* **Add**: New update notification functionality
+* **Update**: Removing documentation folder in favor of online docs
+* **Update**: Localization
+* **Fix**: WordPress admin bar display on mobile screens
+* **Fix**: All NS Theme Check plugin test errors
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/css/core.css
+	languages/mustang-lite.pot
+	library/admin.php
+	library/core.php
+	library/includes/controls/class-WM_Customizer_Range.php
+	setup/setup.php
+	webman-amplifier/content-shortcode-posts-post-simple.php
+	webman-amplifier/content-shortcode-posts-post-widget.php
+	webman-amplifier/content-shortcode-posts-post.php
+	webman-amplifier/content-shortcode-posts-wm_projects-simple.php
+	webman-amplifier/content-shortcode-posts-wm_projects-widget.php
+	webman-amplifier/content-shortcode-posts-wm_projects.php
+	webman-amplifier/content-shortcode-posts-wm_staff.php
+
+
 ## 1.9.0
 
 * **Update**: Beaver Builder compatibility

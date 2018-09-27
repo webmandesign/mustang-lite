@@ -10,6 +10,9 @@
  * @package     WebMan Amplifier
  * @subpackage  Shortcodes
  *
+ * @since    1.0
+ * @version  1.9.1
+ *
  * @uses        array $helper  Contains shortcode $atts array plus additional helper variables.
  */
 
@@ -22,7 +25,7 @@ if ( $helper['link'] ) {
 }
 ?>
 
-<article class="<?php echo $helper['item_class']; ?>"<?php echo wm_schema_org( 'creative_work' ); ?>>
+<article class="<?php echo esc_attr( $helper['item_class'] ); ?>"<?php echo wm_schema_org( 'creative_work' ); ?>>
 
 	<?php
 	if ( has_post_thumbnail( $helper['post_id'] ) ) {
@@ -39,7 +42,7 @@ if ( $helper['link'] ) {
 	?>
 
 	<div class="wm-posts-element wm-html-element title screen-reader-text"><?php
-		echo '<' . $helper['atts']['heading_tag'] . wm_schema_org( 'name' ) . '>';
+		echo '<' . tag_escape( $helper['atts']['heading_tag'] ) . wm_schema_org( 'name' ) . '>';
 
 			echo $link_output[0];
 
@@ -47,7 +50,7 @@ if ( $helper['link'] ) {
 
 			echo $link_output[1];
 
-		echo '</' . $helper['atts']['heading_tag'] . '>';
+		echo '</' . tag_escape( $helper['atts']['heading_tag'] ) . '>';
 	?></div>
 
 </article>

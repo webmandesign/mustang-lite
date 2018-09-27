@@ -11,7 +11,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @version  3.4
- * @version  1.8.2
+ * @version  1.9.1
  *
  * CONTENT:
  * - 1) Required files
@@ -209,7 +209,7 @@
 	 * Get specific files from specific folder(s)
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.9.1
 	 *
 	 * @param  array $args
 	 */
@@ -245,7 +245,7 @@
 
 				foreach ( $args['folders'] as $folder ) {
 					$folder = trim( $folder );
-					if ( $folder && $dir = @opendir( $folder ) ) {
+					if ( $folder && $dir = opendir( $folder ) ) {
 						//This is the correct way to loop over the directory
 							while ( false != ( $file = readdir( $dir ) ) ) {
 								if ( strpos( $file, $args['file_extenstion'] ) ) {
@@ -926,6 +926,8 @@
 	 *
 	 * Output depends on using <!--more--> tag.
 	 *
+	 * @version  1.9.1
+	 *
 	 * @param  object $post
 	 * @param  boolean $content_filters
 	 */
@@ -947,11 +949,6 @@
 			//Preparing output
 				if ( false !== stripos( $post->post_content, '<!--more-->' ) ) {
 				//Display excerpt until <!--more--> tag
-
-					//Helper variables
-						//Required for <!--more--> tag to work
-							global $more;
-							$more = 0;
 
 					$output .= '<div class="more-tag-excerpt">';
 					if ( ! post_password_required() ) {
@@ -1245,6 +1242,8 @@
 	/**
 	 * Paginated heading suffix
 	 *
+	 * @version  1.9.1
+	 *
 	 * @param  string $tag           Wrapper tag
 	 * @param  string $singular_only Display only on singular posts of specific type
 	 */
@@ -1266,12 +1265,8 @@
 				 */
 				$placeholder = paginate_links();
 
-				if ( ! isset( $paged ) ) {
-					$paged = 0;
-				}
-				if ( ! isset( $page ) ) {
-					$page = 0;
-				}
+				$paginated = ( ! isset( $paged ) ) ? ( 0 ) : ( absint( $paged ) );
+				$parted    = ( ! isset( $page ) ) ? ( 0 ) : ( absint( $page ) );
 
 				$tag = trim( $tag );
 				if ( $tag ) {
@@ -1281,10 +1276,10 @@
 				}
 
 			//Preparing output
-				if ( 1 < $page ) {
-					$output = ' ' . $tag[0] . sprintf( __( '(part %s)', 'mustang-lite' ), $page ) . $tag[1];
-				} elseif ( 1 < $paged ) {
-					$output = ' ' . $tag[0] . sprintf( __( '(page %s)', 'mustang-lite' ), $paged ) . $tag[1];
+				if ( 1 < $parted ) {
+					$output = ' ' . $tag[0] . sprintf( __( '(part %s)', 'mustang-lite' ), $parted ) . $tag[1];
+				} elseif ( 1 < $paginated ) {
+					$output = ' ' . $tag[0] . sprintf( __( '(page %s)', 'mustang-lite' ), $paginated ) . $tag[1];
 				}
 
 			//Output

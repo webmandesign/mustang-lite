@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.0
+ * @version  1.9.1
  *
  * CONTENT:
  * - 1) Required files
@@ -152,9 +152,6 @@
 			if ( ! class_exists( 'WM_Amplifier' ) ) {
 				add_filter( 'wmhook_admin_modifications_enabled', '__return_false' );
 			}
-
-		//Remove filters
-			remove_filter( 'widget_title', 'esc_html' );
 
 
 
@@ -547,9 +544,6 @@
 						'main' => __( 'Main navigation', 'mustang-lite' ),
 					) ) );
 
-			//Custom WP Adminbar styles
-				add_theme_support( 'admin-bar', array( 'callback' => 'wm_adminbar_css' ) );
-
 			//Custom header and background (do not integrate yet...)
 				// add_theme_support( 'custom-header' );
 				// add_theme_support( 'custom-background' );
@@ -935,7 +929,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  1.8.2
+	 * @version  1.9.1
 	 *
 	 * @param  array $classes
 	 */
@@ -944,14 +938,7 @@
 			//Helper variables
 				global $post, $paged, $page;
 
-				if ( ! isset( $paged ) ) {
-					$paged = 0;
-				}
-				if ( ! isset( $page ) ) {
-					$page = 0;
-				}
-
-				$paginated    = max( $paged, $page );
+				$paginated = max( absint( $page ), absint( $paged ) );
 				$body_classes = array();
 				$post_id      = ( is_home() ) ? ( get_option( 'page_for_posts' ) ) : ( null );
 
@@ -1070,30 +1057,6 @@
 				return $classes;
 		}
 	} // /wm_body_classes
-
-
-
-	/**
-	 * WP Adminbar custom CSS
-	 */
-	if ( ! function_exists( 'wm_adminbar_css' ) ) {
-		function wm_adminbar_css() {
-			//Helper variables
-				$output = array();
-				$height = absint( apply_filters( 'wmhook_wm_adminbar_css_height', 32 ) );
-
-			//Preparing output
-				$output[0]   = '<style type="text/css" media="screen">';
-				$output[10]  = 'html { margin-top: ' . $height . 'px; }';
-				$output[20]  = '@media screen and ( max-width: 782px ) { html { margin-top: 0; } #wpadminbar { display: none; } }';
-				$output[100] = '</style>';
-
-				$output = implode( "\r\n", apply_filters( 'wmhook_wm_adminbar_css_output', $output ) );
-
-			//Output
-				echo $output;
-		}
-	} // /wm_adminbar_css
 
 
 
@@ -1617,21 +1580,14 @@
 	 * Slider
 	 *
 	 * @since    1.0
-	 * @version  1.7
+	 * @version  1.9.1
 	 */
 	if ( ! function_exists( 'wm_section_slider' ) ) {
 		function wm_section_slider() {
 			//Helper variables
 				global $paged, $page;
 
-				if ( ! isset( $paged ) ) {
-					$paged = 0;
-				}
-				if ( ! isset( $page ) ) {
-					$page = 0;
-				}
-
-				$paged = max( $paged, $page );
+				$paginated = max( absint( $page ), absint( $paged ) );
 
 				$output      = $slider_width = $image_title = $image_caption = $image_link = '';
 				$page_id     = ( is_home() ) ? ( get_option( 'page_for_posts' ) ) : ( null );
@@ -1648,7 +1604,7 @@
 			//Requirements check
 				if (
 						( ! is_singular( 'page' ) && ! is_home() && ! $wc_shop ) //check for singular pages; WooCommerce support
-						|| 1 < $paged
+						|| 1 < $paginated
 					) {
 					return;
 				}
@@ -1759,7 +1715,7 @@
 	 * Main heading (title)
 	 *
 	 * @since    1.0
-	 * @version  1.7
+	 * @version  1.9.1
 	 *
 	 * @param  array $args Heading setup arguments
 	 */
@@ -1768,13 +1724,7 @@
 			//Helper variables
 				global $post, $page, $paged, $wp_query;
 
-				if ( ! isset( $paged ) ) {
-					$paged = 0;
-				}
-				if ( ! isset( $page ) ) {
-					$page = 0;
-				}
-				$paginated = max( $paged, $page );
+				$paginated = max( absint( $page ), absint( $paged ) );
 
 				$blog_page_id = get_option( 'page_for_posts' );
 				$page_id      = ( is_home() ) ? ( $blog_page_id ) : ( null );
@@ -1819,7 +1769,7 @@
 						'class'   => 'main-heading entry-header wrap clearfix',
 						'link'    => get_permalink( $page_id ),
 						'page_id' => $page_id,
-						'paged'   => array( $paginated, $paged, $page ),
+						'paged'   => array( $paginated, absint( $paged ), absint( $page ) ),
 						'output'  => "\r\n\r\n" . '<header id="main-heading" class="{class}">' . "\r\n" . apply_filters( 'wmhook_section_inner_wrappers', '' ) . '<{tag} class="entry-title"' . wm_schema_org( 'name' ) . '>{title}</{tag}>{addons}' . apply_filters( 'wmhook_section_inner_wrappers_close', '' ) . "\r\n" . '</header>' . "\r\n",
 						'tag'     => 'h1',
 						'title'   => ( 2 > $paginated ) ? ( get_the_title( $page_id ) ) : ( '<a href="' . get_permalink( $page_id ) . '">' . get_the_title( $page_id ) . '</a>' ),
@@ -2627,12 +2577,14 @@
 		/**
 		 * Blog page template query setup
 		 *
+		 * @version  1.9.1
+		 *
 		 * @return  object WordPress query
 		 */
 		if ( ! function_exists( 'wm_blog_page_query' ) ) {
 			function wm_blog_page_query() {
 				//Helper variables
-					global $paged, $page, $wm_blog_page_id;
+					global $paged, $wm_blog_page_id;
 
 					//Requirements check
 						if (
@@ -2642,13 +2594,9 @@
 							return;
 						}
 
-					$page  = get_query_var( 'page' );
-					$paged = ( isset( $paged ) && $paged ) ? ( $paged ) : ( 1 );
-
-					$pagination_page = 1;
-					if ( $page || $paged ) {
-						$pagination_page = max( $page, $paged );
-					}
+					$page = get_query_var( 'page' );
+					$paginated = max( absint( $page ), absint( $paged ) );
+					$pagination_page = max( 1, $paginated );
 
 					$article_count = wma_meta_option( 'blog-posts-count', $wm_blog_page_id );
 					$cats_action   = ( wma_meta_option( 'blog-categories-action', $wm_blog_page_id ) ) ? ( wma_meta_option( 'blog-categories-action', $wm_blog_page_id ) ) : ( 'category__in' );

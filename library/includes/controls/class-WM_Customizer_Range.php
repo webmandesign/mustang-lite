@@ -9,7 +9,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.1
- * @version  1.7
+ * @version  1.9.1
  */
 
 
@@ -41,7 +41,7 @@ class WM_Customizer_Range extends WP_Customize_Control {
 			<span class="slide-number-wrapper">
 				<span id="<?php echo sanitize_title( $this->id ); ?>-slider" class="number-slider"></span>
 			</span>
-			<input type="number" name="<?php echo $this->id; ?>" id="<?php echo sanitize_title( $this->id ); ?>" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
+			<input type="number" name="<?php echo esc_attr( $this->id ); ?>" id="<?php echo sanitize_title( $this->id ); ?>" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
 		</label>
 
 		<script><!--

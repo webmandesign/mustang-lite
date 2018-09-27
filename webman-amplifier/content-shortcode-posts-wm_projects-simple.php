@@ -10,6 +10,9 @@
  * @package     WebMan Amplifier
  * @subpackage  Shortcodes
  *
+ * @since    1.0
+ * @version  1.9.1
+ *
  * @uses        array $helper  Contains shortcode $atts array plus additional helper variables.
  */
 
@@ -24,7 +27,7 @@ if ( $helper['link'] ) {
 $project_preview = trim( wma_meta_option( 'slider' ) );
 ?>
 
-<article class="<?php echo $helper['item_class']; ?>"<?php echo wm_schema_org( 'creative_work' ); ?>>
+<article class="<?php echo esc_attr( $helper['item_class'] ); ?>"<?php echo wm_schema_org( 'creative_work' ); ?>>
 
 	<?php
 	if ( $project_preview ) {
@@ -47,7 +50,7 @@ $project_preview = trim( wma_meta_option( 'slider' ) );
 	?>
 
 	<div class="wm-posts-element wm-html-element title<?php if ( $project_preview ) echo ' screen-reader-text'; ?>"><?php
-		echo '<' . $helper['atts']['heading_tag'] . wm_schema_org( 'name' ) . '>';
+		echo '<' . tag_escape( $helper['atts']['heading_tag'] ) . wm_schema_org( 'name' ) . '>';
 
 			echo $link_output[0];
 
@@ -55,7 +58,7 @@ $project_preview = trim( wma_meta_option( 'slider' ) );
 
 			echo $link_output[1];
 
-		echo '</' . $helper['atts']['heading_tag'] . '>';
+		echo '</' . tag_escape( $helper['atts']['heading_tag'] ) . '>';
 	?></div>
 
 </article>
