@@ -1,5 +1,16 @@
 # Mustang Lite Changelog
 
+## 1.9.2
+
+* **Update**: WordPress 5.0 ready
+
+### Files changed:
+
+	changelog.md
+	style.css
+	setup/setup-webman-amplifier.php
+
+
 ## 1.9.1
 
 * **Add**: New update notification functionality

@@ -5,8 +5,8 @@
  * @author     WebMan
  * @copyright  2014 WebMan
  *
- * @since    1.0
- * @version  1.8.1
+ * @since    1.0.0
+ * @version  1.9.2
  */
 
 
@@ -38,14 +38,6 @@
 			'widget-twitter',
 			'disable-isotope-notice',
 		) ) );
-
-	// WebMan Advanced Metaboxes
-
-		add_filter( 'wmhook_metabox_visual_wrapper_toggle', '__return_true' );
-
-	// Visual Composer text block content filters
-
-		// add_filter( 'wmhook_shortcode_text_block_content', 'wm_default_content_filters', 10 );
 
 
 
@@ -375,29 +367,31 @@
 			/**
 			 * Page metabox metafields
 			 *
-			 * @version  1.7
+			 * @version  1.9.2
 			 *
 			 * @param   array $fields Array of predefined metafields
 			 *
 			 * @return  array Modified $fields array
 			 */
 			function wm_page_metafields( $fields = array() ) {
-				//Helper variables
+
+				// Helper variables
+
 					global $post_id;
 
 					$wm_layouts = ( ! function_exists( 'wm_helper_var' ) ) ? ( array( 'sidebars' => array(), 'website' => array() ) ) : ( wm_helper_var( 'layouts' ) );
 
 					$menus  = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
 					$helper = array(
-							'menus'    => array( '' => __( 'Default', 'mustang-lite' ) ),
-							'sidebars' => $wm_layouts['sidebars'],
-							'website'  => $wm_layouts['website'],
-						);
+						'menus'    => array( '' => __( 'Default', 'mustang-lite' ) ),
+						'sidebars' => $wm_layouts['sidebars'],
+						'website'  => $wm_layouts['website'],
+					);
 
 					if (
-							is_array( $menus )
-							&& ! empty( $menus )
-						) {
+						is_array( $menus )
+						&& ! empty( $menus )
+					) {
 						foreach ( $menus as $item ) {
 							if ( isset( $item->name ) && isset( $item->slug ) ) {
 								$helper['menus'][ $item->slug ] = $item->name;
@@ -405,249 +399,253 @@
 						}
 					}
 
-				//"Settings" tab
+
+				// Processing
+
+					// "Settings" tab
 					$fields[100] = array(
-							'type'  => 'section-open',
-							'id'    => 'page-options-section',
-							'title' => __( 'Settings', 'mustang-lite' ),
-							'page'  => array(
-									'templates' => array( 'page-template/blank.php' ),
-									'operand'   => 'IS_NOT'
-								),
-						);
+						'type'  => 'section-open',
+						'id'    => 'page-options-section',
+						'title' => __( 'Settings', 'mustang-lite' ),
+						'page'  => array(
+							'templates' => array( 'page-template/blank.php' ),
+							'operand'   => 'IS_NOT'
+						),
+					);
 
 						$fields[120] = array(
-								'type'        => 'checkbox',
-								'id'          => 'disable-heading',
-								'label'       => __( 'Disable main heading', 'mustang-lite' ),
-								'description' => __( 'Hide main heading section', 'mustang-lite' ),
-							);
+							'type'        => 'checkbox',
+							'id'          => 'disable-heading',
+							'label'       => __( 'Disable main heading', 'mustang-lite' ),
+							'description' => __( 'Hide main heading section', 'mustang-lite' ),
+						);
 
 						$fields[140] = array(
-								'type'        => 'select',
-								'id'          => 'sidebar',
-								'label'       => esc_html__( 'Page layout', 'mustang-lite' ),
-								'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang-lite' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang-lite' ),
-								'options'     => $helper['sidebars'],
-							);
+							'type'        => 'select',
+							'id'          => 'sidebar',
+							'label'       => esc_html__( 'Page layout', 'mustang-lite' ),
+							'description' => esc_html__( 'Select a sidebar position or enable fullwidth sections.', 'mustang-lite' ) . '<br>' . esc_html__( 'Fullwidth sections page layout is suitable for use with page builders.', 'mustang-lite' ),
+							'options'     => $helper['sidebars'],
+						);
 
 						$fields[160] = array(
-								'type'        => 'select',
-								'id'          => 'layout',
-								'label'       => __( 'Website layout', 'mustang-lite' ),
-								'description' => __( 'Select a website layout for this page', 'mustang-lite' ),
-								'options'     => $helper['website'],
-							);
+							'type'        => 'select',
+							'id'          => 'layout',
+							'label'       => __( 'Website layout', 'mustang-lite' ),
+							'description' => __( 'Select a website layout for this page', 'mustang-lite' ),
+							'options'     => $helper['website'],
+						);
 
 						$fields[180] = array(
-								'type'        => 'select',
-								'id'          => 'footer',
-								'label'       => __( 'Footer layout', 'mustang-lite' ),
-								'description' => __( 'Select a footer layout', 'mustang-lite' ),
-								'options'     => array(
-										''        => __( 'Widgets and credits', 'mustang-lite' ),
-										'widgets' => __( 'Widgets only', 'mustang-lite' ),
-										'credits' => __( 'Credits only', 'mustang-lite' ),
-										'none'    => __( 'No footer', 'mustang-lite' ),
-									),
-							);
+							'type'        => 'select',
+							'id'          => 'footer',
+							'label'       => __( 'Footer layout', 'mustang-lite' ),
+							'description' => __( 'Select a footer layout', 'mustang-lite' ),
+							'options'     => array(
+								''        => __( 'Widgets and credits', 'mustang-lite' ),
+								'widgets' => __( 'Widgets only', 'mustang-lite' ),
+								'credits' => __( 'Credits only', 'mustang-lite' ),
+								'none'    => __( 'No footer', 'mustang-lite' ),
+							),
+						);
 
 					$fields[1000] = array(
-							'type' => 'section-close',
-						);
-				// /"Settings" tab
+						'type' => 'section-close',
+					);
 
-				//"Slider" tab
+
+
+					//"Slider" tab
 					$fields[2000] = array(
-							'type'  => 'section-open',
-							'id'    => 'page-slider-section',
-							'title' => __( 'Slider', 'mustang-lite' ),
-							'page'  => array(
-									'templates' => array( 'page-template/blank.php' ),
-									'operand'   => 'IS_NOT'
-								),
-						);
+						'type'  => 'section-open',
+						'id'    => 'page-slider-section',
+						'title' => __( 'Slider', 'mustang-lite' ),
+						'page'  => array(
+							'templates' => array( 'page-template/blank.php' ),
+							'operand'   => 'IS_NOT'
+						),
+					);
 
 						$fields[2020] = array(
-								'type'    => 'html',
-								'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( '<strong>Please note that this is a special slider section setup.</strong><br />This slider will be displayed above the website header area. For standard sliders please use the shortcodes directly in the page content.', 'mustang-lite' ) . '</div></td></tr>',
-							);
+							'type'    => 'html',
+							'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( '<strong>Please note that this is a special slider section setup.</strong><br />This slider will be displayed above the website header area. For standard sliders please use the shortcodes directly in the page content.', 'mustang-lite' ) . '</div></td></tr>',
+						);
 
 						$fields[2040] = array(
-								'type'        => 'select',
-								'id'          => 'slider',
-								'label'       => __( 'Set special slider', 'mustang-lite' ),
-								'description' => __( 'Select a slider type used as a special slider above the website header', 'mustang-lite' ),
-								'options'     => array(
-										''       => __( 'No special slider', 'mustang-lite' ),
-										'custom' => __( 'Custom slider (use shortcode)', 'mustang-lite' ),
-										'static' => __( 'Featured image', 'mustang-lite' ),
-									),
-							);
+							'type'        => 'select',
+							'id'          => 'slider',
+							'label'       => __( 'Set special slider', 'mustang-lite' ),
+							'description' => __( 'Select a slider type used as a special slider above the website header', 'mustang-lite' ),
+							'options'     => array(
+								''       => __( 'No special slider', 'mustang-lite' ),
+								'custom' => __( 'Custom slider (use shortcode)', 'mustang-lite' ),
+								'static' => __( 'Featured image', 'mustang-lite' ),
+							),
+						);
 
 						$fields[2060] = array(
-								'type'        => 'text',
-								'id'          => 'slider-shortcode',
-								'label'       => __( 'Slider shortcode', 'mustang-lite' ),
-								'description' => __( 'Set the custom slider shortcode', 'mustang-lite' ),
-								'conditional' => array(
-										'option'       => array(
-												'tag'  => 'select',
-												'name' => 'wm-slider',
-												'type' => '',
-											),
-										'option_value' => array( 'custom' ),
-										'operand'      => 'IS',
-									),
-							);
+							'type'        => 'text',
+							'id'          => 'slider-shortcode',
+							'label'       => __( 'Slider shortcode', 'mustang-lite' ),
+							'description' => __( 'Set the custom slider shortcode', 'mustang-lite' ),
+							'conditional' => array(
+								'option'       => array(
+									'tag'  => 'select',
+									'name' => 'wm-slider',
+									'type' => '',
+								),
+								'option_value' => array( 'custom' ),
+								'operand'      => 'IS',
+							),
+						);
 
 						$fields[2080] = array(
-								'type'        => 'select',
-								'id'          => 'slider-static',
-								'label'       => __( 'Image caption position', 'mustang-lite' ),
-								'description' => __( 'Featured image will be displayed in the special slider section.<br />Set the image caption (you can use shortcodes) and set the image caption position here.', 'mustang-lite' ) . '<br /><a href="#" class="button-primary button-set-featured-image" style="margin-top: .5em">' . __( 'Set featured image', 'mustang-lite' ) . '</a>',
-								'options'     => array(
-										'center' => __( 'Center', 'mustang-lite' ),
-										'left'   => __( 'Left', 'mustang-lite' ),
-										'right'  => __( 'Right', 'mustang-lite' ),
-									),
-								'conditional' => array(
-										'option'       => array(
-												'tag'  => 'select',
-												'name' => 'wm-slider',
-												'type' => '',
-											),
-										'option_value' => array( 'static' ),
-										'operand'      => 'IS',
-									),
-							);
+							'type'        => 'select',
+							'id'          => 'slider-static',
+							'label'       => __( 'Image caption position', 'mustang-lite' ),
+							'description' => __( 'Featured image will be displayed in the special slider section.<br />Set the image caption (you can use shortcodes) and set the image caption position here.', 'mustang-lite' ) . '<br /><a href="#" class="button-primary button-set-featured-image" style="margin-top: .5em">' . __( 'Set featured image', 'mustang-lite' ) . '</a>',
+							'options'     => array(
+								'center' => __( 'Center', 'mustang-lite' ),
+								'left'   => __( 'Left', 'mustang-lite' ),
+								'right'  => __( 'Right', 'mustang-lite' ),
+							),
+							'conditional' => array(
+								'option'       => array(
+									'tag'  => 'select',
+									'name' => 'wm-slider',
+									'type' => '',
+								),
+								'option_value' => array( 'static' ),
+								'operand'      => 'IS',
+							),
+						);
 
 					$fields[3000] = array(
-							'type' => 'section-close',
-						);
-				// /"Slider" tab
+						'type' => 'section-close',
+					);
 
-				//"Blog" tab
+
+
+					//"Blog" tab
 					$fields[4000] = array(
-							'type'  => 'section-open',
-							'id'    => 'page-blog-section',
-							'title' => __( 'Blog', 'mustang-lite' ),
-							'page'  => array(
-									'templates' => array( 'home.php' ),
-									'operand'   => 'IS'
-								),
-						);
+						'type'  => 'section-open',
+						'id'    => 'page-blog-section',
+						'title' => __( 'Blog', 'mustang-lite' ),
+						'page'  => array(
+							'templates' => array( 'home.php' ),
+							'operand'   => 'IS'
+						),
+					);
 
 						$fields[4020] = array(
-								'type'        => 'slider',
-								'id'          => 'blog-posts-count',
-								'label'       => __( 'Number of posts', 'mustang-lite' ),
-								'description' => __( 'Sets the number of posts listed on this blog page only. Other archives will display posts according to WordPress settings.<br />Value of "-1" will display all posts. When you set the value of "0", WordPress settings are applied.', 'mustang-lite' ),
-								'default'     => 0,
-								'min'         => -1,
-								'max'         => 25,
-								'step'        => 1,
-								'zero'        => true,
-							);
+							'type'        => 'slider',
+							'id'          => 'blog-posts-count',
+							'label'       => __( 'Number of posts', 'mustang-lite' ),
+							'description' => __( 'Sets the number of posts listed on this blog page only. Other archives will display posts according to WordPress settings.<br />Value of "-1" will display all posts. When you set the value of "0", WordPress settings are applied.', 'mustang-lite' ),
+							'default'     => 0,
+							'min'         => -1,
+							'max'         => 25,
+							'step'        => 1,
+							'zero'        => true,
+						);
 
 						//Categories multi field
 						$category_fields = array();
 						$category_fields[] = array(
-								'type'    => 'select',
-								'id'      => 'category',
-								'label'   => __( 'Category', 'mustang-lite' ),
-								'options' => wma_taxonomy_array(),
-							);
+							'type'    => 'select',
+							'id'      => 'category',
+							'label'   => __( 'Category', 'mustang-lite' ),
+							'options' => wma_taxonomy_array(),
+						);
 						$fields[4040] = array(
-								'type'        => 'repeater',
-								'id'          => 'blog-categories',
-								'label'       => __( 'Posts categories', 'mustang-lite' ),
-								'description' => __( 'You can choose to display all posts or posts from a specific categories only. Press [+] button to add a category and select the category name from dropdown list.', 'mustang-lite' ),
-								'fields'      => $category_fields,
-							);
+							'type'        => 'repeater',
+							'id'          => 'blog-categories',
+							'label'       => __( 'Posts categories', 'mustang-lite' ),
+							'description' => __( 'You can choose to display all posts or posts from a specific categories only. Press [+] button to add a category and select the category name from dropdown list.', 'mustang-lite' ),
+							'fields'      => $category_fields,
+						);
 
 						$fields[4060] = array(
-								'type'        => 'radio',
-								'id'          => 'blog-categories-action',
-								'label'       => __( 'Categories action', 'mustang-lite' ),
-								'description' => __( 'Exclude or use the above categories?', 'mustang-lite' ),
-								'default'     => 'category__in',
-								'options'     => array(
-										'category__in'     => __( 'Posts just from these categories', 'mustang-lite' ),
-										'category__not_in' => __( 'Exclude posts from these categories', 'mustang-lite' ),
-									),
-							);
+							'type'        => 'radio',
+							'id'          => 'blog-categories-action',
+							'label'       => __( 'Categories action', 'mustang-lite' ),
+							'description' => __( 'Exclude or use the above categories?', 'mustang-lite' ),
+							'default'     => 'category__in',
+							'options'     => array(
+								'category__in'     => __( 'Posts just from these categories', 'mustang-lite' ),
+								'category__not_in' => __( 'Exclude posts from these categories', 'mustang-lite' ),
+							),
+						);
 
 					$fields[5000] = array(
-							'type' => 'section-close',
-						);
-				// /"Blog" tab
+						'type' => 'section-close',
+					);
 
-				//"One page" tab
+
+
+					//"One page" tab
 					if (
-							! function_exists( 'wm_is_woocommerce' )
-							|| ! (
-								function_exists( 'wm_is_woocommerce' )
-								&& $post_id
-								&& $post_id == wc_get_page_id( 'shop' )
-							)
-						) {
+						! function_exists( 'wm_is_woocommerce' )
+						|| ! (
+							function_exists( 'wm_is_woocommerce' )
+							&& $post_id
+							&& $post_id == wc_get_page_id( 'shop' )
+						)
+					) {
 
 						$fields[6000] = array(
-								'type'  => 'section-open',
-								'id'    => 'page-one-section',
-								'title' => __( 'One page', 'mustang-lite' ),
-								'page'  => array(
-										'templates' => array( 'page-template/one-page.php' ),
-										'operand'   => 'IS'
-									),
-							);
+							'type'  => 'section-open',
+							'id'    => 'page-one-section',
+							'title' => __( 'One page', 'mustang-lite' ),
+							'page'  => array(
+								'templates' => array( 'page-template/one-page.php' ),
+								'operand'   => 'IS'
+							),
+						);
 
 							$fields[6020] = array(
-									'type'    => 'html',
-									'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( 'Use this page template to place most (or all) of your website content on a single page. Set the ID for each section of the page (apply on row shortcode) and use them in custom navigation as anchors. You can set a navigation for this page below. Once you click the navigation link, the page will scroll to the section of a specific anchor ID.', 'mustang-lite' ) . '</div></td></tr>',
-								);
-
-							$fields[6040] = array(
-									'type'        => 'select',
-									'id'          => 'navigation',
-									'label'       => __( 'Anchor navigation', 'mustang-lite' ),
-									'description' => __( 'Set a special anchor navigation for this page', 'mustang-lite' ),
-									'options'     => $helper['menus'],
-								);
-
-						$fields[7000] = array(
-								'type' => 'section-close',
+								'type'    => 'html',
+								'content' => '<tr class="option padding-20"><td colspan="2"><div class="box blue">' . __( 'Use this page template to place most (or all) of your website content on a single page. Set the ID for each section of the page (apply on row shortcode) and use them in custom navigation as anchors. You can set a navigation for this page below. Once you click the navigation link, the page will scroll to the section of a specific anchor ID.', 'mustang-lite' ) . '</div></td></tr>',
 							);
 
+							$fields[6040] = array(
+								'type'        => 'select',
+								'id'          => 'navigation',
+								'label'       => __( 'Anchor navigation', 'mustang-lite' ),
+								'description' => __( 'Set a special anchor navigation for this page', 'mustang-lite' ),
+								'options'     => $helper['menus'],
+							);
+
+						$fields[7000] = array(
+							'type' => 'section-close',
+						);
+
 					}
-				// /"One page" tab
 
-				/**
-				 * For more form fields options please check the PHP files inside
-				 * the "wm-amplifier/includes/metabox/fields/" folder.
-				 */
 
-				return $fields;
+				// Options
+
+					return $fields;
+
 			} // /wm_page_metafields
 
 
 
 			wma_add_meta_box( array(
-					// Meta fields function callback (should return array of fields).
-					// The function callback is used for to use a WordPress globals
-					// available during the metabox rendering, such as $post.
-					'fields' => 'wm_page_metafields',
+				// Meta fields function callback (should return array of fields).
+				// The function callback is used for to use a WordPress globals
+				// available during the metabox rendering, such as $post.
+				'fields' => 'wm_page_metafields',
 
-					// Meta box id, unique per meta box.
-					'id' => 'page-metabox',
+				// Meta box id, unique per meta box.
+				'id' => 'page-metabox',
 
-					// Post types.
-					'pages' => array( 'page' ),
+				// Post types.
+				'pages' => array( 'page' ),
 
-					// Meta box title.
-					'title' => __( 'Page options', 'mustang-lite' ),
-				) );
+				// Meta box title.
+				'title' => __( 'Page options', 'mustang-lite' ),
+			) );
 
 
 
