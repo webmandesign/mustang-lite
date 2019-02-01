@@ -2985,5 +2985,7 @@
 		 * @since    1.7
 		 * @version  1.9.3
 		 */
-
-			require get_theme_file_path( WM_SETUP_DIR . 'premium/setup-premium.php' );
+		$premium_file = get_theme_file_path( WM_SETUP_DIR . 'premium/setup-premium.php' );
+		if ( file_exists( $premium_file ) ) {
+			require $premium_file;
+		}
