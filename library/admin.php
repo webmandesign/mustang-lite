@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.0
- * @version  1.9.1
+ * @version  1.9.3
  *
  * CONTENT:
  * - 1) Required files
@@ -30,7 +30,7 @@
 				file_exists( WM_SETUP . 'widgets.php' )
 				|| file_exists( WM_SETUP_CHILD . 'widgets.php' )
 			) {
-			locate_template( WM_SETUP_DIR . 'widgets.php', true );
+			require get_theme_file_path( WM_SETUP_DIR . 'widgets.php' );
 		}
 
 	//Load the theme introduction page
@@ -41,12 +41,12 @@
 					|| file_exists( WM_SETUP_CHILD . 'about/about.php' )
 				)
 			) {
-			locate_template( WM_SETUP_DIR . 'about/about.php', true );
+			require get_theme_file_path( WM_SETUP_DIR . 'about/about.php' );
 		}
 
 	//Skinning functionality
 		if ( class_exists( 'WM_Amplifier' ) ) {
-			locate_template( WM_LIBRARY_DIR . 'skinning.php', true );
+			require get_theme_file_path( WM_LIBRARY_DIR . 'skinning.php' );
 		}
 
 

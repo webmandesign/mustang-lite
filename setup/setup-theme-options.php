@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.2
+ * @version  1.9.3
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -78,7 +78,7 @@
 	 * Set $wm_skin_design array
 	 *
 	 * @since    1.0
-	 * @version  1.8.2
+	 * @version  1.9.3
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -101,7 +101,7 @@
 						'topbar' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Section: Top Bar', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'topbar' . 10 => array(
@@ -163,7 +163,7 @@
 						'header' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Section: Header', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'header' . 10 => array(
@@ -254,7 +254,7 @@
 						'range' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Section: Special Slider', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'range' . 10 => array(
@@ -286,7 +286,7 @@
 						'heading' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Section: Main Heading', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'heading' . 10 => array(
@@ -317,7 +317,7 @@
 						'content' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Section: Content', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'content' . 10 => array(
@@ -375,7 +375,7 @@
 						'footer' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Section: Footer', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'footer' . 10 => array(
@@ -468,7 +468,7 @@
 						'website-background' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Background', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'website-background' . 5 => array(
@@ -490,7 +490,7 @@
 						'colors-global' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Colors', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'colors-global' . 10 => array(
@@ -566,7 +566,7 @@
 						'branding' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Logo', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'branding' . 10 => array(
@@ -588,7 +588,7 @@
 						'images' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Images', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'images' . 5 => array(
@@ -647,7 +647,7 @@
 						'fonts' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Fonts', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'fonts' . 10 => array(
@@ -771,7 +771,7 @@
 						'layout' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Layout', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'layout' . 10 => array(
@@ -814,7 +814,7 @@
 						'others' => array(
 							'type'           => 'section',
 							'create_section' => __( 'Others', 'mustang-lite' ),
-							'in_panel'       => _x( 'Theme', 'Customizer panel title.', 'mustang-lite' ),
+							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
 
 							'others' . 10 => array(

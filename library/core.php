@@ -7,11 +7,11 @@
  * @package    WebMan WordPress Theme Framework
  * @author     WebMan
  * @license    GPL-2.0+
- * @link       http://www.webmandesign.eu
+ * @link       https://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @version  3.4
- * @version  1.9.1
+ * @version  1.9.3
  *
  * CONTENT:
  * - 1) Required files
@@ -32,7 +32,7 @@
  */
 
 	//Layouts and patterns
-		locate_template( WM_LIBRARY_DIR . 'includes/hooks.php', true );
+		require get_theme_file_path( WM_LIBRARY_DIR . 'includes/hooks.php' );
 
 	//Plugins activation
 		if (
@@ -42,8 +42,8 @@
 					|| file_exists( WM_SETUP_CHILD . 'plugins.php' )
 				)
 			) {
-			locate_template( WM_LIBRARY_DIR . 'includes/class-tgm-plugin-activation.php', true );
-			locate_template( WM_SETUP_DIR . 'plugins.php',                                true );
+			require get_theme_file_path( WM_LIBRARY_DIR . 'includes/class-tgm-plugin-activation.php' );
+			require get_theme_file_path( WM_SETUP_DIR . 'plugins.php' );
 		}
 
 
@@ -1597,6 +1597,8 @@
 	/**
 	 * Comments pagination
 	 *
+	 * @version  1.9.3
+	 *
 	 * @param  string $container_id
 	 */
 	if ( ! function_exists( 'wm_comments_navigation' ) ) {
@@ -1606,7 +1608,7 @@
 				$container_id = esc_attr( sanitize_html_class( trim( $container_id ) ) );
 
 			//Preparing output
-				$output[10] = '<nav id="' . $container_id . '" class="navigation comment-navigation ' . $container_id . '" role="navigation">';
+				$output[10] = '<nav id="' . $container_id . '" class="navigation comment-navigation ' . $container_id . '">';
 				$output[20] = '<h3 class="screen-reader-text">' . __( 'Comment navigation', 'mustang-lite' ) . '</h3>';
 				$output[30] = '<div class="nav-previous">' . get_previous_comments_link( __( '&larr; Older comments', 'mustang-lite' ) ) . '</div>';
 				$output[40] = '<div class="nav-next">' . get_next_comments_link( __( 'Newer comments &rarr;', 'mustang-lite' ) ) . '</div>';
@@ -1833,7 +1835,7 @@
 		 *
 		 * @since    3.0
 		 * @version  3.4
-		 * @version  1.8.2
+		 * @version  1.9.3
 		 *
 		 * @param  boolean $args
 		 */
@@ -1886,7 +1888,7 @@
 					// Get the file content with output buffering
 
 						ob_start();
-						locate_template( 'assets/css/' . $css_generator_file, true );
+						require get_theme_file_path( 'assets/css/' . $css_generator_file );
 						$output = trim( ob_get_clean() );
 
 					// Requirements check

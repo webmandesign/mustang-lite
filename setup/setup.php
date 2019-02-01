@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.1
+ * @version  1.9.3
  *
  * CONTENT:
  * - 1) Required files
@@ -28,7 +28,7 @@
  */
 
 	//Theme options arrays
-		locate_template( WM_SETUP_DIR . 'setup-theme-options.php', true );
+		require get_theme_file_path( WM_SETUP_DIR . 'setup-theme-options.php' );
 
 
 
@@ -180,7 +180,7 @@
 	 * Theme helper variables
 	 *
 	 * @since    1.0
-	 * @version  1.8.1
+	 * @version  1.9.3
 	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key Additional key if the variable is array
@@ -308,8 +308,8 @@
 								'name'          => __( 'General Sidebar', 'mustang-lite' ),
 								'id'            => 'general',
 								'description'   => __( 'The default general sidebar.', 'mustang-lite' ),
-								'before_widget' => '<div class="widget %1$s %2$s">',
-								'after_widget'  => '</div>',
+								'before_widget' => '<section class="widget %1$s %2$s">',
+								'after_widget'  => '</section>',
 								'before_title'  => '<h3 class="widget-heading">',
 								'after_title'   => '</h3>'
 							),
@@ -317,8 +317,8 @@
 								'name'          => __( 'Topbar Widgets', 'mustang-lite' ),
 								'id'            => 'topbar',
 								'description'   => __( 'Widget area displayed as topbar of the website.', 'mustang-lite' ),
-								'before_widget' => '<div class="widget %1$s %2$s">',
-								'after_widget'  => '</div>',
+								'before_widget' => '<section class="widget %1$s %2$s">',
+								'after_widget'  => '</section>',
 								'before_title'  => '<p class="widget-heading">',
 								'after_title'   => '</p>'
 							),
@@ -326,8 +326,8 @@
 								'name'          => __( 'Topbar Extra Widgets', 'mustang-lite' ),
 								'id'            => 'topbar-extra',
 								'description'   => __( 'Widget area displayed as extra topbar. It rolls out from top of the website when a button is clicked.', 'mustang-lite' ),
-								'before_widget' => '<div class="widget %1$s %2$s">',
-								'after_widget'  => '</div>',
+								'before_widget' => '<section class="widget %1$s %2$s">',
+								'after_widget'  => '</section>',
 								'before_title'  => '<h4 class="widget-heading">',
 								'after_title'   => '</h4>'
 							),
@@ -335,8 +335,8 @@
 								'name'          => __( 'Main Heading Widgets', 'mustang-lite' ),
 								'id'            => 'main-heading-widgets',
 								'description'   => __( 'Widget area displayed in the Main Heading section.', 'mustang-lite' ),
-								'before_widget' => '<div class="widget %1$s %2$s">',
-								'after_widget'  => '</div>',
+								'before_widget' => '<section class="widget %1$s %2$s">',
+								'after_widget'  => '</section>',
 								'before_title'  => '<p class="widget-heading">',
 								'after_title'   => '</p>'
 							),
@@ -344,8 +344,8 @@
 								'name'          => __( 'Footer Widgets', 'mustang-lite' ),
 								'id'            => 'footer-widgets',
 								'description'   => __( 'Masonry footer layout. Set up the columns number in theme admin panel.', 'mustang-lite' ),
-								'before_widget' => '<div class="widget %1$s %2$s">',
-								'after_widget'  => '</div>',
+								'before_widget' => '<section class="widget %1$s %2$s">',
+								'after_widget'  => '</section>',
 								'before_title'  => '<h3 class="widget-heading">',
 								'after_title'   => '</h3>'
 							),
@@ -353,8 +353,8 @@
 								'name'          => __( 'Credits Widgets', 'mustang-lite' ),
 								'id'            => 'credits',
 								'description'   => __( 'Credits or copyright area in the footer. Takes up to 3 widgets. When you insert 1 widget, it will be displayed fullwidth. When 2 widgets are in the area, first is displayed on left, the second on right. In case of 3 widgets in the area, first is displayed fullwidth, second and third below, on the left and on the right.', 'mustang-lite' ),
-								'before_widget' => '<div class="widget %1$s %2$s">',
-								'after_widget'  => '</div>',
+								'before_widget' => '<section class="widget %1$s %2$s">',
+								'after_widget'  => '</section>',
 								'before_title'  => '<h4 class="widget-heading">',
 								'after_title'   => '</h4>'
 							),
@@ -365,8 +365,8 @@
 								'name'          => __( 'Floating cart', 'mustang-lite' ),
 								'id'            => 'floating-cart',
 								'description'   => __( 'Widget area displayed as floating shoping cart.', 'mustang-lite' ),
-								'before_widget' => '<div class="widget %1$s %2$s">',
-								'after_widget'  => '</div>',
+								'before_widget' => '<section class="widget %1$s %2$s">',
+								'after_widget'  => '</section>',
 								'before_title'  => '<h4 class="widget-heading">',
 								'after_title'   => '</h4>'
 							);
@@ -437,7 +437,7 @@
 	 * Theme installation
 	 *
 	 * @since    1.0
-	 * @version  1.9.0
+	 * @version  1.9.3
 	 */
 	if ( ! function_exists( 'wm_install' ) ) {
 		function wm_install() {
@@ -483,7 +483,8 @@
 				//WordPress visual editor CSS stylesheets
 					$visual_editor_css = array();
 					if ( wm_google_fonts() ) {
-						$visual_editor_css[] = esc_url_raw( str_replace( ',', '%2C', '//fonts.googleapis.com/css' . wm_google_fonts() ) );
+						$http = ( is_ssl() ) ? ( 'https:' ) : ( 'http' );
+						$visual_editor_css[] = esc_url_raw( str_replace( ',', '%2C', $http . '://fonts.googleapis.com/css' . wm_google_fonts() ) );
 					}
 					$visual_editor_css[] = get_option( WM_THEME_SETTINGS_PREFIX . WM_THEME_SHORTNAME . '-ve-css' );
 					$visual_editor_css   = apply_filters( 'wmhook_wm_install_visual_editor_css', array_filter( $visual_editor_css ) );
@@ -669,7 +670,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.8.0
+	 * @version  1.9.3
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -692,6 +693,8 @@
 			/**
 			 * Styles
 			 */
+
+				$http = ( is_ssl() ) ? ( 'https:' ) : ( 'http' );
 
 				$register_styles = apply_filters( 'wmhook_wm_register_assets_register_styles', array(
 					//Frontend
@@ -717,7 +720,7 @@
 						'wm-admin-wc-rtl'     => array( wm_get_stylesheet_directory_uri( 'library/assets/css/rtl-admin-woocommerce.css' ) ),
 						'wm-theme-customizer' => array( wm_get_stylesheet_directory_uri( 'library/assets/css/theme-customizer.css' ) ),
 					//Google Fonts
-						'wm-google-fonts' => array( esc_url_raw( '//fonts.googleapis.com/css' . wm_google_fonts() ) ),
+						'wm-google-fonts' => array( esc_url_raw( $http . '://fonts.googleapis.com/css' . wm_google_fonts() ) ),
 					), $stylesheets );
 
 				foreach ( $register_styles as $handle => $atts ) {
@@ -1335,6 +1338,8 @@
 
 	/**
 	 * Navigation
+	 *
+	 * @version  1.9.3
 	 */
 	if ( ! function_exists( 'wm_section_navigation' ) ) {
 		function wm_section_navigation() {
@@ -1357,7 +1362,7 @@
 				$args = apply_filters( 'wmhook_wm_section_navigation_args', $args );
 
 			//Preparing output
-				$output .= '<nav id="nav-main" class="nav-main clearfix" role="navigation">';
+				$output .= '<nav id="nav-main" class="nav-main clearfix">';
 				$output .= wm_accessibility_skip_link( 'to_content' );
 				$output .= wp_nav_menu( $args );
 				$output .= '</nav>';
@@ -1580,7 +1585,7 @@
 	 * Slider
 	 *
 	 * @since    1.0
-	 * @version  1.9.1
+	 * @version  1.9.3
 	 */
 	if ( ! function_exists( 'wm_section_slider' ) ) {
 		function wm_section_slider() {
@@ -1705,7 +1710,7 @@
 				} // /switch
 
 			//Output
-				echo apply_filters( 'wmhook_wm_section_slider_output', "\r\n\r\n" . '<section id="slider" class="slider wrap clearfix slider-main-wrap" role="banner">' . "\r\n" . $output . "\r\n" . '</section>' . "\r\n" );
+				echo apply_filters( 'wmhook_wm_section_slider_output', "\r\n\r\n" . '<section id="slider" class="slider wrap clearfix slider-main-wrap">' . "\r\n" . $output . "\r\n" . '</section>' . "\r\n" );
 		}
 	} // /wm_section_slider
 
@@ -1959,11 +1964,13 @@
 
 	/**
 	 * Content top
+	 *
+	 * @version  1.9.3
 	 */
 	if ( ! function_exists( 'wm_section_content_top' ) ) {
 		function wm_section_content_top() {
 			//Helper variables
-				$output = "\r\n\r\n" . '<div id="content-section" class="content-section wrap clearfix" role="main"' . wm_schema_org( 'main_content' ) . '>' . "\r\n";
+				$output = "\r\n\r\n" . '<div id="content-section" class="content-section wrap clearfix"' . wm_schema_org( 'main_content' ) . '>' . "\r\n";
 
 			//Output
 				echo apply_filters( 'wmhook_wm_section_content_top_output', $output );
@@ -2447,7 +2454,7 @@
 	 * Sidebar setup array
 	 *
 	 * @since    1.0
-	 * @version  1.7
+	 * @version  1.9.3
 	 *
 	 * @param  string $return Specify which output array key to return.
 	 * @param  array $atts
@@ -2537,7 +2544,7 @@
 				//Actuall sidebar HTML output
 					if ( 'none' !== $output['position'] ) {
 						$output['output'] = wma_sidebar( apply_filters( 'wmhook_wm_sidebar_setup_sidebar_atts', array(
-								'attributes' => ' role="complementary"',
+								'attributes' => '',
 								'class'      => 'sidebar widget-area clearfix sidebar-' . esc_attr( $output['position'] . $output['class_sidebar'] ),
 								'sidebar'    => 'general',
 							), $atts ) );
@@ -2730,7 +2737,7 @@
 		 */
 
 			if ( class_exists( 'WM_Amplifier' ) ) {
-				locate_template( WM_SETUP_DIR . 'setup-webman-amplifier.php', true );
+				require get_theme_file_path( WM_SETUP_DIR . 'setup-webman-amplifier.php' );
 			}
 
 
@@ -2950,11 +2957,11 @@
 		 * Beaver Builder integration
 		 *
 		 * @since    1.6
-		 * @version  1.6
+		 * @version  1.9.3
 		 */
 
 			if ( class_exists( 'FLBuilder' ) ) {
-				locate_template( WM_SETUP_DIR . 'setup-beaver-builder.php', true );
+				require get_theme_file_path( WM_SETUP_DIR . 'setup-beaver-builder.php' );
 			}
 
 
@@ -2963,11 +2970,11 @@
 		 * One Click Demo Import
 		 *
 		 * @since    1.6
-		 * @version  1.7.1
+		 * @version  1.9.3
 		 */
 
 			if ( ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) && is_admin() ) {
-				locate_template( WM_SETUP_DIR . 'setup-one-click-demo-import.php', true );
+				require get_theme_file_path( WM_SETUP_DIR . 'setup-one-click-demo-import.php' );
 			}
 
 
@@ -2976,7 +2983,7 @@
 		 * Premium features?
 		 *
 		 * @since    1.7
-		 * @version  1.7
+		 * @version  1.9.3
 		 */
 
-			locate_template( WM_SETUP_DIR . 'premium/setup-premium.php', true );
+			require get_theme_file_path( WM_SETUP_DIR . 'premium/setup-premium.php' );

@@ -7,18 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.2
- */
-
-
-
-
-
-/**
- * Output custom skin styles
- *
- * @since    1.0
- * @version  1.8.2
+ * @version  1.9.3
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */
@@ -1429,7 +1418,6 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 							'selector'  => 'body',
 							'styles'    => array(
 								'font-family' => '"' . $helper['google_fonts'][ wm_option( $helper['prefix'] . 'font-body' ) ] . '", Helvetica, Arial, Verdana, sans-serif',
-								'font-size'   => wm_option( $helper['prefix'] . 'font-size-body', '', 'px' ),
 							)
 						),
 						've-' . 'fonts-headings' => array(

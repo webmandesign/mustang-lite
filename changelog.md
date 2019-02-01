@@ -1,5 +1,37 @@
 # Mustang Lite Changelog
 
+## 1.9.3
+
+* **Update**: Removing all `locate_template()`
+* **Update**: Adding WordPress theme required `readme.txt` file
+* **Update**: Fixing Beaver Builder global settings modification
+* **Update**: Removing custom font size in editor stylesheet
+* **Update**: Removing all `role` HTML attributes
+* **Update**: Widget areas markup
+* **Update**: Info URLs
+* **Update**: Localization
+
+### Files changed:
+
+	changelog.md
+	functions.php
+	readme.txt
+	sidebar-footer.php
+	style.css
+	assets/css/_custom-styles.php
+	assets/css/_generate-css.php
+	assets/css/_generate-rtl-css.php
+	assets/css/_generate-ve-css.php
+	languages/*.*
+	library/admin.php
+	library/core.php
+	library/skinning.php
+	setup/setup-beaver-builder.php
+	setup/setup-theme-options.php
+	setup/setup.php
+	setup/about/about.php
+
+
 ## 1.9.2
 
 * **Update**: WordPress 5.0 ready

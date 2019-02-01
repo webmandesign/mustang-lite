@@ -10,7 +10,7 @@
  *
  * @since       3.0
  * @version     3.4
- * @version  1.7
+ * @version  1.9.3
  *
  * CONTENT:
  * - 1) Required files
@@ -29,9 +29,9 @@
  */
 
 	//Include function to generate the WordPress Customizer CSS
-		locate_template( 'assets/css/_custom-styles.php', true );
+		require get_theme_file_path( 'assets/css/_custom-styles.php' );
 	//Include sanitizing functions
-		locate_template( WM_LIBRARY_DIR . 'includes/sanitize.php', true );
+		require get_theme_file_path( WM_LIBRARY_DIR . 'includes/sanitize.php' );
 
 
 
@@ -191,7 +191,7 @@
 	/**
 	 * Registering sections and options for WP Customizer
 	 *
-	 * @version  1.5
+	 * @version  1.9.3
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */
@@ -204,12 +204,11 @@
 			 * @link  http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/
 			 */
 
-				locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Hidden.php',      true );
-				locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_HTML.php',        true );
-				// locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WP_Customize_Image_Control.php',       true );
-				locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Multiselect.php', true );
-				locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Radiocustom.php', true );
-				locate_template( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Range.php',      true );
+				require get_theme_file_path( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Hidden.php' );
+				require get_theme_file_path( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_HTML.php' );
+				require get_theme_file_path( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Multiselect.php' );
+				require get_theme_file_path( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Radiocustom.php' );
+				require get_theme_file_path( WM_LIBRARY_DIR . 'includes/controls/class-WM_Customizer_Range.php' );
 
 
 
@@ -236,7 +235,7 @@
 					) );
 
 				//To make sure our customizer sections start after WordPress default ones
-					$priority = apply_filters( 'wmhook_wm_theme_customizer_priority', 900 );
+					$priority = apply_filters( 'wmhook_wm_theme_customizer_priority', 0 );
 				//Default section name in case not set (should be overwritten anyway)
 					$customizer_panel   = '';
 					$customizer_section = WM_THEME_SHORTNAME;

@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.1.1
- * @version  1.6
+ * @version  1.9.3
  */
 
 
@@ -48,7 +48,7 @@
 
 		echo wmhook_sidebars_before();
 
-			echo "\r\n\r\n" . '<div class="wm-sidebar widget-area footer-widgets-container widgets-count-' . count( $widgets_count ) . '" data-id="' . $sidebar_id . '" data-widgets-count="' . count( $widgets_count ) . '">' . "\r\n";
+			echo "\r\n\r\n" . '<aside class="wm-sidebar widget-area footer-widgets-container widgets-count-' . count( $widgets_count ) . '" data-id="' . $sidebar_id . '" data-widgets-count="' . count( $widgets_count ) . '">' . "\r\n";
 
 				echo wmhook_sidebar_top();
 
@@ -60,7 +60,7 @@
 
 				echo wmhook_sidebar_bottom();
 
-			echo "\r\n" . '</div>' . "\r\n\r\n";
+			echo "\r\n" . '</aside>' . "\r\n\r\n";
 
 		echo wmhook_sidebars_after();
 

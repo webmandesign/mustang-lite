@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.2
+ * @version  1.9.3
  *
  * CONTENT:
  *  1) Requirements check
@@ -150,7 +150,7 @@
 	 * Render the "About" screen content
 	 *
 	 * @since    1.0
-	 * @version  1.8.1
+	 * @version  1.9.3
 	 */
 	if ( ! function_exists( 'wm_about_screen' ) ) {
 		function wm_about_screen() {
@@ -181,7 +181,7 @@
 							printf(
 								esc_html_x( 'Thank you for using %1$s WordPress theme by %2$s!', '1: theme name, 2: theme developer link.', 'mustang-lite' ),
 								'<strong>' . WM_THEME_NAME . '</strong>',
-								'<a href="http://www.webmandesign.eu" target="_blank"><strong>WebMan Design</strong></a>'
+								'<a href="https://www.webmandesign.eu" target="_blank"><strong>WebMan Design</strong></a>'
 							);
 
 							?>
@@ -195,7 +195,7 @@
 
 								<a href="https://webmandesign.github.io/docs/mustang/" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'mustang-lite' ); ?></a>
 
-								<a href="http://support.webmandesign.eu" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Forum', 'mustang-lite' ); ?></a>
+								<a href="https://support.webmandesign.eu" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Forum', 'mustang-lite' ); ?></a>
 
 							</p>
 

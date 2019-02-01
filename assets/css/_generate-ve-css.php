@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7
+ * @version  1.9.3
  *
  * @uses        Custom CSS Styles Generator
  * @uses        require() instead of require_once() due to previous inclusion of files when building global CSS stylesheet
@@ -93,7 +93,7 @@
 						 * For basic CSS file paths use this structure:
 						 * 'CUSTOM_CSS_FILE_SLUG'
 						 */
-						locate_template( $css_file_path, true, false );
+						require get_theme_file_path( $css_file_path );
 
 					}
 
@@ -116,8 +116,6 @@
 /**
  * Custom styles from skin editor
  */
-
-	// locate_template( 'assets/css/_custom-styles.php', true ); //Must be in separate file for WordPress customizer
 
 	$output .= "\r\n\r\n\r\n/**\r\n * Skin styles\r\n */\r\n\r\n" . wm_custom_styles( true ) . "\r\n\r\n" . '/* End of file */';
 

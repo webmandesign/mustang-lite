@@ -3,15 +3,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mustang\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2018-09-27 20:44+0200\n"
+"POT-Creation-Date: 2019-02-01 19:01+0100\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
-"Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Last-Translator: WebMan Design, Oliver Juhas\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -117,38 +117,38 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: library/core.php:1610
+#: library/core.php:1612
 msgid "Comment navigation"
 msgstr ""
 
-#: library/core.php:1611
+#: library/core.php:1613
 msgid "&larr; Older comments"
 msgstr ""
 
-#: library/core.php:1612
+#: library/core.php:1614
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: library/core.php:1632
+#: library/core.php:1634
 msgid "Skip to content"
 msgstr ""
 
-#: library/core.php:1633
+#: library/core.php:1635
 msgid "Skip to navigation"
 msgstr ""
 
-#: library/core.php:1922
+#: library/core.php:1924
 msgid ""
 "ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
 msgstr ""
 
-#: library/core.php:2214
+#: library/core.php:2216
 msgid ""
 "The theme writes a files to your server. You do not appear to have your FTP "
 "credentials set up in \"wp-config.php\" file."
 msgstr ""
 
-#: library/core.php:2214
+#: library/core.php:2216
 msgid "Please set your FTP credentials first."
 msgstr ""
 
@@ -605,32 +605,32 @@ msgstr ""
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
-#: library/skinning.php:372 setup/setup-theme-options.php:155
+#: library/skinning.php:371 setup/setup-theme-options.php:155
 #: setup/setup-theme-options.php:278
 msgid "Background color"
 msgstr ""
 
-#: library/skinning.php:393 setup/setup-webman-amplifier.php:1229
+#: library/skinning.php:392 setup/setup-webman-amplifier.php:1227
 msgid "Background image"
 msgstr ""
 
-#: library/skinning.php:415
+#: library/skinning.php:414
 msgid "High DPI background image"
 msgstr ""
 
-#: library/skinning.php:440
+#: library/skinning.php:439
 msgid "Background position"
 msgstr ""
 
-#: library/skinning.php:463
+#: library/skinning.php:462
 msgid "Background repeat"
 msgstr ""
 
-#: library/skinning.php:486
+#: library/skinning.php:485
 msgid "Background attachment"
 msgstr ""
 
-#: library/skinning.php:509
+#: library/skinning.php:508
 msgid "CSS3 background size"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 #: setup/setup-theme-options.php:650 setup/setup-theme-options.php:774
 #: setup/setup-theme-options.php:817
 msgctxt "Customizer panel title."
-msgid "Theme"
+msgid "Theme Options"
 msgstr ""
 
 #: setup/setup-theme-options.php:109
@@ -1018,15 +1018,15 @@ msgstr ""
 msgid "Section: Content"
 msgstr ""
 
-#: setup/setup-theme-options.php:326 setup/setup-webman-amplifier.php:329
+#: setup/setup-theme-options.php:326 setup/setup-webman-amplifier.php:321
 msgid "Sidebar position"
 msgstr ""
 
-#: setup/setup-theme-options.php:328 setup/setup-webman-amplifier.php:511
+#: setup/setup-theme-options.php:328 setup/setup-webman-amplifier.php:509
 msgid "Left"
 msgstr ""
 
-#: setup/setup-theme-options.php:329 setup/setup-webman-amplifier.php:512
+#: setup/setup-theme-options.php:329 setup/setup-webman-amplifier.php:510
 msgid "Right"
 msgstr ""
 
@@ -1283,11 +1283,11 @@ msgid "Heading H4, H5 and H6 font size"
 msgstr ""
 
 #: setup/setup-theme-options.php:773 setup/setup-theme-options.php:779
-#: setup/setup-webman-amplifier.php:1106 setup/setup-webman-amplifier.php:1197
+#: setup/setup-webman-amplifier.php:1104 setup/setup-webman-amplifier.php:1195
 msgid "Layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:785 setup/setup-webman-amplifier.php:437
+#: setup/setup-theme-options.php:785 setup/setup-webman-amplifier.php:434
 msgid "Website layout"
 msgstr ""
 
@@ -1331,15 +1331,15 @@ msgstr ""
 msgid "Disable Appearance &raquo; Welcome page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:120
+#: setup/setup-webman-amplifier.php:112
 msgid "Projects"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:138
+#: setup/setup-webman-amplifier.php:130
 msgid "Projects tags"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:196
+#: setup/setup-webman-amplifier.php:188
 msgid ""
 "<h2>Audio post format</h2>Displays audio player to play your audio files. "
 "Could be used for Podcasting. Please place the <code>[wm_audio]</code> "
@@ -1347,7 +1347,7 @@ msgid ""
 "follow on next line."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:211
+#: setup/setup-webman-amplifier.php:203
 msgid ""
 "<h2>Gallery post format</h2>A standard post with a gallery of images in post "
 "content. Slideshow will be displayed on blog page from the first gallery "
@@ -1357,173 +1357,173 @@ msgid ""
 "post page."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:226
+#: setup/setup-webman-amplifier.php:218
 msgid ""
 "<h2>Link post format</h2>Promotes interesting URL links. You can set the "
 "link anywhere in the post content. The link will be emphasized when post is "
 "displayed."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:226 setup/setup-webman-amplifier.php:241
-#: setup/setup-webman-amplifier.php:256
+#: setup/setup-webman-amplifier.php:218 setup/setup-webman-amplifier.php:233
+#: setup/setup-webman-amplifier.php:248
 msgid "Post title will not be displayed."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:241
+#: setup/setup-webman-amplifier.php:233
 msgid ""
 "<h2>Quote post format</h2>A quotation. Please place the actual quote "
 "(blockquote) directly into post content. To set a quote source use a "
 "<code>&lt;cite></code> HTML tag."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:256
+#: setup/setup-webman-amplifier.php:248
 msgid ""
 "<h2>Status post format</h2>A short status update, similar to a Twitter "
 "status update. Please place the actual status text directly into post "
 "content area."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:271
+#: setup/setup-webman-amplifier.php:263
 msgid ""
 "<h2>Video post format</h2>A single video. Please place the <code>[wm_video]</"
 "code> shortcode as the first thing in post content. The video description "
 "text can follow on next line."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:305 setup/setup-webman-amplifier.php:392
-#: setup/setup-webman-amplifier.php:718 setup/setup.php:217 setup/setup.php:292
+#: setup/setup-webman-amplifier.php:297 setup/setup-webman-amplifier.php:386
+#: setup/setup-webman-amplifier.php:716 setup/setup.php:217 setup/setup.php:292
 #: setup/setup.php:299
 msgid "Default"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:316 setup/setup-webman-amplifier.php:412
-#: setup/setup-webman-amplifier.php:712
+#: setup/setup-webman-amplifier.php:308 setup/setup-webman-amplifier.php:409
+#: setup/setup-webman-amplifier.php:710
 msgid "Settings"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:322 setup/setup-webman-amplifier.php:422
+#: setup/setup-webman-amplifier.php:314 setup/setup-webman-amplifier.php:419
 msgid "Disable main heading"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:323 setup/setup-webman-amplifier.php:423
+#: setup/setup-webman-amplifier.php:315 setup/setup-webman-amplifier.php:420
 msgid "Hide main heading section"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:330
+#: setup/setup-webman-amplifier.php:322
 msgid "Select a sidebar position"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:362
+#: setup/setup-webman-amplifier.php:354
 msgid "Post options"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:429 setup/setup-webman-amplifier.php:716
+#: setup/setup-webman-amplifier.php:426 setup/setup-webman-amplifier.php:714
 msgid "Page layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:430 setup/setup-webman-amplifier.php:717
+#: setup/setup-webman-amplifier.php:427 setup/setup-webman-amplifier.php:715
 msgid "Select a sidebar position or enable fullwidth sections."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:430 setup/setup-webman-amplifier.php:717
+#: setup/setup-webman-amplifier.php:427 setup/setup-webman-amplifier.php:715
 msgid "Fullwidth sections page layout is suitable for use with page builders."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:438
+#: setup/setup-webman-amplifier.php:435
 msgid "Select a website layout for this page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:445
+#: setup/setup-webman-amplifier.php:442
 msgid "Footer layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:446
+#: setup/setup-webman-amplifier.php:443
 msgid "Select a footer layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:448
+#: setup/setup-webman-amplifier.php:445
 msgid "Widgets and credits"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:449
+#: setup/setup-webman-amplifier.php:446
 msgid "Widgets only"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:450
+#: setup/setup-webman-amplifier.php:447
 msgid "Credits only"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:451
+#: setup/setup-webman-amplifier.php:448
 msgid "No footer"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:464
+#: setup/setup-webman-amplifier.php:462
 msgid "Slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:473
+#: setup/setup-webman-amplifier.php:471
 msgid ""
 "<strong>Please note that this is a special slider section setup.</"
 "strong><br />This slider will be displayed above the website header area. "
 "For standard sliders please use the shortcodes directly in the page content."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:479
+#: setup/setup-webman-amplifier.php:477
 msgid "Set special slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:480
+#: setup/setup-webman-amplifier.php:478
 msgid "Select a slider type used as a special slider above the website header"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:482
+#: setup/setup-webman-amplifier.php:480
 msgid "No special slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:483
+#: setup/setup-webman-amplifier.php:481
 msgid "Custom slider (use shortcode)"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:484
+#: setup/setup-webman-amplifier.php:482
 msgid "Featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:491
+#: setup/setup-webman-amplifier.php:489
 msgid "Slider shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:492
+#: setup/setup-webman-amplifier.php:490
 msgid "Set the custom slider shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:507
+#: setup/setup-webman-amplifier.php:505
 msgid "Image caption position"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:508
+#: setup/setup-webman-amplifier.php:506
 msgid ""
 "Featured image will be displayed in the special slider section.<br />Set the "
 "image caption (you can use shortcodes) and set the image caption position "
 "here."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:508
+#: setup/setup-webman-amplifier.php:506
 msgid "Set featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:510 setup/setup.php:200
+#: setup/setup-webman-amplifier.php:508 setup/setup.php:200
 msgid "Center"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:534
+#: setup/setup-webman-amplifier.php:533
 msgid "Blog"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:544
+#: setup/setup-webman-amplifier.php:543
 msgid "Number of posts"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:545
+#: setup/setup-webman-amplifier.php:544
 msgid ""
 "Sets the number of posts listed on this blog page only. Other archives will "
 "display posts according to WordPress settings.<br />Value of \"-1\" will "
@@ -1531,34 +1531,34 @@ msgid ""
 "applied."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:558
+#: setup/setup-webman-amplifier.php:557
 msgid "Category"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:564
+#: setup/setup-webman-amplifier.php:563
 msgid "Posts categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:565
+#: setup/setup-webman-amplifier.php:564
 msgid ""
 "You can choose to display all posts or posts from a specific categories "
 "only. Press [+] button to add a category and select the category name from "
 "dropdown list."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:572
+#: setup/setup-webman-amplifier.php:571
 msgid "Categories action"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:573
+#: setup/setup-webman-amplifier.php:572
 msgid "Exclude or use the above categories?"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:576
+#: setup/setup-webman-amplifier.php:575
 msgid "Posts just from these categories"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:577
+#: setup/setup-webman-amplifier.php:576
 msgid "Exclude posts from these categories"
 msgstr ""
 
@@ -1583,99 +1583,99 @@ msgstr ""
 msgid "Set a special anchor navigation for this page"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:649
+#: setup/setup-webman-amplifier.php:647
 msgid "Page options"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:674
+#: setup/setup-webman-amplifier.php:672
 msgid "Icon"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:681
+#: setup/setup-webman-amplifier.php:679
 msgid "Hover title"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:686
+#: setup/setup-webman-amplifier.php:684
 msgid "URL link"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:724
+#: setup/setup-webman-amplifier.php:722
 msgid "Custom preview slider"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:725
+#: setup/setup-webman-amplifier.php:723
 msgid ""
 "This slider will be displayed on projects list only, instead of featured "
 "image. Please enter the slider shortcode."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1108
+#: setup/setup-webman-amplifier.php:1106
 msgid "Default layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1109
+#: setup/setup-webman-amplifier.php:1107
 msgid "Simple posts or projects layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1170
+#: setup/setup-webman-amplifier.php:1168
 msgid "Theme Modules"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1190
+#: setup/setup-webman-amplifier.php:1188
 msgid "Output layout"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1191
+#: setup/setup-webman-amplifier.php:1189
 msgid ""
 "Set optional output layout name. You can use <code>simple</code> with "
 "<em>Posts</em> and <em>Projects</em> posts."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1203
+#: setup/setup-webman-amplifier.php:1201
 msgid "Remove section inner container"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1204
+#: setup/setup-webman-amplifier.php:1202
 msgid "This is only relevant when using \"Fullwidth sections\" page layout."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1209
+#: setup/setup-webman-amplifier.php:1207
 msgid ""
 "Remove the inner Section container to make the content fill the whole "
 "section without any paddings."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1216
+#: setup/setup-webman-amplifier.php:1214
 msgid "Section background video URL"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1217
+#: setup/setup-webman-amplifier.php:1215
 msgid ""
 "Set optional section background video URL. Video will be played "
 "automatically in a loop."
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1223
+#: setup/setup-webman-amplifier.php:1221
 msgid "Styling"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1230
+#: setup/setup-webman-amplifier.php:1228
 msgid "The image will cover the column background"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1244
+#: setup/setup-webman-amplifier.php:1242
 msgid "Forums Index"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1247
+#: setup/setup-webman-amplifier.php:1245
 msgid "Forum"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1252
+#: setup/setup-webman-amplifier.php:1250
 msgid "bbPress Shortcode"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:1253
+#: setup/setup-webman-amplifier.php:1251
 msgid "This will display your entire forum index. No parameters to be set."
 msgstr ""
 
@@ -1858,137 +1858,137 @@ msgstr ""
 msgid "Widget area displayed as floating shoping cart."
 msgstr ""
 
-#: setup/setup.php:544
+#: setup/setup.php:545
 msgid "Main navigation"
 msgstr ""
 
-#: setup/setup.php:1274
+#: setup/setup.php:1277
 msgid "Open extra topbar"
 msgstr ""
 
-#: setup/setup.php:1327
+#: setup/setup.php:1330
 msgid "Close search form"
 msgstr ""
 
-#: setup/setup.php:1364
+#: setup/setup.php:1369
 msgid "Menu"
 msgstr ""
 
-#: setup/setup.php:1403
+#: setup/setup.php:1408
 msgid "Show cart"
 msgstr ""
 
-#: setup/setup.php:1407
+#: setup/setup.php:1412
 msgid "Search"
 msgstr ""
 
-#: setup/setup.php:1793
+#: setup/setup.php:1798
 #, php-format
 msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1795
+#: setup/setup.php:1800
 #, php-format
 msgid "Monthly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1795
+#: setup/setup.php:1800
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: setup/setup.php:1797
+#: setup/setup.php:1802
 #, php-format
 msgid "Yearly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1797
+#: setup/setup.php:1802
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: setup/setup.php:1799
+#: setup/setup.php:1804
 #, php-format
 msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1801
+#: setup/setup.php:1806
 #, php-format
 msgid "Tag Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1803
+#: setup/setup.php:1808
 #, php-format
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1806
+#: setup/setup.php:1811
 #, php-format
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
-#: setup/setup.php:1810
+#: setup/setup.php:1815
 msgid "Archives"
 msgstr ""
 
-#: setup/setup.php:1841
+#: setup/setup.php:1846
 msgid "Error 404"
 msgstr ""
 
-#: setup/setup.php:1847
+#: setup/setup.php:1852
 #, php-format
 msgid "%s forums"
 msgstr ""
 
-#: setup/setup.php:1850
+#: setup/setup.php:1855
 #, php-format
 msgid "Forum: %s"
 msgstr ""
 
-#: setup/setup.php:1853
+#: setup/setup.php:1858
 #, php-format
 msgid "Topic: %s"
 msgstr ""
 
-#: setup/setup.php:1861
+#: setup/setup.php:1866
 #, php-format
 msgid " / Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:2114
+#: setup/setup.php:2121
 msgid "Back to top of the page"
 msgstr ""
 
-#: setup/setup.php:2381
+#: setup/setup.php:2388
 msgid "Content width"
 msgstr ""
 
-#: setup/setup.php:2382
+#: setup/setup.php:2389
 msgid "Mobile width"
 msgstr ""
 
-#: setup/setup.php:2429
+#: setup/setup.php:2436
 #, php-format
 msgid "Previous item: %s"
 msgstr ""
 
-#: setup/setup.php:2432
+#: setup/setup.php:2439
 #, php-format
 msgid "Next item: %s"
 msgstr ""
 
-#: setup/setup.php:2872
+#: setup/setup.php:2879
 msgid "Load more..."
 msgstr ""
 
-#: setup/setup.php:2917
+#: setup/setup.php:2924
 msgid "Like it!"
 msgstr ""
 
-#: setup/setup.php:2917
+#: setup/setup.php:2924
 msgid "Liked already!"
 msgstr ""
 
-#: setup/setup.php:2923
+#: setup/setup.php:2930
 msgid "Views count"
 msgstr ""

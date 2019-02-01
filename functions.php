@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.2
+ * @version  1.9.3
  */
 
 
@@ -136,10 +136,10 @@
  * Required files
  */
 
-	locate_template( WM_LIBRARY_DIR . 'core.php',  true );
+	require get_theme_file_path( WM_LIBRARY_DIR . 'core.php' );
 
-	locate_template( WM_SETUP_DIR . 'setup.php',   true );
+	require get_theme_file_path( WM_SETUP_DIR . 'setup.php' );
 
-	locate_template( WM_LIBRARY_DIR . 'admin.php', true );
+	require get_theme_file_path( WM_LIBRARY_DIR . 'admin.php' );
 
 	require WM_SETUP_DIR . 'functions.php';
