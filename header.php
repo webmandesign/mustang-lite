@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.0
+ * @version  1.9.4
  */
 
 
@@ -46,6 +46,12 @@
 <body id="top" <?php body_class(); ?>>
 
 <?php
+
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+} else {
+	do_action( 'wp_body_open' );
+}
 
 	/**
 	 * Body

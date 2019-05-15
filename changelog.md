@@ -1,5 +1,18 @@
 # Mustang Lite Changelog
 
+## 1.9.4
+
+* **Update**: Implementing WordPress 5.2 code updates
+
+### Files changed:
+
+	changelog.md
+	header.php
+	readme.txt
+	style.css
+	setup/about/about.php
+
+
 ## 1.9.3
 
 * **Update**: Removing all `locate_template()`

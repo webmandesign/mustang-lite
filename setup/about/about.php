@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.3
+ * @version  1.9.4
  *
  * CONTENT:
  *  1) Requirements check
@@ -209,9 +209,9 @@
 
 							<h2 class="screen-reader-text"><?php esc_html_e( 'Quickstart Guide', 'mustang-lite' ); ?></h2>
 
-							<div class="feature-section three-col">
+							<div class="feature-section three-col has-3-columns" style="max-width: none;">
 
-								<div class="first-feature col">
+								<div class="first-feature col column">
 
 									<span class="dropcap">1</span>
 
@@ -230,7 +230,7 @@
 
 								</div>
 
-								<div class="feature col">
+								<div class="feature col column">
 
 									<span class="dropcap">2</span>
 
@@ -246,7 +246,7 @@
 
 								</div>
 
-								<div class="last-feature col">
+								<div class="last-feature col column">
 
 									<span class="dropcap">3</span>
 
