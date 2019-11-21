@@ -6,14 +6,13 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.8.1
+ * @version  1.9.5
  *
  * Contents:
  *
  *   0) Init
- *  10) Files
- *  20) Texts
- *  30) Setup
+ *  10) Texts
+ *  20) Setup
  * 100) Helpers
  */
 class Mustang_One_Click_Demo_Import {
@@ -34,7 +33,7 @@ class Mustang_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    1.6
-		 * @version  1.8.0
+		 * @version  1.9.5
 		 */
 		private function __construct() {
 
@@ -46,13 +45,11 @@ class Mustang_One_Click_Demo_Import {
 
 						add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles', 99 );
 
-						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
-
 						add_action( 'pt-ocdi/before_widgets_import', __CLASS__ . '::before_widgets_import' );
 
-					// Filters
+						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
-						add_filter( 'pt-ocdi/import_files', __CLASS__ . '::files' );
+					// Filters
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
 
@@ -88,50 +85,38 @@ class Mustang_One_Click_Demo_Import {
 
 
 	/**
-	 * 10) Files
-	 */
-
-		/**
-		 * Import files setup
-		 *
-		 * @since    1.6
-		 * @version  1.6
-		 */
-		public static function files() {
-
-			// Output
-
-				return array(
-
-						array(
-							'import_file_name'       => esc_html__( 'Theme demo content', 'mustang-lite' ),
-							'import_file_url'        => esc_url_raw( 'https://raw.githubusercontent.com/webmandesign/demo-content/master/mustang/content/demo-content-mustang.xml' ),
-							'import_widget_file_url' => esc_url_raw( 'https://raw.githubusercontent.com/webmandesign/demo-content/master/mustang/widgets/mustang-widgets.wie' ),
-						),
-
-					);
-
-		} // /files
-
-
-
-
-
-	/**
-	 * 20) Texts
+	 * 10) Texts
 	 */
 
 		/**
 		 * Info texts
 		 *
 		 * @since    1.6
-		 * @version  1.8.1
+		 * @version  1.9.5
 		 *
 		 * @param  string $text  Default intro text.
 		 */
 		public static function info( $text = '' ) {
 
 			// Processing
+
+				$text .= '<div class="manual-import-info">';
+
+					$text .= '<h2>';
+					$text .= esc_html__( 'Manual import procedure', 'mustang-lite' );
+					$text .= '</h2>';
+
+					$text .= '<p>';
+					$text .= esc_html__( 'By importing this demo content you get the exact copy of the theme demo website.', 'mustang-lite' );
+					$text .= ' (<a href="https://themedemos.webmandesign.eu/mustang-lite/">' . esc_html__( 'Preview the theme demo website &raquo;', 'mustang-lite' ) . '</a>)';
+
+					$text .= '<br>';
+
+					$text .= esc_html__( 'For instructions on importing theme demo content please visit GitHub repository.', 'mustang-lite' );
+					$text .= ' (<a href="https://github.com/webmandesign/demo-content/blob/master/mustang-lite/readme.md#what-is-this">' . esc_html__( 'GitHub repository instructions &raquo;', 'mustang-lite' ) . '</a>)';
+					$text .= '</p>';
+
+				$text .= '</div>';
 
 				$text .= '<div class="media-files-quality-info">';
 
@@ -142,7 +127,7 @@ class Mustang_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'mustang-lite' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'mustang-lite' );
-					$text .= ' <a href="https://webmandesign.github.io/docs/mustang/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'mustang-lite' ) . '</a>';
+					$text .= ' <a href="https://webmandesign.github.io/docs/mustang-lite/#credits">' . esc_html__( 'Get media for your website &raquo;', 'mustang-lite' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';
@@ -150,15 +135,21 @@ class Mustang_One_Click_Demo_Import {
 				$text .= '<div class="ocdi__demo-import-notice">';
 
 					$text .= '<h3>';
-					$text .= esc_html__( 'Install required plugins!', 'mustang-lite' );
+					$text .= esc_html__( 'Install demo required plugins!', 'mustang-lite' );
 					$text .= '</h3>';
 
 					$text .= '<p>';
 					$text .= esc_html__( 'Please read the information about the theme demo required plugins first.', 'mustang-lite' );
 					$text .= ' ' . esc_html__( 'If you do not install and activate demo required plugins, some of the content will not be imported.', 'mustang-lite' );
-					$text .= ' <a href="https://github.com/webmandesign/demo-content/tree/master/mustang/content#before-you-begin" target="_blank" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'mustang-lite' ) . '"><strong>';
+					$text .= ' <a href="https://github.com/webmandesign/demo-content/blob/master/mustang-lite/readme.md#required-plugins" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'mustang-lite' ) . '"><strong>';
 					$text .= esc_html__( 'View the list of required plugins &raquo;', 'mustang-lite' );
 					$text .= '</strong></a>';
+					$text .= '</p>';
+
+					$text .= '<p>';
+					$text .= '<em>';
+					$text .= esc_html__( '(Note that this set of plugins may differ from plugins recommended under Appearance &rarr; Install Plugins!)', 'mustang-lite' );
+					$text .= '</em>';
 					$text .= '</p>';
 
 				$text .= '</div>';

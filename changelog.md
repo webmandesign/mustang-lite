@@ -1,5 +1,18 @@
 # Mustang Lite Changelog
 
+## 1.9.5
+
+* **Update**: Setting manual import for One Click Demo Import plugin to comply with WordPress.org theme requirements
+* **Update**: Localization
+* **Fix**: 
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+
+
 ## 1.9.4
 
 * **Update**: Implementing WordPress 5.2 code updates

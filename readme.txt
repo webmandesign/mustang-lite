@@ -3,7 +3,7 @@ Contributors: webmandesign
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.7.0
 Tested up to: 5.2
-Stable tag: 1.9.4
+Stable tag: 1.9.5
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,8 +37,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 1.9.4 =
-Implementing WordPress 5.2 code updates.
+= 1.9.5 =
+Updating import for One Click Demo Import plugin to comply with WordPress.org theme requirements, updating localization.
 
 
 == Resources ==
