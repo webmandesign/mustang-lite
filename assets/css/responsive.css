@@ -2,7 +2,7 @@
  * Responsive styles
  *
  * @since    1.0
- * @version  1.8.2
+ * @version  1.9.5
  */
 
 	/**
@@ -337,16 +337,12 @@
 							        box-shadow: 0 0 80px 0 rgba(0,0,0, .66);
 						}
 
-						#nav-main .sub-menu {background: #f6f6f6}
-						#nav-main .sub-menu .sub-menu {background: #ededed}
-						#nav-main .sub-menu .sub-menu .sub-menu {background: #e4e4e4}
 
 						#nav-main > .menu > li {border-left: 1px solid #eee !important}
 
 						#nav-main li a,
 						#nav-main li li a,
 						#nav-main li .inner {
-							color: #333;
 							border-top: 1px solid #f6f6f6;
 							border-bottom: 1px solid #eee;
 							border-left: 1px solid #f6f6f6;
@@ -360,18 +356,20 @@
 
 						#nav-main a.mobile-nav {
 							background: none;
-							color: #ddd;
+						}
+
+						#nav-main a.mobile-nav,
+						#nav-main li a,
+						#nav-main li li a,
+						#nav-main li .inner {
+							color: inherit;
 						}
 
 						/* Active menu item */
 							#nav-main li a:hover,
 							#nav-main li:hover > a,
 							#nav-main .active-menu-item > a {
-								background: #dbdbdb;
-								border-top: 1px solid #fff;
-								border-bottom: 1px solid #e3e3e3;
-								-webkit-box-shadow: none;
-								        box-shadow: none;
+								background: rgba(0,0,0,.1);
 							}
 
 

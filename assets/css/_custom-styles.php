@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.3
+ * @version  1.9.5
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */
@@ -722,6 +722,25 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 											'box-shadow'         => 'inset 0 .15em 1.4em 0 rgba(0,0,0, ' . wm_nav_shadow_opacity( wma_color_brightness( wm_option( $helper['prefix'] . 'header-bg-color', 'color' ) ), 15 ) / 100 . ')',
 										)
 									),
+
+								'navigation-mobile-' . 10 => array( 'custom' => '@media only screen and (max-width: 1024px) {' ),
+
+									'navigation-mobile-' . 20 => array(
+										'selector' => '#nav-main',
+										'styles'   => array(
+											'background-color' => wm_option( $helper['prefix'] . 'nav-bg-color', 'color' ),
+											'color'            => wm_option( $helper['prefix'] . 'nav-color', 'color' ),
+										)
+									),
+
+									'navigation-mobile-' . 20 => array(
+										'selector' => '#nav-main > .menu > li, #nav-main li a, #nav-main li li a, #nav-main li .inner',
+										'styles'   => array(
+											'border-color' => wm_option( $helper['prefix'] . 'nav-border-color', 'color', ' !important' ),
+										)
+									),
+
+								'navigation-mobile-' . 30 => array( 'custom' => '}' ),
 
 
 
