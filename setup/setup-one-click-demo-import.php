@@ -108,12 +108,12 @@ class Mustang_One_Click_Demo_Import {
 
 					$text .= '<p>';
 					$text .= esc_html__( 'By importing this demo content you get the exact copy of the theme demo website.', 'mustang-lite' );
-					$text .= ' (<a href="https://themedemos.webmandesign.eu/mustang-lite/">' . esc_html__( 'Preview the theme demo website &raquo;', 'mustang-lite' ) . '</a>)';
+					$text .= ' (<a href="https://themedemos.webmandesign.eu/mustang/">' . esc_html__( 'Preview the theme demo website &raquo;', 'mustang-lite' ) . '</a>)';
 
 					$text .= '<br>';
 
 					$text .= esc_html__( 'For instructions on importing theme demo content please visit GitHub repository.', 'mustang-lite' );
-					$text .= ' (<a href="https://github.com/webmandesign/demo-content/blob/master/mustang-lite/readme.md#what-is-this">' . esc_html__( 'GitHub repository instructions &raquo;', 'mustang-lite' ) . '</a>)';
+					$text .= ' (<a href="https://github.com/webmandesign/demo-content/blob/master/mustang/readme.md#what-is-this">' . esc_html__( 'GitHub repository instructions &raquo;', 'mustang-lite' ) . '</a>)';
 					$text .= '</p>';
 
 				$text .= '</div>';
@@ -127,7 +127,7 @@ class Mustang_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'mustang-lite' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'mustang-lite' );
-					$text .= ' <a href="https://webmandesign.github.io/docs/mustang-lite/#credits">' . esc_html__( 'Get media for your website &raquo;', 'mustang-lite' ) . '</a>';
+					$text .= ' <a href="https://webmandesign.github.io/docs/mustang/#credits">' . esc_html__( 'Get media for your website &raquo;', 'mustang-lite' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';
@@ -141,7 +141,7 @@ class Mustang_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please read the information about the theme demo required plugins first.', 'mustang-lite' );
 					$text .= ' ' . esc_html__( 'If you do not install and activate demo required plugins, some of the content will not be imported.', 'mustang-lite' );
-					$text .= ' <a href="https://github.com/webmandesign/demo-content/blob/master/mustang-lite/readme.md#required-plugins" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'mustang-lite' ) . '"><strong>';
+					$text .= ' <a href="https://github.com/webmandesign/demo-content/blob/master/mustang/readme.md#required-plugins" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'mustang-lite' ) . '"><strong>';
 					$text .= esc_html__( 'View the list of required plugins &raquo;', 'mustang-lite' );
 					$text .= '</strong></a>';
 					$text .= '</p>';
