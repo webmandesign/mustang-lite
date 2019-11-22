@@ -4,13 +4,17 @@
 
 * **Update**: Setting manual import for One Click Demo Import plugin to comply with WordPress.org theme requirements
 * **Update**: Localization
-* **Fix**: 
+* **Fix**: Custom mobile menu colors
 
 ### Files changed:
 
 	changelog.md
 	readme.txt
 	style.css
+	assets/css/_custom-styles.php
+	assets/css/responsive.css
+	setup/setup-one-click-demo-import.php
+	setup/about/about.php
 
 
 ## 1.9.4

@@ -38,7 +38,7 @@ Please see `changelog.md` file.
 == Upgrade Notice ==
 
 = 1.9.5 =
-Updating import for One Click Demo Import plugin to comply with WordPress.org theme requirements, updating localization.
+Updating import for One Click Demo Import plugin to comply with WordPress.org theme requirements, updating localization, fixing mobile menu colors.
 
 
 == Resources ==
