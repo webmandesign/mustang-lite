@@ -7,7 +7,7 @@
  * This fallback stylesheet is not compatible with RTL.
  *
  * @since    1.1.1
- * @version  1.8.2
+ * @version  2.0.0
  */
 
 /* Base */
@@ -39,8 +39,6 @@
 @import url( 'sidebar.css' );
 
 @import url( 'footer.css' );
-
-@import url( 'prettyphoto.css' );
 
 @import url( 'plugins.css' );
 

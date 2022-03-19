@@ -9,7 +9,7 @@
  * @uses        Custom CSS Styles Generator
  *
  * @since    1.0
- * @version  1.9.3
+ * @version  2.0.0
  */
 
 
@@ -38,7 +38,6 @@
 			120  => 'comments',
 			130  => 'sidebar',
 			140  => 'footer',
-			150  => 'prettyphoto',
 			160  => 'plugins',
 			170  => 'shortcodes',
 			180  => 'borders',
@@ -52,11 +51,6 @@
 		//RTL languages support
 			if ( is_rtl() ) {
 				$wm_theme_css_files[190] = 'rtl-borders';
-			}
-
-		//Disable PrettyPhoto
-			if ( wm_option( 'skin-disable-lightbox' ) ) {
-				unset( $wm_theme_css_files[150] );
 			}
 
 		//Disable Animate.css

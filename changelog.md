@@ -1,5 +1,35 @@
 # Mustang Lite Changelog
 
+## 2.0.0, 20220319
+
+### Update
+- HTML5 support
+- Recommended plugins list
+- Styles
+- Removing obsolete PrettyPhoto and jQuery.Appear scripts
+- Removing obsolete code
+
+### Fix
+- jQuery code
+- Beaver Builder editor styles
+
+### File updates
+	changelog.md
+	style.css
+	assets/css/__fallback.css
+	assets/css/_generate-css.php
+	assets/css/beaver-builder-editor.css
+	assets/css/rtl.css
+	assets/js/scripts-global.js
+	library/core.php
+	library/assets/js/customizer.js
+	library/includes/class-tgm-plugin-activation.php
+	setup/plugins.php
+	setup/setup-one-click-demo-import.php
+	setup/setup-theme-options.php
+	setup/setup.php
+
+
 ## 1.9.5
 
 * **Update**: Setting manual import for One Click Demo Import plugin to comply with WordPress.org theme requirements

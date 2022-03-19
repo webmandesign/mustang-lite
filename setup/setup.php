@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.3
+ * @version  2.0.0
  *
  * CONTENT:
  * - 1) Required files
@@ -92,10 +92,6 @@
 				add_action( 'wmhook_footer_top',     'wm_section_footer_top',     10 );
 				add_action( 'wmhook_footer',         'wm_section_footer',         10 );
 				add_action( 'wmhook_footer_bottom',  'wm_section_footer_bottom',  10 );
-
-		//Remove actions
-			remove_action( 'wp_head', 'wp_generator'     );
-			remove_action( 'wp_head', 'wlwmanifest_link' );
 
 
 
@@ -437,7 +433,7 @@
 	 * Theme installation
 	 *
 	 * @since    1.0
-	 * @version  1.9.3
+	 * @version  2.0.0
 	 */
 	if ( ! function_exists( 'wm_install' ) ) {
 		function wm_install() {
@@ -523,12 +519,15 @@
 
 			//Enable HTML5 markup
 				add_theme_support( 'html5', array(
-						'comment-list',
-						'comment-form',
-						'search-form',
-						'gallery',
-						'caption',
-					) );
+					'caption',
+					'comment-form',
+					'comment-list',
+					'gallery',
+					'navigation-widgets',
+					'search-form',
+					'script',
+					'style',
+				) );
 
 			//Post formats
 				add_theme_support( 'post-formats', apply_filters( 'wmhook_wm_install_post_formats', array(
@@ -670,7 +669,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.9.3
+	 * @version  2.0.0
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -742,9 +741,6 @@
 								'src'  => wm_get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ),
 								'deps' => array( 'jquery', 'imagesloaded' ),
 							),
-					//jQuery plugins
-						'jquery-appear' => array( wm_get_stylesheet_directory_uri( 'assets/js/appear/jquery.appear.min.js' ) ),
-						'jquery-prettyphoto' => array( wm_get_stylesheet_directory_uri( 'assets/js/prettyphoto/jquery.prettyPhoto.min.js' ) ),
 					//Backend
 						'wm-customizer' => array(
 								'src'  => wm_get_stylesheet_directory_uri( 'library/assets/js/customizer.js' ),
@@ -773,7 +769,7 @@
 	 * Frontend HTML head assets
 	 *
 	 * @since    1.0
-	 * @version  1.5
+	 * @version  2.0.0
 	 */
 	if ( ! function_exists( 'wm_site_assets' ) ) {
 		function wm_site_assets() {
@@ -826,11 +822,6 @@
 			 * Scripts
 			 */
 
-				//PrettyPhoto lightbox
-					if ( ! wm_option( 'skin-disable-lightbox' ) ) {
-						$enqueue_scripts[] = 'jquery-prettyphoto';
-					}
-
 				//Masonry footer only if there are more widgets in footer than columns settings
 					$footer_widgets = wp_get_sidebars_widgets();
 					if (
@@ -842,7 +833,6 @@
 					}
 
 				//Global theme scripts
-					$enqueue_scripts[] = 'jquery-appear';
 					$enqueue_scripts[] = 'wm-scripts-global';
 
 				$enqueue_scripts = apply_filters( 'wmhook_wm_site_assets_enqueue_scripts', $enqueue_scripts );
@@ -932,7 +922,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  1.9.1
+	 * @version  2.0.0
 	 *
 	 * @param  array $classes
 	 */
@@ -1007,11 +997,6 @@
 						$body_classes[80] = 'list-articles-full';
 					} else {
 						$body_classes[80] = 'list-articles-short';
-					}
-
-				//Theme lightbox used
-					if ( ! wm_option( 'skin-disable-lightbox' ) ) {
-						$body_classes[90] = 'theme-lightbox-enabled';
 					}
 
 				//Requirements check

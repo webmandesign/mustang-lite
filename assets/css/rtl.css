@@ -5,7 +5,7 @@
  * Styles are sorted in order in which they are included into main stylesheet file.
  *
  * @since    1.0
- * @version  1.8.2
+ * @version  2.0.0
  *
  * @link  http://codex.wordpress.org/Right_to_Left_Language_Support
  */
@@ -665,27 +665,6 @@
 				left: 2%;
 				border-radius: 50% 0 50% 50%;
 			}
-
-
-
-	/**
-	 * 150
-	 *
-	 * prettyphoto.css
-	 */
-
-		div.pp_default .pp_content {
-			position: relative;
-			left: -6px;
-		}
-		a.pp_expand, a.pp_contract {right: 10px}
-
-		.pp_nav .pp_play,.pp_nav .pp_pause,
-		a.pp_arrow_previous, a.pp_arrow_next,
-		a.pp_next,
-		a.pp_previous,
-		a.pp_expand, a.pp_contract,
-		a.pp_close {text-indent: 10000px}
 
 
 

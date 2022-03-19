@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.8.2
+ * @version  2.0.0
  *
  * CONTENT:
  * - 10) Basics
@@ -14,9 +14,7 @@
  * - 40) Masonry footer
  * - 50) Masonry gallery
  * - 60) YouTube embed fix
- * - 70) Image lightbox
  * - 80) Tabbed widget
- * - 90) Appear animations
  * - 100) Row video background
  * - 110) Columns tweaks
  * - 120) WooCommerce floating cart
@@ -106,7 +104,7 @@ jQuery( function() {
 				}
 				*/
 
-				jQuery( window ).scroll( function() {
+				jQuery( window ).on( 'scroll', function() {
 
 					var scrollPosition = jQuery( window ).scrollTop();
 
@@ -137,20 +135,6 @@ jQuery( function() {
 			if ( wmIsHighDPI() && $logo.data( 'hidpi' ) ) {
 				$logo.attr( 'src', $logo.data( 'hidpi' ) );
 			}
-
-
-
-		/**
-		 * Remove empty paragraphs from Contact Form 7 plugin output
-		 */
-
-			jQuery( '.wpcf7 p, .wpcf7 span' ).each( function() {
-				var $this = jQuery( this );
-
-				if ( '' == jQuery.trim( $this.html() ) ) {
-					$this.remove();
-				}
-			} );
 
 
 
@@ -214,7 +198,7 @@ jQuery( function() {
 		/**
 		 * Sticky header
 		 *
-		 * @version  1.1
+		 * @version  2.0.0
 		 */
 
 			var wmHeader = jQuery( '#header' );
@@ -235,14 +219,14 @@ jQuery( function() {
 					    wmContainerPadding = 0;
 
 					if ( ( wmHeaderTop + wmHeader.outerHeight() ) < wmScrolled ) {
-						wmContainerPadding = wmHeaderTop + wmHeaderHeightInitial - wmTopbarHeight;
+						// wmContainerPadding = wmHeaderTop + wmHeaderHeightInitial - wmTopbarHeight;
 						wmHeader.parent().addClass( 'is-sticky' );
 					} else {
-						wmContainerPadding = ( 0 > wmHeaderTop - wmTopbarHeight ) ? ( 0 ) : ( wmHeaderTop - wmTopbarHeight );
+						// wmContainerPadding = ( 0 > wmHeaderTop - wmTopbarHeight ) ? ( 0 ) : ( wmHeaderTop - wmTopbarHeight );
 						wmHeader.parent().removeClass( 'is-sticky' );
 					}
 
-					jQuery( '.website-container' ).css( 'padding-top', Math.round( wmContainerPadding ) );
+					// jQuery( '.website-container' ).css( 'padding-top', Math.round( wmContainerPadding ) );
 				} // /wmStickyHeader
 
 				jQuery( window ).on( 'scroll resize orientationchange', function( e ) {
@@ -348,7 +332,7 @@ jQuery( function() {
 			if ( jQuery( 'body' ).hasClass( 'page' ) ) {
 
 				//Scrolling the window
-					jQuery( window ).scroll( function() {
+					jQuery( window ).on( 'scroll', function() {
 						var wmFromTop = jQuery( this ).scrollTop() + wmHeaderHeight;
 
 						wmCurrentSection = wmSections.map( function() {
@@ -531,51 +515,6 @@ jQuery( function() {
 
 
 	/**
-	 * 70) Image lightbox
-	 */
-
-		if ( jQuery().prettyPhoto && jQuery( 'body' ).hasClass( 'theme-lightbox-enabled' ) ) {
-
-			var wmThumbsLinks        = 'a[href*=".gif"], a[href*=".jpg"], a[href*=".jpeg"], a[href*=".png"], a[href*=".mov"], a[href*=".swf"], .lightbox, a.modal, a[data-modal], a[data-target="modal"], a[rel^="prettyPhoto"], a[rel^="lightbox"]',
-			    wmPrettyPhotoOptions = {
-			    		deeplinking        : false,
-							overlay_gallery    : false,
-							show_title         : false,
-							slideshow          : 6000,
-							social_tools       : false,
-							theme              : 'pp_webman',
-							opacity            : '0.8',
-							default_width      : 800,
-							default_height     : 450,
-							horizontal_padding : 0,
-							ie6_fallback       : false,
-							markup             : '<div class ="pp_pic_holder"><div class="ppt">&nbsp;</div><div class="pp_content_container"><div class="pp_content"><div class="pp_loaderIcon"></div><div class="pp_fade"><a class="pp_close" href="#">Close</a><a href="#" class="pp_expand" title="Expand the image">Expand</a><div class="pp_nav"><a href="#" class="pp_arrow_previous">Previous</a><p class="currentTextHolder">0/0</p><a href="#" class="pp_arrow_next">Next</a></div><div class="pp_hoverContainer"><a class="pp_next" href="#">next</a><a class="pp_previous" href="#">previous</a></div><div id="pp_full_res"></div><div class="pp_details"><p class="pp_description"></p></div></div></div></div></div><div class="pp_overlay"></div>'
-						};
-
-			//WooCommerce support
-				// jQuery( '.product > .images a' ).attr( 'rel', 'prettyPhoto[product-gallery]' );
-
-			jQuery( '.gallery, .tiled-gallery, .wm-slideshow' ).each( function() {
-				var $this           = jQuery( this ),
-				    wmGalleryImages = $this.find( wmThumbsLinks ),
-				    wmGalleryID     = 'gallery' + Math.floor( ( Math.random() * 100 ) + 1 );
-
-				wmGalleryImages.attr( {
-						rel   : 'prettyPhoto[' + wmGalleryID + ']',
-						title : function() {
-								return jQuery( this ).find( 'img' ).attr( 'title' );
-							}
-					} );
-			} );
-
-			jQuery( wmThumbsLinks ).not( '.no-lightbox' ).addClass( 'cursor-zoom-in' ).prettyPhoto( wmPrettyPhotoOptions );
-			jQuery( 'a[rel^="prettyPhoto"]' ).prettyPhoto( wmPrettyPhotoOptions );
-
-		} // /prettyPhoto
-
-
-
-	/**
 	 * 80) Tabbed widget
 	 *
 	 * IMPORTANT: Supports only one instance of the widget on a page!
@@ -594,92 +533,6 @@ jQuery( function() {
 
 				jQuery( '<li><a href="#' + wmWidgetTabId + '" data-tab="#' + wmWidgetTabId + '">' + wmWidgetTabTitle + '</a></li>' ).appendTo( '.wm-tabbed-widgets > .wm-tab-links' );
 			} );
-
-
-
-	/**
-	 * 90) Appear animations
-	 */
-
-		//Viewport animations
-			if (
-					jQuery().appear
-					&& jQuery( '.wm-progress, [class*="animation-"]' ).length
-				) {
-
-				/**
-				 * Set initial CSS
-				 */
-
-					jQuery( '.wm-progress.animated .wm-progress-bar' ).css( 'width', 0 );
-
-
-
-				/**
-				 * In viewport
-				 */
-
-					jQuery( '.wm-progress.animated:in-viewport' ).each( function() {
-							var $this = jQuery( this );
-
-							$this.find( '.wm-progress-bar' ).animate( { 'width' : $this.data( 'progress' ) + '%' }, 2000 );
-						} );
-
-					jQuery( '[class*="animation-"]:in-viewport' ).each( function() {
-							var $this        = jQuery( this ),
-							    wmAllClasses = $this.attr( 'class' );
-
-							/**
-							 * Animate.css support
-							 *
-							 * @link  http://daneden.github.io/animate.css/
-							 *
-							 * Set the class of "animation-ANIMATION_TYPE" on the element.
-							 * This JavaScript will change the class to animation when element
-							 * is in vieport.
-							 */
-							$this.attr( 'class', wmAllClasses.replace( 'animation-', 'animated ' ) );
-						} );
-
-
-
-				/**
-				 * Progress bar
-				 */
-
-					jQuery( '.wm-progress.animated' ).appear().each( function() {
-							var $this = jQuery( this );
-
-							$this.on( 'appear', function( e ) {
-								$this.find( '.wm-progress-bar' ).animate( { 'width' : $this.data( 'progress' ) + '%' }, 1000 );
-							} );
-						} );
-
-
-
-				/**
-				 * CSS animation classes
-				 */
-
-					jQuery( '[class*="animation-"]' ).appear().each( function() {
-							var $this        = jQuery( this ),
-							    wmAllClasses = $this.attr( 'class' );
-
-							$this.on( 'appear', function( e ) {
-								/**
-								 * Animate.css support
-								 *
-								 * @link  http://daneden.github.io/animate.css/
-								 *
-								 * Set the class of "animation-ANIMATION_TYPE" on the element.
-								 * This JavaScript will change the class to animation when element
-								 * is in vieport.
-								 */
-								$this.attr( 'class', wmAllClasses.replace( 'animation-', 'animated ' ) );
-							} );
-					} );
-
-			} // /appear
 
 
 
@@ -782,7 +635,7 @@ jQuery( function() {
 				} );
 			*/
 
-			jQuery( 'body' ).bind( 'added_to_cart', function() {
+			jQuery( 'body' ).on( 'added_to_cart', function() {
 					jQuery( '#floating-cart' ).css( 'z-index', 99999 );
 
 					jQuery( '#floating-cart-switch' ).animate( { fontSize : '1.28em', marginTop : '1em' }, 400, function() {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mustang\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2019-11-22 16:47+0100\n"
+"POT-Creation-Date: 2022-03-19 21:02+0100\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
 "Last-Translator: WebMan Design, Oliver Juhas\n"
 "Language-Team: \n"
@@ -11,13 +11,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:28
@@ -754,41 +754,6 @@ msgid "In that case please read the instructions &raquo;"
 msgstr ""
 
 #: setup/about/about.php:291
-msgid "Installing the theme demo content"
-msgstr ""
-
-#: setup/about/about.php:294
-msgid ""
-"You can install the theme demo content including pages, posts, custom post "
-"types, layouts, menus and widgets directly from your WordPress dashboard by "
-"clicking the button bellow."
-msgstr ""
-
-#: setup/about/about.php:298
-msgid ""
-"Alternatively (such as when the automated installation fails) you can follow "
-"theme documentation instructions for manual demo content installation."
-msgstr ""
-
-#: setup/about/about.php:299
-msgid "Read the instructions &raquo;"
-msgstr ""
-
-#: setup/about/about.php:304
-msgid "Install and run \"One Click Demo Import\" plugin"
-msgstr ""
-
-#: setup/about/about.php:308
-msgid "Install theme demo content"
-msgstr ""
-
-#: setup/about/about.php:312
-msgid ""
-"Or head over to Appearance &raquo; Import Demo Data to start the import "
-"process."
-msgstr ""
-
-#: setup/about/about.php:323
 msgid ""
 "You can disable this page in Appearance &raquo; Customize &raquo; Theme "
 "&raquo; Others."
@@ -808,6 +773,26 @@ msgstr ""
 
 #: setup/plugins.php:70
 msgid "One Click Demo Import (for installing theme demo content)"
+msgstr ""
+
+#: setup/plugins.php:76
+msgctxt "Plugin name."
+msgid "Classic Widgets"
+msgstr ""
+
+#: setup/plugins.php:77
+msgid "Improves widgets management screen."
+msgstr ""
+
+#: setup/plugins.php:77
+msgid "Restores the previous WordPress widgets settings screens."
+msgstr ""
+
+#: setup/plugins.php:77
+msgid ""
+"Sidebars and widgets are not going to be used in fully block themes in the "
+"future, so if your website still uses sidebars, it is better to use this "
+"plugin to enable classic user interface."
 msgstr ""
 
 #: setup/setup-beaver-builder.php:250
@@ -945,8 +930,8 @@ msgstr ""
 #: setup/setup-theme-options.php:320 setup/setup-theme-options.php:378
 #: setup/setup-theme-options.php:471 setup/setup-theme-options.php:493
 #: setup/setup-theme-options.php:569 setup/setup-theme-options.php:591
-#: setup/setup-theme-options.php:650 setup/setup-theme-options.php:774
-#: setup/setup-theme-options.php:817
+#: setup/setup-theme-options.php:635 setup/setup-theme-options.php:759
+#: setup/setup-theme-options.php:802
 msgctxt "Customizer panel title."
 msgid "Theme Options"
 msgstr ""
@@ -1200,40 +1185,26 @@ msgid "Images"
 msgstr ""
 
 #: setup/setup-theme-options.php:596
-msgid "Lightbox"
-msgstr ""
-
-#: setup/setup-theme-options.php:601
-msgid ""
-"If you use a special image lightbox effect plugin, you should disable the "
-"theme native effect below."
-msgstr ""
-
-#: setup/setup-theme-options.php:606
-msgid "Disable lightbox effect"
-msgstr ""
-
-#: setup/setup-theme-options.php:611
 msgid "Image ratios"
 msgstr ""
 
-#: setup/setup-theme-options.php:616
+#: setup/setup-theme-options.php:601
 msgid "Set up image ratios for the different theme items."
 msgstr ""
 
-#: setup/setup-theme-options.php:621
+#: setup/setup-theme-options.php:606
 msgid "Blog list image"
 msgstr ""
 
-#: setup/setup-theme-options.php:627
+#: setup/setup-theme-options.php:612
 msgid "[wm_posts] shortcode image"
 msgstr ""
 
-#: setup/setup-theme-options.php:633
+#: setup/setup-theme-options.php:618
 msgid "[gallery] shortcode image"
 msgstr ""
 
-#: setup/setup-theme-options.php:639
+#: setup/setup-theme-options.php:624
 msgid ""
 "Please decide on, and set the image ratios up for different website sections "
 "right after the theme activation. If you change the image sizes later on, "
@@ -1242,7 +1213,7 @@ msgid ""
 "keep their original sizes."
 msgstr ""
 
-#: setup/setup-theme-options.php:639
+#: setup/setup-theme-options.php:624
 msgid ""
 "If you wish to resize the previously uploaded images to conform the new "
 "image ratios, you can use a plugin for this. Recommended plugins are <a href="
@@ -1252,84 +1223,84 @@ msgid ""
 "Rebuild</a>."
 msgstr ""
 
-#: setup/setup-theme-options.php:649
+#: setup/setup-theme-options.php:634
 msgid "Fonts"
 msgstr ""
 
-#: setup/setup-theme-options.php:655
+#: setup/setup-theme-options.php:640
 msgid ""
 "Set the Google Font to be used for website headings and body text. You can "
 "additionally set a font subset for different character lists."
 msgstr ""
 
-#: setup/setup-theme-options.php:661
+#: setup/setup-theme-options.php:646
 msgid "Text logo font"
 msgstr ""
 
-#: setup/setup-theme-options.php:667
+#: setup/setup-theme-options.php:652
 msgid "Headings font"
 msgstr ""
 
-#: setup/setup-theme-options.php:673
+#: setup/setup-theme-options.php:658
 msgid "Body text font"
 msgstr ""
 
-#: setup/setup-theme-options.php:680
+#: setup/setup-theme-options.php:665
 msgid "Font subset"
 msgstr ""
 
-#: setup/setup-theme-options.php:686
+#: setup/setup-theme-options.php:671
 msgid "Font sizes"
 msgstr ""
 
-#: setup/setup-theme-options.php:692
+#: setup/setup-theme-options.php:677
 msgid "Basic font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:706
+#: setup/setup-theme-options.php:691
 msgid ""
 "Heading font size is counted from the basic font size. Set the percentage of "
 "the basic font size for each heading."
 msgstr ""
 
-#: setup/setup-theme-options.php:712
+#: setup/setup-theme-options.php:697
 msgid "Heading H1 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:726
+#: setup/setup-theme-options.php:711
 msgid "Heading H2 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:740
+#: setup/setup-theme-options.php:725
 msgid "Heading H3 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:754
+#: setup/setup-theme-options.php:739
 msgid "Heading H4, H5 and H6 font size"
 msgstr ""
 
-#: setup/setup-theme-options.php:773 setup/setup-theme-options.php:779
+#: setup/setup-theme-options.php:758 setup/setup-theme-options.php:764
 #: setup/setup-webman-amplifier.php:1104 setup/setup-webman-amplifier.php:1195
 msgid "Layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:785 setup/setup-webman-amplifier.php:434
+#: setup/setup-theme-options.php:770 setup/setup-webman-amplifier.php:434
 msgid "Website layout"
 msgstr ""
 
-#: setup/setup-theme-options.php:787 setup/setup.php:300
+#: setup/setup-theme-options.php:772 setup/setup.php:296
 msgid "Fullwidth"
 msgstr ""
 
-#: setup/setup-theme-options.php:788 setup/setup.php:301
+#: setup/setup-theme-options.php:773 setup/setup.php:297
 msgid "Boxed"
 msgstr ""
 
-#: setup/setup-theme-options.php:795
+#: setup/setup-theme-options.php:780
 msgid "Website width"
 msgstr ""
 
-#: setup/setup-theme-options.php:806
+#: setup/setup-theme-options.php:791
 msgid ""
 "The website width is being set up for the boxed layout. The actual website "
 "content width would be the website width minus the boxed layout paddings "
@@ -1337,23 +1308,23 @@ msgid ""
 "will be 1320px (= 1480 - 160)."
 msgstr ""
 
-#: setup/setup-theme-options.php:816
+#: setup/setup-theme-options.php:801
 msgid "Others"
 msgstr ""
 
-#: setup/setup-theme-options.php:822
+#: setup/setup-theme-options.php:807
 msgid "CSS3 Animations"
 msgstr ""
 
-#: setup/setup-theme-options.php:828
+#: setup/setup-theme-options.php:813
 msgid "Disable Animate.css library"
 msgstr ""
 
-#: setup/setup-theme-options.php:833
+#: setup/setup-theme-options.php:818
 msgid "Welcome page"
 msgstr ""
 
-#: setup/setup-theme-options.php:839
+#: setup/setup-theme-options.php:824
 msgid "Disable Appearance &raquo; Welcome page"
 msgstr ""
 
@@ -1417,8 +1388,8 @@ msgid ""
 msgstr ""
 
 #: setup/setup-webman-amplifier.php:297 setup/setup-webman-amplifier.php:386
-#: setup/setup-webman-amplifier.php:716 setup/setup.php:217 setup/setup.php:292
-#: setup/setup.php:299
+#: setup/setup-webman-amplifier.php:716 setup/setup.php:213 setup/setup.php:288
+#: setup/setup.php:295
 msgid "Default"
 msgstr ""
 
@@ -1537,7 +1508,7 @@ msgstr ""
 msgid "Set featured image"
 msgstr ""
 
-#: setup/setup-webman-amplifier.php:508 setup/setup.php:200
+#: setup/setup-webman-amplifier.php:508 setup/setup.php:196
 msgid "Center"
 msgstr ""
 
@@ -1705,169 +1676,169 @@ msgstr ""
 msgid "This will display your entire forum index. No parameters to be set."
 msgstr ""
 
-#: setup/setup.php:196
+#: setup/setup.php:192
 msgid "Left, top"
 msgstr ""
 
-#: setup/setup.php:197
+#: setup/setup.php:193
 msgid "Center horizontally, top"
 msgstr ""
 
-#: setup/setup.php:198
+#: setup/setup.php:194
 msgid "Right, top"
 msgstr ""
 
-#: setup/setup.php:199
+#: setup/setup.php:195
 msgid "Left, center vertically"
 msgstr ""
 
-#: setup/setup.php:201
+#: setup/setup.php:197
 msgid "Right, center vertically"
 msgstr ""
 
-#: setup/setup.php:202
+#: setup/setup.php:198
 msgid "Left, bottom"
 msgstr ""
 
-#: setup/setup.php:203
+#: setup/setup.php:199
 msgid "Center horizontally, bottom"
 msgstr ""
 
-#: setup/setup.php:204
+#: setup/setup.php:200
 msgid "Right, bottom"
 msgstr ""
 
-#: setup/setup.php:207
+#: setup/setup.php:203
 msgid "Do not repeat"
 msgstr ""
 
-#: setup/setup.php:208
+#: setup/setup.php:204
 msgid "Repeat horizontally"
 msgstr ""
 
-#: setup/setup.php:209
+#: setup/setup.php:205
 msgid "Repeat vertically"
 msgstr ""
 
-#: setup/setup.php:210
+#: setup/setup.php:206
 msgid "Repeat (tile)"
 msgstr ""
 
-#: setup/setup.php:213
+#: setup/setup.php:209
 msgid "Move on scrolling"
 msgstr ""
 
-#: setup/setup.php:214
+#: setup/setup.php:210
 msgid "Fixed position"
 msgstr ""
 
-#: setup/setup.php:218
+#: setup/setup.php:214
 msgid "Cover"
 msgstr ""
 
-#: setup/setup.php:219
+#: setup/setup.php:215
 msgid "Contain"
 msgstr ""
 
-#: setup/setup.php:225
+#: setup/setup.php:221
 msgid " - do not use Google Font"
 msgstr ""
 
-#: setup/setup.php:277
+#: setup/setup.php:273
 msgid "Square"
 msgstr ""
 
-#: setup/setup.php:279
+#: setup/setup.php:275
 msgid "Landscape 4 to 3"
 msgstr ""
 
-#: setup/setup.php:280
+#: setup/setup.php:276
 msgid "Landscape 3 to 2"
 msgstr ""
 
-#: setup/setup.php:281
+#: setup/setup.php:277
 msgid "Landscape 16 to 9"
 msgstr ""
 
-#: setup/setup.php:282
+#: setup/setup.php:278
 msgid "Landscape 2 to 1"
 msgstr ""
 
-#: setup/setup.php:283
+#: setup/setup.php:279
 msgid "Landscape 3 to 1"
 msgstr ""
 
-#: setup/setup.php:285
+#: setup/setup.php:281
 msgid "Portrait 3 to 4"
 msgstr ""
 
-#: setup/setup.php:286
+#: setup/setup.php:282
 msgid "Portrait 2 to 3"
 msgstr ""
 
-#: setup/setup.php:293
+#: setup/setup.php:289
 msgid "Right sidebar"
 msgstr ""
 
-#: setup/setup.php:294
+#: setup/setup.php:290
 msgid "Left sidebar"
 msgstr ""
 
-#: setup/setup.php:295
+#: setup/setup.php:291
 msgid "No sidebar"
 msgstr ""
 
-#: setup/setup.php:296
+#: setup/setup.php:292
 msgid "Fullwidth sections"
 msgstr ""
 
-#: setup/setup.php:308
+#: setup/setup.php:304
 msgid "General Sidebar"
 msgstr ""
 
-#: setup/setup.php:310
+#: setup/setup.php:306
 msgid "The default general sidebar."
 msgstr ""
 
-#: setup/setup.php:317
+#: setup/setup.php:313
 msgid "Topbar Widgets"
 msgstr ""
 
-#: setup/setup.php:319
+#: setup/setup.php:315
 msgid "Widget area displayed as topbar of the website."
 msgstr ""
 
-#: setup/setup.php:326
+#: setup/setup.php:322
 msgid "Topbar Extra Widgets"
 msgstr ""
 
-#: setup/setup.php:328
+#: setup/setup.php:324
 msgid ""
 "Widget area displayed as extra topbar. It rolls out from top of the website "
 "when a button is clicked."
 msgstr ""
 
-#: setup/setup.php:335
+#: setup/setup.php:331
 msgid "Main Heading Widgets"
 msgstr ""
 
-#: setup/setup.php:337
+#: setup/setup.php:333
 msgid "Widget area displayed in the Main Heading section."
 msgstr ""
 
-#: setup/setup.php:344
+#: setup/setup.php:340
 msgid "Footer Widgets"
 msgstr ""
 
-#: setup/setup.php:346
+#: setup/setup.php:342
 msgid "Masonry footer layout. Set up the columns number in theme admin panel."
 msgstr ""
 
-#: setup/setup.php:353
+#: setup/setup.php:349
 msgid "Credits Widgets"
 msgstr ""
 
-#: setup/setup.php:355
+#: setup/setup.php:351
 msgid ""
 "Credits or copyright area in the footer. Takes up to 3 widgets. When you "
 "insert 1 widget, it will be displayed fullwidth. When 2 widgets are in the "
@@ -1876,145 +1847,145 @@ msgid ""
 "left and on the right."
 msgstr ""
 
-#: setup/setup.php:365
+#: setup/setup.php:361
 msgid "Floating cart"
 msgstr ""
 
-#: setup/setup.php:367
+#: setup/setup.php:363
 msgid "Widget area displayed as floating shoping cart."
 msgstr ""
 
-#: setup/setup.php:545
+#: setup/setup.php:544
 msgid "Main navigation"
 msgstr ""
 
-#: setup/setup.php:1277
+#: setup/setup.php:1262
 msgid "Open extra topbar"
 msgstr ""
 
-#: setup/setup.php:1330
+#: setup/setup.php:1315
 msgid "Close search form"
 msgstr ""
 
-#: setup/setup.php:1369
+#: setup/setup.php:1354
 msgid "Menu"
 msgstr ""
 
-#: setup/setup.php:1408
+#: setup/setup.php:1393
 msgid "Show cart"
 msgstr ""
 
-#: setup/setup.php:1412
+#: setup/setup.php:1397
 msgid "Search"
 msgstr ""
 
-#: setup/setup.php:1798
+#: setup/setup.php:1783
 #, php-format
 msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1800
+#: setup/setup.php:1785
 #, php-format
 msgid "Monthly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1800
+#: setup/setup.php:1785
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: setup/setup.php:1802
+#: setup/setup.php:1787
 #, php-format
 msgid "Yearly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1802
+#: setup/setup.php:1787
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: setup/setup.php:1804
+#: setup/setup.php:1789
 #, php-format
 msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1806
+#: setup/setup.php:1791
 #, php-format
 msgid "Tag Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1808
+#: setup/setup.php:1793
 #, php-format
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1811
+#: setup/setup.php:1796
 #, php-format
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
-#: setup/setup.php:1815
+#: setup/setup.php:1800
 msgid "Archives"
 msgstr ""
 
-#: setup/setup.php:1846
+#: setup/setup.php:1831
 msgid "Error 404"
 msgstr ""
 
-#: setup/setup.php:1852
+#: setup/setup.php:1837
 #, php-format
 msgid "%s forums"
 msgstr ""
 
-#: setup/setup.php:1855
+#: setup/setup.php:1840
 #, php-format
 msgid "Forum: %s"
 msgstr ""
 
-#: setup/setup.php:1858
+#: setup/setup.php:1843
 #, php-format
 msgid "Topic: %s"
 msgstr ""
 
-#: setup/setup.php:1866
+#: setup/setup.php:1851
 #, php-format
 msgid " / Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:2121
+#: setup/setup.php:2106
 msgid "Back to top of the page"
 msgstr ""
 
-#: setup/setup.php:2388
+#: setup/setup.php:2373
 msgid "Content width"
 msgstr ""
 
-#: setup/setup.php:2389
+#: setup/setup.php:2374
 msgid "Mobile width"
 msgstr ""
 
-#: setup/setup.php:2436
+#: setup/setup.php:2421
 #, php-format
 msgid "Previous item: %s"
 msgstr ""
 
-#: setup/setup.php:2439
+#: setup/setup.php:2424
 #, php-format
 msgid "Next item: %s"
 msgstr ""
 
-#: setup/setup.php:2879
+#: setup/setup.php:2864
 msgid "Load more..."
 msgstr ""
 
-#: setup/setup.php:2924
+#: setup/setup.php:2909
 msgid "Like it!"
 msgstr ""
 
-#: setup/setup.php:2924
+#: setup/setup.php:2909
 msgid "Liked already!"
 msgstr ""
 
-#: setup/setup.php:2930
+#: setup/setup.php:2915
 msgid "Views count"
 msgstr ""

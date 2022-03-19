@@ -1,11 +1,10 @@
 === Mustang Lite ===
 Contributors: webmandesign
-Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Requires at least: 4.7.0
-Tested up to: 5.2
-Stable tag: 1.9.5
-License: GNU General Public License v3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Requires at least: 4.8
+Tested up to: 5.9
+Requires PHP: 5.6
+License: GPL-3.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 Mustang Lite theme lets you create responsive business websites.
 
@@ -35,13 +34,7 @@ Please visit support forum at https://support.webmandesign.eu/
 Please see `changelog.md` file.
 
 
-== Upgrade Notice ==
-
-= 1.9.5 =
-Updating import for One Click Demo Import plugin to comply with WordPress.org theme requirements, updating localization, fixing mobile menu colors.
-
-
-== Resources ==
+== Copyright ==
 
 * TGM-Plugin-Activation © 2012 Thomas Griffin, GPL v2 or later
 * Animate.css © 2014 Daniel Eden, MIT

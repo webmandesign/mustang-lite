@@ -11,7 +11,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @version  3.4
- * @version  1.9.3
+ * @version  2.0.0
  *
  * CONTENT:
  * - 1) Required files
@@ -69,7 +69,7 @@
 		//Blog page query modification
 			add_action( 'pre_get_posts', 'wm_home_query', 10 );
 		//Contextual help
-			add_action( 'contextual_help', 'wm_help', 10, 3 );
+			// add_action( 'contextual_help', 'wm_help', 10, 3 );
 		//Display post excerpt
 			if ( is_single() && has_excerpt() ) {
 				add_action( 'wmhook_content_top', 'wm_excerpt', 10 );

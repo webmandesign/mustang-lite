@@ -6,54 +6,47 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since       3.0
- * @version     3.1
+ * @version     2.0.0
  */
 
-
-
-( function( exports, $ ) {
-
-
+( function( wp, $ ) {
 
 	/**
 	 * Custom radio select
 	 *
 	 * @since 3.1
 	 */
-
-	jQuery( '.custom-radio-container' ).on( 'change', 'input', function() {
-			jQuery( this ).parent().addClass( 'active' ).siblings().removeClass( 'active' );
-		} );
-
-
+	$( '.custom-radio-container' ).on( 'change', 'input', function() {
+		$( this ).parent().addClass( 'active' ).siblings().removeClass( 'active' );
+	} );
 
 	/**
-	 * Run actions after customizer saving
+	 * Run actions after customizer saving.
+	 *
+	 * IMPORTANT:
+	 * This can not be done with jQuery.on() as it does not work.
+	 * We have to use jQuery.bind() here still, unfortunately.
 	 *
 	 * @since    3.0
-	 * @version  3.1
+	 * @version  2.0.0
 	 */
+	wp.customize.bind( 'saved', function() {
+		if (
+			$( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-new input' ).val()
+			|| $( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-load select' ).val()
+		) {
+			//Trigger action when customizer saved and new skin/load skin set
 
-		exports.customize.bind( 'saved', function() {
+			//Refresh the page when loading skin (will empty also the new skin/load skin fields)
+			if ( $( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-load select' ).val() ) {
+				document.location.reload( true );
+			}
 
-				if (
-						$( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-new input' ).val()
-						|| $( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-load select' ).val()
-					) {
-					//Trigger action when customizer saved and new skin/load skin set
+			//Empty the new skin field
+			$( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-new input' ).val( '' );
 
-					//Refresh the page when loading skin (will empty also the new skin/load skin fields)
-						if ( $( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-load select' ).val() ) {
-							document.location.reload( true );
-						}
+		}
 
-					//Empty the new skin field
-						$( '#customize-control-wm-' + wmCustomizerHelper.wmThemeShortname + '-skin-wm-skin-new input' ).val( '' );
-
-				}
-
-			} );
-
-
+	} );
 
 } )( wp, jQuery );

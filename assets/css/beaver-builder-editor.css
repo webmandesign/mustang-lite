@@ -2,7 +2,7 @@
  * Beaver Builder editor styles
  *
  * @since    1.6
- * @version  1.8.2
+ * @version  2.0.0
  */
 
 .fl-builder .header,
@@ -11,6 +11,9 @@
 	z-index: 0;
 }
 
+.fl-builder-panel button,
+.fl-builder-panel [type="button"],
+.fl-builder-panel [type="submit"],
 .fl-lightbox button,
 .fl-lightbox [type="button"],
 .fl-lightbox [type="submit"] {

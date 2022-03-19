@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.3
+ * @version  2.0.0
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -78,7 +78,7 @@
 	 * Set $wm_skin_design array
 	 *
 	 * @since    1.0
-	 * @version  1.9.3
+	 * @version  2.0.0
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -590,21 +590,6 @@
 							'create_section' => __( 'Images', 'mustang-lite' ),
 							'in_panel'       => _x( 'Theme Options', 'Customizer panel title.', 'mustang-lite' ),
 						),
-
-							'images' . 5 => array(
-								'type'    => 'html',
-								'content' => '<h3>' . __( 'Lightbox', 'mustang-lite' ) . '</h3>',
-							),
-
-								'images' . 10 => array(
-									'type'    => 'html',
-									'content' => '<p class="description">' . __( 'If you use a special image lightbox effect plugin, you should disable the theme native effect below.', 'mustang-lite' ) . '</p>',
-								),
-								'images' . 20 => array(
-									'type'  => 'checkbox',
-									'id'    => $prefix . 'disable-lightbox',
-									'label' => __( 'Disable lightbox effect', 'mustang-lite' ),
-								),
 
 							'images' . 30 => array(
 								'type'    => 'html',

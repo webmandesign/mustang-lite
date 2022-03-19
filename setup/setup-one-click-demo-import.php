@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.9.5
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -343,18 +343,16 @@ class Mustang_One_Click_Demo_Import {
 		 * OCDI plugin admin page styles
 		 *
 		 * @since    1.7.1
-		 * @version  1.7.1
+		 * @version  2.0.0
 		 */
 		public static function styles() {
 
 			// Processing
 
-				// OCDI 2.0 styling fix
-
-					wp_add_inline_style(
-							'ocdi-main-css',
-							'.ocdi.about-wrap { max-width: 66em; }'
-						);
+				wp_add_inline_style(
+					'ocdi-main-css',
+					'.ocdi__content-container { max-width: 1024px; }'
+				);
 
 		} // /styles
 

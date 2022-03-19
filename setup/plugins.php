@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.7
+ * @version  2.0.0
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -70,6 +70,13 @@
 							'name'     => esc_html__( 'One Click Demo Import (for installing theme demo content)', 'mustang-lite' ),
 							'slug'     => 'one-click-demo-import',
 							'required' => false,
+						),
+
+						'classic-widgets' => array(
+							'name'        => esc_html_x( 'Classic Widgets', 'Plugin name.', 'mustang-lite' ),
+							'description' => esc_html__( 'Improves widgets management screen.', 'mustang-lite' ) . ' ' . esc_html__( 'Restores the previous WordPress widgets settings screens.', 'mustang-lite' ) . ' ' . esc_html__( 'Sidebars and widgets are not going to be used in fully block themes in the future, so if your website still uses sidebars, it is better to use this plugin to enable classic user interface.', 'mustang-lite' ),
+							'slug'        => 'classic-widgets',
+							'required'    => false,
 						),
 
 				) );

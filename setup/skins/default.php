@@ -97,7 +97,6 @@
 	"wm-skin-html-bg-size"                : "cover",
 	"wm-skin-logo"                        : "___get_template_directory_uri\/assets\/img\/branding\/logo-mustang.png",
 	"wm-skin-logo-hidpi"                  : "___get_template_directory_uri\/assets\/img\/branding\/logo-mustang@2x.png",
-	"wm-skin-disable-lightbox"            : false,
 	"wm-skin-image-blog"                  : "ratio-31",
 	"wm-skin-image-posts"                 : "ratio-169",
 	"wm-skin-image-gallery"               : "ratio-169",
