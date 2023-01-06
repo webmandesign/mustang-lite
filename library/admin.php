@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    3.0
- * @version  1.9.3
+ * @version  2.1.0
  *
  * CONTENT:
  * - 1) Required files
@@ -31,17 +31,6 @@
 				|| file_exists( WM_SETUP_CHILD . 'widgets.php' )
 			) {
 			require get_theme_file_path( WM_SETUP_DIR . 'widgets.php' );
-		}
-
-	//Load the theme introduction page
-		if (
-				is_admin()
-				&& (
-					file_exists( WM_SETUP . 'about/about.php' )
-					|| file_exists( WM_SETUP_CHILD . 'about/about.php' )
-				)
-			) {
-			require get_theme_file_path( WM_SETUP_DIR . 'about/about.php' );
 		}
 
 	//Skinning functionality

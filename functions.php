@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.3
+ * @version  2.1.0
  */
 
 
@@ -135,6 +135,9 @@
 /**
  * Required files
  */
+
+	// Welcome page.
+	require_once( get_theme_file_path( WM_SETUP_DIR . 'welcome/class-welcome.php' ) );
 
 	require get_theme_file_path( WM_LIBRARY_DIR . 'core.php' );
 

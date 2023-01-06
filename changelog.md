@@ -1,5 +1,32 @@
 # Mustang Lite Changelog
 
+## 2.1.0, 20230106
+
+### Updated
+- Welcome page
+- Localization
+
+### Fixed
+- Making blog page a current menu ancestor when visiting a blog post
+
+### File updates
+	changelog.md
+	functions.php
+	readme.txt
+	style.css
+	assets/scss/welcome.scss
+	languages/*.*
+	library/admin.php
+	setup/setup.php
+	setup/welcome/class-welcome.php
+	template-parts/admin/notice-welcome.php
+	template-parts/admin/welcome-demo.php
+	template-parts/admin/welcome-footer.php
+	template-parts/admin/welcome-guide.php
+	template-parts/admin/welcome-header.php
+	template-parts/admin/welcome-promo.php
+
+
 ## 2.0.0, 20220319
 
 ### Update

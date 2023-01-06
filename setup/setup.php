@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  2.0.0
+ * @version  2.1.0
  *
  * CONTENT:
  * - 1) Required files
@@ -669,7 +669,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  2.0.0
+	 * @version  2.1.0
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -711,9 +711,6 @@
 								'media' => 'print',
 							),
 					//Backend
-						'wm-about'            => array( wm_get_stylesheet_directory_uri( 'library/assets/css/about.css' ) ),
-						'wm-about-custom'     => ( file_exists( WM_SETUP_CHILD . 'about/about-custom.css' ) ) ? ( array( trailingslashit( get_stylesheet_directory_uri() ) . WM_SETUP_DIR . 'about/about-custom.css' ) ) : ( array( trailingslashit( get_template_directory_uri() ) . WM_SETUP_DIR . 'about/about-custom.css' ) ),
-						'wm-about-rtl'        => array( wm_get_stylesheet_directory_uri( 'library/assets/css/rtl-about.css' ) ),
 						'wm-admin'            => array( wm_get_stylesheet_directory_uri( 'library/assets/css/admin.css' ) ),
 						'wm-admin-rtl'        => array( wm_get_stylesheet_directory_uri( 'library/assets/css/rtl-admin.css' ) ),
 						'wm-admin-wc-rtl'     => array( wm_get_stylesheet_directory_uri( 'library/assets/css/rtl-admin-woocommerce.css' ) ),
@@ -1417,7 +1414,7 @@
 		 * This is global for all menus, not just main navigation.
 		 *
 		 * @since    1.0
-		 * @version  1.3
+		 * @version  2.1.0
 		 *
 		 * @param  array  $classes The CSS classes that are applied to the menu item's `<li>` element.
 		 * @param  object $item    The current menu item.
@@ -1440,7 +1437,7 @@
 					//General class for active menu
 						if (
 								false !== strpos( $classes, 'current-menu' )
-								// || false !== strpos( $classes, 'current_page' )
+								|| false !== strpos( $classes, 'current_page' )
 							) {
 							$classes .= ' active-menu-item';
 						}
@@ -1468,14 +1465,28 @@
 
 
 		/**
-		 * Navigation item position classes
+		 * Navigation item position classes.
+		 *
+		 * @since    1.0.0
+		 * @version  2.1.0
 		 */
 		if ( ! function_exists( 'wm_nav_item_position_class' ) ) {
 			function wm_nav_item_position_class( $items ) {
-				//Preparing output
+
+				// Requirements check
+
+					if ( empty( $items ) ) {
+						return $items;
+					}
+
+
+				// Processing
+
 					$items[1]->classes[] = 'menu-item-first';
 
-				//Output
+
+				// Output
+
 					return $items;
 			}
 		} // /wm_nav_item_position_class

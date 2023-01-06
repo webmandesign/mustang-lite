@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mustang\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2022-03-19 21:02+0100\n"
+"POT-Creation-Date: 2023-01-06 03:10+0100\n"
 "PO-Revision-Date: 2015-02-27 11:58+0100\n"
 "Last-Translator: WebMan Design, Oliver Juhas\n"
 "Language-Team: \n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -634,131 +634,6 @@ msgstr ""
 msgid "CSS3 background size"
 msgstr ""
 
-#: setup/about/about.php:133
-msgid "Welcome"
-msgstr ""
-
-#: setup/about/about.php:170
-#, php-format
-msgctxt "1: theme name, 2: theme version number."
-msgid "Welcome to %1$s %2$s"
-msgstr ""
-
-#: setup/about/about.php:182
-#, php-format
-msgctxt "1: theme name, 2: theme developer link."
-msgid "Thank you for using %1$s WordPress theme by %2$s!"
-msgstr ""
-
-#: setup/about/about.php:189
-msgid "Please take time to read the steps below to set up your website."
-msgstr ""
-
-#: setup/about/about.php:196
-msgid "Theme Documentation"
-msgstr ""
-
-#: setup/about/about.php:198
-msgid "Support Forum"
-msgstr ""
-
-#: setup/about/about.php:210
-msgid "Quickstart Guide"
-msgstr ""
-
-#: setup/about/about.php:218
-msgid "WebMan Amplifier"
-msgstr ""
-
-#: setup/about/about.php:221
-#, php-format
-msgctxt "%s: plugin name."
-msgid ""
-"To make the theme highly flexible, open and future-proof, it uses the %s "
-"plugin."
-msgstr ""
-
-#: setup/about/about.php:222
-msgid ""
-"Please, install and activate this plugin to unveil the additional "
-"functionality."
-msgstr ""
-
-#: setup/about/about.php:227
-#, php-format
-msgctxt "%s: plugin name."
-msgid "Install %s &raquo;"
-msgstr ""
-
-#: setup/about/about.php:237
-msgid "The WordPress settings"
-msgstr ""
-
-#: setup/about/about.php:240
-msgid ""
-"Do not forget to set up your WordPress in \"Settings\" section of the "
-"WordPress dashboard."
-msgstr ""
-
-#: setup/about/about.php:241
-msgid "Please go through all the subsections and options."
-msgstr ""
-
-#: setup/about/about.php:242
-msgid "This step is required for all WordPress websites."
-msgstr ""
-
-#: setup/about/about.php:245
-msgid "Set Up WordPress &raquo;"
-msgstr ""
-
-#: setup/about/about.php:253
-msgid "Customize the theme"
-msgstr ""
-
-#: setup/about/about.php:256
-msgid "You can customize the theme using live-preview editor."
-msgstr ""
-
-#: setup/about/about.php:257
-msgid "Customization changes will go live only after you save them!"
-msgstr ""
-
-#: setup/about/about.php:260
-msgid "Customize the Theme &raquo;"
-msgstr ""
-
-#: setup/about/about.php:273
-msgid "Important:"
-msgstr ""
-
-#: setup/about/about.php:280
-msgid ""
-"For the best performance, the theme generates a single CSS stylesheet file "
-"using WordPress native filesystem API."
-msgstr ""
-
-#: setup/about/about.php:281
-msgid "The file is being generated after saving theme customizer settings."
-msgstr ""
-
-#: setup/about/about.php:282
-msgid ""
-"If you notice an error message in WordPress dashboard after leaving the "
-"theme customizer, please check whether you should set up the FTP credentials "
-"in your \"wp-config.php\" file."
-msgstr ""
-
-#: setup/about/about.php:283
-msgid "In that case please read the instructions &raquo;"
-msgstr ""
-
-#: setup/about/about.php:291
-msgid ""
-"You can disable this page in Appearance &raquo; Customize &raquo; Theme "
-"&raquo; Others."
-msgstr ""
-
 #: setup/functions.php:230
 msgid "All posts"
 msgstr ""
@@ -1216,11 +1091,11 @@ msgstr ""
 #: setup/setup-theme-options.php:624
 msgid ""
 "If you wish to resize the previously uploaded images to conform the new "
-"image ratios, you can use a plugin for this. Recommended plugins are <a href="
-"\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\" target="
-"\"_blank\">Regenerate Thumbnails</a> or <a href=\"http://wordpress.org/"
-"extend/plugins/ajax-thumbnail-rebuild/\" target=\"_blank\">AJAX Thumbnail "
-"Rebuild</a>."
+"image ratios, you can use a plugin for this. Recommended plugins are <a "
+"href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\" "
+"target=\"_blank\">Regenerate Thumbnails</a> or <a href=\"http://wordpress."
+"org/extend/plugins/ajax-thumbnail-rebuild/\" target=\"_blank\">AJAX "
+"Thumbnail Rebuild</a>."
 msgstr ""
 
 #: setup/setup-theme-options.php:634
@@ -1395,6 +1270,7 @@ msgstr ""
 
 #: setup/setup-webman-amplifier.php:308 setup/setup-webman-amplifier.php:409
 #: setup/setup-webman-amplifier.php:710
+#: template-parts/admin/welcome-guide.php:47
 msgid "Settings"
 msgstr ""
 
@@ -1859,133 +1735,349 @@ msgstr ""
 msgid "Main navigation"
 msgstr ""
 
-#: setup/setup.php:1262
+#: setup/setup.php:1259
 msgid "Open extra topbar"
 msgstr ""
 
-#: setup/setup.php:1315
+#: setup/setup.php:1312
 msgid "Close search form"
 msgstr ""
 
-#: setup/setup.php:1354
+#: setup/setup.php:1351
 msgid "Menu"
 msgstr ""
 
-#: setup/setup.php:1393
+#: setup/setup.php:1390
 msgid "Show cart"
 msgstr ""
 
-#: setup/setup.php:1397
+#: setup/setup.php:1394
 msgid "Search"
 msgstr ""
 
-#: setup/setup.php:1783
+#: setup/setup.php:1794
 #, php-format
 msgid "Daily Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1785
+#: setup/setup.php:1796
 #, php-format
 msgid "Monthly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1785
+#: setup/setup.php:1796
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: setup/setup.php:1787
+#: setup/setup.php:1798
 #, php-format
 msgid "Yearly Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1787
+#: setup/setup.php:1798
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: setup/setup.php:1789
+#: setup/setup.php:1800
 #, php-format
 msgid "Category Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1791
+#: setup/setup.php:1802
 #, php-format
 msgid "Tag Archives: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1793
+#: setup/setup.php:1804
 #, php-format
 msgid "Search Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:1796
+#: setup/setup.php:1807
 #, php-format
 msgid "<strong>%s</strong> archives"
 msgstr ""
 
-#: setup/setup.php:1800
+#: setup/setup.php:1811
 msgid "Archives"
 msgstr ""
 
-#: setup/setup.php:1831
+#: setup/setup.php:1842
 msgid "Error 404"
 msgstr ""
 
-#: setup/setup.php:1837
+#: setup/setup.php:1848
 #, php-format
 msgid "%s forums"
 msgstr ""
 
-#: setup/setup.php:1840
+#: setup/setup.php:1851
 #, php-format
 msgid "Forum: %s"
 msgstr ""
 
-#: setup/setup.php:1843
+#: setup/setup.php:1854
 #, php-format
 msgid "Topic: %s"
 msgstr ""
 
-#: setup/setup.php:1851
+#: setup/setup.php:1862
 #, php-format
 msgid " / Results for: <strong>%s</strong>"
 msgstr ""
 
-#: setup/setup.php:2106
+#: setup/setup.php:2117
 msgid "Back to top of the page"
 msgstr ""
 
-#: setup/setup.php:2373
+#: setup/setup.php:2384
 msgid "Content width"
 msgstr ""
 
-#: setup/setup.php:2374
+#: setup/setup.php:2385
 msgid "Mobile width"
 msgstr ""
 
-#: setup/setup.php:2421
+#: setup/setup.php:2432
 #, php-format
 msgid "Previous item: %s"
 msgstr ""
 
-#: setup/setup.php:2424
+#: setup/setup.php:2435
 #, php-format
 msgid "Next item: %s"
 msgstr ""
 
-#: setup/setup.php:2864
+#: setup/setup.php:2875
 msgid "Load more..."
 msgstr ""
 
-#: setup/setup.php:2909
+#: setup/setup.php:2920
 msgid "Like it!"
 msgstr ""
 
-#: setup/setup.php:2909
+#: setup/setup.php:2920
 msgid "Liked already!"
 msgstr ""
 
-#: setup/setup.php:2915
+#: setup/setup.php:2926
 msgid "Views count"
+msgstr ""
+
+#: setup/welcome/class-welcome.php:126 setup/welcome/class-welcome.php:128
+msgid "Welcome"
+msgstr ""
+
+#. translators: %1$s: heart icon, %2$s: star icons.
+#: setup/welcome/class-welcome.php:189
+#, php-format
+msgid "If you %1$s love this theme don't forget to rate it %2$s."
+msgstr ""
+
+#: setup/welcome/class-welcome.php:196
+msgid "And/or please consider a donation."
+msgstr ""
+
+#: setup/welcome/class-welcome.php:199
+#: template-parts/admin/welcome-promo.php:29
+msgid "Thank you!"
+msgstr ""
+
+#: setup/welcome/class-welcome.php:213
+msgid ""
+"Have a suggestion for improvement or something is not working as it should?"
+msgstr ""
+
+#: setup/welcome/class-welcome.php:215
+msgid "&rarr; Contact support"
+msgstr ""
+
+#. translators: %s: Theme name.
+#: template-parts/admin/notice-welcome.php:26
+#, php-format
+msgid "Thank you for installing %s theme!"
+msgstr ""
+
+#: template-parts/admin/notice-welcome.php:34
+msgid "Visit \"Welcome\" page for information on how to set up your website."
+msgstr ""
+
+#: template-parts/admin/notice-welcome.php:42
+msgid "Let's Get Started &raquo;"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:23
+msgid "Theme Demo Content"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:27
+msgid "Full theme demo content"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:30
+msgid ""
+"You can install a full theme demo content to match the theme demo website."
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:31
+msgid "(Preview the demo &rarr;)"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:32
+msgid "This provides a comprehensive start for building your own website."
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:36
+msgid "Please check out these information:"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:37
+msgid "Information about theme demo content &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:38
+msgid "Specific instructions on how to install theme demo content &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:43
+msgid "Install demo content"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:45
+msgid "(Appearance &rarr; Import Demo Data)"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:48
+msgid "Use \"One Click Demo Import\" plugin &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-footer.php:25
+msgid ""
+"You can disable this page in Appearance &rarr; Customize &rarr; Theme "
+"Options &rarr; Others."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:21
+msgid "Quickstart Guide"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:26
+msgid "WebMan Amplifier"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:29
+#, php-format
+msgctxt "%s: plugin name."
+msgid ""
+"To make the theme highly flexible, open and future-proof, it uses the %s "
+"plugin."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:30
+msgid ""
+"Please, install and activate this plugin to unveil the additional "
+"functionality."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:33
+#, php-format
+msgctxt "%s: plugin name."
+msgid "Install %s &raquo;"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:40
+msgid "Set up"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:43
+msgid "Make sure to tweak \"Settings\" section of your site."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:44
+msgid "Please go through all the subsections and options."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:45
+msgid "This step is required for all WordPress websites."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:53
+#: template-parts/admin/welcome-guide.php:59
+msgid "Customize"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:56
+msgid "You can customize your website using a live-preview editor."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:57
+msgid "Customization changes apply only after you publish them."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:65
+msgid "New to WordPress?"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:67
+msgid "If you are new to WordPress check out info in theme documentation."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:68
+msgid "Get to know WordPress &rarr;"
+msgstr ""
+
+#. translators: 1: theme name, 2: theme developer link.
+#: template-parts/admin/welcome-header.php:33
+#, php-format
+msgid "Congratulations and thank you for choosing %1$s theme by %2$s!"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:39
+msgid "Information on this page introduces the theme and provides useful tips."
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:44
+msgid "Quickstart"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:45
+msgid "Demo content"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:46
+msgid "Upgrade"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:51
+msgid "Documentation &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:52
+msgid "Support Forum &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:56
+msgctxt "Notice, hint."
+msgid "Tip:"
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:23
+msgid "Like the theme?"
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:27
+#, php-format
+msgid "You are using a fully functional 100% free WordPress theme."
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:28
+msgid ""
+"If you find it helpful, please support its updates and technical support "
+"service with a donation at WebManDesign.eu."
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:32
+msgid "Visit WebMan Design website now &rarr;"
 msgstr ""
