@@ -1,5 +1,16 @@
 # Mustang Lite Changelog
 
+## 2.1.1, 20240902
+
+### Updated
+- Confirming support with WordPress 6.6
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+
+
 ## 2.1.0, 20230106
 
 ### Updated
