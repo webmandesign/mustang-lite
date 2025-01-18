@@ -1,5 +1,17 @@
 # Mustang Lite Changelog
 
+## 2.1.2, 20250118
+
+### Updated
+- Beaver Builder upgrade link
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	setup/setup-beaver-builder.php
+	
+
 ## 2.1.1, 20240902
 
 ### Updated

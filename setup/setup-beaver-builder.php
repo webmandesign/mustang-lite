@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.6
- * @version  1.9.3
+ * @version  2.1.2
  *
  * Contents:
  *
@@ -43,7 +43,7 @@
 	 * Upgrade link URL
 	 *
 	 * @since    1.6
-	 * @version  1.6
+	 * @version  2.1.2
 	 *
 	 * @param  string $url
 	 */
@@ -52,7 +52,7 @@
 
 			// Output
 
-				return esc_url( add_query_arg( 'fla', '67', $url ) );
+				return trailingslashit( FL_BUILDER_STORE_URL ) . 'fla/67/';
 
 		}
 	} // /wm_bb_upgrade_url
