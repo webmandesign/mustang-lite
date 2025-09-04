@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan
  *
  * @since    1.0.0
- * @version  1.9.2
+ * @version  2.1.3
  */
 
 
@@ -168,6 +168,51 @@
  */
 
 	if ( function_exists( 'wma_add_meta_box' ) ) {
+
+		/**
+		 * @since  2.1.3
+		 */
+		function wm_mustang_add_meta_box() {
+
+			wma_add_meta_box( array(
+				// Meta fields function callback (should return array of fields).
+				// The function callback is used for to use a WordPress globals
+				// available during the metabox rendering, such as $post.
+				'fields' => 'wm_post_metafields',
+
+				// Meta box id, unique per meta box.
+				'id' => 'post-metabox',
+
+				// Post types.
+				'pages' => array( 'post' ),
+
+				// Meta box title.
+				'title' => __( 'Post options', 'mustang-lite' ),
+
+				// Function callback of form fields displayed immediately after
+				// visual editor on 1st tab.
+				'visual-wrapper-add' => 'wm_post_formats_metafields',
+			) );
+
+			wma_add_meta_box( array(
+				// Meta fields function callback (should return array of fields).
+				// The function callback is used for to use a WordPress globals
+				// available during the metabox rendering, such as $post.
+				'fields' => 'wm_page_metafields',
+
+				// Meta box id, unique per meta box.
+				'id' => 'page-metabox',
+
+				// Post types.
+				'pages' => array( 'page' ),
+
+				// Meta box title.
+				'title' => __( 'Page options', 'mustang-lite' ),
+			) );
+
+		} // /wm_mustang_add_meta_box
+
+		add_action( 'after_setup_theme', 'wm_mustang_add_meta_box' );
 
 		/**
 		 * Post metaboxex
@@ -335,28 +380,6 @@
 
 				return $fields;
 			} // /wm_post_metafields
-
-
-
-			wma_add_meta_box( array(
-					// Meta fields function callback (should return array of fields).
-					// The function callback is used for to use a WordPress globals
-					// available during the metabox rendering, such as $post.
-					'fields' => 'wm_post_metafields',
-
-					// Meta box id, unique per meta box.
-					'id' => 'post-metabox',
-
-					// Post types.
-					'pages' => array( 'post' ),
-
-					// Meta box title.
-					'title' => __( 'Post options', 'mustang-lite' ),
-
-					// Function callback of form fields displayed immediately after
-				 	// visual editor on 1st tab.
-				 	'visual-wrapper-add' => 'wm_post_formats_metafields',
-				) );
 
 
 
@@ -628,24 +651,6 @@
 					return $fields;
 
 			} // /wm_page_metafields
-
-
-
-			wma_add_meta_box( array(
-				// Meta fields function callback (should return array of fields).
-				// The function callback is used for to use a WordPress globals
-				// available during the metabox rendering, such as $post.
-				'fields' => 'wm_page_metafields',
-
-				// Meta box id, unique per meta box.
-				'id' => 'page-metabox',
-
-				// Post types.
-				'pages' => array( 'page' ),
-
-				// Meta box title.
-				'title' => __( 'Page options', 'mustang-lite' ),
-			) );
 
 
 

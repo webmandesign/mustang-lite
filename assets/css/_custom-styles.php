@@ -7,7 +7,7 @@
  * @copyright   2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.9.5
+ * @version  2.1.3
  *
  * @param  boolean $visual_editor If true, will output only styles for WordPress Visual Editor.
  */
@@ -1346,8 +1346,8 @@ if ( ! function_exists( 'wm_custom_styles' ) ) {
 						$logo_id = wm_get_image_id_from_url( wm_option( 'skin-logo' ) );
 
 						if ( $logo_id ) {
-							$logo_height = wp_get_attachment_image_src( $logo_id, 'full' );
-							$logo_height = $logo_height[2];
+							$logo_height = (array) wp_get_attachment_image_src( $logo_id, 'full' );
+							$logo_height = (string) $logo_height[2];
 						} else {
 							$logo_height = explode( 'x', WM_DEFAULT_LOGO_SIZE );
 							$logo_height = $logo_height[1];

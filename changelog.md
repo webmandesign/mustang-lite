@@ -1,5 +1,17 @@
 # Mustang Lite Changelog
 
+## 2.1.3, 20250904
+
+### Fixed
+- Fixing localization PHP error
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	setup/setup-webman-amplifier.php
+
+
 ## 2.1.2, 20250118
 
 ### Updated
